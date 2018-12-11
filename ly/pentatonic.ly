@@ -70,7 +70,7 @@ pentaTwo = \relative c' {
      d4-- c a | c-- a g | a-- g f | g-- f d | f-- d c | d2.-- \bar "|."
 }
   
-\pentaThree = \relative c' {
+pentaThree = \relative c' {
     \key f \major
     \time 4/4 
      d8-- f g a  f-- g a c | g-- a c d  a-- c d f | d1-- \breath \break 
@@ -94,7 +94,7 @@ pentaFive= \relative c' {
      f4-- d c | d-- c a | c-- a g | a-- g f| g-- f d | f2.-- \bar "|."
 }
   
-\pentaSix = \relative c' {
+pentaSix = \relative c' {
     \key f \major
     \time 4/4 
      f8\p\< g a c  g-- a c d | a-- c d f c-- d f g | f1--\ff \breath \break 
