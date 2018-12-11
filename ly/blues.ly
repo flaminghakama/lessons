@@ -10,7 +10,7 @@ composerName = "transcribed by D. Elaine Alt"
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2018 Elaine Paul" } 
+    copyright = \markup { \tiny "copyright © 2018 D. Elaine Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \titleLeft \titleRight }  }
     poet = ""
