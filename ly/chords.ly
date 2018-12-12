@@ -93,9 +93,6 @@ tonicDominantTriadChords = \chordmode {
     \set noChordSymbol = ##f
     c1 | g | c | g |
     a1:m | e | a:m | e |
-
-    c2 g:7 | c1 |
-    a2:m e:7 | a1:m | 
 }
 tonicDominantTriad = \relative c' {
     \key c \major
@@ -115,15 +112,77 @@ tonicDominantTriad = \relative c' {
     }
     \bar "||"
 
+}
+
+grandArpeggioChords = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    c2 g:7 | c1 |
+    c2 g:7 | c1 |
+    a2:m e:7 | a1:m | 
+    a2:m e:7 | a1:m | 
+}
+grandArpeggio = \relative c' {
+    \key c \major
+    \time 4/4 
     \relative c' { 
         \tuplet 3/2 4 { c8 e g  c e g  f d b  g f d } | c1 | 
+    }
+    \relative c''' { 
+        \tuplet 3/2 4 { c8 g e  c g e  g b d   f g b   } | c1 | 
         \bar "||"
     }
     \relative c'' {
         \tuplet 3/2 4 { a8 c e  a c e  d b gs  e d b } | a1 | 
+    }
+    \relative c''' { 
+        \tuplet 3/2 4 { a8 e c  a e c  e gs b  d e gs  } | a1 | 
         \bar "||"
     }
 
+}
+
+
+tonicDominantTriadStepwiseChords = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    c4 g c g | c g c g | c1 |
+    c4 g c g | c g c g | c g c2 |
+
+    a4:m e a:m e | a:m e a2:m | 
+    a4:m e a:m e | a:m e a:m e | a1:m 
+
+}
+tonicDominantTriadStepwise = \relative c' {
+    \key c \major
+    \time 4/4 
+    \relative c' { 
+        \tuplet 3/2 4 { 
+            c8 e g  d g b  e, g c  g b d | 
+            g, c e  b d g  c, e g  d g b } | c1 | \break
+    }
+    \relative c''' {
+        \tuplet 3/2 4 { 
+            c8 g e  b' g d  g e c  g' d b | 
+            e c g  d' b g  c g e  b' g d |
+            g e c  g' d b } c2 | \break
+
+    }
+    \bar "||"
+
+    \relative c'' { 
+        \tuplet 3/2 4 { 
+            a8 c e  b e gs  c, e a  e gs? b | 
+            e, a c  gs b e  } a,2 | \break
+    }
+    \relative c''' { 
+        \tuplet 3/2 4 { 
+            a8 e c  gs' e b  e c a  e' b gs |
+            c a e  b' gs e  a e c  gs' e b } | a'1 |
+    }
+    \bar "||"
 }
 
 
@@ -162,7 +221,7 @@ tonicDominantTriadExchange = \relative c' {
     \relative c''' { 
         \tuplet 3/2 4 { 
             a8 e' c  gs b e  c a e  e gs? b |
-            a e c  b e gs  e c a  gs? b e |
+            a e c  b e gs  e c a  gs b e |
             c a e  e gs b  a e c  b e gs? } | a1
     }
 }
@@ -260,6 +319,27 @@ tonicDominantExtendedRange = {
     << 
         \new ChordNames \transpose c c { \tonicDominantTriadChords }
         \new Staff \tonicDominantTriad
+    >>
+}
+
+\bookpart {
+    \header {
+        subtitle = "Grand Arpeggio"
+    }
+    << 
+        \new ChordNames \transpose c c { \grandArpeggioChords }
+        \new Staff \grandArpeggio
+    >>
+}
+
+\bookpart {
+    \header {
+        title = ""
+        subtitle = "Tonic and Dominant Triads, Stepwise"
+    }
+    << 
+        \new ChordNames \transpose c c { \tonicDominantTriadStepwiseChords }
+        \new Staff \tonicDominantTriadStepwise
     >>
 }
 
