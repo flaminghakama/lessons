@@ -73,7 +73,7 @@ breathingLinear = \relative c' {
 }
 	
 
-<< { \breathingNonLinear \pageBreak \breathingLinear } >>
+<< { \autoPageBreaksOff \breathingNonLinear \pageBreak \breathingLinear } >>
 
 %{
 	
