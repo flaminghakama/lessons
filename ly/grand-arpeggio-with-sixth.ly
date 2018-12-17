@@ -48,14 +48,14 @@ composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-fonts.ily"
 
 
-grandArpeggioMajorChords = \chordmode { 
+grandArpeggioMajorSixthChords = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    c1 | g:7 | c1 |
-    c1 | g:7 | c1 |
+    c1:6 | g:7 | c:6 |
+    c1:6 | g:7 | c:6 |
 }
-grandArpeggioMajor = \relative c' {
+grandArpeggioMajorSixth = \relative c' {
     \key c \major
     \time 4/4 
     \relative c' { 
@@ -66,18 +66,18 @@ grandArpeggioMajor = \relative c' {
         \bar "||"
     }
 }
-grandArpeggioMajorTwo = \relative c' {
+grandArpeggioMajorSixthTwo = \relative c' {
     \key c \major
     \time 4/4 
     \relative c' { 
-         c8 e g a  c e g a  b g f d  b g f d  | c1 | 
+         c8 e g a  c e g a  g f d b  g f d b | c1 | 
     }
     \relative c''' { 
          c8 a g e  c a g e  f g b d  f g b d | c1 | 
         \bar "||"
     }
 }
-grandArpeggioMajorThree = \relative c' {
+grandArpeggioMajorSixthThree = \relative c' {
     \key c \major
     \time 4/4 
     \relative c' { 
@@ -88,14 +88,80 @@ grandArpeggioMajorThree = \relative c' {
         \bar "||"
     }
 }
-grandArpeggioMajorFour = \relative c' {
+grandArpeggioMajorSixthFour = \relative c' {
     \key c \major
     \time 4/4 
     \relative c' { 
          c8 e g a  c e g a | g f d b  g f d b | c1 | 
     }
     \relative c'' { 
-         c8 a g e   c a g e  | f g b d  f g b d | c1 | 
+         c8 g' e c  a g e c | b d f g  b d f g | e8 ( c2.. ) | 
+        \bar "||"
+    }
+}
+grandArpeggioMajorSixthFive = \relative c' {
+    \key c \major
+    \time 4/4 
+    \relative c' { 
+         c8 e, g a  c e g a | b g f d  b g f d | c'1 | 
+    }
+    \relative c'' { 
+         c8 a g e   c a g e  | f g b d  f g b d | e8 ( c'2.. ) | 
+        \bar "||"
+    }
+}
+grandArpeggioMajorSixthSix = \relative c' {
+    \key c \major
+    \time 4/4 
+    \relative c' { 
+         c8 e g a  c e g a  g f d b  g f d b | c1 | 
+    }
+    \relative c''' { 
+         c8 a g e  c a g e  d b d f  g b d f  | e2 ( c' ) | 
+        \bar "||"
+    }
+}
+grandArpeggioMajorSixthSeven = \relative c' {
+    \key c \major
+    \time 4/4 
+    \relative c' { 
+         c8 g a c  e g a c  d b g f  d b g f | g a' g e c2 | 
+    }
+    \relative c'' { 
+         c8 a g e  c a g a  b d f g  b d f g  | a8 ( af16 g fs8. g16  c2 ) | 
+        \bar "||"
+    }
+}
+grandArpeggioMajorSixthEight = \relative c' {
+    \key c \major
+    \time 4/4 
+    \relative c' { 
+         c8 e g a  c e g a  g f d b  g f d b | c1 | 
+    }
+    \relative c'' { 
+         c8 a g e  c a c e  f g b d  f g b d | c1 | 
+        \bar "||"
+    }
+}
+grandArpeggioMajorSixthNine = \relative c' {
+    \key c \major
+    \time 4/4 
+    \relative c'' { 
+         c8 e g a  c e g e  d b g f  d b g f | e ( c'2.. ) | 
+    }
+    \relative c''' { 
+         c8 a g e  c a g e  f g b d  f g b d | c1 | 
+        \bar "||"
+    }
+}
+grandArpeggioMajorSixthTen = \relative c' {
+    \key c \major
+    \time 4/4 
+    \relative c' { 
+         c8 e g a  c e g a | g f d b  g f d b | c1 | 
+    }
+    \relative c'' { 
+         c8 a' g e   c a g e  | d b g f  g b d f | e8 ( c'2.. ) | 
         \bar "||"
     }
 }
@@ -153,10 +219,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "C Major (G Dominant)"
         } 
         << 
-            \new ChordNames \transpose c c { \grandArpeggioMajorChords }
-            \new Staff \grandArpeggioMajor
-            \new ChordNames \transpose c c { \grandArpeggioMajorChords }
-            \new Staff \grandArpeggioMajorTwo
+            \new ChordNames \transpose c c { \grandArpeggioMajorSixthChords }
+            \new Staff \grandArpeggioMajorSixth
+            \new ChordNames \transpose c c { \grandArpeggioMajorSixthChords }
+            \new Staff \grandArpeggioMajorSixthTwo
         >>
     }
 
@@ -166,10 +232,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "G Major (D Dominant)"
         } 
         << 
-            \new ChordNames \transpose c g { \grandArpeggioMajorChords }
-            \new Staff \transpose c g \grandArpeggioMajorThree
-            \new ChordNames \transpose c g { \grandArpeggioMajorChords }
-            \new Staff \transpose c g \grandArpeggioMajorFour
+            \new ChordNames \transpose c g { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c g \grandArpeggioMajorSixthThree
+            \new ChordNames \transpose c g { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c g \grandArpeggioMajorSixthTen
         >>
     }
     \score {
@@ -177,8 +243,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "F Major (C Dominant)"
         } 
         << 
-            \new ChordNames \transpose c f { \grandArpeggioMajorChords }
-            \new Staff \transpose c f \grandArpeggioMajor
+            \new ChordNames \transpose c f { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c f \grandArpeggioMajorSixth
+            \new ChordNames \transpose c f { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c f \grandArpeggioMajorSixthSeven
         >>
     }
 
@@ -188,10 +256,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "D Major (A Dominant)"
         } 
         << 
-            \new ChordNames \transpose c d { \grandArpeggioMajorChords }
-            \new Staff \transpose c d \grandArpeggioMajor
-            \new ChordNames \transpose c d { \grandArpeggioMajorChords }
-            \new Staff \transpose c d \grandArpeggioMajorTwo
+            \new ChordNames \transpose c d { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c d \grandArpeggioMajorSixth
+            \new ChordNames \transpose c d { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c d \grandArpeggioMajorSixthEight
         >>
     }
     \score {
@@ -199,10 +267,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "Bb Major (F Dominant)"
         } 
         << 
-            \new ChordNames \transpose c bf' { \grandArpeggioMajorChords }
-            \new Staff \transpose c bf, \grandArpeggioMajor
-            \new ChordNames \transpose c bf' { \grandArpeggioMajorChords }
-            \new Staff \transpose c bf, \grandArpeggioMajorTwo
+            \new ChordNames \transpose c bf' { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c bf, \grandArpeggioMajorSixth
+            \new ChordNames \transpose c bf' { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c bf, \grandArpeggioMajorSixthNine
         >>
     }
 
@@ -212,8 +280,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "A Major (E Dominant)"
         } 
         << 
-            \new ChordNames \transpose c a { \grandArpeggioMajorChords }
-            \new Staff \transpose c a \grandArpeggioMajorFour
+            \new ChordNames \transpose c a { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c a \grandArpeggioMajorSixthFour
+            \new ChordNames \transpose c a { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c a \grandArpeggioMajorSixthFive
         >>
     }
     \score {
@@ -221,10 +291,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "Eb Major (Bb Dominant)"
         } 
         << 
-            \new ChordNames \transpose c ef { \grandArpeggioMajorChords }
-            \new Staff \transpose c ef \grandArpeggioMajor
-            \new ChordNames \transpose c ef { \grandArpeggioMajorChords }
-            \new Staff \transpose c ef \grandArpeggioMajorTwo
+            \new ChordNames \transpose c ef { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c ef \grandArpeggioMajorSixth
+            \new ChordNames \transpose c ef { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c ef \grandArpeggioMajorSixthTwo
         >>
     }
 
@@ -234,10 +304,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "E Major (B Dominant)"
         } 
         << 
-            \new ChordNames \transpose c e { \grandArpeggioMajorChords }
-            \new Staff \transpose c e \grandArpeggioMajor
-            \new ChordNames \transpose c e { \grandArpeggioMajorChords }
-            \new Staff \transpose c e \grandArpeggioMajorTwo
+            \new ChordNames \transpose c e { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c e \grandArpeggioMajorSixth
+            \new ChordNames \transpose c e { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c e \grandArpeggioMajorSixthTwo
         >>
     }
     \score {
@@ -245,8 +315,8 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "Ab Major (Eb Dominant)"
         } 
         << 
-            \new ChordNames \transpose c af { \grandArpeggioMajorChords }
-            \new Staff \transpose c af \grandArpeggioMajorTwo
+            \new ChordNames \transpose c af { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c af \grandArpeggioMajorSixthFive
         >>
     }
 
@@ -256,8 +326,8 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "B Major (F# Dominant)"
         } 
         << 
-            \new ChordNames \transpose c b' { \grandArpeggioMajorChords }
-            \new Staff \transpose c b, \grandArpeggioMajor
+            \new ChordNames \transpose c b' { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c b, \grandArpeggioMajorSixth
         >>
     }
     \score {
@@ -265,8 +335,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "Db Major (Ab Dominant)"
         } 
         << 
-            \new ChordNames \transpose c df { \grandArpeggioMajorChords }
-            \new Staff \transpose c df \grandArpeggioMajor
+            \new ChordNames \transpose c df { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c df \grandArpeggioMajorSixth
+            \new ChordNames \transpose c df { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c df \grandArpeggioMajorSixthSix
         >>
     }
 
@@ -276,10 +348,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "F# Major (C# Dominant)"
         } 
         << 
-            \new ChordNames \transpose c fs { \grandArpeggioMajorChords }
-            \new Staff \transpose c fs \grandArpeggioMajor
-            \new ChordNames \transpose c fs { \grandArpeggioMajorChords }
-            \new Staff \transpose c fs \grandArpeggioMajorTwo
+            \new ChordNames \transpose c fs { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c fs \grandArpeggioMajorSixth
+            \new ChordNames \transpose c fs { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c fs \grandArpeggioMajorSixthThree
         >>
     }
     \score {
@@ -287,10 +359,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "Gb Major (Db Dominant)"
         } 
         << 
-            \new ChordNames \transpose c gf { \grandArpeggioMajorChords }
-            \new Staff \transpose c gf \grandArpeggioMajor
-            \new ChordNames \transpose c gf { \grandArpeggioMajorChords }
-            \new Staff \transpose c gf \grandArpeggioMajorTwo
+            \new ChordNames \transpose c gf { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c gf \grandArpeggioMajorSixth
+            \new ChordNames \transpose c gf { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c gf \grandArpeggioMajorSixthTwo
         >>
     }
 
@@ -300,8 +372,8 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "C# Major (G# Dominant)"
         } 
         << 
-            \new ChordNames \transpose c cs { \grandArpeggioMajorChords }
-            \new Staff \transpose c cs \grandArpeggioMajor
+            \new ChordNames \transpose c cs { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c cs \grandArpeggioMajorSixth
         >>
     }
     \score {
@@ -309,10 +381,10 @@ grandArpeggioMinorTwo = \relative c' {
             piece = "Cb Major (Fb Dominant)"
         } 
         << 
-            \new ChordNames \transpose c cf { \grandArpeggioMajorChords }
-            \new Staff \transpose c cf \grandArpeggioMajor
-            \new ChordNames \transpose c cf { \grandArpeggioMajorChords }
-            \new Staff \transpose c cf' \grandArpeggioMajorTwo
+            \new ChordNames \transpose c cf { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c cf \grandArpeggioMajorSixth
+            \new ChordNames \transpose c cf { \grandArpeggioMajorSixthChords }
+            \new Staff \transpose c cf' \grandArpeggioMajorSixthTwo
         >>
     }
 }
