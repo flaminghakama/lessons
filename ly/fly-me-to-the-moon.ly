@@ -1,7 +1,42 @@
 \version "2.19.81"
 
+titleLeft = "Fly Me "
+titleRight = "To The Moon"
+title = "Fly Me To The Moon"
+composerName = "Bart Howard"
+
+\include "../../scores/flaming-libs/flaming-paper.ily"
 \include "../../scores/flaming-libs/flaming-markup.ily"
 \include "../../scores/flaming-libs/flaming-chords.ily"
+
+\paper {
+
+  top-margin = #2
+  right-margin = #14
+
+  % First page spacing after header
+  markup-system-spacing.padding = #2
+
+  % Subsequent page spacing after header
+  top-system-spacing.minimum-distance = #18
+
+  % Spacing in between systems
+  system-system-spacing.basic-distance = #18
+
+  % Space after score, before the next score
+  score-system-spacing.minimum-distance = #13
+
+  page-breaking = #ly:minimal-breaking
+
+  ragged-bottom = ##t
+  ragged-last-bottom = ##t
+
+  #(define fonts
+    (make-pango-font-tree "Marker Felt" 
+                          "Highlander ITC TT" 
+                          "LilyJAZZText"
+                           (/ myStaffSize 20)))
+}
 
 toCoda = <>^\markup { \translate #'( -2 . 1.75) \huge \bold \musicglyph #"scripts.coda" }
 atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scripts.coda" }
@@ -95,37 +130,21 @@ lyricsHead = \lyricmode {
 
 lyricsCoda = \lyricmode {
     \override LyricText.font-family = #'typewriter
-    \override LyricText.font-size = #'2	true!
+    \override LyricText.font-size = #'2
+
+    true.
 
 	In o -- ther words,
 	I love you!
 }
 
-\paper {
-  #(define fonts
-    (make-pango-font-tree "Marker Felt" 
-                          "Highlander ITC TT" 
-                          "LilyJAZZText"
-                           (/ myStaffSize 20)))
-}
-
 \book {
-	\bookOutputSuffix "concert"
-    \paper {
+	\bookOutputSuffix "in-C"
 
-        % First page spacing after header
-        markup-system-spacing.padding = #6
-
-        % Subsequent page spacing after header
-        top-system-spacing.minimum-distance = #18
-
-        % Spacing in between systems
-        system-system-spacing.minimum-distance = #14
-    }
     \header {
     	title = "Fly Me To The Moon"
+        subtitle = "Key of C"
     	composer = "Bart Howard"
-        subtitle = ""
         poet = "Lead Sheet"
         instrumentName = \poet
     }
@@ -185,7 +204,7 @@ lyricsCoda = \lyricmode {
             }
         >>
         \layout { 
-            indent = 5.15\cm
+            indent = 3.15\cm
             short-indent = 1.25\cm
             \context {
                 \Score
@@ -197,29 +216,19 @@ lyricsCoda = \lyricmode {
 }
 
 \book {
-    \bookOutputSuffix "for-Eb"
-    \paper {
+    \bookOutputSuffix "in-A"
 
-        % First page spacing after header
-        markup-system-spacing.padding = #6
-
-        % Subsequent page spacing after header
-        top-system-spacing.minimum-distance = #18
-
-        % Spacing in between systems
-        system-system-spacing.minimum-distance = #14
-    }
     \header {
     	title = "Fly Me To The Moon"
+        subtitle = "Key of A"
     	composer = "Bart Howard"
-        subtitle = ""
         poet = "Lead Sheet"
         instrumentName = \poet
     }
 
     \score {
         <<
-            \new ChordNames \transpose ef c { \chordsHead }
+            \new ChordNames \transpose c a { \chordsHead }
         	\new Staff = "voice" { 
 	            \compressFullBarRests
 	            \override MultiMeasureRest.expand-limit = #1
@@ -228,7 +237,7 @@ lyricsCoda = \lyricmode {
 	            \override DynamicLineSpanner #'staff-padding = #3.0
 	            \accidentalStyle modern-voice-cautionary
                 \new Voice = "lead" {
-                    \transpose ef, c { 
+                    \transpose c a { 
                     	\autoPageBreaksOff
                         \melodyHead
                         \noPageBreak
@@ -252,7 +261,7 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose ef c { \chordsCoda }
+            \new ChordNames \transpose c a { \chordsCoda }
         	\new Staff = "voice" { 
 	            \compressFullBarRests
 	            \override MultiMeasureRest.expand-limit = #1
@@ -261,7 +270,7 @@ lyricsCoda = \lyricmode {
 	            \override DynamicLineSpanner #'staff-padding = #3.0
 	            \accidentalStyle modern-voice-cautionary
                 \new Voice = "lead" {
-                    \transpose ef, c { 
+                    \transpose c a { 
                     	\autoPageBreaksOff
                         \melodyCoda
                     }
@@ -272,7 +281,482 @@ lyricsCoda = \lyricmode {
             }
         >>
         \layout { 
-            indent = 5.15\cm
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+\book {
+    \bookOutputSuffix "in-Eb"
+
+    \header {
+        title = "Fly Me To The Moon"
+        subtitle = "Key of Eb"
+        composer = "Bart Howard"
+        poet = "Lead Sheet"
+        instrumentName = \poet
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c ef { \chordsHead }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c ef { 
+                        \autoPageBreaksOff
+                        \melodyHead
+                        \noPageBreak
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c ef { \chordsCoda }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c ef { 
+                        \autoPageBreaksOff
+                        \melodyCoda
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+
+\book {
+    \bookOutputSuffix "in-Gb"
+
+    \header {
+        title = "Fly Me To The Moon"
+        subtitle = "Key of Gb"
+        composer = "Bart Howard"
+        poet = "Lead Sheet"
+        instrumentName = \poet
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c gf { \chordsHead }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c gf { 
+                        \autoPageBreaksOff
+                        \melodyHead
+                        \noPageBreak
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c gf { \chordsCoda }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c gf { 
+                        \autoPageBreaksOff
+                        \melodyCoda
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+% Hidden 
+
+
+\book {
+    \bookOutputSuffix "in-C-blank"
+
+    \header {
+        title = "Fly Me To The Moon"
+        subtitle = "Key of C"
+        composer = "Bart Howard"
+        poet = "Lead Sheet"
+        instrumentName = \poet
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c c { \chordsHead }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c c { 
+                        \autoPageBreaksOff
+                        \hideNotes
+                        \melodyHead
+                        \noPageBreak
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c c { \chordsCoda }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c c { 
+                        \autoPageBreaksOff 
+                        \hideNotes
+                        \melodyCoda
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+\book {
+    \bookOutputSuffix "in-A-blank"
+
+    \header {
+        title = "Fly Me To The Moon"
+        subtitle = "Key of A"
+        composer = "Bart Howard"
+        poet = "Lead Sheet"
+        instrumentName = \poet
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c a { \chordsHead }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c a { 
+                        \autoPageBreaksOff
+                        \hideNotes
+                        \melodyHead
+                        \noPageBreak
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c a { \chordsCoda }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c a { 
+                        \autoPageBreaksOff
+                        \hideNotes
+                        \melodyCoda
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+\book {
+    \bookOutputSuffix "in-Eb-blank"
+
+    \header {
+        title = "Fly Me To The Moon"
+        subtitle = "Key of Eb"
+        composer = "Bart Howard"
+        poet = "Lead Sheet"
+        instrumentName = \poet
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c ef { \chordsHead }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c ef { 
+                        \autoPageBreaksOff
+                        \hideNotes
+                        \melodyHead
+                        \noPageBreak
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c ef { \chordsCoda }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c ef { 
+                        \autoPageBreaksOff
+                        \hideNotes
+                        \melodyCoda
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+
+\book {
+    \bookOutputSuffix "in-Gb-blank"
+
+    \header {
+        title = "Fly Me To The Moon"
+        subtitle = "Key of Gb"
+        composer = "Bart Howard"
+        poet = "Lead Sheet"
+        instrumentName = \poet
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c gf { \chordsHead }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c gf { 
+                        \autoPageBreaksOff
+                        \hideNotes
+                        \melodyHead
+                        \noPageBreak
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c gf { \chordsCoda }
+            \new Staff = "voice" { 
+                \compressFullBarRests
+                \override MultiMeasureRest.expand-limit = #1
+                \set Staff.instrumentName = ""
+                \set Staff.shortInstrumentName = #""
+                \override DynamicLineSpanner #'staff-padding = #3.0
+                \accidentalStyle modern-voice-cautionary
+                \new Voice = "lead" {
+                    \transpose c gf { 
+                        \autoPageBreaksOff
+                        \hideNotes
+                        \melodyCoda
+                    }
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 3.15\cm
             short-indent = 1.25\cm
             \context {
                 \Score
