@@ -1,0 +1,91 @@
+Jason Yu 
+12th grade 
+
+12/9/18
+
+Was working on classical piece in A minor
+Introduced long tones with dynamics
+Introduced palm key technique
+Worked on articulations
+
+Created 6 exercises for arpeggios to support piece
+
+C major - G major
+A minor - G magjor
+1. one octave triads ascending - descending / descending - ascending
+2. normal range triads ascending - descending / descending - ascending
+3. stepwise ascending / descending
+4. stepwise interchange ascending - descending / descending - ascending
+5. extended range triads ascending - descending / descending - ascending
+
+Grand arpeggio
+C major - G7 
+A minor - E7
+6. ascending - descending / descending - ascending
+
+Shared favorite pieces
+(Never lose love for you?)
+Fly Me To the Moon
+()
+
+12/16/18
+
+Warm up on long tones exercise with dynamics (D - A - D - A - D)
+Read chord exercises 1, 2, 6
+review classical piece in A minor, focus on articulation and breathing
+Intonation, mouthpiece technique, ligature position, reed work
+Read through Fly Me To the Moon in original key (transposed for Eb: A major)
+
+To practice: 
+warm up on long tones for dynamics and intonation
+5 chord exercises (all but extended range)
+Fly Me To the Moon, reading the original key (C major)
+
+
+12/23/18
+
+Warmed up on long tones with dynamics, paid attention to intonation when getting loud
+Played through Tonic-Dominant chord exercises.  Was at about qn=60.  
+Played through Fly Me To The Moon in C, A and Eb.  Pointed out rhythm, counting through long notes.
+Discussed diatonic vs relative chords and scales.
+Discussed use or relative chords in Fly Me To The Moon and how to find the chord tones, how to compare adjacent chords for common tones and changing tones.
+
+
+To practice:
+
+Warm up on long tones with dynamic swell, focusing on keeping pitch steady
+
+Aim to get to speed of mm=80 on chord exercises (C Major/A Minor)
+Start chord exercises for other keys (I will send these), related to Fly Me To The Moon (in C)
+
+Improvise with the recording, using the scale of the piece.
+
+Go through the song and write out all the chords (start with the pitch named in the chord, then choose every other note in the scale).
+
+Go through the song again and make note of the common tones between chords.  (Examples: 
+
+	First two chords are A- & D-.  
+	A- has A C E G, and D- has D F A C.  So, A- & D- share the notes A & C.
+
+	Next two chords are D- & G7.
+	D- has D F A C, and G7 has G B D F.  So, D- & G7 share the notes D & F.
+
+	Next two chords are G7 and C.
+	G7 has G B D F, and C has C E G (also B if we go to Cmaj7).  So, G7 and C(maj7) share the notes G (& B).
+
+Go through the song again and write out the non-common tones.  Examples:
+
+	First two chords are A- & D-.  
+	A- has A C E G, and D- has D F A C.  So, the notes unique to A- are E & G, and the notes unique to D- are D & F.  See how these are intertwined and alternate (D, E, F & G)
+
+	Next two chords are D- & G7.
+	D- has D F A C, and G7 has G B D F.  So, the notes unique to D- are A & C, and the notes unique to G7 are G & B.  These are intertwined and alternate (G, A, B, C).
+
+	Next two chords are G7 and C.
+	G7 has G B D F, and C has C E G (also B if we go to Cmaj7).  So, the notes unique to G7 are D & F, and the notes unique to Cmaj7 are C & E.  These are intertwined and alternate (C, D, E, F).
+
+Go through the song again and identify the rhythmic lick every 2 measures.  This is a 4-note pattern, with the first two notes from the first chords, and the seconds two notes from the second chord.  
+
+	Write 4-note melodies for each of these patterns, choosing notes from the appropriate chords.  Try one pattern with ascending notes, one with descending notes, and one with common tones. 
+
+

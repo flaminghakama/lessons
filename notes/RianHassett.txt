@@ -1,0 +1,160 @@
+Rian Hassett
+
+12/9/18
+
+Preparing for audition for arts school:
+* Classical (written) pieces  
+* Improv on blues (Au Privave)
+* Sight reading
+
+Worked on classical pieces rhythm, articulations, intonation, breathing
+Played Au Privave from memory
+
+
+12/16/18
+
+Warm up on long tones exercise with dynamics (D - A - D - A - D)
+Played all major scales
+Introduced grand arpeggio and scales in thirds
+
+Introduced and played through pentatonic scale exercises in D minor / F major
+
+Sight read 2 blues in G (Blues Walk) and D (Blues for Duane) and discussed use of blues scale
+Improv on D blues scale over D blues
+
+Worked on classical piece, focus on rhythm and breathing
+* Knows some sections by ear, and plays them somewhat inaccurately
+* Plays well-known passages too quickly
+
+Discussed reed rotation -- always use a different reed each time you play
+
+Discussed saxophone maintenance -- cork on the neck is old and compressed, so mouthpiece doesn't stay in place.  No need to use cork grease every time.  For now, it might help to wipe/scrape some off so it isn't so slippery.   Eventually, the cork will need to be replaced.   Can be temporarily adjusted by wrapping cork with a little plumbers tape.  However, using tape will compress the cork more, which will hasten the point at which recorking needs to happen.
+
+
+
+Roate use of your reeds.   Use a different reed each time you play.  Use each of them once before repeating.
+
+Warm up on long tones with dynamics.  When playing loud, go as loud as possible so you learn where the pitch and tone change.  Pay attention to intonation -- try to avoid going flat when getting louder. Play as slow as possible so that you complete the exercise in a full breath.  Make sure to inhale fully before starting.
+
+Practice classical pieces with a metronome--relax and enjoy your tone during the easy passages rather than speeding up.
+
+Practice the pentatonic scale exercises in D minor / F major.  Use a metronome and work up to the target tempo.  Write down the fastest tempo you can play accurately.
+
+
+Scale and chord exercises for keys helpful for Au Privave.  
+
+* Major Scales
+D major, G major, A major  as usual
+
+* Scales in 3rds
+http://davidelainealt.com/lessons/pdf/scales-in-thirds-relative.pdf
+C major / A minor
+F major / D minor 
+G major / E minor
+D major / B minor
+
+* Grand Arpeggios
+http://davidelainealt.com/lessons/pdf/grand-arpeggio.pdf
+C Major (G Dominant) page 1
+F Major (C Dominant) page 1
+G Major (D Dominant) page 1
+D Major (A Dominant) page 1
+
+D minor (A Dominant) page 4
+A minor (E Dominant) page 4
+
+
+12/23/18
+
+Played through scales C, G, D, A & F in Major, Natural Minor, Myxolydian (Dominant) and Blues
+
+Gave him printouts for both parallel and relative scales in thirds.  We also talked briefly about the other scales on there: Dorian Minor, Melodic Minor and Harmonic Minor.  Gave him printouts of the scales in thirds exercises.  Next time need printouts of the Grand Arpeggio exercise.
+
+Discussion of approach to improvisation based on blues scale and the blues chord changes (below).
+
+Practiced soloing on concert F blues (Au Privave)
+
+Rehearsed Allegro and Andante pieces.  
+Allegro had better dynamics and rhythm was more solid.
+
+
+To practice:
+
+Major, Dominant, Blues and Natural minor scales for C, F, G, D, A
+
+Scales in thirds exercises, for C, G, F, D, A. 
+
+Find out the fastest tempo you can play each scale without making errors.  Practice the Natural minor rather than what is wiritten, which is Harmonic minor, by ignoring the accidentals.
+
+Print out this exercise, and play 
+http://davidelainealt.com/lessons/pdf/grand-arpeggio.pdf
+C Major (G Dominant) page 1
+F Major (C Dominant) page 1
+G Major (D Dominant) page 1
+D Major (A Dominant) page 1
+
+D minor (A Dominant) page 4
+A minor (E Dominant) page 4
+
+
+Practice playing your slow classical piece as loud as you can stand, to help develop tone and dynaic range.
+
+
+To practice for the improvisation, besides playing with the backing track, 
+print out and practice these chord exercises for the chords in the blues form:
+http://davidelainealt.com/lessons/pdf/chords-for-blues.pdf
+
+	You can always play a blues scale on any chord. 
+	So, that is a fine place to start.
+
+	But, in order to express the differences among the parts of the song, start by identifing the notes that change between chords.  
+
+	Incorporate the chord-specific notes, and let them guide your melodic choices, , in addition to (or instead of) notes in the blues scale.
+
+
+	In particular, there are tendencies for two notes in a Dominant 7 chord:  the 3rd leads up, and the b7th leads down, each to the next chromatic note.  
+
+		From D7 to G7     F# => G
+		                  C => B
+
+		From A7 to D7     G => F# (harmonic)
+		                  C# => D 
+
+	Since this is overlayed on a blues scale, these notes can also lead back to the blues scale versions, also adjacent chromatic notes. 
+
+	So, we can can also use these note movements:
+
+		From D7 to G7     F# => G (harmonic)
+		                  F# => F (blues)
+		                  C => B
+
+		From A7 to D7     G => F# (harmonic)
+		                  G => F  (blues)
+		                  C# => D 
+		                  C# => C (blues)
+
+    [ Exerise to map out F/F#/G over the blues form ] 
+    [ Exercise to map out B/C/C# over the blues form ] 
+    [ Exercise to demonstrate difference between harmonic and blues ] 
+
+
+	So when you get to the end of the D7 measures and want to say "Here comes the next section of the song", play the note C and emphasize it.
+
+	Start with short patterns from the blues scale and repeat them over each measure  Change notes as the chords change to follow this pattern:
+ 
+ 		D7 has F# (3rd) and C (b7).   
+		Play F#, instead of the F from the blues scale.
+		Try to end the first 4-bar phrase on C (the b7) which wants to lead down to B.  
+
+		G7 has F (b7) and B (3rd).   
+		Play B instead of A or C
+	 	Go back to playing F instead of F# 
+	 	Emphasize G
+
+		A7 has G (b7) and C# (3rd).
+		Play C# instead of the C from the blues scale
+		Emphasize the G (the b7) which wants to lead down to F#
+		(Either F or F# is ok )
+	
+
+
