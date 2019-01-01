@@ -38,15 +38,22 @@ composerName = "D. Elaine Alt"
                            (/ myStaffSize 20)))
 }
 
+\layout {
+    \context {
+        \Score
+        \omit BarNumber
+    }
+}
+
 chordsA = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
 
 	a1:m7 | d:m7 | g:7 | c |
-	f1 | b:m7.5- | e:7.9- | a:7.9- | 
+	f1 | b:m7.5- | e:7 | a:7 | 
 
-	d1:m7 | g:7.9- | c | a:m | 
+	d1:m7 | g:7 | c | a:m | 
 	d1:m7 | g:7 | c | b2:m7 e:7 | 
 }
 chordsB = \chordmode { 
@@ -55,12 +62,12 @@ chordsB = \chordmode {
     \set noChordSymbol = ##f
 
 	a1:m7 | d:m7 | g:7 | c |
-	f1 | b:m7.5- | e:7.9- | a2:m7 a:7.9- | 
+	f1 | b:m7.5- | e:7 | a2:m7 a:7 | 
 
-	d1:m7 | g:7.9- | 
+	d1:m7 | g:7 | 
 
-		e:m7.5- | a:7.9- | 
-	d:m7 | g:7.9- | c1 | b2:m7 e:7 | 
+		e:m7.5- | a:7 | 
+	d:m7 | g:7 | c1 | b2:m7 e:7 | 
 }
 
 chordsCoda = \chordmode { 
@@ -75,7 +82,7 @@ chordsCoda = \chordmode {
 exerciseARootPosition = \relative c'' { 
     \key c \major
     <a c e g>1 | <d, f a c> | <g b d f> | <c, e g b> | \break
-    <f a c e> | <b d f a> | <e, gs b d f> | <a cs e g> | \break
+    <f a c e> | <b d f a> | <e, gs b d> | <a cs e g> | \break
 
     <d, f a c> | <g b d f> | <c, e g b> | <a' c e g> | \break
     <d, f a c> | <g b d f> | <c, e g b> | <b d fs a>2 <e gs b d> |
@@ -84,7 +91,7 @@ exerciseARootPosition = \relative c'' {
 exerciseAOnTheStaff = \relative c'' { 
 	\key c \major
     <a c e g>1 | <a c d f> | <g b d f> | <g b c e> | \break
-    <f a c e> | <f a b d> | <e gs b d f> | <g a cs e> | \break
+    <f a c e> | <f a b d> | <e gs b d> | <g a cs e> | \break
 
     <a c d f> | <g b d f> | <g b c e> | <g a c e> | \break
     <a c d f> | <g b d f> | <g b c e> | <a b d fs>2 <gs b d e> |
