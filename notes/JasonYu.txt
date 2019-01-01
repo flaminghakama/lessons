@@ -89,3 +89,24 @@ Go through the song again and identify the rhythmic lick every 2 measures.  This
 	Write 4-note melodies for each of these patterns, choosing notes from the appropriate chords.  Try one pattern with ascending notes, one with descending notes, and one with common tones. 
 
 
+
+
+I wanted to share these exercises with you.  These are based on the chord changes to Fly Me to the Moon (in C) and should help with the assignment we came up with.  
+
+http://davidelainealt.com/lessons/pdf/fly-me-chord-exercises-in-C.pdf
+
+These exercises include: 
+
+1) "Root Position Chords"  Lists the notes in the chords, where the lowest pitch is the note the chord is named for.  (This is called "root position").  You might want to try figuring these out on your own, then compare it to this.   The purpose is to show what the notes are in each chord, and that most of the chords are constructed only using notes in the scale.  
+
+2) "Inverted Chords"  Lists the notes in the chords, but inverted so the notes are in similar register, and shows the overlap--usually there are 2 notes that are common between adjacent chords, and these trade off:  2 of the notes in a chord are shared with the preceding chord, and the other 2 notes are shared with the following chord.
+
+3) "Running changes" shows the basic arpeggio pattern in one octave, in root position, both ascending then descending.  Note how the roots are not close to each other.
+
+4) "Common Tones" elaborates the notes that are common between adjacent chords.  In order to establish this pattern, we often start on notes that are not the root of the chord.  
+
+5) "Ascending Arpeggios" these are similar to the previous chord exercises, designed to show the chords over much of the range of the instrument.  These start on the root of the chord, drop down to a low note, and continue upward.  
+
+6) "Descending Arpeggios" is the downward version of #5, starting on the root in the upper register and descending through the range of the instrument.
+
+
