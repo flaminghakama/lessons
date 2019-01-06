@@ -1,83 +1,7 @@
 \version "2.19.81"
 
-titleLeft = "Chord"
-titleRight = "Exercises"
-title = "Chord Exercises"
-composerName = "D. Elaine Alt"
 
-\include "../../scores/flaming-libs/flaming-paper.ily"
-\include "../../scores/flaming-libs/flaming-markup.ily"
-\include "../../scores/flaming-libs/flaming-chords.ily"
-
-\paper {
-
-  top-margin = #2
-  right-margin = #14
-
-  % First page spacing after header
-  markup-system-spacing.padding = #2
-
-  % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #18
-
-  % Spacing in between systems
-  system-system-spacing.basic-distance = #18
-
-  % Space after score, before the next score
-  score-system-spacing.minimum-distance = #13
-
-  page-breaking = #ly:minimal-breaking
-
-  ragged-bottom = ##t
-  ragged-last-bottom = ##t
-
-  #(define fonts
-    (make-pango-font-tree "Marker Felt" 
-                          "Highlander ITC TT" 
-                          "LilyJAZZText"
-                           (/ myStaffSize 20)))
-}
-
-\layout {
-    \context {
-        \Score
-        \omit BarNumber
-    }
-}
-
-chordsA = \chordmode { 
-    \set chordChanges = ##t 
-    \set chordNameExceptions = #flamingChordExceptions
-    \set noChordSymbol = ##f
-
-	a1:m7 | d:m7 | g:7 | c |
-	f1 | b:m7.5- | e:7 | a:7 | 
-
-	d1:m7 | g:7 | c | a:m | 
-	d1:m7 | g:7 | c | b2:m7 e:7 | 
-}
-chordsB = \chordmode { 
-    \set chordChanges = ##t 
-    \set chordNameExceptions = #flamingChordExceptions
-    \set noChordSymbol = ##f
-
-	a1:m7 | d:m7 | g:7 | c |
-	f1 | b:m7.5- | e:7 | a2:m7 a:7 | 
-
-	d1:m7 | g:7 | 
-
-		e:m7.5- | a:7 | 
-	d:m7 | g:7 | c1 | b2:m7 e:7 | 
-}
-
-chordsCoda = \chordmode { 
-    \set chordChanges = ##t 
-    \set chordNameExceptions = #flamingChordExceptions
-    \set noChordSymbol = ##f
-
-		e2:m7.5- bf:9 | a1:7.9- | 
-	d:m7 | g:7.9- | c2 bf4:6 b:7 | c1 | 
-}
+\include "ly/fly-me-chord-exercises.ily"
 
 exerciseARootPosition = \relative c'' { 
     \key c \major
@@ -85,7 +9,7 @@ exerciseARootPosition = \relative c'' {
     <f a c e> | <b d f a> | <e, gs b d> | <a cs e g> | \break
 
     <d, f a c> | <g b d f> | <c, e g b> | <a' c e g> | \break
-    <d, f a c> | <g b d f> | <c, e g b> | <b d fs a>2 <e gs b d> |
+    <d, f a c> | <g b d f> | <c, e g b> | <b d fs a>2 <e gs b d> | \bar "||"
 }
 
 exerciseAOnTheStaff = \relative c'' { 
@@ -94,7 +18,7 @@ exerciseAOnTheStaff = \relative c'' {
     <f a c e> | <f a b d> | <e gs b d> | <g a cs e> | \break
 
     <a c d f> | <g b d f> | <g b c e> | <g a c e> | \break
-    <a c d f> | <g b d f> | <g b c e> | <a b d fs>2 <gs b d e> |
+    <a c d f> | <g b d f> | <g b c e> | <a b d fs>2 <gs b d e> | \bar "||"
 }
 
 exerciseACommonTones = \relative c''' { 
@@ -103,7 +27,7 @@ exerciseACommonTones = \relative c''' {
     e c e c  a f a f | f a f a  b d b d | d b d b  gs e gs e | e g? e g   a cs a cs | \break
 
     c? a c a  f d f d | d f d f  g b g b | b g b' g  e c e c | c e c e  g a g a | \break
-    c a c a  f d f d | d f d f  g b g b | b g b g  e c e c | fs d b a  d b gs e |
+    c a c a  f d f d | d f d f  g b g b | b g b g  e c e c | fs d b a  d b gs e | \bar "||"
 }
 
 exerciseARunningChanges = \relative c'' { 
@@ -112,7 +36,7 @@ exerciseARunningChanges = \relative c'' {
     f, a c e  f e c a | b d f a  b a f d | e, gs b d  e d b gs | a cs e g  a g e cs | \break
 
     d f a c?  d c a f | g, b d f  g f d b | c, e g b  c b g e | a c e g  a g e c | \break
-    d, f a c?  d c a f | g b d f  g f d b | c e g b  c b g e  | b d fs a  e, gs b d |
+    d, f a c?  d c a f | g b d f  g f d b | c e g b  c b g e  | b d fs a  e, gs b d | \bar "||"
 }
 
 exerciseAAscending = \relative c'' { 
@@ -121,7 +45,7 @@ exerciseAAscending = \relative c'' {
     f, e, f a  c e f a | b d,, f a  b d f a | e d, e gs  b d e gs | a e, g a  cs e g a | \break
 
     d d,, f a  c? d f a | g f, g b  d f g b | c e,, g b  c e g b | a c,, e g  a c e g | \break
-    d d, f a  c? d f a | g d, f g  b d f g | c c,, e g  b c e g | b d,, fs a  e gs b d |
+    d d, f a  c? d f a | g d, f g  b d f g | c c,, e g  b c e g | b d,, fs a  e gs b d | \bar "||"
 }
 
 exerciseADescending = \relative c''' { 
@@ -130,13 +54,13 @@ exerciseADescending = \relative c''' {
     f' e c a  f e c'' a  | b a f d  b a f d | e' d b gs  e d b'' gs | a g e cs  a g e cs | \break
 
     d c'' a f  d c a f | g b' g f  d b g f | e c'' b g  e c b g| a c' a g  e c a g | \break
-    d d'' c a  f d c a | g d'' b g  f d b g | c g' e c  b g e c | b' a fs d   e' d b gs |
+    d d'' c a  f d c a | g d'' b g  f d b g | c g' e c  b g e c | b' a fs d   e' d b gs | \bar "||"
 }
 
 
 \book {
 
-    \bookOutputSuffix "in-C"
+    %\bookOutputSuffix "in-C"
 
     \header { 
         title = "Chord Exercises"
