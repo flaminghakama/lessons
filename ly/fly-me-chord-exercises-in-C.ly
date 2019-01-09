@@ -51,7 +51,7 @@ exerciseAAscending = \relative c'' {
 exerciseADescending = \relative c''' { 
     \key c \major
     a8 g e c  a g e c | d'' c a f  d c a f | g' f d b  g f d b | c'' b g e  c b g e | \break
-    f' e c a  f e c'' a  | b a f d  b a f d | e' d b gs  e d b'' gs | a g e cs  a g e cs | \break
+    f' e c a  f e c'' a  | b a f d  b a f d | e' d b gs  e d b'' gs | a g? e cs  a g e cs | \break
 
     d c'' a f  d c a f | g b' g f  d b g f | e c'' b g  e c b g| a c' a g  e c a g | \break
     d d'' c a  f d c a | g d'' b g  f d b g | c g' e c  b g e c | b' a fs d   e' d b gs | \bar "||"
