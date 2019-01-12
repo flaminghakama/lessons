@@ -1,0 +1,182 @@
+\version "2.19.15"
+\include "english.ly"
+
+titleLeft = "Exercises for"
+titleRight = "Pinky Keys"
+title = "Exercises for Pinky Keys"
+composerName = "D. Elaine Alt"
+\include "../scores/flaming-libs/flaming-paper.ily"
+\include "../scores/flaming-libs/flaming-chords.ily"
+\include "../scores/flaming-libs/flaming-markup.ily"
+\include "../scores/flaming-libs/flaming-chords.ily"
+ 	 
+\header {
+    source = ""
+    style = ""
+    copyright = \markup { \tiny "copyright © 2018 D. Elaine Alt" } 
+    lastupdated = ""
+    title = \markup { \italic \fontsize #4 \bold { \title }  }
+    poet = ""
+    composer = \markup \italic \composerName
+    tagline = ""
+    instrumentName = ""
+}
+
+alternateFingering = { <>^\markup { \bold \huge "+" } }
+
+\paper {
+
+  top-margin = #2
+  right-margin = #14
+
+  % First page spacing after header
+  markup-system-spacing.padding = #4
+
+  % Subsequent page spacing after header
+  top-system-spacing.minimum-distance = #14
+
+  % Spacing in between systems
+  system-system-spacing.basic-distance = #18
+  system-system-spacing.minimum-distance = #15
+
+  page-breaking = #ly:minimal-breaking
+
+  #(define fonts
+    (make-pango-font-tree "Hardwood" 
+                          "Highlander ITC TT" 
+                          "Papyrus"
+                           (/ myStaffSize 20)))
+}
+%BodoniClassicChancery" 
+\include "../scores/flaming-libs/flaming-fonts.ily"
+
+aMajorChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    a1 | r | r | r | r | r | e2:7 a2 | 
+    a2 e | a e | d e | a1:maj7 | 
+}
+aMajorNotes = {
+    \relative c''' { 
+        \mark "Neighboring notes"
+        a8 ( gs b ) a-.  a ( gs b ) a-.  | gs ( fs a ) gs-.  gs ( fs a ) gs-. |
+        fs ( e gs ) fs-.  fs ( e gs ) fs-.  | e ( d cs ) b a2 | \break
+        a8 ( gs b ) a-.  gs ( fs a ) gs-.  | fs ( e gs ) fs-.  e ( d fs ) e-. | 
+        d ( cs ) b ( \alternateFingering gs' ) a2 \bar "||" \break
+    }
+    \relative c' { 
+        \mark "Chordal interchange"
+        e8 ( a cs a ) e ( gs b gs ) | 
+        e8 ( a cs a ) e ( gs b gs ) | 
+        a ( fs d fs ) \alternateFingering gs ( b, d e ) | 
+        a ( gs' e cs ) a2 \bar "||" \break
+    }
+}
+
+aMinorChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    a2:m gs:dim7 | a:m gs:dim7 | 
+    a:m gs:dim7 | a:m gs:dim7 | 
+    a:m e:7 | a:m gs:dim7 | 
+    a:m gs:dim7 | a:m e:7 | 
+    a1:m | r8 e4.:7 a2:m | 
+}
+aMinorNotes = {
+    \relative c'' { 
+        a8 ( b c e ) f ( d b gs ) | a ( c e a ) gs ( f d b ) |
+        c ( d e a ) b ( gs f d ) | \break e ( f gs a ) b ( gs b d ) | 
+        c ( b a e ) b' ( a gs e ) | e' ( d c a ) d ( b gs f ) | \break
+        a a ( e ) a gs gs ( b, ) gs' | f ( e d c ) e e ( gs, ) e' |
+        c ( b a ) b ( a gs ) a ( e | c ) gs' ( d b ) a'2 |   
+    }
+}
+
+
+EbMajorChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    ef1 | bf:7 | 
+    ef | r | 
+    r | bf:7 | 
+    r2 ef2 | bf2:7 ef2 | 
+
+}
+EbMajorNotes = {
+    \relative c' { 
+        ef8 ( f ) g af  g ( af ) bf c | af ( bf ) d f  af ( f ) d bf | 
+        ef ( d c bf  af ) d ( c bf | af g ) c ( bf  af g f ) bf ( | 
+        af g f ef ) af ( g f ef ) | bf ( d f af ) f ( af bf d ) | 
+        af ( bf d f ) ef ( f g bf ) | af ( f d bf ) ef2 |    
+    }
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\layout { 
+    indent = 1.25\cm
+    short-indent = 1.25\cm
+    \context {
+        \Score
+        \override StaffGrouper.staff-staff-spacing.padding = #0
+        \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+    }
+}
+
+\bookpart {
+    \header {
+        subtitle = "G#/Ab Pinky Key"
+    }
+
+    \score {
+        \header {
+            piece = "A Major"
+        } 
+        << 
+            \new ChordNames \transpose c c { 
+                \aMajorChords 
+            }
+            \new Staff { 
+                \numericTimeSignature 
+                \key a \major
+                \aMajorNotes
+            \bar "||"
+            }
+        >>
+    }
+    \score {
+        \header {
+            piece = "A Minor"
+        } 
+        << 
+            \new ChordNames \transpose c c { 
+                \aMinorChords 
+            }
+            \new Staff { 
+                \numericTimeSignature 
+                \key a \minor
+                \aMinorNotes
+            \bar "||"
+            }
+        >>
+    }
+    \score {
+        \header {
+            piece = "Eb Major"
+        } 
+        << 
+            \new ChordNames \transpose c c { 
+                \EbMajorChords 
+            }
+            \new Staff { 
+                \numericTimeSignature 
+                \key ef \major
+                \EbMajorNotes
+            \bar "||"
+            }
+        >>
+    }
+ }
