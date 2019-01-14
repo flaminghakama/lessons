@@ -55,16 +55,19 @@ aMajorChords = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     a1 | r | r | r | r | r | e2:7 a2 | 
+    e2:7 a | e:7 a |
     a2 e | a e | d e | a1:maj7 |
     d1 | e | a | r | a4 r4 r2 |
 }
 aMajorNotes = {
     \relative c''' { 
         \mark "Neighboring notes"
+        \bar "[|:"
         a8 ( gs b ) a-.  a ( gs b ) a-.  | gs ( fs a ) gs-.  gs ( fs a ) gs-. |
-        fs ( e gs ) fs-.  fs ( e gs ) fs-.  | e ( d cs ) b a2 | \break
+        fs ( e gs ) fs-.  fs ( e gs ) fs-.  | e ( d cs ) b a2 |
         a8 ( gs b ) a-.  gs ( fs a ) gs-.  | fs ( e gs ) fs-.  e ( d fs ) e-. | 
-        d ( cs ) b ( \alternateFingering gs' ) a2 \bar "||" \break
+        d ( cs ) b ( \alternateFingering gs' ) a2 \bar ":|]" 
+        d,8 ( cs ) b ( b' ) a2 | gs8 ( d' b' e ) a,2 \bar "||" \break
     }
     \relative c' { 
         \mark "Chordal interchange"
@@ -76,7 +79,7 @@ aMajorNotes = {
         fs'8 ( d ) fs ( d )  fs ( d ) fs ( d ) | 
         gs ( e ) gs ( e ) gs ( e ) gs ( e ) | 
         a a ( gs ) a  e e ( ds ) e | 
-        cs cs ( c ) cs  a a ( gs ) gs' | 
+        cs cs ( bs ) cs  a a ( gs ) gs' | 
         a2 a,4 r4 \bar "||"
     }
 }
@@ -90,10 +93,11 @@ aMinorChords = \chordmode {
     a:m e:7 | a:m gs:dim7 | 
     a:m gs:dim7 | a:m e:7 | 
     a1:m | r8 e4.:7 a2:m | 
-    gs:dim7 | a2:m r ||
+    gs1:dim7 | a2:m r ||
 }
 aMinorNotes = {
     \relative c'' { 
+        \mark "Chordal interchange"
         \bar "[|:"
         a8 ( b c e ) f ( d b gs ) | a ( c e a ) gs ( f d b ) |
         c ( d e a ) b ( gs f d ) |  e ( f gs a ) b ( gs b d ) | \break
@@ -104,7 +108,6 @@ aMinorNotes = {
     }
 }
 
-
 EbMajorChords = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
@@ -113,16 +116,54 @@ EbMajorChords = \chordmode {
     ef | r | 
     r | bf:7 | 
     r2 ef2 | bf2:7 ef2 | 
+    bf1:7 | ef2 r2 |
 
 }
 EbMajorNotes = {
     \relative c' { 
+        \mark "Major scale and Dominant chord"
+        \bar "[|:"
         ef8 ( f ) g af  g ( af ) bf c | af ( bf ) d f  af ( f ) d bf | 
         ef ( d c bf  af ) d ( c bf | af g ) c ( bf  af g f ) bf ( | 
         af g f ef ) af ( g f ef ) | bf ( d f af ) f ( af bf d ) | 
         af ( bf d f ) ef ( f g bf ) | af ( f d bf ) ef2 |    
+        \bar ":|]"
+        f8 ( d af f ) af16 ( bf af bf ) af ( bf af bf ) | g4 ef' r2 \bar "||" \break
     }
 }
+
+fMinorChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    r8 |
+    f1:m | r2 c:aug7 | 
+    f1:m | c2.:aug7 f4:m | 
+    r1 | c2:aug7 f:m ||
+    r1 | df | c:aug7 | f4:m c:aug7 f2:m ||
+
+}
+fMinorNotes = {
+    \relative c' { 
+        \bar "[|:"
+        \partial 8*1
+        f16 ( g )
+        \mark "Minor scale and Augmented Dominant chord"
+        \bar "||"
+        af16 ( g ) f g  af ( g ) f g  f8 ( ef ) df ( c ) | 
+        af'16 ( g ) f g  af ( g ) e af  c4.  af16 ( bf ) | 
+        c16 ( bf ) af bf  c ( bf ) af bf  c8 ( df ) e ( af, ) | 
+        e16 ( af bf c )  af ( bf c e )  bf ( c e af ) f4 | 
+        c8 ( af ) c ( f, ) af ( c, ) ef ( df ) | 
+        c8 ( bf' ) af ( e ) f4. \bar ":|]" \noBreak
+        f'16 ( g )  \bar "||" \noBreak
+        af16 ( g ) e f   g ( f ) bf, c  df8 ( c ) af ( f ) | 
+        df8 ( f af c )  df ( f af c ) |
+        bf16 ( e, c af )  e' ( c bf e, ) af ( e c bf ) e''4 |
+        af,16 ( g ) f g af ( e ) bf c  f,2 \bar "||" \break
+    }
+}
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -169,7 +210,7 @@ EbMajorNotes = {
                 \numericTimeSignature 
                 \key a \minor
                 \aMinorNotes
-            \bar "||"
+            \bar "||"\pageBreak
             }
         >>
     }
@@ -185,6 +226,22 @@ EbMajorNotes = {
                 \numericTimeSignature 
                 \key ef \major
                 \EbMajorNotes
+            \bar "||"
+            }
+        >>
+    }
+    \score {
+        \header {
+            piece = "F Minor"
+        } 
+        << 
+            \new ChordNames \transpose c c { 
+                \fMinorChords 
+            }
+            \new Staff { 
+                \numericTimeSignature 
+                \key f \minor
+                \fMinorNotes
             \bar "||"
             }
         >>
