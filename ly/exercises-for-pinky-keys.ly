@@ -55,7 +55,8 @@ aMajorChords = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     a1 | r | r | r | r | r | e2:7 a2 | 
-    a2 e | a e | d e | a1:maj7 | 
+    a2 e | a e | d e | a1:maj7 |
+    d1 | e | a | r | a4 r4 r2 |
 }
 aMajorNotes = {
     \relative c''' { 
@@ -67,10 +68,16 @@ aMajorNotes = {
     }
     \relative c' { 
         \mark "Chordal interchange"
+        \bar "[|:"
         e8 ( a cs a ) e ( gs b gs ) | 
         e8 ( a cs a ) e ( gs b gs ) | 
         a ( fs d fs ) \alternateFingering gs ( b, d e ) | 
-        a ( gs' e cs ) a2 \bar "||" \break
+        a ( gs' e cs ) a2 \bar ":|]" 
+        fs'8 ( d ) fs ( d )  fs ( d ) fs ( d ) | 
+        gs ( e ) gs ( e ) gs ( e ) gs ( e ) | 
+        a a ( gs ) a  e e ( ds ) e | 
+        cs cs ( c ) cs  a a ( gs ) gs' | 
+        a2 a,4 r4 \bar "||"
     }
 }
 
@@ -83,14 +90,17 @@ aMinorChords = \chordmode {
     a:m e:7 | a:m gs:dim7 | 
     a:m gs:dim7 | a:m e:7 | 
     a1:m | r8 e4.:7 a2:m | 
+    gs:dim7 | a2:m r ||
 }
 aMinorNotes = {
     \relative c'' { 
+        \bar "[|:"
         a8 ( b c e ) f ( d b gs ) | a ( c e a ) gs ( f d b ) |
-        c ( d e a ) b ( gs f d ) | \break e ( f gs a ) b ( gs b d ) | 
-        c ( b a e ) b' ( a gs e ) | e' ( d c a ) d ( b gs f ) | \break
-        a a ( e ) a gs gs ( b, ) gs' | f ( e d c ) e e ( gs, ) e' |
-        c ( b a ) b ( a gs ) a ( e | c ) gs' ( d b ) a'2 |   
+        c ( d e a ) b ( gs f d ) |  e ( f gs a ) b ( gs b d ) | \break
+        c ( b a e ) b' ( a gs e ) | e' ( d c a ) d ( b gs f ) | 
+        a a ( e a ) gs gs ( b, gs' ) | f ( e d c ) e e ( gs, e' ) | \break
+        c ( b a ) b ( a gs ) a ( e | c ) gs' ( d b ) a'2 | \bar ":|]"  
+        f''8 d ( b ) gs (  f ) d ( b ) gs | a2 r2 |  \bar "||"
     }
 }
 
