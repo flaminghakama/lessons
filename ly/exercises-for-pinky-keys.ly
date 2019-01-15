@@ -22,7 +22,8 @@ composerName = "D. Elaine Alt"
     instrumentName = ""
 }
 
-alternateFingering = { <>^\markup { \bold \huge "+" } }
+alternateFingering = <>^\markup \raise #0.2 { \fontsize #5 \bold "+" }
+
 
 \paper {
 
