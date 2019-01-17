@@ -9,7 +9,9 @@ composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-chords.ily"
 \include "../scores/flaming-libs/flaming-markup.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
- 	 
+  
+\include "ly/ily/layout.ily"
+
 \header {
     source = ""
     style = ""
@@ -158,25 +160,25 @@ fMinorNotes = {
         c8 ( af ) c ( f, ) af ( c, ) ef ( df ) | 
         c8 ( bf' ) af ( e ) f4. \bar ":|]" \noBreak
         f'16 ( g )  \bar "||" \noBreak
-        af16 ( g ) e f   g ( f ) bf, c  df8 ( c ) af ( f ) | 
+        af16 ( g ) e f   
+            \override Stem.details.beamed-lengths = #'(4.5)
+            g ( f ) bf, c  df8 ( c ) af ( f ) | 
         df8 ( f af c )  df ( f af c ) |
-        bf16 ( e, c af )  e' ( c bf e, ) af ( e c bf ) e''4 |
-        af,16 ( g ) f g af ( e ) bf c  f,2 \bar "||" \break
+
+        \override Stem.details.beamed-lengths = #'(4.5)
+        bf16 ( e, c af )  e' ( c bf e, ) af ( e c bf ) 
+            \override Stem.details.beamed-lengths = #'(3.5) 
+            e''4 |
+        \override Stem.details.beamed-lengths = #'(4.5)
+        af,16 ( g ) 
+            \override Stem.details.beamed-lengths = #'(4.5)
+            f g af ( e ) bf c  f,2 \bar "||" \break
     }
 }
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\layout { 
-    indent = 1.25\cm
-    short-indent = 1.25\cm
-    \context {
-        \Score
-        \override StaffGrouper.staff-staff-spacing.padding = #0
-        \override StaffGrouper.staff-staff-spacing.basic-distance = #0
-    }
-}
 
 \bookpart {
     \header {
@@ -192,7 +194,7 @@ fMinorNotes = {
                 \aMajorChords 
             }
             \new Staff { 
-                \numericTimeSignature 
+                \include "ly/ily/staff-properties.ily"
                 \key a \major
                 \aMajorNotes
             \bar "||"
@@ -208,7 +210,7 @@ fMinorNotes = {
                 \aMinorChords 
             }
             \new Staff { 
-                \numericTimeSignature 
+                \include "ly/ily/staff-properties.ily"
                 \key a \minor
                 \aMinorNotes
             \bar "||"\pageBreak
@@ -224,7 +226,7 @@ fMinorNotes = {
                 \EbMajorChords 
             }
             \new Staff { 
-                \numericTimeSignature 
+                \include "ly/ily/staff-properties.ily"
                 \key ef \major
                 \EbMajorNotes
             \bar "||"

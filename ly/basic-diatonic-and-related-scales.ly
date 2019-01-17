@@ -10,6 +10,8 @@ composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-markup.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
  	 
+\include "ly/ily/layout.ily"
+
 \header {
     source = ""
     style = ""
@@ -47,14 +49,7 @@ composerName = "D. Elaine Alt"
 }
 %BodoniClassicChancery" 
 \include "../scores/flaming-libs/flaming-fonts.ily"
-
-
-\layout {
-    \context {
-        \Score
-        \omit BarNumber
-    }
-}
+\include "ly/ily/layout.ily"
 
 scaleMajorChords = \chordmode { 
     \set chordChanges = ##f
@@ -110,7 +105,7 @@ scaleMyxolydianChords = \chordmode {
 
 }
 scaleMyxolydianNotes = \relative c'' { 
-    g4 a8 b  c d e f | g4 f8 e  d c b a | g2. r4 | 
+    g4 a8 b  c d e f | g4 f8 e  d c b a | g2. r4 \bar "||"
 }
 scaleMyxolydianNotesLow = \transpose c c, \scaleMyxolydianNotes
 
@@ -134,34 +129,19 @@ scaleBluesChords = \chordmode {
 
 }
 scaleBluesNotes = \relative c'' { 
-    g4 bf8 c  cs d f fs | g4 f?8 ef  d df c bf | g2. r4 \bar "||" 
+    \tuplet 3/2 2 { g4 bf c  cs d f | g f d  df c bf } | g2. r4 \bar "||" 
 }
 scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\layout { 
-    indent = 1.25\cm
-    short-indent = 1.25\cm
-    \context {
-        \Score
-        \override StaffGrouper.staff-staff-spacing.padding = #0
-        \override StaffGrouper.staff-staff-spacing.basic-distance = #0
-    }
-}
-
-
  % No Accidentals
 \bookpart {
     \header {
-        subtitle = "Scales in Relative Keys"
+        subtitle = "Diatonc Scales of C Major and A Minor"
     }
-
     \score {
-        \header {
-            piece = "Diatonc Scales of C Major and A Minor"
-        } 
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -175,7 +155,7 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleMelodicMinorChords
             }
             \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "C Major, Scale degree I"
                 \scaleMajorNotes
@@ -206,15 +186,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Parallel Keys"
+        subtitle = "Parallel Scales of C"
+        composer = ""
     }
-
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Basic Parallel Scales of C"
-        } 
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -228,7 +203,7 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \transpose a c \scaleMelodicMinorChords
             }
             \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "C Major"
                 \scaleMajorNotes
@@ -260,15 +235,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Relative Keys"
+        subtitle = "Diatonc Scales of G Major and E Minor"
+        composer = ""
     }
-
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Diatonc Scales of G Major and E Minor"
-        } 
         \transpose c g <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -282,7 +252,7 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleMelodicMinorChords
             }
             \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "G Major, Scale degree I"
                 \scaleMajorNotes
@@ -313,15 +283,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Parallel Keys"
+        composer = ""
+        subtitle = "Parallel Scales of G"
     }
-
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Basic Parallel Scales of G"
-        } 
         \transpose c g <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -335,7 +300,7 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \transpose a c \scaleMelodicMinorChords
             }
             \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "G Major"
                 \scaleMajorNotes
@@ -366,15 +331,11 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Relative Keys"
+        composer = ""
+        subtitle = "Diatonc Scales of F Major and D Minor"
     }
 
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Diatonc Scales of F Major and D Minor"
-        } 
         \transpose c f <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -387,8 +348,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleHarmonicMinorChords
                 \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "F Major, Scale degree I"
                 \scaleMajorNotes
@@ -419,15 +380,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Parallel Keys"
+        composer = ""
+        subtitle = "Parallel Scales of F"
     }
-
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Basic Parallel Scales of F"
-        } 
         \transpose c f <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -440,8 +396,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \transpose a c \scaleHarmonicMinorChords
                 \transpose a c \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "F Major"
                 \scaleMajorNotes
@@ -473,15 +429,11 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Relative Keys"
+        composer = ""
+        subtitle = "Diatonc Scales of D Major and B Minor"
     }
 
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Diatonc Scales of D Major and B Minor"
-        } 
         \transpose c d <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -494,8 +446,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleHarmonicMinorChords
                 \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "D Major, Scale degree I"
                 \scaleMajorNotes
@@ -526,15 +478,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Parallel Keys"
+        composer = ""
+        subtitle = "Parallel Scales of D"
     }
-
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Basic Parallel Scales of D"
-        } 
         \transpose c d <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -547,8 +494,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \transpose a c \scaleHarmonicMinorChords
                 \transpose a c \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "D Major"
                 \scaleMajorNotes
@@ -579,15 +526,11 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Relative Keys"
+        composer = ""
+        subtitle = "Diatonc Scales of Bb Major and G Minor"
     }
 
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Diatonc Scales of Bb Major and G Minor"
-        } 
         \transpose c bf <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -600,8 +543,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleHarmonicMinorChords
                 \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "Bb Major, Scale degree I"
                 \scaleMajorNotes
@@ -632,15 +575,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Scales in Parallel Keys"
+        composer = ""
+        subtitle = "Parallel Scales of Bb"
     }
-
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Basic Parallel Scales of Bb"
-        } 
         \transpose c bf <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -653,8 +591,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \transpose a c \scaleHarmonicMinorChords
                 \transpose a c \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "Bb Major"
                 \scaleMajorNotes
@@ -686,15 +624,11 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Relative Keys"
+        composer = ""
+        subtitle = "Diatonc Scales of A Major and F# Minor"
     }
 
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Diatonc Scales of A Major and F# Minor"
-        } 
         \transpose c a <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -707,8 +641,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleHarmonicMinorChords
                 \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "A Major, Scale degree I"
                 \scaleMajorNotes
@@ -739,15 +673,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Parallel Keys"
+        composer = ""
+        subtitle = "Parallel Scales of A"
     }
-
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Basic Parallel Scales of A"
-        } 
         \transpose c a <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -760,8 +689,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \transpose a c \scaleHarmonicMinorChords
                 \transpose a c \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "A Major"
                 \scaleMajorNotes
@@ -792,15 +721,11 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Relative Keys"
+        composer = ""
+        subtitle = "Diatonc Scales of Eb Major and C Minor"
     }
 
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Diatonc Scales of Eb Major and C Minor"
-        } 
         \transpose c ef <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -813,8 +738,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleHarmonicMinorChords
                 \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "Eb Major, Scale degree I"
                 \scaleMajorNotes
@@ -845,15 +770,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Parallel Keys"
+        composer = ""
+        subtitle = "Parallel Scales of Eb"
     }
-
     \score {
-        \header {
-            title = ""
-            composer = ""
-            piece = "Basic Parallel Scales of Eb"
-        } 
         \transpose c ef <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
@@ -866,8 +786,8 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \transpose a c \scaleHarmonicMinorChords
                 \transpose a c \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
                 \key c \major
                 \mark "Eb Major"
                 \scaleMajorNotes
