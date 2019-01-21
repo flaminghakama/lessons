@@ -9,6 +9,8 @@ composerName = "D. Elaine Alt"
 \include "../../scores/flaming-libs/flaming-markup.ily"
 \include "../../scores/flaming-libs/flaming-chords.ily"
 
+\include "ly/ily/layout.ily"
+
 \paper {
 
   top-margin = #2
@@ -36,13 +38,6 @@ composerName = "D. Elaine Alt"
                           "Highlander ITC TT" 
                           "LilyJAZZText"
                            (/ myStaffSize 20)))
-}
-
-\layout {
-    \context {
-        \Score
-        \omit BarNumber
-    }
 }
 
 chordsA = \chordmode { 

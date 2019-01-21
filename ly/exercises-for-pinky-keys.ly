@@ -242,7 +242,7 @@ fMinorNotes = {
                 \fMinorChords 
             }
             \new Staff { 
-                \numericTimeSignature 
+                \include "ly/ily/staff-properties.ily"
                 \key f \minor
                 \fMinorNotes
             \bar "||"
