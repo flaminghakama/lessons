@@ -2,9 +2,10 @@
 \include "english.ly"
 
 titleLeft = "Careless Whisper"
-titleRight = "(Half Time)"
-title = "Careless Whisper (Half Time)"
-composerName = "G. Michael & A. Ridgeley"
+titleRight = "Rhythm Exercises"
+title = "Careless Whisper Rhythm Exercises"
+composerName = "D. Elaine Alt"
+arrangerName = "G. Michael & A. Ridgeley"
 \include "../scores/flaming-libs/flaming-paper.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
 \include "../scores/flaming-libs/flaming-markup.ily"
@@ -57,22 +58,21 @@ lickChords = \chordmode {
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    s1 ||
-    d1:m | s | g:m | s2 a2:m7 |
-    bf1:maj7 | s | a:m7 | s |  
-
-    d1:m | s | g:m | s2 a2:m7 |
-    bf1:maj7 | s | a:m7 | s |  
-
-    d1:m | s | g:m | s2 a2:m7 |
-    bf1:maj7 | s | a:m7 | s |  
-
     d1:m | s | g:m | s2 a2:m7 |
     bf1:maj7 | s | a:m7 | s |  
 }
 
-lick = \relative c' {
-    
+songChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s1 ||
+    \lickChords
+    \lickChords
+    \lickChords
+    \lickChords
+}
+song = \relative c' {
     \key f \major
     r2 r4 f4 \glissando \bar "||" 
 
@@ -110,26 +110,118 @@ lick = \relative c' {
 
 }
 
+rhythmOne = \relative c' {
+    \key f \major
+    d4 e8 d ~ 8 e4 d8 ~ | 
+    4 e8 d ~ 2 |
 
+    f4 g8 f ~ 8 g4 f8 ~ | 
+    4 g8 f ~ 2 | \break
+
+    a4 bf8 a ~ 8 bf4 a8 ~ | 
+    4 bf8 a ~ 2 |
+
+    c4 d8 c ~ 8 d4 c8 ~ | 
+    4 d8 c ~ 4 d \bar "||" \break
+
+    a4 d8 a ~ 8 d4 a8 ~ | 
+    4 d8 a ~ 2 |
+
+    bf4 d8 bf ~ 8 d4 bf8 ~ | 
+    4 d8 bf ~ 2 |
+
+    f'4 d8 f ~ 8 d4 f8 ~ | 
+    4 d8 f ~ 2 |
+
+    e4 d8 e ~ 8 d4 e8 ~ | 
+    4 d8 e ~ 4 d | \bar "||" \break
+}
+rhythmOneChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    \lickChords
+    \lickChords
+}
+
+rhythmTwo = \relative c' {
+    r4 d8 f ~ 8 a4 c8 ~ | 
+    4 e8 c ~ 8 a4. |
+
+    r4 g,8 bf ~ 8 d4 f8 ~ | 
+    4 a8 c ~ 8 a4. | \break
+
+    r4 f,8 bf ~ 8 d4 f8 ~ | 
+    4 a8 c ~ 8 a4.  |
+
+    r4 a,8 bf ~ 8 c4 d8 ~ | 
+    4 e8 f ~ 8 g4. \bar "||" \break
+
+    r4 f8 d ~ 8 a4 f'8 ~ | 
+    4 d8 a ~ 2 |
+
+    r4 d'8 c ~ 8 bf4 d8 ~ | 
+    4 c8 bf ~ 2 | \break
+
+    r4 d8 bf ~ 8 a4 d8 ~ | 
+    4 bf8 a ~ 2 |
+
+    r4 e'8 c ~ 8 a4 e'8 ~ | 
+    4 c8 a ~ 2 \bar "||" \break
+}
+rhythmTwoChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    \lickChords
+    \lickChords
+}
+    
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\bookpart {
+\book { 
     \header {
         poet = "Eb Alto Saxophone"
     }
 
-    \score {
-        \transpose ef, c 
-        << 
-            \new ChordNames \transpose c c { 
-                \lickChords 
-            }
-            \new Staff { 
-                \include "ly/ily/staff-properties.ily"
-                \lick
-            }
-        >>
+    \bookpart {
+        \header {
+            subtitle = "Rhythm One"
+        }
+        \score {
+            \transpose ef, c 
+            << 
+                \new ChordNames \transpose c c { 
+                    \rhythmOneChords 
+                    \rhythmTwoChords 
+                }
+                \new Staff { 
+                    \include "ly/ily/staff-properties.ily"
+                    \rhythmOne
+                    \rhythmTwo
+                }
+            >>
+        }
     }
- }
+    \bookpart {
+        \header {
+            title = ""
+            subtitle = "Careless Whisper (Half Time)"
+            composer = ""
+        }
+        \score {
+            \transpose ef, c 
+            << 
+                \new ChordNames \transpose c c { 
+                    \songChords 
+                }
+                \new Staff { 
+                    \include "ly/ily/staff-properties.ily"
+                    \song
+                }
+            >>
+        }
+     }
+}
