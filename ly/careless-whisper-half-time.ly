@@ -76,18 +76,18 @@ song = \relative c' {
 
     e'4 d8 a ~ 8 f4 e'8 ~ | 
     4 d8 a ~ 8 f4. |
-    c'4 bf8 f ~ 8 d4 c'8 ~ | 
-    4 bf8 f ~ 2 | \break
+    c'4 bf8 f ~ 8 d4 c'8 ~ | \break
+    4 bf8 f ~ 2 | 
     
     bf4 a8 f ~ 8 d4 bf8 ~ | 
     2. r4 | 
-    a4 bf c d |
-    e f g a | \break
+    a4 bf c d | \break
+    e f g a  \glissando |
 
     e'4 d8 a ~ 8 f4 e'8 ~ | 
     4 d8 a ~ 8 f4. |
-    c'4 bf8 f ~ 8 d4 c'8 ~ | 
-    4 bf8 f ~ 2 | \break
+    c'4 bf8 f ~ 8 d4 c'8 ~ | \break
+    4 bf8 f ~ 2 | 
     
     bf4 a8 f ~ 8 d4 bf8 ~ | 
     2. r4 | 
@@ -177,6 +177,9 @@ rhythmTwoChords = \chordmode {
             subtitle = "Two Patterns"
         }
         \score {
+            \header {
+                piece = "Rhythm One"
+            }
             \transpose ef, c 
             << 
                 \new ChordNames \transpose c c { 
@@ -184,12 +187,14 @@ rhythmTwoChords = \chordmode {
                 }
                 \new Staff { 
                     \include "ly/ily/staff-properties.ily"
-                    \mark \markup \box { "Rhythm One"}
                     \rhythmOne
                 }
             >>
         }
         \score {
+            \header {
+                piece = "Rhythm Two"
+            }
             \transpose ef, c 
             << 
                 \new ChordNames \transpose c c { 
@@ -197,7 +202,6 @@ rhythmTwoChords = \chordmode {
                 }
                 \new Staff { 
                     \include "ly/ily/staff-properties.ily"
-                    \mark \markup \box { "Rhythm Two"}
                     \rhythmTwo
                 }
             >>
