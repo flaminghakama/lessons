@@ -69,8 +69,6 @@ songChords = \chordmode {
     s1 ||
     \lickChords
     \lickChords
-    \lickChords
-    \lickChords
 }
 song = \relative c' {
     \key f \major
@@ -95,19 +93,6 @@ song = \relative c' {
     2. r4 | 
     a4 bf c d |
     e f g a \bar "||" \break
-
-    a2. g4 ~ | 4 f2 d4 ~ | 
-    4 r4 r2 | r2 r4 r8 d8 | \break
-
-    a'2. g4 ~ | 2 ~ 8 d f d | 
-    a'2 g | f4. e8 ~ 2 | \break
-
-    r4 d8 e  f4 g8 a ~ | 1 | 
-    r4 d,8 e  f4 g8 a ~ | 8 c a4 ~ 4. c8 | \break
-
-    a4 bf a bf | a bf8 a ~  2 |
-    a4 g8 8 ~ 2 | f e \bar "||"
-
 }
 
 rhythmOne = \relative c' {
@@ -122,7 +107,7 @@ rhythmOne = \relative c' {
     4 bf8 a ~ 2 |
 
     c4 d8 c ~ 8 d4 c8 ~ | 
-    4 d8 c ~ 4 d \bar "||" \break
+    4 d8 c ~ 2 \bar "||" \break
 
     a4 d8 a ~ 8 d4 a8 ~ | 
     4 d8 a ~ 2 |
@@ -130,11 +115,11 @@ rhythmOne = \relative c' {
     bf4 d8 bf ~ 8 d4 bf8 ~ | 
     4 d8 bf ~ 2 |
 
-    f'4 d8 f ~ 8 d4 f8 ~ | 
-    4 d8 f ~ 2 |
+    d4 f8 d ~ 8 f4 d8 ~ | 
+    4 f8 d ~ 2 |
 
-    e4 d8 e ~ 8 d4 e8 ~ | 
-    4 d8 e ~ 4 d | \bar "||" \break
+    d4 e8 d ~ 8 e4 d8 ~ | 
+    4 e8 d ~ 2 \bar "|."
 }
 rhythmOneChords = \chordmode { 
     \set chordChanges = ##f
@@ -145,6 +130,7 @@ rhythmOneChords = \chordmode {
 }
 
 rhythmTwo = \relative c' {
+    \key f \major
     r4 d8 f ~ 8 a4 c8 ~ | 
     4 e8 c ~ 8 a4. |
 
@@ -157,17 +143,17 @@ rhythmTwo = \relative c' {
     r4 a,8 bf ~ 8 c4 d8 ~ | 
     4 e8 f ~ 8 g4. \bar "||" \break
 
-    r4 f8 d ~ 8 a4 f'8 ~ | 
-    4 d8 a ~ 2 |
+    r4 f'8 d ~ 8 a4 f'8 ~ | 
+    4 d8 a ~ 8 f4. |
 
     r4 d'8 c ~ 8 bf4 d8 ~ | 
-    4 c8 bf ~ 2 | \break
+    4 c8 bf ~ 8 a4. | \break
 
     r4 d8 bf ~ 8 a4 d8 ~ | 
-    4 bf8 a ~ 2 |
+    4 bf8 a ~ 8 f4. |
 
     r4 e'8 c ~ 8 a4 e'8 ~ | 
-    4 c8 a ~ 2 \bar "||" \break
+    4 c8 a ~ 8 g4. \bar "|." 
 }
 rhythmTwoChords = \chordmode { 
     \set chordChanges = ##f
@@ -188,18 +174,30 @@ rhythmTwoChords = \chordmode {
 
     \bookpart {
         \header {
-            subtitle = "Rhythm One"
+            subtitle = "Two Patterns"
         }
         \score {
             \transpose ef, c 
             << 
                 \new ChordNames \transpose c c { 
                     \rhythmOneChords 
+                }
+                \new Staff { 
+                    \include "ly/ily/staff-properties.ily"
+                    \mark \markup \box { "Rhythm One"}
+                    \rhythmOne
+                }
+            >>
+        }
+        \score {
+            \transpose ef, c 
+            << 
+                \new ChordNames \transpose c c { 
                     \rhythmTwoChords 
                 }
                 \new Staff { 
                     \include "ly/ily/staff-properties.ily"
-                    \rhythmOne
+                    \mark \markup \box { "Rhythm Two"}
                     \rhythmTwo
                 }
             >>
@@ -209,7 +207,7 @@ rhythmTwoChords = \chordmode {
         \header {
             title = ""
             subtitle = "Careless Whisper (Half Time)"
-            composer = ""
+            composer = \arrangerName
         }
         \score {
             \transpose ef, c 
