@@ -41,8 +41,30 @@ composerName = "Bart Howard"
 
 \include "ly/ily/layout.ily"
 
-toCoda = <>^\markup { \translate #'( -2 . 1.75) \huge \bold \musicglyph #"scripts.coda" }
-atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scripts.coda" }
+strcture = \relative c' { 
+    \key c \minor
+    s1
+    \bar "||"
+  
+    s1*3 \break
+    s1*4 \break
+    s1
+    \bar "||"
+    
+    s1*3 \break
+    s1*4 \break
+    s1
+    \bar "||"
+
+    s1*3 \break
+    s1*4 \break
+    s1
+    \bar "||"
+    
+    s1*3 \break
+    s1*5
+    \bar "|."
+}
 
 chordsHead = \chordmode { 
     \set chordChanges = ##t 
@@ -53,12 +75,12 @@ chordsHead = \chordmode {
     d2:7 g:7 | c1:m | 
     f2:7 bf:7 | ef1 |
     d2:7 g:7 | c1:m | 
-    af1 | g | 
+    af1:7 | g:7 | 
 
     d2:7 g:7 | c1:m | 
     f2:7 bf:7 | ef1 |
     d2:7 g:7 | c1:m | 
-    af1 | g | 
+    af1:7 | g:7 | 
 
     g2:7 c:7 | f:7 bf:7 | ef:7 af:7 | df1 | 
     f2:7 bf:7 | ef:7 af:7 | df:7 gf:7 | g1 |  
@@ -66,53 +88,119 @@ chordsHead = \chordmode {
     d2:7 g:7 | c1:m | 
     f2:7 bf:7 | ef1 |
     d2:7 g:7 | c1:m | 
-    af1 | g | 
+    af2:7 g:7 | c1:m || 
 }
 
-chordsCoda = \chordmode { 
-    \set chordChanges = ##t 
-    \set chordNameExceptions = #flamingChordExceptions
-    \set noChordSymbol = ##f
-
-		e2:m7.5- bf:9 | a1:7.9- | 
-	d:m7 | g:7.9- | c2 bf4:6 b:7 | c1 | 
-}
-
-
-melodyHead = \relative c' { 
+melodyVerySimplified = \relative c' { 
     \key c \minor
-    r8 g\mp c [ d ]  ef f ( g ef ) 
-    \bar "||"
-	
-    fs2 f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
+  
+    gf2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
     a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
-    fs2 f4. ef8 | r2 ef8 ( c ) ef c ~ | 
-    c2\< ~ 4.\xf  c8->\f | \break     
+    gf2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf  c8->\f |     
 
-    r8 g\mp c [ d ]  ef f ( g ef ) 
-    \bar "||"
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
     
-    fs2 f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    gf2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
     a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
-    fs2 f4. ef8 | r2 ef8 ( c ) ef c ~ | 
-    c2\< ~ 4.\xf c8->\f | \break
+    gf2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf c8->\f |
 
-    r2 r8 g'4->\ff 8-> ~ \bar "||"
+    r2 r8 g'4->\ff 8-> ~ ||
     g4 b,8\mf ( a ) bf4 g'8 ( e ) | f4 a,8 ( g ) af4 f'8 ( d ) | 
     ef4 g8 ( f ) gf4 e8 ( f ~ | 2 )  r8 f4->\ff 8-> ~ | 
 
     f4 a,8\mf ( g ) af4 f'8 ( d ) | ef4 g,8 ( f ) gf4  ef'8 ( c ) | 
-    df4 f8 ( ef8 ) e4.\< ef8->\f | \break
+    df4 f8 ( ef8 ) ff4.\< ef8->\f |
 
-    r8 g,\mp c [ d ]  ef f ( g ef ) 
-    \bar "||"
+    r8 g,\mp c [ d ]  ef f ( g ef ) ||
     
-    fs2 f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    gf2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
     a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
-    fs2 f4. ef8 | r2 ef8 ( c ) ef c ~ | 
-    c2\< ~ 4.\xf c8->\f | R1 
-    \bar "|."
+    gf2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf c8->\f | R1 || 
+}
 
+melodySimplified = \relative c' { 
+    \key c \minor
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
+  
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf  c8->\f |     
+
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
+    
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf c8->\f |
+
+    r2 r8 g''4->\ff 8-> ~ ||
+    g4 b,8\mf ( a ) bf4 g'8 ( e ) | f4 a,8 ( g ) af4 f'8 ( d ) | 
+    ef4 g,8 ( f ) gf4 e8 ( f ~ | 2 )  r8 f'4->\ff 8-> ~ | 
+
+    f4 a,8\mf ( g ) af4 f'8 ( d ) | ef4 g,8 ( f ) gf4  ef'8 ( c ) | 
+    df4 f,8 ( ef8 ) ff4.\< ef8->\f |
+
+    r8 g,\mp c [ d ]  ef f ( g ef ) ||
+    
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf c8->\f | R1 ||
+}
+
+melodyFirstAA = \relative c' { 
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
+  
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 \tuplet 3/2 { ef16 ( f ef } c8 ) ef c ~ | 
+    c2\< ~ 4.\xf  c8->\f |     
+
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
+    
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 \tuplet 3/2 { ef16 ( f ef } c8 ) ef c ~ | 
+    c2\< ~ 4.\xf c8->\f |
+}
+
+melodyBridge = \relative c''' { 
+    r2 r8 g4->\ff 8-> ~ ||
+    g4 \tuplet 3/2 { b,16\mf ( c b } a8 ) bf4 g'8 ( e ) | 
+    f4 \tuplet 3/2 { a,16 ( bf a } g8 ) af4 f'8 ( d ) | 
+    ef4 \tuplet 3/2 { g,16 ( af g } f8 ) gf4 e8 ( f ~ | 2 )  r8 f'4->\ff 8-> ~ | 
+
+    f4 \tuplet 3/2 { a,16\mf ( bf a } g8 ) af4 f'8 ( d ) | 
+    ef4 \tuplet 3/2 { g,16 ( af g } f8 ) gf4  ef'8 ( c ) | 
+    df4 \tuplet 3/2 { f,16 ( gf f } ef8 ) ff4.\< ef8->\f |
+}
+
+melodyLastA = \relative c' { 
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
+    
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 \tuplet 3/2 { ef16 ( f ef } c8 ) ef c ~ | 
+    c2\< ~ 4.\xf c8->\f | R1 ||
+}
+
+melodyLowBridge = \relative c' { 
+    \key c \minor
+    \melodyFirstAA
+    \transpose c c, \melodyBridge
+    \melodyLastA
+}
+
+melody = \relative c' { 
+    \key c \minor
+    \melodyFirstAA
+    \melodyBridge
+    \melodyLastA
 }
 
 \header {
@@ -122,22 +210,82 @@ melodyHead = \relative c' {
     instrumentName = \poet
 }
 
+\book {
+  \bookOutputSuffix "very-simplified-for-Eb"
+    \header {
+        subtitle = "(very simplified)"
+    }
+    \score {
+        <<
+            %\new ChordNames \transpose ef c { \chordsHead }
+            \new Staff = "lead" \transpose ef, c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \strcture
+                    \melodyVerySimplified
+                >>
+            }
+        >>
+    }
+}
 
 \book {
-	\bookOutputSuffix "for-Eb"
-
+  \bookOutputSuffix "simplified-for-Eb"
     \header {
         subtitle = "(simplified)"
     }
-
     \score {
         <<
             \new ChordNames \transpose ef c { \chordsHead }
-        	\new Staff = "lead" \transpose ef, c {
+            \new Staff = "lead" \transpose ef, c {
                 \include "ly/ily/staff-properties.ily"
-            	\autoPageBreaksOff
-                \melodyHead
-                \noPageBreak
+                \autoPageBreaksOff
+                <<
+                    \strcture
+                    \melodySimplified
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "low-bridge-for-Eb"
+    \header {
+        subtitle = "(low bridge)"
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c { \chordsHead }
+            \new Staff = "lead" \transpose ef, c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \strcture
+                    \melodyLowBridge
+                >>
+            }
+        >>
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        subtitle = ""
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c { \chordsHead }
+            \new Staff = "lead" \transpose ef, c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \strcture
+                    \melody
+                >>
             }
         >>
     }
