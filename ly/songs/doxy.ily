@@ -1,9 +1,20 @@
 \version "2.19.81"
 
-titleLeft = "Fly Me "
-titleRight = "To The Moon"
-title = "Fly Me To The Moon"
-composerName = "Bart Howard"
+titleLeft = "Doxy"
+titleRight = " "
+title = "Doxy"
+composerName = "Sonny Rollins"
+
+%{
+
+killPreview ; rm doxy-*pdf ;  lilypond ly/songs/doxy.ily  ; for file in doxy-*.pdf ; do op $file ; done  
+mv doxy-for-Eb.pdf pdf/songs
+mv doxy-blank-for-Eb.pdf pdf/songs
+python ~/git/PyPDF2/Scripts/pdfcat -o doxy-for-Eb.pdf pdf/songs/doxy-for-Eb.pdf pdf/songs/doxy-blank-for-Eb.pdf
+mv doxy-for-Eb.pdf pdf/songs/printable
+
+%}
+
 
 \include "../../../scores/flaming-libs/flaming-paper.ily"
 \include "../../../scores/flaming-libs/flaming-markup.ily"
@@ -16,7 +27,7 @@ composerName = "Bart Howard"
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #8
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -59,22 +70,38 @@ strcture = \relative c' {
     \bar "|."
 }
 
-chordsHead = \chordmode { 
+strctureBlank = \relative c' { 
+    \key bf \major
+    \bar "[|:"
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 \bar ":|][|:"
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 \bar ":|]"
+}
+
+
+chordsForm = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-
-    s1 ||
     bf2 af:7 | g1:7 | c2:7 f:7 | bf f:7 | 
     bf2 af:7 | g1:7 | c1:7 | f:7 |
     bf1:7 | s | ef:7 | bf:dim7 | 
     bf2 af:7 | g1:7 | c2:7 f:7 | bf2 f:7 | 
+}
 
-    bf2 af:7 | g1:7 | c2:7 f:7 | bf f:7 | 
-    bf2 af:7 | g1:7 | c1:7 | f:7 |
-    bf1:7 | s | ef:7 | bf:dim7 | 
-    bf2 af:7 | g1:7 | c2:7 f:7 | bf f:7 |
 
+chordsHead = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s1 ||
+    \chordsForm
+    \chordsForm
     c2:7 f:7 | bf1 | 
 }
 
@@ -128,6 +155,27 @@ melody = \relative c' {
                     \strcture
                     \melody
                 >>
+                \noPageBreak
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "blank-for-Eb"
+    \header {
+        subtitle = ""
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c { 
+                \chordsForm 
+                \chordsForm
+            }
+            \new Staff = "lead" \transpose ef c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \strctureBlank 
                 \noPageBreak
             }
         >>

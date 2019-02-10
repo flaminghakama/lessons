@@ -5,6 +5,17 @@ titleRight = "To The Moon"
 title = "Fly Me To The Moon"
 composerName = "Bart Howard"
 
+%{
+
+python ~/git/PyPDF2/Scripts/pdfcat -o jordu-very-simplified-and-full-for-Eb.pdf pdf/songs/jordu-very-simplified-for-Eb.pdf pdf/songs/jordu-for-Eb.pdf
+python ~/git/PyPDF2/Scripts/pdfcat -o jordu-and-low-bridge-for-Eb.pdf pdf/songs/jordu-for-Eb.pdf pdf/songs/jordu-low-bridge-for-Eb.pdf
+python ~/git/PyPDF2/Scripts/pdfcat -o jordu-simplifieds-for-Eb.pdf pdf/songs/jordu-simplified-for-Eb.pdf pdf/songs/jordu-simplified-low-bridge-for-Eb.pdf
+mv jordu-very-simplified-and-full-for-Eb.pdf pdf/songs/printable
+jordu-and-low-bridge-for-Eb.pdf pdf/songs/printable
+jordu-simplifieds-for-Eb.pdf pdf/songs/printable
+
+%}
+
 \include "../../../scores/flaming-libs/flaming-paper.ily"
 \include "../../../scores/flaming-libs/flaming-markup.ily"
 \include "../../../scores/flaming-libs/flaming-chords.ily"
@@ -92,7 +103,6 @@ chordsHead = \chordmode {
 }
 
 melodyVerySimplified = \relative c' { 
-    \key c \minor
     r8 g\mp c [ d ]  ef f ( g ef ) ||
   
     gf2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
@@ -109,7 +119,7 @@ melodyVerySimplified = \relative c' {
 
     r2 r8 g'4->\ff 8-> ~ ||
     g4 b,8\mf ( a ) bf4 g'8 ( e ) | f4 a,8 ( g ) af4 f'8 ( d ) | 
-    ef4 g8 ( f ) gf4 e8 ( f ~ | 2 )  r8 f4->\ff 8-> ~ | 
+    ef4 g,8 ( f ) gf4 e'8 ( f ~ | 2 )  r8 f4->\ff 8-> ~ | 
 
     f4 a,8\mf ( g ) af4 f'8 ( d ) | ef4 g,8 ( f ) gf4  ef'8 ( c ) | 
     df4 f8 ( ef8 ) ff4.\< ef8->\f |
@@ -123,7 +133,6 @@ melodyVerySimplified = \relative c' {
 }
 
 melodySimplified = \relative c' { 
-    \key c \minor
     r8 g\mp c [ d ]  ef f ( g ef ) ||
   
     fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
@@ -146,6 +155,36 @@ melodySimplified = \relative c' {
     df4 f,8 ( ef8 ) ff4.\< ef8->\f |
 
     r8 g,\mp c [ d ]  ef f ( g ef ) ||
+    
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf c8->\f | R1 ||
+}
+
+melodySimplifiedLowBridge = \relative c' { 
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
+  
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf  c8->\f |     
+
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
+    
+    fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
+    a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
+    fs2-- f4. ef8 | r2 ef8 ( c ) ef c ~ | 
+    c2\< ~ 4.\xf c8->\f |
+
+    r2 r8 g'4->\ff 8-> ~ ||
+    g4 b,8\mf ( a ) bf4 g'8 ( e ) | f4 a,8 ( g ) af4 f'8 ( d ) | 
+    ef4 g,8 ( f ) gf4 e8 ( f ~ | 2 )  r8 f'4->\ff 8-> ~ | 
+
+    f4 a,8\mf ( g ) af4 f'8 ( d ) | ef4 g,8 ( f ) gf4  ef'8 ( c ) | 
+    df4 f,8 ( ef8 ) ff4.\< ef8->\f |
+
+    r8 g\mp c [ d ]  ef f ( g ef ) ||
     
     fs2-- f4. ef8 | r8 g, c [ d ]  ef f ( g bf ) | 
     a2 af4. g8 | r 8 g, c [ d ]  ef f ( g ef ) | 
@@ -251,6 +290,26 @@ melody = \relative c' {
 }
 
 \book {
+  \bookOutputSuffix "simplified-low-bridge-for-Eb"
+    \header {
+        subtitle = "(simplified, low bridge)"
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c { \chordsHead }
+            \new Staff = "lead" \transpose ef, c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \strcture
+                    \melodySimplifiedLowBridge
+                >>
+            }
+        >>
+    }
+}
+
+\book {
   \bookOutputSuffix "low-bridge-for-Eb"
     \header {
         subtitle = "(low bridge)"
@@ -290,3 +349,4 @@ melody = \relative c' {
         >>
     }
 }
+
