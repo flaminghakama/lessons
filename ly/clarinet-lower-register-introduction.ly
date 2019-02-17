@@ -112,7 +112,7 @@ songNotes = \relative c' {
             >>
         }
         \header {
-            piece = "G Major"
+            %piece = "G Major"
         }
     }
 
@@ -132,7 +132,7 @@ songNotes = \relative c' {
             >>
         }
         \header {
-            piece = "G Major"
+            %piece = "G Major"
         }
         %{
         \score {
