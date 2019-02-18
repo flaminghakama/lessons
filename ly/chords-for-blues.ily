@@ -316,7 +316,7 @@ fifthsJazzBlues = \relative c'' {
             \transpose d c <<
                \include "ly/ily/score-properties.ily"
                \new ChordNames { 
-                    \jazzBluesChords
+                    \jazzBluesRollingChords
                 }
                 \new Staff { 
                     \autoPageBreaksOff
@@ -469,7 +469,7 @@ fifthsJazzBlues = \relative c'' {
             \transpose d g <<
                \include "ly/ily/score-properties.ily"
                \new ChordNames { 
-                    \jazzBluesChords
+                    \jazzBluesRollingChords
                 }
                 \new Staff { 
                     \autoPageBreaksOff
@@ -621,7 +621,7 @@ fifthsJazzBlues = \relative c'' {
             \transpose d d <<
                \include "ly/ily/score-properties.ily"
                \new ChordNames { 
-                    \jazzBluesChords
+                    \jazzBluesRollingChords
                 }
                 \new Staff { 
                     \autoPageBreaksOff
@@ -777,7 +777,7 @@ fifthsJazzBlues = \relative c'' {
             \transpose d d <<
                \include "ly/ily/score-properties.ily"
                \new ChordNames { 
-                    \jazzBluesChords
+                    \jazzBluesRollingChords
                 }
                 \new Staff { 
                     \autoPageBreaksOff
