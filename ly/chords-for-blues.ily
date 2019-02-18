@@ -13,7 +13,7 @@ composerName = "D. Elaine Alt"
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2018 D. Elaine Alt" } 
+    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -24,17 +24,17 @@ composerName = "D. Elaine Alt"
 
 \paper {
 
-  top-margin = #14
-  right-margin = #17
+  top-margin = #2
+  right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #4
+  markup-system-spacing.padding = #2
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #8
 
   % Spacing in between systems
-  system-system-spacing.minimum-distance = #16
+  system-system-spacing.minimum-distance = #13
 
   page-breaking = #ly:minimal-breaking
 
@@ -45,15 +45,11 @@ composerName = "D. Elaine Alt"
                            (/ myStaffSize 20)))
 }
 %BodoniClassicChancery" 
+
 \include "../scores/flaming-libs/flaming-fonts.ily"
 
-
-\layout {
-    \context {
-        \Score
-        \omit BarNumber
-    }
-}
+\include "ly/ily/saxophone-fingerings.ily"    
+\include "ly/ily/layout.ily"
 
 rockBluesChords = \chordmode { 
     \set chordChanges = ##f
@@ -62,7 +58,6 @@ rockBluesChords = \chordmode {
     d1:7 | r | r | r |
     g:7 | r | d:7 | r | 
     a:7 | g:7 | d:7 | a:7 |
-
 }
 basicJazzBluesChords = \chordmode { 
     \set chordChanges = ##f
@@ -82,151 +77,204 @@ jazzBluesChords = \chordmode {
 }
 
 arpeggiosRockBlues  = \relative c' { 
+    \key d \major
+    \time 4/4
+    \bar "[|:"
     d2 fs | a c | d fs | a c | \break
     g, b | d f | d, fs | a c | \break
     a4 cs e g | g, b d f | d, fs a c | a cs e g  
-     \bar "||" 
+    \bar ":|]"
 }
 arpeggiosRockBluesLow = \transpose c c, \arpeggiosRockBlues
 
 arpeggiosBasicJazzBlues  = \relative c' { 
+    \key d \major
+    \time 4/4
+    \bar "[|:"
     d2 fs | a c | d fs | a c | \break
     g, b | d f | d, fs | a c | \break
     e,4 g b d | a cs e g | d, fs a c | a cs e g  
-     \bar "||" 
+    \bar ":|]"
 }
 arpeggiosBasicJazzBluesLow = \transpose c c, \arpeggiosBasicJazzBlues
 
 arpeggiosJazzBlues  = \relative c' { 
+    \key d \major
+    \time 4/4
+    \bar "[|:"
     d4 fs a c | g b d f | d, fs a c | e g a c | \break
     g, b d f | g, b d f | d, fs a c | fs, a b ds, | \break
     e4 g b d | a cs e g | fs d, ds fs | e g a cs |  
-     \bar "||" 
+    \bar ":|]"
 }
 arpeggiosJazzBluesLow = \transpose c c, \arpeggiosJazzBlues
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\layout { 
-    indent = 1.25\cm
-    short-indent = 1.25\cm
-    \context {
-        \Score
-        \override StaffGrouper.staff-staff-spacing.padding = #0
-        \override StaffGrouper.staff-staff-spacing.basic-distance = #0
-    }
-}
-
 \bookpart {
     \header {
-        subtitle = ""
+        subtitle = "Some Blues Forms in C"
     }
-
     \score {
-        \header {
-            piece = "Some Blues Forms in C"
-        } 
         \transpose d c <<
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c { 
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
                 \rockBluesChords 
-                \basicJazzBluesChords
-                \jazzBluesChords
             }
-            \new Staff \transpose c c { 
+            \new Staff { 
                 \autoPageBreaksOff
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-                \key d \major
-                \mark "R&B (Rock) Blues Form"
+                \include "ly/ily/staff-properties.ily"
                 \arpeggiosRockBlues
-                \break
-                \mark "Basic Jazz Blues Form"
-                \arpeggiosBasicJazzBlues
-                \break
-                \mark "Jazz Blues Form"
-                \arpeggiosJazzBlues
-                \bar "|."
             }
         >>
+        \header {
+            piece = \markup \pad-markup #2 "R&B (Rock) Blues Form"
+        } 
+    }
+    \score {
+        \transpose d c <<
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
+                \basicJazzBluesChords
+            }
+            \new Staff { 
+                \autoPageBreaksOff
+                \include "ly/ily/staff-properties.ily"
+                \arpeggiosBasicJazzBlues
+            }
+        >>
+        \header {
+            piece = \markup \pad-markup #2 "Basic Jazz Blues Form"
+        } 
+    }
+    \score {
+        \transpose d c <<
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
+                \jazzBluesChords
+            }
+            \new Staff { 
+                \autoPageBreaksOff
+                \include "ly/ily/staff-properties.ily"
+                \arpeggiosJazzBlues
+            }
+        >>
+        \header {
+            piece = \markup \pad-markup #2 "Jazz Blues Form"
+        } 
     }
 }
-
 
 \bookpart {
     \header {
         title = ""
-        subtitle = "Blues Forms and Chords"
+        subtitle = "Some Blues Forms in G"
         composer = ""
     }
-
     \score {
-        \header {
-            piece = "Some Blues Forms in G"
-            composer = ""
-        } 
         \transpose d g <<
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c { 
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
                 \rockBluesChords 
-                \basicJazzBluesChords
-                \jazzBluesChords
             }
-            \new Staff \transpose c c { 
+            \new Staff { 
                 \autoPageBreaksOff
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-                \key d \major
-                \mark "R&B (Rock) Blues Form"
+                \include "ly/ily/staff-properties.ily"
                 \arpeggiosRockBlues
-                \break
-                \mark "Basic Jazz Blues Form"
-                \arpeggiosBasicJazzBlues
-                \break
-                \mark "Jazz Blues Form"
-                \arpeggiosJazzBlues
-                \bar "|."
             }
         >>
+        \header {
+            subtitle = "Some Blues Forms in G"
+            piece = \markup \pad-markup #2 "R&B (Rock) Blues Form"
+        } 
+    }
+    \score {
+        \transpose d g <<
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
+                \basicJazzBluesChords
+            }
+            \new Staff { 
+                \autoPageBreaksOff
+                \include "ly/ily/staff-properties.ily"
+                \arpeggiosBasicJazzBlues
+            }
+        >>
+        \header {
+            piece = \markup \pad-markup #2 "Basic Jazz Blues Form"
+        } 
+    }
+    \score {
+        \transpose d g <<
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
+                \jazzBluesChords
+            }
+            \new Staff { 
+                \autoPageBreaksOff
+                \include "ly/ily/staff-properties.ily"
+                \arpeggiosJazzBlues
+            }
+        >>
+        \header {
+            piece = \markup \pad-markup #2 "Jazz Blues Form"
+        } 
     }
 }
-
 
 \bookpart {
     \header {
         title = ""
-        subtitle = "Blues Forms and Chords"
+        subtitle = "Some Blues Forms in D"
         composer = ""
     }
-
     \score {
-        \header {
-            piece = "Some Blues Forms in D"
-            composer = ""
-        } 
-        << 
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c { 
+        \transpose d d <<
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
                 \rockBluesChords 
-                \basicJazzBluesChords
-                \jazzBluesChords
             }
-            \new Staff \transpose c c { 
+            \new Staff { 
                 \autoPageBreaksOff
-                \set Staff.explicitKeySignatureVisibility = #end-of-line-invisible
-                \key d \major
-                \mark "R&B (Rock) Blues Form"
+                \include "ly/ily/staff-properties.ily"
                 \arpeggiosRockBlues
-                \break
-                \mark "Basic Jazz Blues Form"
-                \arpeggiosBasicJazzBlues
-                \break
-                \mark "Jazz Blues Form"
-                \arpeggiosJazzBlues
-                \bar "|."
             }
         >>
+        \header {
+            piece = \markup \pad-markup #2 "R&B (Rock) Blues Form"
+        } 
+    }
+    \score {
+        \transpose d d <<
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
+                \basicJazzBluesChords
+            }
+            \new Staff { 
+                \autoPageBreaksOff
+                \include "ly/ily/staff-properties.ily"
+                \arpeggiosBasicJazzBlues
+            }
+        >>
+        \header {
+            piece = \markup \pad-markup #2 "Basic Jazz Blues Form"
+        } 
+    }
+    \score {
+        \transpose d d <<
+           \include "ly/ily/score-properties.ily"
+           \new ChordNames { 
+                \jazzBluesChords
+            }
+            \new Staff { 
+                \autoPageBreaksOff
+                \include "ly/ily/staff-properties.ily"
+                \arpeggiosJazzBlues
+            }
+        >>
+        \header {
+            piece = \markup \pad-markup #2 "Jazz Blues Form"
+        } 
     }
 }

@@ -13,7 +13,7 @@ composerName = "D. Elaine Alt"
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2018 D. Elaine Alt" } 
+    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
