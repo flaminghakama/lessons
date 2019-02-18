@@ -28,7 +28,7 @@ composerName = "D. Elaine Alt"
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #8
@@ -300,7 +300,7 @@ fifthsJazzBlues = \relative c'' {
             \transpose d c <<
                \include "ly/ily/score-properties.ily"
                \new ChordNames { 
-                    \jazzBluesRollingChords
+                    \jazzBluesShoutChords
                 }
                 \new Staff { 
                     \autoPageBreaksOff
@@ -453,7 +453,7 @@ fifthsJazzBlues = \relative c'' {
             \transpose d g, <<
                \include "ly/ily/score-properties.ily"
                \new ChordNames { 
-                    \jazzBluesRollingChords
+                    \jazzBluesShoutChords
                 }
                 \new Staff { 
                     \autoPageBreaksOff
@@ -605,7 +605,7 @@ fifthsJazzBlues = \relative c'' {
             \transpose d d <<
                \include "ly/ily/score-properties.ily"
                \new ChordNames { 
-                    \jazzBluesRollingChords
+                    \jazzBluesShoutChords
                 }
                 \new Staff { 
                     \autoPageBreaksOff
@@ -761,7 +761,7 @@ fifthsJazzBlues = \relative c'' {
             \transpose d d <<
                \include "ly/ily/score-properties.ily"
                \new ChordNames { 
-                    \jazzBluesRollingChords
+                    \jazzBluesShoutChords
                 }
                 \new Staff { 
                     \autoPageBreaksOff
@@ -786,7 +786,7 @@ fifthsJazzBlues = \relative c'' {
                 }
             >>
             \header {
-                piece = \markup \pad-markup #2 "Jazz Blues Riff"
+                piece = \markup \pad-markup #2 "Jazz Blues Bounce"
             } 
         }
         \score {
