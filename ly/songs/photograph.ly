@@ -147,12 +147,12 @@ melodyChorusOne = \relative c'' {
     1 | e8 4 ds8 ~ 16 e16 8 ~ 8 8 |  
 }
 melodyPostChorus = \relative c'' { 
-    R1 
+    R1 \pageBreak
 }
 melodyVerseTwo = \relative c'' { 
     r2 gs8 8 fs gs ~ ||
-    1 | r2 gs8 8 fs gs ( ~ | 16 fs ) e8  8 8 ~ 4 r | r2 e8 8 fs ds ~ | 
-    4 8 e ~ 4 a8 gs | 4 e ~ 8 8 r4 | R1 | r4 e8 8 gs8 8 fs gs ~ | 
+    1 | r2 gs8 8 fs gs ( ~ | 16 fs e8 )  8 8 ~ 4 r | r2 e8 8 fs ds ~ | 
+    4 8 e ~ 4 a8 ( gs ) | 4 e ~ 8 8 r4 | R1 | r4 e8 8 gs8 8 fs gs ~ | 
     4 fs8 gs ~ 4.  e8 | e8 8 8 8  gs8 8 fs gs ~ | 16 fs e8 r4 r4 r8 e8 ( ~ | 8 fs ) r4 e8 8 fs ds ~ |
     4 8 e8 ~ 8 b8 4 | a'8 gs8 ~ 8 fs16 e  e8. ( fs16 gs4 ~ | 8. fs16 e2. ) | r4 r8 ds8 ~ ( 8 e4. ) ||  
 }
@@ -161,7 +161,7 @@ melodyChorusTwo = \relative c'' {
     gs2 b, | gs'8 8 8 a ~ 8 gs fs e | 
     gs2 fs | gs8 8 8 a ~ 8 gs fs e | 
     gs2 fs | gs8 4 a8 ~ 8 gs fs16 e16 8 ( ~ |
-    2 ~ 8 fs16 gs ~ 4 ) |  
+    2 ~ 8 fs16 gs ~ 4 ) |  \pageBreak
 }
 melodyChorusThree = \relative c'' { 
     r2 r8 e8 8 [ fs ] ||
@@ -220,7 +220,60 @@ melodyHeadForEb = \relative c' {
 }
 
 lyricsHead = \lyricmode {
+    Lov -- ing can hurt
+    Lov -- ing can hurt some -- times
+    But it's the on -- ly thing that I know
+    And when it gets hard
+    You know it can get hard some -- times
+    It is the on -- ly thing that makes us feel a -- live
 
+    We keep this love in a pho -- to -- graph
+    We make these me -- mo -- ries for our -- selves
+    Where our eyes are ne -- ver clo -- sing
+    Hearts were ne -- ver bro -- ken
+    And times for -- ev -- er fro -- zen and still
+
+    So you can keep me in -- side the poc -- ket of your
+    Ripped jeans hol -- ding me clo -- ser till our
+    Eyes meet, you won't ev -- er be a -- lone
+    Wait for me to come home
+
+    Lov -- ing can heal
+    Lov -- ing can mend your soul
+    And it's the on -- ly thing that I know, know
+    I swear it will get ea -- si -- er
+    re -- mem -- ber that with ev -- e -- ry piece of ya mmm
+    It is the on -- ly thing we take with us when we die mmm
+
+    We keep this love in a pho -- to -- graph
+    We make these me -- mo -- ries for our -- selves
+    Where our eyes are ne -- ver clo -- sing
+    Hearts were ne -- ver bro -- ken
+    And times for -- ev -- er fro -- zen and still
+
+    So you can keep me in -- side the poc -- ket of your
+    Ripped jeans hol -- ding me clo -- ser till our
+    Eyes meet, you won't ev -- er be a -- lone
+
+    And if you hurt me well that's o -- k ba -- by, on -- ly
+    Words bleed in -- side these pa -- ges you just
+    Hold me and I won't ev -- er let you go
+
+    Wait for me to come home
+    Wait for me to come home
+    Wait for me to come home
+    Wait for me to come home oh
+
+    Oh you can fit me in -- side the neck -- lace you got when you were
+    six -- teen next to your heart -- beat where I 
+    Should be, keep it deep with -- in your soul
+    And if you hurt me well that's o -- k ba -- by on -- ly 
+    Words bleed in -- side these pa -- ges you just
+    Hold me I won't ev -- er let you go
+    And when I'm a -- way I will re -- mem -- ber how you
+    Kissed me un -- der the lamp post back on sixth street 
+    Hear -- ing you whis -- per through the phone
+    Wait for me to come home
 }
 
 \book {
