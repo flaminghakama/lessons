@@ -1,9 +1,9 @@
 \version "2.19.81"
 
-titleLeft = "Fly Me "
-titleRight = "To The Moon"
-title = "Fly Me To The Moon"
-composerName = "Bart Howard"
+titleLeft = "Jordu"
+titleRight = "Jordu"
+titleFull = "Jordu"
+composer = "Duke Jordan"
 
 %{
 
@@ -243,8 +243,8 @@ melody = \relative c' {
 }
 
 \header {
-    title = "Jordu"
-    composer = "Duke Jordan"
+    title = \titleFull
+    composer = \composer
     poet = "Eb Alto Saxophone"
     instrumentName = \poet
 }
