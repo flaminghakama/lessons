@@ -59,11 +59,11 @@ exerciseOne = \relative c' {
     fs8 [ ( f ] )  fs [ ( f ] ) fs [ ( f ] ) fs [ ( f ] ) 
     \bar ":|][|:"
     fs8^"+" [ ( f ] )  fs^"+" [ ( f ] ) fs^"+" [ ( f ] ) fs^"+" [ ( f ] ) 
-    \bar ":|][|:"
+    \bar ":|][|:" \break
     g8 [ ( fs ] )  g [ ( f ] ) g8 [ ( fs ] )  g [ ( f ] ) 
     \bar ":|][|:"
     fs [ ( e ] ) f [ ( e ] ) fs [ ( e ] ) f [ ( e ] ) 
-    \bar ":|][|:"
+    \bar ":|][|:" \break
     fs [ ( d ] ) f [ ( d ] ) fs [ ( d ] ) f [ ( d ] ) 
     \bar ":|][|:"
     fs [ ( c ] ) f [ ( c ] ) fs [ ( c ] ) f [ ( c ] ) 
@@ -76,13 +76,15 @@ exerciseTwo = \relative c' {
     \bar "[|:"
     b8 [ ( bf ] )  b [ ( bf ] ) b [ ( bf ] ) b [ ( bf ] ) 
     \bar ":|][|:"
-    b8 [ ( bf^"+" ] )  b [ ( bf^"+" ] ) b [ ( bf^"+" ] ) b [ ( bf^"+" ] ) 
-    \bar ":|][|:"
+    b8^"+" [ ( bf ] )  b^"+" [ ( bf ] ) b^"+" [ ( bf ] ) b^"+" [ ( bf ] ) 
+    \bar ":|][|:" \break
     c8 [ ( b ] )  c [ ( bf ] ) c [ ( b ] ) c [ ( bf ] ) 
     \bar ":|][|:"
     d8 [ ( b ] )  d [ ( bf ] ) d [ ( b ] ) d [ ( bf ] ) 
-    \bar ":|][|:"
+    \bar ":|][|:" \break
     e8 [ ( b ] )  e [ ( bf ] ) e [ ( b ] ) e [ ( bf ] ) 
+    \bar ":|][|:" 
+    a8 [ ( b ] )  a [ ( bf ] ) a [ ( b ] ) a [ ( bf ] ) 
     \bar ":|]"
 }
 

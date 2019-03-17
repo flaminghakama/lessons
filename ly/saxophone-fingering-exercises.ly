@@ -47,7 +47,7 @@ composerName = "D. Elaine Alt"
 %BodoniClassicChancery" 
 \include "../scores/flaming-libs/flaming-fonts.ily"
 
-\include "ly/ily/saxophone-fingerings.ily"    
+%\include "ly/ily/saxophone-fingerings.ily"    
 \include "ly/ily/layout.ily"
 
 
@@ -102,9 +102,6 @@ rh
       (ees eesT)
    possibilities for low-c:
       (low-c low-cT)
-
-
-
 %}
 
 lowBb = \markup \center-align \pad-markup #2 {
@@ -465,8 +462,34 @@ blueTraneFingeringsAlto = \relative c' {
     s1 | \break s1 | 
     s1 | s1 |
     s1 | s1
-
 }
+
+
+mrPcStructure = \relative c'' { 
+    \key c \minor
+    \partial 8*5 s8*5 
+    \bar "[|:" 
+    \repeat volta 2 { 
+        s1*12
+    }
+    \bar ":|]"
+}
+mrPcBreaks = \relative c'' { 
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+}
+mrPcNotes = \relative c'' {
+    c8 c d d ef ef f f | g4. f8 ef c r bf | c2 bf4. c8 ~ | 4 r r2 | 
+    f8 f g g af af bf bf | c4. bf8 af f r ef | c4 bf4. c8 ~ | 4 r ef8 c ef gf | 
+    r8 f4. ~ 4. gf8 | r8 f4 ef8 c4 bf | c2 bf4. c8 ~ | 4 r r2 |
+}
+mrPcFingeringsAlto = \relative c' { 
+    s4^\lowA s^\midB s^\midC s^\midD | s4.^\midE s8 s2 | s^\lowA s^\lowG | s1 |
+    s4^\midD s^\midE s^\midF s^\midG | s4.^\midA  s8 s2 | s1 | s2 s8^\midC s^\lowA s s^\midEb |
+    s8 s2..^\midD | s1 | s1 | s1
+}
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -596,6 +619,33 @@ blueTraneFingeringsAlto = \relative c' {
                         \blueTraneStructure 
                         \blueTraneNotes
                         \blueTraneFingeringsAlto
+                    >>
+                }
+            >>
+            \layout { 
+                indent = 6\cm
+            }
+        }
+    }
+
+    \bookpart {
+        \header {
+            title = ""
+            subtitle = "Mr. P.C."
+            composer = \markup { \italic "composed by" "John Coltrane" }
+            poet = "Eb Alto Saxophone"
+        }
+        \score {
+            << 
+                \include "ly/ily/score-properties.ily"
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose ef c {
+                    \include "ly/ily/staff-properties.ily"
+                    <<
+                        \mrPcStructure 
+                        \mrPcNotes
+                        \mrPcFingeringsAlto
                     >>
                 }
             >>

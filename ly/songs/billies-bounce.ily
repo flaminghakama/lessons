@@ -23,7 +23,7 @@ jordu-simplifieds-for-Eb.pdf pdf/songs/printable
 
 \paper {
 
-  top-margin = #2
+  top-margin = #10
   right-margin = #14
 
   % First page spacing after header
