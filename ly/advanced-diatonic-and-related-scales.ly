@@ -1,9 +1,9 @@
 \version "2.19.15"
 \include "english.ly"
 
-titleLeft = "Basic Relative and Parallel"
+titleLeft = "Advanced Relative and Parallel"
 titleRight = "Scales for Saxophone"
-title = "Basic Relative and Parallel Scales for Saxophone"
+title = "Advanced Relative and Parallel Scales for Saxophone"
 composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-paper.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
@@ -15,7 +15,7 @@ composerName = "D. Elaine Alt"
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2018 D. Elaine Alt" } 
+    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -136,16 +136,16 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
- % No Accidentals
+ % 4 Accidentals
 \bookpart {
     \header {
-        subtitle = "Diatonc Scales of C Major and A Minor"
+        subtitle = "Diatonc Scales of E Major and C# Minor"
     }
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c { 
+            \new ChordNames \transpose c e { 
                 \scaleMajorChords 
                 \scaleMyxolydianChords
                 \scaleBluesChords
@@ -154,28 +154,28 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleHarmonicMinorChords
                 \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
+            \new Staff \transpose c e { 
                 \include "ly/ily/staff-properties.ily"
                 \key c \major
-                \mark "C Major, Scale degree I"
+                \mark "E Major, Scale degree I"
                 \scaleMajorNotes
                 \break
-                \mark "G Dominant Myxolydian, Scale degree V"
+                \mark "B Dominant Myxolydian, Scale degree V"
                 \scaleMyxolydianNotes
                 \break
-                \mark "G Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
+                \mark "B Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
                 \scaleBluesNotes
                 \break
-                \mark "D Dorian Minor, Scale degree ii"
+                \mark "F# Dorian Minor, Scale degree ii"
                 \scaleDorianNotes
                 \break
-                \mark "A Natural Minor, Scale degree vi"
+                \mark "C# Natural Minor, Scale degree vi"
                 \scaleNaturalMinorNotes
                 \break
-                \mark "A Harmonic Minor, Scale degree vi"
+                \mark "C# Harmonic Minor, Scale degree vi"
                 \scaleHarmonicMinorNotes
                 \break
-                \mark "A Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
+                \mark "C# Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
                 \scaleMelodicMinorNotes
                 \bar "|."
             }
@@ -186,14 +186,14 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
 \bookpart {
     \header {
         title = ""
-        subtitle = "Parallel Scales of C"
+        subtitle = "Parallel Scales of E"
         composer = ""
     }
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c {
+            \new ChordNames \transpose c e {
                 \scaleMajorChords 
                 \transpose g c \scaleMyxolydianChords
                 \transpose g c \scaleBluesChords
@@ -202,28 +202,28 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \transpose a c \scaleHarmonicMinorChords
                 \transpose a c \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
+            \new Staff \transpose c e { 
                 \include "ly/ily/staff-properties.ily"
                 \key c \major
-                \mark "C Major"
+                \mark "E Major"
                 \scaleMajorNotes
                 \break
-                \mark "C Dominant, the V of F Major, b7"
+                \mark "E Dominant, the V of A Major, b7"
                 \transpose g c { \key c \major \scaleMyxolydianNotes }
                 \break
-                \mark "C Blues, elaboration of the V of F Major, b7, b3, b5"
+                \mark "E Blues, elaboration of the V of A Major, b7, b3, b5"
                 \transpose g c { \key c \major \scaleBluesNotes }
                 \break
-                \mark "C Dorian Minor, the ii of Bb Major, b7 b3"
+                \mark "E Dorian Minor, the ii of D Major, b7 b3"
                 \transpose d c { \key c \major \scaleDorianNotes }
                 \break
-                \mark "C Nautral (Parallel) Minor, the vi of Eb Major, b7 b3 b6"
+                \mark "E Nautral (Parallel) Minor, the vi of G Major, b7 b3 b6"
                 \transpose a c { \key a \minor \scaleNaturalMinorNotes }
                 \break
-                \mark "C Harmonic Minor, for the the V7 of C Minor, Dominant G7b9"
+                \mark "E Harmonic Minor, for the the V7 of E Minor, Dominant B7b9"
                 \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
                 \break
-                \mark "C Melodic Minor, combination of Major and Natural minor"
+                \mark "E Melodic Minor, combination of Major and Natural minor"
                 \transpose a c { \key a \minor \scaleMelodicMinorNotes }
                 \bar "|."
             }
@@ -231,18 +231,17 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
     }
 }
 
-% 1 Accidentals
 \bookpart {
     \header {
         title = ""
-        subtitle = "Diatonc Scales of G Major and E Minor"
+        subtitle = "Diatonc Scales of Ab Major and F Minor"
         composer = ""
     }
     \score {
-        \transpose c g <<
+        << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c { 
+            \new ChordNames \transpose c af { 
                 \scaleMajorChords 
                 \scaleMyxolydianChords
                 \scaleBluesChords
@@ -251,28 +250,125 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
                 \scaleHarmonicMinorChords
                 \scaleMelodicMinorChords
             }
-            \new Staff \transpose c c { 
+            \new Staff \transpose c af { 
                 \include "ly/ily/staff-properties.ily"
                 \key c \major
-                \mark "G Major, Scale degree I"
+                \mark "Ab Major, Scale degree I"
                 \scaleMajorNotes
                 \break
-                \mark "D Dominant Myxolydian, Scale degree V"
+                \mark "Eb Dominant Myxolydian, Scale degree V"
                 \scaleMyxolydianNotesLow
                 \break
-                \mark "D Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
+                \mark "Eb Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
                 \scaleBluesNotesLow
                 \break
-                \mark "A Dorian Minor, Scale degree ii"
+                \mark "Bb Dorian Minor, Scale degree ii"
                 \scaleDorianNotes
                 \break
-                \mark "E Natural Minor, Scale degree vi"
+                \mark "F Natural Minor, Scale degree vi"
                 \scaleNaturalMinorNotesLow
                 \break
-                \mark "E Harmonic Minor, Scale degree vi"
+                \mark "F Harmonic Minor, Scale degree vi"
                 \scaleHarmonicMinorNotesLow
                 \break
-                \mark "E Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
+                \mark "F Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
+                \scaleMelodicMinorNotesLow
+                \bar "|."
+            }
+        >>
+    }
+}
+
+\bookpart {
+    \header {
+        title = ""
+        subtitle = "Parallel Scales of Ab"
+        composer = ""
+    }
+    \score {
+        << 
+            \override Score.RehearsalMark.self-alignment-X = #LEFT
+            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \new ChordNames \transpose c af {
+                \scaleMajorChords 
+                \transpose g c \scaleMyxolydianChords
+                \transpose g c \scaleBluesChords
+                \transpose d c \scaleDorianChords
+                \transpose a c \scaleNaturalMinorChords
+                \transpose a c \scaleHarmonicMinorChords
+                \transpose a c \scaleMelodicMinorChords
+            }
+            \new Staff \transpose c af { 
+                \include "ly/ily/staff-properties.ily"
+                \key c \major
+                \mark "Ab Major"
+                \scaleMajorNotes
+                \break
+                \mark "Ab Dominant, the V of Db Major, b7"
+                \transpose g c { \key c \major \scaleMyxolydianNotes }
+                \break
+                \mark "Ab Blues, elaboration of the V of Db Major, b7, b3, b5"
+                \transpose g c { \key c \major \scaleBluesNotes }
+                \break
+                \mark "Ab Dorian Minor, the ii of Gb Major, b7 b3"
+                \transpose d c { \key c \major \scaleDorianNotes }
+                \break
+                \mark "Ab Nautral (Parallel) Minor, the vi of Cb Major, b7 b3 b6"
+                \transpose a c { \key a \minor \scaleNaturalMinorNotes }
+                \break
+                \mark "Ab Harmonic Minor, for the the V7 of Ab Minor, Dominant Eb7b9"
+                \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
+                \break
+                \mark "Ab Melodic Minor, combination of Major and Natural minor"
+                \transpose a c { \key a \minor \scaleMelodicMinorNotes }
+                \bar "|."
+            }
+        >>
+    }
+}
+
+% 5 Accidentals
+\bookpart {
+    \header {
+        title = ""
+        subtitle = "Diatonc Scales of B Major and G# Minor"
+        composer = ""
+    }
+    \score {
+        \transpose c c <<
+            \override Score.RehearsalMark.self-alignment-X = #LEFT
+            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \new ChordNames \transpose c b { 
+                \scaleMajorChords 
+                \scaleMyxolydianChords
+                \scaleBluesChords
+                \scaleDorianChords
+                \scaleNaturalMinorChords
+                \scaleHarmonicMinorChords
+                \scaleMelodicMinorChords
+            }
+            \new Staff \transpose c b { 
+                \include "ly/ily/staff-properties.ily"
+                \key c \major
+                \mark "B Major, Scale degree I"
+                \scaleMajorNotes
+                \break
+                \mark "F# Dominant Myxolydian, Scale degree V"
+                \scaleMyxolydianNotesLow
+                \break
+                \mark "F# Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
+                \scaleBluesNotesLow
+                \break
+                \mark "C# Dorian Minor, Scale degree ii"
+                \scaleDorianNotes
+                \break
+                \mark "G# Natural Minor, Scale degree vi"
+                \scaleNaturalMinorNotesLow
+                \break
+                \mark "G# Harmonic Minor, Scale degree vi"
+                \scaleHarmonicMinorNotesLow
+                \break
+                \mark "G# Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
                 \scaleMelodicMinorNotesLow
                 \bar "|."
             }
@@ -284,10 +380,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
     \header {
         title = ""
         composer = ""
-        subtitle = "Parallel Scales of G"
+        subtitle = "Parallel Scales of B"
     }
     \score {
-        \transpose c g <<
+        \transpose c b <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
             \new ChordNames \transpose c c {
@@ -302,25 +398,25 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \key c \major
-                \mark "G Major"
+                \mark "B Major"
                 \scaleMajorNotes
                 \break
-                \mark "G Dominant, the V of C Major, b7"
+                \mark "B Dominant, the V of E Major, b7"
                 \transpose g c { \key c \major \scaleMyxolydianNotes }
                 \break
-                \mark "G Blues, elaboration of the V of C Major, b7, b3, b5"
+                \mark "B Blues, elaboration of the V of E Major, b7, b3, b5"
                 \transpose g c { \key c \major \scaleBluesNotes }
                 \break
-                \mark "G Dorian Minor, the ii of F Major, b7 b3"
+                \mark "B Dorian Minor, the ii of A Major, b7 b3"
                 \transpose d c { \key c \major \scaleDorianNotes }
                 \break
-                \mark "G Nautral (Parallel) Minor, the vi of Bb Major, b7 b3 b6"
+                \mark "B Nautral (Parallel) Minor, the vi of D Major, b7 b3 b6"
                 \transpose a c { \key a \minor \scaleNaturalMinorNotes }
                 \break
-                \mark "G Harmonic Minor, for the the V7 of G Minor, Dominant D7b9"
+                \mark "B Harmonic Minor, for the the V7 of D Minor, Dominant F#7b9"
                 \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
                 \break
-                \mark "G Melodic Minor, combination of Major and Natural minor"
+                \mark "B Melodic Minor, combination of Major and Natural minor"
                 \transpose a c { \key a \minor \scaleMelodicMinorNotes }
                 \bar "|."
             }
@@ -332,11 +428,11 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
     \header {
         title = ""
         composer = ""
-        subtitle = "Diatonc Scales of F Major and D Minor"
+        subtitle = "Diatonc Scales of Db Major and Bb Minor"
     }
 
     \score {
-        \transpose c f <<
+        \transpose c df <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
             \new ChordNames \transpose c c { 
@@ -351,123 +447,25 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
             \new Staff \transpose c c {
                 \include "ly/ily/staff-properties.ily"
                 \key c \major
-                \mark "F Major, Scale degree I"
+                \mark "Db Major, Scale degree I"
                 \scaleMajorNotes
                 \break
-                \mark "C Dominant Myxolydian, Scale degree V"
-                \scaleMyxolydianNotesLow
-                \break
-                \mark "C Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
-                \scaleBluesNotesLow
-                \break
-                \mark "G Dorian Minor, Scale degree ii"
-                \scaleDorianNotes
-                \break
-                \mark "D Natural Minor, Scale degree vi"
-                \scaleNaturalMinorNotesLow
-                \break
-                \mark "D Harmonic Minor, Scale degree vi"
-                \scaleHarmonicMinorNotesLow
-                \break
-                \mark "D Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
-                \scaleMelodicMinorNotesLow
-                \bar "|."
-            }
-        >>
-    }
-}
-
-\bookpart {
-    \header {
-        title = ""
-        composer = ""
-        subtitle = "Parallel Scales of F"
-    }
-    \score {
-        \transpose c f <<
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c {
-                \scaleMajorChords 
-                \transpose g c \scaleMyxolydianChords
-                \transpose g c \scaleBluesChords
-                \transpose d c \scaleDorianChords
-                \transpose a c \scaleNaturalMinorChords
-                \transpose a c \scaleHarmonicMinorChords
-                \transpose a c \scaleMelodicMinorChords
-            }
-            \new Staff \transpose c c {
-                \include "ly/ily/staff-properties.ily"
-                \key c \major
-                \mark "F Major"
-                \scaleMajorNotes
-                \break
-                \mark "F Dominant, the V of Bb Major, b7"
-                \transpose g c { \key c \major \scaleMyxolydianNotes }
-                \break
-                \mark "F Blues, elaboration of the V of Bb Major, b7, b3, b5"
-                \transpose g c { \key c \major \scaleBluesNotes }
-                \break
-                \mark "F Dorian Minor, the ii of Eb Major, b7 b3"
-                \transpose d c { \key c \major \scaleDorianNotes }
-                \break
-                \mark "F Nautral (Parallel) Minor, the vi of Ab Major, b7 b3 b6"
-                \transpose a c { \key a \minor \scaleNaturalMinorNotes }
-                \break
-                \mark "F Harmonic Minor, for the the V7 of F Minor, Dominant C7b9"
-                \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
-                \break
-                \mark "F Melodic Minor, combination of Major and Natural minor"
-                \transpose a c { \key a \minor \scaleMelodicMinorNotes }
-                \bar "|."
-            }
-        >>
-    }
-}
-
-% 2 Accidentals
-\bookpart {
-    \header {
-        title = ""
-        composer = ""
-        subtitle = "Diatonc Scales of D Major and B Minor"
-    }
-
-    \score {
-        \transpose c d <<
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c { 
-                \scaleMajorChords 
-                \scaleMyxolydianChords
-                \scaleBluesChords
-                \scaleDorianChords
-                \scaleNaturalMinorChords
-                \scaleHarmonicMinorChords
-                \scaleMelodicMinorChords
-            }
-            \new Staff \transpose c c {
-                \include "ly/ily/staff-properties.ily"
-                \key c \major
-                \mark "D Major, Scale degree I"
-                \scaleMajorNotes
-                \break
-                \mark "A Dominant Myxolydian, Scale degree V"
+                \mark "Ab Dominant Myxolydian, Scale degree V"
                 \scaleMyxolydianNotes
                 \break
-                \mark "A Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
+                \mark "Ab Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
                 \scaleBluesNotes
                 \break
-                \mark "E Dorian Minor, Scale degree ii"
+                \mark "Eb Dorian Minor, Scale degree ii"
                 \scaleDorianNotes
                 \break
-                \mark "B Natural Minor, Scale degree vi"
+                \mark "Bb Natural Minor, Scale degree vi"
                 \scaleNaturalMinorNotes
                 \break
-                \mark "B Harmonic Minor, Scale degree vi"
+                \mark "Bb Harmonic Minor, Scale degree vi"
                 \scaleHarmonicMinorNotes
                 \break
-                \mark "B Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
+                \mark "Bb Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
                 \scaleMelodicMinorNotes
                 \bar "|."
             }
@@ -479,10 +477,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
     \header {
         title = ""
         composer = ""
-        subtitle = "Parallel Scales of D"
+        subtitle = "Parallel Scales of Db"
     }
     \score {
-        \transpose c d <<
+        \transpose c df <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
             \new ChordNames \transpose c c {
@@ -497,25 +495,25 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
             \new Staff \transpose c c {
                 \include "ly/ily/staff-properties.ily"
                 \key c \major
-                \mark "D Major"
+                \mark "Db Major"
                 \scaleMajorNotes
                 \break
-                \mark "D Dominant, the V of G Major, b7"
+                \mark "Db Dominant, the V of Ab Major, b7"
                 \transpose g c { \key c \major \scaleMyxolydianNotes }
                 \break
-                \mark "D Blues, elaboration of the V of G Major, b7, b3, b5"
+                \mark "Db Blues, elaboration of the V of Ab Major, b7, b3, b5"
                 \transpose g c { \key c \major \scaleBluesNotes }
                 \break
-                \mark "D Dorian Minor, the ii of C Major, b7 b3"
+                \mark "Db Dorian Minor, the ii of Cb Major, b7 b3"
                 \transpose d c { \key c \major \scaleDorianNotes }
                 \break
-                \mark "D Nautral (Parallel) Minor, the vi of F Major, b7 b3 b6"
+                \mark "Db Nautral (Parallel) Minor, the vi of Fb Major, b7 b3 b6"
                 \transpose a c { \key a \minor \scaleNaturalMinorNotes }
                 \break
-                \mark "D Harmonic Minor, for the the V7 of D Minor, Dominant A7b9"
+                \mark "Db Harmonic Minor, for the the V7 of Fb Minor, Dominant C7b9"
                 \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
                 \break
-                \mark "D Melodic Minor, combination of Major and Natural minor"
+                \mark "Db Melodic Minor, combination of Major and Natural minor"
                 \transpose a c { \key a \minor \scaleMelodicMinorNotes }
                 \bar "|."
             }
@@ -523,15 +521,16 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
     }
 }
 
+% 6 Accidentals
 \bookpart {
     \header {
         title = ""
         composer = ""
-        subtitle = "Diatonc Scales of Bb Major and G Minor"
+        subtitle = "Diatonc Scales of F# Major and D# Minor"
     }
 
     \score {
-        \transpose c bf <<
+        \transpose c fs <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
             \new ChordNames \transpose c c { 
@@ -546,220 +545,220 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
             \new Staff \transpose c c {
                 \include "ly/ily/staff-properties.ily"
                 \key c \major
-                \mark "Bb Major, Scale degree I"
+                \mark "F# Major, Scale degree I"
                 \scaleMajorNotes
                 \break
-                \mark "F Dominant Myxolydian, Scale degree V"
-                \scaleMyxolydianNotesLow
-                \break
-                \mark "F Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
-                \scaleBluesNotesLow
-                \break
-                \mark "C Dorian Minor, Scale degree ii"
-                \scaleDorianNotes
-                \break
-                \mark "G Natural Minor, Scale degree vi"
-                \scaleNaturalMinorNotesLow
-                \break
-                \mark "G Harmonic Minor, Scale degree vi"
-                \scaleHarmonicMinorNotesLow
-                \break
-                \mark "G Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
-                \scaleMelodicMinorNotesLow
-                \bar "|."
-            }
-        >>
-    }
-}
-
-\bookpart {
-    \header {
-        title = ""
-        composer = ""
-        subtitle = "Parallel Scales of Bb"
-    }
-    \score {
-        \transpose c bf <<
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c {
-                \scaleMajorChords 
-                \transpose g c \scaleMyxolydianChords
-                \transpose g c \scaleBluesChords
-                \transpose d c \scaleDorianChords
-                \transpose a c \scaleNaturalMinorChords
-                \transpose a c \scaleHarmonicMinorChords
-                \transpose a c \scaleMelodicMinorChords
-            }
-            \new Staff \transpose c c {
-                \include "ly/ily/staff-properties.ily"
-                \key c \major
-                \mark "Bb Major"
-                \scaleMajorNotes
-                \break
-                \mark "Bb Dominant, the V of Eb Major, b7"
-                \transpose g c { \key c \major \scaleMyxolydianNotes }
-                \break
-                \mark "Bb Blues, elaboration of the V of Eb Major, b7, b3, b5"
-                \transpose g c { \key c \major \scaleBluesNotes }
-                \break
-                \mark "Bb Dorian Minor, the ii of Ab Major, b7 b3"
-                \transpose d c { \key c \major \scaleDorianNotes }
-                \break
-                \mark "Bb Nautral (Parallel) Minor, the vi of Db Major, b7 b3 b6"
-                \transpose a c { \key a \minor \scaleNaturalMinorNotes }
-                \break
-                \mark "Bb Harmonic Minor, for the the V7 of Bb Minor, Dominant F7b9"
-                \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
-                \break
-                \mark "Bb Melodic Minor, combination of Major and Natural minor"
-                \transpose a c { \key a \minor \scaleMelodicMinorNotes }
-                \bar "|."
-            }
-        >>
-    }
-}
-
-% 3 Accidentals
-\bookpart {
-    \header {
-        title = ""
-        composer = ""
-        subtitle = "Diatonc Scales of A Major and F# Minor"
-    }
-
-    \score {
-        \transpose c a <<
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c { 
-                \scaleMajorChords 
-                \scaleMyxolydianChords
-                \scaleBluesChords
-                \scaleDorianChords
-                \scaleNaturalMinorChords
-                \scaleHarmonicMinorChords
-                \scaleMelodicMinorChords
-            }
-            \new Staff \transpose c c {
-                \include "ly/ily/staff-properties.ily"
-                \key c \major
-                \mark "A Major, Scale degree I"
-                \scaleMajorNotes
-                \break
-                \mark "E Dominant Myxolydian, Scale degree V"
-                \scaleMyxolydianNotesLow
-                \break
-                \mark "E Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
-                \scaleBluesNotesLow
-                \break
-                \mark "B Dorian Minor, Scale degree ii"
-                \scaleDorianNotes
-                \break
-                \mark "F# Natural Minor, Scale degree vi"
-                \scaleNaturalMinorNotesLow
-                \break
-                \mark "F# Harmonic Minor, Scale degree vi"
-                \scaleHarmonicMinorNotesLow
-                \break
-                \mark "F# Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
-                \scaleMelodicMinorNotesLow
-                \bar "|."
-            }
-        >>
-    }
-}
-
-\bookpart {
-    \header {
-        title = ""
-        composer = ""
-        subtitle = "Parallel Scales of A"
-    }
-    \score {
-        \transpose c a <<
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c {
-                \scaleMajorChords 
-                \transpose g c \scaleMyxolydianChords
-                \transpose g c \scaleBluesChords
-                \transpose d c \scaleDorianChords
-                \transpose a c \scaleNaturalMinorChords
-                \transpose a c \scaleHarmonicMinorChords
-                \transpose a c \scaleMelodicMinorChords
-            }
-            \new Staff \transpose c c {
-                \include "ly/ily/staff-properties.ily"
-                \key c \major
-                \mark "A Major"
-                \scaleMajorNotes
-                \break
-                \mark "A Dominant, the V of D Major, b7"
-                \transpose g c { \key c \major \scaleMyxolydianNotes }
-                \break
-                \mark "A Blues, elaboration of the V of D Major, b7, b3, b5"
-                \transpose g c { \key c \major \scaleBluesNotes }
-                \break
-                \mark "A Dorian Minor, the ii of G Major, b7 b3"
-                \transpose d c { \key c \major \scaleDorianNotes }
-                \break
-                \mark "A Nautral (Parallel) Minor, the vi of C Major, b7 b3 b6"
-                \transpose a c { \key a \minor \scaleNaturalMinorNotes }
-                \break
-                \mark "A Harmonic Minor, for the the V7 of A Minor, Dominant E7b9"
-                \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
-                \break
-                \mark "A Melodic Minor, combination of Major and Natural minor"
-                \transpose a c { \key a \minor \scaleMelodicMinorNotes }
-                \bar "|."
-            }
-        >>
-    }
-}
-
-\bookpart {
-    \header {
-        title = ""
-        composer = ""
-        subtitle = "Diatonc Scales of Eb Major and C Minor"
-    }
-
-    \score {
-        \transpose c ef <<
-            \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-            \new ChordNames \transpose c c { 
-                \scaleMajorChords 
-                \scaleMyxolydianChords
-                \scaleBluesChords
-                \scaleDorianChords
-                \scaleNaturalMinorChords
-                \scaleHarmonicMinorChords
-                \scaleMelodicMinorChords
-            }
-            \new Staff \transpose c c {
-                \include "ly/ily/staff-properties.ily"
-                \key c \major
-                \mark "Eb Major, Scale degree I"
-                \scaleMajorNotes
-                \break
-                \mark "Bb Dominant Myxolydian, Scale degree V"
+                \mark "C# Dominant Myxolydian, Scale degree V"
                 \scaleMyxolydianNotes
                 \break
-                \mark "Bb Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
+                \mark "C# Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
                 \scaleBluesNotes
                 \break
-                \mark "F Dorian Minor, Scale degree ii"
+                \mark "G# Dorian Minor, Scale degree ii"
                 \scaleDorianNotes
                 \break
-                \mark "C Natural Minor, Scale degree vi"
+                \mark "D# Natural Minor, Scale degree vi"
+                \scaleNaturalMinorNotesLow
+                \break
+                \mark "D# Harmonic Minor, Scale degree vi"
+                \scaleHarmonicMinorNotesLow
+                \break
+                \mark "D# Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
+                \scaleMelodicMinorNotesLow
+                \bar "|."
+            }
+        >>
+    }
+}
+
+\bookpart {
+    \header {
+        title = ""
+        composer = ""
+        subtitle = "Parallel Scales of F#"
+    }
+    \score {
+        \transpose c fs <<
+            \override Score.RehearsalMark.self-alignment-X = #LEFT
+            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \new ChordNames \transpose c c {
+                \scaleMajorChords 
+                \transpose g c \scaleMyxolydianChords
+                \transpose g c \scaleBluesChords
+                \transpose d c \scaleDorianChords
+                \transpose a c \scaleNaturalMinorChords
+                \transpose a c \scaleHarmonicMinorChords
+                \transpose a c \scaleMelodicMinorChords
+            }
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \key c \major
+                \mark "F# Major"
+                \scaleMajorNotes
+                \break
+                \mark "F# Dominant, the V of B Major, b7"
+                \transpose g c { \key c \major \scaleMyxolydianNotes }
+                \break
+                \mark "F# Blues, elaboration of the V of B Major, b7, b3, b5"
+                \transpose g c { \key c \major \scaleBluesNotes }
+                \break
+                \mark "F# Dorian Minor, the ii of E Major, b7 b3"
+                \transpose d c { \key c \major \scaleDorianNotes }
+                \break
+                \mark "F# Nautral (Parallel) Minor, the vi of A Major, b7 b3 b6"
+                \transpose a c { \key a \minor \scaleNaturalMinorNotes }
+                \break
+                \mark "F# Harmonic Minor, for the the V7 of B Minor, Dominant C#7b9"
+                \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
+                \break
+                \mark "F# Melodic Minor, combination of Major and Natural minor"
+                \transpose a c { \key a \minor \scaleMelodicMinorNotes }
+                \bar "|."
+            }
+        >>
+    }
+}
+
+\bookpart {
+    \header {
+        title = ""
+        composer = ""
+        subtitle = "Diatonc Scales of Gb Major and Eb Minor"
+    }
+
+    \score {
+        \transpose c gf <<
+            \override Score.RehearsalMark.self-alignment-X = #LEFT
+            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \new ChordNames \transpose c c { 
+                \scaleMajorChords 
+                \scaleMyxolydianChords
+                \scaleBluesChords
+                \scaleDorianChords
+                \scaleNaturalMinorChords
+                \scaleHarmonicMinorChords
+                \scaleMelodicMinorChords
+            }
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \key c \major
+                \mark "Gb Major, Scale degree I"
+                \scaleMajorNotes
+                \break
+                \mark "Db Dominant Myxolydian, Scale degree V"
+                \scaleMyxolydianNotesLow
+                \break
+                \mark "Db Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
+                \scaleBluesNotesLow
+                \break
+                \mark "Ab Dorian Minor, Scale degree ii"
+                \scaleDorianNotes
+                \break
+                \mark "Eb Natural Minor, Scale degree vi"
+                \scaleNaturalMinorNotesLow
+                \break
+                \mark "Eb Harmonic Minor, Scale degree vi"
+                \scaleHarmonicMinorNotesLow
+                \break
+                \mark "Eb Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
+                \scaleMelodicMinorNotesLow
+                \bar "|."
+            }
+        >>
+    }
+}
+
+\bookpart {
+    \header {
+        title = ""
+        composer = ""
+        subtitle = "Parallel Scales of Gb"
+    }
+    \score {
+        \transpose c gf <<
+            \override Score.RehearsalMark.self-alignment-X = #LEFT
+            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \new ChordNames \transpose c c {
+                \scaleMajorChords 
+                \transpose g c \scaleMyxolydianChords
+                \transpose g c \scaleBluesChords
+                \transpose d c \scaleDorianChords
+                \transpose a c \scaleNaturalMinorChords
+                \transpose a c \scaleHarmonicMinorChords
+                \transpose a c \scaleMelodicMinorChords
+            }
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \key c \major
+                \mark "Gb Major"
+                \scaleMajorNotes
+                \break
+                \mark "Gb Dominant, the V of Cb Major, b7"
+                \transpose g c { \key c \major \scaleMyxolydianNotes }
+                \break
+                \mark "Gb Blues, elaboration of the V of Cb Major, b7, b3, b5"
+                \transpose g c { \key c \major \scaleBluesNotes }
+                \break
+                \mark "Gb Dorian Minor, the ii of Fb Major, b7 b3"
+                \transpose d c { \key c \major \scaleDorianNotes }
+                \break
+                \mark "Gb Nautral (Parallel) Minor, the vi of Bbb Major, b7 b3 b6"
+                \transpose a c { \key a \minor \scaleNaturalMinorNotes }
+                \break
+                \mark "Gb Harmonic Minor, for the the V7 of Bbb Minor, Dominant Db7b9"
+                \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
+                \break
+                \mark "Gb Melodic Minor, combination of Major and Natural minor"
+                \transpose a c { \key a \minor \scaleMelodicMinorNotes }
+                \bar "|."
+            }
+        >>
+    }
+}
+
+% 7 Accidentals
+\bookpart {
+    \header {
+        title = ""
+        composer = ""
+        subtitle = "Diatonc Scales of C# Major and A# Minor"
+    }
+
+    \score {
+        \transpose c cs <<
+            \override Score.RehearsalMark.self-alignment-X = #LEFT
+            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \new ChordNames \transpose c c { 
+                \scaleMajorChords 
+                \scaleMyxolydianChords
+                \scaleBluesChords
+                \scaleDorianChords
+                \scaleNaturalMinorChords
+                \scaleHarmonicMinorChords
+                \scaleMelodicMinorChords
+            }
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \key c \major
+                \mark "C# Major, Scale degree I"
+                \scaleMajorNotes
+                \break
+                \mark "G# Dominant Myxolydian, Scale degree V"
+                \scaleMyxolydianNotes
+                \break
+                \mark "G# Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
+                \scaleBluesNotes
+                \break
+                \mark "D# Dorian Minor, Scale degree ii"
+                \scaleDorianNotes
+                \break
+                \mark "A# Natural Minor, Scale degree vi"
                 \scaleNaturalMinorNotes
                 \break
-                \mark "C Harmonic Minor, Scale degree vi"
+                \mark "A# Harmonic Minor, Scale degree vi"
                 \scaleHarmonicMinorNotes
                 \break
-                \mark "C Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
+                \mark "A# Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
                 \scaleMelodicMinorNotes
                 \bar "|."
             }
@@ -771,10 +770,10 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
     \header {
         title = ""
         composer = ""
-        subtitle = "Parallel Scales of Eb"
+        subtitle = "Parallel Scales of C#"
     }
     \score {
-        \transpose c ef <<
+        \transpose c cs <<
             \override Score.RehearsalMark.self-alignment-X = #LEFT
             \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
             \new ChordNames \transpose c c {
@@ -789,25 +788,122 @@ scaleBluesNotesLow = \transpose c c, \scaleBluesNotes
             \new Staff \transpose c c {
                 \include "ly/ily/staff-properties.ily"
                 \key c \major
-                \mark "Eb Major"
+                \mark "C# Major"
                 \scaleMajorNotes
                 \break
-                \mark "Eb Dominant, the V of Ab Major, b7"
+                \mark "C# Dominant, the V of F# Major, b7"
                 \transpose g c { \key c \major \scaleMyxolydianNotes }
                 \break
-                \mark "Eb Blues, elaboration of the V of Ab Major, b7, b3, b5"
+                \mark "C# Blues, elaboration of the V of F# Major, b7, b3, b5"
                 \transpose g c { \key c \major \scaleBluesNotes }
                 \break
-                \mark "Eb Dorian Minor, the ii of Db Major, b7 b3"
+                \mark "C# Dorian Minor, the ii of B Major, b7 b3"
                 \transpose d c { \key c \major \scaleDorianNotes }
                 \break
-                \mark "Eb Nautral (Parallel) Minor, the vi of Gb Major, b7 b3 b6"
+                \mark "C# Nautral (Parallel) Minor, the vi of E Major, b7 b3 b6"
                 \transpose a c { \key a \minor \scaleNaturalMinorNotes }
                 \break
-                \mark "Eb Harmonic Minor, for the the V7 of Eb Minor, Dominant Bb7b9"
+                \mark "C# Harmonic Minor, for the the V7 of C# Minor, Dominant G#7b9"
                 \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
                 \break
-                \mark "Eb Melodic Minor, combination of Major and Natural minor"
+                \mark "C# Melodic Minor, combination of Major and Natural minor"
+                \transpose a c { \key a \minor \scaleMelodicMinorNotes }
+                \bar "|."
+            }
+        >>
+    }
+}
+
+\bookpart {
+    \header {
+        title = ""
+        composer = ""
+        subtitle = "Diatonc Scales of Cb Major and Ab Minor"
+    }
+
+    \score {
+        \transpose c cf <<
+            \override Score.RehearsalMark.self-alignment-X = #LEFT
+            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \new ChordNames \transpose c c { 
+                \scaleMajorChords 
+                \scaleMyxolydianChords
+                \scaleBluesChords
+                \scaleDorianChords
+                \scaleNaturalMinorChords
+                \scaleHarmonicMinorChords
+                \scaleMelodicMinorChords
+            }
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \key c \major
+                \mark "Cb Major, Scale degree I"
+                \scaleMajorNotes
+                \break
+                \mark "Gb Dominant Myxolydian, Scale degree V"
+                \scaleMyxolydianNotes
+                \break
+                \mark "Gb Blues, elaboration of Myxoldian scale degree V with its Parallel Minor"
+                \scaleBluesNotes
+                \break
+                \mark "Db Dorian Minor, Scale degree ii"
+                \scaleDorianNotes
+                \break
+                \mark "Ab Natural Minor, Scale degree vi"
+                \scaleNaturalMinorNotes
+                \break
+                \mark "Ab Harmonic Minor, Scale degree vi"
+                \scaleHarmonicMinorNotes
+                \break
+                \mark "Ab Melodic Minor, Scale degree vi, ascending Major, descending Natural minor"
+                \scaleMelodicMinorNotes
+                \bar "|."
+            }
+        >>
+    }
+}
+
+\bookpart {
+    \header {
+        title = ""
+        composer = ""
+        subtitle = "Parallel Scales of Cb"
+    }
+    \score {
+        \transpose c cf <<
+            \override Score.RehearsalMark.self-alignment-X = #LEFT
+            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \new ChordNames \transpose c c {
+                \scaleMajorChords 
+                \transpose g c \scaleMyxolydianChords
+                \transpose g c \scaleBluesChords
+                \transpose d c \scaleDorianChords
+                \transpose a c \scaleNaturalMinorChords
+                \transpose a c \scaleHarmonicMinorChords
+                \transpose a c \scaleMelodicMinorChords
+            }
+            \new Staff \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \key c \major
+                \mark "Cb Major"
+                \scaleMajorNotes
+                \break
+                \mark "Cb Dominant, the V of Fb Major, b7"
+                \transpose g c { \key c \major \scaleMyxolydianNotes }
+                \break
+                \mark "Cb Blues, elaboration of the V of Fb Major, b7, b3, b5"
+                \transpose g c { \key c \major \scaleBluesNotes }
+                \break
+                \mark "Cb Dorian Minor, the ii of Bbb Major, b7 b3"
+                \transpose d c { \key c \major \scaleDorianNotes }
+                \break
+                \mark "Cb Nautral (Parallel) Minor, the vi of Ebb Major, b7 b3 b6"
+                \transpose a c { \key a \minor \scaleNaturalMinorNotes }
+                \break
+                \mark "Cb Harmonic Minor, for the the V7 of Cb Minor, Dominant Gb7b9"
+                \transpose a c { \key a \minor \scaleHarmonicMinorNotes }
+                \break
+                \mark "Cb Melodic Minor, combination of Major and Natural minor"
                 \transpose a c { \key a \minor \scaleMelodicMinorNotes }
                 \bar "|."
             }
