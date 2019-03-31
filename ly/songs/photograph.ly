@@ -61,7 +61,7 @@ structure = \relative c' {
 
     s1*8 \bar "||"
     s1*16 \bar "||"
-    s1*10 \bar "|."
+    s1*9 \bar "|."
 }
 
 chordsVerse = \chordmode { 
@@ -123,11 +123,22 @@ chordsHead = \chordmode {
     \chordsChorus
     \chordsChorus
 
-    s1 | e1 ||
+    e1 ||
 }
 
+melodyIntro = \relative c'' { 
+    r8 e ds [ e ~ ] 8 b a gs | 
+    r8 e' ds [ e ~ ] 8 b a gs | 
+    r8 e' ds [ e ~ ] 8 b a gs | 
+    r8 e' ds [ e ~ ] 8 b a gs | 
+    r8 e' ds [ e ~ ] 8 b a gs | 
+    r8 e' ds [ e ~ ] 8 b a gs | 
+    r8 e' ds [ e ~ ] 8 b a gs |
+    e2 
+} 
+
 melodyVerseOne = \relative c'' { 
-    r2 gs8 8 fs gs ||
+    gs8 8 fs gs ||
     R1 | r2 gs8 8 fs gs ( ~ | 16 fs e8 ) 8 8 ~ 4 r | r2 e8 8 fs ds ~ | 
     4 8 e ~ 4 a8 gs ~ | 8. e16 ~ 2. | R1 | r4 r8 e8 gs8 8 fs gs ~ ( | 
     4. fs8 ~ 4. e8 ) | r4 e8 8 gs8 8 fs gs ( | fs4 ) e8 8 ~ 4 r | r2 e8 8 fs ds ~ | 
@@ -174,16 +185,18 @@ melodyCodaCommon = \relative c'' {
     e8 4 ds8 8 e4 8 ||
     R1 | e8 4 ds8 8 e4 8 | R1 | fs8 gs4 fs8 ~ 16 16 gs8 ~ 8 8 ( ~ | 
     8. fs16 e4 ) r2 | e8 4 ds8 ~ 16 16 e8 ~ 8 b ~ | 4. e8 ~ ( 4. fs8 ~ | 2 ) r8 e8 8 [ fs ] | 
+
     gs2 b,8 8 8 8 | gs'8 8 8 a ~ 8 gs fs e | gs2 fs | gs8 8 8 a ~ 8 gs fs e | 
-    gs2 fs | gs8 4 a8 ~ 8 gs fs e | e2 ( ~ 8. fs16 gs4 ) | r2 r8 e8 8 [ fs ] | 
-    gs2 b,4 r8. b16 | gs'8 8 8 a ~ 8 gs fs e | gs2 fs | gs8 8 8 a ~ 8 gs fs e | 
-    gs2 fs | gs8 4 a8 ~ 8 gs fs e | e2. ( fs4 ) | 
+    gs2 fs | gs8 4 a8 ~ 8 gs fs e | e2 ( ~ 8. fs16 gs4 ~ | 4 ) r4 r8 e8 8 [ fs ] | 
+
+    gs2 b,4 r8. b16 | gs'8 8 8 a ~ 8 gs fs e | gs2 fs4 r | gs8 8 8 a ~ 8 gs fs e | 
+    b'2 gs | gs8 4 a8 ~ 8 gs fs e | e2 ( ~ 16 fs gs8 ~ 4 ~ | 4 ) 
 }
 
 melodyCoda = \relative c' { 
-    r4 r8 e8 8 8 gs8 8 ~ | 
-    1 | R1 | gs8 8 8 a ~ 8 gs fs e | gs2 fs | gs8 8 8 a ~ 8 gs fs e | 
-    gs2 fs | gs8 8 8 a ~ 8 gs fs e | e1 | e8 4 ds8 e8 4 8 ~ | 1 | 
+        r8 e8 8 8 gs8 8 ~ | 
+    1 | gs8 8 8 a ~ 8 gs fs e | gs2 fs | gs8 8 8 a ~ 8 gs fs e | 
+    gs2 fs | gs8 8 8 a ~ 8 gs fs e | e1 | e8 4 ds8 e8 4 8 ~ | \fermata 1 | 
 }
 melodyCodaForC = \relative c'' { 
     \melodyCodaCommon
@@ -195,7 +208,7 @@ melodyCodaForEb = \transpose c c, {
 }
 
 melodyHead = \relative c' { 
-    R1*7
+    \melodyIntro
     \melodyVerseOne
     \melodyPreChorus
     \melodyChorusOne
@@ -207,7 +220,7 @@ melodyHead = \relative c' {
     \melodyCodaForC
 }
 melodyHeadForEb = \relative c' { 
-    R1*7
+    \melodyIntro
     \melodyVerseOne
     \melodyPreChorus
     \transpose c c, \melodyChorusOne
@@ -220,6 +233,9 @@ melodyHeadForEb = \relative c' {
 }
 
 lyricsHead = \lyricmode {
+
+    \repeat unfold 43 { \skip 1 }
+
     Lov -- ing can hurt
     Lov -- ing can hurt some -- times
     But it's the on -- ly thing that I know
@@ -305,6 +321,7 @@ lyricsHead = \lyricmode {
     }
 
 }
+
 \book {
     \bookOutputSuffix "for-Eb"
 
@@ -332,5 +349,5 @@ lyricsHead = \lyricmode {
             }
         >>
     }
-
 }
+
