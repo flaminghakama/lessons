@@ -104,6 +104,33 @@ exerciseSevenMajor = \relative c' {
     \bar "|." 
 }
 
+
+exerciseEightMajor = \relative c'' { 
+    \key c \major
+    \time 4/4
+
+    c4 c r c | c r r c | r c c c | r2 r4 c |
+
+    c8 8 r4 r c8 8 | r4 c r c8 8 | r4 c8 8 4 8 8 | r8 c8 8 [ 8 ] 4 4 |  
+    
+    c8 8 8 8 r2 | r4 c8 8 8 8 4 | r4 r8 c8 4 8 8 | c4 r r8 c8 4 |  
+    
+    r4 c8 8 r4 r8 c8 | c4 r4 r8 c8 8 [ 8 ] | 8 8 r4 r8 c8 8 [ 8 ] | 4 r8 c r c r c 
+    \bar "|." 
+}
+
+exerciseNineMajor = \relative c'' { 
+    \key c \major
+    \time 4/4
+    c8 4 8 4 r | r c8 8 8 4 8 | r2 c4 8 8 | r8 c8 8 [ 8 ] 4 r | 
+
+    r4 c8 8 ~ 8 8 4 | r4 c8 8 ~ 8 4 8 | r4 c8 8 16 16 8 r4 | c8 4 8 ~ 8 16 16 4 | 
+
+    c4 4 16 16 8 r4 | c8 4 8 16 16 8 r4 | c8 8 16 16 8 8 4 8 | 8 16 16  8 16 16  16 16 8  4 
+    \bar "|."
+}
+
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -219,12 +246,45 @@ exerciseSevenMajor = \relative c' {
                 \new Staff \transpose c, df { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseSevenMajor 
+                    \pageBreak
                 }
             >>
             \header {
                 title = ""
                 composer = ""
                 piece = "7."
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \exerciseEightMajor 
+                }
+            >>
+            \header {
+                title = ""
+                composer = ""
+                piece = "8."
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \exerciseNineMajor 
+                }
+            >>
+            \header {
+                title = ""
+                composer = ""
+                piece = "9."
             }
         }
     }

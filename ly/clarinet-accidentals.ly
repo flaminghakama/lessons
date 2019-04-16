@@ -6,7 +6,6 @@ titleRight = "Accidentals"
 title = "Clarinet Accidentals"
 composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
 \include "../scores/flaming-libs/flaming-markup.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
 
@@ -58,7 +57,7 @@ exerciseOne = \relative c' {
     \bar "[|:"
     fs8 [ ( f ] )  fs [ ( f ] ) fs [ ( f ] ) fs [ ( f ] ) 
     \bar ":|][|:"
-    fs8^"+" [ ( f ] )  fs^"+" [ ( f ] ) fs^"+" [ ( f ] ) fs^"+" [ ( f ] ) 
+    fs8^\midGbAlt [ ( f ] )  fs^"+" [ ( f ] ) fs^"+" [ ( f ] ) fs^"+" [ ( f ] ) 
     \bar ":|][|:" \break
     g8 [ ( fs ] )  g [ ( f ] ) g8 [ ( fs ] )  g [ ( f ] ) 
     \bar ":|][|:"
@@ -76,15 +75,15 @@ exerciseTwo = \relative c' {
     \bar "[|:"
     b8 [ ( bf ] )  b [ ( bf ] ) b [ ( bf ] ) b [ ( bf ] ) 
     \bar ":|][|:"
-    b8^"+" [ ( bf ] )  b^"+" [ ( bf ] ) b^"+" [ ( bf ] ) b^"+" [ ( bf ] ) 
+    b?8^\lowBAlt [ ( bf ] )  b^"+" [ ( bf ] ) b^"+" [ ( bf ] ) b^"+" [ ( bf ] ) 
     \bar ":|][|:" \break
     c8 [ ( b ] )  c [ ( bf ] ) c [ ( b ] ) c [ ( bf ] ) 
     \bar ":|][|:"
-    d8 [ ( b ] )  d [ ( bf ] ) d [ ( b ] ) d [ ( bf ] ) 
+    d8 [ ( b? ] )  d [ ( bf ] ) d [ ( b ] ) d [ ( bf ] ) 
     \bar ":|][|:" \break
     e8 [ ( b ] )  e [ ( bf ] ) e [ ( b ] ) e [ ( bf ] ) 
     \bar ":|][|:" 
-    a8 [ ( b ] )  a [ ( bf ] ) a [ ( b ] ) a [ ( bf ] ) 
+    a8 [ ( b? ] )  a [ ( bf ] ) a [ ( b ] ) a [ ( bf ] ) 
     \bar ":|]"
 }
 

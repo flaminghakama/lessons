@@ -1,3 +1,5 @@
+% #(print-keys-verbose 'clarinet (current-error-port))
+
 %{
 
 Fingering options for clarinet
@@ -58,42 +60,42 @@ rh
 %}
 
 lowERight = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two three four five six))
         (rh . (e))
     )
 }
 lowELeft = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb e))
         (cc . (one two three four five six))
         (rh . ())
     )
 }
 lowFRight = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two three four five six))
         (rh . (f))
     )
 }
 lowFLeft = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb f))
         (cc . (one two three four five six))
         (rh . ())
     )
 }
 lowGbRight = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two three four five six))
         (rh . (fis))
     )
 }
 lowGbRight = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two three four five six))
         (rh . (fis))
@@ -101,64 +103,71 @@ lowGbRight = \markup \center-align \pad-markup #2 {
 }
 
 lowG = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
     	(cc . (one two three four five six))
     	(rh . ())
     )
 }
 lowAb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two three four five six))
         (rh . (gis))
     )
 }
 lowA = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
     	(cc . (one two three four five))
     	(rh . ())
     )
 }
 lowBb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two three four))
         (rh . ())
     )
 }
 lowB = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+    \override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two three five))
         (rh . ())
     )
 }
+lowBAlt = \markup \center-align \pad-markup #2 {
+    \override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
+        (lh . (thumb))
+        (cc . (one two three four))
+        (rh . (b))
+    )
+}
 
 lowC = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two three))
         (rh . ())
     )
 }
 lowDb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb cis))
         (cc . (one two three))
         (rh . ())
     )
 }
 lowD = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two))
         (rh . ())
     )
 }
 %{ lowEb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one two))
         (rh . ())
@@ -168,28 +177,36 @@ lowD = \markup \center-align \pad-markup #2 {
 %}
 
 midE = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . (one))
         (rh . ())
     )
 }
 midF = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . (thumb))
         (cc . ())
         (rh . ())
     )
 }
 midGb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+  \override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . ())
         (cc . (one))
         (rh . ())
     )
 }
+midGbAlt = \markup \center-align \pad-markup #2 {
+  \override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
+        (lh . (thumb))
+        (cc . ())
+        (rh . (three four))
+    )
+}
+
 midG = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'clarinet #'(
+	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
         (lh . ())
         (cc . ())
         (rh . ())

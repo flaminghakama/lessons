@@ -4,6 +4,7 @@ titleLeft = "Tokyo"
 titleRight = "Blue"
 title = "Tokyo Blue"
 composerName = "Charles McPherson"
+arrangerName = "D. Elaine Alt"
 
 %{
 
@@ -20,6 +21,11 @@ op pdf/songs/printable/tokyo-blue-Alto-Saxophone-in-Eb.printable.pdf
 \include "../../../scores/flaming-libs/flaming-markup.ily"
 \include "../../../scores/flaming-libs/flaming-chords.ily"
 \include "../../../scores/flaming-libs/flaming-dynamics.ily"
+
+\header {
+    arranger = \markup \italic { "Transcribed by " \arrangerName }
+}
+
 
 \paper {
 
@@ -138,6 +144,9 @@ introMelodyInEb = \relative c''' {
 
 melodySongInEb = \relative c' { 
 
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.25)
+
     << 
 
         \new CueVoice {
@@ -226,7 +235,7 @@ melodySongInEb = \relative c' {
     a8 fs  \tuplet 3/2 { e8 a, d }  cs16 e, b' a  cs,4 | 
     r4  \tuplet 3/2 { cs'8 e8 8 } \tuplet 3/2 { e8 8 a, }  e'16 ef d a | 
 
-    d16 cs e, fs  c'8 8 ~  8 [ \tuplet 3/2 { b16 a fs ] } cs16 e a b | 
+    d16 cs e, fs  cs'8 8 ~  8 [ \tuplet 3/2 { b16 a fs ] } cs16 e a b | 
     \tuplet 3/2 { d8 e8 8 }  d16 b r8  \tuplet 3/2 { cs8 a e }  d16 cs'8. |
     a16 e b' e,  a8 b16 e,  cs' a e' d ~  16 cs a e |
     \tuplet 3/2 { cs'8 e8 8 }  d16 e8.  r4  r8 e16 a | 
