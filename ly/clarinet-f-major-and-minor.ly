@@ -1,9 +1,9 @@
 \version "2.19.15"
 \include "english.ly"
 
-titleLeft = "Clarinet G Major"
-titleRight = "and G Minor"
-title = "Clarinet G Major and G Minor"
+titleLeft = "Clarinet F Major"
+titleRight = "and F Minor"
+title = "Clarinet F Major and F Minor"
 composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-paper.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
@@ -62,7 +62,7 @@ clarTabScale = #0.8
         print-all-headers = ##t
     }
     \header {
-        title = "G Major and G Minor"
+        title = "F Major and F Minor"
     }
     \bookpart {
 
@@ -70,7 +70,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseOneMajor
                 }
@@ -78,7 +78,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "1 - G Major"
+                piece = "1 - F Major"
             }
         }
 
@@ -86,7 +86,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseOneMinor
                 }
@@ -94,7 +94,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "1 - G Minor"
+                piece = "1 - F Minor"
             }
         }
 
@@ -102,7 +102,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseTwoMajor
                 }
@@ -110,7 +110,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "2 - G Major"
+                piece = "2 - F Major"
             }
         }
 
@@ -118,7 +118,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseTwoMinor 
                 }
@@ -126,7 +126,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "2 - G Minor"
+                piece = "2 - F Minor"
             }
         }
 
@@ -134,7 +134,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseThreeMajor 
                 }
@@ -142,7 +142,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "3 - G Major"
+                piece = "3 - F Major"
             }
         }
 
@@ -150,7 +150,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseThreeMinor 
                 }
@@ -158,7 +158,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "3 - G Minor"
+                piece = "3 - F Minor"
             }
         }
         \pageBreak
@@ -167,7 +167,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseFourMajor 
                 }
@@ -175,7 +175,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "4 - G Major"
+                piece = "4 - F Major"
             }
         }
 
@@ -183,7 +183,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseFourMinor 
                 }
@@ -191,7 +191,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "4 - G Minor"
+                piece = "4 - F Minor"
             }
         }
 
@@ -199,7 +199,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseFiveMajor 
                 }
@@ -207,7 +207,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "5 - G Major"
+                piece = "5 - F Major"
             }
         }
 
@@ -215,7 +215,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseFiveMinor 
                 }
@@ -223,7 +223,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "5 - G Minor"
+                piece = "5 - F Minor"
             }
         }
 
@@ -231,7 +231,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseSixMajor 
                 }
@@ -239,7 +239,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "6 - G Major"
+                piece = "6 - F Major"
             }
         }
 
@@ -247,7 +247,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseSevenMinor 
                 }
@@ -255,7 +255,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "7 - G Minor"
+                piece = "7 - F Minor"
             }
         }
 
@@ -263,7 +263,7 @@ clarTabScale = #0.8
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseEightMinor 
                 }
@@ -271,7 +271,7 @@ clarTabScale = #0.8
             \header {
                 title = ""
                 composer = ""
-                piece = "8 - G Minor"
+                piece = "8 - F Minor"
             }
         }
     }
