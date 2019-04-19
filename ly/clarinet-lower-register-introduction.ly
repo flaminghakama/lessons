@@ -130,24 +130,23 @@ songNotes = \relative c' {
                     \songNotes
                 }
             >>
+            \header {
+                piece = "G Major"
+            }
         }
-        \header {
-            %piece = "G Major"
-        }
-        %{
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g, c { 
+                \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \songNotes
                 }
             >>
+            \header {
+                piece = "F Major"
+            }
         }
-        \header {
-            piece = "C Major"
-        }
-        %}
     }
 }

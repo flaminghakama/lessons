@@ -87,6 +87,62 @@ exerciseTwo = \relative c' {
     \bar ":|]"
 }
 
+exerciseThree = \relative c' { 
+    \key c \major
+    \time 4/4
+    af1^\lowAb fs^\lowGbRight f?^\lowFRight  e^\lowERight \bar "|." \break 
+
+    \bar "[|:"
+    \mark "Close"
+    g8 [ ( af ] )  g [ ( fs ] )  g [ ( af ] )  g [ ( fs ] )  
+    \bar ":|][|:"
+    \mark "Far"
+    g8 [ ( f? ] ) g [ ( e ] )  g8 [ ( f ] ) g [ ( e ] ) 
+    \bar ":|][|:" \break
+    \mark "Top"
+    g8 [ ( af ] )  g [ ( f? ] ) g [ ( af ] ) g [ ( f ] ) 
+    \bar ":|][|:" 
+    f [ ( g ] )  af [ ( g ] ) f [ ( g ] ) af [ ( g ] ) 
+    \bar ":|][|:" \break
+    \mark "Bottom"
+    g8 [ ( fs ] )  g [ ( e ] ) g8 [ ( fs ] ) g [ ( e ] ) 
+    \bar ":|][|:" 
+    e8 [ ( g ] )  fs [ ( a ] ) g8 [ ( fs ] ) g [ ( e ] ) 
+    \bar ":|][|:" \break
+    \mark "F major"
+    f8 [ ( g ] )  f [ ( a ] ) f [ ( bf ] ) f [ ( c' ] ) | 
+    f,8 [ ( d' ] )  f, [ ( e' ] ) f, [ ( f' ] ) bf, [ ( g ] ) 
+    \bar ":|][|:" \break
+    \mark "E minor"
+    e8 [ ( g ] )  e [ ( a ] ) e [ ( b' ] ) e, [ ( c' ] ) | 
+    e,8 [ ( d' ] )  e, [ ( e' ] ) e, [ ( d' ] ) b [ ( g ] ) 
+    \bar ":|]"
+}
+
+exerciseFour = \relative c' { 
+    \key c \major
+    \time 4/4
+    \bar "[|:"
+    g8 [ ( af^\lowAb ] )  g [ ( fs^\lowGbRight ] )  g [ ( af ] )  g [ ( fs ] )  
+    \bar ":|][|:"
+    g8 [ ( f^\lowFRight ] ) g [ ( e^\lowERight ] )  g8 [ ( f ] ) g [ ( e ] ) 
+    \bar ":|][|:" \break
+    g8 [ ( af ] )  g [ ( fs ] ) g8 [ ( f ] ) g [ ( e ] ) 
+    \bar ":|][|:"
+    f [ ( g ] )  af [ ( g ] ) f [ ( g ] ) af [ ( g ] ) 
+    \bar ":|][|:" \break
+    e8 [ ( g ] )  af [ ( g ] ) e [ ( g ] ) af [ ( g ] ) 
+    \bar ":|][|:"
+    f8 [ ( g ] )  f [ ( a ] ) f [ ( bf ] ) f [ ( c' ] ) 
+    \bar ":|][|:" \break
+    f,8 [ ( d' ] )  f, [ ( e' ] ) f, [ ( f' ] ) c [ ( a ] ) 
+    \bar ":|][|:" \break
+    e8 [ ( g ] )  e [ ( a ] ) e [ ( b ] ) e [ ( c ] ) 
+    \bar ":|][|:" 
+    e8 [ ( g ] )  fs [ ( a ] ) e [ ( g ] ) fs [ ( a ] ) 
+    \bar ":|]"
+}
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -131,5 +187,45 @@ exerciseTwo = \relative c' {
                 piece = "2 - B & Bb"
             }
         }
+    }
+    \bookpart {
+
+        \header {
+            title = ""
+            subtitle = ""
+            composer = ""
+            arranger = ""
+        }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \exerciseThree
+                }
+            >>
+            \header {
+                piece = "3 - Right hand pinky keys"
+            }
+        }
+
+%{
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \exerciseTwo
+                }
+            >>
+            \header {
+                title = ""
+                composer = ""
+                piece = "2 - B & Bb"
+            }
+        }
+        %}
     }
 }
