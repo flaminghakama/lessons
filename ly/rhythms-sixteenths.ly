@@ -86,20 +86,20 @@ exerciseThree = \relative c'' {
 exerciseFour = \relative c'' { 
     \key g \major
     \time 4/4
-    g8 8  r4  a8 8  r4 | b16 16 8  c8 8  r4  d8 16 16 | 
-    e8 8  r4  fs8 8  r4 | g16 16 8  e16 16 8  r4  d8 c16 a16 | 
-    r4  b8 a16 g16  r4  e16 fs16 g8 | r4  g8 a16 b16  r4  c16 d16 e16 fs16 | 
-    g16 16 8  b,8 8  c8 8  d8 e16 fs16 | g8 g,8  r4  g'8 g,16 fs16  g16 fs16 g8 
+    d4  4  d8 b16 g  d'4 | r8 c8 8 [ 8 ] 8 b16 g f4  | 
+    g8 d16 e  g8 8  8 d16 e  g4 | r4 g8 d16 e g8 d' g4 | 
+    r4 g,8 16 16  r4  b8 16 16 | r4 d8 16 16 r4  f8 16 16 |
+    e8 d16 e  g8 g,  a8 b16 c  d8 g | r8 a8 g df16 c  bf8 f16 fs g4 
     \bar "|." 
 }
 
 exerciseFive = \relative c'' { 
     \key g \major
     \time 4/4
-    d16 df c bf  g8 8  r4  df'?8 c16 bf | g8 8  r4  r8 bf8  c8 [ df8 ] | 
-    d?16 f16 g8  r4  r8 g8  d,8 [ 8 ] | f'16 d16 df8  r4  r8 c8  bf16 g16 f8 | 
-    d8 g8  r8 f8  g8 bf16 c16  bf8 c16 df16 | c16 df16 d8  df16 d16 f8  g8 8  r8 bf8 | 
-    g8 d16 f16  g8 f16 d16  df16 c16 bf8  df?16 c16 bf8 | r8 d,8  g8 [ g'8 ]  f16 d16 df8  c8 bf16  g16
+    g8 8  r4  a8 8  r4 | b16 16 8  c8 8  r4  d8 16 16 | 
+    e8 8  r4  fs8 8  r4 | g16 16 8  e16 16 8  r4  d8 c16 a16 | 
+    r4  b8 a16 g16  r4  e16 fs16 g8 | r4  g8 a16 b16  r4  c16 d16 e16 fs16 | 
+    g16 16 8  b,8 8  c8 8  d8 e16 fs16 | g8 g,8  r4  g'8 g,16 fs16  g16 fs16 g8 
     \bar "|." 
 }
 
@@ -113,7 +113,17 @@ exerciseSix = \relative c'' {
     \bar "|." 
 }
 
-exerciseSeven = \relative c' { 
+exerciseSeven = \relative c'' { 
+    \key g \major
+    \time 4/4
+    d16 df c bf  g8 8  r4  df'?8 c16 bf | g8 8  r4  r8 bf8  c8 [ df8 ] | 
+    d?16 f16 g8  r4  r8 g8  d,8 [ 8 ] | f'16 d16 df8  r4  r8 c8  bf16 g16 f8 | 
+    d8 g8  r8 f8  g8 bf16 c16  bf8 c16 df16 | c16 df16 d8  df16 d16 f8  g8 8  r8 bf8 | 
+    g8 d16 f16  g8 f16 d16  df16 c16 bf8  df?16 c16 bf8 | r8 d,8  g8 [ g'8 ]  f16 d16 df8  c8 bf16  g16
+    \bar "|." 
+}
+
+exerciseEight = \relative c' { 
     \key g \major
     \time 4/4
     c4 r8 g c4 r8 g | c g c e g4 r | 
@@ -166,13 +176,13 @@ exerciseNine = \relative c'' {
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
-                    \transpose g g \exerciseOne
+                    \exerciseOne
                 }
             >>
             \header {
                 title = ""
                 composer = ""
-                piece = "1."
+                piece = \markup \center-column { "1. Preperatory"  " " }
             }
         }
 
@@ -182,13 +192,13 @@ exerciseNine = \relative c'' {
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
-                    \transpose g g \exerciseTwo
+                    \exerciseTwo
                 }
             >>
             \header {
                 title = ""
                 composer = ""
-                piece = "2."
+                piece = \markup \center-column { "2. Four Sixteenths"  " " }
             }
         }
 
@@ -198,13 +208,13 @@ exerciseNine = \relative c'' {
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \transpose g g \exerciseThree 
+                    \exerciseThree 
                 }
             >>
             \header {
                 title = ""
                 composer = ""
-                piece = "3."
+                piece = \markup \center-column { "3. Two Sixteenths + Eighth"  " " }
             }
         }
 
@@ -212,32 +222,15 @@ exerciseNine = \relative c'' {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g ef { 
+                \new Staff \transpose d g { 
                     \include "ly/ily/staff-properties.ily"
-                    \transpose g g \exerciseFour 
+                    \exerciseFour 
                 }
             >>
             \header {
                 title = ""
                 composer = ""
-                piece = "4."
-            }
-        }
-
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g a { 
-                    \include "ly/ily/staff-properties.ily"
-                    \transpose g g \exerciseFive 
-                    \pageBreak
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = "5."
+                piece = \markup \center-column { "4. Eighth + Two Sixteenths"  " " }
             }
         }
 
@@ -247,33 +240,48 @@ exerciseNine = \relative c'' {
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g bf { 
                     \include "ly/ily/staff-properties.ily"
-                    \transpose g g \exerciseSix 
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = "6."
-            }
-        }
-%{
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c, df { 
-                    \include "ly/ily/staff-properties.ily"
-                    \exerciseSeven 
+                    \exerciseFive 
                     \pageBreak
                 }
             >>
             \header {
                 title = ""
                 composer = ""
-                piece = "7."
+                piece = \markup \center-column { "5. Mixture"  " " }
             }
         }
 
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose g, d { 
+                    \include "ly/ily/staff-properties.ily"
+                    \exerciseSix 
+                }
+            >>
+            \header {
+                title = ""
+                composer = ""
+                piece = \markup \center-column { "6. Syncopation Mixture"  " " }
+            }
+        }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose g a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \exerciseSeven 
+                }
+            >>
+            \header {
+                title = ""
+                composer = ""
+                piece = \markup \center-column { "7. Blues Mixture"  " " }
+            }
+        }
+%{
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -286,7 +294,7 @@ exerciseNine = \relative c'' {
             \header {
                 title = ""
                 composer = ""
-                piece = "8."
+                piece = \markup \center-column { "8."  " " }
             }
         }
 
