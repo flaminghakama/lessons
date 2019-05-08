@@ -66,10 +66,10 @@ mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/ily/rhythms-eighths.ily"
-\include "ly/ily/rhythms-careless-whisper.ily"
-\include "ly/ily/rhythms-syncopation.ily"
-\include "ly/ily/rhythms-sixteenths.ily"
+\include "ly/notes/rhythms-eighths.ily"
+\include "ly/notes/rhythms-careless-whisper.ily"
+\include "ly/notes/rhythms-syncopation.ily"
+\include "ly/notes/rhythms-sixteenths.ily"
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
