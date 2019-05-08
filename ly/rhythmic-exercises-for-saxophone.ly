@@ -1,19 +1,30 @@
 \version "2.19.15"
 \include "english.ly"
 
-titleLeft = "Rhythmic"
-titleRight = "Exercises"
-title = "Rhythmic Exercises"
+titleLeft = "Rhythmic Exercises"
+titleRight = "for Saxophone"
+title = "Rhythmic Exercises for Saxophone"
 composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-paper.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
 \include "../scores/flaming-libs/flaming-markup.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
 
+%{
+
+rm rhythmic-exercises-for-saxophone.pdf
+lilypond ly/rhythmic-exercises-for-saxophone.ly 
+~/git/part-format/bookify-6page.sh rhythmic-exercises-for-saxophone.pdf rhythmic-exercises-for-saxophone-printable.pdf
+mv rhythmic-exercises-for-saxophone.pdf pdf
+mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
+
+%}
+
+
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2019 D. Elaine Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -24,8 +35,8 @@ composerName = "D. Elaine Alt"
 
 \paper {
 
-    top-margin = #14
-    right-margin = #17
+    top-margin = #2
+    right-margin = #14
 
     % First page spacing after header
     markup-system-spacing.padding = #0
@@ -55,10 +66,14 @@ composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
+\include "ly/ily/rhythms-eighths.ily"
+\include "ly/ily/rhythms-careless-whisper.ily"
+\include "ly/ily/rhythms-syncopation.ily"
 \include "ly/ily/rhythms-sixteenths.ily"
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \book { 
     \paper {
@@ -67,149 +82,11 @@ composerName = "D. Elaine Alt"
     \header {
         title = \title
     }
-    \bookpart {
 
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseOne
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "1. Preperatory"  " " }
-            }
-        }
+   \include "ly/bookparts/rhythms-eighths.ily"
+   \include "ly/bookparts/rhythms-careless-whisper.ily"
+   \include "ly/bookparts/rhythms-syncopation.ily"
+   \include "ly/bookparts/rhythms-sixteenths.ily"
+ 
 
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g f { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseTwo
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "2. Four Sixteenths"  " " }
-            }
-        }
-
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g a { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseThree 
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "3. Two Sixteenths + Eighth"  " " }
-            }
-        }
-
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose d g { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseFour 
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "4. Eighth + Two Sixteenths"  " " }
-            }
-        }
-
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g bf { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseFive 
-                    \pageBreak
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "5. Mixture"  " " }
-            }
-        }
-
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g, d { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseSix 
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "6. Syncopation Mixture"  " " }
-            }
-        }
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g a { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseSeven 
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "7. Blues Mixture"  " " }
-            }
-        }
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g e { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseEight 
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "8. Two Sixteenth Pickups"  " " }
-            }
-        }
-
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose ef ef { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsSixteenthsExerciseNine 
-                }
-            >>
-            \header {
-                title = ""
-                composer = ""
-                piece = \markup \center-column { "9. Two Sixteenth Downbeats"  " " }
-            }
-        }
-    }
 }
