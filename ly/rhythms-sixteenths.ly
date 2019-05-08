@@ -98,7 +98,7 @@ exerciseFive = \relative c'' {
     \time 4/4
     g8 8  r4  a8 8  r4 | b16 16 8  c8 8  r4  d8 16 16 | 
     e8 8  r4  fs8 8  r4 | g16 16 8  e16 16 8  r4  d8 c16 a16 | 
-    r4  b8 a16 g16  r4  e16 fs16 g8 | r4  g8 a16 b16  r4  c16 d16 e16 fs16 | 
+    r4  b8 a16 g16  r4  d16 g16 b8 | r4  a8 b16 c16  r4  c16 d16 e16 fs16 | 
     g16 16 8  b,8 8  c8 8  d8 e16 fs16 | g8 g,8  r4  g'8 g,16 fs16  g16 fs16 g8 
     \bar "|." 
 }
@@ -119,41 +119,26 @@ exerciseSeven = \relative c'' {
     d16 df c bf  g8 8  r4  df'?8 c16 bf | g8 8  r4  r8 bf8  c8 [ df8 ] | 
     d?16 f16 g8  r4  r8 g8  d,8 [ 8 ] | f'16 d16 df8  r4  r8 c8  bf16 g16 f8 | 
     d8 g8  r8 f8  g8 bf16 c16  bf8 c16 df16 | c16 df16 d8  df16 d16 f8  g8 8  r8 bf8 | 
-    g8 d16 f16  g8 f16 d16  df16 c16 bf8  df?16 c16 bf8 | r8 d,8  g8 [ g'8 ]  f16 d16 df8  c8 bf16  g16
+    g8 d16 f16  g8 f16 d16  df16 c16 bf8  df?16 c16 bf8 | r8 d,?8  g8 [ g'8 ]  f16 d16 df8  c8 bf16  g16
     \bar "|." 
 }
-
-exerciseEight = \relative c' { 
-    \key g \major
-    \time 4/4
-    c4 r8 g c4 r8 g | c g c e g4 r | 
-    f4 r8 d f4 r8 d | f d b d g,4 r 
-    \bar "|." 
-}
-
 
 exerciseEight = \relative c'' { 
     \key g \major
     \time 4/4
-
-    c4 c r c | c r r c | r c c c | r2 r4 c |
-
-    c8 8 r4 r c8 8 | r4 c r c8 8 | r4 c8 8 4 8 8 | r8 c8 8 [ 8 ] 4 4 |  
-    
-    c8 8 8 8 r2 | r4 c8 8 8 8 4 | r4 r8 c8 4 8 8 | c4 r r8 c8 4 |  
-    
-    r4 c8 8 r4 r8 c8 | c4 r4 r8 c8 8 [ 8 ] | 8 8 r4 r8 c8 8 [ 8 ] | 4 r8 c r c r c 
+    d4 r r r8 e16 fs | g4 r r r8 g16 d | a'4 r8 g16 e b'4 r8 c16 b | 
+    b8 a4. r2 | r4 r8 d16 c b4 r8 a16 b | c4 r8 d,16 a' r4 r8 cs,8 ~ | 4 d4 r r8 c16 b | 
+    a8 b16 c  b8 c16 d r4 r8 e16 ef | d4 r r8 g,16 16 4
     \bar "|." 
 }
 
-exerciseNine = \relative c'' { 
-    \key c \major
+exerciseNine = \relative c' { 
+    \key ef \major
     \time 4/4
-    c8 4 8 4 r | r c8 8 8 4 8 | r2 c4 8 8 | r8 c8 8 [ 8 ] 4 r | 
-
-    r4 c8 8 ~ 8 8 4 | r4 c8 8 ~ 8 4 8 | r4 c8 8 16 16 8 r4 | c8 4 8 ~ 8 16 16 4 | 
-
-    c4 4 16 16 8 r4 | c8 4 8 16 16 8 r4 | c8 8 16 16 8 8 4 8 | 8 16 16  8 16 16  16 16 8  4 
+    ef16 16 r8 r4 c16 16 r8 r4 | ef16 16 r8 f4  g16 16 r8 r4 | 
+    f16 af r8  r4  g16 bf r8  r4 | c16 bf c bf  c d r8  ef16 16 r8 r4 | 
+    r4 c16 16 r8 r4 bf16 16 r8 | r4  af16 f d f  g g r8 d'16 16 r8 | 
+    ef16 16 r8  d16 16 r8  c16 16 r8  bf16 gf r8 | r4 g?16 ef r8  df16 16 r8  ef''16 16 r8  
     \bar "|."
 }
 
@@ -281,12 +266,11 @@ exerciseNine = \relative c'' {
                 piece = \markup \center-column { "7. Blues Mixture"  " " }
             }
         }
-%{
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose g e { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseEight 
                 }
@@ -294,7 +278,7 @@ exerciseNine = \relative c'' {
             \header {
                 title = ""
                 composer = ""
-                piece = \markup \center-column { "8."  " " }
+                piece = \markup \center-column { "8. Two Sixteenth Pickups"  " " }
             }
         }
 
@@ -302,7 +286,7 @@ exerciseNine = \relative c'' {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose ef ef { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseNine 
                 }
@@ -310,9 +294,8 @@ exerciseNine = \relative c'' {
             \header {
                 title = ""
                 composer = ""
-                piece = "9."
+                piece = \markup \center-column { "9. Two Sixteenth Downbeats"  " " }
             }
         }
-        %}
     }
 }
