@@ -3,7 +3,7 @@
 titleLeft = "Jordu"
 titleRight = "Jordu"
 titleFull = "Jordu"
-composer = "Duke Jordan"
+composerName = "Duke Jordan"
 
 %{
 
@@ -52,7 +52,7 @@ jordu-simplifieds-for-Eb.pdf pdf/songs/printable
 
 \include "ly/ily/layout.ily"
 
-strcture = \relative c' { 
+structure = \relative c' { 
     \key c \minor
     s1
     \bar "||"
@@ -244,7 +244,7 @@ melody = \relative c' {
 
 \header {
     title = \titleFull
-    composer = \composer
+    composer = \composerName
     poet = "Eb Alto Saxophone"
     instrumentName = \poet
 }
@@ -261,7 +261,7 @@ melody = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \strcture
+                    \structure
                     \melodyVerySimplified
                 >>
             }
@@ -281,7 +281,7 @@ melody = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \strcture
+                    \structure
                     \melodySimplified
                 >>
             }
@@ -301,7 +301,7 @@ melody = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \strcture
+                    \structure
                     \melodySimplifiedLowBridge
                 >>
             }
@@ -321,14 +321,13 @@ melody = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \strcture
+                    \structure
                     \melodyLowBridge
                 >>
             }
         >>
     }
 }
-
 
 \book {
   \bookOutputSuffix "for-Eb"
@@ -342,7 +341,29 @@ melody = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \strcture
+                    \structure
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-C"
+    \header {
+        subtitle = ""
+        poet = "Concert Pitch"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose c c { \chordsHead }
+            \new Staff = "lead" \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
                     \melody
                 >>
             }
