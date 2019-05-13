@@ -24,8 +24,8 @@ composerName = "D. Elaine Alt"
 
 \paper {
 
-  top-margin = #14
-  right-margin = #17
+  top-margin = #2
+  right-margin = #14
 
   % First page spacing after header
   markup-system-spacing.padding = #0
@@ -34,8 +34,8 @@ composerName = "D. Elaine Alt"
   top-system-spacing.minimum-distance = #14
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
-  system-system-spacing.minimum-distance = #15
+  %system-system-spacing.basic-distance = #18
+  %system-system-spacing.minimum-distance = #15
 
   page-breaking = #ly:minimal-breaking
 
@@ -52,6 +52,158 @@ composerName = "D. Elaine Alt"
 \include "ly/ily/layout.ily"
 
 clarTabScale = #0.8
+
+lowDs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two))
+            (rh . ())
+        )
+        \huge "D#"
+    }
+}
+
+lowCs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb cis))
+            (cc . (one two three))
+            (rh . ())
+        )
+        \huge "C#"
+    }
+}
+
+lowG = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two three four five six))
+            (rh . ())
+        )
+        \huge "G"
+    }
+}
+
+lowA = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two three four five))
+            (rh . ())
+        )
+        \huge "A"
+    }
+}
+
+lowB = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two three five))
+            (rh . ())
+        )
+        \huge "B"
+    }
+}
+
+lowC = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two three))
+            (rh . ())
+        )
+        \huge "C"
+    }
+}
+
+lowGs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two three four five six))
+            (rh . (gis))
+        )
+        " "
+        \huge "G#"
+    }
+}
+
+lowFsLeft = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two three four five six))
+            (rh . (fis))
+        )
+        " "
+        \huge "F#"
+    }
+}
+
+lowFLeft= \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb f))
+            (cc . (one two three four five six))
+            (rh . ())
+        )
+        \huge "F"
+    }
+}
+
+lowFRight= \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two three four five six))
+            (rh . (f))
+        )
+        " "
+        \huge "F"
+    }
+}
+
+lowELeft = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb e))
+            (cc . (one two three four five six))
+            (rh . ())
+        )
+        \huge "E"
+    }
+}
+
+lowERight = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
+            (lh . (thumb))
+            (cc . (one two three four five six))
+            (rh . (e))
+        )
+        " "
+        \huge "E"
+    }
+}
+
+
+
+
 songNotesLong = \relative c' { 
     \key g \major
     \time 2/2
@@ -73,13 +225,23 @@ songNotesLong = \relative c' {
 songNotes = \relative c' { 
     \key g \major
     \time 4/4
-    g4. a8 b4. g8 | b4 g b2 | 
-    a4. b8 c c b a | c1 | \break
+    \tag #'ForG { <>^\lowG } 
+    \tag #'ForF { <>^\lowFRight } 
+    \tag #'ForE { <>^\lowERight } g4. 
+        \tag #'ForG { <>^\lowA }
+        \tag #'ForE { <>^\lowFsLeft } a8
+        \tag #'ForG { <>^\lowB } 
+        \tag #'ForA { <>^\lowCs } 
+        \tag #'ForE { <>^\lowGs } b4.  
+        \tag #'ForF { <>^\lowFLeft } 
+        \tag #'ForE { <>^\lowELeft } g8 | b4 g b2 | \tag #'(ForG ForE) { \break }
+    a4. b8 c c b a | b1 |  \tag #'(ForF ForA) { \break }  
     b4. c8 d4. b8 | d4 b d2 | 
-    c4. d8 e e d c | e1 | \break
+    c4. d8 e e d c | e1 | \tag #'(ForG ForF ForA) { \break }
 
     d4. g,8 a b c d | e1 |
-    e4. a,8 b c d e | fs1 | \break
+    e4. a,8 b c d e | 
+        \tag #'ForE { <>^\lowDs } fs1 | \tag #'(ForG ForF ForA ForE) { \break }
     fs4. b,8 c d e fs | g2. g8 fs |
     e4 c fs d | g4 fs8 e d c b a | 
     g1 \bar "|." 
@@ -96,6 +258,7 @@ songNotes = \relative c' {
         composer = \markup { \italic "composed by" "Richard Rodgers" }
         piece = " "
     }
+    %{
     \bookpart {
 
         \header {
@@ -105,7 +268,7 @@ songNotes = \relative c' {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \songNotesLong
                 }
@@ -115,18 +278,18 @@ songNotes = \relative c' {
             %piece = "G Major"
         }
     }
-
+    %}
     \bookpart {
         \header {
-            title = ""
-            subsubtitle = "Normal Durations and Tempo"
+            %subsubtitle = "Normal Durations and Tempo"
         }
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
                     \songNotes
                 }
             >>
@@ -139,13 +302,46 @@ songNotes = \relative c' {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g f { 
+                \new Staff  \keepWithTag #'(ForF) \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
                     \songNotes
+                    \pageBreak
                 }
             >>
             \header {
                 piece = "F Major"
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForA) { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \transpose g a \songNotes
+                    \noPageBreak
+                }
+            >>
+            \header {
+                piece = "A Major"
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForE) { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \transpose g e \songNotes
+                }
+            >>
+            \header {
+                piece = "E Major"
             }
         }
     }

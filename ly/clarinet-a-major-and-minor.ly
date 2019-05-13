@@ -13,7 +13,7 @@ composerName = "D. Elaine Alt"
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2019 D. Elaine Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -24,14 +24,14 @@ composerName = "D. Elaine Alt"
 
 \paper {
 
-  top-margin = #14
-  right-margin = #17
+  top-margin = #2
+  right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #0
+  markup-system-spacing.padding = #8
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #14
+  top-system-spacing.minimum-distance = #18
 
   % Spacing in between systems
   system-system-spacing.basic-distance = #18
@@ -52,8 +52,6 @@ composerName = "D. Elaine Alt"
 \include "ly/notes/clarinet-exercise-notes.ily"    
 \include "ly/ily/layout.ily"
 
-clarTabScale = #0.8
-
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -68,11 +66,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseOneMajor
+                    \autoPageBreaksOff
+                    \exerciseOneMajorForA
+                    \noPageBreak
                 }
             >>
             \header {
@@ -84,11 +82,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
                     \exerciseOneMinor
+                    \noPageBreak
                 }
             >>
             \header {
@@ -100,11 +98,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
                     \exerciseTwoMajor
+                    \noPageBreak
                 }
             >>
             \header {
@@ -116,11 +114,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
                     \exerciseTwoMinor 
+                    \noPageBreak
                 }
             >>
             \header {
@@ -132,11 +130,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseThreeMajor 
+                    \autoPageBreaksOff
+                    \exerciseThreeMajorForA
+                    \noPageBreak
                 }
             >>
             \header {
@@ -148,11 +146,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseThreeMinor 
+                    \autoPageBreaksOff
+                    \exerciseThreeMinorForA
+                    \noPageBreak
                 }
             >>
             \header {
@@ -165,11 +163,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseFourMajor 
+                    \autoPageBreaksOff
+                    \exerciseFourMajorForA
+                    \noPageBreak
                 }
             >>
             \header {
@@ -181,11 +179,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseFourMinor 
+                    \autoPageBreaksOff
+                    \exerciseFourMinorForA 
+                    \noPageBreak
                 }
             >>
             \header {
@@ -197,11 +195,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseFiveMajor 
+                    \autoPageBreaksOff
+                    \exerciseFiveMajorForA
+                    \noPageBreak
                 }
             >>
             \header {
@@ -213,11 +211,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseFiveMinor 
+                    \autoPageBreaksOff
+                    \exerciseFiveMinorForA
+                    \noPageBreak
                 }
             >>
             \header {
@@ -229,11 +227,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g a { 
+                \new Staff \transpose g a, { 
                     \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
                     \exerciseSixMajor 
+                    \noPageBreak
                 }
             >>
             \header {
@@ -245,11 +243,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseSevenMinor 
+                    \autoPageBreaksOff
+                    \exerciseSevenMinorForA
+                    \noPageBreak
                 }
             >>
             \header {
@@ -261,11 +259,11 @@ clarTabScale = #0.8
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseEightMinor 
+                    \autoPageBreaksOff
+                    \exerciseEightMinorForA
+                    \noPageBreak
                 }
             >>
             \header {

@@ -24,8 +24,8 @@ composerName = "D. Elaine Alt"
 
 \paper {
 
-  top-margin = #14
-  right-margin = #17
+  top-margin = #2
+  right-margin = #14
 
   % First page spacing after header
   markup-system-spacing.padding = #0

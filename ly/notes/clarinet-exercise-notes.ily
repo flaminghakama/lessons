@@ -5,6 +5,13 @@ exerciseOneMajor = \relative c'' {
     g'2. 4 | a2. 4 | fs?2 d | g1 
     \bar "|." 
 }
+exerciseOneMajorForA = \relative c'' { 
+    \key g \major
+    \time 4/4
+    g2. 4 | d2. 4 | b2 a | g1 | 
+    g'2. 4 | a,2. 4 | fs?2 d | g1 
+    \bar "|." 
+}
 exerciseOneMinor = \relative c'' { 
     \key g \minor
     \time 4/4
@@ -34,10 +41,22 @@ exerciseThreeMajor = \relative c'' {
     g4 g, g'2 | a4 a, a'2 | fs2. d4 | c2 fs | g4 b, a' d, | g2 g,4 r 
     \bar "|." 
 }
+exerciseThreeMajorForA = \relative c'' { 
+    \key g \major
+    \time 4/4
+    g4 g, g'2 | d4 d, d'2 | fs2. d4 | c2 fs, | g4 b d a | g'2 g,4 r 
+    \bar "|." 
+}
 exerciseThreeMinor = \relative c'' { 
     \key g \minor
     \time 4/4
     g4 g, g'2 | a4 a, a'2 | fs2. d4 | c2 fs | g4 bf,? a' d, | g2 g,4 r 
+    \bar "|." 
+}
+exerciseThreeMinorForA = \relative c'' { 
+    \key g \minor
+    \time 4/4
+    g4 g, g'2 | d4 d, d'2 | fs2. d4 | c2 fs, | g4 bf? d a | g'2 g,4 r 
     \bar "|." 
 }
 
@@ -53,6 +72,18 @@ exerciseFourMinor = \relative c'' {
     g4 d bf? d | g g g r | a fs d c | bf g' g, r | 
     \bar "|." 
 }
+exerciseFourMajorForA = \relative c'' { 
+    \key g \major
+    \time 4/4
+    g4 d b d | g g g r | fs? d c a | b g' g, r | 
+    \bar "|." 
+}
+exerciseFourMinorForA = \relative c'' { 
+    \key g \minor
+    \time 4/4
+    g4 d bf? d | g g g r | fs d c a | bf g' g, r | 
+    \bar "|." 
+}
 
 exerciseFiveMajor = \relative c'' { 
     \key g \major
@@ -64,6 +95,18 @@ exerciseFiveMinor = \relative c'' {
     \key g \minor
     \time 4/4
     g4 bf,? d bf | a' c, d c | g' bf, d fs | g2. r4
+    \bar "|." 
+}
+exerciseFiveMajorForA = \relative c'' { 
+    \key g \major
+    \time 4/4
+    g4 b, d b | d, c' d c | g' b, d fs | g2. r4
+    \bar "|." 
+}
+exerciseFiveMinorForA = \relative c'' { 
+    \key g \minor
+    \time 4/4
+    g4 bf,? d bf | d, c' d c | g' bf, d fs | g2. r4
     \bar "|." 
 }
 
@@ -83,6 +126,14 @@ exerciseSevenMinor = \relative c'' {
     bf2 a4 g | d2 r4 bf'8 a | g2 d4 bf | g2 r
     \bar "|." 
 }
+exerciseSevenMinorForA = \relative c' { 
+    \key g \minor
+    \time 4/4
+    \partial 4*1 
+    g8 a | 
+    bf2 a4 g | d2 r4 d'8 c | bf2 a4 fs | g2 r
+    \bar "|." 
+}
 
 exerciseEightMinor = \relative c'' { 
     \key g \minor
@@ -90,5 +141,13 @@ exerciseEightMinor = \relative c'' {
     \partial 4*1 
     g8 a | 
     bf8 a g a bf [ a ] g r | a g fs g a [ g ] fs r | g d bf a g2 
+    \bar "|." 
+}
+exerciseEightMinorForA = \relative c' { 
+    \key g \minor
+    \time 4/4
+    \partial 4*1 
+    g8 a | 
+    bf8 a g a bf [ a ] g r | a g fs g a [ g ] fs r | g' d bf a g2 
     \bar "|." 
 }

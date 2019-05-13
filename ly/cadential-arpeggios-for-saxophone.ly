@@ -18,9 +18,10 @@ composerName = "D. Elaine Alt"
 rm cadential-arpeggios-for-saxophone.pdf
 lilypond ly/cadential-arpeggios-for-saxophone.ly
 op cadential-arpeggios-for-saxophone.pdf 
-python ~/git/part-format/bookify-16page.py cadential-arpeggios-for-saxophone.pdf cadential-arpeggios-for-saxophone-printable.pdf manual
+python ~/git/part-format/bookify-16page.py cadential-arpeggios-for-saxophone.pdf cadential-arpeggios-for-saxophone-printable.pdf automatic
 mv cadential-arpeggios-for-saxophone.pdf pdf
 mv cadential-arpeggios-for-saxophone-printable.pdf pdf/printable
+op pdf/printable/cadential-arpeggios-for-saxophone-printable.pdf 
 
 %}
 
@@ -38,8 +39,8 @@ mv cadential-arpeggios-for-saxophone-printable.pdf pdf/printable
 
 \paper {
 
-  top-margin = #14
-  right-margin = #17
+  top-margin = #2
+  right-margin = #14
 
   % First page spacing after header
   markup-system-spacing.padding = #4
@@ -62,6 +63,14 @@ mv cadential-arpeggios-for-saxophone-printable.pdf pdf/printable
 %BodoniClassicChancery" 
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
+
+\layout {
+    \context { 
+        \ChordNames
+        \override ChordName.font-size = #2
+    } 
+}
+
 
 twoFiveOneMajorChords = \chordmode { 
     \set chordChanges = ##f
