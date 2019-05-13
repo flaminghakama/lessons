@@ -49,7 +49,7 @@ composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-fonts.ily"
 
 \include "ly/ily/clarinet-fingerings.ily"    
-\include "ly/ily/clarinet-exercise-notes.ily"    
+\include "ly/notes/clarinet-exercise-notes.ily"    
 \include "ly/ily/layout.ily"
 
 clarTabScale = #0.8
