@@ -10,6 +10,18 @@ composerName = "H. Hancock"
 \include "../../../scores/flaming-libs/flaming-chords.ily"
 \include "../../../scores/flaming-libs/flaming-dynamics.ily"
 
+%{
+
+rm chameleon-for*pdf
+lilypond ly/songs/chameleon.ly
+python ~/git/part-format/combine-1Page-1Page.py chameleon-for-C.pdf chameleon-for-Eb.pdf chameleon-for-C-and-Eb.pdf
+mv chameleon-for-C.pdf  pdf/songs
+mv chameleon-for-Eb.pdf pdf/songs
+mv chameleon-for-C-and-Eb.pdf pdf/songs/printable
+
+%}
+
+
 \paper {
 
   top-margin = #2
