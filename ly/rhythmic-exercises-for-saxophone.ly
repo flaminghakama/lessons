@@ -14,7 +14,7 @@ composerName = "D. Elaine Alt"
 
 rm rhythmic-exercises-for-saxophone.pdf
 lilypond ly/rhythmic-exercises-for-saxophone.ly 
-~/git/part-format/bookify-6page.sh rhythmic-exercises-for-saxophone.pdf rhythmic-exercises-for-saxophone-printable.pdf
+python ~/git/part-format/bookify-7page.py rhythmic-exercises-for-saxophone.pdf rhythmic-exercises-for-saxophone-printable.pdf manual
 mv rhythmic-exercises-for-saxophone.pdf pdf
 mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
 
@@ -67,6 +67,7 @@ mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/rhythms-eighths.ily"
+\include "ly/notes/rhythms-syncopated-straight.ily"
 \include "ly/notes/rhythms-careless-whisper.ily"
 \include "ly/notes/rhythms-syncopation.ily"
 \include "ly/notes/rhythms-sixteenths.ily"
@@ -74,6 +75,14 @@ mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\layout { 
+    \context {
+        \Score {
+            \override StaffGrouper.staff-staff-spacing =
+                #'((minimum-distance . 10))
+        }
+    }
+}
 
 \book { 
     \paper {
@@ -84,6 +93,7 @@ mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
     }
 
    \include "ly/bookparts/rhythms-eighths.ily"
+   \include "ly/bookparts/rhythms-syncopated-straight.ily"
    \include "ly/bookparts/rhythms-careless-whisper.ily"
    \include "ly/bookparts/rhythms-syncopation.ily"
    \include "ly/bookparts/rhythms-sixteenths.ily"

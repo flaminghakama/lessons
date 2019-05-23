@@ -75,23 +75,6 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g, e { 
-                    \include "ly/ily/staff-properties.ily"
-                    \rhythmsEighthsExerciseFiveMajor 
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "5. E Major"  " " }
-            }
-        }
-
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c fs { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseSixMajor 
@@ -101,7 +84,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "6. F# Major"  " " }
+                piece = \markup \center-column { "5. F# Major"  " " }
             }
         }
 
@@ -112,14 +95,31 @@
                 \new Staff \transpose fs bs { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseSevenMajor 
-                    \pageBreak
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "7. Mozart"  " " }
+                piece = \markup \center-column { "6. Mozart"  " " }
             }
         }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose g, e { 
+                    \include "ly/ily/staff-properties.ily"
+                    \rhythmsEighthsExerciseFiveMajor 
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "7. E Major"  " " }
+            }
+        }
+
     }

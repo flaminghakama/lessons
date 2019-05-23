@@ -120,7 +120,7 @@ chordsBridge = \chordmode {
 }
 chordsPreChorusThree = \chordmode { 
     a1 | e | cs:m | fs:m | 
-    b1:m | d | e | s | 
+    b1:m | d | e | d | 
 }
 chordsChorusThree = \chordmode { 
     e1 | b | e | b | 

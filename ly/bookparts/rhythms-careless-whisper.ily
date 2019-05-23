@@ -5,6 +5,11 @@
             subtitle = "Careless Whisper Syncopation Patterns"
             composer = ""
         }
+        \paper {
+            % Spacing in between systems
+            %system-system-spacing.basic-distance = #18
+            system-system-spacing.minimum-distance = #16
+        }
         \score {
             \transpose ef, c 
             << 
