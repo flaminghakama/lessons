@@ -3,7 +3,7 @@
 
 titleLeft = "Cadential Arpeggios"
 titleRight = "for Saxophone"
-titleTitlePage = \markup \center-column { \titleLeft \titleRight }
+titleTitlePage = \markup \center-column { \titleLeft \concat { \titleRight "," }  "in Major" }
 titleFull = "Cadential Arpeggios for Saxophone"
 composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-paper.ily"
@@ -15,13 +15,13 @@ composerName = "D. Elaine Alt"
 
 %{
 
-rm cadential-arpeggios-for-saxophone.pdf
-lilypond ly/cadential-arpeggios-for-saxophone.ly
-op cadential-arpeggios-for-saxophone.pdf 
-#python ~/git/part-format/bookify-16page.py cadential-arpeggios-for-saxophone.pdf cadential-arpeggios-for-saxophone-printable.pdf automatic
-mv cadential-arpeggios-for-saxophone.pdf pdf
-#mv cadential-arpeggios-for-saxophone-printable.pdf pdf/printable
-op pdf/cadential-arpeggios-for-saxophone.pdf 
+rm cadential-arpeggios-for-saxophone-major.pdf
+lilypond ly/cadential-arpeggios-for-saxophone-major.ly
+op cadential-arpeggios-for-saxophone-major.pdf 
+python ~/git/part-format/bookify-16page.py cadential-arpeggios-for-saxophone-major.pdf cadential-arpeggios-for-saxophone-major-printable.pdf automatic
+mv cadential-arpeggios-for-saxophone-major.pdf pdf
+mv cadential-arpeggios-for-saxophone-major-printable.pdf pdf/printable
+op pdf/printable/cadential-arpeggios-for-saxophone-major-printable.pdf 
 
 %}
 
@@ -72,27 +72,17 @@ op pdf/cadential-arpeggios-for-saxophone.pdf
 }
 
 \include "ly/notes/cadential-arpeggios-major.ily"
-\include "ly/notes/cadential-arpeggios-minor.ily"
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-\book { 
-    \paper {
-        print-all-headers = ##t
-    }
-    \header {
-        title = \title
-        instrumentName = "Saxophone"
-        poet = \instrumentName
-    }
-
-    \bookpart { 
-        \markup \title-page-markup "" "" \titleTitlePage
-    }
-
-    \include "ly/bookparts/cadential-arpeggios-major.ily"
-    \include "ly/bookparts/cadential-arpeggios-minor.ily"
+\header {
+    instrumentName = "Saxophone"
+    poet = \instrumentName
 }
+
+\bookpart { 
+    \markup \title-page-markup "" "" \titleTitlePage
+}
+
+\include "ly/bookparts/cadential-arpeggios-major.ily"
