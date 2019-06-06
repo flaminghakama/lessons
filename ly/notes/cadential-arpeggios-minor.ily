@@ -10,8 +10,8 @@ twoFiveOneMinorChordsTwo = \chordmode {
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    d1:m7 | g:7 | c1:m | s |
-    d1:m7 | g:7 | c1:m | s |
+    d1:m7.5- | g:7 | c1:m7.7+ | s |
+    d1:m7.5- | g:7 | c1:m7.7+ | s |
 }
 twoFiveOneMinorChordsMajorSeven = \chordmode { 
     \set chordChanges = ##f
@@ -148,7 +148,7 @@ twoFiveOneMinorFourVersionTwo = \relative c' {
         \tuplet 3/2 4 { 
             d8 f d  c d c  af c af  f af f | 
             g8 b g  f g f  d f d  b d b  |
-            c'8 ef c  b c b  g b g  ef g e  | } 
+            c'8 ef c  b c b  g b g  ef g ef  | } 
         c1 
         \bar "||"
     }

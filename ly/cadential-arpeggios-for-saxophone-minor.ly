@@ -57,7 +57,7 @@ op pdf/printable/cadential-arpeggios-for-saxophone-minor-printable.pdf
   first-page-number = #13
 
   #(define fonts
-    (make-pango-font-tree "Baskerville" 
+    (make-pango-font-tree "Century Schoolbook L" 
                           "Highlander ITC TT" 
                           "Papyrus"
                            (/ myStaffSize 20)))

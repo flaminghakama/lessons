@@ -14,7 +14,7 @@ composerName = "D. Elaine Alt"
 
 rm rhythmic-exercises-for-saxophone.pdf
 lilypond ly/rhythmic-exercises-for-saxophone.ly 
-python ~/git/part-format/bookify-7page.py rhythmic-exercises-for-saxophone.pdf rhythmic-exercises-for-saxophone-printable.pdf manual
+python ~/git/part-format/bookify-7page.py rhythmic-exercises-for-saxophone.pdf rhythmic-exercises-for-saxophone-printable.pdf automatic
 mv rhythmic-exercises-for-saxophone.pdf pdf
 mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
 
@@ -90,6 +90,11 @@ mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
     }
     \header {
         title = \title
+    }
+
+    \bookpart { 
+        \include "../scores/flaming-libs/flaming-title-page.ily"
+        \markup \title-page-markup "Saxophone" \composerName \title
     }
 
    \include "ly/bookparts/rhythms-eighths.ily"

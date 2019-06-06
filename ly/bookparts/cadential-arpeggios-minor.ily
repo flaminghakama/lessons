@@ -24,8 +24,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c a {
@@ -50,8 +50,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c e {
@@ -78,8 +78,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c d {
@@ -107,8 +107,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c b, {
@@ -135,8 +135,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c g {
@@ -164,8 +164,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c fs {
@@ -195,8 +195,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff {
@@ -224,8 +224,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c cs {
@@ -251,8 +251,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c df {
@@ -280,8 +280,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c f {
@@ -309,8 +309,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c gs {
@@ -337,8 +337,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c bf, {
@@ -366,8 +366,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c ds {
@@ -394,8 +394,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c ef {
@@ -424,8 +424,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c as {
@@ -452,8 +452,8 @@
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChordsMajorSeven
-                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChords
+                \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
             \new Staff \transpose c af {
