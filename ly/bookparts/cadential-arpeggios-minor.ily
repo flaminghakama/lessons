@@ -178,7 +178,7 @@
             }
         >>
         \header {
-            piece = "F# Minor (also see enharmonic Eb Minor, 6 flats)"
+            piece = "F# Minor"
             title = ""
             composer = ""
             poet = ""

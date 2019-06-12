@@ -10,22 +10,6 @@ composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-markup.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
 
-
-%{
-
-killPreview ; 
-rm clarinet-lower-register-introduction.pdf ; 
-lilypond ly/clarinet-lower-register-introduction.ly ;
-op clarinet-lower-register-introduction.pdf ;
-
-python ~/git/part-format/bookify-4page.py clarinet-lower-register-introduction.pdf clarinet-lower-register-introduction.printable.pdf
-mv clarinet-lower-register-introduction.pdf pdf
-mv clarinet-lower-register-introduction.printable.pdf pdf/printable
-op pdf/printable/clarinet-lower-register-introduction.printable.pdf
-
-
-%}
-
 \header {
     source = ""
     style = ""
@@ -67,6 +51,7 @@ op pdf/printable/clarinet-lower-register-introduction.printable.pdf
 
 clarTabScale = #0.8
 
+%{
 middleBb = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
@@ -114,6 +99,7 @@ middleAb = \markup \center-align \line {
         \huge "Ab"
     }
 }
+%}
 
 middleG = \markup \center-align \line { 
     "   "
@@ -139,30 +125,7 @@ middleFs = \markup \center-align \line {
     }
 }
 
-middleFsAlt = \markup \center-align \line { 
-    "   "
-    \center-column \pad-markup #0 {
-        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-            (lh . (thumb))
-            (cc . ())
-            (rh . (three four))
-        )
-        \huge "F#*"
-    }
-}
-
-middleGbAlt = \markup \center-align \line { 
-    "   "
-    \center-column \pad-markup #0 {
-        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-            (lh . (thumb))
-            (cc . ())
-            (rh . (three four))
-        )
-        \huge "Gb*"
-    }
-}
-
+%{
 middleEs = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
@@ -174,6 +137,7 @@ middleEs = \markup \center-align \line {
         \huge " E#"
     }
 }
+%}
 
 middleE = \markup \center-align \line { 
     "   "
@@ -187,13 +151,14 @@ middleE = \markup \center-align \line {
     }
 }
 
+%{
 lowEb = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
             (lh . (thumb))
             (cc . (one))
-            (rh . (four))
+            (rh . (three four))
         )
         \huge "Eb"
     }
@@ -210,6 +175,7 @@ lowDs = \markup \center-align \line {
         \huge "D#"
     }
 }
+%}
 
 lowD = \markup \center-align \line { 
     "   "
@@ -223,6 +189,7 @@ lowD = \markup \center-align \line {
     }
 }
 
+%{
 lowDb = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
@@ -246,6 +213,7 @@ lowCs = \markup \center-align \line {
         \huge "C#"
     }
 }
+%}
 
 lowC = \markup \center-align \line { 
     "   "
@@ -256,18 +224,6 @@ lowC = \markup \center-align \line {
             (rh . ())
         )
         \huge " C"
-    }
-}
-
-lowCb = \markup \center-align \line { 
-    "   "
-    \center-column \pad-markup #0 {
-        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-            (lh . (thumb))
-            (cc . (one two three five))
-            (rh . ())
-        )
-        \huge "Cb"
     }
 }
 
@@ -283,29 +239,19 @@ lowB = \markup \center-align \line {
     }
 }
 
-lowCbAlt = \markup \center-align \line { 
-    "   "
-    \center-column \pad-markup #0 {
-        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-            (lh . (thumb))
-            (cc . (one two three four))
-            (rh . (b))
-        )
-        \huge "Cb*"
-    }
-}
-
+%{
 lowBAlt = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
             (lh . (thumb))
-            (cc . (one two three four))
-            (rh . (b))
+            (cc . (one two three four b))
+            (rh . ())
         )
         \huge "B*"
     }
 }
+%}
 
 lowBb = \markup \center-align \line { 
     "   "
@@ -319,6 +265,7 @@ lowBb = \markup \center-align \line {
     }
 }
 
+%{
 lowAs = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
@@ -330,6 +277,7 @@ lowAs = \markup \center-align \line {
         \huge "A#"
     }
 }
+%}
 
 lowA = \markup \center-align \line { 
     "   "
@@ -355,6 +303,7 @@ lowG = \markup \center-align \line {
     }
 }
 
+%{
 lowGs = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
@@ -385,80 +334,15 @@ lowFsLeft = \markup \center-align \line {
     "   "
     \center-column \pad-markup #0 {
         \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-            (lh . (thumb fis))
-            (cc . (one two three four five six))
-            (rh . ())
-        )
-        " "
-        \huge "F# (L)"
-    }
-}
-
-lowGbLeft = \markup \center-align \line { 
-    "   "
-    \center-column \pad-markup #0 {
-        \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-            (lh . (thumb fis))
-            (cc . (one two three four five six))
-            (rh . ())
-        )
-        " "
-        \huge "Gb (L)"
-    }
-}
-
-lowFsRight = \markup \center-align \line { 
-    "   "
-    \center-column \pad-markup #0 {
-        \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
             (lh . (thumb))
             (cc . (one two three four five six))
             (rh . (fis))
         )
         " "
-        \huge "F# (R)"
+        \huge "F#"
     }
 }
-
-lowFsRightToLeft = \markup \center-align \line { 
-    \center-column \pad-markup #0 {
-        \translate #'(0 . -5) \line { 
-            \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-                (lh . (thumb))
-                (cc . (one two three four five six))
-                (rh . (fis))
-            )
-            "  "
-            \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-                (lh . (thumb fis))
-                (cc . (one two three four five six))
-                (rh . ())
-            )
-        }
-        " "
-        \huge "F# (R>L)"
-    }
-}
-
-lowGbRightToLeft = \markup \center-align \line { 
-    \center-column \pad-markup #0 {
-        \translate #'(0 . -5) \line { 
-            \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-                (lh . (thumb))
-                (cc . (one two three four five six))
-                (rh . (fis))
-            )
-            "  "
-            \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-                (lh . (thumb fis))
-                (cc . (one two three four five six))
-                (rh . ())
-            )
-        }
-        " "
-        \huge "Gb (R>L)"
-    }
-}
+%}
 
 lowFLeft= \markup \center-align \line { 
     "   "
@@ -485,6 +369,7 @@ lowFRight= \markup \center-align \line {
     }
 }
 
+%{
 lowELeft = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
@@ -536,102 +421,62 @@ songNotes = \relative c' {
     \time 4/4
     \tag #'ForG { <>^\lowG }   
     \tag #'ForF { <>^\lowFRight }
-    \tag #'ForE {<>^\lowERight }
-    \tag #'ForAb {<>^\lowAb }
-    \tag #'ForGb {<>^\lowGbLeft }
+    % \tag #'ForE {<>^\lowERight }
+    % \tag #'ForAb {<>^\lowAb }
         g4.
         %\tag #'ForGb {<>^\lowGb }
         \tag #'ForG { <>^\lowA }
-        \tag #'ForE { <>^\lowFsLeft } 
+        % \tag #'ForE { <>^\lowFsLeft } 
         a8        
         \tag #'ForG { <>^\lowB }
-        \tag #'ForA { <>^\lowCs }
-        \tag #'ForE { <>^\lowGs }
-        \tag #'ForFs { <>^\lowAs }
+        % \tag #'ForA { <>^\lowCs }
+        % \tag #'ForE { <>^\lowGs }
+        % \tag #'ForFs { <>^\lowAs }
         b4.  
         \tag #'ForF { <>^\lowFLeft }
-        \tag #'ForE { <>^\lowELeft } 
+        % \tag #'ForE { <>^\lowELeft } 
         g8 | b4 g b2 | 
         \tag #'(ForG ForE) { \break }
 
     a4. b8 
         \tag #'ForG { <>^\lowC }
         \tag #'ForF { <>^\lowBb }
-        \tag #'ForBb { <>^\lowEb }
-        \tag #'ForAb { <>^\lowDb }
-        \tag #'ForFs { <>^\lowBAlt }
-        \tag #'ForGb { <>^\lowCbAlt }
+        % \tag #'ForBb { <>^\lowEb }
+        % \tag #'ForAb { <>^\lowDb }
+        % \tag #'ForFs { <>^\lowBAlt }
         c c b a | 
-        \tag #'ForFs { <>^\lowB } 
-        \tag #'ForGb { <>^\lowCb } 
-        c1 | 
+        % \tag #'ForFs { <>^\lowB } c1 | 
         \tag #'(ForF ForA) { \break }
-
-    b4. 
-        \tag #'ForFs { <>^\lowBAlt }
-        \tag #'ForGb { <>^\lowCbAlt }
-        c8 
+    b4. c8 
         \tag #'ForG { <>^\lowD }
-        d4. b8 | \noBreak d4 b d2 |
-        \tag #'(ForFs ForGb) { \break } 
-
-    \tag #'ForFs { <>^\lowB }
-    \tag #'ForGb { <>^\lowCb }
+        % \tag #'ForFs { <>^\lowBAlt }
+        d4. b8 | d4 b d2 | 
     c4. d8 
         \tag #'ForG { <>^\middleE }
-        \tag #'ForA { <>^\middleFs }
+        % \tag #'ForA { <>^\middleFs }
         e e d c | 
-        \tag #'(ForG) { \break } 
+        \tag #'ForG { \break } 
         e1 | 
-        \tag #'(ForF ForA ForE) { \break }
+        \tag #'(ForF ForA) { \break }
 
-
-    d4. 
-        \tag #'ForFs { <>^\lowFsRightToLeft }
-        \tag #'ForGb { <>^\lowGbRightToLeft }
-        g,8 a b 
-        \tag #'ForFs { <>^\lowBAlt }
-        \tag #'ForGb { <>^\lowCbAlt }
-        c d | 
-        \tag #'(ForFs ForGb) { \break }
-        e1 |
-
+    d4. g,8 a b c d | e1 |
     e4. 
-        \tag #'ForE  \relative c'' { 
-            <>^\lowFsRightToLeft 
-        }
-        a,8 b 
-        \tag #'ForFs { <>^\lowBAlt }
-        \tag #'ForGb { <>^\lowCbAlt }
-        c d e |
+        % \tag #'ForE {<>^\markup { \huge "L>R" }        
+        a,8 b c d e | 
         \tag #'(ForG ForA ForE) { \break }
         \tag #'ForG { <>^\middleFs }
-        \tag #'ForA { <>^\middleGs }
-        \tag #'ForE { <>^\lowDs }
-        \tag #'ForFs { <>^\middleEs }
+        % \tag #'ForA { <>^\middleGs }
+        % \tag #'ForE { <>^\lowDs }
+        % \tag #'ForFs { <>^\middleEs }
         fs1 | 
         \tag #'(ForF) { \break }
-
-    fs4. b,8 
-        \tag #'ForFs { <>^\lowBAlt }
-        \tag #'ForGb { <>^\lowCbAlt }
-        c d e fs | 
+    fs4. b,8 c d e fs | 
         \tag #'ForG { <>^\middleG }
-        \tag #'ForBb { <>^\middleBb }
-        \tag #'ForA { <>^\middleA }
-        \tag #'ForAb { <>^\middleAb }
-        \tag #'ForFs { <>^\middleFsAlt }     
-        \tag #'ForGb { <>^\middleGbAlt }     
+        % \tag #'ForBb { <>^\middleBb }
+        % \tag #'ForA { <>^\middleA }
+        % \tag #'ForAb { <>^\middleAb }
         g2. g8 fs |
-
-    e4 c fs d | 
-        \tag #'ForFs { <>^\middleFsAlt }     
-        \tag #'ForGb { <>^\middleGbAlt }     
-        g4 fs8 e d 
-        \tag #'ForFs { <>^\lowBAlt }
-        \tag #'ForGb { <>^\lowCbAlt }
-        c b a | 
-        
+    e4 c fs d | g4 fs8 e d c b a | 
     g1 \bar "|." 
 }
 
@@ -770,11 +615,10 @@ songNotes = \relative c' {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \with { \magnifyStaff #5/7 } \keepWithTag #'(ForFs) { 
+                \new Staff \keepWithTag #'(ForFs) { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
                     \transpose g fs \songNotes
-                    \noPageBreak
                 }
             >>
             \header {
@@ -786,7 +630,7 @@ songNotes = \relative c' {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \with { \magnifyStaff #5/7 } \keepWithTag #'(ForGb) { 
+                \new Staff \keepWithTag #'(ForGb) { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
                     \transpose g gf \songNotes
@@ -796,7 +640,5 @@ songNotes = \relative c' {
                 piece = "Gb Major"
             }
         }
-
-%}
     }
 }
