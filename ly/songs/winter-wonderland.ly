@@ -119,7 +119,7 @@ chordsForm = \chordmode {
 
     g2:maj7 a:m7/d | g1:maj7 | 
     g2:maj7 a:m7/d | g1:maj7 | 
-    bf2:maj7 c:m7/d | bf1:maj7 | 
+    bf2:maj7 c:m7/f | bf1:maj7 | 
     c2:7 f4:7 bf:7 | bf2:sus4.9 bf:7 ||
 
     ef2:maj9 af:13 | g:m7 c:7 | 
@@ -143,7 +143,7 @@ chordsInstrumental = \chordmode {
 
     g2:maj7 a:m7/d | g1:maj7 | 
     g2:maj7 a:m7/d | g1:maj7 | 
-    bf2:maj7 c:m7/d | bf1:maj7 | 
+    bf2:maj7 c:m7/f | bf1:maj7 | 
     c2:7 f4:7 bf:7 | bf2:sus4.9 bf:7 ||
 
     ef2:maj9 af:13 | g:m7 c:7 | 
@@ -153,7 +153,7 @@ chordsInstrumental = \chordmode {
 
     g2:maj7 a:m7/d | g1:maj7 | 
     g2:maj7 a:m7/d | g1:maj7 | 
-    bf2:maj7 c:m7/d | bf1:maj7 | 
+    bf2:maj7 c:m7/f | bf1:maj7 | 
     c2:7 f4:7 bf:7 | bf2:sus4.9 bf:7 ||
 
     ef2:maj9 af:13 | g:m7 c:7 | 
@@ -181,7 +181,7 @@ melodyAEndingTwo = \relative c' {
 melodyB = \relative c' { 
     d8 8 b'8 8 e,8 8 c'8 8 | b4 g2. |     
     d8 8 b'8 8 e,8 8 c'8 8 | b2. r4 |     
-    f8 8 d'8 8 g,8 8 e'8 8 | d4 bf2 4 | 
+    f8 8 d'8 8 g,8 8 ef'8 8 | d4 bf2 4 | 
     d8 8 g,8 8 c8 8 f,8 8 | bf2. 
 }
 melodyForm = \relative c' { 
