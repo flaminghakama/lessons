@@ -67,6 +67,7 @@ mv pentatonic-exercises-for-saxophone.pdf pdf
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/pentatonic-D-minor.ily"
+\include "ly/notes/pentatonic-G-minor.ily"
 \include "ly/notes/pentatonic-C-minor.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -98,5 +99,7 @@ mv pentatonic-exercises-for-saxophone.pdf pdf
     }
 
     \include "ly/bookparts/pentatonic-D-minor.ily"
+    \include "ly/bookparts/pentatonic-G-minor.ily"
     \include "ly/bookparts/pentatonic-C-minor.ily"
+    \include "ly/bookparts/pentatonic-Csharp-minor.ily"
 }
