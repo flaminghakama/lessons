@@ -8,11 +8,11 @@ pentatonicExerciseOneGMinor = \relative c'' {
     \tuplet 3/2 4 { 
         g8 f g  bf g bf  |
         c8 bf c  d c d  
-        f8 d f  d bf f } | 
+        f8 d f  df c bf } | 
         g2 
 
     \tuplet 3/2 4 { 
-        d'8 f d  c d c  |
+        d'?8 f d  c d c  |
         bf8 c bf  g bf g  
         f8 g f  d f d  |
         c8 d c  bf8 c bf } 
@@ -22,35 +22,38 @@ pentatonicExerciseOneGMinor = \relative c'' {
         g8 bf g  |
         f8 g f  d f d  
         c8 d c  bf8 c bf |
-         c d c  d f d } g2 
+         c d c  d f d  f g f } g4 
     \bar "|."
 }
 
 pentatonicExerciseTwoGMinor = \relative c'' { 
     \key g \minor
-    \time 4/4
-    g2 \tuplet 3/2 4 {
+    \time 3/4
+    g4 \tuplet 3/2 4 {
         d8 c bf  f' d c |
 
-        g'8 f d  bf' g f  c' bf g  d' c bf | 
-        f'8 d c } g'4 
+        g'8 f d  bf' g f  c' bf g |
+        d'8 c bf  f'8 d c } g'4 | 
     \tuplet 3/2 4 { 
-        g8 f d  bf' g f  |
+        g8 f d  bf' g f  
         c'8 bf g  d' c bf 
         f'8 d c  df c bf } |
-        g2 
+        g4
 
     \tuplet 3/2 4 { 
         c8 d f  bf,8 c d | 
-        g,8 bf c  f,8 g bf  
-        d,8 f g  c,8 d f  |
-        bf,8 c d } g,4
+        g,8 bf c  
+        f,8 g bf  
+        d,8 f g |
+        c,8 d f  
+        bf,8 c d } g,4 |
     
     \tuplet 3/2 4 { 
-        g8 bf c  f, g bf | 
-        d,8 f g  c, d f 
+        g8 bf c  f, g bf 
+        d,8 f g |
+        c,8 d f 
         bf,8 c d  f g bf } | 
-        g1 | 
+        g2. | 
     \bar "|." 
 }
 

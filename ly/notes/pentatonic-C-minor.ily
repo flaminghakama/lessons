@@ -15,38 +15,46 @@ pentatonicExerciseOneCMinor = \relative c' {
 
 pentatonicExerciseTwoCMinor = \relative c' { 
     \key c \minor
-    \time 4/4
-    \tuplet 3/2 4 { c8 bf c  ef c bf  f' ef c  g' f ef | bf' g f  c' bf g  ef' c bf } c4 |
-    \tuplet 3/2 4 { c8 bf g  ef' c bf  f' ef c  g' f ef | bf' g f  c' bf g  ef' c bf } c4 | 
-    \tuplet 3/2 4 { c8 bf g  ef' c bf  f' ef c  ef c bf } | c2.
+    \time 3/4
+    c4 \tuplet 3/2 4 { 
+        c8 bf c  ef c bf |
+        f'8 ef c  g' f ef   bf' g f | 
+        c'8 bf g  ef' c bf } c4 |
+    \tuplet 3/2 4 { 
+        c8 bf g  ef' c bf  f' ef c |
+        g'8 f ef  bf' g f  c' bf g |
+        ef'8 c bf } c2  
+    \tuplet 3/2 4 { 
+        c8 bf g  ef' c bf  f' ef c |
+        ef c bf } c4
 
     \tuplet 3/2 4 { 
         ef8 f ef |
-        c8 ef f  bf,8 c ef  
-        g,8 bf c  f, g bf  | 
-        ef,8 f g }  c,4 gf'2 |
+        c8 ef f  bf,8 c ef g,8 bf c |
+        f, g bf  ef,8 f g }  c,4 |
     \tuplet 3/2 4 { 
-        c,8 ef f  bf, c ef 
-        g,?8 bf c  f,8 g bf |
-        ef,8 f g  c, ef f  
-        bf,8 c ef } c4 |
+        c8 ef f  bf, c ef g,8 bf c |
+        f,8 g bf  ef,8 f g  c, ef f |
+        bf,8 c ef } c2 |
     \bar "|." 
 }
 
 pentatonicExerciseThreeCMinor = \relative c' { 
     \key c \minor
-    \time 4/4
-    c8 bf c bf  ef c bf c | f ef c bf  g' f ef c | bf' g f ef  c'2 | 
-    c8 bf g f  ef' c bf g | f' ef c bf  g' f ef c | bf' g f ef  c'2 | 
-    c8 bf g f  ef' c bf g | f' ef c bf  ef c bf g | c1 |
+    \time 6/4
+    \set Timing.beatStructure = 2,2,2
+    c8 bf c bf  ef c bf c  f ef c bf |
+    g'8 f ef c  bf' g f ef  c'2 | 
+    c8 bf g f  ef' c bf g  f' ef c bf |
+    g'8 f ef c  bf' g f ef  c'2 | 
+    c8 bf g f  ef' c bf g  f' ef c bf |
+    ef c bf g  c2 
 
-    f8 ef c bf  ef c bf g | 
-    c8 bf g f  bf g f d | 
-    g8 f ef c  f ef c bf | 
-    ef8 c bf g c2 |
-
-    c8 bf g f  bf g f d | 
-    g8 f ef c  f ef c bf | c1 |
+    f8 ef c bf |
+    ef8 c bf g  c8 bf g f  bf g f d  |
+    g8 f ef c  f ef c bf  ef8 c bf g |
+    c2  c8 bf g f  bf g f d |
+    g8 f ef c  f ef c bf  c2 |
     \bar "|." 
 }
 
@@ -63,15 +71,20 @@ pentatonicExerciseFourCMinor = \relative c' {
         bf8 c ef  f g f } c4 c, | 
     \tuplet 3/2 4 { 
         c'8 ef f  g bf g  ef f g  bf c bf |
-        f8 g bf  c ef c  g bf c  ef f ef } | c2 c,,
+        f8 g bf  c ef c  g bf c  ef f ef } | c4 c,,
     \tuplet 3/2 4 { 
-        f''8 ef c  bf g bf  ef c bf  g f g |
-        c8 bf g  f ef f  bf g f  ef c ef | 
-        g8 f ef  c bf c  f ef c  bf g bf |
-        ef8 c bf  g f g } c4 c, |     
+        f''8 ef c  bf g bf | 
+        ef8 c bf  g f g  
+        c8 bf g  f ef f  |
+        bf8 g f  ef c ef  
+        g8 f ef  c bf c | 
+        f8 ef c  bf g bf 
+        ef8 c bf  g f g } | c4 c,      
     \tuplet 3/2 4 { 
-        c'8 bf g  f ef f  bf g f  ef c ef | 
-        g8 f ef  c bf c  f ef c  bf c ef } | c1 
+        c'8 bf g  f ef f | 
+        bf8 g f  ef c ef  
+        g8 f ef  c bf c | 
+        f ef c  bf c ef } c2 
     \bar "|." 
 }
 
