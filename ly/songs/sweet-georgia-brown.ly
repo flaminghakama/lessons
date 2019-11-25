@@ -11,6 +11,16 @@ lyricistName = "K. Casey"
 \include "../../../scores/flaming-libs/flaming-chords.ily"
 \include "../../../scores/flaming-libs/flaming-dynamics.ily"
 
+
+%{
+lilypond ly/songs/sweet-georgia-brown.ly 
+sweet-georgia-brown-for-C.pdf
+sweet-georgia-brown-for-Eb.pdf
+~/git/PyPDF2/Scripts/pdfcat -o sweet-georgia-brown-C-Eb.pdf sweet-georgia-brown-for-C.pdf sweet-georgia-brown-for-Eb.pdf
+mv sweet-georgia-brown-for-C.pdf sweet-georgia-brown-for-Eb.pdf pdf/songs
+mv sweet-georgia-brown-C-Eb.pdf pdf/songs/printable
+%}
+
 \paper {
 
   top-margin = #2
