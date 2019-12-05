@@ -14,9 +14,8 @@ composerName = "D. Elaine Alt"
 
 rm pentatonic-exercises-for-saxophone.pdf
 lilypond ly/pentatonic-exercises-for-saxophone.ly 
-#python ~/git/part-format/bookify-7page.py pentatonic-exercises-for-saxophone.pdf pentatonic-exercises-for-saxophone-printable.pdf automatic
 mv pentatonic-exercises-for-saxophone.pdf pdf
-#mv pentatonic-exercises-for-saxophone-printable.pdf pdf/printable
+python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone.pdf pdf/printable/pentatonic-exercises-for-saxophone.pdf manual
 
 %}
 
@@ -99,7 +98,7 @@ mv pentatonic-exercises-for-saxophone.pdf pdf
     }
 
     \include "ly/bookparts/pentatonic-D-minor.ily"
-    \include "ly/bookparts/pentatonic-G-minor.ily"
     \include "ly/bookparts/pentatonic-C-minor.ily"
+    \include "ly/bookparts/pentatonic-G-minor.ily"
     \include "ly/bookparts/pentatonic-Csharp-minor.ily"
 }

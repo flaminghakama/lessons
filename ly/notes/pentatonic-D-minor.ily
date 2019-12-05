@@ -32,7 +32,7 @@ pentatonicExerciseThreeDMinor = \relative c' {
     f, g a c  d,2 | 
 
     d8 f g a  c, d f a | 
-    d,1
+    af8 g f g d2 |
     \bar "|." 
 }
 

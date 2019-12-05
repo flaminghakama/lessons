@@ -47,14 +47,23 @@ pentatonicExerciseThreeCMinor = \relative c' {
     g'8 f ef c  bf' g f ef  c'2 | 
     c8 bf g f  ef' c bf g  f' ef c bf |
     g'8 f ef c  bf' g f ef  c'2 | 
-    c8 bf g f  ef' c bf g  f' ef c bf |
-    ef c bf g  c2 
+    c8 bf g f   ef' c bf g  f' ef c bf |
+    ef8 c bf g  c2 
 
-    f8 ef c bf |
-    ef8 c bf g  c8 bf g f  bf g f d  |
-    g8 f ef c  f ef c bf  ef8 c bf g |
-    c2  c8 bf g f  bf g f d |
-    g8 f ef c  f ef c bf  c2 |
+    bf8 c ef f 
+    g,8 bf c ef  
+    f,8 g bf c   
+    ef,8 f g bf | 
+    c,2  
+    c8 ef f g
+    bf,8 c ef f |  
+    g,8 bf c ef  
+    f,8 g bf c 
+    ef,8 f g bf | 
+    c,8 ef f g  
+    bf,8 c ef f  
+    gf8 f ef bf | 
+    c1.
     \bar "|." 
 }
 
