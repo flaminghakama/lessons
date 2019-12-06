@@ -2,16 +2,16 @@
 
         \header {
             title = ""
-            subtitle = "G Minor"
+            subtitle = "A Minor"
             composer = ""
         }
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseOneGMinor
+                    \pentatonicExerciseOneAMinor
                 }
             >>
             \header {
@@ -26,7 +26,7 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseTwoGMinor
                 }
@@ -43,7 +43,7 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseThreeGMinor
                 }
@@ -77,7 +77,7 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseFiveGMinor
                 }
@@ -94,7 +94,7 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g g { 
+                \new Staff \transpose g a { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseSixGMinor
                 }

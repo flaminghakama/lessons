@@ -116,38 +116,62 @@ pentatonicExerciseFourGMinor = \relative c'' {
     \bar "|." 
 }
 
-%{}
-pentatonicExerciseFiveDMinor = \relative c' {
-    \key d \minor
+pentatonicExerciseFiveGMinor = \relative c'' {
+    \key g \minor
     \time 6/4
-    d8 f g af  a [ af g f ]  d2 | 
-    c8 d f g  af [ g f c ]  d2 |
-    f8 g a? c  d [ af g f ]  d2 | 
-    af'8 g f d  g [ f d c ]  d2 | 
-    af'8 a d c  a [ af g f ]  d2 |
+    g8 f df c  bf [ c d f ]  g2 | 
+    d8 f g df'  c [ bf g f ]  g2 | 
+    g8 bf c df  d [ df c bf ]  g2 | 
+    f8 g bf c  df [ c bf f ]  g2 |
+    bf8 c d? f  g [ df c bf ]  g2 | 
+    df'8 c bf g  c [ bf g f ]  g2 | 
+    df'8 d g f  d [ df c bf ]  g2 |
 
-    c'8 d f g  af [ g f c ]  d2 |
-    d8 f g af  a [ af g f ]  d2 | 
-    f8 g a? c  d [ af g f ]  d2 | 
-    af'8 g f d  g [ f d c ]  d2 | 
-    af'8 a d c  a [ af g f ]  d2 |
+    d'8 f g df'  c [ bf g f ]  g2 | 
+    f8 g bf c  df [ c bf f ]  g2 |
+    g8 bf c df  d [ df c bf ]  g2 | 
+    bf8 c df d   f [ df c bf ]  g2 | 
+    df'8 c bf g  c [ bf g f ]  g2 | 
+    df'8 d f df   c [ bf g f ]  g2 |
 
-    f'8 d c a  af [ g f d ]  c [ a af g ] | 
-    f8 d c d  af' [ g f c ]  d c d f | 
-    d2 d'' d,, | 
+    f'8 d df c  bf [ g f d ]  df [ c bf g ] | 
+    f8 d? c bf  g'1 |  
+
     \bar "|."
 }
 
-pentatonicExerciseSixDMinor = \relative c' {
+%{}
+
+pentatonicExerciseFiveDMinor = \relative c' {
     \key d \minor
-    \time 4/4
-    \partial 4*1
-    d8 c |
-    d8 f g af  a c d f 
-    g8 af a c  d f d c |
-    a8 af g f  d c a af 
-    g8 f d c  d2 | 
+    \time 6/4
+    ONE8 THREE FOUR FLATIVE  FIVE [ FLATIVE FOUR THREE ]  ONE2 | 
+    SEVEN8 ONE THREE FOUR  FLATIVE [ FOUR THREE SEVEN ]  ONE2 |
+    THREE8 FOUR FIVE? SEVEN  ONE [ FLATIVE FOUR THREE ]  ONE2 | 
+    FLATIVE'8 FOUR THREE ONE  FOUR [ THREE ONE SEVEN ]  ONE2 | 
+    FLATIVE'8 FIVE ONE SEVEN  FIVE [ FLATIVE FOUR THREE ]  ONE2 |
+
+    SEVEN'8 ONE THREE FOUR  FLATIVE [ FOUR THREE SEVEN ]  ONE2 |
+    ONE8 THREE FOUR FLATIVE  FIVE [ FLATIVE FOUR THREE ]  ONE2 | 
+    THREE8 FOUR FIVE? SEVEN  ONE [ FLATIVE FOUR THREE ]  ONE2 | 
+    FLATIVE'8 FOUR THREE ONE  FOUR [ THREE ONE SEVEN ]  ONE2 | 
+    FLATIVE'8 FIVE ONE SEVEN  FIVE [ FLATIVE FOUR THREE ]  ONE2 |
+
+    THREE'8 ONE SEVEN FIVE  FLATIVE [ FOUR THREE ONE ]  SEVEN [ FIVE FLATIVE FOUR ] | 
+    THREE8 ONE SEVEN ONE  FLATIVE' [ FOUR THREE SEVEN ]  ONE SEVEN d THREE | 
+
     \bar "|."
 }
 
 %}
+
+pentatonicExerciseSixGMinor = \relative c'' {
+    \key g \minor
+    \time 4/4
+    g8 bf, c df  d f g bf |
+    c8 df d f  g8 bf c df |
+    d?8 f d df  c  bf g f | 
+    d?8 df c bf  g f d df |
+    c8 bf d? f  g2 |
+    \bar "|."
+}
