@@ -2,31 +2,41 @@ pentatonicExerciseOneAMinor = \relative c'' {
     \key a \minor
     \time 4/4
     \tuplet 3/2 4 { 
-        a8 g a  c a c  d c d  e d e | 
-        g8 e g } a4  
+        a8 g a  g e g  e d e  d c d  | 
+        c8 d e  g e g } a2 |
+
 
     \tuplet 3/2 4 { 
-        a8 g a  c a c  |
-        d8 c d  e d e  
-        g8 e g  ef d c } | 
+        a8 g a  c a c 
+        d8 c d  e d e |
+        g8 e g } a4 
+
+    \tuplet 3/2 4 { 
+        a8 g a  c a c | 
+        d8 c d  e d e 
+        ef8 d c }  a4 | 
+
+    \tuplet 3/2 4 { 
+        d8 e d  c d c 
+        a8 c a  
+        g8 a g |
+        e g e  
+        d8 e d  
+        c8 d c } 
+
+        a4 | 
+    \tuplet 3/2 4 { 
+        a8 c a 
+        g8 a g  
+        e8 g e  
+        d8 e d |
+        c8 d c 
+        d8 e g  } 
         a2 
-
-    \tuplet 3/2 4 { 
-        e'?8 g e  d e d  |
-        c8 d c  a c a  
-        g8 a g  e g e  |
-        d8 e d  c8 d c } 
-
-        a4 
-    \tuplet 3/2 4 { 
-        a8 c a  |
-        g8 a g  e g e  
-        d8 e d  c8 d c |
-         d e d  e g e  g a g } a4 
     \bar "|."
 }
 
-pentatonicExerciseTwoGMinor = \relative c'' { 
+pentatonicExerciseTwoAMinor = \relative c'' { 
     \key a \minor
     \time 3/4
     a4 \tuplet 3/2 4 {
@@ -57,7 +67,7 @@ pentatonicExerciseTwoGMinor = \relative c'' {
     \bar "|." 
 }
 
-pentatonicExerciseThreeGMinor = \relative c'' { 
+pentatonicExerciseThreeAMinor = \relative c'' { 
     \key a \minor
     \time 4/4
     a2  g8 e d c | 
@@ -81,7 +91,7 @@ pentatonicExerciseThreeGMinor = \relative c'' {
     \bar "|." 
 }
 
-pentatonicExerciseFourGMinor = \relative c'' { 
+pentatonicExerciseFourAMinor = \relative c'' { 
     \key a \minor
     \time 4/4
     a1 
@@ -116,7 +126,7 @@ pentatonicExerciseFourGMinor = \relative c'' {
     \bar "|." 
 }
 
-pentatonicExerciseFiveGMinor = \relative c'' {
+pentatonicExerciseFiveAMinor = \relative c'' {
     \key a \minor
     \time 6/4
     a8 g ef d  c [ d e g ]  a2 | 
@@ -140,7 +150,7 @@ pentatonicExerciseFiveGMinor = \relative c'' {
     \bar "|."
 }
 
-pentatonicExerciseSixGMinor = \relative c'' {
+pentatonicExerciseSixAMinor = \relative c'' {
     \key a \minor
     \time 4/4
     a8 c, d ef  e g a c |

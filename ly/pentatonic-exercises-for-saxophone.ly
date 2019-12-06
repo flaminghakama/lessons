@@ -98,9 +98,9 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
         \markup \title-page-markup "Saxophone" \composerName \title
     }
 
-    %\include "ly/bookparts/pentatonic-A-minor.ily"
-    \include "ly/bookparts/pentatonic-D-minor.ily"
-    \include "ly/bookparts/pentatonic-G-minor.ily"
-    \include "ly/bookparts/pentatonic-C-minor.ily"
-    \include "ly/bookparts/pentatonic-Csharp-minor.ily"
+    \include "ly/bookparts/pentatonic-A-minor.ily"
+    %\include "ly/bookparts/pentatonic-D-minor.ily"
+    %\include "ly/bookparts/pentatonic-G-minor.ily"
+    %\include "ly/bookparts/pentatonic-C-minor.ily"
+    %\include "ly/bookparts/pentatonic-Csharp-minor.ily"
 }

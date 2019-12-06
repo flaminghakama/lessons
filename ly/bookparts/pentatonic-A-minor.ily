@@ -22,6 +22,7 @@
             }
         }
 
+%{}
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
