@@ -70,6 +70,8 @@ python ~/git/part-format/bookify-8page.py pdf/articulation-exercises-for-saxopho
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \layout { 
+    indent = 2.25\cm
+    short-indent = 1.25\cm
     \context {
         \Score {
             \override StaffGrouper.staff-staff-spacing =
@@ -90,10 +92,10 @@ python ~/git/part-format/bookify-8page.py pdf/articulation-exercises-for-saxopho
         title = \title
     }
 
-    \bookpart { 
-        \include "../scores/flaming-libs/flaming-title-page.ily"
-        \markup \title-page-markup "Saxophone" \composerName \title
-    }
+    % \bookpart { 
+    %     \include "../scores/flaming-libs/flaming-title-page.ily"
+    %     \markup \title-page-markup "Saxophone" \composerName \title
+    % }
 
     \include "ly/bookparts/saxophone-articulation.ily"
 }

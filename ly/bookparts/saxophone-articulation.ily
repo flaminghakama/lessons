@@ -1,12 +1,12 @@
     \bookpart {
 
         \header {
-            title = ""
+            title = \title
             subtitle = \markup \center-column {
                 "Repeat and increase the tempo each time."
                 "When you can't keep up, switch to the speed variation."
             }
-            composer = ""
+            %composer = ""
         }
         \score {
             \keepWithTag #'(Normal) << 
@@ -20,9 +20,9 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                % composer = ""
                 piece = \markup \center-column { "1a. Normal"  " " }
-            }
+            } 
         }
 
         \score {
@@ -37,19 +37,22 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "1b. Speed"  " " }
+            }
+            \layout {
+                ragged-last = ##t
             }
         }
 
 
 
         \header {
-            title = ""
-            subtitle = \markup \center-column {
-                "Repeat and increase the tempo each time."
-                "When you can't keep up, switch to the speed variation."
-            }
+            %title = ""
+            % subtitle = \markup \center-column {
+            %     "Repeat and increase the tempo each time."
+            %     "When you can't keep up, switch to the speed variation."
+            % }
             composer = ""
         }
         \score {
@@ -64,7 +67,7 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "2a. Normal"  " " }
             }
         }
@@ -81,20 +84,12 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "2b. Speed"  " " }
             }
         }
 
 
-        \header {
-            title = ""
-            subtitle = \markup \center-column {
-                "Repeat and increase the tempo each time."
-                "When you can't keep up, switch to the speed variation."
-            }
-            composer = ""
-        }
         \score {
             \keepWithTag #'(Normal) << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -107,7 +102,7 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "3a. Normal"  " " }
             }
         }
@@ -124,19 +119,12 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "3b. Speed"  " " }
             }
         }
 
-        \header {
-            title = ""
-            subtitle = \markup \center-column {
-                "Repeat and increase the tempo each time."
-                "When you can't keep up, switch to the speed variation."
-            }
-            composer = ""
-        }
+
         \score {
             \keepWithTag #'(Normal) << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -149,7 +137,7 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "4a. Normal"  " " }
             }
         }
@@ -166,20 +154,13 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "4b. Speed"  " " }
             }
         }
 
 
-        \header {
-            title = ""
-            subtitle = \markup \center-column {
-                "Repeat and increase the tempo each time."
-                "When you can't keep up, switch to the speed variation."
-            }
-            composer = ""
-        }
+
         \score {
             \keepWithTag #'(Normal) << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -192,7 +173,7 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "5a. Normal"  " " }
             }
         }
@@ -207,22 +188,14 @@
                 }
             >>
             \header {
-                title = ""
+                %title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "5b. Speed"  " " }
             }
         }
 
 
-        \header {
-            title = ""
-            subtitle = \markup \center-column {
-                "Repeat and increase the tempo each time."
-                "When you can't keep up, switch to the speed variation."
-            }
-            composer = ""
-        }
         \score {
             \keepWithTag #'(Normal) << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -235,7 +208,7 @@
             \header {
                 title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "6a. Normal"  " " }
             }
         }
@@ -250,11 +223,118 @@
                 }
             >>
             \header {
-                title = ""
+                %title = ""
                 subtitle = ""
-                composer = ""
+                %composer = ""
                 piece = \markup \center-column { "6b. Speed"  " " }
             }
         }
+
+
+
+        \score {
+            \keepWithTag #'(Normal) << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \articulationExerciseSeven
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                %composer = ""
+                piece = \markup \center-column { "7a. Normal"  " " }
+            }
+        }
+
+        \score {
+            \keepWithTag #'(Speed) << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \articulationExerciseSeven
+                }
+            >>
+            \header {
+                %title = ""
+                subtitle = ""
+                %composer = ""
+                piece = \markup \center-column { "7b. Speed"  " " }
+            }
+        }
+
+
+        \score {
+            \keepWithTag #'(Normal) << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \articulationExerciseEight
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                %composer = ""
+                piece = \markup \center-column { "8a. Normal"  " " }
+            }
+        }
+
+        \score {
+            \keepWithTag #'(Speed) << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \articulationExerciseEight
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                %composer = ""
+                piece = \markup \center-column { "8b. Speed"  " " }
+            }
+        }
+
+
+        \score {
+            \keepWithTag #'(Normal) << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \articulationExerciseNine
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                %composer = ""
+                piece = \markup \center-column { "9a. Normal"  " " }
+            }
+        }
+
+        \score {
+            \keepWithTag #'(Speed) << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \articulationExerciseNine
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                %composer = ""
+                piece = \markup \center-column { "9b. Speed"  " " }
+            }
+        }
+
 
     }
