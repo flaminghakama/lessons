@@ -1,27 +1,28 @@
     \bookpart {
 
         \header {
-            title = \title
-            subtitle = \markup \center-column {
-                "For exercises 1-10, repeat and increase the tempo each time."
-                "When you can't keep up, switch to the speed variation."
-            }
+            title = "Scalar Articulation Exercises"
+            % subtitle = \markup \center-column {
+            %     "Repeat and increase the tempo each time."
+            %     "When you can't keep up, switch to the speed variation."
+            % }
             composer = ""
         }
+
         \score {
             \keepWithTag #'(Normal) << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseOne
+                    \articulationScalesExerciseZero
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "1a. Normal"  " " }
+                piece = \markup \center-column { "10a. Normal"  " " }
             } 
         }
 
@@ -31,14 +32,14 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseOne
+                    \articulationScalesExerciseZero
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "1b. Speed"  " " }
+                piece = \markup \center-column { "10b. Speed"  " " }
             }
         }
 
@@ -48,34 +49,16 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseTwo
+                    \articulationScalesExerciseOne
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "2a. Normal"  " " }
+                piece = \markup \center-column { "11. "  " " }
             }
         }
-
-        \score {
-            \keepWithTag #'(Speed) << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
-                    \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseTwo
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "2b. Speed"  " " }
-            }
-        }
-
 
         \score {
             \keepWithTag #'(Normal) << 
@@ -83,34 +66,19 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseThree
+                    \articulationScalesExerciseTwo
                 }
             >>
             \header {
                 title = ""
-                subtitle = ""
+                subtitle = "Rest only 15 seconds between repetitions."
                 composer = ""
-                piece = \markup \center-column { "3a. Normal"  " " }
+                piece = \markup \center-column { "12. "  " " }
+            } 
+            \layout {
+                indent = 1.25\cm        
             }
         }
-
-        \score {
-            \keepWithTag #'(Speed) << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
-                    \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseThree
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "3b. Speed"  " " }
-            }
-        }
-
 
         \score {
             \keepWithTag #'(Normal) << 
@@ -118,35 +86,16 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseFour
+                    \articulationScalesExerciseThree
                 }
             >>
             \header {
                 title = ""
-                subtitle = ""
+                subtitle = "Rest 30 seconds between repetitions."
                 composer = ""
-                piece = \markup \center-column { "4a. Normal"  " " }
+                piece = \markup \center-column { "13. "  " " }
             }
         }
-
-        \score {
-            \keepWithTag #'(Speed) << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
-                    \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseFour
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "4b. Speed"  " " }
-            }
-        }
-
-
 
         \score {
             \keepWithTag #'(Normal) << 
@@ -154,34 +103,16 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseFive
+                    \articulationScalesExerciseFour
                 }
             >>
             \header {
                 title = ""
-                subtitle = ""
+                subtitle = "Rest 15 seconds between repetitions."
                 composer = ""
-                piece = \markup \center-column { "5a. Normal"  " " }
+                piece = \markup \center-column { "14. "  " " }
             }
         }
-
-        \score {
-            \keepWithTag #'(Speed) << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
-                    \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseFive
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "5b. Speed"  " " }
-            }
-        }
-
 
         \score {
             \keepWithTag #'(Normal) << 
@@ -189,35 +120,19 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseSix
+                    \articulationScalesExerciseFive
                 }
             >>
             \header {
                 title = ""
-                subtitle = ""
+                subtitle = "Rest 30 seconds between repetitions."
                 composer = ""
-                piece = \markup \center-column { "6a. Normal"  " " }
+                piece = \markup \center-column { "15. "  " " }
+            } 
+            \layout {
+                indent = 1.25\cm        
             }
         }
-
-        \score {
-            \keepWithTag #'(Speed) << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
-                    \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseSix
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "6b. Speed"  " " }
-            }
-        }
-
-
 
         \score {
             \keepWithTag #'(Normal) << 
@@ -225,34 +140,16 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseSeven
+                    \articulationScalesExerciseSix
                 }
             >>
             \header {
                 title = ""
-                subtitle = ""
+                subtitle = "Rest 30 seconds between repetitions."
                 composer = ""
-                piece = \markup \center-column { "7a. Normal"  " " }
+                piece = \markup \center-column { "16."  " " }
             }
         }
-
-        \score {
-            \keepWithTag #'(Speed) << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
-                    \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseSeven
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "7b. Speed"  " " }
-            }
-        }
-
 
         \score {
             \keepWithTag #'(Normal) << 
@@ -260,34 +157,16 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseEight
+                    \articulationScalesExerciseSeven
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "8a. Normal"  " " }
+                piece = \markup \center-column { "17. "  " " }
             }
         }
-
-        \score {
-            \keepWithTag #'(Speed) << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
-                    \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseEight
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "8b. Speed"  " " }
-            }
-        }
-
 
         \score {
             \keepWithTag #'(Normal) << 
@@ -295,33 +174,49 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseNine
+                    \articulationScalesExerciseEight
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "9a. Normal"  " " }
+                piece = \markup \center-column { "18. "  " " }
             }
         }
-
+        
         \score {
-            \keepWithTag #'(Speed) << 
+            \keepWithTag #'(Normal) << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \articulationExerciseNine
+                    \articulationScalesExerciseNine
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "9b. Speed"  " " }
+                piece = \markup \center-column { "19. "  " " }
             }
         }
-
-
+        
+        \score {
+            \keepWithTag #'(Normal) << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \articulationScalesExerciseTen
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "20. "  " " }
+            }
+        }
+        
     }

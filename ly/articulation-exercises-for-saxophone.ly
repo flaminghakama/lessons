@@ -38,10 +38,10 @@ python ~/git/part-format/bookify-8page.py pdf/articulation-exercises-for-saxopho
     right-margin = #14
 
     % First page spacing after header
-    markup-system-spacing.padding = #6
+    markup-system-spacing.padding = #0
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #14
+    top-system-spacing.minimum-distance = #0
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18
@@ -66,6 +66,7 @@ python ~/git/part-format/bookify-8page.py pdf/articulation-exercises-for-saxopho
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/saxophone-articulation.ily"
+\include "ly/notes/saxophone-articulation-scales.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -98,4 +99,5 @@ python ~/git/part-format/bookify-8page.py pdf/articulation-exercises-for-saxopho
     % }
 
     \include "ly/bookparts/saxophone-articulation.ily"
+    \include "ly/bookparts/saxophone-articulation-scales.ily"
 }
