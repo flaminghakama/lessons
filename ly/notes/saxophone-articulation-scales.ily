@@ -1,6 +1,7 @@
 articulationScalesExerciseZero = \relative c' { 
     \key c \major
     \time 4/4
+    %\override MetronomeMark.font-family = #'typewriter
     \tempo 4=120-144
     b16 c d e  f g a b  c b a g  f e d c | \noBreak b4 r r2 | \tag #'Speed { R1 }
     c16 d e f  g a b c  d c b a  g f e d | \noBreak c4 r r2 | \tag #'Speed { R1^"etc. ..." }
