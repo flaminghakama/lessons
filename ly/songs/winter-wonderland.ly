@@ -202,7 +202,9 @@ melodyInstrumental = \relative c' {
         \melodyACommon
         \melodyAEndingOne
         \melodyAEndingTwo
-        \melodyB
+    }
+    \melodyB
+    \transpose c c, {
         \melodyACommon
         \melodyAEndingTwo
     }
