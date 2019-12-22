@@ -15,7 +15,7 @@ composerName = "D. Elaine Alt"
 rm articulation-exercises-for-saxophone.pdf
 lilypond ly/articulation-exercises-for-saxophone.ly 
 mv articulation-exercises-for-saxophone.pdf pdf
-python ~/git/part-format/bookify-12page.py pdf/articulation-exercises-for-saxophone.pdf pdf/printable/articulation-exercises-for-saxophone.pdf manual
+python ~/git/part-format/bookify-12page.py pdf/articulation-exercises-for-saxophone.pdf pdf/printable/articulation-exercises-for-saxophone.pdf automatic
 
 %}
 
