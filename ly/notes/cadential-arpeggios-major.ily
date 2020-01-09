@@ -44,15 +44,15 @@ twoFiveOneMajorTwo = \relative c' {
 twoFiveOneMajorThree = \relative c' {
     \key c \major
     \relative c' { 
-        d8 f a c  b g f d | c1 | 
-        f8 a c d  f d b g | c,1 | 
-        a'8 c d f  g f d b | c1 | \break
-        c8 d f a  b g f d | c1 |
+        d8 f a c  b g f d | c e g e c2 | 
+        f8 a c d  f d b g | c g e g c2 | \break 
+        a8 c d f  g f d b | c e g, a c2 | 
+        c8 d f a  b g f d | c e g a c2 | \break
     }
     \relative c''' { 
-        d8 c a f  d f g b | c1 | 
-        c8 a f d  b d f g | c,1 | \break
-        a'8 f d c  b d f g | e c g e c2 |  
+        d8 c a f  d f g b | c a g e c2 | 
+        c'8 a f d  b d f g | c e, g a c2 | \break
+        a8 f d c  b d f g | e c g e c2 |  
         f'8 d c a  g b d f | g e c g c'2
         \bar "||"
     }
@@ -111,14 +111,14 @@ twoFiveOneMajorTwoVersionTwo = \relative c' {
 twoFiveOneMajorThreeVersionTwo = \relative c' {
     \key c \major
     \relative c' { 
-        d8 f a c  b g f d | c1 | 
-        f8 a c d  f d b g | c1 | 
-        a,8 c d f  g f d b | c1 | \break
-        c8 d f a  b g f d | c1 |
+        d8 f a c  b g f d | c e g e c2 | 
+        f8 a c d  f d b g | c g e g c2  | \break
+        a,8 c d f  g f d b | c e g a c2 |
+        c,8 d f a  b g f d | c a' g e c2 | \break
     }
     \relative c'' { 
-        d8 c a f  d f g b | c1 | 
-        c8 a f d  b d f g | c,1 | \break
+        d8 c a f  d f g b | c a c e c2  | 
+        c8 a f d  b d f g | c a g e c2 | \break
         a'8 f d c  b d f g | e' c g e c2 |  
         f'8 d c a  g b d f | g e c g c,2
         \bar "||"

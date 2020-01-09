@@ -14,8 +14,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -38,8 +38,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -66,8 +66,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -95,8 +95,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -123,8 +123,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -151,8 +151,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -179,8 +179,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -208,8 +208,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -236,8 +236,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -265,8 +265,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -293,8 +293,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -322,8 +322,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -350,8 +350,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -380,8 +380,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
@@ -408,8 +408,8 @@
                 \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
-                \twoFiveOneMajorChords
+                \twoFiveOneMajorChordsSix
+                \twoFiveOneMajorChordsSix
                 \twoFiveOneMajorChords
                 \twoFiveOneMajorChordsTwo
             }
