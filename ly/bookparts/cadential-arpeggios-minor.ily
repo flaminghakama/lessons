@@ -23,8 +23,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -49,8 +49,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -77,8 +77,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -106,8 +106,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -134,8 +134,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -163,8 +163,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -194,8 +194,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -223,8 +223,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -250,8 +250,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -279,8 +279,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -308,8 +308,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -336,8 +336,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -365,8 +365,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -393,8 +393,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -423,8 +423,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }
@@ -451,8 +451,8 @@
                 \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
-                \twoFiveOneMinorChords
+                \twoFiveOneMinorChordsMajorSeven
+                \twoFiveOneMinorChordsMajorSeven
                 \twoFiveOneMinorChords
                 \twoFiveOneMinorChordsTwo
             }

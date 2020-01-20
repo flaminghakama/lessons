@@ -6,6 +6,13 @@ twoFiveOneMinorChords = \chordmode {
     d2:m7.5- g:7 | c1:m |
     d2:m7.5- g:7 | c1:m |
 }
+twoFiveOneMinorSevenChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    d2:m7.5- g:7 | c1:m7 |
+    d2:m7.5- g:7 | c1:m7 |
+}
 twoFiveOneMinorChordsTwo = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
@@ -49,15 +56,15 @@ twoFiveOneMinorTwo = \relative c' {
 }
 twoFiveOneMinorThreeNotes = \relative c' {
     \relative c' { 
-        d8 f af c  b g f d | c1 | 
-        f8 af c d  f d b g | c,1 | 
-        af'8 c d f  g f d b | c1 | \break
-        c8 d f af  b g f d | c1 |
+        d8 f af c  b g f d | c ef g ef c2 | 
+        f8 af c d  f d b g | c g ef g c2  | \break
+        af8 c d f  g f d b | c ef g, b c2 |
+        c8 d f af  b g f d | c ef g b c2 | \break
     }
     \relative c''' { 
-        d8 c af f  d f g b | c1 | 
-        c8 af f d  b d f g | c,1 | \break
-        af'8 f d c  b d f g | ef c g ef c2 |  
+        d8 c af f  d f g b | c bf g ef c2 | 
+        c'8 af f d  b d f g | c ef, g b c2 | \break
+        af8 f d c  b d f g | ef c g ef c2 |  
         f'8 d c af  g b d f | g ef c g c'2
     }
 }
@@ -122,14 +129,14 @@ twoFiveOneMinorTwoVersionTwo = \relative c' {
 twoFiveOneMinorThreeVersionTwo = \relative c' {
     \key c \minor
     \relative c' { 
-        d8 f af c  b g f d | c1 | 
-        f8 af c d  f d b g | c1 | 
-        af,8 c d f  g f d b | c1 | \break
-        c8 d f af  b g f d | c1 |
+        d8 f af c  b g f d | c ef g ef c2 | 
+        f8 af c d  f d b g | c g ef g c2 | \break
+        af,8 c d f  g f d b | c ef g b c2  |
+        c,8 d f af  b g f d | c ef c b c2 | \break
     }
     \relative c'' { 
-        d8 c af f  d f g b | c1 | 
-        c8 af f d  b d f g | c,1 | \break
+        d8 c af f  d f g b | c b c ef c2 | 
+        c8 af f d  b d f g | c b g ef c2 | \break
         af'8 f d c  b d f g | ef' c g ef c2 |  
         f'8 d c af  g b d f | g ef c g c2
         \bar "||"
