@@ -49,236 +49,520 @@ rh
       (ees eesT)
    possibilities for low-c:
       (low-c low-cT)
-
-
-
 %}
 
-lowBb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . (low-bes))
-        (cc . (one two three four five six))
-        (rh . (c))
-    )
-}
-lowB = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . (b))
-        (cc . (one two three four five six))
-        (rh . (c))
-    )
-}
-lowC = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one two three four five six))
-        (rh . (c))
-    )
-}
-lowDb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . (cis))
-        (cc . (one two three four five six))
-        (rh . (c))
-    )
-}
-lowD = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one two three four five six))
-        (rh . ())
-    )
-}
-lowEb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one two three four five))
-        (rh . (ees))
-    )
-}
-lowE = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-    	(cc . (one two three four five))
-    	(rh . ())
-    )
-}
-lowF = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one two three four))
-        (rh . ())
-    )
-}
-lowGb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-    	(cc . (one two three five))
-    	(rh . ())
-    )
-}
-lowG = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one two three))
-        (rh . ())
-    )
-}
-lowAb = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one two three))
-        (rh . (gis))
-    )
-}
-lowA = \markup \center-align \pad-markup #2 {
-	\woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one two))
-        (rh . ())
-    )
+lowBb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (low-bes))
+            (cc . (one two three four five six))
+            (rh . (c))
+        )
+        \huge "Bb"
+    }
 }
 
-
-midBb = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one two))
-        (rh . (bes))
-    )
-}
-midB = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (one))
-        (rh . ())
-    )
-}
-midC = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . (two))
-        (rh . ())
-    )
-}
-midDb = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . ())
-        (cc . ())
-        (rh . ())
-    )
-}
-midD = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two three four five six))
-        (rh . ())
-    )
-}
-midEb = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two three four five))
-        (rh . (ees))
-    )
-}
-midE = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two three four five))
-        (rh . ())
-    )
-}
-midF = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two three four))
-        (rh . ())
-    )
-}
-midGb = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two three five))
-        (rh . ())
-    )
-}
-midG = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two three))
-        (rh . ())
-    )
-}
-midAb = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two three))
-        (rh . (gis))
-    )
-}
-midA = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two))
-        (rh . ())
-    )
+lowB = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (b))
+            (cc . (one two three four five six))
+            (rh . (c))
+        )
+        \huge "B"
+    }
 }
 
+lowC = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three four five six))
+            (rh . (c))
+        )
+        \huge "C"
+    }
+}
 
-highBb = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one two))
-        (rh . (bes))
-    )
+lowCs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (cis))
+            (cc . (one two three four five six))
+            (rh . (c))
+        )
+        \huge "C#"
+    }
 }
-highB = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (one))
-        (rh . ())
-    )
+lowDb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (cis))
+            (cc . (one two three four five six))
+            (rh . (c))
+        )
+        \huge "Db"
+    }
 }
-highC = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . (two))
-        (rh . ())
-    )
+
+lowD = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three four five six))
+            (rh . ())
+        )
+        \huge "D"
+    }
 }
-highDb = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T))
-        (cc . ())
-        (rh . ())
-    )
+
+lowDs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three four five))
+            (rh . (ees))
+        )
+        \huge "D#"
+    }
 }
-highD = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T d))
-        (cc . ())
-        (rh . ())
-    )
+lowEb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three four five))
+            (rh . (ees))
+        )
+        \huge "Eb"
+    }
 }
-highEb = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T d ees))
-        (cc . ())
-        (rh . ())
-    )
+
+lowE = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three four five))
+            (rh . ())
+        )
+        \huge "E"
+    }
 }
-highE = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T d ees))
-        (cc . ())
-        (rh . (e))
-    )
+
+lowF = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three four))
+            (rh . ())
+        )
+        \huge "F"
+    }
 }
-highF = \markup \center-align \pad-markup #2 {
-    \woodwind-diagram #'saxophone #'(
-        (lh . (T d ees f))
-        (cc . (e))
-        (rh . ())
-    )
+
+lowFs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three five))
+            (rh . ())
+        )
+        \huge "F#"
+    }
+}
+lowGb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three five))
+            (rh . ())
+        )
+        \huge "Gb"
+    }
+}
+
+lowG = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two three))
+            (rh . ())
+        )
+        \huge "G"
+    }
+}
+
+lowAb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (gis))
+            (cc . (one two three))
+            (rh . ())
+        )
+        \huge "Ab"
+    }
+}
+lowGs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (gis))
+            (cc . (one two three))
+            (rh . ())
+        )
+        \huge "G#"
+    }
+}
+
+lowA = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two))
+            (rh . ())
+        )
+        \huge "A"
+    }
+}
+
+midAs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two))
+            (rh . (bes))
+        )
+        \huge "A#"
+    }
+}
+midBb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one two))
+            (rh . (bes))
+        )
+        \huge "Bb"
+    }
+}
+
+midB = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (one))
+            (rh . ())
+        )
+        \huge "B"
+    }
+}
+
+midC = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . (two))
+            (rh . ())
+        )
+        \huge "C"
+    }
+}
+
+midCs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . ())
+            (rh . ())
+        )
+        \huge "C#"
+    }
+}
+midDb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . ())
+            (cc . ())
+            (rh . ())
+        )
+        \huge "Db"
+    }
+}
+
+midD = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two three four five six))
+            (rh . ())
+        )
+        \huge "D"
+    }
+}
+
+midDs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two three four five))
+            (rh . (ees))
+        )
+        \huge "D#"
+    }
+}
+midEb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two three four five))
+            (rh . (ees))
+        )
+        \huge "Eb"
+    }
+}
+
+midE = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two three four five))
+            (rh . ())
+        )
+        \huge "E"
+    }
+}
+
+midF = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two three four))
+            (rh . ())
+        )
+        \huge "F"
+    }
+}
+
+midFs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two three five))
+            (rh . ())
+        )
+        \huge "F#"
+    }
+}
+midGb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two three five))
+            (rh . ())
+        )
+        \huge "Gb"
+    }
+}
+
+midG = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two three))
+            (rh . ())
+        )
+        \huge "G"
+    }
+}
+
+midGs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T gis))
+            (cc . (one two three))
+            (rh . ())
+        )
+        \huge "G#"
+    }
+}
+midAb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T gis))
+            (cc . (one two three))
+            (rh . ())
+        )
+        \huge "Ab"
+    }
+}
+
+midA = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two))
+            (rh . ())
+        )
+        \huge "A"
+    }
+}
+
+highAs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two))
+            (rh . (bes))
+        )
+        \huge "A#"
+    }
+}
+highBb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one two))
+            (rh . (bes))
+        )
+        \huge "Bb"
+    }
+}
+
+highB = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (one))
+            (rh . ())
+        )
+        \huge "B"
+    }
+}
+
+highC = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . (two))
+            (rh . ())
+        )
+        \huge "C"
+    }
+}
+
+highCs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . ())
+            (rh . ())
+        )
+        \huge "C#"
+    }
+}
+highDb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T))
+            (cc . ())
+            (rh . ())
+        )
+        \huge "Db"
+    }
+}
+
+highD = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T d))
+            (cc . ())
+            (rh . ())
+        )
+        \huge "D"
+    }
+}
+
+highDs = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T d ees))
+            (cc . ())
+            (rh . ())
+        )
+        \huge "D#"
+    }
+}
+highEb = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T d ees))
+            (cc . ())
+            (rh . ())
+        )
+        \huge "Eb"
+    }
+}
+
+highE = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T d ees))
+            (cc . ())
+            (rh . (e))
+        )
+        \huge "E"
+    }
+}
+
+highF = \markup \center-align \line {
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
+            (lh . (T d ees f))
+            (cc . (e))
+            (rh . ())
+        )
+        \huge "F"
+    }
 }
