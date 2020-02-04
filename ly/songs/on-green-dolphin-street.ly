@@ -27,6 +27,9 @@ python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-workshee
 mv on-green-dolphin-street-for-C.pdf  pdf/songs
 mv on-green-dolphin-street-for-Bb.pdf pdf/songs
 mv on-green-dolphin-street-for-Eb.pdf pdf/songs
+mv on-green-dolphin-street-worksheet-for-C.pdf pdf/songs
+mv on-green-dolphin-street-worksheet-for-Bb.pdf pdf/songs
+mv on-green-dolphin-street-worksheet-for-Eb.pdf pdf/songs
 mv on-green-dolphin-street-for-C-and-Bb.pdf pdf/songs/printable
 mv on-green-dolphin-street-for-C-and-Eb.pdf pdf/songs/printable
 mv on-green-dolphin-street-for-Bb-and-Eb.pdf pdf/songs/printable
