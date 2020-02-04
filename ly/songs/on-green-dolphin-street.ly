@@ -21,15 +21,21 @@ python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-Bb.p
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-C.pdf on-green-dolphin-street-worksheet-for-C.pdf on-green-dolphin-street-and-worksheet-for-C.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-Bb.pdf on-green-dolphin-street-worksheet-for-Bb.pdf on-green-dolphin-street-and-worksheet-for-Bb.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-Eb.pdf on-green-dolphin-street-worksheet-for-Eb.pdf on-green-dolphin-street-and-worksheet-for-Eb.pdf
+python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-C.pdf on-green-dolphin-street-worksheet-for-C.pdf on-green-dolphin-street-worksheet-for-C-double.pdf
+python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-Bb.pdf on-green-dolphin-street-worksheet-for-Bb.pdf on-green-dolphin-street-worksheet-for-Bb-double.pdf
+python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-Eb.pdf on-green-dolphin-street-worksheet-for-Eb.pdf on-green-dolphin-street-worksheet-for-Eb-double.pdf
 mv on-green-dolphin-street-for-C.pdf  pdf/songs
 mv on-green-dolphin-street-for-Bb.pdf pdf/songs
 mv on-green-dolphin-street-for-Eb.pdf pdf/songs
 mv on-green-dolphin-street-for-C-and-Bb.pdf pdf/songs/printable
 mv on-green-dolphin-street-for-C-and-Eb.pdf pdf/songs/printable
 mv on-green-dolphin-street-for-Bb-and-Eb.pdf pdf/songs/printable
-mv on-green-dolphin-street-and-worksheet-for-C.pdf  pdf/songs
-mv on-green-dolphin-street-and-worksheet-for-Bb.pdf  pdf/songs
-mv on-green-dolphin-street-and-worksheet-for-Eb.pdf  pdf/songs
+mv on-green-dolphin-street-and-worksheet-for-C.pdf  pdf/songs/printable
+mv on-green-dolphin-street-and-worksheet-for-Bb.pdf  pdf/songs/printable
+mv on-green-dolphin-street-and-worksheet-for-Eb.pdf  pdf/songs/printable
+mv on-green-dolphin-street-worksheet-for-C-double.pdf pdf/songs/printable
+mv on-green-dolphin-street-worksheet-for-Bb-double.pdf pdf/songs/printable
+mv on-green-dolphin-street-worksheet-for-Eb-double.pdf pdf/songs/printable
 
 %}
 
@@ -64,6 +70,7 @@ mv on-green-dolphin-street-and-worksheet-for-Eb.pdf  pdf/songs
 }
 
 \include "ly/ily/layout.ily"
+\include "ly/ily/hideMelody.ily"
 
 structure = \relative c' { 
 
@@ -120,6 +127,19 @@ melodyHead = \relative c'' {
     r8 g4. d4 e | f g gs e' | d4. c8 ~ 2 | c,4 d ds b' | 
     a4. g8 ~ 2 | r8 g4. 4 4 | g1 ~ | 1 ||
 }
+melodyExercise = \relative c''' { 
+    b1 s1*3 
+    b1 s1*3 
+
+    b1 s1*3 
+    b1 s1*3 
+
+    b1 s1*3 
+    b1 s1*3 
+
+    b1 s1*3 
+    b1 s1*3 
+}
 
 emptyHead = \relative c'' { 
     s1*8
@@ -142,7 +162,7 @@ melodySong = \relative c' {
 \book {
   \bookOutputSuffix "for-C"
     \header {
-        poet = "Concert Pitch"
+        poet = "    Concert Pitch"
         instrumentName = \poet
     }
     \score {
@@ -162,7 +182,7 @@ melodySong = \relative c' {
 \book {
   \bookOutputSuffix "for-Bb"
     \header {
-        poet = "Bb Soprano Saxophone"
+        poet = "    Bb Soprano Saxophone"
         instrumentName = \poet
     }
     \score {
@@ -182,7 +202,7 @@ melodySong = \relative c' {
 \book {
   \bookOutputSuffix "for-Eb"
     \header {
-        poet = "Eb Alto Saxophone"
+        poet = "    Eb Alto Saxophone"
         instrumentName = \poet
     }
     \score {
@@ -202,7 +222,7 @@ melodySong = \relative c' {
 \book {
   \bookOutputSuffix "worksheet-for-C"
     \header {
-        poet = "Concert Pitch"
+        poet = "    Concert Pitch"
         instrumentName = \poet
     }
     \score {
@@ -211,8 +231,9 @@ melodySong = \relative c' {
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
+                    \hideMelody
                     \structure
-                    \emptyHead
+                    \transpose b, c \melodyExercise
                 >>
             }
         >>
@@ -222,7 +243,7 @@ melodySong = \relative c' {
 \book {
   \bookOutputSuffix "worksheet-for-Bb"
     \header {
-        poet = "Bb Soprano Saxophone"
+        poet = "    Bb Soprano Saxophone"
         instrumentName = \poet
     }
     \score {
@@ -231,8 +252,9 @@ melodySong = \relative c' {
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
+                    \hideMelody
                     \structure
-                    \emptyHead
+                    \melodyExercise
                 >>
             }
         >>
@@ -242,7 +264,7 @@ melodySong = \relative c' {
 \book {
   \bookOutputSuffix "worksheet-for-Eb"
     \header {
-        poet = "Eb Alto Saxophone"
+        poet = "    Eb Alto Saxophone"
         instrumentName = \poet
     }
     \score {
@@ -251,8 +273,9 @@ melodySong = \relative c' {
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
+                    \hideMelody
                     \structure
-                    \emptyHead
+                    \transpose b e \melodyExercise
                 >>
             }
         >>
