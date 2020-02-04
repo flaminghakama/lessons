@@ -28,6 +28,9 @@ python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-
 mv on-the-sunny-side-of-the-street-for-C.pdf  pdf/songs
 mv on-the-sunny-side-of-the-street-for-Bb.pdf pdf/songs
 mv on-the-sunny-side-of-the-street-for-Eb.pdf pdf/songs
+mv on-the-sunny-side-of-the-street-worksheet-for-C.pdf pdf/songs
+mv on-the-sunny-side-of-the-street-worksheet-for-Bb.pdf pdf/songs
+mv on-the-sunny-side-of-the-street-worksheet-for-Eb.pdf pdf/songs
 mv on-the-sunny-side-of-the-street-for-C-and-Bb.pdf pdf/songs/printable
 mv on-the-sunny-side-of-the-street-for-C-and-Eb.pdf pdf/songs/printable
 mv on-the-sunny-side-of-the-street-for-Bb-and-Eb.pdf pdf/songs/printable
