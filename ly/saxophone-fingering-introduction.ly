@@ -244,7 +244,7 @@ mrPcFingeringsAlto = \relative c' {
             title = ""
             subtitle = "Equinox"
             composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "Concert"
+            poet = "   Concert"
         }
         \score {
             << 
@@ -268,7 +268,7 @@ mrPcFingeringsAlto = \relative c' {
             title = ""
             subtitle = "Equinox"
             composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "Eb Alto Saxophone"
+            poet = "   Eb Alto Saxophone"
         }
         \score {
             << 
@@ -295,7 +295,7 @@ mrPcFingeringsAlto = \relative c' {
             title = ""
             subtitle = "Blue Trane"
             composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "Concert"
+            poet = "   Concert"
         }
         \score {
             << 
@@ -318,7 +318,7 @@ mrPcFingeringsAlto = \relative c' {
             title = ""
             subtitle = "Blue Trane"
             composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "Eb Alto Saxophone"
+            poet = "   Eb Alto Saxophone"
         }
         \score {
             << 
@@ -345,7 +345,7 @@ mrPcFingeringsAlto = \relative c' {
             title = ""
             subtitle = "Mr. P.C."
             composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "Eb Alto Saxophone"
+            poet = "   Eb Alto Saxophone"
         }
         \score {
             << 

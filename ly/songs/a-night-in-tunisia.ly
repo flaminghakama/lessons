@@ -15,30 +15,22 @@ composerName = "D. Gillespie"
 killPreview
 rm a-night-in-tunisia*pdf
 lilypond ly/songs/a-night-in-tunisia.ly
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-for-C.pdf a-night-in-tunisia-for-Bb.pdf a-night-in-tunisia-for-C-and-Bb.pdf
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-for-C.pdf a-night-in-tunisia-for-Eb.pdf a-night-in-tunisia-for-C-and-Eb.pdf
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-for-Bb.pdf a-night-in-tunisia-for-Eb.pdf a-night-in-tunisia-for-Bb-and-Eb.pdf
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-for-C.pdf a-night-in-tunisia-worksheet-for-C.pdf a-night-in-tunisia-and-worksheet-for-C.pdf
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-for-Bb.pdf a-night-in-tunisia-worksheet-for-Bb.pdf a-night-in-tunisia-and-worksheet-for-Bb.pdf
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-for-Eb.pdf a-night-in-tunisia-worksheet-for-Eb.pdf a-night-in-tunisia-and-worksheet-for-Eb.pdf
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-worksheet-for-C.pdf a-night-in-tunisia-worksheet-for-C.pdf a-night-in-tunisia-worksheet-for-C-double.pdf
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-worksheet-for-Bb.pdf a-night-in-tunisia-worksheet-for-Bb.pdf a-night-in-tunisia-worksheet-for-Bb-double.pdf
-python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-worksheet-for-Eb.pdf a-night-in-tunisia-worksheet-for-Eb.pdf a-night-in-tunisia-worksheet-for-Eb-double.pdf
-mv a-night-in-tunisia-for-C.pdf  pdf/songs
-mv a-night-in-tunisia-for-Bb.pdf pdf/songs
-mv a-night-in-tunisia-for-Eb.pdf pdf/songs
-mv a-night-in-tunisia-worksheet-for-C.pdf pdf/songs
-mv a-night-in-tunisia-worksheet-for-Bb.pdf pdf/songs
-mv a-night-in-tunisia-worksheet-for-Eb.pdf pdf/songs
-mv a-night-in-tunisia-for-C-and-Bb.pdf pdf/songs/printable
-mv a-night-in-tunisia-for-C-and-Eb.pdf pdf/songs/printable
-mv a-night-in-tunisia-for-Bb-and-Eb.pdf pdf/songs/printable
-mv a-night-in-tunisia-and-worksheet-for-C.pdf  pdf/songs/printable
-mv a-night-in-tunisia-and-worksheet-for-Bb.pdf  pdf/songs/printable
-mv a-night-in-tunisia-and-worksheet-for-Eb.pdf  pdf/songs/printable
-mv a-night-in-tunisia-worksheet-for-C-double.pdf pdf/songs/printable
-mv a-night-in-tunisia-worksheet-for-Bb-double.pdf pdf/songs/printable
-mv a-night-in-tunisia-worksheet-for-Eb-double.pdf pdf/songs/printable
+
+# python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-Bird-for-Bb.pdf a-night-in-tunisia-Dizzy-for-Bb.pdf a-night-in-tunisia-for-Bb.pdf
+# python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-Bird-for-C.pdf a-night-in-tunisia-Dizzy-for-C.pdf a-night-in-tunisia-for-C.pdf
+# python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-Bird-for-Eb.pdf a-night-in-tunisia-Dizzy-for-Eb.pdf a-night-in-tunisia-for-Eb.pdf
+
+mv a-night-in-tunisia-Bird-for-C.pdf  pdf/songs
+mv a-night-in-tunisia-Bird-for-Bb.pdf pdf/songs
+mv a-night-in-tunisia-Bird-for-Eb.pdf pdf/songs
+mv a-night-in-tunisia-Dizzy-for-C.pdf  pdf/songs
+mv a-night-in-tunisia-Dizzy-for-Bb.pdf pdf/songs
+mv a-night-in-tunisia-Dizzy-for-Eb.pdf pdf/songs
+# mv a-night-in-tunisia-for-C.pdf  pdf/songs/printable
+# mv a-night-in-tunisia-for-Bb.pdf pdf/songs/printable
+# mv a-night-in-tunisia-for-Eb.pdf pdf/songs/printable
+
+for file in pdf/songs/a-night-in-tunisia*pdf ; do open -a Preview $file ; done
 
 %}
 
@@ -49,7 +41,7 @@ mv a-night-in-tunisia-worksheet-for-Eb-double.pdf pdf/songs/printable
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #2
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -77,6 +69,12 @@ mv a-night-in-tunisia-worksheet-for-Eb-double.pdf pdf/songs/printable
 
 structure = \relative c' { 
 
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \override Score.RehearsalMark #'extra-offset = #'( 2 . 0 )
+
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.2)
+
     \key d \minor
     \time 4/4
     \partial 8*1 s8
@@ -87,7 +85,7 @@ structure = \relative c' {
     }
     \mark \markup \box "Sax Into"
     \repeat volta 2 {
-        \bar ":|]S[|:"
+        \bar ":|][|:"
         s1*3
     }
     \alternative {
@@ -103,7 +101,7 @@ structure = \relative c' {
 
     \mark \markup \box "A"
     \repeat volta 2 {
-        \bar "[|:"
+        \bar "S[|:"
         s1*7
     }
     \alternative {
@@ -131,11 +129,30 @@ structure = \relative c' {
     \mark \markup \box "Break" 
     s1*12 
     \bar "||" \break
+}
+structureBreak = \relative c' { 
     s1*4
     \bar "|."
 }
+structureSolo = \relative c' { 
+    s1*4 
+    \bar "||"
+    s1*8
+    \bar "||"
+    s1*8
+    \bar "||"
+    s1 
+    \bar "|."
+}
 
-
+structureBird = \relative c' {
+    \structure
+    \structureSolo
+}
+structureDizzy = \relative c' {
+    \structure
+    \structureBreak
+}
 
 chordsSong = \chordmode { 
     \set chordChanges = ##t 
@@ -163,20 +180,58 @@ chordsSong = \chordmode {
     g1:m7.7+ | g:m7 | gf:7.9+ | s1 ||
     f1:maj7 | s | e:m7.5- | a:7.9- ||
 }
+chordsSolo = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    ef1:7 | d:m6 | ef:7 | d:m6 ||
+    ef1:7 | d:m6 | e2:m7.5- a:7.5- | d1:m6 ||
+
+    ef1:7 | d:m6 | ef:7 | d:m6 ||
+    ef1:7 | d:m6 | e2:m7.5- a:7.5- | d1:m6 ||
+
+    a1:m7.5- ||
+}
 
 melodyBassIntro = \relative c' { 
-    bf8 || \repeat percent 2 {  ef, bf' df ef  r df r bf | d, f a b r a r bf } ||
+    bf8 || \repeat percent 2 {  ef, bf' df ef  r df r bf | d, f a b r a r f } ||
 }
 melodySaxIntro = \relative c' { 
-    \repeat percent 2 {  
-        r8 ef4 ( df8 ) ef ( df ) ef ( df ) | r8 e?4 ( d?8 ) e ( d ) e ( d ) |
+    \repeat percent 2 { 
+        <<
+            \relative c' {  
+                r8 ef4 ( df8 ) ef ( df ) ef ( df ) | r8 e?4 ( d?8 ) e ( d ) e ( d ) |
+            } \\
+            \relative c' {
+                r8 bf4 ( af8 ) bf ( af ) bf ( af ) | r8 b4 ( a?8 ) b ( a ) b ( a ) |
+            }
+        >>
     } 
-        r8 ef4. \glissando bf4.
+    <<
+        \relative c' {  
+            r8 e4. \glissando b!4.
+        } \\
+        \relative c' {
+            r8 b4. \glissando f4.
+        }
+    >>
 }
 melodyACommon = \relative c' { 
     a8 
+    \tuplet 3/2 { bf?8 ( df ) f } c'2 bf8 ( f ) | gs8 ( a4. ~ 4. ) a,8 |  
+    \tuplet 3/2 { bf8 ( df ) f } c'2 bf8 ( f ) | a2. r8 a,8 |  
+    \tuplet 3/2 { bf8 ( df ) f } c'2 bf8 ( f ) | gs8 ( a2.. ) |  
+}
+melodyACommonRepeat = \relative c' { 
+    a8 
     \tuplet 3/2 { bf8 ( df ) f } c'2 bf8 ( f ) | gs8 ( a4. ~ 4. ) a,8 |  
     \tuplet 3/2 { bf8 ( df ) f } c'2 bf8 ( f ) | a2. r8 a,8 |  
+    \tuplet 3/2 { bf8 ( df ) f } c'2 bf8 ( f ) | gs8 ( a2.. ) |  
+}
+melodyALastBird = \relative c' { 
+    a8 
+    \tuplet 3/2 { bf8 ( df ) f } c'2 bf8 ( f ) | gs8 ( a4. ~ 4. ) a,8 |  
+    \tuplet 3/2 { bf8 ( df ) f } c'2 bf8 cs ~ | 8 a4. r4 r8 a,8 |  
     \tuplet 3/2 { bf8 ( df ) f } c'2 bf8 ( f ) | gs8 ( a2.. ) |  
 }
 melodyBParker = \relative c'' { 
@@ -201,8 +256,8 @@ melodyBreakDizzy = \relative c'' {
     a ~ | 4 fs8 d a'4 fs8 d | a' f d a' r4 r8 
     a ~ | 4 ff8 df a'4 ff8 df | a' ff df a' r4 
         <<
-            \relative c'' { c8^"To End" f } \\
-            \relative c'' { a8_"To Solos" c } 
+            \relative c'' { c8^"To End: Fine" f } \\
+            \relative c'' { a8_"To Solos: D.S." c } 
         >> || 
     \comp #16
 }
@@ -210,17 +265,41 @@ melodyBreakBird = \relative c'' {
     a8 r a r a ~ | 4 g8 e a4 g8 e | a g e a r4 r8 
     a ~ | 4 f8 df a'4 f8 df | a' f df a' r4 r8 
     a ~ | 4 f8 d a'4 f8 d | a' f d a' \relative c'' {
-                r8 a8 r df ~ | 4. a16 ( f ) a4 4 ~ | 2 
+                r8 a8 r c ~ | 4. a16 ( g ) a4 4 ~ | 2 
             } 
         r4 r8 
     a ~ | 4 fs8 d a'4 fs8 d | a' f d a' r4 r8 
     a ~ | 4 ff8 df a'4 ff8 df | a' ff df a' r4 
         <<
-            \relative c'' { c8^"To End" f } \\
-            \relative c'' { a8_"To Solos" c } 
+            \relative c'' { c8^"To End: Fine" f } \\
+            \relative c'' { a8_"To Solos: D.S." c } 
         >> || 
-    \comp #16
 }
+
+melodySoloInBb = \relative c' {
+    r4 fs16 g b d  fs e ds e  g fs e ef | 
+    d16 \set stemRightBeamCount = #1 b 
+        \set stemLeftBeamCount = #1 \tuplet 3/2 { c16 d c }  b16 g e d  a' g fs e  ds e g ef |
+    d16 c b d ~  16 e a fs  g a b c  d \set stemRightBeamCount = #1 as
+        \set stemLeftBeamCount = #1
+        \tuplet 3/2 { b16 d fs } |
+    \tuplet 3/2 { gs16 a \set stemRightBeamCount = #1 gs } 
+        \set stemLeftBeamCount = #1
+        fs16 e  ds fs, a b  c b a g  fs e d c ||
+
+    f4 r4 r8 ef'8 d16 ef d c | e8 b r4 r8 c r d | 
+    ef8 f  \tuplet 3/2 { d8 ef c } r4 r8 d16 c | b8 g fs e  a g fs e | 
+    b8 c ef g d'c r4 | b2 r2 | 
+    r4 c16 b a g  fs e ds e  fs ds e fs | b,4 r r2 ||
+
+    c'8 d ef f  r ef r fs ~ | \noBreak 16 g gs a  cs,2 r4 | 
+    r4 a'16 af g gf  f b, c d  ef c b a | \tuplet 3/2 { g8 fs? e } ds16 e fs ds e b8. r4 |
+    r8 bf \tuplet 3/2 { c8 ef g } \tuplet 3/2 { d'8 c d ~ } 4 ~ | \noBreak 4 c16 d c b  c8 b  a16 b a g |
+    fs8 e ds fs  c' b f ds | e fs g a b c b16 c b a ||
+    gs8 fs r4 r2 || 
+}
+melodySolo = \transpose c bf, \melodySoloInBb
+
 melodySongBird = \relative c'' { 
     \melodyBassIntro
     \melodySaxIntro
@@ -228,9 +307,10 @@ melodySongBird = \relative c'' {
     \relative c'' { a8 bf a g  ef4 cs8 d ~ | 2 r4 r8 a8 }
     \relative c' { d2. \repeatTie }
     \melodyBParker
-    \melodyACommon
+    \melodyALastBird
     \relative c'' { a8 bf a g  ef4 cs8 d ~ | 4. }
     \melodyBreakBird
+    \melodySolo
 }
 melodySongDiz = \relative c'' { 
     \melodyBassIntro
@@ -239,7 +319,7 @@ melodySongDiz = \relative c'' {
     \relative c'' { a8 bf a g  ef4 cs8 d ~ | 2 r4 r8 a8 }
     \relative c' { d2. \repeatTie }
     \melodyBDizzy
-    \melodyACommon
+    \melodyACommonRepeat
     \relative c'' { a8 bf a g  ef4 cs8 d ~ | 4. }
     \melodyBreakDizzy
 }
@@ -266,7 +346,12 @@ melodyExercise = \relative c''' {
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
-                    \structure
+                    \structureDizzy
+                    {
+                        \clef bass
+                        s1*4
+                        \clef treble
+                    }
                     \melodySongDiz
                 >>
             }
@@ -283,18 +368,22 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsSong }
+            \new ChordNames \transpose c c  { \chordsSong \chordsSolo }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
-                    \structure
+                    \structureBird
+                    {
+                        \clef bass
+                        s1*4
+                        \clef treble
+                    }
                     \melodySongBird
                 >>
             }
         >>
     }
 }
-
 
 \book {
   \bookOutputSuffix "Dizzy-for-Bb"
@@ -309,7 +398,7 @@ melodyExercise = \relative c''' {
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
-                    \structure
+                    \structureDizzy
                     \melodySongDiz
                 >>
             }
@@ -326,11 +415,11 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose bf c  { \chordsSong }
+            \new ChordNames \transpose bf c  { \chordsSong \chordsSolo }
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
-                    \structure
+                    \structureBird
                     \melodySongBird
                 >>
             }
@@ -353,7 +442,7 @@ melodyExercise = \relative c''' {
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
-                    \structure
+                    \structureDizzy
                     \melodySongDiz
                 >>
             }
@@ -370,11 +459,11 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsSong }
+            \new ChordNames \transpose ef c  { \chordsSong \chordsSolo }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
-                    \structure
+                    \structureBird
                     \melodySongBird
                 >>
             }
