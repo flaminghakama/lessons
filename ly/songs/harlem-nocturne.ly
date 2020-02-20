@@ -105,7 +105,25 @@ chordsForm = \chordmode {
 
     bf2:7 f:m7 | bf:7 f:m7 | bf:7 f:m7 | bf1:7 | 
     ef2:7 bf:m7 | ef:7 bf:m7 | ef4:7 df:7 b:7 a:7 | 
-        g4:9 gf:7 f2:7 | 
+        g4:9 f2.:7 | 
+        g4:9 f:9 ef:9 df:9 | g1:m6 | R1 
+
+    g1:m7.7+ | g:m7 | c:m7 | s | 
+    c1:m7.7+ | a2:7.9- ef4:7 d:7.9- | g1:m6 | R1 |
+}
+chordsForFlats = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s1 ||
+    g1:m7.7+ | g:m7 | c:m7 | s | 
+    c1:m7.7+ | a2:7.9- ef4:7 d:7.9-
+        g1:m6 | R1 | 
+        g1:m6 | s2 f:7 ||
+
+    bf2:7 f:m7 | bf:7 f:m7 | bf:7 f:m7 | bf1:7 | 
+    ef2:7 bf:m7 | ef:7 bf:m7 | ef4:7 df:7 cf:7 bff:7 | 
+        g4:9 f2.:7 | 
         g4:9 f:9 ef:9 df:9 | g1:m6 | R1 
 
     g1:m7.7+ | g:m7 | c:m7 | s | 
@@ -125,6 +143,15 @@ melodyB = \relative c'' {
         a8 d, g c, f16 e ef df  d f a c  |
         a8 d, g c, f bf, ef af, | d2. r4 |
 }
+melodyBForFlats = \relative c'' { 
+    c8 ||
+    bf8 f g af ~ 4. c8 | bf f g af ~ 4. c8 | 
+    bf8 f g af ~ 4 g8 f | d8 f4. ~ 4 r8 f'8 | 
+    ef8 bf c df ~ 4. f8 | ef bf c df ~ 4. c8 | 
+    f8 bf, ef af, df gf, cf ff, | 
+        a8 d, g c, f16 e ef df  d f a c  |
+        a8 d, g c, f bf, ef af, | d2. r4 |
+}
 melodyALast = \relative c' { 
     r8 g d' [ g ] a4 bf8 fs ~ | 1 ~ | 8 g \tuplet 3/2 { d8 c bf } g4 bf8 d ~ | 8 c2.. ~ |
     c8 8 g' c d4 ef8 b ~ | 1 ~ | 8 c \tuplet 3/2 { bf8 g ef } df8 bf' a g ~ | 1 ~ | 2. r4 ||
@@ -134,6 +161,13 @@ melodyForm = \relative c' {
         \relative c'' { g1 | r8 g, d' [ g ] a4 bf8 fs\laissezVibrer }
         \relative c'' { g1 ~ | 2 r4 r8 }
     \melodyB
+    \melodyALast
+}
+melodyForFlats = \relative c' { 
+    \melodyACommon
+        \relative c'' { g1 | r8 g, d' [ g ] a4 bf8 fs\laissezVibrer }
+        \relative c'' { g1 ~ | 2 r4 r8 }
+    \melodyBForFlats
     \melodyALast
 }
 
@@ -229,13 +263,13 @@ lyricsHeadTwo = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsForm }
+            \new ChordNames \transpose ef c  { \chordsForFlats }
             \new Staff = "voice" \keepWithTag #'(Part) \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
-                    \melodyForm
+                    \melodyForFlats
                 >>
             }
         >>
