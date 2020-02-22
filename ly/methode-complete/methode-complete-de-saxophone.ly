@@ -12,10 +12,10 @@ composerName = "J. F. Cokken"
 
 %{
 
-rm gammes-diatoniques.pdf
-lilypond ly/gammes-diatoniques.ly 
-mv gammes-diatoniques.pdf pdf
-python ~/git/part-format/bookify-8page.py pdf/gammes-diatoniques.pdf pdf/printable/gammes-diatoniques.pdf manual
+rm methode-complete-de-saxophone.pdf
+lilypond ly/methode-complete/methode-complete-de-saxophone.ly 
+mv methode-complete-de-saxophone.pdf pdf
+python ~/git/part-format/bookify-8page.py pdf/methode-complete-de-saxophone.pdf pdf/printable/methode-complete-de-saxophone.pdf manual
 
 %}
 
@@ -66,9 +66,7 @@ python ~/git/part-format/bookify-8page.py pdf/gammes-diatoniques.pdf pdf/printab
 \include "ly/ily/methode-complete/layout.ily"
 
 \include "ly/notes/methode-complete/gammes-diatoniques.ily"
-% \include "ly/notes/pentatonic-D-minor.ily"
-% \include "ly/notes/pentatonic-G-minor.ily"
-% \include "ly/notes/pentatonic-C-minor.ily"
+\include "ly/notes/methode-complete/lecons-progressives.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -99,8 +97,5 @@ python ~/git/part-format/bookify-8page.py pdf/gammes-diatoniques.pdf pdf/printab
     }
 
     \include "ly/bookparts/methode-complete/gammes-diatoniques.ily"
-    %\include "ly/bookparts/pentatonic-D-minor.ily"
-    %\include "ly/bookparts/pentatonic-G-minor.ily"
-    %\include "ly/bookparts/pentatonic-C-minor.ily"
-    %\include "ly/bookparts/pentatonic-Csharp-minor.ily"
+    \include "ly/bookparts/methode-complete/lecons-progressives.ily"
 }
