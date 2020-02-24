@@ -214,3 +214,74 @@ leconsProgressivesTenBottom = \relative c' {
     b,2 f' | e8 ( g f e d c b c ) | a'2 b | c8 ( c b a g f e d ) | 
     c2 e | f4 r r d8 ( f ) | g4 r g f | e2 r ||
 }
+
+leconsProgressivesElevenTop = \relative c'' { 
+    \key c \major
+    \time 4/4
+    c2 ~ 8 b ( d c | e2 ) r | d2 ~ 8 cs ( e d | f2-^ ) r | 
+    e2 ~ 8 g ( f-^ d ) | c2 ~ 8 g ( c e ) | d2 ~ 8 8 ( e d ) | g,2 r |
+    \bar ":|][|:" 
+
+    g'2 ~ 8 b, ( d g, ) | c2 r | f2 ~ 8 d ( g f ) | e2 r | 
+    e2 ~ 8 d ( c e ) | a,2 ~ 8 d ( f-^ d ) | b2 \( ~ 8 ( g d' b ) | c2 \) r |
+    \bar ":|]"
+}
+leconsProgressivesElevenBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    r8 c ( e [ g ] ) c4 r | r8 c, ( e [ g ] f e d c ) | r8 c ( e [ g ] g4 ) r | r8 g ( b [ d ] c b a g ) |
+    c2 g | a e | f fs | g4 4 r2 ||
+
+    r8 b ( d [ g, ] f2 ) | r8 e ( c [ e ] g e c' g ) | r8 a ( d [ c ] ) b4 4 | c8 c ( b a ) g ( f e d ) |
+    c8 ( d e c ) g'2 ( | f8 )( g a d,  f2 ~ ) | 8 ( d f af g4 ) f | e2 r || 
+}
+
+leconsProgressivesTwelveTop = \relative c'' { 
+    \key c \major
+    \time 4/4
+    r8 c ( g [ c ] ) r d ( g, [ d' ] ) | r e ( c [ e ] ) g4 r | 
+    r8 d ( g, [ d' ] ) r e ( g, [ e' ] ) | r f-^ ( c [ f-^ ] ) b,4 r | 
+    r8 e ( g [ e ] ) r d ( g [ d ] ) | r c ( e [ g, ] ) r e' ( g [ c, ] ) | 
+    r8 d ( cs [ e ] d g d b ) | g2 r |
+    \bar ":|][|:" 
+
+    r8 g' ( a [ g ] ) g4 ( b,  | c8 ) b ( c e  g4 ) r | 
+    r8 f-^ ( d [ g ] f-^ d e f ) | e2 r | 
+    r8 e ( g [ e ] ) r c ( e [ c ] ) | r a ( d [ a ] ) r d ( f-^ [ d ] ) |
+    r8 g, ( a [ g ] c b e d ) | c2 r |
+    \bar ":|]"
+}
+leconsProgressivesTwelveBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    e8 r r4 b8 r r4 | c8 r r4 e8 r c r |  
+    b8 r r4 c8 r r4 | g'8 r r4 g8 r g r |  
+    c,8 r r4 b8 r r4 | c8 r r4 c8 r r4 |  
+    b8 r r4 b8 r b r | b2 r ||  
+
+    f'8 r r4 r8 f ( g [ f ] ) | e r r4 r8 g ( c, [ e ] ) |
+    d4 r d b | r8 c ( e [ g ] c g b g ) | 
+    c8 r r4 a8 r r4 | f8 r r4 f8 r r4 | 
+    g8 r r4 r8 d ( g [ f ] ) | e2 r | 
+}
+
+leconsProgressivesThirteenTop = \relative c'' { 
+    \key c \major
+    \time 4/4
+    r4 c-. r d-. | r e-. g-. r | r d-. r e-. | r d-. g,-. r | 
+    r4 e'-. r d-. | r c-. r e-. | r d r d | g,2 r ||
+    \bar ":|][|:" \break
+
+    r4 g' r b, | r c r c | r f r g | r e r e | 
+    r4 e r c | r a r d | r c r b | c2 r ||
+    \bar ":|]"
+}
+leconsProgressivesThirteenBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    c4-. e-. g-. b,-. | c-. g'-. e-. c-. | b-. g'-. c,-. g'-. | g-. g-. b,-. g'-. |
+    c,4-. g'-. b,-. g'-. | a-. e-. a-. c-. | b-. g-. a-. fs-. | b,-. g'-. g-. r ||
+
+    g4 b g f | e e c e | d b' b, d' | c, c' c, g' |
+    c,4 g' a e | f d f a | g d g f | e2 r |
+}

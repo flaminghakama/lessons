@@ -214,4 +214,67 @@
                 subtitle = ""
             }
         }
+
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff <<
+                    \set PianoStaff.instrumentName = "No. 11"
+                    \new Staff = "upper" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesElevenTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesElevenBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+            }
+        }
+
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff <<
+                    \set PianoStaff.instrumentName = "No. 12"
+                    \new Staff = "upper" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesTwelveTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesTwelveBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+            }
+        }
+
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff <<
+                    \set PianoStaff.instrumentName = "No. 13"
+                    \new Staff = "upper" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesThirteenTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesThirteenBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+            }
+        }
     }

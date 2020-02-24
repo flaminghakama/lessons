@@ -1,8 +1,8 @@
     \bookpart {
 
         \header {
-            title = ""
-            subtitle = "Gammes Diatoniques"
+            title = "Gammes Diatoniques"
+            subtitle = ""
             composer = ""
         }
         \score {
@@ -35,7 +35,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -49,7 +49,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -63,7 +63,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -77,7 +77,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -91,7 +91,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -105,7 +105,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -119,7 +119,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -133,7 +133,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -147,7 +147,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -161,7 +161,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
 
@@ -175,7 +175,7 @@
                 }
             >>
             \header {
-                subtitle = ""
+                title = ""
             }
         }
     }

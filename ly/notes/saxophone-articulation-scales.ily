@@ -52,9 +52,9 @@ articulationScalesExerciseThree = \relative c' {
     \tempo 4=112-160
     b16 ( c ) d-. e-.  c ( d ) e-. fs-. | d ( e ) fs-. g-.  e ( fs ) g-. a-. | 
     fs16 ( g ) a-. b-.  g ( a ) b-. c-. | a ( b ) c-. d-.  b ( c ) d-. e-. | 
-    c16 ( d ) e-. fs-.  d ( e ) fs-. g-. | e ( f ) g-. a-.  fs ( g ) a-. b-. | 
-    g16 ( a ) b-. c-.  a ( b ) c-. d-. | b ( c ) d-. e-.  c ( d ) e-. d-. |
-    <g, g'>2 |
+    c16 ( d ) e-. fs-.  d ( e ) fs-. g-. | e ( fs ) g-. a-.  fs ( g ) a-. b-. | 
+    g16 ( a ) b-. c-.  a ( b ) c-. d-. | b ( c ) d-. e-.  c ( d ) e-. <b fs'>-. |
+    <g g'>2 |
     \bar "|."
 }
 
@@ -109,6 +109,7 @@ articulationScalesExerciseSeven = \relative c'' {
     \key c \major
     \time 2/4
     \tempo 4=84-112
+    \override TupletBracket.bracket-visibility = ##f
     c8 \tuplet 3/2 8 { 16 16 16 } 
     b8 \tuplet 3/2 8 { 16 16 16 } |
     a8 \tuplet 3/2 8 { 16 16 16 } 
@@ -136,32 +137,34 @@ articulationScalesExerciseSeven = \relative c'' {
 }
 
 articulationScalesExerciseEight = \relative c'' { 
-    \key c \major
+    \key f \major
     \time 2/4
     \tempo 4=84-112
-    c8 \tuplet 3/2 8 { e16-. d-. c-. } 
-    b8 \tuplet 3/2 8 { d16-. c-. b-. } |
-    a8 \tuplet 3/2 8 { c16-. b-. a-. } 
-    g8 \tuplet 3/2 8 { b16-. a-. g-. } |
+    \override TupletBracket.bracket-visibility = ##f
+    bf8 \tuplet 3/2 8 { d16-. c-. bf-. } |
+    a8 \tuplet 3/2 8 { c16-. bf-. a-. } 
+    g8 \tuplet 3/2 8 { bf16-. a-. g-. } |
     f8 \tuplet 3/2 8 { a16-. g-. f-. } 
     e8 \tuplet 3/2 8 { g16-. f-. e-. } |
     d8 \tuplet 3/2 8 { f16-. e-. d-. } 
     c8 \tuplet 3/2 8 { e16-. d-. c-. } |
-    b8 \tuplet 3/2 8 { d16-. c-. b-. 
-    c16 d-. e-.  g-. a-. b-. } |
+    bf8 \tuplet 3/2 8 { d16-. c-. bf-. }
+    \tuplet 6/4 4 { c16 d-. e-.  f-. g-. a-. } |
 
-    c8 \tuplet 3/2 8 { a16-. b-. c-. } 
-    d8 \tuplet 3/2 8 { b16-. c-. d-. } |
+    bf8 \tuplet 3/2 8 { g16-. a-. bf-. } 
+    c8 \tuplet 3/2 8 { a16-. bf-. c-. } 
+    d8 \tuplet 3/2 8 { bf16-. c-. d-. } |
     e8 \tuplet 3/2 8 { c16-. d-. e-. } 
     f8 \tuplet 3/2 8 { d16-. e-. f-. } |
     g8 \tuplet 3/2 8 { e16-. f-. g-. } 
     a8 \tuplet 3/2 8 { f16-. g-. a-. } |
-    b8 \tuplet 3/2 8 { g16-. a-. b-. } 
-    c8 \tuplet 3/2 8 { a16-. b-. c-. } |
-    d8 \tuplet 3/2 8 { b16-. c-. d-. } 
+    bf8 \tuplet 3/2 8 { g16-. a-. bf-. } 
+    c8 \tuplet 3/2 8 { a16-. bf-. c-. } |
+    d8 \tuplet 3/2 8 { bf16-. c-. d-. } 
     e8 \tuplet 3/2 8 { c16-. d-. e-. } |
     f8 \tuplet 3/2 8 { d16-. e-. f-. } 
-    e4 |
+    f4 \tuplet 3/2 8 { 16-. 16-. 16-. } |
+    f2
     \bar "|."
 }
 
@@ -170,6 +173,7 @@ articulationScalesExerciseNine = \relative c'' {
     \key c \major
     \time 4/4
     \tempo 4=84-96
+    \override TupletBracket.bracket-visibility = ##f
     c8 \tuplet 3/2 8 { 16 16 16 } \tuplet 6/4 4 { 16 16 16  16 16 16 } 4 r4 |
     b8 \tuplet 3/2 8 { 16 16 16 } \tuplet 6/4 4 { 16 16 16  16 16 16 } 4 r4 |
     a8 \tuplet 3/2 8 { 16 16 16 } \tuplet 6/4 4 { 16 16 16  16 16 16 } 4 r4 |
@@ -199,6 +203,7 @@ articulationScalesExerciseTen = \relative c' {
     \key f \major
     \time 4/4
     \tempo 4=84-96
+    \override TupletBracket.bracket-visibility = ##f
     bf8 \tuplet 3/2 8 { c16 d e } \tuplet 6/4 4 { f16 g a  bf c d } e4 r4 | 
     c,8 \tuplet 3/2 8 { d16 e f } \tuplet 6/4 4 { g16 a bf  c d e } f4 r4 |
     d,8 \tuplet 3/2 8 { e16 f g } \tuplet 6/4 4 { a16 bf c  d e f } g4 r4 |
