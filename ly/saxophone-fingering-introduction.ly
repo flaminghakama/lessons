@@ -145,6 +145,15 @@ blueTraneStructure = \relative c'' {
         }
     } 
 }
+blueTraneChords = \chordmode {
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s8 s2 ||
+    c1:m7 | s | s | s |
+    f1:m7 | s | c:m7 | s | 
+    g1:m7 | f2:m7 bf:7 | c1:m7 | s |
+}
 blueTraneBreaks = \relative c'' { 
     s8*5 
     s1*3 \break
@@ -154,8 +163,8 @@ blueTraneBreaks = \relative c'' {
 blueTraneNotes = \relative c'' { 
     g8 bf [ d bf c ~ ] ||
 
-    c1 ~ | 4 r8 g8 bf d bf c ~ | 1 ~ | 4 r8 bf8 d f d ef ~ | 
-    ef1 ~ | 4 r8 g,8 bf d bf c ~ | 1 ~ | 4 r8 g8 c d c bf ~ | 
+    c1 ~ | 4 r8 g8 bf d bf c ~ | 1 ~ | 4 r8 c8 ef g ef f ~ | 
+    f1 ~ | 4 r8 g,8 bf d bf c ~ | 1 ~ | 4 r8 g8 c d c bf ~ | 
     bf1 ~ | 4 r8 g8 bf d bf c ~ 
 
     c1 ~ | 4 r8 g8 bf d bf c
@@ -164,7 +173,7 @@ blueTraneNotes = \relative c'' {
 }
 blueTraneFingeringsAlto = \relative c' { 
     s8^\lowE s^\lowG s^\midB s^\lowG s^\lowA || \break
-    s1 | s1 | s1 | \break s4 s8 s^\lowG s^\midB s^\midD s^\midB s^\midC |
+    s1 | s1 | s1 | \break s4 s8 s^\lowA s^\midC s^\midE s^\midC s^\midD |
     s1 | \break s1 | 
     s1 | s1 |
     s1 | s1
@@ -293,7 +302,7 @@ mrPcFingeringsAlto = \relative c' {
     \bookpart {
         \header {
             title = ""
-            subtitle = "Blue Trane"
+            subtitle = "Blue Train"
             composer = \markup { \italic "composed by" "John Coltrane" }
             poet = "   Concert"
         }
@@ -302,6 +311,9 @@ mrPcFingeringsAlto = \relative c' {
                 \include "ly/ily/score-properties.ily"
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new ChordNames \transpose ef c { 
+                    \blueTraneChords
+                }
                 \new Staff \transpose c c {
                     \include "ly/ily/staff-properties.ily"
                     <<
@@ -316,7 +328,7 @@ mrPcFingeringsAlto = \relative c' {
     \bookpart {
         \header {
             title = ""
-            subtitle = "Blue Trane"
+            subtitle = "Blue Train"
             composer = \markup { \italic "composed by" "John Coltrane" }
             poet = "   Eb Alto Saxophone"
         }
