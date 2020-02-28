@@ -341,6 +341,7 @@
             }
         }
 
+
         \score {
             << 
                 \include "ly/bookparts/methode-complete/score-properties.ily"
@@ -353,6 +354,69 @@
                     \new Staff = "lower" {
                         \include "ly/ily/staff-properties.ily"
                         \leconsProgressivesSeventeenBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+            }
+        }
+        
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff <<
+                    \set PianoStaff.instrumentName = "No. 18"
+                    \new Staff = "upper" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesEighteenTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesEighteenBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+            }
+        }
+        
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff <<
+                    \set PianoStaff.instrumentName = "No. 19"
+                    \new Staff = "upper" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesNinteenTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesNinteenBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+            }
+        }
+        
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff <<
+                    \set PianoStaff.instrumentName = "No. 20"
+                    \new Staff = "upper" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesTwentyTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/staff-properties.ily"
+                        \leconsProgressivesTwentyBottom
                     }
                 >>
             >>

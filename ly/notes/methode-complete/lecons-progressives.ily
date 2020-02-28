@@ -399,3 +399,69 @@ leconsProgressivesSeventeenBottom = \relative c' {
     r4 g ( f ) | e g c | b a b | c c c | 
     r4 a c, | r f f | r8 g ( b, [ d ] g [ f ] ) | e4 r r |
 }
+
+leconsProgressivesEighteenTop = \relative c'' { 
+    \key c \major
+    \time 3/4
+    %\stemDown
+    c8 ( g e g c d | e4 ) r r | d8 ( b g b d e | f4 ) r r |
+    e8-! g, ( fs g d' g, ) | c ( g e g c e ) | d-! d ( e d c a ) | a4 r r |  
+    \bar ":|][|:" \break
+
+    g'8 ( f e f ) a, ( b ) | c2 d8 e | f ( e f-^ d g f | e4 ) r r | 
+    g,8 ( c e d c b ) | a-! d ( f-^ e d c ) | c ( b a g a b ) | c4 r r |    
+    \bar ":|]"
+}
+leconsProgressivesEighteenBottom = \relative c' { 
+    \key c \major
+    \time 3/4
+    c4 r r | c'8 ( g e g e c ) | b4 r r | d'8 ( b g f d g ) | 
+    c,4 r b' ( | c ) c, r | r fs fs | g g r | 
+
+    g4 r f | e8 ( g f e d c ) | b4 b b | c8 c' ( b g a f ) | 
+    e4 e r | f f r | g f f | e r r |    
+}
+
+leconsProgressivesNinteenTop = \relative c'' { 
+    \key c \major
+    \time 6/8
+    c4 ( d8 e4 ) r8 | d4 ( e8 f4 ) r8 | 
+    e4 d8 c4 e8 | d4. ( g,4 ) r8 | 
+    \bar ":|][|:" 
+
+    g'4 ( b,8 ) c4 r8 | f4 ( g8 ) e4 r8 | 
+    e4 c8 a4 d8 | b4. ( c4 ) r8 |
+    \bar ":|]"
+}
+leconsProgressivesNinteenBottom = \relative c' { 
+    \key c \major
+    \time 6/8
+    e8 ( g ) b,-. c-. g'-. c,-. | b ( d ) c-. b-. g'-. b,-. |
+    c8-. g' ( f ) e ( g ) c,-. | b g' d b4 r8 | 
+
+    r8 g' f e g c, | r a' b c g c | 
+    r8 c, e r f f | r g f e4 r8 |
+}
+
+leconsProgressivesTwentyTop = \relative c'' { 
+    \key c \major
+    \time 6/8
+    \stemDown
+
+    c8. g16 ( d' g,  e'4 ) r8 | d8. g,16 ( e' g,  f'4 ) r8 | 
+    e8. f16-^ ( d e ) c8. b16 c e | d8. g16 ( d b ) g4 r8 | 
+    \bar ":|][|:" 
+
+    g'8. f16 ( a, b  c4 ) r8 | f8.-^ d16 ( g f  e4 ) r8 |
+    e8. d16 ( c b ) a8. d16 ( e f-^ ) | b,8. g16 ( a b  c4 ) r8 |
+    \bar ":|]"
+}
+leconsProgressivesTwentyBottom = \relative c' { 
+    \key c \major
+    \time 6/8
+    e8 g b,-. c-. g'-. c-. | b, g' c, d-. g-. b-. | 
+    c8 g' r a a r | b, b b b4 r8 | 
+
+    g'8 ( b, ) f' e ( g ) g | b, ( d ) g c, ( g' ) g | 
+    c,8 g' r f f r | g f f e4 r8 |    
+}

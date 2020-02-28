@@ -69,8 +69,8 @@ gammesDiatoniquesSeptiemes = \relative c' {
     \omit TimeSignature
     c2 b' | d, c' | e, d' | f, e' | g, f' | a, g' |
     b,2 a' | c, b' | d, c' | \break
-    b2 c, | a' b, | g' a, | f' g, | e' a, | d' e, |
-    c,2 d, | b' c, | a' b, | c1 | 
+    b2 c, | a' b, | g' a, | f' g, | e' f, | d' e, |
+    c'2 d, | b' c, | a' b, | c1 | 
     \bar "|." 
 }
 
