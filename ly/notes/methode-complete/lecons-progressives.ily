@@ -285,3 +285,117 @@ leconsProgressivesThirteenBottom = \relative c' {
     g4 b g f | e e c e | d b' b, d' | c, c' c, g' |
     c,4 g' a e | f d f a | g d g f | e2 r |
 }
+
+
+leconsProgressivesFourteenTop = \relative c'' { 
+    \key c \major
+    \time 4/4
+    r4 \tuplet 3/2 { c8 ( g c ) } r4 \tuplet 3/2 { d8 ( g, d' ) } |
+    r4 \tuplet 3/2 { e8 ( c e ) } r4 g |
+
+    r4 \tuplet 3/2 { d8 ( g, d' ) } r4 \tuplet 3/2 { e8 ( g, e' ) } |
+    r4 \tuplet 3/2 { f8-^ ( d f-^ ) } r4 b,4 |
+
+    r4 \tuplet 3/2 { e8 ( g e ) } r4 \tuplet 3/2 { d8 ( f-^ d ) } | \break
+    r4 \tuplet 3/2 { c8 ( e c ) } r4 \tuplet 3/2 { e8 ( g e ) } |
+
+    r4 \tuplet 3/2 { d8 ( e d ) } r4 \tuplet 3/2 { d8 ( e d ) } |
+    g,2 r 
+    \bar ":|][|:" 
+
+    r4 \tuplet 3/2 { g'8 ( a g ) } r4 \tuplet 3/2 { b,8 ( c b ) } |
+    r4 \tuplet 3/2 { c8 ( d c ) } r4 \tuplet 3/2 { c8 ( d c ) } |
+
+    r4 \tuplet 3/2 { f8 ( g f ) } r4 \tuplet 3/2 { g8 ( d g ) } | \break
+    r4 \tuplet 3/2 { e8 ( f e ) } r4 \tuplet 3/2 { e8 ( f e ) } |
+
+    r4 \tuplet 3/2 { e8 ( g e ) } r4 \tuplet 3/2 { c8 ( e c ) } |
+    r4 \tuplet 3/2 { a8 ( f a ) } r4 \tuplet 3/2 { d8 ( f d ) } |
+
+    r4 \tuplet 3/2 { b8 ( d b ) } r4 \tuplet 3/2 { g8 ( b g ) } |
+    c2 r
+    \bar ":|]"
+}
+leconsProgressivesFourteenBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    e4 r b r | c g' e c | b r c r | b g' f d | 
+    c4 r g' r | e r c r | d r c r | b2 r | 
+
+    b4 r f' r | e r c r | d r b r | c r c' r | 
+    c,4 r e r | f r f r | g r f r | e2 r |
+}
+
+
+leconsProgressivesFifteenTop = \relative c'' { 
+    \key c \major
+    \time 4/4
+    c8 4-> b8-> ~ 8 d4-> c8-> ~ | 8 e4 d8 ~ 8 c4 b8-! |
+    d8-! 4-> cs8 ~ 8 e4 d8 ~ | 8 f4-> e8 ~ 8 d4 ds8-! | \break
+    e8 g4 e8 d f4-^ d8 | \noBreak c e4-> c8 e g,4 e'8 | \noBreak 
+    d8 c4 d8 ~ 8 c4 a8 | \noBreak g8 4-> 8 4-> r | \noBreak
+    \bar ":|][|:" 
+
+    g'8 f4-^ d8 ~ 8 c4 b8-! | d-! c4 g8 ~ 8 c4 e8-! | \break
+    f8-^ d4 f8 ~ 8 g4 f8 | e2 r | 
+    e8-! g,4 e'8-! c-! c,4 c'8-! | a f4-> a8-> ~ 8 e'4-> d8 ~ | 
+    d8 a4 g8 ~ 8 a4 b8 | c-! c,4 c'8-! c,4 r |
+    \bar ":|]"
+}
+leconsProgressivesFifteenBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    c8 r e r d r f r | e r c r b r c r | 
+    b8 r f' r e r g r | f r d r b r g' r | 
+    c,8 r e r g r gs r | a r a r c r c, r | 
+    fs8 r d r fs r d r | g r g r g4 r | 
+
+    g8 r b, r d r g r | e r g r e r c r | 
+    b8 r d r g r b r | c r c r g r e r | 
+    c8 r c r a' r a r | f r f r f r f r | 
+    g8 r b, r d r f r | e r e r e4 r | 
+}
+
+leconsProgressivesSixteenTop = \relative c'' { 
+    \key c \major
+    \time 4/4
+    
+    c,4-.\f c'-. d,-. d'-. | e,-. e'-. r2 | d,4 d' e, e' | f, f' r2 |
+    e,4 e' d, d' | c, c' e, e' | d,4 d'2 d,4 | g g' r2 |
+    \bar ":|][|:" \break
+
+    g4 g, b' b, | c' c, r2 | f,4 f' g, g' | e e, r2 | 
+    e4 e' g c, | f, a' c f,, | g f' d g, | c c' r2 |
+    \bar ":|]"
+}
+leconsProgressivesSixteenBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    r4 e r g | r c-. c,-. c' | r b r c | r d-. g,-. b-. |
+    r4 c r b | r a r g | r fs d c | b g' r2 |
+
+    r4 b r g | r c, e g | r a r b | r c c, c' |
+    r4 c r e, | r f f d | r d r f | e c r2 |
+}
+
+leconsProgressivesSeventeenTop = \relative c'' { 
+    \key c \major
+    \time 3/4
+
+    c2 d4 | e r r | d2 e4 | f r r | 
+    e2*1/2 s4\> d4 | c2*1/2\! s4\> e4 | d2\! fs,4 | g r r |  
+    \bar ":|][|:" 
+
+    g'2 b,4 | c r r | f2 g4 | e r r |
+    e2 c4 | a2 d4 | b2. | c4 r r |    
+    \bar ":|]"
+}
+leconsProgressivesSeventeenBottom = \relative c' { 
+    \key c \major
+    \time 3/4
+    e4 g b, | c e g | b g c | d b g | 
+    c4 c b | a a g | fs d c | b g' r |
+
+    r4 g ( f ) | e g c | b a b | c c c | 
+    r4 a c, | r f f | r8 g ( b, [ d ] g [ f ] ) | e4 r r |
+}
