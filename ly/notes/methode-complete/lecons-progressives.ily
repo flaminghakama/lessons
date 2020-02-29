@@ -465,3 +465,120 @@ leconsProgressivesTwentyBottom = \relative c' {
     g'8 ( b, ) f' e ( g ) g | b, ( d ) g c, ( g' ) g | 
     c,8 g' r f f r | g f f e4 r8 |    
 }
+
+leconsProgressivesTwentyOneTop = \relative c'' { 
+    \key c \major
+    \time 2/4
+    c8 c d d | e4 r | d8 d e e | f4 r | 
+    e8 e d d | c c e e | d2 ( | g,4 ) r |
+    \bar ":|][|:" \break
+
+    g'8 g b, b | c4 r | f8 f g g | e4 r | 
+    e8 e c c | a a d d | b2 ( | c4 ) r |
+    \bar ":|]"
+}
+leconsProgressivesTwentyOneBottom = \relative c' { 
+    \key c \major
+    \time 2/4
+    e8 g c, g' | c,-. e-. g-. c-. | b g c g | d'-. g,-. b-. d-. |
+    c8 g-. f-. g-. | e g c, g' | b, g' a fs | g [ g ] g r |
+
+    b,8 d g f | e c e g | d b d b | c c' g e | 
+    c8 c e e | f f r f | g g d g | e4 r | 
+}
+
+leconsProgressivesTwentyTwoTop = \relative c'' { 
+    \key c \major
+    \time 2/4
+    c16 ( g c e ) d ( b d f-^ ) | e-! c ( a' g  f e d c ) |
+    d16 ( g, b d ) e ( g, c e ) | f-!-^ d ( b' a g f e d ) | \break
+    e16 ( g f e d f-^ e d ) | c ( b d c e d f-^ e ) | 
+    d16-! g ( fs g ) fs ( g d ) b-! | b4 r |
+    \bar ":|][|:" 
+
+    g'16 ( f ) e ( d ) c ( b ) a ( b ) | c4. d16 ( e ) | \break
+    f16-^ ( d g f ) f-^ ( d g f-^ ) | e4 r16 g, ( [ fs g ] ) | 
+    e'16 ( g, c d ) e ( d c b ) | a ( c f-^ g gs a ) f-^ ( d ) | 
+    c16 ( b a' g  e f-^ d g ) | c,4 r |
+    \bar ":|]"
+}
+leconsProgressivesTwentyTwoBottom = \relative c' { 
+    \key c \major
+    \time 2/4
+    e4 ( b | c ) r | b ( c | g' ) r | 
+    c,4 f | e r8 c | b4 b | b r | 
+
+    b4 r | c16 ( e a g ) f ( e d c ) | b4 b | c8 [ c' ] c, r |
+    c4 e | f r8 f | g4 g8 f | e4 r | 
+}
+
+leconsProgressivesTwentyThreeTop = \relative c'' { 
+    \key c \major
+    \time 2/2
+    c8 ( b c g ) d' ( cs d g, ) | e'-! g ( c b a g f e ) | 
+    d8 ( cs d g, ) e' ( ds e g, ) | f'-! b ( d c b a g f ) | \break 
+    e8 g ( f e ) d f-^ ( e d ) | c ( b c d e f fs g ) |
+    d8 ( b g ) e' d ( c a ) d | g, g ( b d ) g4 r |
+    \bar ":|][|:" 
+    a8 ( g f-^ d b ) g ( a b ) | c g ( c e g c, e g ) | \break
+    f8 ( e f a g ) d ( g f ) | e2 r | 
+    e8 ( f fs g ) c, ( d ds e ) | a, ( b c cs d e f a ) | 
+    g8-. g, ( b d g fs f-^ d ) | c-! c, ( e g c4 ) r |
+    \bar ":|]"
+}
+leconsProgressivesTwentyThreeBottom = \relative c' { 
+    \key c \major
+    \time 2/2
+    e2 b | c4 r r2 | b2 c | d4 r r2 | 
+    c'2 ( b | a4 ) r r2 | b2 ( fs | g4 ) r r2 | 
+
+    f2 ( g | e4 ) r r2 | d'2 ( b | c4 ) r r2 | 
+    c,2 ( e | f4 ) r r2 | b,2 ( d | e4 ) r r2 |
+}
+
+leconsProgressivesTwentyFourTop = \relative c'' { 
+    \key c \major
+    \time 4/4
+    \tuplet 3/2 4 { c8\< ( d ds e f fs } g4\! ) r | 
+    \tuplet 3/2 4 { d8\< ( e f fs g gs } a4\! ) r | 
+    \tuplet 3/2 4 { g8\> ( fs f e d c } b4\! ) r | 
+    \tuplet 3/2 4 { c8 ( g' e ) c-. g-. e-. } c4\! r |
+
+    \tuplet 3/2 4 { c'8\< ( d ds e f fs } g4\! ) r | 
+    \tuplet 3/2 4 { fs8\< ( g gs a as b } c4\! ) r | 
+    \tuplet 3/2 4 { b8\> ( a g fs g e } d4\! ) r | 
+    \tuplet 3/2 4 { d8\> ( cs c b bf a } g4\! ) r |
+    \bar ":|][|:" 
+
+    \tuplet 3/2 4 { g8 ( a bf b c cs d ) b ( c d e f |
+    g8 ) e ( g } c4 ) \tuplet 3/2 4 { r8 c, ( e } g4 ) |
+    \tuplet 3/2 4 { g,8 ( a bf b c cs d ) b ( c d e f |
+    g8 ) e ( g } c4 ) \tuplet 3/2 4 { r8 c, ( e } g4 ) |
+
+    \tuplet 3/2 4 { c,8\< ( d ds e f fs } g4\! ) r | 
+    \tuplet 3/2 4 { d8\< ( e f fs g gs } a4\! ) r | 
+    \tuplet 3/2 4 { g8\> ( fs f e d c } b4\! ) r | 
+    \tuplet 3/2 4 { c8 ( g' e ) c-. g-. e-. } c4\! r |     
+    \bar ":|]"
+}
+leconsProgressivesTwentyFourBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    e4 r \tuplet 3/2 4 { e8 ( g f ) e-. d-. c-. } |
+    b4 r \tuplet 3/2 4 { b'8 ( d c ) b-. a-. g-. } |
+    e'4 r \tuplet 3/2 4 { g,8 ( a b c d ds } |
+    e4 ) r \tuplet 3/2 4 { r8 g, ( a b c d } |
+
+    e4 ) r \tuplet 3/2 4 { e,8 ( g f e d c ) } | 
+    a'4 r \tuplet 3/2 4 { a8 ( e' d c b a ) } |
+    g4 r \tuplet 3/2 4 { d8 ( cs d ds e fs ) } |
+    g4 d b r ||
+
+    g'2 f | e4 \tuplet 3/2 4 { r8 e ( g } c,4 ) \tuplet 3/2 4 { r8 g' ( c, ) } |
+    d2 f | e4 \tuplet 3/2 4 { r8 e ( g } c,4 ) \tuplet 3/2 4 { r8 g' ( c, ) } |
+
+    e4 r \tuplet 3/2 4 { e8 ( g f ) e-. d-. c-. } |
+    b4 r \tuplet 3/2 4 { b'8 ( d c ) b-. a-. g-. } |
+    e'4 r \tuplet 3/2 4 { g,8 ( a b c d ds } |
+    e4 ) r r2 |
+}

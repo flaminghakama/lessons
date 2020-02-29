@@ -7,4 +7,11 @@
         \override StaffGrouper.staff-staff-spacing.basic-distance = #0
         \omit BarNumber    
     }
+    \context {
+        \Voice
+        \override Slur.height-limit = 2.0
+        \override Slur.ratio = 0.30
+        \override Slur.minimum-length = 2.3
+        \override Slur.details.free-head-distance = 1.1
+    }
 }
