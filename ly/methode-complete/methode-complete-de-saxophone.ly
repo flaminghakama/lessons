@@ -14,7 +14,7 @@ composerName = "J. F. Cokken"
 
 rm methode-complete-de-saxophone.pdf
 lilypond ly/methode-complete/methode-complete-de-saxophone.ly 
-mv methode-complete-de-saxophone.pdf pdf
+mv methode-complete-de-saxophone.pdf pdf/methode-complete
 python ~/git/part-format/bookify-8page.py pdf/methode-complete-de-saxophone.pdf pdf/printable/methode-complete-de-saxophone.pdf manual
 
 %}
@@ -41,7 +41,7 @@ python ~/git/part-format/bookify-8page.py pdf/methode-complete-de-saxophone.pdf 
     markup-system-spacing.padding = #0
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #20
+    top-system-spacing.minimum-distance = #14
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18
