@@ -15,6 +15,7 @@ articulationScalesExerciseZero = \relative c' {
         c16 d e f  g a b c  d c b a  g f e d | \noBreak c4 r r2 |
         d16 e f g  a b c d  e d c b  a g f e | \noBreak d4 r r2 |
         e16 f g a  b c d e  f e d c  b a g f | \noBreak e4 r r2 |
+        f16 d' b g  f e d c  b a g f  e d c b | \noBreak c1 |
     }
     \bar "|."
 }
@@ -30,6 +31,7 @@ articulationScalesExerciseOne = \relative c' {
     f16 g a b  c d e f  g a b c | d c b a  g f e d  c b a g | f4 r r | R2. |
     g16 a b c  d e f g  a b c d | e d c b  a g f e  d c b a | g4 r r | R2. |
     a16 b c d  e f g a  b c d e | f e d c  b a g f  e d c b | a4 r r | R2. |
+    b16 c d e  f e d c  b a g f | e d c b  a g f e  d c b d | c2. |
     \bar "|."
 }
 
@@ -141,17 +143,17 @@ articulationScalesExerciseEight = \relative c'' {
     \time 2/4
     \tempo 4=84-112
     \override TupletBracket.bracket-visibility = ##f
+    bf8 \tuplet 3/2 8 { d16-. c-. bf-. } 
+    a8 \tuplet 3/2 8 { c16-. bf-. a-. } |
+    g8 \tuplet 3/2 8 { bf16-. a-. g-. } 
+    f8 \tuplet 3/2 8 { a16-. g-. f-. } |
+    e8 \tuplet 3/2 8 { g16-. f-. e-. } 
+    d8 \tuplet 3/2 8 { f16-. e-. d-. } |
+    c8 \tuplet 3/2 8 { e16-. d-. c-. } 
     bf8 \tuplet 3/2 8 { d16-. c-. bf-. } |
-    a8 \tuplet 3/2 8 { c16-. bf-. a-. } 
-    g8 \tuplet 3/2 8 { bf16-. a-. g-. } |
-    f8 \tuplet 3/2 8 { a16-. g-. f-. } 
-    e8 \tuplet 3/2 8 { g16-. f-. e-. } |
-    d8 \tuplet 3/2 8 { f16-. e-. d-. } 
-    c8 \tuplet 3/2 8 { e16-. d-. c-. } |
-    bf8 \tuplet 3/2 8 { d16-. c-. bf-. }
-    \tuplet 6/4 4 { c16 d-. e-.  f-. g-. a-. } |
+    \tuplet 6/4 4 { c16 d-. e-.  f-. g-. a-. } 
 
-    bf8 \tuplet 3/2 8 { g16-. a-. bf-. } 
+    bf8 \tuplet 3/2 8 { g16-. a-. bf-. } |
     c8 \tuplet 3/2 8 { a16-. bf-. c-. } 
     d8 \tuplet 3/2 8 { bf16-. c-. d-. } |
     e8 \tuplet 3/2 8 { c16-. d-. e-. } 
@@ -163,7 +165,7 @@ articulationScalesExerciseEight = \relative c'' {
     d8 \tuplet 3/2 8 { bf16-. c-. d-. } 
     e8 \tuplet 3/2 8 { c16-. d-. e-. } |
     f8 \tuplet 3/2 8 { d16-. e-. f-. } 
-    f4 \tuplet 3/2 8 { 16-. 16-. 16-. } |
+    e8 \tuplet 3/2 8 { bf16-. g16-. c,,16-. } |
     f2
     \bar "|."
 }

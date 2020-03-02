@@ -39,7 +39,7 @@ lilypond ly/methode-complete/lecons-progressives.ly
     markup-system-spacing.padding = #0
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #20
+    top-system-spacing.minimum-distance = #14
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18
@@ -64,9 +64,6 @@ lilypond ly/methode-complete/lecons-progressives.ly
 \include "ly/ily/methode-complete/layout.ily"
 
 \include "ly/notes/methode-complete/lecons-progressives.ily"
-% \include "ly/notes/pentatonic-D-minor.ily"
-% \include "ly/notes/pentatonic-G-minor.ily"
-% \include "ly/notes/pentatonic-C-minor.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -97,8 +94,4 @@ lilypond ly/methode-complete/lecons-progressives.ly
     }
 
     \include "ly/bookparts/methode-complete/lecons-progressives.ily"
-    %\include "ly/bookparts/pentatonic-D-minor.ily"
-    %\include "ly/bookparts/pentatonic-G-minor.ily"
-    %\include "ly/bookparts/pentatonic-C-minor.ily"
-    %\include "ly/bookparts/pentatonic-Csharp-minor.ily"
 }

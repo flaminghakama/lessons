@@ -62,7 +62,7 @@ twoFiveOneMinorThreeNotes = \relative c' {
         c8 d f af  b g f d | c ef g b c2 | \break
     }
     \relative c''' { 
-        d8 c af f  d f g b | c bf g ef c2 | 
+        d8 c af f  d f g b | c b g ef c2 | 
         c'8 af f d  b d f g | c ef, g b c2 | \break
         af8 f d c  b d f g | ef c g ef c2 |  
         f'8 d c af  g b d f | g ef c g c'2
