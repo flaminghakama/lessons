@@ -14,6 +14,7 @@ composerName = "J. F. Cokken"
 
 rm lecons-progressives.pdf
 lilypond ly/methode-complete/lecons-progressives.ly 
+mv lecons-progressives.pdf pdf/methode-complete
 
 %}
 

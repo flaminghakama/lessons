@@ -19,6 +19,7 @@ lilypond ly/songs/harlem-nocturne.ly
 python ~/git/part-format/combine-1Page-1Page.py harlem-nocturne-for-C.pdf harlem-nocturne-for-Eb.pdf harlem-nocturne-for-C-and-Eb.pdf
 mv harlem-nocturne-for-C.pdf  pdf/songs
 mv harlem-nocturne-for-Eb.pdf pdf/songs
+mv harlem-nocturne-for-Eb-large.pdf pdf/songs
 mv harlem-nocturne-for-C-and-Eb.pdf pdf/songs/printable
 
 %}
@@ -275,3 +276,28 @@ lyricsHeadTwo = \lyricmode {
         >>
     }
 }
+
+\book {
+  \bookOutputSuffix "for-Eb-large"
+    \header {
+        subtitle = ""
+        arranger = ""
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c  { \chordsForFlats }
+            \new Staff = "voice" \with {
+                \magnifyStaff #(magstep 3)
+            } \keepWithTag #'(Part) \transpose ef, c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \easyHeadsOn
+                    \melodyForFlats
+                >>
+            }
+        >>
+    }
+}
+
