@@ -1,4 +1,4 @@
-leconsProgressivesOneTop = \relative c'' { 
+petitesEtudesOneTop = \relative c'' { 
     \key c \major
     \time 2/2
     c2 d | e r | d e | f r | e d | c e | d1 | g,2 r | 
@@ -7,14 +7,14 @@ leconsProgressivesOneTop = \relative c'' {
     g'2 b, | c r | f g | e r | e c | a d | b1 | c2 r | 
     \bar ":|]"
 }
-leconsProgressivesOneBottom = \relative c' { 
+petitesEtudesOneBottom = \relative c' { 
     \key c \major
     \time 2/2
     e4 g b, g' | c, e g c | b g c g | d' g, b d | c g f g | e g c, c' | b g a fs | g g g r ||
     r4 g f g | e g e c | a' c b d | c c, e g | c g e g | f d f f | g g f g | e g c, r ||
 }
 
-leconsProgressivesTwoTop = \relative c'' { 
+petitesEtudesTwoTop = \relative c'' { 
     \key c \major
     \time 2/2
     c2 d4 4 | e2 r | d2 e4 4 | f2 r | e2 d4 4 | c2 e4 4 | d2 2 | g, r | 
@@ -23,14 +23,14 @@ leconsProgressivesTwoTop = \relative c'' {
     g'2 b,4 4 | c2 r | f g4 4 | e2 r | e c4 4 | a2 d4 4 | b1 | c2 r | 
     \bar ":|]"
 }
-leconsProgressivesTwoBottom = \relative c' { 
+petitesEtudesTwoBottom = \relative c' { 
     \key c \major
     \time 2/2
     e2 b | c4 e g c | b2 c | d4 g, b d | c2 b | a c | b4 g a fs | g4 4 4 r ||
     b,4 d f2 | e4 g e c | a' d8 c b2 | c4 c, e g | c g e a8 g | f4 d8 e f4 fs | g d f2 | e4 g c, r ||
 }
 
-leconsProgressivesThreeTop = \relative c'' { 
+petitesEtudesThreeTop = \relative c'' { 
     \key c \major
     \time 4/4
     c4 4 d4 4 | e2 r | d4 4 e4 4 | f2 r | e4 4 d4 4 | c4 4 e4 4 | d2 4 4 | g,2 r | 
@@ -38,14 +38,14 @@ leconsProgressivesThreeTop = \relative c'' {
     g'4 4 b,4 4 | c2 r | f4 4 g4 4 | e2 r | e4 4 d4 4 | a4 4 d4 4 | b2 4 4 | c2 r | 
     \bar ":|]"
 }
-leconsProgressivesThreeBottom = \relative c' { 
+petitesEtudesThreeBottom = \relative c' { 
     \key c \major
     \time 4/4
     e2 b | c4 e g c | b2 c | d4 g, b d | c2 b | a c | b4 g e fs | g4 4 4 r ||
     r4 g4 4 f | e g c b | a d8 c b4 g | c4 c, e g | c2 e, | f2. 4 | g4 4 f2 | e2 r ||
 }
 
-leconsProgressivesFourTop = \relative c'' { 
+petitesEtudesFourTop = \relative c'' { 
     \key c \major
     \time 4/4
     c2. ( d4 | e2 ) r | d2. ( e4 | f2 ) r | 
@@ -56,7 +56,7 @@ leconsProgressivesFourTop = \relative c'' {
     e2._> ( c4_> | a2. ) d4_> | b2._> b4 | c2_> r2 
     \bar ":|]"
 }
-leconsProgressivesFourBottom = \relative c' { 
+petitesEtudesFourBottom = \relative c' { 
     \key c \major
     \time 4/4
     \marcato
@@ -67,7 +67,7 @@ leconsProgressivesFourBottom = \relative c' {
     c4 r c, e | f r f f | g g g f | e2 r ||
 }
 
-leconsProgressivesFiveTop = \relative c'' { 
+petitesEtudesFiveTop = \relative c'' { 
     \key c \major
     \time 4/4
     c4 ( b d c | e2 ) r | d4 ( cs e d | f2-^ ) r | 
@@ -80,7 +80,7 @@ leconsProgressivesFiveTop = \relative c'' {
     
     \bar ":|]"
 }
-leconsProgressivesFiveBottom = \relative c' { 
+petitesEtudesFiveBottom = \relative c' { 
     \key c \major
     \time 4/4
     c4 r r2 | r4 c e g | g r r2 | r4 g b d | 
@@ -90,7 +90,7 @@ leconsProgressivesFiveBottom = \relative c' {
     c2 e | f4 r r f | g2 f | e r || 
 }
 
-leconsProgressivesFiveTop = \relative c'' { 
+petitesEtudesFiveTop = \relative c'' { 
     \key c \major
     \time 4/4
     c4 ( b d c | e2 ) r | d4 ( cs e d | f2-^ ) r | 
@@ -103,7 +103,7 @@ leconsProgressivesFiveTop = \relative c'' {
     
     \bar ":|]"
 }
-leconsProgressivesFiveBottom = \relative c' { 
+petitesEtudesFiveBottom = \relative c' { 
     \key c \major
     \time 4/4
     c4 r r2 | r4 c e g | g r r2 | r4 g b d | 
@@ -113,7 +113,7 @@ leconsProgressivesFiveBottom = \relative c' {
     c2 e | f4 r r f | g2 f | e r || 
 }
 
-leconsProgressivesSixTop = \relative c'' { 
+petitesEtudesSixTop = \relative c'' { 
     \key c \major
     \time 4/4
     c4-! c2-> d4 | e2 r | d4-! d2-> e4 | f2 r | 
@@ -124,14 +124,14 @@ leconsProgressivesSixTop = \relative c'' {
     e4-! 2-> c4 ~ | 4 a2^> d4 ~ | 4 b2-> g'4 | c,2 r 
     \bar ":|]"
 }
-leconsProgressivesSixBottom = \relative c' { 
+petitesEtudesSixBottom = \relative c' { 
     \key c \major
     \time 4/4
     e2 g | c4 g e c | g'2 2 | 4 d' b g | c2 b | a c | b4 g d c | b2 r ||
     g'2 f | e4 g e c | b2 g' | c4 c, e g | c2 a | f d | g f | e r ||
 }
 
-leconsProgressivesSevenTop = \relative c'' { 
+petitesEtudesSevenTop = \relative c'' { 
     \key c \major
     \time 4/4
     r4 c2 d4 ~ | 4 e2 c4 | r4 d2 e4 ~ | 4 f2-> d4 | 
@@ -142,7 +142,7 @@ leconsProgressivesSevenTop = \relative c'' {
     r4 e2 c4 ~ | 4 a2 d4 ~ | 4 c2 b4 | c2 r ||
     \bar ":|]"
 }
-leconsProgressivesSevenBottom = \relative c' { 
+petitesEtudesSevenBottom = \relative c' { 
     \key c \major
     \time 4/4
     e2 g | c e, | g c | d g, | c b | a c ~ | 4 4 4 4 | b2 r ||
@@ -150,7 +150,7 @@ leconsProgressivesSevenBottom = \relative c' {
 }
 
 
-leconsProgressivesEightTop = \relative c'' { 
+petitesEtudesEightTop = \relative c'' { 
     \key c \major
     \time 4/4
     r8 c-. b-. [ c-. ] d4-. g, ~ | 4 e'2-> r4 | r8 d-. cs-. [ d-. ] e4 a, ~ | 4 f'2-> r4 | \break
@@ -161,7 +161,7 @@ leconsProgressivesEightTop = \relative c'' {
     r4 e-> ~ 8 d-. c-. b-. | a4-. d-. r8 d-. e-. [ f-.-^ ] | b,4-. c-. d-. b-. | c2 r |
     \bar ":|]"
 }
-leconsProgressivesEightBottom = \relative c' { 
+petitesEtudesEightBottom = \relative c' { 
     \key c \major
     \time 4/4
     e4 d8 c b2 | bf'4-> a cs,8 e a g | f4 e8 d cs2 | d4 c b8 g' a b | 
@@ -171,7 +171,7 @@ leconsProgressivesEightBottom = \relative c' {
     c,2 e | f2. e8 d | g2. f4 | e2 r ||
 }
 
-leconsProgressivesNineTop = \relative c'' { 
+petitesEtudesNineTop = \relative c'' { 
     \key c \major
     \time 4/4
     c2 e8 ( d c d | e2 ) r | d2 f8 ( e d e | f2 ) r | \break
@@ -182,7 +182,7 @@ leconsProgressivesNineTop = \relative c'' {
     e2 c8 ( d e c ) | a2 d8 ( e f d ) | b2 c8 ( b a b ) | c2 r |    
     \bar ":|]"
 }
-leconsProgressivesNineBottom = \relative c' { 
+petitesEtudesNineBottom = \relative c' { 
     \key c \major
     \time 4/4
     r8 e ( c [ e ] ) g ( f e f ) | g g g g g ( e d c ) | 
@@ -194,7 +194,7 @@ leconsProgressivesNineBottom = \relative c' {
     c4 c, r g'8 ( e ) | f4 4 r a8 ( f ) | d4 g2-> f4 | e2 r || 
 }
 
-leconsProgressivesTenTop = \relative c'' { 
+petitesEtudesTenTop = \relative c'' { 
     \key c \major
     \time 4/4
     c8 ( b c g d' cs d g, | e'2 ) r | d8 ( cs d g, e' ds e g, | f'2 ) r | \break
@@ -205,7 +205,7 @@ leconsProgressivesTenTop = \relative c'' {
     e8 ( g f e d c b c ) | a-! b ( c cs d e f-^ d ) | b4 4 c8 ( b a b ) | c2 r |
     \bar ":|]"
 }
-leconsProgressivesTenBottom = \relative c' { 
+petitesEtudesTenBottom = \relative c' { 
     \key c \major
     \time 4/4
     e2 b | c8 ( [ r c e ] g e d c ) | b2 c | d8 ( g b d c b a g ) | 
@@ -215,7 +215,7 @@ leconsProgressivesTenBottom = \relative c' {
     c2 e | f4 r r d8 ( f ) | g4 r g f | e2 r ||
 }
 
-leconsProgressivesElevenTop = \relative c'' { 
+petitesEtudesElevenTop = \relative c'' { 
     \key c \major
     \time 4/4
     c2 ~ 8 b ( d c | e2 ) r | d2 ~ 8 cs ( e d | f2-^ ) r | 
@@ -226,7 +226,7 @@ leconsProgressivesElevenTop = \relative c'' {
     e2 ~ 8 d ( c e ) | a,2 ~ 8 d ( f-^ d ) | b2 \( ~ 8 ( g d' b ) | c2 \) r |
     \bar ":|]"
 }
-leconsProgressivesElevenBottom = \relative c' { 
+petitesEtudesElevenBottom = \relative c' { 
     \key c \major
     \time 4/4
     r8 c ( e [ g ] ) c4 r | r8 c, ( e [ g ] f e d c ) | r8 c ( e [ g ] g4 ) r | r8 g ( b [ d ] c b a g ) |
@@ -236,7 +236,7 @@ leconsProgressivesElevenBottom = \relative c' {
     c8 ( d e c ) g'2 ( | f8 )( g a d,  f2 ~ ) | 8 ( d f af g4 ) f | e2 r || 
 }
 
-leconsProgressivesTwelveTop = \relative c'' { 
+petitesEtudesTwelveTop = \relative c'' { 
     \key c \major
     \time 4/4
     r8 c ( g [ c ] ) r d ( g, [ d' ] ) | r e ( c [ e ] ) g4 r | 
@@ -251,7 +251,7 @@ leconsProgressivesTwelveTop = \relative c'' {
     r8 g, ( a [ g ] c b e d ) | c2 r |
     \bar ":|]"
 }
-leconsProgressivesTwelveBottom = \relative c' { 
+petitesEtudesTwelveBottom = \relative c' { 
     \key c \major
     \time 4/4
     e8 r r4 b8 r r4 | c8 r r4 e8 r c r |  
@@ -265,7 +265,7 @@ leconsProgressivesTwelveBottom = \relative c' {
     g8 r r4 r8 d ( g [ f ] ) | e2 r | 
 }
 
-leconsProgressivesThirteenTop = \relative c'' { 
+petitesEtudesThirteenTop = \relative c'' { 
     \key c \major
     \time 4/4
     r4 c-. r d-. | r e-. g-. r | r d-. r e-. | r d-. g,-. r | 
@@ -276,7 +276,7 @@ leconsProgressivesThirteenTop = \relative c'' {
     r4 e r c | r a r d | r c r b | c2 r ||
     \bar ":|]"
 }
-leconsProgressivesThirteenBottom = \relative c' { 
+petitesEtudesThirteenBottom = \relative c' { 
     \key c \major
     \time 4/4
     c4-. e-. g-. b,-. | c-. g'-. e-. c-. | b-. g'-. c,-. g'-. | g-. g-. b,-. g'-. |
@@ -287,7 +287,7 @@ leconsProgressivesThirteenBottom = \relative c' {
 }
 
 
-leconsProgressivesFourteenTop = \relative c'' { 
+petitesEtudesFourteenTop = \relative c'' { 
     \key c \major
     \time 4/4
     r4 \tuplet 3/2 { c8 ( g c ) } r4 \tuplet 3/2 { d8 ( g, d' ) } |
@@ -316,7 +316,7 @@ leconsProgressivesFourteenTop = \relative c'' {
     c2 r
     \bar ":|]"
 }
-leconsProgressivesFourteenBottom = \relative c' { 
+petitesEtudesFourteenBottom = \relative c' { 
     \key c \major
     \time 4/4
     e4 r b r | c g' e c | b r c r | b g' f d | 
@@ -327,7 +327,7 @@ leconsProgressivesFourteenBottom = \relative c' {
 }
 
 
-leconsProgressivesFifteenTop = \relative c'' { 
+petitesEtudesFifteenTop = \relative c'' { 
     \key c \major
     \time 4/4
     c8 4-> b8-> ~ 8 d4-> c8-> ~ | 8 e4 d8 ~ 8 c4 b8-! |
@@ -342,7 +342,7 @@ leconsProgressivesFifteenTop = \relative c'' {
     d8 a4 g8 ~ 8 a4 b8 | c-! c,4 c'8-! c,4 r |
     \bar ":|]"
 }
-leconsProgressivesFifteenBottom = \relative c' { 
+petitesEtudesFifteenBottom = \relative c' { 
     \key c \major
     \time 4/4
     c8 r e r d r f r | e r c r b r c r | 
@@ -356,7 +356,7 @@ leconsProgressivesFifteenBottom = \relative c' {
     g8 r b, r d r f r | e r e r e4 r | 
 }
 
-leconsProgressivesSixteenTop = \relative c'' { 
+petitesEtudesSixteenTop = \relative c'' { 
     \key c \major
     \time 4/4
     
@@ -368,7 +368,7 @@ leconsProgressivesSixteenTop = \relative c'' {
     e4 e' g c, | f, a' c f,, | g f' d g, | c c' r2 |
     \bar ":|]"
 }
-leconsProgressivesSixteenBottom = \relative c' { 
+petitesEtudesSixteenBottom = \relative c' { 
     \key c \major
     \time 4/4
     r4 e r g | r c-. c,-. c' | r b r c | r d-. g,-. b-. |
@@ -378,7 +378,7 @@ leconsProgressivesSixteenBottom = \relative c' {
     r4 c r e, | r f f d | r d r f | e c r2 |
 }
 
-leconsProgressivesSeventeenTop = \relative c'' { 
+petitesEtudesSeventeenTop = \relative c'' { 
     \key c \major
     \time 3/4
 
@@ -390,7 +390,7 @@ leconsProgressivesSeventeenTop = \relative c'' {
     e2 c4 | a2 d4 | b2. | c4 r r |    
     \bar ":|]"
 }
-leconsProgressivesSeventeenBottom = \relative c' { 
+petitesEtudesSeventeenBottom = \relative c' { 
     \key c \major
     \time 3/4
     e4 g b, | c e g | b g c | d b g | 
@@ -400,7 +400,7 @@ leconsProgressivesSeventeenBottom = \relative c' {
     r4 a c, | r f f | r8 g ( b, [ d ] g [ f ] ) | e4 r r |
 }
 
-leconsProgressivesEighteenTop = \relative c'' { 
+petitesEtudesEighteenTop = \relative c'' { 
     \key c \major
     \time 3/4
     %\stemDown
@@ -412,7 +412,7 @@ leconsProgressivesEighteenTop = \relative c'' {
     g,8 ( c e d c b ) | a-! d ( f-^ e d c ) | c ( b a g a b ) | c4 r r |    
     \bar ":|]"
 }
-leconsProgressivesEighteenBottom = \relative c' { 
+petitesEtudesEighteenBottom = \relative c' { 
     \key c \major
     \time 3/4
     c4 r r | c'8 ( g e g e c ) | b4 r r | d'8 ( b g f d g ) | 
@@ -422,7 +422,7 @@ leconsProgressivesEighteenBottom = \relative c' {
     e4 e r | f f r | g f f | e r r |    
 }
 
-leconsProgressivesNinteenTop = \relative c'' { 
+petitesEtudesNinteenTop = \relative c'' { 
     \key c \major
     \time 6/8
     c4 ( d8 e4 ) r8 | d4 ( e8 f4 ) r8 | 
@@ -433,7 +433,7 @@ leconsProgressivesNinteenTop = \relative c'' {
     e4 c8 a4 d8 | b4. ( c4 ) r8 |
     \bar ":|]"
 }
-leconsProgressivesNinteenBottom = \relative c' { 
+petitesEtudesNinteenBottom = \relative c' { 
     \key c \major
     \time 6/8
     e8 ( g ) b,-. c-. g'-. c,-. | b ( d ) c-. b-. g'-. b,-. |
@@ -443,7 +443,7 @@ leconsProgressivesNinteenBottom = \relative c' {
     r8 c, e r f f | r g f e4 r8 |
 }
 
-leconsProgressivesTwentyTop = \relative c'' { 
+petitesEtudesTwentyTop = \relative c'' { 
     \key c \major
     \time 6/8
     \stemDown
@@ -456,7 +456,7 @@ leconsProgressivesTwentyTop = \relative c'' {
     e8. d16 ( c b ) a8. d16 ( e f-^ ) | b,8. g16 ( a b  c4 ) r8 |
     \bar ":|]"
 }
-leconsProgressivesTwentyBottom = \relative c' { 
+petitesEtudesTwentyBottom = \relative c' { 
     \key c \major
     \time 6/8
     e8 g b,-. c-. g'-. c-. | b, g' c, d-. g-. b-. | 
@@ -466,7 +466,7 @@ leconsProgressivesTwentyBottom = \relative c' {
     c,8 g' r f f r | g f f e4 r8 |    
 }
 
-leconsProgressivesTwentyOneTop = \relative c'' { 
+petitesEtudesTwentyOneTop = \relative c'' { 
     \key c \major
     \time 2/4
     c8 c d d | e4 r | d8 d e e | f4 r | 
@@ -477,7 +477,7 @@ leconsProgressivesTwentyOneTop = \relative c'' {
     e8 e c c | a a d d | b2 ( | c4 ) r |
     \bar ":|]"
 }
-leconsProgressivesTwentyOneBottom = \relative c' { 
+petitesEtudesTwentyOneBottom = \relative c' { 
     \key c \major
     \time 2/4
     e8 g c, g' | c,-. e-. g-. c-. | b g c g | d'-. g,-. b-. d-. |
@@ -487,7 +487,7 @@ leconsProgressivesTwentyOneBottom = \relative c' {
     c8 c e e | f f r f | g g d g | e4 r | 
 }
 
-leconsProgressivesTwentyTwoTop = \relative c'' { 
+petitesEtudesTwentyTwoTop = \relative c'' { 
     \key c \major
     \time 2/4
     c16 ( g c e ) d ( b d f-^ ) | e-! c ( a' g  f e d c ) |
@@ -502,7 +502,7 @@ leconsProgressivesTwentyTwoTop = \relative c'' {
     c16 ( b a' g  e f-^ d g ) | c,4 r |
     \bar ":|]"
 }
-leconsProgressivesTwentyTwoBottom = \relative c' { 
+petitesEtudesTwentyTwoBottom = \relative c' { 
     \key c \major
     \time 2/4
     e4 ( b | c ) r | b ( c | g' ) r | 
@@ -512,7 +512,7 @@ leconsProgressivesTwentyTwoBottom = \relative c' {
     c4 e | f r8 f | g4 g8 f | e4 r | 
 }
 
-leconsProgressivesTwentyThreeTop = \relative c'' { 
+petitesEtudesTwentyThreeTop = \relative c'' { 
     \key c \major
     \time 2/2
     c8 ( b c g ) d' ( cs d g, ) | e'-! g ( c b a g f e ) | 
@@ -526,7 +526,7 @@ leconsProgressivesTwentyThreeTop = \relative c'' {
     g8-. g, ( b d g fs f-^ d ) | c-! c, ( e g c4 ) r |
     \bar ":|]"
 }
-leconsProgressivesTwentyThreeBottom = \relative c' { 
+petitesEtudesTwentyThreeBottom = \relative c' { 
     \key c \major
     \time 2/2
     e2 b | c4 r r2 | b2 c | d4 r r2 | 
@@ -536,7 +536,7 @@ leconsProgressivesTwentyThreeBottom = \relative c' {
     c,2 ( e | f4 ) r r2 | b,2 ( d | e4 ) r r2 |
 }
 
-leconsProgressivesTwentyFourTop = \relative c'' { 
+petitesEtudesTwentyFourTop = \relative c'' { 
     \key c \major
     \time 4/4
     \tuplet 3/2 4 { c8\< ( d ds e f fs } g4\! ) r | 
@@ -561,7 +561,7 @@ leconsProgressivesTwentyFourTop = \relative c'' {
     \tuplet 3/2 4 { c8 ( g' e ) c-. g-. e-. } c4\! r |     
     \bar ":|]"
 }
-leconsProgressivesTwentyFourBottom = \relative c' { 
+petitesEtudesTwentyFourBottom = \relative c' { 
     \key c \major
     \time 4/4
     e4 r \tuplet 3/2 4 { e8 ( g f ) e-. d-. c-. } |
@@ -581,99 +581,4 @@ leconsProgressivesTwentyFourBottom = \relative c' {
     b4 r \tuplet 3/2 4 { b'8 ( d c ) b-. a-. g-. } |
     e'4 r \tuplet 3/2 4 { g,8 ( a b c d ds } |
     e4 ) r r2 |
-}
-
-leconsProgressivesTwentyFiveTop = \relative c'' { 
-    \key c \major
-    \time 2/2
-    \tupletSpan 2
-    \tupletUp
-    \override TupletBracket.bracket-visibility = ##f
-    c2\f d | e r | \tuplet 3/2 { c4\p ( b c ) d ( c d ) } | e2 r | 
-    d2\f e | f r | \tuplet 3/2 { d4\p ( c d ) e ( d e ) } | f2 r |
-    e2 \tuplet 3/2 { d4 e d } | c2 \tuplet 3/2 { d4 c b } | d1 | g,2 r |
-    \bar ":|][|:" 
-
-    g'2 b, | c r | \tuplet 3/2 { g'4 ( a g ) b, ( c b ) } | c2 r |
-    f2 g | e r | \tuplet 3/2 { f4 ( e f ) g ( a g ) } | e2 r | 
-    \tuplet 3/2 { e4 e e c d e | a, a a d e f-^ } | b,2 \tuplet 3/2 { d4 c b } | c2 r | 
-    \bar ":|]"
-}
-leconsProgressivesTwentyFiveBottom = \relative c' { 
-    \key c \major
-    \time 2/2
-    \tupletSpan 2
-    \tupletDown
-    \override TupletBracket.bracket-visibility = ##f
-    e2 g | c r | e,4 r g r | c2 r | 
-    g2 c | d r | g,4 r c r | d2 r | 
-    c2 g | a c, | \tuplet 3/2 { b4 d b a' d, a' } | b2 r ||
-
-    \tuplet 3/2 { g4 d b g' g f-. | e-. g-. f-. e-. d-. c-. } | b2 d | \tuplet 3/2 { e4-. c-. d-. e-. f-. g-. } |
-    \tuplet 3/2 { a4 g a b a b | c b a g f e } | d2 b | \tuplet 3/2 { c4 e g c g e } |
-    c2 e | f \tuplet 3/2 { f4 e d } | g2 f | e r ||
-}
-
-leconsProgressivesTwentySixTop = \relative c'' { 
-    \key c \major
-    \time 4/4
-
-    c2 d8. [ f16 e8. d16 ] | e2 r | d e8. [ g16 f8. e16 ] | f2 r | \break
-    e8. [ g16 f8. e16 ] d2 | \noBreak c8. [ b16 c8. d16 ] e2 | \noBreak d4 8. e16 d8. [ c16 b8. a16 ] | \noBreak g2 r | \noBreak
-    \bar ":|][|:" 
-    g'2 b,8. [ c16 d8. b16 ] | \noBreak c2 r | \break f8. [ e16 f8.-^ d16 ] g2 | e r | 
-    e8. [ f16 g8. e16 ] c2 | a8. [ b16 c8. cs16 ] d2 | c8. [ b16 a8. g16 ] a8. [ g16 a8. b16 ] | c2 r |
-    \bar ":|]"
-}
-leconsProgressivesTwentySixBottom = \relative c' { 
-    \key c \major
-    \time 4/4
-    r8. e16 d8. c16 b2 | c8. [ d16 e8. f16 ] g8. [ a16 b8. c16 ] | 
-    r8. b16 a8. g16 c4 c, | r8. g'16 b,8. d16 g8. [ f16 e8. d16 ] | 
-    c4 r b'8. [ d16 c8. b16 ] | a4 r c,8. [ e16 d8. c16 ] | 
-    b8. d16 g4 r8. a16 d,8. c16  | b8. d16 g4 r2 ||
-
-    r8. g16 b,8. d16 f2-> | e8. [ c16 g'8. f16 ] e8. [ d16 c8. e16 ] | 
-    d2 b8. [ c16 d8. b16 ] | c8. [ 16 e8. g16 ] c2 | 
-    c,2 e8. [ f16 g8. e16 ] | f4 4 r8. d16 e8. f16 | 
-    g4 r r8. g16 fs8. f16 | e2 r || 
-}
-
-
-leconsProgressivesTwentySevenTop = \relative c'' { 
-    \key c \major
-    \time 4/4
-
-    c8. [ g16 c8. e16 ] d8. [ b16 d8. f16-^ ] | 
-    e8. [ g16 c8. b16 ] a8. [ g16 f8. e16 ] | 
-    d8. [ b16 g8. d'16 ] e8. [ c16 g8. e'16 ] | 
-    f8.-^ [ d16 b8. g16 ] a8. [ b16 c8. d16 ] | \break
-
-    e8. [ g16 f8. e16 ] d8. [ f16 e8. d16 ] |  
-    c8. [ g16 c8. d16 ] e8. [ c16 e8. g16 ] |  
-    d8. [ 16 8. 16 ] e8. [ d16 c8. a16 ] |  
-    g8. [ 16 b8. d16 ] g4 r |  
-    \bar ":|][|:" \break
-
-    g8. [ f16 e8. d16 ] e8. [ d16 c8. b16 ] |  
-    c8. [ e16 g8. 16 ] 8. [ 16 8. 16 ] | 
-    f8.-^ [ d16 e8. f16 ] g8. [ d16 g8. f16 ] | 
-    e4 r8. g,16 a8. [ b16 c8. d16 ] | \break
-
-    e4.. c,16 d8. [ e16 f8. g16 ] | g2 r4 f'8.-^ d16 | 
-    b8. [ g16 fs8. g16 ] a8. [ g16 e'8. d16 ] | c2 r |  
-    \bar ":|]"
-}
-leconsProgressivesTwentySevenBottom = \relative c' { 
-    \key c \major
-    \time 4/4
-    e8 r e r b r b r | c8 r r4 r2 | 
-    b8 r b r c r c r | g' r r4 r2 | 
-    c,8 r r4 b8 r r4 | c8 r r4 c'8 r r4 | 
-    b8 r g r fs r d r | g r r4 r2 ||
-
-    b,8 r r4 f'8 r r4 | r4 e8 r g r c, r| 
-    d8 r c r b r d r | r4 c8 r c r r4 | 
-    r4 c8 r c r r4 | r4 f8 r f r r4 | 
-    r4 g8 r d r f r | e2 r ||
 }

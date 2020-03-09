@@ -1,7 +1,7 @@
     \bookpart {
 
         \header {
-            title = "30 Leçons Progressives"
+            title = "Petites Études"
             subtitle = ""
             composer = ""
         }
@@ -12,11 +12,11 @@
                     \set PianoStaff.instrumentName = "No. 1"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesOneTop
+                        \petitesEtudesOneTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesOneBottom
+                        \petitesEtudesOneBottom
                     }
                 >>
             >>
@@ -26,6 +26,7 @@
             }
         }
 
+%{}
         \score {
             << 
                 \include "ly/bookparts/methode-complete/score-properties.ily"
@@ -33,11 +34,11 @@
                     \set PianoStaff.instrumentName = "No. 2"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwoTop
+                        \petitesEtudesTwoTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwoBottom
+                        \petitesEtudesTwoBottom
                     }
                 >>
             >>
@@ -54,11 +55,11 @@
                     \set PianoStaff.instrumentName = "No. 3"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesThreeTop
+                        \petitesEtudesThreeTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesThreeBottom
+                        \petitesEtudesThreeBottom
                     }
                 >>
             >>
@@ -75,11 +76,11 @@
                     \set PianoStaff.instrumentName = "No. 4"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesFourTop
+                        \petitesEtudesFourTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesFourBottom
+                        \petitesEtudesFourBottom
                     }
                 >>
             >>
@@ -96,11 +97,11 @@
                     \set PianoStaff.instrumentName = "No. 5"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesFiveTop
+                        \petitesEtudesFiveTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesFiveBottom
+                        \petitesEtudesFiveBottom
                     }
                 >>
             >>
@@ -117,11 +118,11 @@
                     \set PianoStaff.instrumentName = "No. 6"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesSixTop
+                        \petitesEtudesSixTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesSixBottom
+                        \petitesEtudesSixBottom
                     }
                 >>
             >>
@@ -138,11 +139,11 @@
                     \set PianoStaff.instrumentName = "No. 7"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesSevenTop
+                        \petitesEtudesSevenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesSevenBottom
+                        \petitesEtudesSevenBottom
                     }
                 >>
             >>
@@ -159,11 +160,11 @@
                     \set PianoStaff.instrumentName = "No. 8"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesEightTop
+                        \petitesEtudesEightTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesEightBottom
+                        \petitesEtudesEightBottom
                     }
                 >>
             >>
@@ -180,11 +181,11 @@
                     \set PianoStaff.instrumentName = "No. 9"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesNineTop
+                        \petitesEtudesNineTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesNineBottom
+                        \petitesEtudesNineBottom
                     }
                 >>
             >>
@@ -201,11 +202,11 @@
                     \set PianoStaff.instrumentName = "No. 10"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTenTop
+                        \petitesEtudesTenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTenBottom
+                        \petitesEtudesTenBottom
                     }
                 >>
             >>
@@ -222,11 +223,11 @@
                     \set PianoStaff.instrumentName = "No. 11"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesElevenTop
+                        \petitesEtudesElevenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesElevenBottom
+                        \petitesEtudesElevenBottom
                     }
                 >>
             >>
@@ -243,11 +244,11 @@
                     \set PianoStaff.instrumentName = "No. 12"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwelveTop
+                        \petitesEtudesTwelveTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwelveBottom
+                        \petitesEtudesTwelveBottom
                     }
                 >>
             >>
@@ -264,11 +265,11 @@
                     \set PianoStaff.instrumentName = "No. 13"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesThirteenTop
+                        \petitesEtudesThirteenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesThirteenBottom
+                        \petitesEtudesThirteenBottom
                     }
                 >>
             >>
@@ -285,11 +286,11 @@
                     \set PianoStaff.instrumentName = "No. 14"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesFourteenTop
+                        \petitesEtudesFourteenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesFourteenBottom
+                        \petitesEtudesFourteenBottom
                     }
                 >>
             >>
@@ -306,11 +307,11 @@
                     \set PianoStaff.instrumentName = "No. 15"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesFifteenTop
+                        \petitesEtudesFifteenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesFifteenBottom
+                        \petitesEtudesFifteenBottom
                     }
                 >>
             >>
@@ -327,11 +328,11 @@
                     \set PianoStaff.instrumentName = "No. 16"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesSixteenTop
+                        \petitesEtudesSixteenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesSixteenBottom
+                        \petitesEtudesSixteenBottom
                     }
                 >>
             >>
@@ -349,11 +350,11 @@
                     \set PianoStaff.instrumentName = "No. 17"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesSeventeenTop
+                        \petitesEtudesSeventeenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesSeventeenBottom
+                        \petitesEtudesSeventeenBottom
                     }
                 >>
             >>
@@ -370,11 +371,11 @@
                     \set PianoStaff.instrumentName = "No. 18"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesEighteenTop
+                        \petitesEtudesEighteenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesEighteenBottom
+                        \petitesEtudesEighteenBottom
                     }
                 >>
             >>
@@ -391,11 +392,11 @@
                     \set PianoStaff.instrumentName = "No. 19"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesNinteenTop
+                        \petitesEtudesNinteenTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesNinteenBottom
+                        \petitesEtudesNinteenBottom
                     }
                 >>
             >>
@@ -412,11 +413,11 @@
                     \set PianoStaff.instrumentName = "No. 20"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyTop
+                        \petitesEtudesTwentyTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyBottom
+                        \petitesEtudesTwentyBottom
                     }
                 >>
             >>
@@ -433,11 +434,11 @@
                     \set PianoStaff.instrumentName = "No. 21"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyOneTop
+                        \petitesEtudesTwentyOneTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyOneBottom
+                        \petitesEtudesTwentyOneBottom
                     }
                 >>
             >>
@@ -454,11 +455,11 @@
                     \set PianoStaff.instrumentName = "No. 22"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyTwoTop
+                        \petitesEtudesTwentyTwoTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyTwoBottom
+                        \petitesEtudesTwentyTwoBottom
                     }
                 >>
             >>
@@ -475,11 +476,11 @@
                     \set PianoStaff.instrumentName = "No. 23"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyThreeTop
+                        \petitesEtudesTwentyThreeTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyThreeBottom
+                        \petitesEtudesTwentyThreeBottom
                     }
                 >>
             >>
@@ -496,11 +497,11 @@
                     \set PianoStaff.instrumentName = "No. 24"
                     \new Staff = "upper" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyFourTop
+                        \petitesEtudesTwentyFourTop
                     }
                     \new Staff = "lower" {
                         \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyFourBottom
+                        \petitesEtudesTwentyFourBottom
                     }
                 >>
             >>
@@ -509,69 +510,6 @@
                 subtitle = ""
             }
         }
-
-        \score {
-            << 
-                \include "ly/bookparts/methode-complete/score-properties.ily"
-                \new PianoStaff <<
-                    \set PianoStaff.instrumentName = "No. 25"
-                    \new Staff = "upper" {
-                        \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyFiveTop
-                    }
-                    \new Staff = "lower" {
-                        \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentyFiveBottom
-                    }
-                >>
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-            }
-        }
-
-        \score {
-            << 
-                \include "ly/bookparts/methode-complete/score-properties.ily"
-                \new PianoStaff <<
-
-                    \set PianoStaff.instrumentName = "No. 26"
-                    \new Staff = "upper" {
-                        \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentySixTop
-                    }
-                    \new Staff = "lower" {
-                        \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentySixBottom
-                    }
-                >>
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-            }
-        }
-
-        \score {
-            << 
-                \include "ly/bookparts/methode-complete/score-properties.ily"
-                \new PianoStaff <<
-
-                    \set PianoStaff.instrumentName = "No. 27"
-                    \new Staff = "upper" {
-                        \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentySevenTop
-                    }
-                    \new Staff = "lower" {
-                        \include "ly/ily/methode-complete/staff-properties.ily"
-                        \leconsProgressivesTwentySevenBottom
-                    }
-                >>
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-            }
-        }
+        %}
+        
     }
