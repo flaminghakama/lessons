@@ -545,7 +545,7 @@ leconsProgressivesTwentyFourTop = \relative c'' {
     \tuplet 3/2 4 { c8 ( g' e ) c-. g-. e-. } c4\! r |
 
     \tuplet 3/2 4 { c'8\< ( d ds e f fs } g4\! ) r | 
-    \tuplet 3/2 4 { fs8\< ( g gs a as b } c4\! ) r | 
+    \tuplet 3/2 4 { fs8\< ( g gs a as b } c4\! ) r | \pageBreak
     \tuplet 3/2 4 { b8\> ( a g fs g e } d4\! ) r | 
     \tuplet 3/2 4 { d8\> ( cs c b bf a } g4\! ) r |
     \bar ":|][|:" 
@@ -653,7 +653,7 @@ leconsProgressivesTwentySevenTop = \relative c'' {
     c8. [ g16 c8. d16 ] e8. [ c16 e8. g16 ] |  
     d8. [ 16 8. 16 ] e8. [ d16 c8. a16 ] |  
     g8. [ 16 b8. d16 ] g4 r |  
-    \bar ":|][|:" \break
+    \bar ":|][|:" \pageBreak
 
     g8. [ f16 e8. d16 ] e8. [ d16 c8. b16 ] |  
     c8. [ e16 g8. 16 ] 8. [ 16 8. 16 ] | 
@@ -676,4 +676,105 @@ leconsProgressivesTwentySevenBottom = \relative c' {
     d8 r c r b r d r | r4 c8 r c r r4 | 
     r4 c8 r c r r4 | r4 f8 r f r r4 | 
     r4 g8 r d r f r | e2 r ||
+}
+
+
+leconsProgressivesTwentyEightTop = \relative c'' { 
+    \key c \major
+    \time 4/4
+    c2-> r8. d16 b8. g16 | e'2-> r8. g16 e8. c16 | 
+    d2-> r8. e16 c8. g16 | f'2-> r8. d16 g8. f16 | \break
+    e8. c16 g'4 r8. d16 g4 | \noBreak r8. e16 g4 r8. c,16 d8. e16 | \noBreak 
+    d8. b16 g4 r8. b16 a8. d16 | \noBreak g,2 r | \noBreak
+    \bar ":|][|:"
+    g'4\> ( f8\! ) r r8. g,16 a8. b16 | \noBreak c8. d16 e4 r d8. e16 | \break 
+    f8. e16 d4 r8. g16 8. f16 | e2 r8. g,16 c8. d16 |
+    e8. f16 g4 r e8. c16 | a8. d16 f4-^ r8. f16-^ d8. c16 |
+    b8. g'16 a8. g16 a8. g16 f8.-^ d16 | c2 r ||
+    \bar ":|]"
+}
+leconsProgressivesTwentyEightBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    r8. e16 d8. c16 b2 | r8. c16 e8. g16 c,2 | 
+    r8. b16 d8. g16 c,2 | r8. g'16 b,8. d16 g4 r | 
+    c2-> b-> | c4 e, r c | 
+    b4 d r c | b b8. d16 g4 r ||
+
+    r8. g16 b,8. d16 g4 ( f ) | e8 r c r c' r r4 | 
+    r4 b,8 r b r b r | r8. c16 e8. g16 c4 r | 
+    c,2 e | f d | 
+    g8 r g r g r g r | e2 r ||
+}
+
+leconsProgressivesTwentyNineTop = \relative c' { 
+    \key c \major
+    \time 4/4
+    c16 ( e g c ) e4-> d,16 ( g b d ) f4->-^ | e,16 ( g c e g4 ) r2 | 
+    b,,16 ( d g b ) d4-> c,16 ( e g c ) e4-> | \break d,16 ( g b d ) g4-> r2 |
+    c,,16-> ( e g c ) e ( c g e ) d-> ( g b d ) f-> ( d b g ) |
+    e16-> ( g c e ) g-> ( e c g ) e'-> ( c g e ) c4-> | \break
+    b16-> ( d g b ) d4-> ~ 8 d,-.-> e-.-> fs-.-> | g4 d16 ( g b d ) g4 r ||
+    \bar ":|][|:"
+    g16 ( f-^ d b ) g4-> f'16-^ ( d b g ) f4-> | \break
+    e16 ( g c e ) g4 r8 c,,16 ( e ) g ( c e g ) | 
+    d,16 ( g b d ) f4-> ~ 8 g, ( g' f-^ ) | e2 r | 
+    
+    e,16 ( g c e ) g4-> g,16 ( c e g ) c4-> | \break
+    a8 f16-^ ( c' ) a-. f-. c-. a-. f4 r8 a' | 
+    g16 ( f-^ d b ) g4-> g'16 ( g, b d ) g4-> | 
+    r8 c,,16 ( e g c ) e-. g-. c4 r ||
+    \bar ":|]"
+}
+leconsProgressivesTwentyNineBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    c8 r c'4-> ( b8 ) r d4-> ( | c8 ) r e16 ( c g e ) c4 r |
+    g'8 r b4-> ( c8 ) r c4-> ( | b8 ) r g16 ( d' b d ) g,4 r |
+    e2-> f-> | g2.-> e4-> |
+    d8 r d r r d-> cs-> [ c-> ] | b r g' r g r r4 ||
+
+    g8 r b,4-> ( d8 ) r b4-> ( | c8 ) r c' r c r r4 |
+    b,2 g' | c8. e,16 g ( c, e g ) c4 r | 
+    c,8 r e4 ~ 8 r e'4 ( | f8 ) r r4 r2 | 
+    b,,8 r r4 f'8 r r4 | e8 r e r e r r4 ||
+}
+
+leconsProgressivesThirtyTop = \relative c' { 
+    \key c \major
+    \time 4/4
+    \override TupletBracket.bracket-visibility = ##f
+    \tuplet 3/2 4 { e8-> ( g c ) c c c  d-> ( b g ) g g g |
+    g-> ( c e ) g ( e g ) } c4 r | 
+    \tuplet 3/2 4 { g,8 ( b d ) d d d g, ( c e ) e e e |
+    g, ( g b ) d ( b d ) } g4 r | \break
+
+    \tuplet 3/2 4 { e8 ( g ) f-. e-. d-. c-. b ( d ) c-. b-. a-. g-. | 
+    c8 g-. a-. b-. c-. d-. e ( c ) d-. e-. d-. c-. } |
+    b4 \tuplet 3/2 { d8 ( g ) b,-. } d4 \tuplet 3/2 { c8 ( a ) d } |
+    g,4 \tuplet 3/2 { g8 b d } g4 r | 
+    \bar ":|][|:"  \break
+
+    \tuplet 3/2 4 { g8 g, g  g g g  a-> ( g ) g  g g g |
+    g8-! e' ( c ) } g4-> \tuplet 3/2 { r8 e' ( c ) } g4-> | 
+    \tuplet 3/2 4 { g'8 g, g g g g  a-> ( g ) g  g g g |
+    r8 e' ( c ) } g4 ~ \tuplet 3/2 { g8 e' ( c ) } g4 | \break
+
+    \tuplet 3/2 4 { r8 e' ( g ) r g ( c ) r c, ( e ) r e ( g ) |
+    r8 a, ( c ) r c ( f ) r f ( a ) r a ( c ) | 
+    r8 g, ( b d ) d-. d-. r e ( c ) g' ( f ) d-. | 
+    c8 ( g' ) e-. c-. g-. e-. } c4-. r ||
+    \bar ":|]"
+}
+leconsProgressivesThirtyBottom = \relative c' { 
+    \key c \major
+    \time 4/4
+    \override TupletBracket.bracket-visibility = ##f
+    r4 e r b | r c8 r e r c r | r4 b r c | r g'8 r b r g r | 
+    c,2 d | e4 r r c | d r fs r | g r g r ||
+
+    f1 | e4 \tuplet 3/2 { r8 c ( e ) } g4 \tuplet 3/2 { r8 c, ( e ) } | 
+    f1 | e4 \tuplet 3/2 { r8 c ( e ) } g4 \tuplet 3/2 { r8 c, ( g' ) } |
+    c8 r e r g r c, r | f, r a r c r f r | 
+    f,8 r f r e r f r | e r e r e4 r ||
 }

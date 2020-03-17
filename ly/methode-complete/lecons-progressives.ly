@@ -40,7 +40,7 @@ mv lecons-progressives.pdf pdf/methode-complete
     markup-system-spacing.padding = #0
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #14
+    top-system-spacing.minimum-distance = #8
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18

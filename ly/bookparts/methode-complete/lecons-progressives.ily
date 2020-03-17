@@ -2,8 +2,8 @@
 
         \header {
             title = "30 Leçons Progressives"
-            subtitle = ""
-            composer = ""
+            subtitle = "Pour tenir lieu de solfége"
+            % composer = ""
         }
         \score {
             << 
@@ -22,7 +22,8 @@
             >>
             \header {
                 title = ""
-                subtitle = "Pour tenir lieu de solfége"
+                subtitle = ""
+                composer = ""
             }
         }
 
@@ -44,6 +45,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -65,8 +67,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
 
         \score {
             << 
@@ -86,6 +90,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -107,6 +112,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -128,8 +134,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
 
         \score {
             << 
@@ -149,6 +157,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -170,8 +179,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
 
         \score {
             << 
@@ -191,8 +202,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        
 
         \score {
             << 
@@ -212,8 +225,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
 
         \score {
             << 
@@ -233,6 +248,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -254,8 +270,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
 
         \score {
             << 
@@ -275,6 +293,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -296,9 +315,11 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
-
+        \pageBreak
+        
         \score {
             << 
                 \include "ly/bookparts/methode-complete/score-properties.ily"
@@ -317,6 +338,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -338,6 +360,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -360,8 +383,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
         
         \score {
             << 
@@ -381,6 +406,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
         
@@ -402,6 +428,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
         
@@ -423,8 +450,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
         
         \score {
             << 
@@ -444,6 +473,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
         
@@ -465,8 +495,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
         
         \score {
             << 
@@ -486,6 +518,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
         
@@ -507,6 +540,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -528,8 +562,10 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
+        \pageBreak
 
         \score {
             << 
@@ -550,6 +586,7 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
             }
         }
 
@@ -572,6 +609,77 @@
             \header {
                 title = ""
                 subtitle = ""
+                composer = ""
+            }
+        }
+
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff <<
+
+                    \set PianoStaff.instrumentName = "No. 28"
+                    \new Staff = "upper" {
+                        \include "ly/ily/methode-complete/staff-properties.ily"
+                        \leconsProgressivesTwentyEightTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/methode-complete/staff-properties.ily"
+                        \leconsProgressivesTwentyEightBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+            }
+        }
+        \pageBreak
+
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff <<
+                    \set PianoStaff.instrumentName = "No. 29"
+                    \new Staff = "upper" {
+                        \include "ly/ily/methode-complete/staff-properties.ily"
+                        \leconsProgressivesTwentyNineTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/methode-complete/staff-properties.ily"
+                        \leconsProgressivesTwentyNineBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+            }
+        }
+        \pageBreak
+
+        \score {
+            << 
+                \include "ly/bookparts/methode-complete/score-properties.ily"
+                \new PianoStaff << 
+                    \set PianoStaff.instrumentName = "No. 30"
+                    \new Staff = "upper" {
+                        \include "ly/ily/methode-complete/staff-properties.ily"
+                        \pageBreak
+                        \leconsProgressivesThirtyTop
+                    }
+                    \new Staff = "lower" {
+                        \include "ly/ily/methode-complete/staff-properties.ily"
+                        \leconsProgressivesThirtyBottom
+                    }
+                >>
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
             }
         }
     }
