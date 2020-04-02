@@ -18,10 +18,14 @@ killPreview
 rm youll-never-walk-alone*pdf
 lilypond ly/songs/youll-never-walk-alone.ly
 op youll-never-walk-alone-for-C.pdf
-python ~/git/part-format/combine-1Page-1Page.py youll-never-walk-alone-for-C.pdf youll-never-walk-alone-for-Eb.pdf youll-never-walk-alone-for-C-and-Eb.pdf
+python ~/git/part-format/combine-1Page-1Page.py youll-never-walk-alone-for-C.pdf youll-never-walk-alone-easynotes-for-Eb.pdf youll-never-walk-alone-for-C-and-Eb.pdf
+python ~/git/part-format/combine-1Page-1Page.py youll-never-walk-alone-for-A.pdf youll-never-walk-alone-easynotes-for-C.pdf youll-never-walk-alone-for-A-and-C.pdf
 mv youll-never-walk-alone-for-C.pdf  pdf/songs
 mv youll-never-walk-alone-for-Eb.pdf pdf/songs
+mv youll-never-walk-alone-easynotes-for-C.pdf  pdf/songs
+mv youll-never-walk-alone-easynotes-for-Eb.pdf pdf/songs
 mv youll-never-walk-alone-for-C-and-Eb.pdf pdf/songs/printable
+mv youll-never-walk-alone-for-A-and-C.pdf pdf/songs/printable
 
 %}
 
@@ -171,7 +175,34 @@ lyricsHeadOne = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "easynotes-for-C"
+    \header {
+        subtitle = ""
+        poet = "   Concert Pitch"
+    }
+    \score {
+        <<
+            \new ChordNames \transpose c c  { \chordsForm }
+            \new Staff = "voice" \with {
+                \magnifyStaff #(magstep 3)
+            } \keepWithTag #'(Part) \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \easyHeadsOn
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "easynotes-for-Eb"
     \header {
         subtitle = ""
     }
@@ -181,6 +212,28 @@ lyricsHeadOne = \lyricmode {
             \new Staff = "voice" \with {
                 \magnifyStaff #(magstep 3)
             } \keepWithTag #'(Part) \transpose ef, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \easyHeadsOn
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        subtitle = ""
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c  { \chordsForm }
+            \new Staff = "voice" \keepWithTag #'(Part) \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
