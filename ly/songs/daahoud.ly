@@ -16,21 +16,18 @@ killPreview
 rm daahoud*pdf
 lilypond ly/songs/daahoud.ly
 
-# python ~/git/part-format/combine-1Page-1Page.py daahoud-Bird-for-Bb.pdf daahoud-Dizzy-for-Bb.pdf daahoud-for-Bb.pdf
-# python ~/git/part-format/combine-1Page-1Page.py daahoud-Bird-for-C.pdf daahoud-Dizzy-for-C.pdf daahoud-for-C.pdf
-# python ~/git/part-format/combine-1Page-1Page.py daahoud-Bird-for-Eb.pdf daahoud-Dizzy-for-Eb.pdf daahoud-for-Eb.pdf
+python ~/git/part-format/combine-1Page-1Page.py daahoud-for-C.pdf daahoud-for-Bb.pdf daahoud-for-C-and-Bb.pdf
+python ~/git/part-format/combine-1Page-1Page.py daahoud-for-C.pdf daahoud-for-Eb.pdf daahoud-for-C-and-Eb.pdf
 
-mv daahoud-Bird-for-C.pdf  pdf/songs
-mv daahoud-Bird-for-Bb.pdf pdf/songs
-mv daahoud-Bird-for-Eb.pdf pdf/songs
-mv daahoud-Dizzy-for-C.pdf  pdf/songs
-mv daahoud-Dizzy-for-Bb.pdf pdf/songs
-mv daahoud-Dizzy-for-Eb.pdf pdf/songs
-# mv daahoud-for-C.pdf  pdf/songs/printable
-# mv daahoud-for-Bb.pdf pdf/songs/printable
-# mv daahoud-for-Eb.pdf pdf/songs/printable
+mv daahoud-for-C.pdf  pdf/songs
+mv daahoud-for-Bb.pdf pdf/songs
+mv daahoud-for-Eb.pdf pdf/songs
+mv daahoud-for-C-and-Bb.pdf  pdf/songs
+mv daahoud-for-C-and-Eb.pdf  pdf/songs
 
 for file in pdf/songs/daahoud*pdf ; do open -a Preview $file ; done
+
+echo git add pdf/songs/daahoud* ly/songs/daahoud.ly
 
 %}
 
@@ -109,6 +106,7 @@ structure = \relative c' {
     \bar "||" 
 }
 structureCoda = \relative c' { 
+    \key c \minor
     \atCoda
     s1*5
     \bar "|."
