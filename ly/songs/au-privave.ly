@@ -25,6 +25,8 @@ mv au-privave-for-Eb.pdf pdf/songs
 mv au-privave-for-C-and-Bb.pdf  pdf/songs
 mv au-privave-for-C-and-Eb.pdf  pdf/songs
 
+op pdf/songs/au-privave-for-Eb.pdf
+
 for file in pdf/songs/au-privave*pdf ; do open -a Preview $file ; done
 
 %}
@@ -73,10 +75,16 @@ structure = \relative c' {
 
     \key f \major
     \time 4/4
-    s1*4 \break
-    s1*4 \break
-    s1*4 \break
-    \bar "||" 
+    \bar "[|:"
+    \repeat volta 2 { 
+        s1*4 \break
+        s1*4 \break
+        s1*3 
+    }
+    \alternative {
+        { s1 \bar ":|]" } 
+        { s1 \bar "||" }
+    }
 }
 
 chordsSong = \chordmode { 
@@ -86,16 +94,19 @@ chordsSong = \chordmode {
     f1 | g2:m7 c:7 | f g:m7 | c:m7 f:aug7 | 
     bf1:7 | bf2:m7 ef:7 | f g:m7 | a:m7 d:7 | 
     g1:m7 | g2:m7 c:7 | f d:7 | g:m7 c:7 |
+                            | g:m7 c:7 |
 }
+
 melody = \relative c' { 
-    f8 ( e f ) c-. r4 a'8 ( gs | a ) c,-. r e r g ( f ) [ c ] | 
-    g'8 ( f ) a bf ( a ) f ( g ) ef-. | r d'-> r4 r8 df r f, | 
+    f8 ( e ) f  c-. r4 a'8 ( gs ) | a c,-. r e r g ( f [ c ) ] | 
+    g'8 ( f ) a bf ( a f ) g ef-. | r d'4.-> r8 df r f, | 
 
-    cf'4.^\lheel f8 r cf bf4-> ~ | 4 r8 af8 ~ 8 f ( g f ) | 
-    c'4-. r8 a bf4-. r8 g | c4-. 4 ~ 8 a bf c16 ( d ) | 
+    cf'4.^\lheel f8-^ r cf-> ( bf4 ~ | 4 ) r8 af8 ( ~ 8 f g f ) | 
+    c'4-. r8 a ( bf4-. ) r8 g | c4-. 4-> ~ 8 a ( bf c ) | 
 
-    a8 g f ( e ) f4-. r8 c'8 | bf4-. r8 f'-> ( ~ 8 c ) e f-> |
-    r4 r8 c8 4 . a8 | bf a f ( d ) a'8 << { a4.^"Last X" } \\ { g4._"1st X" } >>
+    a8 g ( f e ) f4-. r8 c'8 | bf4-. r8 f'-> ( ~ 8 c ) e f-> |
+    r4 r8 c8 4 . a8 | bf a ( f d ) a'8 a4. 
+    \relative c'' { bf8 a f ( d ) a'8 g4. }
 }
 
 \header {
