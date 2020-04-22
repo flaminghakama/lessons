@@ -14,7 +14,10 @@ composerName = "J. F. Cokken"
 
 rm lecons-progressives.pdf
 lilypond ly/methode-complete/lecons-progressives.ly 
+
+python ~/git/part-format/bookify-16page.py lecons-progressives.pdf lecons-progressives-printable.pdf automatic
 mv lecons-progressives.pdf pdf/methode-complete
+mv lecons-progressives-printable.pdf pdf/methode-complete/printable
 
 %}
 

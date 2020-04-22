@@ -92,10 +92,11 @@ grandArpeggioMinorDiminishedTwo = \relative c' {
         \tuplet 3/2 4 { a8 c e  a c e  d b gs  f d b } | a1 | 
     }
     \relative c'''' { 
-        \tuplet 3/2 4 { a8 e c  a e c  e gs b  d e gs  } | a1 | 
+        \tuplet 3/2 4 { a8 e c  a e c  f gs b  d f gs  } | a1 | 
         \bar "||"
     }
 }
+
 
 grandArpeggioMajorSixthChords = \chordmode { 
     \set chordChanges = ##f

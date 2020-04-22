@@ -87,7 +87,7 @@ python ~/git/part-format/bookify-8page.py pdf/saxophone-low-register.pdf pdf/pri
         print-all-headers = ##t
     }
     \header {
-        title = \title
+        %title = \title
     }
 
     % \bookpart { 
