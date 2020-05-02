@@ -188,7 +188,7 @@ melodyB = \relative c'' {
         }
     >> |
     \relative c'' {
-        r4 r8 ff-^ r df-^ r bf-^ | ef2 bf8 af gf bf |
+        r4 r8 ff-^ r df-^ r bf-^ | df2 bf8 af gf bf |
     }
 }
 melodyLastA = \relative c'' {
