@@ -16,14 +16,8 @@ killPreview
 rm wabash*pdf
 lilypond ly/songs/wabash.ly
 
-python ~/git/part-format/combine-1Page-1Page.py wabash-for-C.pdf wabash-for-Bb.pdf wabash-for-C-and-Bb.pdf
-python ~/git/part-format/combine-1Page-1Page.py wabash-for-C.pdf wabash-for-Eb.pdf wabash-for-C-and-Eb.pdf
-
-mv wabash-for-C.pdf  pdf/songs
-mv wabash-for-Bb.pdf pdf/songs
-mv wabash-for-Eb.pdf pdf/songs
-mv wabash-for-C-and-Bb.pdf  pdf/songs
-mv wabash-for-C-and-Eb.pdf  pdf/songs
+mv wabash-for-C.pdf pdf/songs
+mv wabash-transposed-for-Eb.pdf pdf/songs
 
 for file in pdf/songs/wabash*pdf ; do open -a Preview $file ; done
 
