@@ -67,7 +67,9 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
 
 \include "ly/notes/pentatonic-A-minor.ily"
 \include "ly/notes/pentatonic-D-minor.ily"
+\include "ly/notes/pentatonic-E-minor.ily"
 \include "ly/notes/pentatonic-G-minor.ily"
+\include "ly/notes/pentatonic-B-minor.ily"
 \include "ly/notes/pentatonic-C-minor.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -98,9 +100,11 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
         \markup \title-page-markup "Saxophone" \composerName \title
     }
 
-    \include "ly/bookparts/pentatonic-A-minor.ily"
-    %\include "ly/bookparts/pentatonic-D-minor.ily"
-    %\include "ly/bookparts/pentatonic-G-minor.ily"
-    %\include "ly/bookparts/pentatonic-C-minor.ily"
-    %\include "ly/bookparts/pentatonic-Csharp-minor.ily"
+    %\include "ly/bookparts/pentatonic-A-minor.ily"
+    \include "ly/bookparts/pentatonic-D-minor.ily"
+    \include "ly/bookparts/pentatonic-E-minor.ily"
+    \include "ly/bookparts/pentatonic-G-minor.ily"
+    \include "ly/bookparts/pentatonic-B-minor.ily"
+    \include "ly/bookparts/pentatonic-C-minor.ily"
+    \include "ly/bookparts/pentatonic-Csharp-minor.ily"
 }
