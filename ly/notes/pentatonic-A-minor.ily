@@ -2,19 +2,14 @@ pentatonicExerciseOneAMinor = \relative c'' {
     \key a \minor
     \time 4/4
     \tuplet 3/2 4 { 
-        a8 g a  g e g  e d e  d c d  | 
-        c8 d e  g e g } a2 |
-
+        a8 g a  c a c 
+        d8 c d  e d e |
+        g8 e g  a g c } a2 | 
 
     \tuplet 3/2 4 { 
         a8 g a  c a c 
-        d8 c d  e d e |
-        g8 e g } a4 
-
-    \tuplet 3/2 4 { 
-        a8 g a  c a c | 
-        d8 c d  e d e 
-        ef8 d c }  a4 | 
+        d8 c d  e d e | 
+        ef8 d c a e g }  a2 | 
 
     \tuplet 3/2 4 { 
         d8 e d  c d c 
@@ -22,17 +17,16 @@ pentatonicExerciseOneAMinor = \relative c'' {
         g8 a g |
         e g e  
         d8 e d  
-        c8 d c } 
-
-        a4 | 
+        c8 d c 
+        a8 c g } | a2  
     \tuplet 3/2 4 { 
         a8 c a 
-        g8 a g  
+        g8 a g | 
         e8 g e  
-        d8 e d |
+        d8 e d 
         c8 d c 
-        d8 e g  } 
-        a2 
+        d8 e g } | 
+        a1 
     \bar "|."
 }
 

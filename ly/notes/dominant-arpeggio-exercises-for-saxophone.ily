@@ -136,10 +136,10 @@ domiantArpeggioAFlat = \relative c' {
     \relative c'' { 
         af2. ( gf8 ) ef ( |
         c8 ) ef ( gf ) af (  ef ) gf ( af ) c ( | 
-        gf8 ) af ( c ) ef (  af, ) c ( ef ) gf ( |       
-        c,8 ) ef ( gf ) af (  ef ) gf ( af ) c ( |
-        gf8 ) af ( c ) ef (  af, ) c ( ef ) gf, ( |       
-        af1 ) |
+        gf8 ) af ( c ) ef (  af,4 ) |
+        af8 c ( ef ) gf ( c, ) ef ( gf ) af ( |
+        ef8 ) gf ( af ) c ( gf ) af ( c ) ef (  |
+        af,8 ) c ( ef ) gf, ( af2 ) |
     }
     \relative c''' { 
         ef8 c ( af ) gf (   c ) af ( gf ) ef (  |
