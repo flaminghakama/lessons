@@ -15,7 +15,7 @@ composerName = "Elaine Paul"
 rm approach-note-exercises-for-saxophone.pdf
 lilypond ly/approach-note-exercises-for-saxophone.ly 
 mv approach-note-exercises-for-saxophone.pdf pdf
-python ~/git/part-format/bookify-8page.py pdf/approach-note-exercises-for-saxophone.pdf pdf/printable/approach-note-exercises-for-saxophone.pdf manual
+python ~/git/engraving/part-format/bookify-8page.py pdf/approach-note-exercises-for-saxophone.pdf pdf/printable/approach-note-exercises-for-saxophone.pdf manual
 
 %}
 
