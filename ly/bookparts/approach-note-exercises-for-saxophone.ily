@@ -244,7 +244,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c ef \scaleSingleChromaticDescendingOne
+                \transpose c ef \scaleSingleChromaticDescendingOneFlats
             }
         >>
     }
@@ -314,7 +314,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c af \scaleSingleChromaticDescendingTwo
+                \transpose c af \scaleSingleChromaticDescendingTwoFlats
             }
         >>
     }
@@ -384,7 +384,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c df \scaleSingleChromaticDescendingOne
+                \transpose c df \scaleSingleChromaticDescendingOneFlats
             }
         >>
     }

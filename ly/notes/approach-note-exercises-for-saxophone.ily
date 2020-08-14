@@ -39,7 +39,7 @@ scaleSingleChromaticAscendingFlats = \relative c' {
         b8 a g fs  g a as b
         c8 b a g   a b c cs 
 
-        d8 c b a  b c d ef 
+        d8 c b a  b c d ds 
         e8 d c b  c d e es 
         fs8 e d c  d e es fs 
         g2. r4 \break
@@ -123,6 +123,32 @@ scaleSingleChromaticDescendingCommonSharps = \relative c' {
     }
 }
 
+scaleSingleChromaticDescendingFlats = \relative c' {
+    \key c \major
+    \time 4/4 
+    \relative c' {
+        c8 d e f  g f e ef
+        d8 e f g  a g f ds
+        e8 f g a  b a g fs
+        f8 g a b  c b a gs
+        g8 a b c  d c b bf
+        a8 b c d  e d c as
+        b8 c d e  f e d cs
+        c2. r4 \break
+    }
+    \relative c'' { 
+        c8 d e f  e d c as 
+        b8 c d e  d c b bf
+        a8 b c d  c b a gs
+        g8 a b c  b a g fs
+
+        f8 g a b  a g f ds
+        e8 f g a  g f e ef
+        d8 e f g  f e d cs
+    }
+}
+
+
 scaleSingleChromaticDescendingOne = \relative c' {
     \scaleSingleChromaticDescendingCommon
     \relative c' {
@@ -131,8 +157,24 @@ scaleSingleChromaticDescendingOne = \relative c' {
     \bar "||"
 }
 
+scaleSingleChromaticDescendingOneFlats = \relative c' {
+    \scaleSingleChromaticDescendingFlats
+    \relative c' {
+        \tuplet 3/2 2 { c4 c'' a  g e c  b g e } c2 
+    }
+    \bar "||"
+}
+
 scaleSingleChromaticDescendingTwo = \relative c' {
     \scaleSingleChromaticDescendingCommon
+    \relative c' {
+        \tuplet 3/2 2 { c4 e, g  c e g } c1 
+    }
+    \bar "||"
+}
+
+scaleSingleChromaticDescendingTwoFlats = \relative c' {
+    \scaleSingleChromaticDescendingFlats
     \relative c' {
         \tuplet 3/2 2 { c4 e, g  c e g } c1 
     }
