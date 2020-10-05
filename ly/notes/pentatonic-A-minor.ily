@@ -41,23 +41,25 @@ pentatonicExerciseTwoAMinor = \relative c'' {
     \tuplet 3/2 4 { 
         a8 g e  c' a g  
         d'8 c a  e' d c 
-        g'8 e d  ef d c } |
-        a4
+        ef d c } a4 |
 
     \tuplet 3/2 4 { 
-        d8 e g  c,8 d e | 
+        c8 d e  
         a,8 c d  
-        g,8 a c  
-        e,8 g a |
+        g,8 a c | 
+        e,8 g a 
         d,8 e g  
-        c,8 d e } a,4 |
+        c,8 d e } |
+    a,4 
     
     \tuplet 3/2 4 { 
-        a8 c d  g, a c 
-        e,8 g a |
+        a8 c d  
+        g,8 a c |
+        e,8 g a 
         d,8 e g 
-        c,8 d e  g a c } | 
-        a2. | 
+        c,8 d e | 
+        g a c } 
+    a2
     \bar "|." 
 }
 
@@ -73,15 +75,20 @@ pentatonicExerciseThreeAMinor = \relative c'' {
     d' c a g  e' d c a |
     ef' d c g  a2 | 
 
-    c8 d e g,  a c d e |
-    g,8 a c d  e, g a c |
-    d,8 e g a  c, d e g |
-    a,2 
+    a8 c d e
+    g,8 a c d | 
+    e,8 g a c 
+    d,8 e g a |
+    c,8 d e g 
+    a,2 |
 
-    a8 c d e |
-    g,8 a c d  e, g a c |
-    d,8 e g a  c, d e g | 
-    a8 ef' d c  a2  |
+    a8 c d e 
+    g,8 a c d |
+    e,8 g a c 
+    d,8 e g a | 
+    c,8 d e g  
+    a8 ef' d c | 
+    a1 |
     \bar "|." 
 }
 

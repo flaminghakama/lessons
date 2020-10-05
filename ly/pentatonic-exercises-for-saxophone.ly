@@ -79,6 +79,7 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
 \include "ly/notes/pentatonic-C-sharp-minor.ily"
 \include "ly/notes/pentatonic-F-minor.ily"
 
+\include "ly/notes/pentatonic-B-flat-minor.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -119,6 +120,10 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
     \include "ly/bookparts/pentatonic-F-sharp-minor.ily"
     \include "ly/bookparts/pentatonic-C-minor.ily"
 
-    \include "ly/bookparts/pentatonic-Csharp-minor.ily"
+    \include "ly/bookparts/pentatonic-C-sharp-minor.ily"
     \include "ly/bookparts/pentatonic-F-minor.ily"
+
+    \include "ly/bookparts/pentatonic-G-sharp-minor.ily"
+    \include "ly/bookparts/pentatonic-B-flat-minor.ily"
+
 }
