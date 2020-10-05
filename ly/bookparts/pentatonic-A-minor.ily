@@ -1,9 +1,9 @@
     \bookpart {
 
         \header {
-            title = ""
+            % title = ""
             subtitle = "A Minor"
-            composer = ""
+            % composer = ""
         }
         \score {
             << 

@@ -80,6 +80,7 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
 \include "ly/notes/pentatonic-F-minor.ily"
 
 \include "ly/notes/pentatonic-B-flat-minor.ily"
+\include "ly/notes/pentatonic-E-flat-minor.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -104,10 +105,10 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
         title = \title
     }
 
-    \bookpart { 
-        \include "../scores/flaming-libs/flaming-title-page.ily"
-        \markup \title-page-markup "Saxophone" \composerName \title
-    }
+    % \bookpart { 
+    %     \include "../scores/flaming-libs/flaming-title-page.ily"
+    %     \markup \title-page-markup "Saxophone" \composerName \title
+    % }
 
     \include "ly/bookparts/pentatonic-A-minor.ily"
 
@@ -126,4 +127,5 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
     \include "ly/bookparts/pentatonic-G-sharp-minor.ily"
     \include "ly/bookparts/pentatonic-B-flat-minor.ily"
 
+    \include "ly/bookparts/pentatonic-E-flat-minor.ily"
 }

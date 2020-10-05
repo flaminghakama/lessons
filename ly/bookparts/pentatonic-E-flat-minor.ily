@@ -9,9 +9,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g gf { 
+                \new Staff \transpose e ef { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseOneGMinor
+                    \pentatonicExerciseOneEMinorForEFlat
                 }
             >>
             \header {
@@ -26,9 +26,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g gf { 
+                \new Staff \transpose e ef { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseTwoGMinor
+                    \pentatonicExerciseTwoEMinorForEFlat
                 }
             >>
             \header {
@@ -43,9 +43,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g gf { 
+                \new Staff \transpose e ef { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseThreeGMinor
+                    \pentatonicExerciseThreeEMinorForEFlat
                 }
             >>
             \header {
@@ -60,9 +60,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g gf { 
+                \new Staff \transpose e ef { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseFourGMinor
+                    \pentatonicExerciseFourEMinorForEFlat
                 }
             >>
             \header {
@@ -77,9 +77,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g gf { 
+                \new Staff \transpose e ef { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseFiveGMinor
+                    \pentatonicExerciseFiveEMinorForEFlat
                 }
             >>
             \header {
@@ -94,9 +94,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g gf { 
+                \new Staff \transpose ef ef { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseSixGMinor
+                    \pentatonicExerciseSixEFlatMinor
                 }
             >>
             \header {
