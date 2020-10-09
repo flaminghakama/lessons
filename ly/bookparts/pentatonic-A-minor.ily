@@ -2,7 +2,7 @@
 
         \header {
             % title = ""
-            subtitle = "A Minor"
+            subtitle = "Part 1 of 3: A Minor"
             % composer = ""
         }
         \score {

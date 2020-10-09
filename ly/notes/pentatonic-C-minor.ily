@@ -3,9 +3,9 @@ pentatonicExerciseOneCMinor = \relative c' {
     \time 4/4
     \tuplet 3/2 4 { c8 bf c  ef c ef  f ef f  g f g | bf g bf  c bf ef } c2 | 
     \tuplet 3/2 4 { c8 bf c  ef c ef  f ef f  g f g | bf g bf  c bf ef } c2 | 
-    \tuplet 3/2 4 { c8 bf c  ef c ef  f ef f  ef c ef } | c2 
+    \tuplet 3/2 4 { c8 bf c  ef c ef  f ef f  ef c ef } | c2. 
 
-    \tuplet 3/2 4 { f8 ef f  ef c ef | 
+    \tuplet 3/2 4 { ef8 f ef | 
         c8 ef c  bf c bf  
         g8 bf g  f g f |
         ef8 f ef  c ef bf } c2 
