@@ -16,14 +16,9 @@ killPreview
 rm lady-bird*pdf
 lilypond ly/songs/lady-bird.ly
 
-python ~/git/part-format/combine-1Page-1Page.py lady-bird-for-C.pdf lady-bird-for-Bb.pdf lady-bird-for-C-and-Bb.pdf
-python ~/git/part-format/combine-1Page-1Page.py lady-bird-for-C.pdf lady-bird-for-Eb.pdf lady-bird-for-C-and-Eb.pdf
-
 mv lady-bird-for-C.pdf  pdf/songs
 mv lady-bird-for-Bb.pdf pdf/songs
 mv lady-bird-for-Eb.pdf pdf/songs
-mv lady-bird-for-C-and-Bb.pdf  pdf/songs
-mv lady-bird-for-C-and-Eb.pdf  pdf/songs
 
 for file in pdf/songs/lady-bird*pdf ; do open -a Preview $file ; done
 
@@ -80,7 +75,7 @@ structure = \relative c' {
         s1*4 \break
         s1*4 \break
         s1*4 \break
-        s1*4 
+        s1*4 \break
     }
     \bar "||"
 
@@ -98,8 +93,17 @@ structure = \relative c' {
         s1*4 \break
         s1*4 \break
         s1*4 \break
+        s1*4 \break 
+    } \bar ":|][|:"
+
+    \mark \markup \box "V.3"
+    \repeat volta 2 {
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
         s1*4 
-    } \bar ":|]"
+    } 
+    \bar ":|]"
 }
 
 chordsReal = \chordmode { 
@@ -120,6 +124,16 @@ chordsScher = \chordmode {
     c1:maj7 | s | bf:m7 | ef:7 | 
     af1:maj7 | s | a:m7 | d:7 | 
     d1:m7 | g:7 | c2:maj7 ef:7 | af:7 g:7.5- ||
+}
+chordsDexter = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+    c1:maj7 | s | f:m7 | bf:7 | 
+    c1:maj7 | s | b2:m7 e:7 | bf:m7 ef:7 | 
+    af1:maj7 | s | a:m7 | d:7 | 
+    d1:m7 | g:7 | c2:maj7 ef:7 | af:maj7 g:7.9- ||
 }
 
 melodyReal = \relative c'' { 
@@ -151,6 +165,20 @@ melodyScher = \relative c'' {
        \relative c'' { g4 4 f ef | f f ef df } >>
 }
 
+melodyDexter = \relative c'' { 
+    r8 g4. 4 4 | 4. 8 r g4 8 | 
+    bf2 af8 c, ef g | r e2.. | 
+    
+    r8 g4. 4 4 | 4. 8 r g4 8 | 
+    c2 bf8 df, f c' | r bf2.. | 
+
+    r8 bf4. a4 af | bf a8 af ~ 4 r | 
+    r8 b4. bf4 a | b af8 a ~ 4 r | 
+
+    c2 r8 a4 f8 | e2 r8 e4 f8 | 
+    g4. ( gs16 a bf2 ) | ef,4. ( f16 g af2 ) |
+}
+
 shoutMelody = \relative c'' { 
     r8 d4. b8 g r b | d4 b8 g r b d [ bf ~ ] |
     bf2.. 8 | r2 r8 b4. |
@@ -172,7 +200,8 @@ melody = {
     \melodyReal 
     \melodyScher
     \pageBreak 
-    \shoutMelody 
+    \shoutMelody
+    \melodyDexter 
 }
 
 \book {
@@ -187,6 +216,7 @@ melody = {
                 \chordsReal
                 \chordsScher
                 \chordsScher
+                \chordsDexter
             }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -211,6 +241,7 @@ melody = {
                 \chordsReal
                 \chordsScher
                 \chordsScher
+                \chordsDexter
             }
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
@@ -235,6 +266,7 @@ melody = {
                 \chordsReal
                 \chordsScher
                 \chordsScher
+                \chordsDexter
             }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
