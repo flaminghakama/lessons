@@ -14,8 +14,10 @@ composerName = "D. Elaine Alt"
 
 rm pentatonic-exercises-for-saxophone.pdf
 lilypond ly/pentatonic-exercises-for-saxophone.ly 
-mv pentatonic-exercises-for-saxophone.pdf pdf
-python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone.pdf pdf/printable/pentatonic-exercises-for-saxophone.pdf manual
+mv pentatonic-exercises-for-saxophone*.pdf pdf
+python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone-1-of-3.pdf pdf/printable/pentatonic-exercises-for-saxophone-1-of-3.pdf manual
+python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone-2-of-3.pdf pdf/printable/pentatonic-exercises-for-saxophone-2-of-3.pdf manual
+python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone-3-of-3.pdf pdf/printable/pentatonic-exercises-for-saxophone-3-of-3.pdf manual
 
 %}
 
@@ -66,11 +68,21 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/pentatonic-A-minor.ily"
-\include "ly/notes/pentatonic-D-minor.ily"
+
 \include "ly/notes/pentatonic-E-minor.ily"
-\include "ly/notes/pentatonic-G-minor.ily"
+\include "ly/notes/pentatonic-D-minor.ily"
+
 \include "ly/notes/pentatonic-B-minor.ily"
+\include "ly/notes/pentatonic-G-minor.ily"
+
+\include "ly/notes/pentatonic-F-sharp-minor.ily"
 \include "ly/notes/pentatonic-C-minor.ily"
+
+%\include "ly/notes/pentatonic-C-sharp-minor.ily"
+\include "ly/notes/pentatonic-F-minor.ily"
+
+\include "ly/notes/pentatonic-B-flat-minor.ily"
+\include "ly/notes/pentatonic-E-flat-minor.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -88,6 +100,7 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
 }
 
 \book { 
+    \bookOutputName "pentatonic-exercises-for-saxophone"
     \paper {
         print-all-headers = ##t
     }
@@ -100,11 +113,79 @@ python ~/git/part-format/bookify-8page.py pdf/pentatonic-exercises-for-saxophone
         \markup \title-page-markup "Saxophone" \composerName \title
     }
 
-    %\include "ly/bookparts/pentatonic-A-minor.ily"
-    \include "ly/bookparts/pentatonic-D-minor.ily"
+    \include "ly/bookparts/pentatonic-A-minor.ily"
+
     \include "ly/bookparts/pentatonic-E-minor.ily"
-    \include "ly/bookparts/pentatonic-G-minor.ily"
+    \include "ly/bookparts/pentatonic-D-minor.ily"
+
     \include "ly/bookparts/pentatonic-B-minor.ily"
+    \include "ly/bookparts/pentatonic-G-minor.ily"
+
+    \include "ly/bookparts/pentatonic-F-sharp-minor.ily"
     \include "ly/bookparts/pentatonic-C-minor.ily"
-    \include "ly/bookparts/pentatonic-Csharp-minor.ily"
+
+    \include "ly/bookparts/pentatonic-C-sharp-minor.ily"
+    \include "ly/bookparts/pentatonic-F-minor.ily"
+
+    \include "ly/bookparts/pentatonic-G-sharp-minor.ily"
+    \include "ly/bookparts/pentatonic-B-flat-minor.ily"
+
+    \include "ly/bookparts/pentatonic-E-flat-minor.ily"
+}
+
+
+\book { 
+    \bookOutputName "pentatonic-exercises-for-saxophone-1-of-3"
+    \paper {
+        print-all-headers = ##t
+    }
+    \header {
+        title = \title
+    }
+
+    % \bookpart { 
+    %     \include "../scores/flaming-libs/flaming-title-page.ily"
+    %     \markup \title-page-markup "Saxophone" \composerName \title
+    % }
+
+    \include "ly/bookparts/pentatonic-A-minor.ily"
+
+    \include "ly/bookparts/pentatonic-E-minor.ily"
+    \include "ly/bookparts/pentatonic-D-minor.ily"
+
+    \include "ly/bookparts/pentatonic-B-minor.ily"
+}
+
+\book { 
+    \bookOutputName "pentatonic-exercises-for-saxophone-2-of-3"
+    \paper {
+        print-all-headers = ##t
+    }
+    \header {
+        title = \title
+    }
+
+    \include "ly/bookparts/pentatonic-G-minor.ily"
+
+    \include "ly/bookparts/pentatonic-F-sharp-minor.ily"
+    \include "ly/bookparts/pentatonic-C-minor.ily"
+
+    \include "ly/bookparts/pentatonic-C-sharp-minor.ily"
+}
+
+\book { 
+    \bookOutputName "pentatonic-exercises-for-saxophone-3-of-3"
+    \paper {
+        print-all-headers = ##t
+    }
+    \header {
+        title = \title
+    }
+
+    \include "ly/bookparts/pentatonic-F-minor.ily"
+
+    \include "ly/bookparts/pentatonic-G-sharp-minor.ily"
+    \include "ly/bookparts/pentatonic-B-flat-minor.ily"
+
+    \include "ly/bookparts/pentatonic-E-flat-minor.ily"
 }
