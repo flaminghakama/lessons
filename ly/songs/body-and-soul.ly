@@ -4,14 +4,15 @@ titleLeft = "Body"
 titleRight = "& Soul"
 title = "Body & Soul"
 composerName = "Holiday, Coltrane"
-holidayComposerName = "Holiday"
-coltraneComposerName = "Coltrane"
+holidayComposerName = "Billie Holiday"
+coltraneComposerName = "John Coltrane"
 
 \include "../../../scores/flaming-libs/flaming-paper.ily"
 \include "../../../scores/flaming-libs/flaming-markup.ily"
 \include "../../../scores/flaming-libs/flaming-chords.ily"
 \include "../../../scores/flaming-libs/flaming-dynamics.ily"
 \include "../../../scores/flaming-libs/flaming-roadmap.ily"
+\include "../../../scores/flaming-libs/flaming-barlines.ily"
 
 %{
 	killPreview
@@ -53,26 +54,27 @@ holidayStructure = {
 	\tempo 4=65
 	\time 4/4
 	\startSection "Intro"
-	s1 \fermata
+	\fermata s1
 	\repeat volta 2 {
-		\startSectionWithRepeat "A"
+		\startSection "A"
+		\bar "[|:"
 		s1*4 
 		s1*2
 	}
 	\alternative {
 		{ 
-			s1*2 
-			\bar ":|]"
+			s1 \noBreak s1 
+			\bar ":|]" \noBreak
 		}
-		{ s1*2 }
+		{ s1 \noBreak s1  \break }
 	}
 
 	\startSection "B"
-	s1*4
-	s1*4
+	s1*4 \break
+	s1*4 \break
 
 	\startSection "A"
-	s1*4
+	s1*4 \break
 	s1*4	
 }
 
@@ -145,9 +147,10 @@ coltraneStructure = {
 	\tempo 4=65
 	\time 4/4
 	\startSection "Intro"
-	s1*8
+	s1*4 \break
+	s1*4 \break
 	\repeat volta 2 {
-		\startSectionWithRepeat "A"
+		\startSection "A"
 		\bar "S[|:"
 		s1*8 
 		s1*7
@@ -158,29 +161,34 @@ coltraneStructure = {
 			s1 
 			\bar ":|]"
 		}
-		{ s1 }
+		{ 
+			s1 
+			\break
+		}
 	}
 
 	\startSection "B"
 	s1*8
-	s1*8
+	s1*8 \break
 
 	\startSection "A"
 	s1*8
 	s1*8	
+	\bar "||"
 }
 
 coltraneCodaStructure = {
 	\key df \major
-	s1 \fermata	\bar "||"
-	s1 \fermata	\bar "||"
+	\fermata s1	\bar "||"
+	\fermata s1	\bar "||"
 	s2 \fermata	s \bar "||"
 	s2 s2 \fermata	\bar "||"
 	s1*5 \bar "||"
-	s1 \fermata \bar "|."
+	\fermata s1 \bar "|."
 }
 
 coltraneIntroChanges = \chordmode {
+	\useFlamingChords
 	ef4.:m ef:m7.7+ ef4:m7 ~ | 8 ef4.:m6 ef4:m7 ef:m7.7+ |
 	ef1:min/af | s |
 
@@ -188,10 +196,11 @@ coltraneIntroChanges = \chordmode {
 }
 
 coltraneHeadChanges = \chordmode {
+	\useFlamingChords
 	ef1:min/af | s | s | s |
 	df1:maj/af | gf:7/af | f:dim7/af | c2:m7 af |
 	ef1:min/af | s | s | c2:m7.5- f:7.9- | 
-	a1:maj.5-/af | s | ef2:7 af:7 |
+	a1:maj7.5-/af | s1 | ef2:7 af:7 |
 
 		df2:maj7 f4:m7 bf:7 ||
 		df2:maj7 e4:m7 a:7 ||
@@ -204,10 +213,11 @@ coltraneHeadChanges = \chordmode {
 	ef1:min/af | s | s | s |
 	df1:maj/af | gf:7/af | f:dim7/af | c2:m7 af |
 	ef1:min/af | s | s | c2:m7.5- f:7.9- | 
-	a1:maj.5-/af | s | ef2:dim7 af:7 | df:maj7 f4:m7 bf:7 |
+	a1:maj7.5-/af | s | ef2:dim7 af:7 | df:maj7 f4:m7 bf:7 |
 }
 
 coltraneCodaChanges = \chordmode {
+	\useFlamingChords
 	bf1:7.9- | ef:m7 | c2:m7.5- f:7.9- | ef:m7 af:13.9- |
 	cf1:maj7 | f:maj7 | a:maj7 | ef2:m7 af:7 |
 	df4:maj7 gf:maj7 df:maj7/f af:9/df | df1:maj9 |
@@ -215,8 +225,7 @@ coltraneCodaChanges = \chordmode {
 
 
 coltraneMelody = \relative c' {
-	ef4. 8 ~ 4 4 ~ | 8 4. 4 4 | 
-	s1*6 
+	\repeat percent 4 { ef4. 8 ~ 4 4 ~ | 8 4. 4 4 | }
 
 	% "A"
 		s1*8 
@@ -233,7 +242,7 @@ coltraneMelody = \relative c' {
 }
 \header {
     title = \title
-    composer = \holidayComposerName
+    composer = \coltraneComposerName
 }
 
 \book {
@@ -259,7 +268,7 @@ coltraneMelody = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \holidayChanges }
+            \new ChordNames \transpose c c  { \coltraneCodaChanges }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
