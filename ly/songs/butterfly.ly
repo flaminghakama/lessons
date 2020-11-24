@@ -11,13 +11,24 @@ lyricistName = "D. Koldenhoven"
 \include "../../../scores/flaming-libs/flaming-chords.ily"
 \include "../../../scores/flaming-libs/flaming-dynamics.ily"
 
+%{
+
+killPreview
+rm butterfly*pdf
+lilypond ly/songs/butterfly.ly
+op butterfly-for-C.pdf 
+mv butterfly*pdf pdf/songs
+
+%}
+
+
 \paper {
 
   top-margin = #2
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -40,13 +51,14 @@ lyricistName = "D. Koldenhoven"
                            (/ myStaffSize 20)))
 }
 
-%\include "ly/ily/layout.ily"
+\include "ly/ily/layout.ily"
 
-strcture = \relative c' { 
+structure = \relative c' { 
     
     \key c \major
     \time 2/2 
 
+    \tempo Samba 2=100
     \repeat volta 2 { 
         \bar "[|:" s1*4 \bar ":|]" s1*2 \break
 
@@ -59,7 +71,6 @@ strcture = \relative c' {
         \startSection "C"
         \bar "||" s1*3 \pageBreak s1*5 \break
         \bar "||" s1*8
-        <>^"To Coda"
     }
     \alternative {
         { s1*2 \bar ":|]" }
@@ -67,7 +78,7 @@ strcture = \relative c' {
     } 
     s1 \break s1*6 \break
     \startSection "Woodwind Melody"
-    s1*3 \break s1*5 
+    s1*4 \break s1*4 
 
     \startSection "D"
     \bar "||" s1*4 \pageBreak s1*4 \break
@@ -76,11 +87,21 @@ strcture = \relative c' {
     \bar "||"
 }
 
+eighths = { 
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.85)
+}
+
+noEighths = {
+    \override Stem.length-fraction = #(magstep 0.5)
+}
+
 structureCoda = \relative c' { 
     \override Score.RehearsalMark.self-alignment-X = #LEFT 
     \once \override Score.RehearsalMark #'extra-offset = #'( -10 . -2 ) 
     \once \override Score.RehearsalMark #'font-size = #8 
     \mark \markup { \musicglyph #"scripts.coda" }
+
 
     \key c \major   
     \time 2/2 
@@ -100,7 +121,7 @@ structureCoda = \relative c' {
 }
 
 chordsA = \chordmode { 
-    c1:6.9 | s | d:9 | s | 
+    c1:6.9 | s | d:9.11+ | s | 
     g1:13.9-.11+ | g:aug7.9-.11+ | 
 }
 
@@ -157,28 +178,36 @@ chordsCoda = \chordmode {
 melodyIntro = \relative c'' { 
     \repeat percent 3 { \comp #4 } | \comp #4 | 
     \override Staff.NoteHead.style = #'slash
-    a1 ~ 1 | 
+    \tag #'(forC) { a1 ~ 1 }
+    \tag #'(forBb) { g1 ~ 1 }
+    \tag #'(forEb) \relative c' { c1 ~ 1 } |
     \revert Staff.NoteHead.style
 }
 
 melodyA = \relative c' { 
+    \eighths
     g8 c d f  e d b c  | e g b d  c b a g | 
+    \noEighths
     gs4. a8 ~ 2 | r4 gs2 \glissando e4 | gs4. a8 ~ 2 |
 }
 
 melodyB = \relative c' { 
+    \eighths
     c8 d e g  f e f g | af bf c b  bf a af g |
-    r8 bf, c [d]  f e df f | gf af bf a  af g gf f | 
+    r8 bf, c [d]  f e ef f | gf af bf a  af g gf f | 
+    \noEighths
 }
 
 melodyC = \relative c'' { 
-    ef8 df c bf  af f ef df | c b d e  d f df b | 
-    c1 ~ | 2. r4 | 
+    \eighths
+    ef8 df c bf  af f ef df | c b d g  f af df, b | 
+    \noEighths
+    c1 ~ | 2.  
 }
 
 melodyD = \relative c'' {
     r2 \tuplet 3/2 { a4 b c } | bf4 af g f | 
-    g2. af8 bf | af4 gf8 f8 ~ 8 ef4 f8 ~ | 
+    g2. af8 bf | af4 gf8 f8 ~ 8 ef!4 f8 ~ | 
     f2 r4 df8 ef | f4 g8 a g4 f | 
     e4. a8 ~ 2 ~ | 2  
 }
@@ -190,6 +219,7 @@ harmonyD = \relative c' {
 }
 
 melodySong = \relative c' { 
+
     \melodyIntro
 
     % A
@@ -215,10 +245,11 @@ melodySong = \relative c' {
     \relative c'' { 
         r4 gs2 a4 | gs4 a8 c ~ 2 ~ | 1 | 
 
+        \eighths
         c4 a8 f d f a f | c' af e'4  c8 af f af |
-        b8 g d'4  b8 g e g | b g cs2 r8 c |
+        b8 g d'4  b8 g e g | b g \noEighths cs4 ~ 4 r8 c |
     }
-    \melodyC |
+    \melodyC  \toCoda r4 |
     \comp #8 ||
 
     % 2nd Ending
@@ -236,12 +267,14 @@ melodySong = \relative c' {
     << 
         \relative c' { 
             \melodyB
+            \eighths
             af8 bf af bf  c df c df | d e d e  f g f g | 
+            \noEighths
             a4. 8 ~ 2 ~ | 2.  
         }
         \relative c { 
             s1*4 | 
-            f8 g f g  af bf af bf | b c b c  d e d e | 
+            f8 g f g  af! bf! af bf | b c b c  d e d e | 
             e4. 8 ~ 2 ~ | 2. 
         }
     >> r4 | 
@@ -257,12 +290,14 @@ melodySong = \relative c' {
 }
 
 melodyCoda = \relative c' { 
-    \melodyC
-    \relative c'' { 
-        ef8 df c bf  af4 ef'8 df  c bf af4 ||
 
+    \melodyC r4 
+    \relative c'' { 
+        \eighths
+        ef8 df c bf  af4 ef'8 df  c bf af4 ||
+        \noEighths
     }
-    \melodyC
+    \melodyC r4 
 
     <<
         \relative c'' { g1 ~ | 1 ~ | 1 ~ | 2 }
@@ -338,28 +373,27 @@ lyricsCoda = \lyricmode {
 
 \header {
     title = \title
+    subtitle = "Samba da Borboleta"
     composer = \markup \italic { "composed by" \composerName }
     arranger = \markup \italic { "lyrics by" \lyricistName }
-    poet = "Eb Alto Saxophone"
+    poet = "Lead Sheet"
     instrumentName = \poet
 }
 
 \book {
   \bookOutputSuffix "for-C"
     \header {
-        subtitle = ""
-        poet = "Concert Pitch"
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { 
+            \new ChordNames \keepWithTag #'(forC) \transpose c c  { 
                 \chordsSong
             }
-            \new Staff = "voice" \transpose c c { 
+            \new Staff = "voice" \keepWithTag #'(forC) \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice = "lead" <<
                     \autoPageBreaksOff
-                    \strcture
+                    \structure
                     \melodySong
                     \noPageBreak
                 >>
@@ -377,12 +411,134 @@ lyricsCoda = \lyricmode {
             piece = " " 
         }
         <<
-            \new ChordNames \transpose c c { \chordsCoda }
+            \new ChordNames \keepWithTag #'(forC) \transpose c c { \chordsCoda }
             \new Staff = "voice" { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice = "lead" {
                     \autoPageBreaksOff
-                    \transpose c c <<
+                    \keepWithTag #'(forC) \transpose c c <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+                \omit BarNumber
+            }
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        poet = "Lead Sheet in Bb"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \keepWithTag #'(forBb) \transpose bf, c  { 
+                \chordsSong
+            }
+            \new Staff = "voice" \keepWithTag #'(forBb) \transpose bf, c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" <<
+                    \autoPageBreaksOff
+                    \structure
+                    \melodySong
+                    \noPageBreak
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+    }
+
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        <<
+            \new ChordNames \keepWithTag #'(forBb) \transpose bf, c { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \keepWithTag #'(forBb) \transpose bf, c <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+                \omit BarNumber
+            }
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        poet = "Lead Sheet in Eb"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \keepWithTag #'(forEb) \transpose ef, c  { 
+                \chordsSong
+            }
+            \new Staff = "voice" \keepWithTag #'(forEb) \transpose ef, c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" <<
+                    \autoPageBreaksOff
+                    \structure
+                    \melodySong
+                    \noPageBreak
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+    }
+
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        <<
+            \new ChordNames \keepWithTag #'(forEb) \transpose ef, c { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \keepWithTag #'(forEb) \transpose ef, c <<
                         \structureCoda
                         \melodyCoda
                     >>
