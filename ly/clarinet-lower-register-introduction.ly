@@ -215,7 +215,7 @@ lowD = \markup \center-align \line {
     "   "
     \center-column \pad-markup #0 {
         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
-            (lh . (thumb cis))
+            (lh . (thumb))
             (cc . (one two))
             (rh . ())
         )
