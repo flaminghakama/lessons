@@ -16,9 +16,7 @@ killPreview
 rm wabash*pdf
 lilypond ly/songs/fishman/wabash.ly
 
-mv wabash-for-C.pdf pdf/songs
-fishman/mv wabash-transposed-for-Eb.pdf pdf/songs
-fishman/
+mv wabash*.pdf pdf/songs/fishman
 for file in pdf/songs/fishman/wabash*pdf ; do open -a Preview $file ; done
 
 echo git add pdf/songs/fishman/wabash* ly/songs/fishman/wabash.ly

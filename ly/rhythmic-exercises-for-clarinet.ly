@@ -14,9 +14,9 @@ composerName = "Elaine Alt"
 
 rm rhythmic-exercises-for-clarinet.pdf
 lilypond ly/rhythmic-exercises-for-clarinet.ly 
-python ~/git/part-format/bookify-7page.py rhythmic-exercises-for-clarinet.pdf rhythmic-exercises-for-clarinet-printable.pdf automatic
+#python ~/git/part-format/bookify-7page.py rhythmic-exercises-for-clarinet.pdf rhythmic-exercises-for-clarinet-printable.pdf automatic
 mv rhythmic-exercises-for-clarinet.pdf pdf
-mv rhythmic-exercises-for-clarinet-printable.pdf pdf/printable
+#mv rhythmic-exercises-for-clarinet-printable.pdf pdf/printable
 
 %}
 
