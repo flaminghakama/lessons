@@ -218,7 +218,7 @@ melodyForTranposing = \relative c' {
   \bookOutputSuffix "real-book-key-for-Eb"
     \header {
         poet = "    Eb Alto Sax"
-        subtitle = "(Key from Real Book version of Autumn Leaves Key)"
+        subtitle = "(Key from Real Book version of Autumn Leaves)"
         instrumentName = \poet
     }
     \score {

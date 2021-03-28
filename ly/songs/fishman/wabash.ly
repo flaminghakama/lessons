@@ -5,23 +5,23 @@ titleRight = "Avenue"
 title = "Wabash Avenue"
 composerName = "G. Fishman"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm wabash*pdf
-lilypond ly/songs/wabash.ly
+lilypond ly/songs/fishman/wabash.ly
 
 mv wabash-for-C.pdf pdf/songs
-mv wabash-transposed-for-Eb.pdf pdf/songs
+fishman/mv wabash-transposed-for-Eb.pdf pdf/songs
+fishman/
+for file in pdf/songs/fishman/wabash*pdf ; do open -a Preview $file ; done
 
-for file in pdf/songs/wabash*pdf ; do open -a Preview $file ; done
-
-echo git add pdf/songs/wabash* ly/songs/wabash.ly
+echo git add pdf/songs/fishman/wabash* ly/songs/fishman/wabash.ly
 
 %}
 
@@ -199,9 +199,9 @@ melodyForEb = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "original"
     \header {
-        poet = "    Concert Pitch"
+        poet = "    Published Key"
         instrumentName = \poet
     }
     \score {
