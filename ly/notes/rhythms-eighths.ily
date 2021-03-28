@@ -1,7 +1,7 @@
 rhythmsEighthsExerciseOneMajor = \relative c'' { 
     \key g \major
     \time 4/4
-    g4 r r r8 fs? | e4 r r a | d,8 c4. r4 e | fs8 d e fs g4 r  
+    g4 r r r8 fs | e4 r r a | d,8 c4. r4 e | fs8 d e fs g4 r  
     \bar "|." 
 }
 
