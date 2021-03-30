@@ -208,6 +208,33 @@ lyricsHeadOne = \lyricmode {
     }
 }
 
+\book {
+  \bookOutputSuffix "original-for-Eb"
+    \header {
+        subtitle = ""
+        poet = "Concert Pitch"
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose a e  { \chordsForm }
+            \new Staff = "voice" \transpose a e { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
 % \book {
 %   \bookOutputSuffix "for-C"
 %     \header {
