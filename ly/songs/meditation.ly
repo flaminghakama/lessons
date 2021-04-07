@@ -43,6 +43,9 @@ composerName = "A. C. Jobim"
 
 strcture = \relative c' { 
     \key c \major
+    \startSection "Intro"
+    s1*4 \break
+    s1*4 \break
     \startSection "A1"
     s1*4 \break
     s1*4 \break
@@ -69,6 +72,10 @@ chordsForm = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
+
+    s1 s s s
+    d1:m7 g:7 c1:6 g:aug7
+
     c1:6 s b:1.4.5.7 b:7
     c1:6 s a:7 s 
     d1:m7 s bf:7 s 
@@ -89,19 +96,35 @@ chordsForm = \chordmode {
     
 }
 
+introMelody = \transpose b e \relative c'' {
+     r2 \tuplet 3/2 { r4 e fs } | g8 gf4 e8 ~ 4 ef8 d ~ | 
+     d4. e8 f e d4 ~ | 2. r4 | 
+
+     r4 c8 d \tuplet 3/2 { ef4 d c ~ } | 2 ~ 8 d4. |
+     b1 | R1 | 
+}
+
+interludeMelody = \relative c'' {
+     r4 r8 e fs4 g8 gf ~ | 8 e4. ~ 4 ef8 d ~ | 
+     d2. e8 f ~ | 8 e d2. |
+
+     r8 d16 df \tuplet 3/2 { c8 d ef ~ } 4 ~ | 2 ~ 8 d c d |
+     b1 | R1 | 
+}
+
 melody = \relative c'' { 
     % A1
     r4 r8 a8 ~ 2 ~ | 2. g8 b ~ | 
-    8 bf a2. ~ | 2 r4 fs8 g | 
+    8 bf a2. ~ | 4 r4 r4 fs8 g ~ | 
     
-    a4. 8 \tuplet 3/2 { a4 4 8 8 ~ } | 8 4. ~ 4 r | 
-    r4 r8 g8 b4 g8 a ~ | 4 bf8 a ~ 2 | 
+    g8 a4 16 16 a8 4 16 16 ~ | 8 4. ~ 4 r | 
+    r4 g8 b8 ~ 4 g8 a ~ | 4 bf8 a ~ 2 | 
 
     r2 f2 ~ | 2 ~ 8 e4 g8 ~ | 
-    g8 gf f2. ~ | 2 r4 r8 g8 ~ | 
+    g8 gf f2. ~ | 4 r4 r r8 g8 ~ | 
 
-    g8 8 e4 ~ \tuplet 3/2 {  e4 4 8 8 } | e8 ds e f  r4 e8 f ~ |
-    8 g8 ~ 8 16 16  4. fs8 ~ | 8 g a2 r4 | 
+    g8 8 e4 ~ 8 4 8 ~ | 16 ds8 e16 ~ 8 f ~ 8 r e f ~ |
+    8 g8 ~ 16 8. ~ 16 8. ~ 8  8  ~ | 8 fs16 g ~ 8 a8 ~ 4 r4 | 
 
     % A2
     R1 | a2. g4 |
@@ -112,14 +135,14 @@ melody = \relative c'' {
 
 
     R1 | f2. e8 g8 ~ | 
-    g8 gf f2. ~ | 2 r4 r8 c8 | 
+    g8 gf f2. ~ | 4 r4 r r8 c8 | 
 
     ds8 e4 8  4.  8 ~ | 8 8 f4 ~ 4 e8 f ~ |
     8 g8 ~  8. 16  16 g8. ~ 8. fs16 ~ | 8 g a2.|  
 
 
     % B
-    R1 | c2. b8 d ~  | 8 df8 c2. ~ | 2. b4 | 
+    R1 | c2. b8 d ~  | 8 df8 c2. ~ | 2 r4 b4 | 
 
     d4. df8  c b4 d8 ~ | d4 df8 c ~ 4. b8 | 
     a2. r4 | r2 r4 r8 a8 ~ | 
@@ -133,13 +156,14 @@ melody = \relative c'' {
     r2 r8 b8 4 ~ | 8 g a b ~ 8 a4. ~ |
 
     a2 r  | r4 r8 f8 ~ 4 e8 g ~ | 
-    g8 gf4 f8 ~ 2 ~ | 2 r8 g4 8 | 
+    g8 gf4 f8 ~ 2 ~ | 4 r4 r8 g4 8 | 
 
     e4. 8  \tuplet 3/2 { f4 4 8 8 ~ } | f8 d4. 8 e4 8 ~ | 
     e8 4 8 ~ 8 4 8 | c1 |   
 }
 
 melodyForm = \relative c' { 
+    \introMelody
     \melody
 }
 
@@ -147,11 +171,15 @@ lyricsHeadOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
+    puh puh pa -- ya -- da ya -- da
+    puh pa -- ya -- dah
+    puh puh pa -- ya -- da ya -- da
+    
     Quem a -- cre -- di -- tou
-    No am -- or, no sor -- ri -- so, na flor
+    No am -- o -- r, no sor -- ri -- so, na flor
     En -- tão son -- hou, son -- hou
     E per -- deu a paz
-    O am -- or, o sor -- ri -- so e a flor
+    O am -- or, sor -- riso e a flor
     Se trans -- for -- mam de -- pres -- sa de -- mais
 
     Quem, no co -- ra -- ção
