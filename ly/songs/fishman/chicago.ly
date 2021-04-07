@@ -197,6 +197,7 @@ melodyForTranposing = \relative c' {
 
 }
 
+%{
 \book {
   \bookOutputSuffix "real-book-key"
     \header {
