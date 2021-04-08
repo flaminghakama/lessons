@@ -124,7 +124,7 @@ melody = \relative c'' {
     g8 gf f2. ~ | 4 r4 r r8 g8 ~ | 
 
     g8 8 e4 ~ 8 4 8 ~ | 16 ds8 e16 ~ 8 f ~ 8 r e f ~ |
-    8 g8 ~ 16 8. ~ 16 8. ~ 8  8  ~ | 8 fs16 g ~ 8 a8 ~ 4 r4 | 
+    f8 g8 ~ 16 16 8 ~ 16 8. ~  4 ~ | 8 fs16 g ~ 8 a8 ~ 4 r4 | 
 
     % A2
     R1 | a2. g4 |
@@ -158,8 +158,12 @@ melody = \relative c'' {
     a2 r  | r4 r8 f8 ~ 4 e8 g ~ | 
     g8 gf4 f8 ~ 2 ~ | 4 r4 r8 g4 8 | 
 
-    e4. 8  \tuplet 3/2 { f4 4 8 8 ~ } | f8 d4. 8 e4 8 ~ | 
-    e8 4 8 ~ 8 4 8 | c1 |   
+    e4. 8  f8 4 16 16 | d4 ~ 8 16 16 e8 4 8 ~  | 
+    e8 8 8 c ~ 2 ~ | 2 r |   
+}
+
+melodyCoda = \relative c' { 
+    r4 e \tuplet 3/2 { b4 d e } | fs1 ||
 }
 
 melodyForm = \relative c' { 
