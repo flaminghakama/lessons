@@ -68,6 +68,17 @@ strcture = \relative c' {
     s1*4 \bar "|."
 }
 
+structureCoda = \relative c' { 
+    \override Score.RehearsalMark.self-alignment-X = #LEFT 
+    \once \override Score.RehearsalMark #'extra-offset = #'( -10 . -2 ) 
+    \once \override Score.RehearsalMark #'font-size = #8 
+    \mark \markup { \musicglyph #"scripts.coda" }
+    \key c \major 
+    s1*2
+    \bar "|."
+}
+
+
 chordsForm = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
@@ -96,8 +107,17 @@ chordsForm = \chordmode {
     
 }
 
+chordsCoda = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s1*2
+}
+
+
+
 introMelody = \transpose b e \relative c'' {
-     r2 \tuplet 3/2 { r4 e fs } | g8 gf4 e8 ~ 4 ef8 d ~ | 
+     r2 \tuplet 3/2 { r4 e fs } | g8 fs4 e8 ~ 4 ef8 d ~ | 
      d4. e8 f e d4 ~ | 2. r4 | 
 
      r4 c8 d \tuplet 3/2 { ef4 d c ~ } | 2 ~ 8 d4. |
@@ -105,7 +125,7 @@ introMelody = \transpose b e \relative c'' {
 }
 
 interludeMelody = \relative c'' {
-     r4 r8 e fs4 g8 gf ~ | 8 e4. ~ 4 ef8 d ~ | 
+     r4 r8 e fs4 g8 fs ~ | 8 e4. ~ 4 ef8 d ~ | 
      d2. e8 f ~ | 8 e d2. |
 
      r8 d16 df \tuplet 3/2 { c8 d ef ~ } 4 ~ | 2 ~ 8 d c d |
@@ -162,8 +182,8 @@ melody = \relative c'' {
     e8 8 8 c ~ 2 ~ | 2 r |   
 }
 
-melodyCoda = \relative c' { 
-    r4 e \tuplet 3/2 { b4 d e } | fs1 ||
+melodyCoda = \transpose b e \relative c'' { 
+    r4 bf \tuplet 3/2 { d4 f g } | a1 ||
 }
 
 melodyForm = \relative c' { 
@@ -204,7 +224,13 @@ lyricsHeadOne = \lyricmode {
     E a tri -- ste -- za a -- ca -- bou
 
 }
-
+lyricsCoda = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+    ya
+    pah va va
+    vee
+}
 
 \header {
     title = \title
@@ -218,6 +244,7 @@ lyricsHeadOne = \lyricmode {
     \header {
         subtitle = ""
         poet = "Concert Pitch"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -238,13 +265,47 @@ lyricsHeadOne = \lyricmode {
             % }
         >>
     }
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        <<
+            \new ChordNames \transpose a e { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose a e <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+                \omit BarNumber
+            }
+        }
+    }
+
 }
 
 \book {
   \bookOutputSuffix "original-for-Eb"
     \header {
         subtitle = ""
-        poet = "Concert Pitch"
+        poet = "Eb Alto Saxophone"
     }
     \score {
         \transpose ef, c <<
@@ -264,6 +325,39 @@ lyricsHeadOne = \lyricmode {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
             % }
         >>
+    }
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        \transpose ef, c <<
+            \new ChordNames \transpose a e { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose a e <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+                \omit BarNumber
+            }
+        }
     }
 }
 
@@ -313,4 +407,39 @@ lyricsHeadOne = \lyricmode {
 %             }
 %         >>
 %     }
+
+%     \score {
+%         \header {
+%             subtitle = " " 
+%             piece = " " 
+%         }
+%         <<
+%             \new ChordNames \transpose a e { \chordsCoda }
+%             \new Staff = "voice" { 
+%                 \include "ly/ily/staff-properties.ily"
+%                 \new Voice = "lead" {
+%                     \autoPageBreaksOff
+%                     \transpose a e <<
+%                         \structureCoda
+%                         \melodyCoda
+%                     >>
+%                 }
+%             }
+%             \new Lyrics \with { alignAboveContext = "staff" } {
+%                 \lyricsto "lead" { \lyricsCoda } 
+%             }
+%         >>
+%         \layout { 
+%             indent = 2.25\cm
+%             short-indent = 1.25\cm
+%             \context {
+%                 \Score
+%                 \override StaffGrouper.staff-staff-spacing.padding = #0
+%                 \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+%                 \omit BarNumber
+%             }
+%         }
+%     }
 % }
+
+%}
