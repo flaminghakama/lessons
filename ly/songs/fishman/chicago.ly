@@ -61,13 +61,14 @@ atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scrip
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    %\override Score.RehearsalMark #'extra-offset = #'( -3 . -2.5 )
+    \override Score.RehearsalMark #'extra-offset = #'( -3 . -3 )
 
     \override Beam.damping = #2.75 
     \override Stem.length-fraction = #(magstep 1.2)
 
     \key d \major
     \time 4/4
+    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . 3 )
     \mark \markup \box "A"
     \repeat volta 2 {
         s1*4 \break s1*4 \break
@@ -183,7 +184,10 @@ melodyForTranposing = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsSong }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -197,7 +201,6 @@ melodyForTranposing = \relative c' {
 
 }
 
-%{
 \book {
   \bookOutputSuffix "real-book-key"
     \header {
@@ -207,7 +210,10 @@ melodyForTranposing = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose d c  { \chordsSong }
+            \new ChordNames \transpose d c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
             \new Staff \transpose d c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -230,7 +236,10 @@ melodyForTranposing = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose d' a  { \chordsSong }
+            \new ChordNames \transpose d' a  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
             \new Staff \transpose d' a { 
                 \include "ly/ily/staff-properties.ily"
                 <<

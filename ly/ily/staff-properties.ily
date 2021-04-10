@@ -6,5 +6,5 @@
                 \accidentalStyle modern-voice-cautionary
 			    \override Beam.damping = #2.75 
 			    \override Stem.length-fraction = #(magstep 1.00) 
-			    \override DynamicLineSpanner.staff-padding = #2
+			    \override DynamicLineSpanner.staff-padding = #2.6
 
