@@ -65,6 +65,8 @@ op pdf/printable/clarinet-lower-register-introduction.printable.pdf
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
+\include "ly/notes/clarinet-introduction.ily"
+
 clarTabScale = #0.8
 
 middleBb = \markup \center-align \line { 
@@ -796,7 +798,104 @@ songNotes = \relative c' {
                 piece = "Gb Major"
             }
         }
+    }
 
-%}
+    \bookpart {
+        \header {
+            title = ""
+            subtitle = ""
+            subsubtitle = "Large intervals"
+        }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \clarinetOne
+                }
+            >>
+            \header {
+                piece = "G Major"
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \clarinetTwo
+                }
+            >>
+            \header {
+                piece = "F Major"
+            }
+        }
+ 
+       \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \clarinetThree
+                }
+            >>
+            \header {
+                piece = "Introducing middle C - same key as low F"
+            }
+        }
+        \pageBreak
+
+       \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \clarinetFour
+                }
+            >>
+            \header {
+                piece = "Slurs over the break"
+            }
+        }
+        \pageBreak
+ 
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \clarinetFive
+                }
+            >>
+            \header {
+                piece = "Evenness of fingering - Left hand"
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \clarinetSix
+                }
+            >>
+            \header {
+                piece = "Evenness of fingering - Right hand"
+            }
+        }
     }
 }
