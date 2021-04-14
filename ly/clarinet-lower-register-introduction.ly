@@ -44,7 +44,7 @@ op pdf/printable/clarinet-lower-register-introduction.printable.pdf
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #0
+  markup-system-spacing.padding = #6
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #14
@@ -648,30 +648,8 @@ songNotes = \relative c' {
         composer = \markup { \italic "composed by" "Richard Rodgers" }
         piece = " "
     }
-    %{
-    \bookpart {
-
-        \header {
-            subsubtitle = "Long Durations, Fast Tempo"
-        }
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \keepWithTag #'(ForG) \transpose g g { 
-                    \include "ly/ily/staff-properties.ily"
-                    \songNotesLong
-                }
-            >>
-        }
-        \header {
-            %piece = "G Major"
-        }
-    }
-    %}
     \bookpart {
         \header {
-            %subsubtitle = "Normal Durations and Tempo"
         }
         \score {
             << 
@@ -804,6 +782,7 @@ songNotes = \relative c' {
         \header {
             title = ""
             subtitle = ""
+            composer = ""
             subsubtitle = "Large intervals"
         }
         \score {
