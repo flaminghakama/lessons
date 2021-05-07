@@ -18,10 +18,10 @@ rm clarinet-lower-register-introduction.pdf ;
 lilypond ly/clarinet-lower-register-introduction.ly ;
 op clarinet-lower-register-introduction.pdf ;
 
-python ~/git/part-format/bookify-4page.py clarinet-lower-register-introduction.pdf clarinet-lower-register-introduction.printable.pdf
+#python ~/git/part-format/bookify-4page.py clarinet-lower-register-introduction.pdf clarinet-lower-register-introduction.printable.pdf
 mv clarinet-lower-register-introduction.pdf pdf
-mv clarinet-lower-register-introduction.printable.pdf pdf/printable
-op pdf/printable/clarinet-lower-register-introduction.printable.pdf
+#mv clarinet-lower-register-introduction.printable.pdf pdf/printable
+#op pdf/printable/clarinet-lower-register-introduction.printable.pdf
 
 
 %}
