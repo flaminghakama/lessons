@@ -8,10 +8,12 @@ composerName = "M. Santamaria"
 %{
 
 killPreview ; rm afro-blue*pdf ;  lilypond ly/songs/afro-blue.ly  ; for file in afro-blue*.pdf ; do op $file ; done  
-mv afro-bluefor-Eb.pdf pdf/songs
-mv afro-blueblank-for-Eb.pdf pdf/songs
-python ~/git/PyPDF2/Scripts/pdfcat -o afro-bluefor-Eb.pdf pdf/songs/afro-bluefor-Eb.pdf pdf/songs/afro-blueblank-for-Eb.pdf
-mv afro-bluefor-Eb.pdf pdf/songs/printable
+
+killPreview
+rm afro-blue*pdf
+lilypond ly/songs/afro-blue.ly
+mv afro-blue*.pdf pdf/songs
+for file in pdf/songs/afro-blue*.pdf ; do op $file ; done  
 
 %}
 
