@@ -154,7 +154,7 @@ head = \relative c'' {
     d8 gs d d'-> ~ 8 gs, r d | f2-- r8 fs r g | 
 
     gs4. b8 r b f [ d'-> ] | r f-> r d-> ~ 4 c | 
-    df8 4. cf4 af8 gf ~ | 1 || 
+    df8-> 4. cf4 af8 gf ~ | 1 || 
 }
 
 headForFlats = \relative c'' { 
@@ -168,7 +168,7 @@ headForFlats = \relative c'' {
     eff8 af eff eff'-> ~ 8 af, r eff? | f2-- r8 fs r g | 
 
     af4. cf8 r cf f, [ eff'-> ] | r f-> r d-> ~ 4 c | 
-    df8 4. cf4 af8 gf ~ | 1 || 
+    df8-> 4. cf4 af8 gf ~ | 1 || 
 }
 
 backgroundsITenor = \relative c' { 
@@ -237,7 +237,7 @@ backgroundsIICombined = \relative c'' {
     r2 c | b g  | <f df af>1 | R1 ||
     
     r2 af | <b fs cs gs>1 ~ | 1 | R1 | 
-    r2 gs | <b f c fs,>1 ~ | <bf f cf fs,> ~ | <bf ff cf fs,> ) || 
+    r2 gs | <b f c fs,>1 ~ | <bf f cf fs,> ~ | <bf ff cf fs,> || 
 }
 
 
@@ -265,6 +265,12 @@ backgroundsIICombined = \relative c'' {
                     { 
                         \intro 
                         \head 
+                        <<
+                            \backgroundsITrumpet
+                            \backgroundsIHorn
+                            \backgroundsITrombone
+                            \backgroundsITenor
+                        >>
                         \backgroundsIICombined 
                     }
                     \noPageBreak
