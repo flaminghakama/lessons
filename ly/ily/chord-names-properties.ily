@@ -1,1 +1,1 @@
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 2
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.4
