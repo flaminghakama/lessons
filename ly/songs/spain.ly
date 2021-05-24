@@ -150,7 +150,7 @@ melodyIntro = \relative c' {
 
 melodyAFirst = \relative c'' { 
     d4 fs8 d e d b d ~ | 8 cs a cs ~ 8 b g4 | 
-    <a fs e>4. 8 r4 4 ~ | 2 <fs cs b>4. 8 |  
+    <a fs>4. 8 r4 4 ~ | 2 <fs cs>4. 8 |  
     r4 2. ~ | 2 r4 }
 
 melodyASecond = \relative c' { 
@@ -160,13 +160,13 @@ melodyASecond = \relative c' {
     <d fs,>4. <cs e,>8 ~ 2 ~ | 2. <fs, as,>4 | 
 
     <g b,>4. <a cs,>8 ~ 4 <b d,> | <cs e,>4. <d fs,>8 ~ 4 <e g,> |  
-    << \relative c'' { d4 e8 <fs cs>8 ~ 2 ~ | 2 } \\
+    << \relative c'' { d4 e8 fs8 ~ 2 ~ | 2 } \\
        \relative c'' { a1 ~ | 2 } >> r8 e4 d8 |
 
     << \relative c'' \tuplet 3/2 { cs2 d e } \\ \relative c'' { as1 } >> |
     <d a>2 <cs g> | 
     << \relative c'' { cs4. b8 ~ 2 ~ | 1 } \\
-       \relative c' { e4. ds8 ~ 4 <fs cs b> ~ | 1 } >> ||
+       \relative c' { e4. ds8 ~ 4 fs ~ | 1 } >> ||
 }
 
 melodyBFirst = \relative c'' { 
@@ -182,7 +182,7 @@ melodyBSecond = \relative c' {
 melodyBThird = \relative c'' {   
     <fs cs>4 | 
     <e b>2 <d a>4. << \relative c'' { b8 ~ | 1 ~ | 1 } \\
-                      \relative c' { <fs e>8 ~ | 2. <fs cs>4 ~ | 1 } >> ||
+                      \relative c' { fs8 ~ | 2. cs4 ~ | 1 } >> ||
 }
 melodyBFourth = \relative c'' {   
     a8 fs4 fs'8
