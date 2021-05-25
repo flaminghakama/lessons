@@ -2,9 +2,9 @@
 \include "english.ly"
 
 titleLeft = "Grand Arpeggios"
-titleRight = "for Saxophone"
-title = "Grand Arpeggios for Saxophone"
-composerName = "Elaine Paul"
+titleRight = "for Clarinet"
+title = "Grand Arpeggios for Clarinet"
+composerName = "Elaine Paul Alt"
 \include "../scores/flaming-libs/flaming-paper.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
 \include "../scores/flaming-libs/flaming-markup.ily"
@@ -12,9 +12,10 @@ composerName = "Elaine Paul"
 
 %{
 
-rm grand-arpeggios-for-saxophone-minor.pdf
-lilypond ly/grand-arpeggios-for-saxophone-minor.ly 
-mv grand-arpeggios-for-saxophone-minor.pdf pdf
+rm pdf/exercises/grand-arpeggios-for-clarinet.pdf
+lilypond ly/exercises/grand-arpeggios-for-clarinet.ly 
+mv grand-arpeggios-for-clarinet.pdf pdf/exercises
+python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-clarinet.pdf pdf/printable/grand-arpeggios-for-clarinet.pdf manual
 
 %}
 
@@ -37,10 +38,10 @@ mv grand-arpeggios-for-saxophone-minor.pdf pdf
     right-margin = #14
 
     % First page spacing after header
-    markup-system-spacing.padding = #8
+    markup-system-spacing.padding = #0
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #16
+    top-system-spacing.minimum-distance = #14
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18
@@ -65,30 +66,20 @@ mv grand-arpeggios-for-saxophone-minor.pdf pdf
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/grand-arpeggios.ily"
-
+            
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \layout { 
-%     \context {
-%         \Score {
-%             \override StaffGrouper.staff-staff-spacing =
-%                 #'((minimum-distance . 10))
-%         }
-%     }
-% }
-
 \layout { 
-    indent = 1.25\cm
-    short-indent = 1.25\cm
     \context {
-        \Score
-        \override StaffGrouper.staff-staff-spacing.padding = #0
-        \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+        \Score {
+            \override StaffGrouper.staff-staff-spacing =
+                #'((minimum-distance . 10))
+        }
     }
 }
 
 \header { 
-    instrumentName = "Saxophone"
+    instrumentName = "Clarinet"
 }
 
 \book { 
@@ -99,10 +90,10 @@ mv grand-arpeggios-for-saxophone-minor.pdf pdf
         title = \title
     }
 
-    % \bookpart { 
-    %     \include "../scores/flaming-libs/flaming-title-page.ily"
-    %     \markup \title-page-markup "Saxophone" \composerName \title
-    % }
+    \bookpart { 
+        \include "../scores/flaming-libs/flaming-title-page.ily"
+        \markup \title-page-markup "Clarinet" \composerName \title
+    }
 
-    \include "ly/bookparts/grand-arpeggios-minor.ily"
+    \include "ly/bookparts/grand-arpeggios-major-clarinet.ily"
 }
