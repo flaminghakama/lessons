@@ -38,7 +38,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c' g \grandArpeggioMinorTwo
+                \transpose c' g \grandArpeggioMinor
             }
         >>
     }

@@ -13,7 +13,7 @@ composerName = "Elaine Paul Alt"
 %{
 
 rm pdf/exercises/grand-arpeggios-for-clarinet.pdf
-lilypond ly/exercises/grand-arpeggios-for-clarinet.ly 
+lilypond ly/exercises/grand-arpeggios-for-clarinet-major.ly 
 mv grand-arpeggios-for-clarinet.pdf pdf/exercises
 python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-clarinet.pdf pdf/printable/grand-arpeggios-for-clarinet.pdf manual
 

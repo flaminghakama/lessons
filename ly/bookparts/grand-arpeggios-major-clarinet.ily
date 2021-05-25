@@ -110,7 +110,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c' a \grandArpeggioMajor
+                \transpose c'' a \grandArpeggioMajor
             }
         >>
     }
@@ -127,7 +127,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c ef \grandArpeggioMajorTwo
+                \transpose c ef \grandArpeggioMajor
             }
         >>
     }
@@ -189,7 +189,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c' b \grandArpeggioMajor
+                \transpose c' b \grandArpeggioMajorTwo
             }
         >>
     }
@@ -275,7 +275,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c cs \grandArpeggioMajor
+                \transpose c cs \grandArpeggioMajorTwo
             }
         >>
     }
