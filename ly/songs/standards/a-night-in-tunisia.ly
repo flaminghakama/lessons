@@ -14,23 +14,9 @@ composerName = "D. Gillespie"
 
 killPreview
 rm a-night-in-tunisia*pdf
-lilypond ly/songs/a-night-in-tunisia.ly
-
-# python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-Bird-for-Bb.pdf a-night-in-tunisia-Dizzy-for-Bb.pdf a-night-in-tunisia-for-Bb.pdf
-# python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-Bird-for-C.pdf a-night-in-tunisia-Dizzy-for-C.pdf a-night-in-tunisia-for-C.pdf
-# python ~/git/part-format/combine-1Page-1Page.py a-night-in-tunisia-Bird-for-Eb.pdf a-night-in-tunisia-Dizzy-for-Eb.pdf a-night-in-tunisia-for-Eb.pdf
-
-mv a-night-in-tunisia-Bird-for-C.pdf  pdf/songs
-mv a-night-in-tunisia-Bird-for-Bb.pdf pdf/songs
-mv a-night-in-tunisia-Bird-for-Eb.pdf pdf/songs
-mv a-night-in-tunisia-Dizzy-for-C.pdf  pdf/songs
-mv a-night-in-tunisia-Dizzy-for-Bb.pdf pdf/songs
-mv a-night-in-tunisia-Dizzy-for-Eb.pdf pdf/songs
-# mv a-night-in-tunisia-for-C.pdf  pdf/songs/printable
-# mv a-night-in-tunisia-for-Bb.pdf pdf/songs/printable
-# mv a-night-in-tunisia-for-Eb.pdf pdf/songs/printable
-
-for file in pdf/songs/a-night-in-tunisia*pdf ; do open -a Preview $file ; done
+lilypond ly/songs/standards/a-night-in-tunisia.ly
+mv a-night-in-tunisia*.pdf pdf/songs/standards
+for file in pdf/songs/standards/a-night-in-tunisia*pdf ; do open -a Preview $file ; done
 
 %}
 
@@ -354,7 +340,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsSong }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -380,7 +369,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsSong \chordsSolo }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong \chordsSolo 
+            }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -406,7 +398,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose d bf  { \chordsSong \chordsSolo }
+            \new ChordNames \transpose d bf  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong \chordsSolo 
+            }
             \new Staff \transpose d bf { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -432,7 +427,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c bf  { \chordsSong \chordsSolo }
+            \new ChordNames \transpose c bf  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong \chordsSolo 
+            }
             \new Staff \transpose c bf { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -459,7 +457,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose bf c  { \chordsSong }
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -480,7 +481,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose bf c  { \chordsSong \chordsSolo }
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong \chordsSolo 
+            }
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -503,7 +507,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsSong }
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -524,7 +531,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsSong \chordsSolo }
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong \chordsSolo 
+            }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -547,7 +557,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsForm }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm 
+            }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -568,7 +581,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose bf c  { \chordsForm }
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm 
+            }
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
@@ -589,7 +605,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsForm }
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm 
+            }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
