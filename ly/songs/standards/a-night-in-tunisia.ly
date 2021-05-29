@@ -5,10 +5,10 @@ titleRight = "Tunisia"
 title = "A Night in Tunisia"
 composerName = "D. Gillespie"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
@@ -312,6 +312,18 @@ melodySongBird = \relative c'' {
     \melodyBreakBird
     \melodySolo
 }
+melodySongBirdForBbMinor = \relative c'' { 
+    \transpose c' c \melodyBassIntro
+    \melodySaxIntro
+    \melodyACommon
+    \relative c'' { a8 bf a g  ef4 cs8 d ~ | 2 r4 r8 a8 }
+    \relative c' { d2. \repeatTie }
+    \melodyBParker
+    \melodyALastBird
+    \relative c'' { a8 bf a g  ef4 cs8 d ~ | 4. }
+    \melodyBreakBird
+    \melodySolo
+}
 melodySongDiz = \relative c'' { 
     \melodyBassIntro
     \melodySaxIntro
@@ -384,6 +396,59 @@ melodyExercise = \relative c''' {
         >>
     }
 }
+
+\book {
+  \bookOutputSuffix "Bird-transposed-to-Bb-minor"
+    \header {
+        poet = "    Concert Pitch"
+        subtitle = "(Transposed to Bb-)"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose d bf  { \chordsSong \chordsSolo }
+            \new Staff \transpose d bf { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structureBird
+                    {
+                        \clef bass
+                        s1*4
+                        \clef treble
+                    }
+                    \melodySongBirdForBbMinor
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "Bird-transposed-to-Bb-minor-for-Bb"
+    \header {
+        poet = "    For Bb"
+        subtitle = "(Transposed to Bb-)"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose c bf  { \chordsSong \chordsSolo }
+            \new Staff \transpose c bf { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structureBird
+                    {
+                        \clef bass
+                        s1*4
+                        \clef treble
+                    }
+                    \melodySongBirdForBbMinor
+                >>
+            }
+        >>
+    }
+}
+
 
 \book {
   \bookOutputSuffix "Dizzy-for-Bb"
