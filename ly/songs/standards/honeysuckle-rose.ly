@@ -19,6 +19,7 @@ rm pdf/songs/standards/honeysuckle-rose*
 lilypond ly/songs/standards/honeysuckle-rose.ly 
 mv honeysuckle-rose*pdf pdf/songs/standards
 for file in pdf/songs/standards/honeysuckle-rose*pdf ; do op $file ; done 
+
 %}
 
 \paper {

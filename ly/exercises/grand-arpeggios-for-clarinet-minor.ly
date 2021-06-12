@@ -15,6 +15,7 @@ composerName = "Elaine Paul"
 rm pdf/exercises/grand-arpeggios-for-clarinet-minor.pdf
 lilypond ly/exercises/grand-arpeggios-for-clarinet-minor.ly 
 mv grand-arpeggios-for-clarinet-minor.pdf pdf/exercises
+op pdf/exercises/grand-arpeggios-for-clarinet-minor.pdf
 
 %}
 
