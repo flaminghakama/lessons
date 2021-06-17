@@ -449,6 +449,36 @@ melodyExercise = \relative c''' {
 
 
 \book {
+  \bookOutputSuffix "Bird-transposed-to-Bb-minor-for-Eb"
+    \header {
+        poet = "    For Eb"
+        subtitle = "(Transposed to Bb-)"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose f bf  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong \chordsSolo 
+            }
+            \new Staff \transpose f bf { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structureBird
+                    {
+                        \clef bass
+                        s1*4
+                        \clef treble
+                    }
+                    \melodySongBirdForBbMinor
+                >>
+            }
+        >>
+    }
+}
+
+
+\book {
   \bookOutputSuffix "Dizzy-for-Bb"
     \header {
         poet = "    Bb Lead Sheet"

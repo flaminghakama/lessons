@@ -13,7 +13,11 @@ lyricistName = "D. Heyward"
 
 
 %{
+killPreview
+rm summertime*.pdf
 lilypond ly/songs/standards/summertime.ly 
+mv summertime*.pdf pdf/songs/standards
+for file in pdf/songs/standards/summertime*.pdf ; do op $file ; done
 %}
 
 \paper {
@@ -82,6 +86,23 @@ chordsForm = \chordmode {
 
 }
 
+carrChordsForm = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s2 ||
+    a1:m | s | s | ef:7 | 
+    d1:m | c:m | b:m7.5- | e:7 |
+    a1:m | s | s | a2:m6 g:7 | 
+    c1 | f2:7 e:7 | a1:m | e:7 |
+
+    a1:m | s | s | ef:7 | 
+    d1:m | c:m | b:m7.5- | e:7 |
+    a1:m | s | s | a2:m6 g:7 | 
+    c1 | f2:7 e:7 | a1:m | e:7 |
+
+}
+
 melodyForm = \relative c'' { 
     e4 c || e1 ~ | 8 r d8. c16 d8. e16 c4 | a2 e ~ | 4 r 
     e'4 c | d8 2.. | r4 c8. a16 c8. a16 c4 | b1 ~ | 2 
@@ -126,7 +147,6 @@ lyricsHeadOne = \lyricmode {
     poet = "Eb Alto Saxophone"
     instrumentName = \poet
 }
-
 
 \book {
   \bookOutputSuffix "for-C"
@@ -210,3 +230,84 @@ lyricsHeadOne = \lyricmode {
     }
 }
 
+
+\book {
+  \bookOutputSuffix "in-B-minor-for-C"
+    \header {
+        subtitle = "(Amy Carr Key)"
+        poet = "Concert Pitch"
+    }
+    \score {
+        <<
+            \new ChordNames \transpose a b  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \carrChordsForm 
+            }
+            \new Staff = "voice" \transpose a b { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-B-minor-for-Bb"
+    \header {
+        subtitle = "(Amy Carr Key)"
+        poet = "Bb Lead Sheet"
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose a b  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \carrChordsForm 
+            }
+            \new Staff = "voice" \transpose a b { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-B-minor-for-Eb"
+    \header {
+        subtitle = "(Amy Carr Key)"
+        poet = "Eb Lead Sheet"
+    } 
+    \score {
+        \transpose ef c <<
+            \new ChordNames \transpose a b  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \carrChordsForm 
+            }
+            \new Staff = "voice" \transpose a b { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
