@@ -56,24 +56,15 @@ for file in pdf/songs/standards/honeysuckle-rose*pdf ; do op $file ; done
 strcture = \relative c' { 
     \key f \major
     \tempo "Medium, with a lift"
-    \repeat volta 2 { 
-        s1*4 
-        s1*4 \bar "||" \break
-        s1*4 
-        s1*4 \bar "||" \break
-        s1*4 
-        s1*4 \bar "||" \break
-        s1*4 
-        s1*2
-    }
-    \alternative { 
-        {
-            s1*2 \bar ":|]"
-        }
-        { 
-            s1*2 \bar "|."
-        }
-    }
+
+    s1*4 \break
+    s1*4 \bar "||" \break
+    s1*4 \break
+    s1*4 \bar "||" \break
+    s1*4 \break
+    s1*4 \bar "||" \break
+    s1*4 \break
+    s1*4 \bar "|." 
 }
 
 chordsForm = \chordmode { 
@@ -175,9 +166,9 @@ lyricsHeadTwo = \lyricmode {
 
 
 \book {
-  \bookOutputSuffix "original"
+  \bookOutputSuffix "for-C"
     \header {
-        subtitle = "(Original Key)"
+        subtitle = ""
         poet = "Concert Pitch"
     }
     \score {
@@ -197,10 +188,14 @@ lyricsHeadTwo = \lyricmode {
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
         >>
     }
 }
 
+%{
 \book {
   \bookOutputSuffix "transposed-to-C"
     \header {
@@ -254,3 +249,5 @@ lyricsHeadTwo = \lyricmode {
         >>
     }
 }
+
+%}
