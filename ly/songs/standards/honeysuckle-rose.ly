@@ -28,7 +28,7 @@ for file in pdf/songs/standards/honeysuckle-rose*pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -53,20 +53,47 @@ for file in pdf/songs/standards/honeysuckle-rose*pdf ; do op $file ; done
 
 \include "ly/ily/layout.ily"
 
-strcture = \relative c' { 
+structure = \relative c' { 
+
     \key f \major
     \tempo "Medium, with a lift"
 
-    s1*4 \break
-    s1*4 \bar "||" \break
-    s1*4 \break
-    s1*4 \bar "||" \break
-    s1*4 \break
-    s1*4 \bar "||" \break
-    s1*4 \break
-    s1*4 \bar "|." 
+    s1*8 \break
+
+    \bar "[|:"
+
+    \repeat volta 2 { 
+        \mark \markup \box "A"
+        s1*4 \break
+        s1*4 \bar "||" \break
+
+        \mark \markup \box "A"
+        s1 \noBreak s1 \noBreak s1 \noBreak s1 \break
+        s1*4 \bar "||" \break
+
+        \mark \markup \box "B"
+        s1*4 \break
+        s1*4 \bar "||" \break
+
+        \mark \markup \box "A"
+        s1*4 \break
+        s1*2 
+    }
+    \alternative {
+        { s1*2  \bar ":|]" } 
+        { s1*2 }
+    }
+    \bar "|."    
 }
 
+
+chordsIntro = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    g1:m7 | c:7 | g:m7 | c:7 | 
+    f1 | g2:m7 c:7 | a1:m7.5- | d:7.9- ||
+}
 chordsForm = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
@@ -84,7 +111,15 @@ chordsForm = \chordmode {
     f2 af:dim7 | g:m7 c:7 | f1 | a2:m7.5- d:7.9- ||
         f2  df:7 | g4:m7 gf:7 f2:6 ||
 }
+chordsSong = \chordmode { 
+    \chordsIntro
+    \chordsForm
+}
 
+melodyIntro = \relative c' { 
+    \comp #4 \comp #4 \comp #4 \comp #4 
+    \comp #4 \comp #4 \comp #4 \comp #4 
+}
 melodyHead = \relative c'' { 
     c8 bf d, f a2 | c8 bf d, f a2 | c8 bf d, f a4 4 | 2 8 g f d | 
     f4 4 2 ~ | 2 a8 g f d | f1 ~ | 4 r r2 ||
@@ -99,7 +134,8 @@ melodyHead = \relative c'' {
     f4 4 2 ~ | 2 a8 g f d | f1 ~ | 4 r r2 ||
         f1 ~ | 2 ~ 8 r r4 ||
 }
-melodyForm = \relative c' { 
+melodySong = \relative c' { 
+    \melodyIntro
     \melodyHead
 }
 
@@ -133,8 +169,10 @@ lyricsHeadOne = \lyricmode {
     seems the hon -- ey fair -- ly drips.
 
     You're con -- fec -- tion, 
-    good - nees knows, 
+    good -- nees knows, 
     Hon -- ey -- suck -- le Rose.
+    Rose.
+
     Rose.
 }
 lyricsHeadTwo = \lyricmode {
@@ -142,18 +180,6 @@ lyricsHeadTwo = \lyricmode {
     \override LyricText.font-size = #'2
 
     \repeat unfold 10 { \skip 1 }
-
-    \repeat unfold 16 { \skip 1 }
-    \repeat unfold 16 { \skip 1 }
-
-    \repeat unfold 12 { \skip 1 }
-    \repeat unfold 21 { \skip 1 }
-
-    \repeat unfold 16 { \skip 1 }
-
-    She's all of these and more
-    She's ev -- 'ry thing 
-    that you'd a -- dore.
 }
 
 \header {
@@ -175,29 +201,77 @@ lyricsHeadTwo = \lyricmode {
         <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
+                \chordsSong 
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
-                    \melodyForm
+                    \structure
+                    \melodySong
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
+        >>
+    }
+}
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        subtitle = ""
+        poet = "Bb Lead Sheet"
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        subtitle = ""
+        poet = "Eb Lead Sheet"
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
             }
         >>
     }
 }
 
-%{
 \book {
-  \bookOutputSuffix "transposed-to-C"
+  \bookOutputSuffix "in-C-for-C"
     \header {
         subtitle = "(Amy Carr key)"
         poet = "Concert Pitch"
@@ -206,14 +280,14 @@ lyricsHeadTwo = \lyricmode {
         <<
             \new ChordNames \transpose f, c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
+                \chordsSong 
             }
             \new Staff = "voice" \transpose f, c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
-                    \melodyForm
+                    \structure
+                    \melodySong
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -224,23 +298,23 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "transposed-to-C-for-Bb"
+  \bookOutputSuffix "in-C-for-Bb"
     \header {
         subtitle = "(Amy Carr key)"
         poet = "Bb Lead Sheet"
     }
     \score {
-        <<
-            \new ChordNames \transpose f d { 
+        \transpose bf, c <<
+            \new ChordNames \transpose f c { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
+                \chordsSong 
             }
-            \new Staff = "voice" \transpose f, d { 
+            \new Staff = "voice" \transpose f, c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
-                    \melodyForm
+                    \structure
+                    \melodySong
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -250,4 +324,29 @@ lyricsHeadTwo = \lyricmode {
     }
 }
 
-%}
+\book {
+  \bookOutputSuffix "in-C-for-Eb"
+    \header {
+        subtitle = "(Amy Carr key)"
+        poet = "Eb Lead Sheet"
+    }
+    \score {
+        \transpose ef c <<
+            \new ChordNames \transpose f c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose f, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}

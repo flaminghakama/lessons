@@ -69,7 +69,8 @@ structureIntro = \relative c' {
 }
 
 structureVerse = \relative c' { 
-    \mark \markup "Voice"
+    \key a \minor
+    \mark \markup \box "Verse"
     s1*4 \break 
     s1*4 \break  
     s1*4 \bar "||"
@@ -268,6 +269,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureVerse
@@ -287,6 +289,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureHead
@@ -314,6 +317,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureIntro
@@ -333,6 +337,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureVerse
@@ -352,6 +357,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureHead
@@ -377,8 +383,9 @@ lyricsHeadOne = \lyricmode {
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsIntro
             }
-            \new Staff = "voice" \transpose ef c { 
+            \new Staff = "voice" \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureIntro
@@ -398,6 +405,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose ef c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureVerse
@@ -415,8 +423,9 @@ lyricsHeadOne = \lyricmode {
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm 
             }
-            \new Staff = "voice" \transpose ef c { 
+            \new Staff = "voice" \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureHead
@@ -444,6 +453,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureIntro
@@ -463,6 +473,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureVerse
@@ -482,6 +493,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureHead
@@ -509,6 +521,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureIntro
@@ -528,6 +541,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureVerse
@@ -547,6 +561,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureHead
@@ -574,6 +589,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose ef c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureIntro
@@ -593,6 +609,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose ef c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureVerse
@@ -612,6 +629,7 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose ef c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureHead
