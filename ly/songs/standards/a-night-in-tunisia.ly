@@ -334,7 +334,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "Dizzy-for-C"
     \header {
-        poet = "    Concert Pitch"
+        poet = "Concert Pitch"
         subtitle = "(Dizzy)"
         instrumentName = \poet
     }
@@ -363,7 +363,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "Bird-for-C"
     \header {
-        poet = "    Concert Pitch"
+        poet = "Concert Pitch"
         subtitle = "(Bird & Dexter)"
         instrumentName = \poet
     }
@@ -390,10 +390,10 @@ melodyExercise = \relative c''' {
 }
 
 \book {
-  \bookOutputSuffix "Bird-transposed-to-Bb-minor"
+  \bookOutputSuffix "in-Bb-minor-for-C"
     \header {
-        poet = "    Concert Pitch"
-        subtitle = "(Transposed to Bb-)"
+        poet = "Concert Pitch"
+        subtitle = "(Amy Carr Key)"
         instrumentName = \poet
     }
     \score {
@@ -419,10 +419,10 @@ melodyExercise = \relative c''' {
 }
 
 \book {
-  \bookOutputSuffix "Bird-transposed-to-Bb-minor-for-Bb"
+  \bookOutputSuffix "in-Bb-minor-for-Bb"
     \header {
-        poet = "    For Bb"
-        subtitle = "(Transposed to Bb-)"
+        poet = "Bb Lead Sheet"
+        subtitle = "(Amy Carr Key)"
         instrumentName = \poet
     }
     \score {
@@ -447,12 +447,11 @@ melodyExercise = \relative c''' {
     }
 }
 
-
 \book {
-  \bookOutputSuffix "Bird-transposed-to-Bb-minor-for-Eb"
+  \bookOutputSuffix "in-Bb-minor-for-Eb"
     \header {
-        poet = "    For Eb"
-        subtitle = "(Transposed to Bb-)"
+        poet = "Eb Lead Sheet"
+        subtitle = "(Amy Carr Key)"
         instrumentName = \poet
     }
     \score {
@@ -481,7 +480,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "Dizzy-for-Bb"
     \header {
-        poet = "    Bb Lead Sheet"
+        poet = "Bb Lead Sheet"
         subtitle = "(Dizzy)"
         instrumentName = \poet
     }
@@ -505,7 +504,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "Bird-for-Bb"
     \header {
-        poet = "    Bb Lead Sheet"
+        poet = "Bb Lead Sheet"
         subtitle = "(Bird & Dexter)"
         instrumentName = \poet
     }
@@ -531,7 +530,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "Dizzy-for-Eb"
     \header {
-        poet = "    Eb Lead Sheet"
+        poet = "Eb Lead Sheet"
         subtitle = "(Dizzy)"
         instrumentName = \poet
     }
@@ -555,7 +554,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "Bird-for-Eb"
     \header {
-        poet = "    Eb Lead Sheet"
+        poet = "Eb Lead Sheet"
         subtitle = "(Bird & Dexter)"
         instrumentName = \poet
     }
@@ -582,7 +581,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "worksheet-for-C"
     \header {
-        poet = "    Concert Pitch"
+        poet = "Concert Pitch"
         instrumentName = \poet
     }
     \score {
@@ -606,7 +605,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "worksheet-for-Bb"
     \header {
-        poet = "    Bb Soprano Saxophone"
+        poet = "Bb Soprano Saxophone"
         instrumentName = \poet
     }
     \score {
@@ -630,7 +629,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "worksheet-for-Eb"
     \header {
-        poet = "    Eb Alto Saxophone"
+        poet = "Eb Alto Saxophone"
         instrumentName = \poet
     }
     \score {

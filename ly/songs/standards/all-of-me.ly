@@ -237,7 +237,7 @@ lyricsHeadOne = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "original-for-C"
+  \bookOutputSuffix "for-C"
     \header {
         subtitle = ""
         poet = "Concert Pitch"
@@ -304,7 +304,7 @@ lyricsHeadOne = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "original-for-Bb"
+  \bookOutputSuffix "for-Bb"
     \header {
         subtitle = ""
         poet = "Bb Lead Sheet"
@@ -372,7 +372,7 @@ lyricsHeadOne = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "original-for-Eb"
+  \bookOutputSuffix "for-Eb"
     \header {
         subtitle = ""
         poet = "Eb Lead Sheet"
