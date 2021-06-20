@@ -47,7 +47,7 @@ lilypond ly/songs/standards/stella-by-starlight.ly
 
 \include "ly/ily/layout.ily"
 
-strcture = \relative c' { 
+structureIntro = \relative c' { 
     \key c \major
     \tempo "Moderato"
     s1*4 \bar "||" \break
@@ -56,9 +56,11 @@ strcture = \relative c' {
     \once \override BreathingSign.text = \markup { 
         \musicglyph "scripts.caesura.curved" 
     } \breathe 
-    \bar "||" \break 
+    \bar "!" \break 
+}
+structureForm = \relative c' { 
     \key g \major
-    s4 \bar "|"   
+    s4 \bar "||"   
     s1*4 \break
     s1*4 
     s1*4 
@@ -69,12 +71,24 @@ strcture = \relative c' {
     s1*4     
     \bar "|."
 }
+structureSolos = \relative c' { 
+    \bar "[|:"
+    s1*4 \break
+    s1*6 \break
+    s1*6 \bar "||" \break
+    s1*4 
+    s1*4 \bar "||" \break
+    s1*4 
+    s1*4     
+    \bar ":|]"
+}
 
-chordsForm = \chordmode { 
+chordsIntro = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    f1:maj9 | af:dim7 | g:m11 | c:7 ||
+    f1:maj9 | af:dim7 | 
+    g:1.3-.5.7.11 | c:7 ||
 
     f2:maj/c a:m/c | g1:m7/c |
     f2:maj/a af:dim7 | g:m7 c:7 |
@@ -82,16 +96,36 @@ chordsForm = \chordmode {
     a2:m gs:dim7/a | a:m9 d:7.9- | 
     g2:maj/b ef:7/bf | a:m7 d4:9
 
+}
+chordsFormOriginal = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
     g4 || g1:dim7 | s | d:13 | d:aug7 |
     d1:m9/g | g:7.9- | c:maj9 | s2 f:9 |
     g1/d | e:m9 | b:m | e:m7.5-/bf | 
     d1/a | g:dim7 | fs:m7.5- | b:7 ||
 
-    e1:aug7.9- | s | a:m11 | s | 
+    e1:aug7.9- | s | a:1.3-.5.7.11 | s | 
     c1:m7.7+ | s | g:maj9/b | s ||
 
     bf1:dim7 | s | f:6.11+ | e:7 |
     c1:m | d:7.9- | g:maj9 | s || 
+}
+chordsFormRealBook = \transpose bf g \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    e1:m7.5- | a:7.9- | c:m7 | f:7 |
+    f1:m7 | bf:7 | ef:maj7 | af:7 |
+    bf1:maj7 | e2:m7 a:7.9- | d1:m7 | bf2:m7 ef:7 |
+    f1:maj7 | e2:m7 a:7.9- | a1:m7.5- | d:7.9- ||
+
+    g1:aug7.9- | s | c:m7 | s | 
+    af1:7 | s | bf:maj7 | s ||
+
+    e1:m7.5- | a:7.9- | d:m7.5- | g:7.9- | 
+    c1:m7.5- | f:7.9- | bf:maj7 | s |
 }
 
 melodyIntro = \relative c'' { 
@@ -151,7 +185,7 @@ lyricsHeadOne = \lyricmode {
     that's Stel -- la by star -- light and not a dream.
 
     My heart and I a -- gree
-    She's ev -- 'ry thing on eareth to me.
+    She's ev -- 'ry thing on earth to me.
 }
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
@@ -191,13 +225,17 @@ lyricsHeadTwo = \lyricmode {
         <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
+                \chordsIntro
+                \chordsFormOriginal
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
+                    {
+                        \structureIntro
+                        \structureForm
+                    }
                     \melodyForm
                 >>
             }
@@ -209,7 +247,69 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "real-book-key-for-C"
+  \bookOutputSuffix "original-G-for-Bb"
+    \header {
+        subtitle = "(Original Key)"
+        poet = "Bb Lead Sheet"
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsIntro
+                \chordsFormOriginal
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    {
+                        \structureIntro
+                        \structureForm
+                    }
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+\book {
+  \bookOutputSuffix "original-G-for-Eb"
+    \header {
+        subtitle = "(Original Key)"
+        poet = "Eb Lead Sheet"
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsIntro
+                \chordsFormOriginal
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    {
+                        \structureIntro
+                        \structureForm
+                    }
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "real-book-Bb-for-C"
     \header {
         subtitle = "(Real Book key)"
         poet = "Concert Pitch"
@@ -218,13 +318,18 @@ lyricsHeadTwo = \lyricmode {
         <<
             \new ChordNames \transpose g bf  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
+                \chordsIntro
+                s4
+                \chordsFormRealBook
             }
             \new Staff = "voice" \transpose g bf { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
+                    {
+                        \structureIntro
+                        \structureForm
+                    }
                     \melodyForm
                 >>
             }
@@ -252,7 +357,7 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
+                    \structure
                     \melodyForm
                 >>
             }
@@ -276,14 +381,98 @@ lyricsHeadTwo = \lyricmode {
         <<
             \new ChordNames \transpose g f  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
+                \chordsIntro
+                \chordsFormOriginal
+                \chordsFormRealBook
             }
             \new Staff = "voice" \transpose g f { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
-                    \melodyForm
+                    {
+                        \structureIntro
+                        \pageBreak
+                        \structureForm
+                        \structureSolos
+                    }
+                    {
+                        \melodyForm
+                        \comp #128
+                    }
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Bb"
+    \header {
+        subtitle = "(Amy Carr key)"
+        poet = "Bb Lead Sheet"
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose g f  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsIntro
+                \chordsFormOriginal
+                \chordsFormRealBook
+            }
+            \new Staff = "voice" \transpose g f { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    {
+                        \structureIntro
+                        \pageBreak
+                        \structureForm
+                        \structureSolos
+                    }
+                    {
+                        \melodyForm
+                        \comp #128
+                    }
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Eb"
+    \header {
+        subtitle = "(Amy Carr key)"
+        poet = "Eb Lead Sheet"
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose g f  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsIntro
+                \chordsFormOriginal
+                \chordsFormRealBook
+            }
+            \new Staff = "voice" \transpose g f { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    {
+                        \structureIntro
+                        \pageBreak
+                        \structureForm
+                        \structureSolos
+                    }
+                    {
+                        \melodyForm
+                        \comp #128
+                    }
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
