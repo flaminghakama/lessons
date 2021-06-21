@@ -14,7 +14,7 @@ lyricistName = "E. Y. Harburg"
 
 %{
 
-    https://www.youtube.com/watch?v=yZNo_cpsZIc
+https://www.youtube.com/watch?v=yZNo_cpsZIc
 
 killPreview
 rm somewhere-over-the-rainbow*.pdf
@@ -30,10 +30,10 @@ for file in pdf/songs/standards/somewhere-over-the-rainbow*.pdf ; do op $file ; 
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #10
+  markup-system-spacing.padding = #2
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #16
+  top-system-spacing.minimum-distance = #20
 
   % Spacing in between systems
   system-system-spacing.basic-distance = #18
@@ -58,8 +58,9 @@ for file in pdf/songs/standards/somewhere-over-the-rainbow*.pdf ; do op $file ; 
 structureIntro = \relative c' { 
     \key ef \major
     \time 2/2
-    s1*12
-    s1*2
+    s1*8 \break
+
+    s1*6
     \time 3/2 
     s1.*2
     \time 2/2
@@ -75,15 +76,15 @@ structureForm = \relative c' {
     \bar "[|:"
     \repeat volta 2 { 
         s1*8 \bar "||" 
-        s1*7 \break
+        s1*7
     }
     \alternative {
-        { s1 \bar ":|]" }
+        { s1 \bar ":|]" \pageBreak }
         { s1 \bar "||" }
     }
     \once \override Score.RehearsalMark #'extra-offset = #'( 2.5 . -1.2 ) 
     \mark \markup \box "B"
-    s1*8 \bar "||" \pageBreak
+    s1*8 \bar "||"
     s1*8 \break
     \once \override Score.RehearsalMark #'extra-offset = #'( -2 . 0 ) 
     \mark \markup \box "A"
@@ -101,41 +102,48 @@ structureCoda = \relative c' {
     s1 \bar "||" 
     s1 | s2 \fermata s4 s | 
     s2. \fermata s4 | 
-    \tempo "rit."
+    <>^"rit."
     s2 \fermata s4 \fermata s4 |
     \fermata s1
     \bar "|."
 }
 
-chordsIntro = \chordmode { 
-    \set chordChanges = ##t 
+chordsIntroInBb = \chordmode { 
+    \set chordChanges = ##t
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    s1*12
-    s1*2
-    s1.*2
-    s1
-    s1.
-    s1*2
+    ef1/f | ef/bf | bf:maj7 | c2:m7 f:7 | 
+    bf2/f b:dim7 | c:m7 f:7 | bf1 | bf:6 |  
+    
+    bf1 | ef/bf | bf:maj7 | a2:m7 d:7 | 
+    g1:m | ef2:7.5- c:9 | 
+    c1.:m7/f |   
+
+    bf1./f |
+    c1:m7/f |   
+
+    bf1/f bf2/ef | 
+    c1:m7/f | f:13 |
 }
+chordsIntro = \transpose bf ef \chordsIntroInBb
 chordsForm = \chordmode { 
-    \set chordChanges = ##t 
+    \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    a1:m7.5- | d:7.9- | g:m7 | s2 a:7.5- | 
+    a1:m7.5- | d:7.9- | g:m7 | ef:7.5- | 
     af1:maj7 | a2:m7.5- d:7.9- | g1:m7 | c:7.9- ||
 
     f1:m7 | af:m7 | g:m7 | c:7.9- | 
-    f1:m7 | bf:7.9- | ef:maj7 | f2:m7 bf:7.9- | 
-        f2:m7 bf:7.9- | 
+    f1:m7 | bf:7.9- | ef:maj7 | bf1:7.9- | 
+        s2 bf:7.9- | 
 
-    ef1:maj7 | s | f:m7 | bf:7.9- | 
+    ef1:maj7 | s | f:m7 | bf:7 | 
     g:m7 | c:7.9- | f:m7 | bf:7.9- || 
 
     ef1:maj7 | s | a:m7.5- | d:7.9- | 
     g:m7 | c:7 | f:m7 | bf:7 ||
 
-    a1:m7.5- | d:7.9- | g:m7 | s2 a:7.5- | 
+    a1:m7.5- | d:7.9- | g:m7 | ef:7.5- | 
     af1:maj7 | a2:m7.5- d:7.9- | g1:m7 | c:7.9- ||
 
     f1:m7 | af:m7 | g:m7 | c:7.9- | 
@@ -348,7 +356,6 @@ lyricsCoda = \lyricmode {
         }
     }
 }
-
 
 \book {
   \bookOutputSuffix "in-Gb-for-C"
