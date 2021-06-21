@@ -28,7 +28,7 @@ for file in pdf/songs/standards/somewhere-over-the-rainbow*.pdf ; do op $file ; 
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #10
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #16
@@ -55,12 +55,22 @@ for file in pdf/songs/standards/somewhere-over-the-rainbow*.pdf ; do op $file ; 
 
 structureIntro = \relative c' { 
     \key ef \major
-    \time 4/4
-    s1*8 \break
+    \time 2/2
+    s1*12
+    s1*2
+    \time 3/2 
+    s1.*2
+    \time 2/2
+    s1
+    \time 3/2 
+    s1.
+    \time 2/2
+    s1*2 \break
 }
 structureForm = \relative c' { 
     \once \override Score.RehearsalMark #'extra-offset = #'( -2 . 0 ) 
     \mark \markup \box "A"
+    \bar "[|:"
     \repeat volta 2 { 
         s1*8 \bar "||" 
         s1*7 \break
@@ -71,7 +81,7 @@ structureForm = \relative c' {
     }
     \once \override Score.RehearsalMark #'extra-offset = #'( 2.5 . -1.2 ) 
     \mark \markup \box "B"
-    s1*8 \bar "||" 
+    s1*8 \bar "||" \pageBreak
     s1*8 \break
     \once \override Score.RehearsalMark #'extra-offset = #'( -2 . 0 ) 
     \mark \markup \box "A"
@@ -99,8 +109,12 @@ chordsIntro = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    ef1 | c:m6 | f:m7 | bf:7 |
-    g1:m7.5- | c:7.9- | f:m7 | bf:7.9- || 
+    s1*12
+    s1*2
+    s1.*2
+    s1
+    s1.
+    s1*2
 }
 chordsForm = \chordmode { 
     \set chordChanges = ##t 
@@ -133,28 +147,45 @@ chordsCoda = \chordmode {
     f1:m7 | bf1:7.9- | a4:m7.5- af:m6 ef2:maj7.11+ || 
 }
 
-melodyIntro = \relative c' { 
-    \comp #32
+melodyIntroInBb = \relative c' { 
+
+    r8 f g [ ef ] f4. c16 d16 | ef4 4 8 f4 bf,16 c |
+    d4 d d8 ef4 a,16 bf | c1 |
+
+    d2 2 | d8 f4 ef8 d4 c | 
+    bf1  ~ | 2 r | 
+
+    r8 f'8 g [ ef ] f4. c16 d | ef4 4 8 f4 bf,16 c | 
+    d4 d d8 ef4 a,16 bf | c1 |
+
+    a2 bf | a'2 g4 f | 
+    a2 f1 |
+
+    r4 a,8 bf d4. f8  a4. bf8 | f1 | 
+    r4 a,8 bf d4 f a4. bf8 | c1 ~ | 2 r ||
 }
+
+melodyIntro = \transpose bf, ef \melodyIntroInBb
+
 melodyForm = \relative c' { 
-    ef1 | ef' | d2 bf4 c | d2 ef | 
-    ef,1 | c' | bf ~ | 1 ||
+    ef1 | ef' | d2 bf8 c4. | d2 ef | 
+    r2 ef,4. c'8 ~ | 1 | bf ~ | 1 ||
 
-    c,1 | af' | g2 ef4 f | g2 af | 
-    f2 d4 ef | f2 g | ef1 | R1 ||
-        r2 r4 bf' ||
+    r2 c,2 | af'1 | g2 ef8 f4. | g2 af | 
+    f2. d8 ef | f2 g | ef1 ~ | 2 r ||
+        ef2 \repeatTie \breath bf' ||
 
-    g4 bf g bf | g bf g bf | af bf af bf | af bf af bf | 
-    c1 | c ~ | 1 | r2 r4 bf ||
+    g4 bf g bf | g8 bf4. g4 bf | af bf af bf | af bf af bf | 
+    c1  ~ | 1 ~ | 1 | r2 r4 bf ||
 
-    g4 bf g bf | g bf g bf | a c a c | a c a c | 
+    g4 bf g bf | g8 bf4. g4 \breath bf | a c a c | a c a c | 
     d1 | d | f | c ||
 
-    ef,1 | ef' | d2 bf4 c | d2 ef | 
-    ef,1 | c' | bf ~ | 1 ||
+    ef,1 | ef' | d2 bf8 c4. | d2 ef | 
+    r2 ef,4. c'8 ~ | 1 | bf ~ | 1 ||
 
-    c,1 | af' | g2 ef4 f | g2 af | 
-    f2 d4 ef | f2 g | ef1 | R1 ||
+    af1 | af | g2 ef4 f | g2 af | 
+    f2 d4. ef8 | f2 g | ef1 | R1 ||
 }
 melodyCoda = \relative c'' { 
     r2 r4 bf4 ||
@@ -167,6 +198,37 @@ melodySong = \relative c'' {
     \melodyForm
 }
 
+lyricsIntro = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+
+    When all the world is a hope -- less jum -- ble
+    And the rain -- drops tum -- ble all a -- round,
+
+    Hea -- ven o -- pens it's ma -- gic lane.
+
+    When all the clouds dar -- ken up the sky -- way
+    There's a rain -- bow hig -- way to be found,
+
+    Lead -- ing from your win -- dow pane
+
+    To a place be -- hind the sun,
+    Just a step be -- yond the rain.
+}
+
+lyricsIntroSkip = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+
+    \repeat unfold 19 { \skip 1 }
+    \repeat unfold 8 { \skip 1 }
+
+    \repeat unfold 19 { \skip 1 }
+    \repeat unfold 7 { \skip 1 }
+
+    \repeat unfold 14 { \skip 1 }
+}
+
 lyricsHeadOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
@@ -174,9 +236,10 @@ lyricsHeadOne = \lyricmode {
     Some -- where o -- ver the rain -- bow, way up high,
     There's a land that I heard of once in a lul -- la -- by.
     
+    \repeat unfold 1 { \skip 1 }
 
     Some -- day I'll wish u -- pon a star 
-    and wake up where the clouds are far be -- hind me.
+    and wake up where the clouds are far be -- hind.
 
     Where trou -- bles melt like le -- mon drops 
     a -- way a -- bove the chim -- ney tops,
@@ -197,14 +260,15 @@ lyricsHeadTwo = \lyricmode {
 lyricsCoda = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
-    o -- ver the rain -- bow, blue -- birds fly.
-    o -- ver the rain -- bow; why, then, why can't I?   
+    If hap -- py lit -- tle blue -- birds fly 
+    be -- yond the rain -- bow,
+    Why, oh why can't I?
 }
 
 \header {
     title = \title
     composer = \markup \italic { "composed by" \composerName }
-    arranger = ""
+    arranger = \markup \italic { "lyrics by" \lyricistName }
     poet = "Eb Alto Saxophone"
     instrumentName = \poet
 }
@@ -214,6 +278,7 @@ lyricsCoda = \lyricmode {
     \header {
         subtitle = ""
         poet = "Concert Pitch"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -237,10 +302,16 @@ lyricsCoda = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
+                \lyricsto "lead" { 
+                    \lyricsIntroSkip
+                    \lyricsHeadTwo 
+                } 
             }
         >>
         \layout { 
@@ -273,11 +344,13 @@ lyricsCoda = \lyricmode {
     }
 }
 
+
 \book {
   \bookOutputSuffix "in-Gb-for-C"
     \header {
         subtitle = "(Amy Carr Key)"
         poet = "Concert Pitch"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -301,10 +374,16 @@ lyricsCoda = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
+                \lyricsto "lead" { 
+                    \lyricsIntroSkip
+                    \lyricsHeadTwo 
+                } 
             }
         >>
     }
@@ -334,6 +413,7 @@ lyricsCoda = \lyricmode {
     \header {
         subtitle = "(Amy Carr Key)"
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose bf, c <<
@@ -357,10 +437,16 @@ lyricsCoda = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
+                \lyricsto "lead" { 
+                    \lyricsIntroSkip
+                    \lyricsHeadTwo 
+                } 
             }
         >>
         \layout { 
@@ -398,6 +484,7 @@ lyricsCoda = \lyricmode {
     \header {
         subtitle = "(Amy Carr Key)"
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose ef c <<
@@ -421,10 +508,16 @@ lyricsCoda = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
+                \lyricsto "lead" { 
+                    \lyricsIntroSkip
+                    \lyricsHeadTwo 
+                } 
             }
         >>
         \layout { 
