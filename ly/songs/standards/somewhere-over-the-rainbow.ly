@@ -14,6 +14,8 @@ lyricistName = "E. Y. Harburg"
 
 %{
 
+    https://www.youtube.com/watch?v=yZNo_cpsZIc
+
 killPreview
 rm somewhere-over-the-rainbow*.pdf
 lilypond ly/songs/standards/somewhere-over-the-rainbow.ly 
@@ -168,23 +170,23 @@ melodyIntroInBb = \relative c' {
 melodyIntro = \transpose bf, ef \melodyIntroInBb
 
 melodyForm = \relative c' { 
-    ef1 | ef' | d2 bf8 c4. | d2 ef | 
-    r2 ef,4. c'8 ~ | 1 | bf ~ | 1 ||
+    ef1 | ef' | d2 ~ 8 bf c4 | d2 ef | 
+    r2 ef,4 c' ~ | 1 | bf ~ | 1 ||
 
-    r2 c,2 | af'1 | g2 ef8 f4. | g2 af | 
+    r2 c,2 | af'1 | g2 ~ 8 ef f4 | g2 af | 
     f2. d8 ef | f2 g | ef1 ~ | 2 r ||
         ef2 \repeatTie \breath bf' ||
 
     g4 bf g bf | g8 bf4. g4 bf | af bf af bf | af bf af bf | 
-    c1  ~ | 1 ~ | 1 | r2 r4 bf ||
+    c1  ~ | 1 ~ | 1 | r2 bf ||
 
-    g4 bf g bf | g8 bf4. g4 \breath bf | a c a c | a c a c | 
+    g4 bf g bf | g8 bf4. g4 \breath bf | a c a c | a c a \breath c | 
     d1 | d | f | c ||
 
-    ef,1 | ef' | d2 bf8 c4. | d2 ef | 
-    r2 ef,4. c'8 ~ | 1 | bf ~ | 1 ||
+    ef,1 | ef' | d2 ~ 8 bf c4 | d2 ef | 
+    r2 ef,4 c' ~ | 1 | bf ~ | 1 ||
 
-    af1 | af | g2 ef4 f | g2 af | 
+    af1 | af | g2 ~ 8 ef f4 | g2 af | 
     f2 d4. ef8 | f2 g | ef1 | R1 ||
 }
 melodyCoda = \relative c'' { 
@@ -277,7 +279,7 @@ lyricsCoda = \lyricmode {
   \bookOutputSuffix "for-C"
     \header {
         subtitle = ""
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
     \score {
@@ -341,6 +343,9 @@ lyricsCoda = \lyricmode {
             indent = 2.25\cm
             short-indent = 1.25\cm
         }
+        \header {
+            piece = " "
+        }
     }
 }
 
@@ -349,7 +354,7 @@ lyricsCoda = \lyricmode {
   \bookOutputSuffix "in-Gb-for-C"
     \header {
         subtitle = "(Amy Carr Key)"
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
     \score {

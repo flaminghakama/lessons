@@ -13,11 +13,13 @@ lyricistName = "D. Heyward"
 
 
 %{
+
 killPreview
 rm summertime*.pdf
 lilypond ly/songs/standards/summertime.ly 
 mv summertime*.pdf pdf/songs/standards
 for file in pdf/songs/standards/summertime*.pdf ; do op $file ; done
+
 %}
 
 \paper {
@@ -152,7 +154,8 @@ lyricsHeadOne = \lyricmode {
   \bookOutputSuffix "for-C"
     \header {
         subtitle = ""
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -180,6 +183,7 @@ lyricsHeadOne = \lyricmode {
     \header {
         subtitle = ""
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -208,6 +212,7 @@ lyricsHeadOne = \lyricmode {
     \header {
         subtitle = ""
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -235,7 +240,8 @@ lyricsHeadOne = \lyricmode {
   \bookOutputSuffix "in-B-minor-for-C"
     \header {
         subtitle = "(Amy Carr Key)"
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -263,6 +269,7 @@ lyricsHeadOne = \lyricmode {
     \header {
         subtitle = "(Amy Carr Key)"
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose bf, c <<
@@ -290,6 +297,7 @@ lyricsHeadOne = \lyricmode {
     \header {
         subtitle = "(Amy Carr Key)"
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     } 
     \score {
         \transpose ef c <<

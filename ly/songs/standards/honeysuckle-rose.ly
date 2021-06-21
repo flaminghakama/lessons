@@ -195,7 +195,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "for-C"
     \header {
         subtitle = ""
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -222,6 +223,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = ""
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose bf, c <<
@@ -248,6 +250,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = ""
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose ef, c <<
@@ -274,7 +277,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "in-C-for-C"
     \header {
         subtitle = "(Amy Carr key)"
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -302,6 +306,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = "(Amy Carr key)"
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose bf, c <<
@@ -329,6 +334,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = "(Amy Carr key)"
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose ef c <<

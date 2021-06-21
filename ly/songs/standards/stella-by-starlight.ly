@@ -13,7 +13,12 @@ lyricistName = "N. Washington"
 
 
 %{
+
+rm stella-by-starlight*pdf
 lilypond ly/songs/standards/stella-by-starlight.ly 
+mv stella-by-starlight*pdf pdf/songs/standards
+for file in pdf/songs/standards/stella-by-starlight*pdf ; do op $file ; done
+
 %}
 
 \paper {
@@ -219,7 +224,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "original-G-for-C"
     \header {
         subtitle = "(Original Key)"
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -251,6 +257,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = "(Original Key)"
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose bf, c <<
@@ -281,6 +288,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = "(Original Key)"
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose ef, c <<
@@ -312,7 +320,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "real-book-Bb-for-C"
     \header {
         subtitle = "(Real Book key)"
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -346,6 +355,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = "(Real Book key)"
         poet = "Concert Pitch"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -375,7 +385,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "in-F-for-C"
     \header {
         subtitle = "(Amy Carr key)"
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -413,6 +424,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = "(Amy Carr key)"
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose bf, c <<
@@ -450,6 +462,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = "(Amy Carr key)"
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose ef, c <<

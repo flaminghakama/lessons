@@ -334,7 +334,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "Dizzy-for-C"
     \header {
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
         subtitle = "(Dizzy)"
         instrumentName = \poet
     }
@@ -363,7 +363,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "Bird-for-C"
     \header {
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
         subtitle = "(Bird & Dexter)"
         instrumentName = \poet
     }
@@ -392,7 +392,7 @@ melodyExercise = \relative c''' {
 \book {
   \bookOutputSuffix "in-Bb-minor-for-C"
     \header {
-        poet = "Concert Pitch"
+        poet = "Concert Lead Sheet"
         subtitle = "(Amy Carr Key)"
         instrumentName = \poet
     }
