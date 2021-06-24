@@ -110,7 +110,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c'' a \grandArpeggioMajor
+                \transpose c' a \grandArpeggioMajor
             }
         >>
     }
