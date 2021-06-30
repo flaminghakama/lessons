@@ -467,7 +467,7 @@ lyricsCoda = \lyricmode {
         }
     }
     \score {
-        <<
+        \transpose bf, c <<
             \new ChordNames \transpose ef gf  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsCoda
@@ -538,7 +538,7 @@ lyricsCoda = \lyricmode {
         }
     }
     \score {
-        <<
+        \transpose ef c <<
             \new ChordNames \transpose ef gf  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsCoda
