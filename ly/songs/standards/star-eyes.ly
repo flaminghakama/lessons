@@ -15,7 +15,6 @@ lyricistName = ""
 
 %{
 
-https://www.youtube.com/watch?v=yZNo_cpsZIc
 
 killPreview
 rm star-eyes*.pdf
