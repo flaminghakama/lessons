@@ -82,7 +82,7 @@ chordsForm = \chordmode {
     d1:m7 | g:7 | e2:m7 a:7 | d:m7 g:7 |
 
     c1 | s | s | ef2:m7 af:9 | 
-    d1:m7 | g:7 | d:m7 | g:7 |
+    d1:m7 | g:7 | c:6 | s |
 
     g1:m7 | s | c:1.4.5.7.9 | c:7 |         
     f1:maj13 | s | bf2:7 a:7 | af:7 g:7 |
