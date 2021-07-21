@@ -6,9 +6,9 @@ title = "My Love"
 composerNameFirstPage = "P. Nylen, J. Elofsson, D. B. Kreuger & P. O. Magnusson"
 composerName = "Nylen/Elofsson/Kreuger/Magnusson"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
 
 \header {
     composer = \composerNameFirstPage

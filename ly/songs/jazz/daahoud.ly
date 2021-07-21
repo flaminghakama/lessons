@@ -5,29 +5,20 @@ titleRight = "houd"
 title = "Daahoud"
 composerName = "C. Brown"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm daahoud*pdf
-lilypond ly/songs/daahoud.ly
-
+lilypond ly/songs/jazz/daahoud.ly
 python ~/git/part-format/combine-1Page-1Page.py daahoud-for-C.pdf daahoud-for-Bb.pdf daahoud-for-C-and-Bb.pdf
 python ~/git/part-format/combine-1Page-1Page.py daahoud-for-C.pdf daahoud-for-Eb.pdf daahoud-for-C-and-Eb.pdf
-
-mv daahoud-for-C.pdf  pdf/songs
-mv daahoud-for-Bb.pdf pdf/songs
-mv daahoud-for-Eb.pdf pdf/songs
-mv daahoud-for-C-and-Bb.pdf  pdf/songs
-mv daahoud-for-C-and-Eb.pdf  pdf/songs
-
-for file in pdf/songs/daahoud*pdf ; do open -a Preview $file ; done
-
-echo git add pdf/songs/daahoud* ly/songs/daahoud.ly
+mv daahoud*.pdf  pdf/songs/jazz
+for file in pdf/songs/jazz/daahoud*pdf ; do open -a Preview $file ; done
 
 %}
 

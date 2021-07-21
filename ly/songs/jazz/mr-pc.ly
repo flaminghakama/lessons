@@ -7,19 +7,23 @@ composerName = "John Coltrane"
 
 %{
 
-killPreview ; rm doxy-*pdf ;  lilypond ly/songs/doxy.ily  ; for file in doxy-*.pdf ; do op $file ; done  
-mv doxy-for-Eb.pdf pdf/songs
-mv doxy-blank-for-Eb.pdf pdf/songs
-python ~/git/PyPDF2/Scripts/pdfcat -o doxy-for-Eb.pdf pdf/songs/doxy-for-Eb.pdf pdf/songs/doxy-blank-for-Eb.pdf
-mv doxy-for-Eb.pdf pdf/songs/printable
+killPreview ; rm mr-pc-*pdf ;  lilypond ly/songs/jazz/mr-pc.ly  ; for file in mr-pc-*.pdf ; do op $file ; done  
+
+killPreview
+rm mr-pc*pdf 
+lilypond ly/songs/jazz/mr-pc.ly
+mv mr-pc*.pdf pdf/songs/jazz
+python ~/git/PyPDF2/Scripts/pdfcat -o mr-pc-for-Eb.pdf pdf/songs/jazz/mr-pc-for-Eb.pdf pdf/songs/jazz/mr-pc-blank-for-Eb.pdf
+mv mr-pc*.pdf pdf/songs/jazz/printable
+for file in pdf/songs/jazz/mr-pc*pdf pdf/songs/jazz/printable/mr-pc*pdf ; do open -a Preview $file ; done
 
 %}
 
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 \paper {
 
@@ -134,8 +138,8 @@ melody = \relative c' {
 }
 
 \header {
-    title = "Doxy"
-    composer = "Sonny Rollins"
+    title = \title
+    composer = \composerName
     poet = "Eb Alto Saxophone"
     instrumentName = \poet
 }

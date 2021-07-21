@@ -6,21 +6,21 @@ title = "Harlem Nocturne"
 composerName = "E. Hagen"
 lyricistName = "D. Rogers"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm harlem-nocturne*pdf
-lilypond ly/songs/harlem-nocturne.ly
+lilypond ly/songs/jazz/harlem-nocturne.ly
 python ~/git/part-format/combine-1Page-1Page.py harlem-nocturne-for-C.pdf harlem-nocturne-for-Eb.pdf harlem-nocturne-for-C-and-Eb.pdf
-mv harlem-nocturne-for-C.pdf  pdf/songs
-mv harlem-nocturne-for-Eb.pdf pdf/songs
-mv harlem-nocturne-for-Eb-large.pdf pdf/songs
-mv harlem-nocturne-for-C-and-Eb.pdf pdf/songs/printable
+mv harlem-nocturne-for-*-and-*.pdf pdf/songs/jazz/printable
+mv harlem-nocturne*.pdf  pdf/songs/jazz
+for file in pdf/songs/jazz/harlem-nocturne*pdf pdf/songs/jazz/printable/harlem-nocturne*pdf ; do open -a Preview $file ; done
+
 
 %}
 

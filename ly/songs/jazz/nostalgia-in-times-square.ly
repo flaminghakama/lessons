@@ -5,16 +5,16 @@ titleRight = "Times Square"
 title = "Nostalgia in Times Square"
 composerName = "C. Mingus"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm nostalgia-in-times-square*pdf
-lilypond ly/songs/nostalgia-in-times-square.ly
+lilypond ly/songs/jazz/nostalgia-in-times-square.ly
 python ~/git/part-format/combine-1Page-1Page.py nostalgia-in-times-square-for-C.pdf nostalgia-in-times-square-for-Bb.pdf nostalgia-in-times-square-for-C-and-Bb.pdf
 python ~/git/part-format/combine-1Page-1Page.py nostalgia-in-times-square-for-C.pdf nostalgia-in-times-square-for-Eb.pdf nostalgia-in-times-square-for-C-and-Eb.pdf
 python ~/git/part-format/combine-1Page-1Page.py nostalgia-in-times-square-for-Bb.pdf nostalgia-in-times-square-for-Eb.pdf nostalgia-in-times-square-for-Bb-and-Eb.pdf
@@ -22,18 +22,9 @@ python ~/git/part-format/combine-1Page-1Page.py nostalgia-in-times-square-for-C.
 python ~/git/part-format/combine-1Page-1Page.py nostalgia-in-times-square-for-Bb.pdf nostalgia-in-times-square-worksheet-for-Bb.pdf nostalgia-in-times-square-and-worksheet-for-Bb.pdf
 python ~/git/part-format/combine-1Page-1Page.py nostalgia-in-times-square-for-Eb.pdf nostalgia-in-times-square-worksheet-for-Eb.pdf nostalgia-in-times-square-and-worksheet-for-Eb.pdf
 python ~/git/part-format/combine-1Page-1Page.py nostalgia-in-times-square-worksheet-for-Eb.pdf nostalgia-in-times-square-worksheet-for-Eb.pdf nostalgia-in-times-square-worksheet-for-Eb-double.pdf
-mv nostalgia-in-times-square-for-C.pdf  pdf/songs
-mv nostalgia-in-times-square-for-Bb.pdf pdf/songs
-mv nostalgia-in-times-square-for-Eb.pdf pdf/songs
-mv nostalgia-in-times-square-worksheet-for-C.pdf  pdf/songs
-mv nostalgia-in-times-square-worksheet-for-Bb.pdf pdf/songs
-mv nostalgia-in-times-square-worksheet-for-Eb.pdf pdf/songs
-mv nostalgia-in-times-square-for-C-and-Bb.pdf pdf/songs/printable
-mv nostalgia-in-times-square-for-C-and-Eb.pdf pdf/songs/printable
-mv nostalgia-in-times-square-for-Bb-and-Eb.pdf pdf/songs/printable
-mv nostalgia-in-times-square-and-worksheet-for-C.pdf  pdf/songs/printable
-mv nostalgia-in-times-square-and-worksheet-for-Bb.pdf  pdf/songs/printable
-mv nostalgia-in-times-square-and-worksheet-for-Eb.pdf  pdf/songs/printable
+mv nostalgia-*-for-*-and-*.pdf nostalgia-*-worksheet-*.pdf  pdf/songs/jazz/printable
+mv nostalgia*pdf pdf/songs/jazz
+for file in pdf/songs/jazz/nostalgia*pdf pdf/songs/jazz/printable/nostalgia*pdf ; do open -a Preview $file ; done
 
 %}
 

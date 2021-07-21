@@ -5,24 +5,18 @@ titleRight = "Bird"
 title = "Lady Bird"
 composerName = "T. Dameron"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm lady-bird*pdf
-lilypond ly/songs/lady-bird.ly
-
-mv lady-bird-for-C.pdf  pdf/songs
-mv lady-bird-for-Bb.pdf pdf/songs
-mv lady-bird-for-Eb.pdf pdf/songs
-
-for file in pdf/songs/lady-bird*pdf ; do open -a Preview $file ; done
-
-echo git add pdf/songs/lady-bird* ly/songs/lady-bird.ly
+lilypond ly/songs/jazz/lady-bird.ly
+mv lady-bird*pdf pdf/songs/jazz
+for file in pdf/songs/jazz/lady-bird*pdf ; do open -a Preview $file ; done
 
 %}
 

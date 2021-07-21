@@ -7,24 +7,22 @@ composerName = "M. Davis"
 copyright = \markup { \tiny "copyright © 2019 Elaine Alt" } 
 
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
+killPreview
 rm four-for*pdf
-lilypond ly/songs/four.ly
+lilypond ly/songs/jazz/four.ly
 python ~/git/part-format/combine-1Page-1Page.py four-for-C.pdf four-for-Eb.pdf four-for-C-and-Eb.pdf
 python ~/git/part-format/combine-1Page-1Page.py four-for-C.pdf four-for-Bb.pdf four-for-C-and-Bb.pdf
 python ~/git/part-format/combine-1Page-1Page.py four-for-Bb.pdf four-for-Eb.pdf four-for-Bb-and-Eb.pdf
-mv four-for-C.pdf  pdf/songs
-mv four-for-Bb.pdf pdf/songs
-mv four-for-Eb.pdf pdf/songs
-mv four-for-C-and-Bb.pdf pdf/songs/printable
-mv four-for-C-and-Eb.pdf pdf/songs/printable
-mv four-for-Bb-and-Eb.pdf pdf/songs/printable
+mv four-for-*-and-*.pdf pdf/songs/jazz/printable
+mv four*.pdf  pdf/songs/jazz
+for file in pdf/songs/jazz/four*pdf pdf/songs/jazz/printable/four*pdf ; do open -a Preview $file ; done
 
 %}
 

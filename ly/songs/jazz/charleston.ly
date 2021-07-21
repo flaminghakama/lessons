@@ -12,10 +12,20 @@ composerName = "James P. Johnson"
     instrumentName = \poet
 }
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+
+
+%{
+
+rm charleston*pdf
+lilypond ly/songs/jazz/charleston.ly
+mv charleston*.pdf  pdf/songs/jazz
+for file in pdf/songs/jazz/charleston*pdf ; do op $file ; done
+
+%}
 
 \paper {
 

@@ -6,16 +6,18 @@ titleRight = ""
 title = "Isfahan"
 composerName = "D. Ellington & B. Strayhorn"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm isfahan*pdf
-lilypond ly/songs/isfahan.ly
+lilypond ly/songs/jazz/isfahan.ly
+mv isfahan*pdf pdf/songs/jazz
+for file in pdf/songs/jazz/isfahan*pdf ; do open -a Preview $file ; done
 
 https://www.youtube.com/watch?v=m2U1MGX8SLU&feature=youtu.be&t=15
 %}

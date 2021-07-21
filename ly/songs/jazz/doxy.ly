@@ -7,19 +7,23 @@ composerName = "Sonny Rollins"
 
 %{
 
-killPreview ; rm doxy-*pdf ;  lilypond ly/songs/doxy.ily  ; for file in doxy-*.pdf ; do op $file ; done  
-mv doxy-for-Eb.pdf pdf/songs
-mv doxy-blank-for-Eb.pdf pdf/songs
-python ~/git/PyPDF2/Scripts/pdfcat -o doxy-for-Eb.pdf pdf/songs/doxy-for-Eb.pdf pdf/songs/doxy-blank-for-Eb.pdf
-mv doxy-for-Eb.pdf pdf/songs/printable
+killPreview ; rm doxy-*pdf ;  lilypond ly/songs/jazz/doxy.ly  ; for file in doxy-*.pdf ; do op $file ; done  
+
+killPreview
+rm doxy*.pdf 
+lilypond ly/songs/jazz/doxy.ly
+python ~/git/PyPDF2/Scripts/pdfcat -o doxy-for-Eb.pdf pdf/songs/jazz/doxy-for-Eb.pdf pdf/songs/jazz/doxy-blank-for-Eb.pdf
+mv doxy-for-Eb.pdf pdf/songs/jazz/printable
+mv doxy*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/doxy*pdf pdf/songs/jazz/printable/doxy*pdf ; do open -a Preview $file ; done
 
 %}
 
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 \paper {
 

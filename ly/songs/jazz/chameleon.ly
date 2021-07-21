@@ -5,19 +5,19 @@ titleRight = "eleon"
 title = "Chameleon"
 composerName = "H. Hancock"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
-rm chameleon-for*pdf
-lilypond ly/songs/chameleon.ly
+rm chameleon*pdf
+lilypond ly/songs/jazz/chameleon.ly
 python ~/git/part-format/combine-1Page-1Page.py chameleon-for-C.pdf chameleon-for-Eb.pdf chameleon-for-C-and-Eb.pdf
-mv chameleon-for-C.pdf  pdf/songs
-mv chameleon-for-Eb.pdf pdf/songs
-mv chameleon-for-C-and-Eb.pdf pdf/songs/printable
+mv chameleon-for-C-and-Eb.pdf pdf/songs/jazz/printable
+mv chameleon*.pdf  pdf/songs/jazz
+for file in pdf/songs/jazz/chameleon*pdf pdf/songs/jazz/printable/chameleon*pdf ; do op $file ; done
 
 %}
 

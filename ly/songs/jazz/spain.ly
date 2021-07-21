@@ -7,13 +7,13 @@ composerName = "C. Corea"
 
 %{
 
-killPreview ; rm spain*pdf ;  lilypond ly/songs/spain.ly  ; for file in spain*.pdf ; do op $file ; done  
+killPreview ; rm spain*pdf ;  lilypond ly/songs/jazz/spain.ly  ; for file in spain*.pdf ; do op $file ; done  
 
 killPreview
 rm spain*pdf
-lilypond ly/songs/spain.ly
-mv spain*.pdf pdf/songs
-for file in pdf/songs/spain*.pdf ; do op $file ; done  
+lilypond ly/songs/jazz/spain.ly
+mv spain*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/spain*.pdf ; do op $file ; done  
 
 %}
 

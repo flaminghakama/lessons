@@ -7,13 +7,13 @@ composerName = "J. Henderson"
 
 %{
 
-killPreview ; rm serenity*pdf ;  lilypond ly/songs/standards/serenity.ly  ; for file in serenity*.pdf ; do op $file ; done  
+killPreview ; rm serenity*pdf ;  lilypond ly/songs/jazz/serenity.ly  ; for file in serenity*.pdf ; do op $file ; done  
 
 killPreview
 rm serenity*pdf
-lilypond ly/songs/standards/serenity.ly
-mv serenity*.pdf pdf/songs/standards
-for file in pdf/songs/standards/serenity*.pdf ; do op $file ; done  
+lilypond ly/songs/jazz/serenity.ly
+mv serenity*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/serenity*.pdf ; do op $file ; done  
 
 %}
 
