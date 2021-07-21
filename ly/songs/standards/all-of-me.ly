@@ -270,9 +270,9 @@ lyricsHeadOne = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
-                \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
                     \structureVerse
                     \melodyVerse
                 >>

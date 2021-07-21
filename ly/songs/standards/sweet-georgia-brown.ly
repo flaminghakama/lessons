@@ -13,12 +13,15 @@ lyricistName = "K. Casey"
 
 
 %{
-lilypond ly/songs/sweet-georgia-brown.ly 
-sweet-georgia-brown-for-C.pdf
-sweet-georgia-brown-for-Eb.pdf
-~/git/PyPDF2/Scripts/pdfcat -o sweet-georgia-brown-C-Eb.pdf sweet-georgia-brown-for-C.pdf sweet-georgia-brown-for-Eb.pdf
-mv sweet-georgia-brown-for-C.pdf sweet-georgia-brown-for-Eb.pdf pdf/songs
-mv sweet-georgia-brown-C-Eb.pdf pdf/songs/printable
+
+killPreview
+rm sweet-georgia-brown*pdf
+lilypond ly/songs/standards/sweet-georgia-brown.ly 
+~/git/PyPDF2/Scripts/pdfcat -o sweet-georgia-brown-C-and-Eb.pdf sweet-georgia-brown-for-C.pdf sweet-georgia-brown-for-Eb.pdf
+mv sweet-georgia-brown*and*.pdf pdf/songs/standards/printable
+mv sweet-georgia-brown*.pdf pdf/songs/standards
+for file in pdf/songs/standards/sweet-georgia-brown*.pdf pdf/songs/standards/printable/sweet-georgia-brown*.pdf ; do op $file ; done
+
 %}
 
 \paper {
