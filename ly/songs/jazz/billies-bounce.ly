@@ -7,19 +7,21 @@ composerName = "C. Parker"
 
 %{
 
-python ~/git/PyPDF2/Scripts/pdfcat -o jordu-very-simplified-and-full-for-Eb.pdf pdf/songs/jordu-very-simplified-for-Eb.pdf pdf/songs/jordu-for-Eb.pdf
-python ~/git/PyPDF2/Scripts/pdfcat -o jordu-and-low-bridge-for-Eb.pdf pdf/songs/jordu-for-Eb.pdf pdf/songs/jordu-low-bridge-for-Eb.pdf
-python ~/git/PyPDF2/Scripts/pdfcat -o jordu-simplifieds-for-Eb.pdf pdf/songs/jordu-simplified-for-Eb.pdf pdf/songs/jordu-simplified-low-bridge-for-Eb.pdf
-mv jordu-very-simplified-and-full-for-Eb.pdf pdf/songs/printable
-jordu-and-low-bridge-for-Eb.pdf pdf/songs/printable
-jordu-simplifieds-for-Eb.pdf pdf/songs/printable
+rm jordu*pdf
+lilypond ly/songs/jazz/jordu.ly
+mv jordu*pdf ly/songs/jazz
+#python ~/git/PyPDF2/Scripts/pdfcat -o jordu-very-simplified-and-full-for-Eb.pdf pdf/songs/jazz/jordu-very-simplified-for-Eb.pdf pdf/songs/jazz/jordu-for-Eb.pdf
+#python ~/git/PyPDF2/Scripts/pdfcat -o jordu-and-low-bridge-for-Eb.pdf pdf/songs/jazz/jordu-for-Eb.pdf pdf/songs/jazz/jordu-low-bridge-for-Eb.pdf
+#python ~/git/PyPDF2/Scripts/pdfcat -o jordu-simplifieds-for-Eb.pdf pdf/songs/jazz/jordu-simplified-for-Eb.pdf pdf/songs/jazz/jordu-simplified-low-bridge-for-Eb.pdf
+#mv jordu*pdf pdf/songs/jazz/printable
+for file in pdf/songs/jazz/jordu*pdf ; do op $file ; done
 
 %}
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 \paper {
 

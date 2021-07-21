@@ -11,17 +11,17 @@ killPreview ; rm afro-blue*pdf ;  lilypond ly/songs/afro-blue.ly  ; for file in 
 
 killPreview
 rm afro-blue*pdf
-lilypond ly/songs/afro-blue.ly
-mv afro-blue*.pdf pdf/songs
-for file in pdf/songs/afro-blue*.pdf ; do op $file ; done  
+lilypond ly/songs/jazz/afro-blue.ly
+mv afro-blue*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/afro-blue*.pdf ; do op $file ; done  
 
 %}
 
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 \paper {
 

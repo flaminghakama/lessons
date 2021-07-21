@@ -6,18 +6,19 @@ title = "Butterfly"
 composerName = "G. Fischer"
 lyricistName = "D. Koldenhoven"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm butterfly*pdf
-lilypond ly/songs/butterfly.ly
+lilypond ly/songs/jazz/butterfly.ly
 op butterfly-for-C.pdf 
-mv butterfly*pdf pdf/songs
+mv butterfly*pdf pdf/songs/jazz
+for file in pdf/songs/jazz/butterfly*pdf ; do op $file ; done
 
 %}
 

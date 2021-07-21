@@ -5,29 +5,18 @@ titleRight = "Privave"
 title = "Au Privave"
 composerName = "C. Parker"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm au-privave*pdf
-lilypond ly/songs/au-privave.ly
-
-python ~/git/part-format/combine-1Page-1Page.py au-privave-for-C.pdf au-privave-for-Bb.pdf au-privave-for-C-and-Bb.pdf
-python ~/git/part-format/combine-1Page-1Page.py au-privave-for-C.pdf au-privave-for-Eb.pdf au-privave-for-C-and-Eb.pdf
-
-mv au-privave-for-C.pdf  pdf/songs
-mv au-privave-for-Bb.pdf pdf/songs
-mv au-privave-for-Eb.pdf pdf/songs
-mv au-privave-for-C-and-Bb.pdf  pdf/songs
-mv au-privave-for-C-and-Eb.pdf  pdf/songs
-
-op pdf/songs/au-privave-for-Eb.pdf
-
-for file in pdf/songs/au-privave*pdf ; do open -a Preview $file ; done
+lilypond ly/songs/jazz/au-privave.ly
+mv au-privave-*.pdf  pdf/songs/jazz
+for file in pdf/songs/jazz/au-privave*pdf ; do open -a Preview $file ; done
 
 %}
 

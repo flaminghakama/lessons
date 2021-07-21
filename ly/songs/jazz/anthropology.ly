@@ -7,13 +7,13 @@ composerName = "C. Parker & D. Gillespie"
 
 %{
 
-killPreview ; rm anthropology*pdf ;  lilypond ly/songs/standards/anthropology.ly  ; for file in anthropology*.pdf ; do op $file ; done  
+killPreview ; rm anthropology*pdf ;  lilypond ly/songs/jazz/anthropology.ly  ; for file in anthropology*.pdf ; do op $file ; done  
 
 killPreview
 rm anthropology*pdf
-lilypond ly/songs/standards/anthropology.ly
-mv anthropology*.pdf pdf/songs/standards
-for file in pdf/songs/standards/anthropology*.pdf ; do op $file ; done  
+lilypond ly/songs/jazz/anthropology.ly
+mv anthropology*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/anthropology*.pdf ; do op $file ; done  
 
 %}
 
