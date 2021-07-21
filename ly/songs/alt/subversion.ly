@@ -137,8 +137,8 @@ chordsSongForFlats = \chordmode {
 
 intro = \relative c'' { 
     \override Staff.NoteHead.style = #'slash
-    r8 bf r4 r2 | bf8 8 r4 r2 | 
-    r8 bf r4 r2 | bf8 8 r4 r2 | 
+    r8 bf r4 r2 | bf8. 16 r4 r2 | 
+    r8 bf r4 r2 | bf8. 16 r4 r2 | 
     \revert Staff.NoteHead.style
     s1*4
 }
@@ -150,8 +150,8 @@ head = \relative c'' {
     r8 af ( ef ) [ gf ] ~ 4. d'8-> ~ | 8 b ( fs ) a ~  4. af8 |
     r8 cf \tuplet 3/2 { df8 ( ff df ~ } 8 ) cf r af ~ | 1 ||
 
-    r8 af4.-> gf8 af r cf-> | r gf4. ef8 df4 d8 ~ | 
-    d8 gs d d'-> ~ 8 gs, r d | f2-- r8 fs r g | 
+    r8 af4.-> gf8 af r cf-> | r gf4. ef8 df r d ~ | 
+    d8 gs d d'-> ~ 8 gs, d f-- ~ | 2 r8 fs r g | 
 
     gs4. b8 r b f [ d'-> ] | r f-> r d-> ~ 4 c | 
     df8-> 4. cf4 af8 gf ~ | 1 || 
