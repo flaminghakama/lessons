@@ -52,7 +52,7 @@ for file in pdf/songs/jazz/serenity*.pdf ; do op $file ; done
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
     \key ef \major 

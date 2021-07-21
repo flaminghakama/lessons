@@ -51,7 +51,7 @@ for file in pdf/songs/jazz/chameleon*pdf pdf/songs/jazz/printable/chameleon*pdf 
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
 
@@ -204,7 +204,7 @@ melodyEb = \relative c' {
         instrumentName = \poet
     }
     \score {
-        <<
+        \new StaffGroup <<
             \new ChordNames \transpose c c  { \chordsForm }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"

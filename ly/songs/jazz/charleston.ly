@@ -56,7 +56,7 @@ for file in pdf/songs/jazz/charleston*pdf ; do op $file ; done
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 strcture = \relative c' { 
     \key bf \major

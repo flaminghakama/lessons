@@ -51,7 +51,7 @@ for file in pdf/songs/standards/honeysuckle-rose*pdf ; do op $file ; done
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
 

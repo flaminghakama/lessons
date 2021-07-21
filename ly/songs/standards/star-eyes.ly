@@ -52,7 +52,7 @@ for file in pdf/songs/standards/star-eyes*.pdf ; do op $file ; done
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 voltaAllXButLast = \markup { \text \italic \large { All X but last } }
 voltaLast = \markup { \text \italic \large { Last X } }

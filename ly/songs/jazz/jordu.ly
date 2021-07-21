@@ -53,7 +53,7 @@ for file in pdf/songs/jazz/jordu*pdf pdf/songs/jazz/printable/jordu*pdf ; do ope
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
     \key c \minor

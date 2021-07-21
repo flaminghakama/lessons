@@ -50,7 +50,7 @@ for file in pdf/songs/standards/aint*pdf ; do open -a Preview $file ; done
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 strcture = \relative c' { 
     \key d \minor

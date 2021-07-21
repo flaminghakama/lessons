@@ -48,7 +48,7 @@ for file in pdf/songs/standards/body-and-soul*pdf ; do open -a Preview $file ; d
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 
 % Body & Soul, Coltrane Changes

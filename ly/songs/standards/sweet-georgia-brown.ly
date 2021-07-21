@@ -53,7 +53,7 @@ for file in pdf/songs/standards/sweet-georgia-brown*.pdf pdf/songs/standards/pri
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 strcture = \relative c' { 
     \key f \major

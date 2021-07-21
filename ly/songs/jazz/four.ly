@@ -56,7 +56,7 @@ for file in pdf/songs/jazz/four*pdf pdf/songs/jazz/printable/four*pdf ; do open 
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
 

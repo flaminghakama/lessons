@@ -50,7 +50,7 @@ for file in pdf/songs/standards/a-night-in-tunisia*pdf ; do open -a Preview $fil
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 \include "ly/ily/hideMelody.ily"
 
 structure = \relative c' { 

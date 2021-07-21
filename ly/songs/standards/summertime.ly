@@ -51,7 +51,7 @@ for file in pdf/songs/standards/summertime*.pdf ; do op $file ; done
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 strcture = \relative c' { 
     \key a \minor

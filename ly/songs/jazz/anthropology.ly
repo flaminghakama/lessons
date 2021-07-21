@@ -52,7 +52,7 @@ for file in pdf/songs/jazz/anthropology*.pdf ; do op $file ; done
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
     \key bf \major 

@@ -53,7 +53,7 @@ for file in pdf/songs/standards/all-of-me*.pdf ; do op $file ; done
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structureIntro = \relative c' { 
     \key a \minor

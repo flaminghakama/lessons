@@ -63,7 +63,7 @@ for file in pdf/songs/standards/on-the-sunny-side-of-the-street*pdf pdf/songs/st
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 \include "ly/ily/hideMelody.ily"
 
 structure = \relative c' { 

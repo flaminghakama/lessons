@@ -54,7 +54,7 @@ for file in pdf/songs/jazz/doxy*pdf pdf/songs/jazz/printable/doxy*pdf ; do open 
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 strcture = \relative c' { 
     \key bf \major

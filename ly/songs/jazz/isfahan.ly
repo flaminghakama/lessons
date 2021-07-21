@@ -52,7 +52,7 @@ https://www.youtube.com/watch?v=m2U1MGX8SLU&feature=youtu.be&t=15
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 \include "ly/ily/hideMelody.ily"
 
 structure = \relative c' { 

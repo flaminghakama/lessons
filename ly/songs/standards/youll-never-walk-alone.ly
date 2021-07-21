@@ -54,7 +54,7 @@ mv youll-never-walk-alone*.pdf  pdf/songs/standards
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
     \key c \major

@@ -58,7 +58,7 @@ for file in pdf/songs/jazz/nostalgia*pdf pdf/songs/jazz/printable/nostalgia*pdf 
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 \include "ly/ily/hideMelody.ily"
 
 structureLead = \relative c' { 

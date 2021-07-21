@@ -62,7 +62,7 @@ for file in pdf/songs/standards/on-green-dolphin-street*pdf pdf/songs/standards/
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 \include "ly/ily/hideMelody.ily"
 
 structure = \relative c' { 

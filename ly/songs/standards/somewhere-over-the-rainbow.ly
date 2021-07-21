@@ -53,7 +53,7 @@ for file in pdf/songs/standards/somewhere-over-the-rainbow*.pdf ; do op $file ; 
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 structureIntro = \relative c' { 
     \key ef \major

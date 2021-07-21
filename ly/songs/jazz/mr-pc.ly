@@ -54,7 +54,7 @@ for file in pdf/songs/jazz/mr-pc*pdf pdf/songs/jazz/printable/mr-pc*pdf ; do ope
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
+\include "ly/ily/layout-songs.ily"
 
 strcture = \relative c' { 
     \key bf \major
