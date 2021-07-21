@@ -344,3 +344,22 @@ bassHits = \relative c {
     }
 }
 
+
+%{
+
+https://www.irealpro.com/ireal-pro-file-format
+After the irealbook:// URL scheme identifier, we have six components separated by the '=' character (for this reason the '=' cannot be used in the staff text within the chord progression)
+
+Song Title, The 
+LastName FirstName
+Style 
+Key Signature (C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B, A-, Bb-, B-, C-, C#-, D-, Eb-, E-, F-, F#-, G-, G#-)
+n
+Chord Progression
+
+%}
+
+
+
+
+

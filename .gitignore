@@ -2,3 +2,4 @@
 *.log
 *~
 *sublime-project
+.DS_Store
