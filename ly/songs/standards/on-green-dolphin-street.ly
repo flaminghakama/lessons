@@ -5,16 +5,16 @@ titleRight = "Dolphin St."
 title = "On Green Dolphin St."
 composerName = "Kaper/Washington"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm on-green-dolphin-street*pdf
-lilypond ly/songs/on-green-dolphin-street.ly
+lilypond ly/songs/standards/on-green-dolphin-street.ly
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-C.pdf on-green-dolphin-street-for-Bb.pdf on-green-dolphin-street-for-C-and-Bb.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-C.pdf on-green-dolphin-street-for-Eb.pdf on-green-dolphin-street-for-C-and-Eb.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-Bb.pdf on-green-dolphin-street-for-Eb.pdf on-green-dolphin-street-for-Bb-and-Eb.pdf
@@ -24,21 +24,11 @@ python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-Eb.p
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-C.pdf on-green-dolphin-street-worksheet-for-C.pdf on-green-dolphin-street-worksheet-for-C-double.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-Bb.pdf on-green-dolphin-street-worksheet-for-Bb.pdf on-green-dolphin-street-worksheet-for-Bb-double.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-Eb.pdf on-green-dolphin-street-worksheet-for-Eb.pdf on-green-dolphin-street-worksheet-for-Eb-double.pdf
-mv on-green-dolphin-street-for-C.pdf  pdf/songs
-mv on-green-dolphin-street-for-Bb.pdf pdf/songs
-mv on-green-dolphin-street-for-Eb.pdf pdf/songs
-mv on-green-dolphin-street-worksheet-for-C.pdf pdf/songs
-mv on-green-dolphin-street-worksheet-for-Bb.pdf pdf/songs
-mv on-green-dolphin-street-worksheet-for-Eb.pdf pdf/songs
-mv on-green-dolphin-street-for-C-and-Bb.pdf pdf/songs/printable
-mv on-green-dolphin-street-for-C-and-Eb.pdf pdf/songs/printable
-mv on-green-dolphin-street-for-Bb-and-Eb.pdf pdf/songs/printable
-mv on-green-dolphin-street-and-worksheet-for-C.pdf  pdf/songs/printable
-mv on-green-dolphin-street-and-worksheet-for-Bb.pdf  pdf/songs/printable
-mv on-green-dolphin-street-and-worksheet-for-Eb.pdf  pdf/songs/printable
-mv on-green-dolphin-street-worksheet-for-C-double.pdf pdf/songs/printable
-mv on-green-dolphin-street-worksheet-for-Bb-double.pdf pdf/songs/printable
-mv on-green-dolphin-street-worksheet-for-Eb-double.pdf pdf/songs/printable
+mv on-green-dolphin-street-worksheet*.pdf pdf/songs/standards/printable
+mv on-green-dolphin-street*and*.pdf pdf/songs/standards/printable
+mv on-green*.pdf pdf/songs/standards
+for file in pdf/songs/standards/on-green-dolphin-street*pdf pdf/songs/standards/on-green-dolphin-street*pdf; do open -a Preview $file ; done
+
 
 %}
 

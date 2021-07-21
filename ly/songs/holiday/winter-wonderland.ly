@@ -6,10 +6,10 @@ title = "Winter Wonderland"
 composerName = "Felix Bernard"
 lyricistName = "Richard B. Smith"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 \paper {
 

@@ -7,17 +7,21 @@ composerName = "Holiday, Coltrane"
 holidayComposerName = "Billie Holiday"
 coltraneComposerName = "John Coltrane"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
-\include "../../../scores/flaming-libs/flaming-roadmap.ily"
-\include "../../../scores/flaming-libs/flaming-barlines.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-roadmap.ily"
+\include "../../../../scores/flaming-libs/flaming-barlines.ily"
 
 %{
-	killPreview
-	rm body-and-soul*pdf
-	lilypond ly/songs/body-and-soul.ly
+
+killPreview
+rm body-and-soul*pdf
+lilypond ly/songs/standards/body-and-soul*.ly
+mv body-and-soul*.pdf pdf/songs/standards
+for file in pdf/songs/standards/body-and-soul*pdf ; do open -a Preview $file ; done
+
 %}
 
 \paper {

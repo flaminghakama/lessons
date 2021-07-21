@@ -6,16 +6,16 @@ title = "On The Sunny Side of the Street"
 composerName = "J. McHugh/D. Fields"
 arrangerName = "D. Gillespie"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm on-the-sunny-side-of-the-street*pdf
-lilypond ly/songs/on-the-sunny-side-of-the-street.ly
+lilypond ly/songs/standards/on-the-sunny-side-of-the-street.ly
 python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-C.pdf on-the-sunny-side-of-the-street-for-Bb.pdf on-the-sunny-side-of-the-street-for-C-and-Bb.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-C.pdf on-the-sunny-side-of-the-street-for-Eb.pdf on-the-sunny-side-of-the-street-for-C-and-Eb.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-Bb.pdf on-the-sunny-side-of-the-street-for-Eb.pdf on-the-sunny-side-of-the-street-for-Bb-and-Eb.pdf
@@ -25,21 +25,11 @@ python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-
 python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-worksheet-for-C.pdf on-the-sunny-side-of-the-street-worksheet-for-C.pdf on-the-sunny-side-of-the-street-worksheet-for-C-double.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-worksheet-for-Bb.pdf on-the-sunny-side-of-the-street-worksheet-for-Bb.pdf on-the-sunny-side-of-the-street-worksheet-for-Bb-double.pdf
 python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-worksheet-for-Eb.pdf on-the-sunny-side-of-the-street-worksheet-for-Eb.pdf on-the-sunny-side-of-the-street-worksheet-for-Eb-double.pdf
-mv on-the-sunny-side-of-the-street-for-C.pdf  pdf/songs
-mv on-the-sunny-side-of-the-street-for-Bb.pdf pdf/songs
-mv on-the-sunny-side-of-the-street-for-Eb.pdf pdf/songs
-mv on-the-sunny-side-of-the-street-worksheet-for-C.pdf pdf/songs
-mv on-the-sunny-side-of-the-street-worksheet-for-Bb.pdf pdf/songs
-mv on-the-sunny-side-of-the-street-worksheet-for-Eb.pdf pdf/songs
-mv on-the-sunny-side-of-the-street-for-C-and-Bb.pdf pdf/songs/printable
-mv on-the-sunny-side-of-the-street-for-C-and-Eb.pdf pdf/songs/printable
-mv on-the-sunny-side-of-the-street-for-Bb-and-Eb.pdf pdf/songs/printable
-mv on-the-sunny-side-of-the-street-and-worksheet-for-C.pdf  pdf/songs/printable
-mv on-the-sunny-side-of-the-street-and-worksheet-for-Bb.pdf  pdf/songs/printable
-mv on-the-sunny-side-of-the-street-and-worksheet-for-Eb.pdf  pdf/songs/printable
-mv on-the-sunny-side-of-the-street-worksheet-for-C-double.pdf pdf/songs/printable
-mv on-the-sunny-side-of-the-street-worksheet-for-Bb-double.pdf pdf/songs/printable
-mv on-the-sunny-side-of-the-street-worksheet-for-Eb-double.pdf pdf/songs/printable
+mv on-the-sunny-side-of-the-street*worksheet*.pdf  pdf/songs/standards/printable
+mv on-the-sunny-side-of-the-street*and*.pdf pdf/songs/standards/printable
+mv on-the-sunny-side-of-the-street*.pdf pdf/songs/standards
+
+for file in pdf/songs/standards/on-the-sunny-side-of-the-street*pdf pdf/songs/standards/on-the-sunny-side-of-the-street*pdf; do open -a Preview $file ; done
 
 %}
 

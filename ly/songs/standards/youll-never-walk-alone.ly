@@ -7,25 +7,21 @@ composerName = "R. Rodgers"
 lyricistName = "O. Hammerstein II"
 copyright = \markup { \tiny "copyright © 2020 Elaine Paul Alt" } 
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
 
 killPreview
 rm youll-never-walk-alone*pdf
-lilypond ly/songs/youll-never-walk-alone.ly
+lilypond ly/songs/standards/youll-never-walk-alone.ly
 op youll-never-walk-alone-for-C.pdf
 python ~/git/part-format/combine-1Page-1Page.py youll-never-walk-alone-for-C.pdf youll-never-walk-alone-easynotes-for-Eb.pdf youll-never-walk-alone-for-C-and-Eb.pdf
 python ~/git/part-format/combine-1Page-1Page.py youll-never-walk-alone-for-A.pdf youll-never-walk-alone-easynotes-for-C.pdf youll-never-walk-alone-for-A-and-C.pdf
-mv youll-never-walk-alone-for-C.pdf  pdf/songs
-mv youll-never-walk-alone-for-Eb.pdf pdf/songs
-mv youll-never-walk-alone-easynotes-for-C.pdf  pdf/songs
-mv youll-never-walk-alone-easynotes-for-Eb.pdf pdf/songs
-mv youll-never-walk-alone-for-C-and-Eb.pdf pdf/songs/printable
-mv youll-never-walk-alone-for-A-and-C.pdf pdf/songs/printable
+mv youll-never-walk-alone*and*.pdf pdf/songs/standards/printable
+mv youll-never-walk-alone*.pdf  pdf/songs/standards
 
 %}
 

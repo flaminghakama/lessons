@@ -15,7 +15,6 @@ lyricistName = ""
 
 %{
 
-
 killPreview
 rm star-eyes*.pdf
 lilypond ly/songs/standards/star-eyes.ly 

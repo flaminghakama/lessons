@@ -8,11 +8,13 @@ arrangerName = "D. Elaine Alt"
 
 %{
 
-rm tokyo-blue-Alto-Saxophone-in-Eb.pdf ; lilypond ly/songs/tokyo-blue.ly 
+killPreview
+rm tokyo-blue-*.pdf
+lilypond ly/songs/jazz/tokyo-blue.ly 
 python ~/git/part-format/bookify-4page.py tokyo-blue-Alto-Saxophone-in-Eb.pdf tokyo-blue-Alto-Saxophone-in-Eb.printable.pdf
-mv tokyo-blue-Alto-Saxophone-in-Eb.pdf pdf/songs
-mv tokyo-blue-Alto-Saxophone-in-Eb.printable.pdf pdf/songs/printable
-op pdf/songs/printable/tokyo-blue-Alto-Saxophone-in-Eb.printable.pdf
+mv tokyo-blue-*.printable.pdf pdf/songs/jazz/printable
+mv tokyo-blue*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/tokyo-blue*pdf pdf/songs/jazz/printable/tokyo-blue*pdf ; do open -a Preview $file ; done
 
 %}
 

@@ -6,10 +6,20 @@ title = "Bernie's Tune"
 composerName = "B. Miller"
 lyricistName = "M. Stoller & J. Lieber"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+
+%{
+
+killPreview
+rm bernie*pdf
+lilypond ly/songs/standards/bernie*.ly
+mv bernie*.pdf pdf/songs/standards
+for file in pdf/songs/standards/bernie*pdf ; do open -a Preview $file ; done
+
+%}
 
 \paper {
 

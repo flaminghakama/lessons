@@ -14,20 +14,11 @@ composerName = "S. Rollins"
 
 killPreview
 rm tenor-madness*pdf
-lilypond ly/songs/tenor-madness.ly
-
+lilypond ly/songs/jazz/tenor-madness.ly
 python ~/git/part-format/combine-1Page-1Page.py tenor-madness-for-C.pdf tenor-madness-for-Bb.pdf tenor-madness-for-C-and-Bb.pdf
 python ~/git/part-format/combine-1Page-1Page.py tenor-madness-for-C.pdf tenor-madness-for-Eb.pdf tenor-madness-for-C-and-Eb.pdf
-
-mv tenor-madness-for-C.pdf  pdf/songs
-mv tenor-madness-for-Bb.pdf pdf/songs
-mv tenor-madness-for-Eb.pdf pdf/songs
-mv tenor-madness-for-C-and-Bb.pdf  pdf/songs
-mv tenor-madness-for-C-and-Eb.pdf  pdf/songs
-
-op pdf/songs/tenor-madness-for-Eb.pdf
-
-for file in pdf/songs/tenor-madness*pdf ; do open -a Preview $file ; done
+mv tenor-madness*.pdf  pdf/songs/jazz
+for file in pdf/songs/jazz/tenor-madness*pdf ; do open -a Preview $file ; done
 
 %}
 

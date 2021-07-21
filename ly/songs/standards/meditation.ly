@@ -5,10 +5,21 @@ titleRight = "tation"
 title = "Meditation"
 composerName = "A. C. Jobim"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+
+%{
+
+killPreview
+rm meditation*.pdf
+lilypond ly/songs/standards/meditation.ly 
+mv meditation*.pdf pdf/songs/standards
+for file in pdf/songs/standards/meditation*.pdf ; do op $file ; done
+
+%}
+
 
 \paper {
 

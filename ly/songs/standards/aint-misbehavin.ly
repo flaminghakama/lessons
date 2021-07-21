@@ -6,10 +6,20 @@ title = "Ain't Misbehavin'"
 composerName = "T. 'Fats' Waller & H. Brooks"
 lyricistName = "A. Razaf"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+
+%{
+
+killPreview
+rm aint*pdf
+lilypond ly/songs/standards/aint*.ly
+mv aint*.pdf pdf/songs/standards
+for file in pdf/songs/standards/aint*pdf ; do open -a Preview $file ; done
+
+%}
 
 \paper {
 

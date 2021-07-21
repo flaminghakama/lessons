@@ -5,9 +5,19 @@ titleRight = "To The Moon"
 title = "Fly Me To The Moon"
 composerName = "Bart Howard"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+
+%{
+
+killPreview
+rm fly-me-to-the-moon*pdf
+lilypond ly/songs/standards/fly-me-to-the-moon*.ly
+mv fly-me-to-the-moon*.pdf pdf/songs/standards
+for file in pdf/songs/standards/fly-me-to-the-moon*pdf ; do open -a Preview $file ; done
+
+%}
 
 \paper {
 

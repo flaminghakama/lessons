@@ -5,10 +5,20 @@ titleRight = "Happens"
 title = "Watch What Happens"
 composerName = "M. Legrand"
 
-\include "../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../scores/flaming-libs/flaming-paper.ily"
+\include "../../../../scores/flaming-libs/flaming-markup.ily"
+\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+
+%{
+
+killPreview
+rm pdf/songs/standards/watch-what-happens*
+lilypond ly/songs/standards/watch-what-happens.ly 
+mv watch-what-happens*pdf pdf/songs/standards
+for file in pdf/songs/standards/watch-what-happens*pdf ; do op $file ; done 
+
+%}
 
 \paper {
 
