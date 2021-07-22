@@ -69,16 +69,18 @@ structureIntro = \relative c' {
 }
 
 structureVerse = \relative c' { 
+    \override Staff.TimeSignature #'stencil = ##f  
     \key a \minor
-    \mark \markup \box "Verse"
+    \startSectionNoBarline "Verse"
     s1*4 \break 
     s1*4 \break  
     s1*4 \bar "||"
 }
 
 structureHead = \relative c' { 
+    \override Staff.TimeSignature #'stencil = ##f  
     \key a \minor
-    \mark \markup "Chorus"
+    \startSectionNoBarline "Chorus"
     \bar "[|:" 
     \repeat volta 2 { 
         s1*4 \break
@@ -281,6 +283,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsVerse } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
     \score {
         <<
@@ -301,6 +306,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
 }
 
@@ -350,6 +358,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsVerse } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
     \score {
         <<
@@ -370,6 +381,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
 }
 
@@ -419,6 +433,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsVerse } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
     \score {
         <<
@@ -439,6 +456,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
 }
 
@@ -488,6 +508,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsVerse } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
     \score {
         \transpose c f <<
@@ -508,6 +531,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
 }
 
@@ -557,6 +583,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsVerse } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
     \score {
         \transpose c f <<
@@ -577,6 +606,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
 }
 
@@ -626,6 +658,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsVerse } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
     \score {
         \transpose c f <<
@@ -646,6 +681,9 @@ lyricsHeadOne = \lyricmode {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
         >>
+        \layout { 
+            indent = 1.25\cm
+        }
     }
 }
 
