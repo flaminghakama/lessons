@@ -185,6 +185,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+			    \override Stem.length-fraction = #(magstep 1.2) 
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
@@ -223,6 +224,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+			    \override Stem.length-fraction = #(magstep 1.2) 
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
@@ -262,6 +264,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+			    \override Stem.length-fraction = #(magstep 1.2) 
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
@@ -300,6 +303,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+			    \override Stem.length-fraction = #(magstep 1.2) 
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
@@ -338,6 +342,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+			    \override Stem.length-fraction = #(magstep 1.2) 
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
@@ -376,6 +381,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+			    \override Stem.length-fraction = #(magstep 1.2) 
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
