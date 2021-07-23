@@ -145,7 +145,10 @@ lyricsHeadOne = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsForm }
+            \new ChordNames \transpose c c  { 
+                                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+                                \chordsForm 
+                            }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -169,7 +172,10 @@ lyricsHeadOne = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsForm }
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff = "voice" \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff

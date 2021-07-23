@@ -154,7 +154,10 @@ lyricsHeadOne = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsForm }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -178,7 +181,10 @@ lyricsHeadOne = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsForm }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff = "voice" \with {
                 \magnifyStaff #(magstep 3)
             } \keepWithTag #'(Part) \transpose c c { 
@@ -204,7 +210,10 @@ lyricsHeadOne = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsForm }
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff = "voice" \with {
                 \magnifyStaff #(magstep 3)
             } \keepWithTag #'(Part) \transpose ef, c { 
@@ -228,7 +237,10 @@ lyricsHeadOne = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsForm }
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff = "voice" \keepWithTag #'(Part) \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -250,7 +262,10 @@ lyricsHeadOne = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose a c  { \chordsForm }
+            \new ChordNames \transpose a c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff = "voice" \keepWithTag #'(Part) \transpose a, c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff

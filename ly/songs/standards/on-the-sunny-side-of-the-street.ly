@@ -223,7 +223,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsSong }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -243,7 +246,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose bf c  { \chordsSong }
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
@@ -263,7 +269,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsSong }
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
@@ -283,7 +292,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsForm }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
@@ -305,7 +317,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose bf c  { \chordsForm }
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
@@ -326,7 +341,10 @@ melodyExercise = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c  { \chordsForm }
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<

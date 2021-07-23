@@ -161,7 +161,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c c { \chordsHead }
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsHead 
+            }
         	\new Staff = "voice" { 
 	            \compressFullBarRests
 	            \override MultiMeasureRest.expand-limit = #1
@@ -194,7 +197,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c c { \chordsCoda }
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
         	\new Staff = "voice" { 
 	            \compressFullBarRests
 	            \override MultiMeasureRest.expand-limit = #1
@@ -238,7 +244,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c a { \chordsHead }
+            \new ChordNames \transpose c a { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsHead 
+            }
         	\new Staff = "voice" { 
 	            \compressFullBarRests
 	            \override MultiMeasureRest.expand-limit = #1
@@ -271,7 +280,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c a { \chordsCoda }
+            \new ChordNames \transpose c a { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
         	\new Staff = "voice" { 
 	            \compressFullBarRests
 	            \override MultiMeasureRest.expand-limit = #1
@@ -315,7 +327,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c ef { \chordsHead }
+            \new ChordNames \transpose c ef { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsHead 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -348,7 +363,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c ef { \chordsCoda }
+            \new ChordNames \transpose c ef { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -393,7 +411,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c gf { \chordsHead }
+            \new ChordNames \transpose c gf { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsHead 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -426,7 +447,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c gf { \chordsCoda }
+            \new ChordNames \transpose c gf { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -473,7 +497,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c c { \chordsHead }
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsHead 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -507,7 +534,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c c { \chordsCoda }
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -552,7 +582,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c a { \chordsHead }
+            \new ChordNames \transpose c a { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsHead 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -586,7 +619,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c a { \chordsCoda }
+            \new ChordNames \transpose c a { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -631,7 +667,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c ef { \chordsHead }
+            \new ChordNames \transpose c ef { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsHead 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -665,7 +704,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c ef { \chordsCoda }
+            \new ChordNames \transpose c ef { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -711,7 +753,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c gf { \chordsHead }
+            \new ChordNames \transpose c gf { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsHead 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1
@@ -745,7 +790,10 @@ lyricsCoda = \lyricmode {
 
     \score {
         <<
-            \new ChordNames \transpose c gf { \chordsCoda }
+            \new ChordNames \transpose c gf { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
             \new Staff = "voice" { 
                 \compressFullBarRests
                 \override MultiMeasureRest.expand-limit = #1

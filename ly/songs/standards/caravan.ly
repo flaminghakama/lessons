@@ -213,7 +213,10 @@ lyricsHeadTwo = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsReal }
+            \new ChordNames \transpose c c  {
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsReal 
+            }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -237,7 +240,10 @@ lyricsHeadTwo = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsChuck }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"                
+                \chordsChuck 
+            }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff

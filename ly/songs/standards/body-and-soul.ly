@@ -258,6 +258,7 @@ coltraneMelody = \relative c' {
     \score {
         <<
             \new ChordNames \transpose c c  { 
+				\include "ly/ily/chord-names-properties.ily" 
             	\coltraneIntroChanges 
             	\coltraneHeadChanges 
             }

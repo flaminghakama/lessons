@@ -259,7 +259,10 @@ lyricsCoda = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose a e  { \chordsForm }
+            \new ChordNames \transpose a e  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff = "voice" \transpose a e { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -283,7 +286,10 @@ lyricsCoda = \lyricmode {
             piece = " " 
         }
         <<
-            \new ChordNames \transpose a e { \chordsCoda }
+            \new ChordNames \transpose a e { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
             \new Staff = "voice" { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice = "lead" {
@@ -320,7 +326,10 @@ lyricsCoda = \lyricmode {
     }
     \score {
         \transpose ef, c <<
-            \new ChordNames \transpose a e  { \chordsForm }
+            \new ChordNames \transpose a e  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
             \new Staff = "voice" \transpose a e { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -344,7 +353,10 @@ lyricsCoda = \lyricmode {
             piece = " " 
         }
         \transpose ef, c <<
-            \new ChordNames \transpose a e { \chordsCoda }
+            \new ChordNames \transpose a e { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
             \new Staff = "voice" { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice = "lead" {
@@ -380,7 +392,10 @@ lyricsCoda = \lyricmode {
 %     }
 %     \score {
 %         <<
-%             \new ChordNames \transpose c c  { \chordsForm }
+%             \new ChordNames \transpose c c  { 
+%                 \include "ly/ily/chord-names-properties.ily" 
+%                 \chordsForm 
+%             }
 %             \new Staff = "voice" \transpose c c { 
 %                 \include "ly/ily/staff-properties.ily"
 %                 \autoPageBreaksOff
@@ -407,7 +422,10 @@ lyricsCoda = \lyricmode {
 %     }
 %     \score {
 %         <<
-%             \new ChordNames \transpose ef c  { \chordsForm }
+%             \new ChordNames \transpose ef c  { 
+%                 \include "ly/ily/chord-names-properties.ily" 
+%                 \chordsForm 
+%             }
 %             \new Staff = "voice" \transpose ef, c { 
 %                 \include "ly/ily/staff-properties.ily"
 %                 \autoPageBreaksOff
@@ -425,7 +443,10 @@ lyricsCoda = \lyricmode {
 %             piece = " " 
 %         }
 %         <<
-%             \new ChordNames \transpose a e { \chordsCoda }
+%             \new ChordNames \transpose a e { 
+%                 \include "ly/ily/chord-names-properties.ily" 
+%                 \chordsCoda 
+%             }
 %             \new Staff = "voice" { 
 %                 \include "ly/ily/staff-properties.ily"
 %                 \new Voice = "lead" {
