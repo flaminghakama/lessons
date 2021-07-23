@@ -29,7 +29,7 @@ for file in pdf/songs/jazz/con-alma*.pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #8
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18

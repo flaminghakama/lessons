@@ -259,7 +259,10 @@ melody = \relative c' {
     }
     \score {
         <<
-            %\new ChordNames \transpose ef c { \chordsHead }
+            %\new ChordNames \transpose ef c { 
+            %     \include "ly/ily/chord-names-properties.ily"
+            %     \chordsHead 
+            % }
             \new Staff = "lead" \transpose ef, c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -279,7 +282,10 @@ melody = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c { \chordsHead }
+            \new ChordNames \transpose ef c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsHead 
+            }
             \new Staff = "lead" \transpose ef, c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -299,7 +305,10 @@ melody = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c { \chordsHead }
+            \new ChordNames \transpose ef c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsHead 
+            }
             \new Staff = "lead" \transpose ef, c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -319,7 +328,10 @@ melody = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c { \chordsHead }
+            \new ChordNames \transpose ef c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsHead 
+            }
             \new Staff = "lead" \transpose ef, c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -339,7 +351,10 @@ melody = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c { \chordsHead }
+            \new ChordNames \transpose ef c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsHead 
+            }
             \new Staff = "lead" \transpose ef, c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -361,7 +376,10 @@ melody = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c { \chordsHead }
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsHead 
+            }
             \new Staff = "lead" \transpose c c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff

@@ -109,7 +109,10 @@ melodyInEb = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsSong }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 <<
@@ -129,7 +132,10 @@ melodyInEb = \relative c''' {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { \chordsSong }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
                 <<

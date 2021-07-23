@@ -129,7 +129,7 @@ melody = \relative c' {
     \score {
         <<
             \new ChordNames \transpose c c { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsHead 
             }
             \new Staff = "lead" \transpose c c {
@@ -157,7 +157,7 @@ melody = \relative c' {
     \score {
         <<
             \new ChordNames \transpose ef c { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsHead 
             }
             \new Staff = "lead" \transpose ef, c {

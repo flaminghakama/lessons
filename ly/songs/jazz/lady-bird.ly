@@ -207,6 +207,7 @@ melody = {
     \score {
         <<
             \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsReal
                 \chordsScher
                 \chordsScher
@@ -232,6 +233,7 @@ melody = {
     \score {
         <<
             \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsReal
                 \chordsScher
                 \chordsScher
@@ -257,6 +259,7 @@ melody = {
     \score {
         <<
             \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsReal
                 \chordsScher
                 \chordsScher

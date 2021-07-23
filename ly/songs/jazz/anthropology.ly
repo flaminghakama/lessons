@@ -29,7 +29,7 @@ for file in pdf/songs/jazz/anthropology*.pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #8
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -58,6 +58,8 @@ structure = \relative c' {
     \key bf \major 
     \tempo "Fast Bebop"
     \time 4/4
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \override Score.RehearsalMark #'extra-offset = #'( -5 . 2 )
     \startSectionNoBarline "A"
     \repeat volta 2 { 
         s1*3 \break

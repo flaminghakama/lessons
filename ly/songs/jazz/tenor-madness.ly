@@ -66,17 +66,14 @@ structure = \relative c' {
 
     \key bf \major
     \time 4/4
-    \partial 8*1 s8
     \bar "[|:"
-    \repeat volta 2 { 
-        s1*4 \break
-        s1*4 \break
-        s1*3 
-    }
-    \alternative {
-        { s1 \bar ":|]" } 
-        { s1 \bar "||" }
-    }
+    \partial 8*1 s8
+    \bar "||"
+    s1*4 \break
+    s1*4 \break
+    s1*3 s2.. 
+    \bar ":|]"
+    s8 \bar "|."
 }
 
 chordsSong = \chordmode { 
@@ -86,21 +83,19 @@ chordsSong = \chordmode {
     s8 ||
     bf1 | ef:7 | bf | bf:7 | 
     ef1:7 | s | bf:7 | s | 
-    c1:m7 | f:7 | bf:7 | f:7 |
-                         f:7 ||
+    c1:m7 | f:7 | bf:7 | f:7 ||
 }
 
 melody = \relative c'' { 
     d8 ||
-    r8 bf4 g8 bf4 r8 df | r bf4 g8 bf4 r8 d |
-    r8 bf4 g8 bf c bf g | bf c bf bf r4 r8 df |
+    r8 bf r g bf4 r8 df | r bf r g bf4 r8 d |
+    r8 bf r g bf c bf g | bf c bf bf r4 r8 df |
 
-    r8 bf4 g8 bf4 r8 df | r bf4 g8 bf4 r8 d |
-    r8 bf4 g8 bf c bf g | bf c bf bf r4 r8 c |
+    r8 bf r g bf4 r8 df | r bf r g bf4 r8 d |
+    r8 bf r g bf c bf g | bf c bf bf r4 r8 c |
 
-    r8 g4 c8 b g ef c | bf' g gs a r4 r8 d |
-    r8 bf4 g8 bf c bf g | bf c bf bf r4 r8 df |
-                        | bf c bf bf r2 ||
+    r8 g r c b g ef c | bf' g gs a r4 r8 d |
+    r8 bf r g bf c bf g | bf c bf bf r4. r8 ||
 }
 
 \header {

@@ -1,5 +1,5 @@
 \layout { 
-    indent = 2.5\cm
+    indent = 2.15\cm
     short-indent = 1.25\cm
     \context {
         \Score

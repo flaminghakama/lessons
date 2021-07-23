@@ -15,10 +15,10 @@ lyricistName = "D. Koldenhoven"
 
 killPreview
 rm butterfly*pdf
-lilypond ly/songs/jazz/butterfly.ly
+lilypond ly/songs/standards/butterfly.ly
 op butterfly-for-C.pdf 
-mv butterfly*pdf pdf/songs/jazz
-for file in pdf/songs/jazz/butterfly*pdf ; do op $file ; done
+mv butterfly*pdf pdf/songs/standards
+for file in pdf/songs/standards/butterfly*pdf ; do op $file ; done
 
 %}
 
@@ -29,7 +29,7 @@ for file in pdf/songs/jazz/butterfly*pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #4
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -388,6 +388,7 @@ lyricsCoda = \lyricmode {
     \score {
         <<
             \new ChordNames \keepWithTag #'(forC) \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsSong
             }
             \new Staff = "voice" \keepWithTag #'(forC) \transpose c c { 
@@ -449,6 +450,7 @@ lyricsCoda = \lyricmode {
     \score {
         <<
             \new ChordNames \keepWithTag #'(forBb) \transpose bf, c  { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsSong
             }
             \new Staff = "voice" \keepWithTag #'(forBb) \transpose bf, c { 
@@ -510,6 +512,7 @@ lyricsCoda = \lyricmode {
     \score {
         <<
             \new ChordNames \keepWithTag #'(forEb) \transpose ef, c  { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsSong
             }
             \new Staff = "voice" \keepWithTag #'(forEb) \transpose ef, c { 

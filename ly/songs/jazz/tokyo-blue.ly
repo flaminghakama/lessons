@@ -309,7 +309,10 @@ melodySongInEb = \relative c' {
     \score {
         <<
             \override Score.BarNumber.break-visibility = #'#(#f #f #t)
-            \new ChordNames \transpose ef ef { \chordsSongInEb }
+            \new ChordNames \transpose ef ef { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongInEb 
+            }
             \new Staff = "lead" \transpose ef ef {
                 \include "ly/ily/staff-properties.ily"
                 %\autoPageBreaksOff

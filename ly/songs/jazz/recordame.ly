@@ -139,8 +139,8 @@ melodyFirst = \relative c' {
 }
 melodySecond = \relative c' {
     f1\repeatTie | r8 ef f [ c' ] ~ 4 bf8 g | ef2 r8 d ef [ bf' ] ~ | 2 af4 f8 df ~ | 
-    df1 | r4 a'4 ~ 4. g8 | c,4. 8 r c <g'! d gs,>4 ~ | 4 r8 e b' c e, c ||
-        <g'! d gs,>1\repeatTie  
+    df1 | r4 a'4 ~ 4. g8 | c,4. 8 r c <g' d>4 ~ | 4 r8 e b' c e, c ||
+        <g' d>1\repeatTie  
 }
 
 melodySolo = \relative c' {

@@ -151,7 +151,10 @@ melody = \relative c' {
     }
     \score {
         <<
-            \new ChordNames \transpose ef c { \chordsHead }
+            \new ChordNames \transpose ef c { 
+                \include "ly/ily/chord-names-properties.ily"                
+                \chordsHead 
+            }
             \new Staff = "lead" \transpose ef c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
@@ -173,6 +176,7 @@ melody = \relative c' {
     \score {
         <<
             \new ChordNames \transpose ef c { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsForm 
                 \chordsForm
             }
