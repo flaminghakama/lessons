@@ -175,7 +175,7 @@ lyricsEnglishOne = \lyricmode {
     Dear -- est one, if you should leave me,
     Each lit -- tle dream would take wing, and my life would be through
 
-    Bé -- sa -- me mu -- cho
+    Bé -- sa -- me, bé -- sa -- me mu -- cho
     Love me for -- ev -- er and make all my dre -- ams come true
 
     % Bé -- sa -- me
