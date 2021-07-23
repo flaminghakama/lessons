@@ -118,7 +118,7 @@ melodySong = \relative c' {
     \melodyHead
 }
 
-lyricsHeadOne = \lyricmode {
+lyricsHeadOneEnglish = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
     So close your eyes 
@@ -142,7 +142,7 @@ lyricsHeadOne = \lyricmode {
     When -- ev -- er two can dream a dream to -- ge -- ther
 
 }
-lyricsHeadTwo = \lyricmode {
+lyricsHeadTwoEnglish = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
@@ -150,6 +150,38 @@ lyricsHeadTwo = \lyricmode {
     Don't try to fight the ri -- sing sea
     Don't fight the moon the stars a -- bove and don't fight me
 }
+
+
+lyricsHeadOne = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+    Vou te con -- tar, os ol -- hos já não po -- dem ver
+    Coi -- sas que só o cor -- a -- ção po -- \markup { "de en" } -- ten -- der
+    Fun -- da -- men -- tal é mes -- mo o amor
+    É im -- pos -- sí -- vel ser fe -- liz so -- zi -- nho
+
+    O res -- \markup { "to é" } \skip 1
+
+    Da pri -- mei -- ra vez e -- \markup { "ra a" } ci -- da _ -- de
+    Da se -- gun -- \markup { "da o" } cais \markup { "e a" } eter -- ni -- da _ -- de
+
+    A -- go -- \markup { "ra eu já" } sei, 
+    da on -- da que \markup { "se er" } -- gueu no mar
+
+    E das es -- tre -- las \markup { "que es" } -- que -- ce -- mos de con -- tar
+    O amor se dei -- xa sur -- pre -- en -- der
+    En -- quan -- to a noi -- te vem nos en -- vol -- ver
+}
+lyricsHeadTwo = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+
+    O res -- \markup { "to é" } mar, 
+    e tu -- do \markup { "que eu" } não sei con -- tar
+    São coi -- sas lin -- das que eu te -- nho pra te dar
+    Vem de man -- si -- nho bri -- \markup { "sa e" } me diz
+}
+
 
 \header {
     title = \title
@@ -159,6 +191,37 @@ lyricsHeadTwo = \lyricmode {
     instrumentName = \poet
 }
 
+
+\book {
+  \bookOutputSuffix "english-for-C"
+    \header {
+        subtitle = ""
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOneEnglish } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwoEnglish }
+            }
+        >>
+    }
+}
 
 \book {
   \bookOutputSuffix "for-C"
@@ -245,3 +308,4 @@ lyricsHeadTwo = \lyricmode {
         >>
     }
 }
+
