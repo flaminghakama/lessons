@@ -7,7 +7,7 @@ composerName = "M. Santamaria"
 
 %{
 
-killPreview ; rm afro-blue*pdf ;  lilypond ly/songs/afro-blue.ly  ; for file in afro-blue*.pdf ; do op $file ; done  
+killPreview ; rm afro-blue*pdf ;  lilypond ly/songs/jazz/afro-blue.ly  ; for file in afro-blue*.pdf ; do op $file ; done  
 
 killPreview
 rm afro-blue*pdf
