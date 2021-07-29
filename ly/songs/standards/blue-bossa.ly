@@ -330,6 +330,7 @@ lyricsHeadThree = \lyricmode {
     \header {
         subtitle = ""
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose ef c <<
@@ -411,6 +412,7 @@ lyricsHeadThree = \lyricmode {
     \header {
         subtitle = "(Amy Carr Key)"
         poet = "Concert Pitch"
+        instrumentName = \poet
     }
     \score {
         \transpose c a, <<
@@ -491,6 +493,7 @@ lyricsHeadThree = \lyricmode {
     \header {
         subtitle = "(Amy Carr Key)"
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose c a, \transpose bf, c <<
@@ -572,6 +575,7 @@ lyricsHeadThree = \lyricmode {
     \header {
         subtitle = "(Amy Carr Key)"
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose c a, \transpose ef, c <<

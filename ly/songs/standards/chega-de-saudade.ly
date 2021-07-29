@@ -229,6 +229,7 @@ lyricsEnglishOne = \lyricmode {
     \header {
         subtitle = ""
         poet = "Concert Pitch"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -258,6 +259,7 @@ lyricsEnglishOne = \lyricmode {
     \header {
         subtitle = ""
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose bf c <<
@@ -287,6 +289,7 @@ lyricsEnglishOne = \lyricmode {
     \header {
         subtitle = ""
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose ef c <<

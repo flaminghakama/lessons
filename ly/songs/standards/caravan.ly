@@ -275,6 +275,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = ""
         poet = "Bb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose bf, c <<
@@ -334,6 +335,7 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = ""
         poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
     \score {
         \transpose ef c <<

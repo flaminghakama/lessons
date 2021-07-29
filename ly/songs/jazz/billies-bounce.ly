@@ -153,6 +153,7 @@ solo = \relative c' {
     \bookOutputSuffix "for-Eb"
     \header {
         poet = "Eb Alto Saxophone"
+        instrumentName = \poet
     }
     \score {
         <<
@@ -179,6 +180,7 @@ solo = \relative c' {
     \bookOutputSuffix "for-Bb"
     \header {
         poet = "Bb Tenor Saxophone"
+        instrumentName = \poet
     }
     \score {
         <<

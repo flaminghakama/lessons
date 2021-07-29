@@ -323,6 +323,7 @@ lyricsCoda = \lyricmode {
     \header {
         subtitle = ""
         poet = "Eb Alto Saxophone"
+        instrumentName = \poet
     }
     \score {
         \transpose ef, c <<
@@ -384,94 +385,3 @@ lyricsCoda = \lyricmode {
     }
 }
 
-% \book {
-%   \bookOutputSuffix "for-C"
-%     \header {
-%         subtitle = ""
-%         poet = "Real Book Key"
-%     }
-%     \score {
-%         <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily" 
-%                 \chordsForm 
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \strcture
-%                     \melodyForm
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             % \new Lyrics \with { alignAboveContext = "staff" } {
-%             %     \lyricsto "lead" { \lyricsHeadTwo } 
-%             % }
-%         >>
-%     }
-% }
-
-% \book {
-%   \bookOutputSuffix "for-Eb"
-%     \header {
-%         subtitle = ""
-%         arranger = ""
-%     }
-%     \score {
-%         <<
-%             \new ChordNames \transpose ef c  { 
-%                 \include "ly/ily/chord-names-properties.ily" 
-%                 \chordsForm 
-%             }
-%             \new Staff = "voice" \transpose ef, c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \strcture
-%                     \melodyForm
-%                 >>
-%             }
-%         >>
-%     }
-
-%     \score {
-%         \header {
-%             subtitle = " " 
-%             piece = " " 
-%         }
-%         <<
-%             \new ChordNames \transpose a e { 
-%                 \include "ly/ily/chord-names-properties.ily" 
-%                 \chordsCoda 
-%             }
-%             \new Staff = "voice" { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \new Voice = "lead" {
-%                     \autoPageBreaksOff
-%                     \transpose a e <<
-%                         \structureCoda
-%                         \melodyCoda
-%                     >>
-%                 }
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsCoda } 
-%             }
-%         >>
-%         \layout { 
-%             indent = 2.25\cm
-%             short-indent = 1.25\cm
-%             \context {
-%                 \Score
-%                 \override StaffGrouper.staff-staff-spacing.padding = #0
-%                 \override StaffGrouper.staff-staff-spacing.basic-distance = #0
-%                 \omit BarNumber
-%             }
-%         }
-%     }
-% }
-
-%}
