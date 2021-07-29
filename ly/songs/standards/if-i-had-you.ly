@@ -62,7 +62,7 @@ structure = \relative c' {
     \override Score.RehearsalMark #'extra-offset = #'( -5 . 0 )
 
     \key bf \major
-    % \tempo "Ballad"
+    \tempo "Ballad"
 
     \once \override Score.RehearsalMark #'extra-offset = #'( -5 . 2 )
     \startSectionNoBarline "A"
