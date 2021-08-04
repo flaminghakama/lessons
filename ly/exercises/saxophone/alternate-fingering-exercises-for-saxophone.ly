@@ -1,9 +1,9 @@
 \version "2.19.15"
 \include "english.ly"
 
-titleLeft = "Alternate"
-titleRight = "Fingering Exercises"
-title = "Alternate Fingering Exercises"
+titleLeft = "Alternate Fingering"
+titleRight = "Exercises for Saxophone"
+title = "Alternate Fingering Exercises for Saxophone"
 composerName = "Elaine Paul"
 
 \include "../scores/flaming-libs/flaming-paper.ily"
