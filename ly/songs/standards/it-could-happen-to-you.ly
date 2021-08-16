@@ -27,7 +27,7 @@ for file in pdf/songs/standards/it-could-happen-to-you*pdf ; do open -a Preview 
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -52,25 +52,42 @@ for file in pdf/songs/standards/it-could-happen-to-you*pdf ; do open -a Preview 
 
 \include "ly/ily/layout-songs.ily"
 
+voltaAllXButLast = \markup { \text \italic \large { All X but last } }
+voltaLast = \markup { \text \italic \large { Last X } }
+
 structure = \relative c' { 
     \key ef \major
-    \startSection "A"
-    s1*4 \break
-    s1*4 \break 
-    \bar "||"
-    s1*4 \break
-    s1*4 
-    \override Score.RehearsalMark #'extra-offset = #'( -4 . 0 )
-    \startSection "B"
-    s1*4 \break
-    s1*4 \break 
-    \bar "||"
-    s1*4 \break
-    s1*4 
+    \override Score.RehearsalMark #'extra-offset = #'( -4 . -1 )
+    \startSectionNoBarline "A"
+    \bar "[|:"
+    \repeat volta 2 { 
+        s1*4 \break
+        s1*4 \break 
+        \bar "||"
+        s1*4 \break
+        s1*4 
+        \override Score.RehearsalMark #'extra-offset = #'( -4 . -1 )
+        \startSection "B"
+        s1*4 \break
+        s1*4 \break 
+        \bar "||"
+        s1*4 \break
+        s1*2    
+    } 
+    \alternative { 
+        {
+            \set Score.repeatCommands = #(list (list 'volta voltaAllXButLast)) 
+            s1*2 \bar ":|]" 
+        }
+        { 
+            \set Score.repeatCommands = #(list (list 'volta voltaLast)) 
+            s1*2 
+        }
+    }
     \bar "|."
 }
 
-chordsForm = \chordmode { 
+chordsReal = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -85,7 +102,26 @@ chordsForm = \chordmode {
 
     f1:m7 | df:7.11+ | ef2:maj7 af:7 | g2:m7.5- c:7 |
     f1:m | f2:m7 bf:7 | ef:6 c:m7 | f:m7 bf:7 ||
+        ef1:6 | s ||
 }
+chordsOrigInG = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    g1 | gs:dim7 | a:m | as:dim7 |
+    g1/b | c | b:7 | b2:m7.5- e:7.9- ||
+
+    a1:m7 | c:m7.7+ | g:13 | fs2:m7.5- b:7.9- |
+    e2:m c:7/e | a1:7 | a:m7 | a2:m6 af:9 ||
+
+    g1 | gs:dim7 | a:m | as:dim7 |
+    g1/b | c | b:7 | b2:m7.5- e:7.9- ||
+
+    a1:m7 | c:m7.7+ | g:maj7/d | b2:m7.5- e:7.9- |
+    a1:m7 | a2:m7 d:7.9- | g2 e:m | a:m7 d:aug7.9- ||
+        g2 c:13 | g1:maj7 ||
+}
+chordsOrig = \transpose g ef \chordsOrigInG
 
 melodyForm = \relative c' { 
     \override Beam.damping = #2.75 
@@ -102,6 +138,7 @@ melodyForm = \relative c' {
 
     g2 2 | 4 af ef f | g d f ef8 bf'8 ~ | 1 |
     bf,2 2 | af'4 f2 g4 | ef1 | R1 ||
+        ef1 ~ | 1 ||
 }
 
 lyricsHeadOne = \lyricmode {
@@ -138,9 +175,99 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "original-G-for-C"
     \header {
-        subtitle = ""
+        subtitle = "(Original Key)"
+        poet = "Concert Pitch"
+    }
+    \score {
+        \transpose ef g <<
+            \include "ly/ily/score-properties.ily"
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsOrig
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties-songs.ily"
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "original-G-for-Bb"
+    \header {
+        subtitle = "(Original Key)"
+        poet = "Bb Lead Sheet"
+    }
+    \score {
+        \transpose bf, c \transpose ef g <<
+            \include "ly/ily/score-properties.ily"
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsOrig
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties-songs.ily"
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "original-G-for-Eb"
+    \header {
+        subtitle = "(Original Key)"
+        poet = "Eb Lead Sheet"
+    }
+    \score {
+        \transpose ef, c \transpose ef g <<
+            \include "ly/ily/score-properties.ily"
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsOrig
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties-songs.ily"
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-original-chords-for-C"
+    \header {
+        subtitle = "(Real Book key)"
         poet = "Concert Pitch"
     }
     \score {
@@ -148,7 +275,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsForm 
+                \chordsOrig
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
@@ -168,9 +295,9 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-Eb-original-chords-for-Bb"
     \header {
-        subtitle = ""
+        subtitle = "(Real Book key)"
         poet = "Bb Lead Sheet"
     }
     \score {
@@ -178,7 +305,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsForm 
+                \chordsOrig
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
@@ -198,9 +325,9 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-Eb-original-chords-for-Eb"
     \header {
-        subtitle = ""
+        subtitle = "(Real Book key)"
         poet = "Eb Lead Sheet"
     }
     \score {
@@ -208,7 +335,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsForm 
+                \chordsOrig
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
@@ -226,3 +353,4 @@ lyricsHeadTwo = \lyricmode {
         >>
     }
 }
+
