@@ -109,19 +109,38 @@ chordsOrigInG = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     g1 | gs:dim7 | a:m | as:dim7 |
-    g1/b | c | b:7 | b2:m7.5- e:7.9- ||
+    g1/b | c:1.3.5.9 | b:aug7 | b2:m7.5- e:7.9- ||
 
-    a1:m7 | c:m7.7+ | g:13 | fs2:m7.5- b:7.9- |
-    e2:m c:7/e | a1:7 | a:m7 | a2:m6 af:9 ||
+    a1:m9 | c:m13.7+ | g:maj13 | fs2:m7 b:7.9- |
+    e2:m c:7/bf | a1:7 | a:m7 | a2:m6 af:9 ||
 
     g1 | gs:dim7 | a:m | as:dim7 |
-    g1/b | c | b:7 | b2:m7.5- e:7.9- ||
+    g1/b | c:1.3.5.9 | b:aug7 | b2:m7.5- e:7.9- ||
 
-    a1:m7 | c:m7.7+ | g:maj7/d | b2:m7.5- e:7.9- |
+    a1:m9 | c:m13.7+ | g:maj7/d | b2:m7.5- e:7.9- |
     a1:m7 | a2:m7 d:7.9- | g2 e:m | a:m7 d:aug7.9- ||
         g2 c:13 | g1:maj7 ||
 }
 chordsOrig = \transpose g ef \chordsOrigInG
+
+chordsOrigInGForFlats = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    g1 | gs:dim7 | a:m | as:dim7 |
+    g1/b | c:1.3.5.9 | b:aug7 | b2:m7.5- e:7.9- ||
+
+    a1:m9 | c:m13.7+ | g:maj13 | fs2:m7 b:7.9- |
+    e2:m c:7/bf | a1:7 | a:m7 | a2:m6 gs:9 ||
+
+    g1 | gs:dim7 | a:m | as:dim7 |
+    g1/b | c:1.3.5.9 | b:aug7 | b2:m7.5- e:7.9- ||
+
+    a1:m9 | c:m13.7+ | g:maj7/d | b2:m7.5- e:7.9- |
+    a1:m7 | a2:m7 d:7.9- | g2 e:m | a:m7 d:aug7.9- ||
+        g2 c:13 | g1:maj7 ||
+}
+chordsOrigForFlats = \transpose g ef \chordsOrigInGForFlats
 
 melodyForm = \relative c' { 
     \override Beam.damping = #2.75 
@@ -146,19 +165,21 @@ lyricsHeadOne = \lyricmode {
     \override LyricText.font-size = #'2
 
     Hide your heart from sight,
-    Lock your dreams at night,
-    It could hap -- pen to you.
+    lock your dreams at night,
+    it could hap -- pen to you.
     Don't count stars
-    Or you might stum -- ble,
-    Some -- one drops a sigh
-    And down you tum -- ble,
+    or you might stum -- ble,
+    some -- one drops a sigh
+    and down you tum -- ble,
 
     Keep an eye on spring,
-    Run when church bells ring.
-    It could hap -- pen to you 
+    run when church bells ring.
+    It could hap -- pen to you. 
     All I did was won -- der 
-    How your arms would be
-    And it hap -- pened to me
+    how your arms would be
+    and it hap -- pened to me.
+
+    me.
 }
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
@@ -177,7 +198,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "original-G-for-C"
     \header {
-        subtitle = "(Original Key)"
+        subtitle = "(Original)"
         poet = "Concert Pitch"
     }
     \score {
@@ -207,7 +228,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "original-G-for-Bb"
     \header {
-        subtitle = "(Original Key)"
+        subtitle = "(Original)"
         poet = "Bb Lead Sheet"
     }
     \score {
@@ -215,7 +236,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsOrig
+                \chordsOrigForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
@@ -237,7 +258,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "original-G-for-Eb"
     \header {
-        subtitle = "(Original Key)"
+        subtitle = "(Original)"
         poet = "Eb Lead Sheet"
     }
     \score {
@@ -245,7 +266,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsOrig
+                \chordsOrigForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
@@ -267,7 +288,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "in-Eb-original-chords-for-C"
     \header {
-        subtitle = "(Real Book key)"
+        subtitle = "(Real Book key, original chords)"
         poet = "Concert Pitch"
     }
     \score {
@@ -275,7 +296,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsOrig
+                \chordsOrigForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
@@ -297,7 +318,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "in-Eb-original-chords-for-Bb"
     \header {
-        subtitle = "(Real Book key)"
+        subtitle = "(Real Book key, original chords)"
         poet = "Bb Lead Sheet"
     }
     \score {
@@ -327,7 +348,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "in-Eb-original-chords-for-Eb"
     \header {
-        subtitle = "(Real Book key)"
+        subtitle = "(Real Book key, original chords)"
         poet = "Eb Lead Sheet"
     }
     \score {
@@ -336,6 +357,97 @@ lyricsHeadTwo = \lyricmode {
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
                 \chordsOrig
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties-songs.ily"
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "in-Eb-real-book-chords-for-C"
+    \header {
+        subtitle = "(Real Book)"
+        poet = "Concert Pitch"
+    }
+    \score {
+        <<
+            \include "ly/ily/score-properties.ily"
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsReal
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties-songs.ily"
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-real-book-chords-for-Bb"
+    \header {
+        subtitle = "(Real Book)"
+        poet = "Bb Lead Sheet"
+    }
+    \score {
+        \transpose bf, c <<
+            \include "ly/ily/score-properties.ily"
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsReal
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties-songs.ily"
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-real-book-chords-for-Eb"
+    \header {
+        subtitle = "(Real Book)"
+        poet = "Eb Lead Sheet"
+    }
+    \score {
+        \transpose ef, c <<
+            \include "ly/ily/score-properties.ily"
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsReal
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
