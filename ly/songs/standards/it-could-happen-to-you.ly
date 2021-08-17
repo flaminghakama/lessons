@@ -66,6 +66,17 @@ structureIntro = \relative c' {
     s1*4 
     \bar "[|:"
 }
+structureIntroForEb = \relative c' {
+    \key e \major
+    s1*3
+    s2 s4 s4 
+    \bar "||" \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 
+    \bar "[|:"
+}
 
 structure = \relative c' { 
     \key ef \major
@@ -126,19 +137,33 @@ chordsIntroOrigInG = \chordmode {
     c2:1.4.5.7/g c:7/g | f1:m7 | bf2:7 bf:7/af | ef1/g | 
     bf:m7/af | g1:m7.5- | af:maj9 | a2:m11 d4:1.4.5.7 d:7 ||     
 }
-chordsIntro = \transpose g ef \chordsIntroOrigInG
+chordsIntro = \transpose g ds \chordsIntroOrigInG
+
+chordsIntroOrigInGForSharps = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    bf1:m9 | df:m7.7+ | af2/ef c4:7/e f:m | bf2:m7 ef4:9 ef:aug7/df ||
+    af1/c | cf:dim7 | bf:m7 | bff:7 | 
+    af2 ef:aug | c:m7.5- f:7 | bf1:m7 | ef:7 | 
+    c2:1.4.5.7/g c:7/g | f1:m7 | bf2:7 bf:7/af | ef1/g | 
+    bf:m7/af | g1:m7.5- | af:maj9 | bff2:m11 eff4:1.4.5.7 eff:7 ||     
+}
+chordsIntro = \transpose g ds \chordsIntroOrigInG
+chordsIntroForEb = \transpose g ds \chordsIntroOrigInGForSharps
+chordsIntroForFlats = \transpose g ef \chordsIntroOrigInG
 
 chordsOrigInG = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    g1 | gs:dim7 | a:m | as:dim7 |
+    g1 | gs:dim7 | a:m | bf:dim7 |
     g1/b | c:1.3.5.9 | b:aug7 | b2:m7.5- e:7.9- ||
 
     a1:m9 | c:m13.7+ | g:maj13 | fs2:m7 b:7.9- |
     e2:m c:7/bf | a1:7 | a:m7 | a2:m6 af:9 ||
 
-    g1 | gs:dim7 | a:m | as:dim7 |
+    g1 | gs:dim7 | a:m | bf:dim7 |
     g1/b | c:1.3.5.9 | b:aug7 | b2:m7.5- e:7.9- ||
 
     a1:m9 | c:m13.7+ | g:maj7/d | b2:m7.5- e:7.9- |
@@ -177,6 +202,18 @@ melodyIntroInG = \relative c'' {
     bf2. df4 | c2. bf4 | ef,1 | d ||
 }
 melodyIntro = \transpose g ef \melodyIntroInG
+melodyIntroInGForFlats = \relative c'' { 
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.15) 
+    c2 2 | 4 df af bf | c g bf af | af df, \fermata f ef ||
+
+    ef2. af4 | g2. f4 | ef2. af4 | g2. f4 | 
+    ef4 af g f | ef gf f ef | df2. f4 | ef2. df4 | 
+    c2. g'4 | af2. ef4 | d2. af'4 | bf1 |
+    bf2. df4 | c2. bf4 | ef,1 | eff ||
+}
+melodyIntroForEb = \transpose g ds \melodyIntroInGForFlats
+melodyIntroForFlats = \transpose g ef \melodyIntroInGForFlats
 
 melodyForm = \relative c' { 
     \override Beam.damping = #2.75 
@@ -256,7 +293,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsIntro
+                \chordsIntroForFlats
                 \chordsOrig
             }
             \new Staff = "voice" \transpose c c { 
@@ -296,7 +333,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsIntro
+                \chordsIntroForFlats
                 \chordsOrig
             }
             \new Staff = "voice" \transpose c c { 
@@ -313,7 +350,10 @@ lyricsHeadTwo = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             % \new Lyrics \with { alignAboveContext = "staff" } {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
@@ -333,7 +373,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsIntro
+                \chordsIntroForFlats
                 \chordsOrig
             }
             \new Staff = "voice" \transpose c c { 
@@ -350,7 +390,10 @@ lyricsHeadTwo = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             % \new Lyrics \with { alignAboveContext = "staff" } {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
@@ -370,24 +413,27 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsIntro
+                \chordsIntroForEb
                 \chordsOrigForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
                 \new Voice = "lead" <<
                     { 
-                        \structureIntro \pageBreak
+                        \structureIntroForEb \pageBreak
                         \structure
                     }
                     {
-                        \melodyIntro 
+                        \melodyIntroForEb
                         \melodyForm
                     }
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             % \new Lyrics \with { alignAboveContext = "staff" } {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
@@ -407,7 +453,7 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsIntro
+                \chordsIntroForFlats
                 \chordsOrig
             }
             \new Staff = "voice" \transpose c c { 
@@ -424,7 +470,10 @@ lyricsHeadTwo = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             % \new Lyrics \with { alignAboveContext = "staff" } {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
@@ -444,17 +493,27 @@ lyricsHeadTwo = \lyricmode {
             \include "ly/ily/score-properties.ily"
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
+                \chordsIntroForFlats
                 \chordsOrig
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties-songs.ily"
                 \new Voice = "lead" <<
-                    \structure
-                    \melodyForm
+                    { 
+                        \structureIntro \pageBreak
+                        \structure
+                    }
+                    {
+                        \melodyIntro 
+                        \melodyForm
+                    }
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsIntro
+                    \lyricsHeadOne 
+                } 
             }
             % \new Lyrics \with { alignAboveContext = "staff" } {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
