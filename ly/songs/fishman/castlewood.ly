@@ -11,15 +11,12 @@ composerName = "G. Fishman"
 \include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
+
 killPreview
 rm castlewood*pdf
 lilypond ly/songs/fishman/castlewood.ly
-
 mv castlewood*.pdf pdf/songs/fishman
-
 for file in pdf/songs/fishman/castlewood*pdf ; do open -a Preview $file ; done
-
-echo git add pdf/songs/fishman/castlewood* ly/songs/fishman/castlewood.ly
 
 %}
 
