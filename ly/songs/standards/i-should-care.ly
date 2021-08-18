@@ -131,13 +131,18 @@ melodyIntro = \relative c'' {
     c,8 8 8 8 e4 d | g1 | 
     gs8 8 8 8 a4 as | b1 ||
 } 
+restIntro = \relative c'' { 
+    s1*4
+    s1*6
+} 
 melodyForm = \relative c'' { 
     \override Voice.Rest #'staff-position = #0
+    \stemNeutral
     c2. b4 | 1 | r4 a8 b \tuplet 3/2 { c4 b a } | b4 2. |
     bf2. e,4 | a1 | r4 e8 f \tuplet 3/2 { g4 d e } | f4 2. |
     \tuplet 3/2 { e4 f e } f4 e4 | 4 2. | \tuplet 3/2 { e4 f e } g4 f | e1 | 
     \tuplet 3/2 { d4 e d } f4 e4 | c4 2. | \tuplet 3/2 { d4 e c } d4 e | 
-            \tuplet 3/2 { bf'4 cf af } bf!4 cf! 
+            \stemUp \tuplet 3/2 { bf'4 cf af } bf!4 cf! \stemNeutral 
     c2. b4 | 1 | r4 a8 b \tuplet 3/2 { c4 b a } | b4 2. |
     bf2. e,4 | a1 | r4 e8 f \tuplet 3/2 { g4 d e } | f4 2. |
     \tuplet 3/2 { e4 f e } f4 e4 | g4 f2 e4 | b'4 gs2 a4 | d2. df4 | 
@@ -148,7 +153,9 @@ originalMelody = \relative c' {
     s1*15 
     \omit TupletNumber
     \omit TupletBracket
+    \stemDown 
     \tuplet 3/2 { a4 b g } a4 b
+    \stemNeutral
 }
 
 melodySong = \relative c'' { 
@@ -243,7 +250,10 @@ lyricsCoda = \lyricmode {
                             \melodyForm
                         }
                     >>
-                    \new Voice = "original" \voiceTwo \originalMelody
+                    \new Voice = "original" \voiceTwo {
+                        \restIntro
+                        \originalMelody
+                    }
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -295,7 +305,10 @@ lyricsCoda = \lyricmode {
                             \melodyForm
                         }
                     >>
-                    \new Voice = "original" \voiceTwo \originalMelody
+                    \new Voice = "original" \voiceTwo {
+                        \restIntro
+                        \originalMelody
+                    }
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -348,7 +361,10 @@ lyricsCoda = \lyricmode {
                             \melodyForm
                         }
                     >>
-                    \new Voice = "original" \voiceTwo \originalMelody
+                    \new Voice = "original" \voiceTwo {
+                        \restIntro
+                        \originalMelody
+                    }
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
