@@ -27,7 +27,7 @@ for file in pdf/songs/standards/it-could-happen-to-you*pdf ; do open -a Preview 
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #0
+  markup-system-spacing.padding = #6
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
