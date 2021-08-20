@@ -1,7 +1,7 @@
 \version "2.19.81"
 
-titleLeft = "It Could Happen"
-titleRight = "To You"
+titleLeft = "It Could Hap"
+titleRight = "pen To You"
 title = "It Could Happen To You"
 composerName = "J. Van Heusen"
 lyricistName = "J. Burke"
@@ -58,23 +58,33 @@ voltaLast = \markup { \text \italic \large { Last X } }
 structureIntro = \relative c' {
     \key ff \major
     s1*3
-    s2 s4 s4 
-    \bar "||" \break
-    s1*4 \break
-    s1*4 \break
-    s1*4 \break
-    s1*4 
+    s2 s4 \bar "" \break s4 
+    \bar "||" 
+    
+    s1*3
+    s2 s4 \bar "" \break s4
+    
+    s1*3
+    s2 s4 \bar "" \break s4
+
+    s1*4
+    s1*4
     \bar "[|:"
 }
 structureIntroForEb = \relative c' {
     \key e \major
     s1*3
-    s2 s4 s4 
-    \bar "||" \break
-    s1*4 \break
-    s1*4 \break
-    s1*4 \break
-    s1*4 
+    s2 s4 \bar "" \break s4 
+    \bar "||" 
+    
+    s1*3
+    s2 s4 \bar "" \break s4
+    
+    s1*3
+    s2 s4 \bar "" \break s4
+
+    s1*4
+    s1*4
     \bar "[|:"
 }
 
@@ -135,7 +145,7 @@ chordsIntroOrigInG = \chordmode {
     af1/c | b:dim7 | bf:m7 | a:7 | 
     af2 ef:aug | c:m7.5- f:7 | bf1:m7 | ef:7 | 
     c2:1.4.5.7/g c:7/g | f1:m7 | bf2:7 bf:7/af | ef1/g | 
-    bf:m7/af | g1:m7.5- | af:maj9 | a2:m11 d4:1.4.5.7 d:7 ||     
+    bf:m7/af | g1:m7.5- | af:maj9 | a2:1.3-.5.7.11 d4:1.4.5.7 d:7 ||     
 }
 chordsIntro = \transpose g ds \chordsIntroOrigInG
 
@@ -143,11 +153,11 @@ chordsIntroOrigInGForSharps = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    bf1:m9 | df:m7.7+ | af2/ef c4:7/e f:m | bf2:m7 ef4:9 ef:aug7/df ||
+    bf1:m9 | df:m7.7+ | af2/ef c4:7/ff f:m | bf2:m7 ef4:9 ef:aug7/df ||
     af1/c | cf:dim7 | bf:m7 | bff:7 | 
     af2 ef:aug | c:m7.5- f:7 | bf1:m7 | ef:7 | 
     c2:1.4.5.7/g c:7/g | f1:m7 | bf2:7 bf:7/af | ef1/g | 
-    bf:m7/af | g1:m7.5- | af:maj9 | bff2:m11 eff4:1.4.5.7 eff:7 ||     
+    bf:m7/af | g1:m7.5- | af:maj9 | bff2:1.3-.5.7.11 eff4:1.4.5.7 eff:7 ||     
 }
 chordsIntro = \transpose g ds \chordsIntroOrigInG
 chordsIntroForEb = \transpose g ds \chordsIntroOrigInGForSharps
@@ -286,7 +296,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "original-G-for-C"
     \header {
         subtitle = "(Original)"
-        poet = "Concert Pitch"
+        instrumentName = "Concert Pitch"
+        poet = \instrumentName
     }
     \score {
         \transpose ef g <<
@@ -326,7 +337,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "original-G-for-Bb"
     \header {
         subtitle = "(Original)"
-        poet = "Bb Lead Sheet"
+        instrumentName = "Bb Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         \transpose bf, c \transpose ef g <<
@@ -366,7 +378,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "original-G-for-Eb"
     \header {
         subtitle = "(Original)"
-        poet = "Eb Lead Sheet"
+        instrumentName = "Eb Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         \transpose ef, c \transpose ef g <<
@@ -406,7 +419,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "in-Eb-original-for-C"
     \header {
         subtitle = "(Real Book key, original chords)"
-        poet = "Concert Pitch"
+        instrumentName = "Concert Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         <<
@@ -446,7 +460,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "in-Eb-original-for-Bb"
     \header {
         subtitle = "(Real Book key, original chords)"
-        poet = "Bb Lead Sheet"
+        instrumentName = "Bb Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         \transpose bf, c <<
@@ -486,7 +501,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "in-Eb-original-for-Eb"
     \header {
         subtitle = "(Real Book key, original chords)"
-        poet = "Eb Lead Sheet"
+        instrumentName = "Eb Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         \transpose ef, c <<
@@ -527,7 +543,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "in-Eb-real-book-for-C"
     \header {
         subtitle = "(Real Book)"
-        poet = "Concert Pitch"
+        instrumentName = "Concert Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         <<
@@ -557,7 +574,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "in-Eb-real-book-for-Bb"
     \header {
         subtitle = "(Real Book)"
-        poet = "Bb Lead Sheet"
+        instrumentName = "Bb Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         \transpose bf, c <<
@@ -587,7 +605,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "in-Eb-real-book-for-Eb"
     \header {
         subtitle = "(Real Book)"
-        poet = "Eb Lead Sheet"
+        instrumentName = "Eb Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         \transpose ef, c <<

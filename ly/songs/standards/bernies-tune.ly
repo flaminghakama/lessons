@@ -146,7 +146,8 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "for-C"
     \header {
         subtitle = ""
-        poet = "Concert Pitch"
+        instrumentName = "Concert Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         <<
@@ -177,6 +178,8 @@ lyricsHeadTwo = \lyricmode {
     \header {
         subtitle = ""
         arranger = ""
+        instrumentName = "Eb Lead Sheet"
+        poet = \instrumentName
     }
     \score {
         <<
