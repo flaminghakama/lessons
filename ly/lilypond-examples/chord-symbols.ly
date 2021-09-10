@@ -13,7 +13,7 @@ myChordSequence = \chordmode {
 
 % Define your desired chord symbol design
 myChordExceptions = {
-    <c ees ges bes>1-\markup { "m7(b5)" } 
+    <c ees ges bes>1-\markup { m \super { 7 \flat 5 } } 
 }
 
 % Replace the old chord symbol with your new one
