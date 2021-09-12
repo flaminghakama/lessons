@@ -130,12 +130,12 @@ melodyFormInEb = \relative c'' {
     b'8 8 4-. r8 \grace { a8 ( } b4. ) | 
     b8 8 4-. r8 \grace { a8 ( } b4. ) | 
     b8 8 4-. r8 \grace { a8 ( } b4. ) | 
-    b8 8 4-. r8 \grace { a8 ( } b ~ \tuplet 3/2 { b8 a af ) } | 
+    b8 8 4-. r8 b4. ( \grace { a16 af } | 
 
-    g8 8 4-. r8 g ( ~ \tuplet 3/2 { g4 d8 ) } | 
+    g8 ) 8 4-. r8 g ( ~ \tuplet 3/2 { g4 d8 ) } | 
     g8 8 4-. r8 g ( ~ \tuplet 3/2 { g4 d8 ) } | 
     f8 8 4-. r8 f ( ~ \tuplet 3/2 { f4 c'8 ) } |
-    f,8 8 4-. r2 || 
+    f,8 8 4-. r4 r8 a, || 
 
     d8 ( f c bf fs d' ) r fs, ( | c' fs, cs'4 ) r d | r4 r8 e ~ 4 r |  
     \tag #'Eb { \tupletDown } 
