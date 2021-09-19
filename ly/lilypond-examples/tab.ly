@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 % LilyBin
 
 songChords = \chordmode { c1 d:m }
@@ -27,4 +28,36 @@ songChords = \chordmode { c1 d:m }
     >>
     \layout{}
     \midi{}
+=======
+\version "2.19.81"
+
+guitarNotes = \relative c' {
+  a8 a' <c e> a
+  d,8 a' <d f> a
+}
+
+bassNotes = \relative c' { 
+  a4 g d a
+}
+
+\book {
+    \score {
+        <<
+            \new StaffGroup <<
+                \new Staff {
+                    \clef treble
+                    \guitarNotes
+                }
+                \new TabStaff \guitarNotes
+            >>
+            \new StaffGroup <<
+                \new Staff {
+                    \clef bass
+                    \bassNotes
+                }
+                \new TabStaff \bassNotes
+            >>
+        >>
+    }
+>>>>>>> 235ebc7688568cd2298b66ce6b2c1f38a382973b
 }

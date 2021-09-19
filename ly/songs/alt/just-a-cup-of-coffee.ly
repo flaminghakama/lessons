@@ -111,7 +111,7 @@ intro = \relative c' {
 head = \relative c' { 
     \tuplet 3/2 { r8 fs g } || 
     a8 fs8 4 ~ \tuplet 3/2 { 4 8 } \tuplet 3/2 { a8 g a } | fs2. \tuplet 3/2 { r8 d e } |
-    fs8 b,8 4 ~ 4. a8 | e'2. \tuplet 3/2 { r8 fs e } |
+    fs8 b,8 4 ~ 4. a8 | e'2. \tuplet 3/2 { r8 fs g } |
 
     a8 fs4. ~ \tuplet 3/2 { 4 8 } \tuplet 3/2 { a8 g a } | fs2. \tuplet 3/2 { r8 d e } |
     fs8 b,8 4 ~ 4 \tuplet 3/2 { r8 d b } | e1 ||
@@ -137,7 +137,7 @@ toplineIntro = \relative c'' {
 }
 toplineHead = \relative c'' {
     r4 \tuplet 3/2 { fs8\mp d c } bf2 | r4 \tuplet 3/2 { ff'8 ef d } df2 | 
-    r4 r8 fs b,2 | r8 cs\mf e [ d ] fs e g4 | 
+    r4 r8 fs b,2 | r8 cs\mf e [ d ] fs g g4 | 
     r4 \tuplet 3/2 { e8\p d e } c2 | r4 \tuplet 3/2 { ef8 c ef } df2 | 
     r2 fs8\mf b,8 4 | a'8 g4 a8 e4. e32 fs g a ||
 
@@ -214,7 +214,7 @@ lyricsHeadOne = \lyricmode {
     \override LyricText.font-size = #'2
 
     \repeat unfold 10 { \skip 1 }
-    Mm mm mmm mmm mmm mm mm mm mm mmmmm
+    Mm _ mm _ _  mm _ _ _  mmm
 
     I could give my -- self
     if that's what you want
@@ -228,7 +228,7 @@ lyricsHeadOne = \lyricmode {
     Would you want a tick -- et to To -- k -- yo?
     Would you want to share stor -- ies grow -- ing old?
 
-    Why are we sear -- ching, what's the rea -- son?
+    Why are we search -- ing, what's the rea -- son?
     Are we an an -- ti -- dote to the grey skies, 
     to the sea -- son?
 

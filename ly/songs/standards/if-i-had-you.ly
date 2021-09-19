@@ -89,16 +89,16 @@ chordsForm = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     bf1 | bf:7 | ef:6 | ef:m6 |
-    bf2. e4:dim7 | f2:9 f:aug7 | bf/d df:dim7 | c:m7 f:7 ||
+    bf2 e:dim7 | f2:9 f:aug7 | bf/d df:dim7 | c:m7 f:7 ||
 
     bf1 | bf:7 | ef:6 | ef:m6 |
-    bf2. e4:dim7 | f2:9 f:aug7 | bf1 | e2:m7.5- a:7.9- ||
+    bf2 e:dim7 | f2:9 f:aug7 | bf1 | e2:m7.5- a:7.9- ||
 
     d1:m | e2:m7.5- a:7.9- | d1:m | e2:m7.5- a:7.9- |
     d1:m | e2:m7.5- a:7.9- | d1:m | c2:m7 ef4/f f:7 |
 
     bf1 | bf:7 | ef:6 | ef:m6 |
-    bf2. e4:dim7 | f1:9 | bf | s ||
+    bf2 e:dim7 | f1:9 | bf | s ||
 }
 chordsSong = \chordmode { 
     \chordsForm
@@ -159,7 +159,6 @@ lyricsHeadTwo = \lyricmode {
     instrumentName = \poet
 }
 
-
 \book {
     \bookOutputSuffix "for-C"
     \header {
@@ -215,6 +214,7 @@ lyricsHeadTwo = \lyricmode {
         >>
     }
 }
+
 \book {
     \bookOutputSuffix "for-Eb"
     \header {
@@ -242,3 +242,88 @@ lyricsHeadTwo = \lyricmode {
         >>
     }
 }
+
+\book {
+    \bookOutputSuffix "in-F-for-C"
+    \header {
+        subtitle = "(transposed to Castlewood key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+    \bookOutputSuffix "in-F-for-Bb"
+    \header {
+        subtitle = "(transposed to Castlewood key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c \transpose bf, f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+    \bookOutputSuffix "in-F-for-Eb"
+    \header {
+        subtitle = "(transposed to Castlewood key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef c \transpose bf, f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+%}
