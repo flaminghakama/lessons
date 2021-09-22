@@ -225,8 +225,8 @@ lyricsHeadOne = \lyricmode {
     sta -- ring back at me, 
     did you know?
 
-    Would you want a tick -- et to To -- k -- yo?
-    Would you want to share stor -- ies grow -- ing old?
+    Would you like a tick -- et to To -- k -- yo?
+    Do you want to share stor -- ies grow -- ing old?
 
     Why are we search -- ing, what's the rea -- son?
     Are we an an -- ti -- dote to the grey skies, 
