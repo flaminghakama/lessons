@@ -102,6 +102,30 @@ melody = \relative c'' {
 }
 
 
+lyricsPortugeseHeadOne = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+
+    Triste é viver na solidão
+    Na dor cruel de uma paixão
+    Triste é saber que ninguém
+    Pode viver de ilusão
+    Que nunca vai ser nunca vai dar
+    O sonhador tem que acordar
+
+    Tua beleza é um avião
+    Demais p'rum pobre coração
+    Que pára pra te ver passar
+    Só pra me maltratar
+    Triste é viver na solidão
+
+}
+lyricsHeadTwo = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+}
+
+
 lyricsHeadOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2

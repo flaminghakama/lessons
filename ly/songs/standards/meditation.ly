@@ -387,10 +387,77 @@ lyricsCoda = \lyricmode {
 
 
 \book {
+  \bookOutputSuffix "original-for-Bb"
+    \header {
+        subtitle = ""
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose a e  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose a e { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        \transpose bf, c <<
+            \new ChordNames \transpose a e { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda 
+            }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose a e <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+                \omit BarNumber
+            }
+        }
+    }
+}
+
+\book {
   \bookOutputSuffix "original-for-Eb"
     \header {
         subtitle = ""
-        poet = "Eb Alto Saxophone"
+        poet = "Eb Lead Sheet"
         instrumentName = \poet
     }
     \score {
