@@ -95,7 +95,7 @@ chordsForm = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
 
-    s1 s s s
+    g1:6 s b:m7.5- e:7.9-
     d1:m7 g:7 c1:6 g:aug7
 
     c1:6 s b:1.4.5.7 b:7
