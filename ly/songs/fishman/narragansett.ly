@@ -20,8 +20,6 @@ mv narragansett*.pdf pdf/songs/fishman
 
 for file in pdf/songs/fishman/narragansett*pdf ; do open -a Preview $file ; done
 
-echo git add pdf/songs/fishman/narragansett* ly/songs/fishman/narragansett.ly
-
 %}
 
 atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scripts.coda" }
@@ -236,4 +234,50 @@ melodyForTranposing = \relative c' {
     }
 
 }
+
+\book {
+  \bookOutputSuffix "new-real-book-key-for-C"
+    \header {
+        poet = "    Concert"
+        subtitle = "(Transposed to Key from New Real Book version of Autumn Leaves)"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose a g  { \chordsSong }
+            \new Staff \transpose a g { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melodyForTranposing
+                    \noPageBreak
+                >>
+            }
+        >>
+    }
+
+}
+\book {
+  \bookOutputSuffix "new-real-book-key-for-Eb"
+    \header {
+        poet = "    Eb Alto Sax"
+        subtitle = "(Transposed to Key from New Real Book version of Autumn Leaves)"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose a g  { \chordsSong }
+            \new Staff \transpose a g { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melodyForTranposing
+                    \noPageBreak
+                >>
+            }
+        >>
+    }
+
+}
+
 %}
