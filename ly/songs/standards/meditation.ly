@@ -149,7 +149,7 @@ melody = \relative c'' {
     8 bf a2. ~ | 4 r4 r4 fs8 g ~ | 
     
     g8 a4 16 16 a8 4 16 16 ~ | 8 4. ~ 4 r | 
-    r4 g8 b8 ~ 4 g8 a ~ | 4 bf8 a ~ 2 | 
+    r4 g8 b8 ~ 4 g8 a ~ | 4 b8 a ~ 2 | 
 
     r2 f2 ~ | 2 ~ 8 e4 g8 ~ | 
     g8 gf f2. ~ | 4 r4 r r8 g8 ~ | 
