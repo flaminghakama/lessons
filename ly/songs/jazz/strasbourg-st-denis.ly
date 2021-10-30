@@ -91,12 +91,12 @@ melodyA = \relative c''' {
     af16 f ef f  c bf af bf  ef,8 bf' af4 ~ | 4 r16 f af8 c4 bf8. af16 |
     << 
         \relative c'' { 
-            g2           8 8 gs a ~ | 8. [ \grace { gs16 g } fs16 ] ~ fs8 f ~ 4 r4 
+            g2           8 8 gs a ~ | 8. [ \grace { gs16 g } fs16 ] ~ fs8 f ~ 4
         } \\
         \relative c'' {
-            g8. f16 ef4  8 d df c ~ | 2. s4 
+            g8. f16 ef4  8 d df c ~ | 2.
         }
-    >> r8
+    >> r4 | r8
 }
 
 melodyBTop = \relative c'' { 
@@ -116,8 +116,8 @@ chordsEnding = \chordmode {
     af1:maj7 | f:13.9- |
 }
 chordsForm = \chordmode { 
-    bf2:m c:m | df f:7 | 
-    bf2:m c:m | df f:7 | 
+    bf2:m c:m | df f:m7 | 
+    bf2:m c:m | df f:m7 | 
     bf2:m c:m | df ef:7 | 
     \chordsEnding 
 }
