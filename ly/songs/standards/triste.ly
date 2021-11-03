@@ -1,4 +1,4 @@
-\version "2.19.83"
+ \version "2.19.83"
 
 titleLeft = "Tri"
 titleRight = "ste"

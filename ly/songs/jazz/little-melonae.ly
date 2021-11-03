@@ -116,7 +116,7 @@ chordsHead = \chordmode {
 }
 
 melodyFormInEb = \relative c'' { 
-    d8 ( f c bf fs d' ) r fs, ( | c' fs, cs'4 ) r d | r4 r8 e ~ 4 r |  
+    d8 ( f c bf fs d' ) r fs, ( | c' fs, cs'4 ) r d | r4 r8 ef ~ 4 r |  
     \tag #'Eb { \tupletDown } 
     \tag #'(C Bb) { \tupletUp } 
     \override TupletBracket.bracket-visibility = ##f
@@ -137,7 +137,7 @@ melodyFormInEb = \relative c'' {
     f8 8 4-. r8 f ( ~ \tuplet 3/2 { f4 c'8 ) } |
     f,8 8 4-. r4 r8 a, || 
 
-    d8 ( f c bf fs d' ) r fs, ( | c' fs, cs'4 ) r d | r4 r8 e ~ 4 r |  
+    d8 ( f c bf fs d' ) r fs, ( | c' fs, cs'4 ) r d | r4 r8 ef ~ 4 r |  
     \tag #'Eb { \tupletDown } 
     \tag #'(C Bb) { \tupletUp } 
     \tuplet 3/2 4 { f8 ( d bf g fs ) r d' ( bf g } fs4 ) |

@@ -112,6 +112,10 @@ chordsSong = \chordmode {
 }
 
 head = \relative c'' { 
+
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.25)
+
     r4 r8 gs fs4. b8 | g16 d cs' a ~ 2. | 
     r4 r16 b gs b \tuplet 3/2 { cs4 4 4 } | e,1 |
 
@@ -119,7 +123,7 @@ head = \relative c'' {
     c8 8 8 8 2 ~ | 1 | 
 
     f,8. ef'16 ~ 8 d g,2 | R1 | 
-    d'4. b | b4 a gs | 
+    d'4. cs | b4 a gs | 
     r4 b,2 | cs16 e r8 r2_\markup { \bold "G.P." } |
     R1 
 }
@@ -154,7 +158,12 @@ topline = \relative c'' {
 midline = \relative c' {
 }
 
-bassline = \relative c' {
+bassline = \relative c {
+    fs2 b | e,4 g a cs | d a ds fs | af2 gf4 e |
+    cs2 fs | g f4 af | g bf c e | f a, c d | 
+    ef ef e e | f af bf f ||
+    d4. b | e4 d b | a e' cs | bf16 16 r2 | 
+    bf2 f 
 }
 
 
