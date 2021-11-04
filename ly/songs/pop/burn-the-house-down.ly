@@ -56,6 +56,7 @@ for file in pdf/songs/pop/burn-the-house-down*pdf ; do op $file ; done
 
 structure = \relative c' { 
 
+    \key c \major
     \time 4/4
     \partial 2 
     s2
@@ -76,8 +77,10 @@ structure = \relative c' {
     s1*4
     s1*4
 
+    \pageBreak
+
     \startSection "Horns 3"
-    s1*4 \pageBreak
+    s1*4 
 
     \startSection "Breakdown 1"
     s1*2
@@ -335,6 +338,38 @@ lyricsHeadThree = \lyricmode {
     }
     \score {
         <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        subtitle = ""
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
