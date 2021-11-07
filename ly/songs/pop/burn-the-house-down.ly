@@ -98,6 +98,8 @@ structure = \relative c' {
     \startSection "Horns 5"
     s1*4
 
+    \pageBreak
+
     \startSection "Breakdown 2"
     s1*4
 
@@ -105,7 +107,7 @@ structure = \relative c' {
     s1*4
     s1*4
 
-    \startSection "Verse 4"
+    \startSection "Chorus 3"
     s1*4
     s1*4
 
@@ -145,7 +147,7 @@ bridge = \relative c' {
     a'8 g g a  e d8 8 8 | c8 8 8 8  4  c'8 8 |
 
     a'8 g a4  e d8 c | d8 4 e8 ~ 4 d8 c | 
-    a'8 g a d ~ 16 8. 8 8 | d8. c16 ~ 8 8 ~ 4 |   
+    a'8 g a d, ~ 16 8. 8 8 | d8. c16 ~ 8 8 ~ 4 r4 |   
 }
 hornLineLick = \relative c' { 
     e8. g16  a g a c  e [ e r d ]  r c a8 |
@@ -190,7 +192,23 @@ melody = \relative c'' {
         \stemNeutral
     } 
 
-    s1*3 | s2 s4 
+    \chorus
+    \chorus
+    s1*3
+    \chorusHook
+
+
+    s1*3 s2 s4 
+    \bridge
+
+    \chorus
+    \chorus
+
+    s1*3
+    \chorusHook
+
+    s1*3
+    \chorusHook
 
 }
 
@@ -215,8 +233,12 @@ horns = \relative c'' {
     \hornLineChorus
 
     \hornBreakdown
-    s1*2
 
+    s1*8
+    s1*8
+
+    \hornLineChorus
+    \hornLineChorus
 }
 melodySong = \relative c' << 
     \new Voice = "lead" \melody \\
@@ -269,7 +291,7 @@ lyricsHeadOne = \lyricmode {
     
     Used to let it go
     Woah, oh no
-    (Woah, oh no)
+
     Way up way up we go
     Been up and down that road
     Way up way up, oh no
@@ -277,32 +299,32 @@ lyricsHeadOne = \lyricmode {
     We gon' burn the whole house down
 
     Watch me stand in the line
-    You're only ser -- ving lies
+    You're on -- ly ser -- ving lies
     You've got some -- thing to hide
     We gon' burn the whole house down
     We gon' burn the whole house down
 
     Should I hang my head low?
     Should I bite my tongue?
-    Or should I march with every stran -- ger
+    Or should I march with eve -- ry stran -- ger
     From Twit -- ter to get shit done?
 
     Used to hang my head low
     Now I hear it loud
-    Every stranger from Twit -- ter is gon -- na burn this down
+    Eve -- ry stranger from Twit -- ter is gon -- na burn this down
     
     Way up way up we go
     Been up and down that road
     Way up way up, oh no
     We gon' burn the whole house down
     
-    Watch me stand in the line (whoa oh)
-    You're only ser -- ving lies (yeah)
+    Watch me stand in the line 
+    You're on -- ly ser -- ving lies
     You've got some -- thing to hide
     We gon' burn the whole house down
-    Woah oh, yeah
+
     We gon' burn the whole house down
-    We burn it down, we burn it down
+
     We gon' burn the whole house down
 }
 lyricsHeadTwo = \lyricmode {
