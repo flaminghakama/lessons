@@ -56,6 +56,8 @@ for file in pdf/songs/pop/burn-the-house-down*pdf ; do op $file ; done
 
 structure = \relative c' { 
 
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+
     \key c \major
     \time 4/4
     \partial 2 
@@ -133,6 +135,9 @@ verseMelody = \relative c'' {
 verseHook = \relative c'' { 
     e16 ] ~ 16 d c a | \stemUp c4 \stemNeutral 
 }
+verseHookForHorns = \relative c'' { 
+    e16 ] ~ 16 d c a | 
+}
 chorusHook = \relative c''  { 
     d8 8 8 c  e8. c16 ~ 8 a | 
 }
@@ -142,12 +147,21 @@ chorus = \relative c''' {
     r8 g e [ g ] e g d4 | 
     \chorusHook
 }
-bridge = \relative c' { 
+bridgeFirst = \relative c' { 
     d8 c || a' g a ( g ) e4  d8 c | d8 4 e8 ~ 8 c d c | 
     a'8 g g a  e d8 8 8 | c8 8 8 8  4  c'8 8 |
-
-    a'8 g a4  e d8 c | d8 4 e8 ~ 4 d8 c | 
+}
+bridgeSecond = \relative c''' { 
+    a8 g a4  e d8 c | d8 4 e8 ~ 4 d8 c | 
     a'8 g a d, ~ 16 8. 8 8 | d8. c16 ~ 8 8 ~ 4 r4 |   
+}
+bridge = { 
+    \bridgeFirst
+    \bridgeSecond
+}
+bridgeHorns = \transpose c, c { 
+    \bridgeFirst
+    \transpose c c, \bridgeSecond
 }
 hornLineLick = \relative c' { 
     e8. g16  a g a c  e [ e r d ]  r c a8 |
@@ -155,6 +169,10 @@ hornLineLick = \relative c' {
 hornLineVerse = \relative c' { 
     \hornLineLick
     e8. g16  a g a c  e [ e r c ]  r4 |
+}
+hornLineVerseTwo = \relative c' { 
+    \hornLineLick
+    e8. g16  a g a c  e e r s s4 |
 }
 hornLineChorus = \relative c' { 
     \hornLineVerse
@@ -166,6 +184,10 @@ hornBreakdown = \relative c' {
 }
 
 melody = \relative c'' { 
+
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.25)
+
     r8. \verseMelody
     r16 \verseHook s4 s2 | s1*2 | s2
 
@@ -212,10 +234,56 @@ melody = \relative c'' {
 
 }
 
+
+melodyForHorns = \relative c'' { 
+
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.25)
+
+    r8. \verseMelody
+    r16 \verseHookForHorns s1*3 | s2
+
+    r8. \verseMelody
+    r16 \verseHookForHorns  
+    s1*4
+    \chorus
+    \chorus
+    s1*3
+    \chorusHook
+
+    \relative c''  {
+        R1 | r4 r8 d ~ 8. 
+    } \verseMelody
+    r16 \verseHookForHorns 
+    s1*4
+
+    \chorus
+    \chorus
+    s1*3
+    \chorusHook
+
+    s1*3 s2 s4 
+    \bridgeHorns
+
+    \chorus
+    \chorus
+
+    s1*3
+    \chorusHook
+
+    s1*3
+    \chorusHook
+
+}
+
 horns = \relative c'' { 
+
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.25)
+
     s2 | s1*4 
     \hornLineVerse
-    \hornLineVerse
+    \hornLineVerseTwo
 
     s1*4 
     \hornLineVerse
@@ -243,6 +311,10 @@ horns = \relative c'' {
 melodySong = \relative c' << 
     \new Voice = "lead" \melody \\
     { \horns }
+>>
+melodySongForEb = \relative c' << 
+    \new Voice = "lead" \melodyForHorns \\
+    { \transpose c, c \horns }
 >>
 
 lyricsHeadOne = \lyricmode {
@@ -402,12 +474,12 @@ lyricsHeadThree = \lyricmode {
                 <<
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
-                    \melodySong
+                    \melodySongForEb
                 >>
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
-            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadOne } 
+            % }
             % \new Lyrics \with { alignAboveContext = "staff" } {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
             % }
