@@ -4,7 +4,7 @@ titleLeft = "Burn The"
 titleRight = "House Down"
 title = "Burn The House Down"
 composerName = "AJR"
-%lyricistName = "V. de Moraes"
+%lyricistName = ""
 
 \include "../../../../scores/flaming-libs/flaming-paper.ily"
 \include "../../../../scores/flaming-libs/flaming-markup.ily"

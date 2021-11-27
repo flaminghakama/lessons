@@ -95,7 +95,7 @@ head = \relative c' {
     r2 r8 f, | af4 ~ 4. gf8 | f2  g8 bf | c8 4. r8 bf | 
 
     cf8 [ df ] ef bf4. ~ | 2 r8 bf | a4 c8 e d4 ~ | 2. | 
-    df4 r c8 cf | bf8 4. r4 | a4 c8 e d4 ~ | 2. || 
+    df4 r c8 df | bf8 4. r4 | a4 c8 e d4 ~ | 2. || 
 }
 
 melody = \relative c' {
