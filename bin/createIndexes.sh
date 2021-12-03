@@ -6,6 +6,12 @@ for dir in `find . -type d | grep pdf` ; do
 	echo "<head><title>Directory listing of $dir</title></head>" >> $INDEX
 
     echo "<style>" >> $INDEX
+	echo "A,A:visited {" >> $INDEX
+	echo "    color:\#916545;" >> $INDEX
+	echo "}" >> $INDEX
+	echo "H1,H2,H3,H4,H5,H6 {" >> $INDEX
+	echo "    color:\#492e26;" >> $INDEX
+	echo "}" >> $INDEX
     echo "UL {" >> $INDEX
     echo "    font-size:2em;" >> $INDEX
     echo "    list-style-type:none;" >> $INDEX
