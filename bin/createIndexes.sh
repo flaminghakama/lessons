@@ -7,10 +7,10 @@ for dir in `find . -type d | grep pdf` ; do
 
     echo "<style>" >> $INDEX
 	echo "A,A:visited {" >> $INDEX
-	echo "    color:\#916545;" >> $INDEX
+	echo "    color:#916545;" >> $INDEX
 	echo "}" >> $INDEX
 	echo "H1,H2,H3,H4,H5,H6 {" >> $INDEX
-	echo "    color:\#492e26;" >> $INDEX
+	echo "    color:#492e26;" >> $INDEX
 	echo "}" >> $INDEX
     echo "UL {" >> $INDEX
     echo "    font-size:2em;" >> $INDEX
