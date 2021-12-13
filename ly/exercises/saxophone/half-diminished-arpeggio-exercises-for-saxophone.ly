@@ -40,7 +40,7 @@ mv half-diminished-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
     markup-system-spacing.padding = #2
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #4
+    top-system-spacing.minimum-distance = #12
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18
