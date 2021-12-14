@@ -127,15 +127,21 @@ halfDiminishedArpeggioF = \relative c' {
         cf8 ) ef ( f ) af ( 
         ef8 ) f ( af ) cf ( |
         f,8 ) af ( cf ) ef (        
-        af,8 ) cf ( ef ) af, ( |
-        f1 ) |
+        af,8 ) cf ( ef ) f ( |
+        cf8 ) ef ( f ) af, ( 
+        f'2 ) |
     }
     \relative c''' { 
-        ef8 cf ( af ) f (  cf' ) af ( f ) ef ( |
-        af8 ) f ( ef ) cf (  f ) ef ( cf ) af ( |
-        ef'8 ) cf ( af ) f (  cf' ) af ( f ) ef ( |
-        af8 ) f ( ef ) cf (  f ) ef ( cf ) ef ( |
-        f1 ) 
+        f8 ef ( cf ) af (
+        ef'8 ) cf ( af ) f ( | 
+        cf'8 ) af ( f ) ef ( 
+        af8 ) f ( ef ) cf ( | 
+        f8 ) ef ( cf ) af ( 
+        ef'8 ) cf ( af ) f ( | 
+        cf'8 ) af ( f ) ef ( 
+        af8 ) f ( ef ) cf ( | 
+        f8 ) ef ( cf ) ef ( 
+        f2 ) | 
     }
     \bar "||"
 }
