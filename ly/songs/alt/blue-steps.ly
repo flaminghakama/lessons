@@ -156,10 +156,10 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s2
-    \formChords d2:maj7 f:7 
-    \formChords
-    \formChords d2:maj7 f:7
-    \formChords
+    \formChordsForC d2:maj7 f:7 
+    \formChordsForC
+    \formChordsForC d2:maj7 f:7
+    \formChordsForC
 }
 
 chordsSongForBb = \chordmode { 
