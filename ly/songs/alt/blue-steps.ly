@@ -59,7 +59,7 @@ structure = \relative c' {
     \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
 
     \key bf \major
-    \tempo 4=164
+    \tempo 4=168
     \time 4/4
     \partial 4*2
     s2 
@@ -77,9 +77,15 @@ structure = \relative c' {
 
     \startSectionNoBarline "Solos"
     \bar "[|:"
-    s1*4 \break
-    s1*4 \break
-    s1*4   
+    \repeat volta 2 { 
+        s1*4 \break
+        s1*4 \break
+        s1*3 
+    }
+    \alternative { 
+        { s1 \bar ":|]" }
+        { s1 }
+    }
 
     \pageBreak
 
@@ -114,16 +120,28 @@ structureCoda = \relative c' {
     s1*4 \bar "|."
 }
 
+
+chordsSecondEnding = \chordmode { 
+    d2:maj7 f:7 ||
+}
+
 formChordsForC = \chordmode {
     bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
     ef1:7 | df:7 | af2:m7.7+ b:m7 | e:7 g:aug7 | 
     c1:m7 | f:aug7/cs | fs2:7 a:7 | d:maj7 f:7 ||
 }
 
-formChords = \chordmode {
+formChordsCommon = \chordmode {
     bf2:7 bf:7/af | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
     ef1:7 | df:7 | af2:m7.7+ b:m7 | e:7 g:aug7 | 
-    c1:m7 | f:aug7/cs | fs2:7 a:7 | d:maj7 f:7 ||
+    c1:m7 | f:aug7/cs | 
+}
+formChordsFirstEnding = \chordmode {
+    fs2:7 a:7 | d:maj7 f:7 ||
+}
+formChords = \chordmode {
+    \formChordsCommon
+    \formChordsFirstEnding
 }
 
 formChordsForBb = \chordmode {
@@ -156,9 +174,9 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s2
-    \formChordsForC d2:maj7 f:7 
-    \formChordsForC
-    \formChordsForC d2:maj7 f:7
+    \formChordsForC \chordsSecondEnding  
+    \formChordsForC \chordsSecondEnding
+    \formChordsForC \chordsSecondEnding 
     \formChordsForC
 }
 
@@ -167,9 +185,9 @@ chordsSongForBb = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s2
-    \formChordsForBb d2:maj7 f:7
-    \formChordsForBb
-    \formChordsForBb d2:maj7 f:7
+    \formChordsForBb \chordsSecondEnding 
+    \formChordsForBb \chordsSecondEnding
+    \formChordsForBb \chordsSecondEnding 
     \formChordsForBb
 }
 
@@ -178,26 +196,29 @@ chordsSongForEb = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s2
-    \formChordsForEb d2:maj7 f:7
-    \formChordsForEb 
-    \formChordsForEb d2:maj7 f:7
+    \formChordsForEb \chordsSecondEnding 
+    \formChordsForEb \chordsSecondEnding 
+    \formChordsForEb \chordsSecondEnding 
     \formChordsForEb
 }
 
-head = \relative c' { 
-    r8 f af [ bf ] ||
-    r8 bf df [ ef ] r2 | r4 ff-> ef8 df r af | g a g4-. a-- g8 f | r2 
+headCommon = \relative c' { 
+    r8 f\xmf af [ bf ] ||
+    r8 bf df [ ef ] r2 | r4 ff->\xf ef8 df r af\xmf | g a g4-. a-- g8 f | r2 
 
     r8 f af [ bf ] |
-    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f-> ff } ef4 r8 af, | gf8 af gf4-. gs-- fs8 e | r2 
+    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f->\xf ff } ef4 r8 af,\xmf | gf8 af gf4-. gs-- fs8 e | r2 
 
     r8 g bf [ c ] |
-    r8 c ef [ f ] r2 | r8 cs-> r a ~ 4. f8 | e8 fs e4-. fs-- e8 d | 
+    r8 c ef [ f ] r2 | r8 cs->\xf r a ~ 4. f8\xmf | e8 fs e4-. fs-- e8 d | 
 }
 headFirstEnding = \relative c' { 
-    r2 r8 f af [ bf ] ||  
+    r2 r8 f\xmf af [ bf ] ||  
 }
-headForEb = \relative c' { 
+headSecondEnding = \relative c' { 
+    R1 ||  
+}
+headCommonForEb = \relative c' { 
     r8 f af [ bf ] ||
     r8 bf df [ ef ] r2 | r4 ff-> ef8 df r af | g a g4-. a-- g8 f | r2 
 
@@ -208,84 +229,141 @@ headForEb = \relative c' {
     r8 c ef [ f ] r2 | r8 cs-> r a ~ 4. f8 | ff8 gf ff4-. fs-- e8 d? | 
 }
 
+head = {
+    \headCommonForEb
+    \headFirstEnding
+    \headSecondEnding
+}
+headForEb = {
+    \headCommon
+    \headFirstEnding
+    \headSecondEnding
+}
 
 twosFirst = \relative c' { 
-    r4 r8 d ~ ||
+    r8 d\xmp ~ ||
     d8 ef f g ~  8 af bf c ~ | 8 df ef ff ~ 8 gf af a | R1 | r2 
 }
 twosSecond = \relative c' { 
-    r4 r8 g ~ | 
+    r4 r8 g\xmf ~ | 
     g8 bf c df ~ 8 ef f gf ~ | 8 af bf cf ~ 8 c df ef | R1 | r2 
 }
 twosSecondForEb = \relative c' { 
-    r4 r8 g ~ | 
+    r4 r8 g\xmf ~ | 
     g8 bf c df ~ 8 ef f gf ~ | 8 af bf cf ~ 8 c df ef | R1 | r2 
 }
-twosThird = \relative c' { 
-    r4 r8 f ~ | 
-    f8 g a bf ~ 8 c d ef ~ | 8 f g a ~ 8 b cs ds | R1 | r2 r4 r8 d,, \laissezVibrer |
-    r2
+twosThirdCommon = \relative c' { 
+    r4 r8 f\xf ~ | 
+    f8 g a bf ~ 8 c d ef ~ | 8 f g a ~ 8 b cs ds | R1 | 
 }
-twosThirdForEb = \relative c' { 
-    r4 r8 f ~ | 
-    f8 g a bf ~ 8 c d ef ~ | 8 f g a ~ 8 cf df ef | R1 | r2 r4 r8 d,, \laissezVibrer |
-    r2
+twosFirstEnding = \relative c' { 
+    r2 r4 r8 d\xmp \laissezVibrer |
+}
+twosSecondEnding = \relative c' { 
+    r2 
+}
+twosThirdCommonForEb = \relative c' { 
+    r4 r8 f\xf ~ | 
+    f8 g a bf ~ 8 c d ef ~ | 8 f g a ~ 8 cf df ef | R1 |
 }
 
-twos = { 
+twosCommon = { 
     \twosFirst
     \twosSecond
-    \twosThird
+    \twosThirdCommon
 }
-twosForBb = { 
+twosCommonForBb = { 
     \twosFirst
-    \twosSecondForEb
-    \twosThirdForEb
+    \twosSecond
+    \twosThirdCommonForEb
 }
-twosForEb = { 
+twosCommonForEb = { 
     \transpose c c, \twosFirst
     \twosSecondForEb
-    \transpose c c, \twosThirdForEb
+    \transpose c c, \twosThirdCommonForEb
+}
+twos = { 
+    \twosCommon
+    \twosFirstEnding
+    \twosSecondEnding
+}
+twosForBb = { 
+    \twosCommonForBb
+    \twosFirstEnding
+    \twosSecondEnding
+}
+twosForEb = { 
+    \twosCommonForEb
+    \twosFirstEnding
+    \twosSecondEnding
 }
 
 
-line = \relative c'' { 
-    r2 bf | df ef | e1 | ef2 df4 bf ~ | 
+lineCommon = \relative c'' { 
+    r2 bf\xmp | df ef | e1 | ef2 df4 bf ~ | 
     bf2 ef, | gf af | bf?1 | gs2 g4 ef4 ~ |
-    ef2 c | ef f | fs1 | d2
+    ef2 c | ef f | fs1\xmf | 
 }
-lineForEb = \relative c'' { 
+lineCommonHarmony = \relative c'' { 
+    r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
+    2 g | ef f | ef d | 2 b4 c4 ~ |
+    2 bf | a b | as2\xmf a | 
+}
+lineCommonForEb = \relative c'' { 
     r2 bf | df ef | e1 | ef2 df4 bf ~ | 
     bf2 ef, | gf af | bf?1 | af2 g4 ef4 ~ |
-    ef2 c | ef f | gf1 | d2
+    ef2 c | ef f | gf1 |
+}
+lineFirstEnding = \relative c' { 
+    d1\xmf ||
+}
+lineSecondEnding = \relative c' { 
+    d2.\xmf
+}
+lineSecondEndingHarmony = \relative c { 
+    fs2\xmf f4
+}
+
+line = \relative c'' { 
+    \lineCommon
+    \lineFirstEnding
+    \lineSecondEnding
+}
+lineForEb = \relative c'' { 
+    \lineCommonForEb
+    \lineFirstEnding
+    \lineSecondEnding
 }
 
 outCommon = \relative c'' { 
-    r4 r8 f || 
-    r8 ef r bf df4 ef | r2 ff8 ef df bf | a?4 g8 fs8 r2 | r4 r8 
+    r4 r8 f->\xf || 
+    r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r4 r8 
 
     f'8 r8 ef r bf | 
-    df4 ef r2 | r4 r8 ff8 ef df cf bf | af4 g8 fs8 r2 | r4 r8 
+    df4-> ef-. r2 | r4 r8 ff8 ef df cf bf | af4-- g8 fs8 r2 | r4 r8 
 
     f' r ef r b | 
-    d4 c r2 | r2 ff8 ef df bf |
+    d4-> c-. r2 | r2 ff8-> ef df bf |
 }
 outCommonForEb = \relative c'' { 
-    r4 r8 f || 
-    r8 ef r bf df4 ef | r2 ff8 ef df bf | a?4 g8 fs8 r2 | r4 r8 
+    r4 r8 f-> || 
+    r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r4 r8 
 
     f'8 r8 ef r bf | 
-    df4 ef r2 | r4 r8 ff8 ef df cf bf | af4 g8 gf8 r2 | r4 r8 
+    df4-> ef-. r2 | r4 r8 ff8 ef df cf bf | af4-- g8 gf8 r2 | r4 r8 
 
     f' r ef r b | 
-    d4 c r2 | r2 ff8 ef df bf |
+    d4-> c-. r2 | r2 ff8-> ef df bf |
 }
 
 outFirstEnding = \relative c'' {
-    r2 r4 a8 cs | r4 r8 d r4 r8 f
+    r2 r4 a8 cs-> | r4 r8 d-> r4 r8 f->
+}
+outFirstEndingForMidi = \relative c'' {
+    r2 r4 a8 cs-> | r4 r8 d-> 
 }
 outCoda = \relative c' { 
-    R1 | r2 r4 r8 e ~ | 8 fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
+    R1 | r2 r4 r8 e\xff ~ | 8 fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
 }
 outCodaForEb = \relative c' { 
     R1 | r2 r4 r8 ff ~ | 8 gf af a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
@@ -305,19 +383,19 @@ outForEb = \relative c'' {
 }
 
 melody = \relative c' {
-    \head \headFirstEnding R1
+    \head
     \line
     \twos
     \out
 }
 melodyForBb = \relative c' {
-    \headForEb \headFirstEnding R1
+    \headForEb
     \lineForEb
     \twosForBb
     \outForBb
 }
 melodyForEb = \relative c' {
-    \headForEb \headFirstEnding R1
+    \headForEb
     \lineForEb
     \twosForEb
     \outForEb
@@ -338,10 +416,21 @@ topline = \relative c'' {
 midline = \relative c' {
 }
 
-bassline = \relative c {
+basslineCommon = \relative c {
     bf4 4 af4 4 | ef bf gf' af | a cs, d fs | f af bf d | 
     ef4 df bf g | df'4 cf bf a | af ef' b fs | e fs g d | 
-    c4 g' ef c | cs f a g | fs cs' a e' | d b a f |
+    c4 g' ef c | cs f a g |
+}
+basslineFirstEnding = \relative c, {
+    fs cs' a e' | d b a f |
+}
+bassline = \relative c {
+    \basslineCommon
+    \basslineFirstEnding
+}
+basslineCoda = \relative c {
+   fs cs' a e' | d b a f |
+   fs gs a cs | d fs f bf |
 }
 
 
@@ -513,17 +602,80 @@ bassline = \relative c {
     \score {
         <<
             \new ChordNames \transpose c c,  { 
-                s2 
+                s1*8
+                % "Head"
+                <>\mp
                 \formChords
                 \formChords
+
+                % "Solos"
+                <>\p
+                \formChords
+                \formChords
+
+                % "Twos"
+                <>\mf
+                \formChords
+                \formChords
+
+                % "Out"
+                <>\mf
+                \formChords
+                <>\f
+                \formChordsCommon
+
+                <>\ff
+                \codaChords
             }
             \new Staff \transpose c c { 
-                \head r2
-                \out
+                \tempo 4=168
+                \time 4/4
+                s1*7
+                s2
+                \headCommon
+                r2
+                \headCommon 
+                \headSecondEnding
+                \lineCommon
+                \lineFirstEnding
+                << 
+                    { 
+                        \lineCommon 
+                        \lineSecondEnding
+                    } \\ {
+                        \lineCommonHarmony 
+                        \lineSecondEndingHarmony
+                    }
+                >>
+                \twosCommon
+                cs8 8 8 8 8 8 
+                \twosCommon
+                r2
+                \outCommon
+                \outFirstEndingForMidi
+                \outCommon
+                \outCoda
             }
             \new Staff \transpose c c { 
-                s2 \bassline
+                s1*8
+                <>\mf
                 \bassline
+                \bassline
+
+                <>\mp                
+                \bassline
+                \bassline
+                
+                <>\mf
+                \bassline
+                \bassline
+                
+                <>\f
+                \bassline
+                \basslineCommon
+
+                <>\ff
+                \basslineCoda
             }
         >>
         \midi { }
