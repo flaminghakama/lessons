@@ -27,10 +27,10 @@ mv blue-steps*.midi midi
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #6
+  markup-system-spacing.padding = #2
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #18
+  top-system-spacing.minimum-distance = #22
 
   % Spacing in between systems
   system-system-spacing.basic-distance = #18
@@ -63,6 +63,18 @@ structure = \relative c' {
     \time 4/4
     \partial 4*2
     s2 
+    \startSectionNoBarline "Intro"
+    \bar "[|:"
+    \repeat volta 2 { 
+        s1*4 \break
+        s1*4 \break
+        s1*3 
+    } 
+    \alternative { 
+        { s1 \bar ":|]" }
+        { s1 \break }
+    }
+
     \startSectionNoBarline "Head"
     \bar "[|:"
     \repeat volta 2 { 
@@ -127,7 +139,7 @@ chordsSecondEnding = \chordmode {
 
 formChordsForC = \chordmode {
     bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m7.7+ b:m7 | e:7 g:aug7 | 
+    ef1:7 | df:7 | gs2:m7.7+ b:m7 | e:7 g:aug7 | 
     c1:m7 | f:aug7/cs | fs2:7 a:7 | d:maj7 f:7 ||
 }
 
@@ -175,6 +187,7 @@ chordsSong = \chordmode {
     \set noChordSymbol = ##f
     s2
     \formChordsForC \chordsSecondEnding  
+    \formChordsForC \chordsSecondEnding  
     \formChordsForC \chordsSecondEnding
     \formChordsForC \chordsSecondEnding 
     \formChordsForC
@@ -185,6 +198,7 @@ chordsSongForBb = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s2
+    \formChordsForBb \chordsSecondEnding 
     \formChordsForBb \chordsSecondEnding 
     \formChordsForBb \chordsSecondEnding
     \formChordsForBb \chordsSecondEnding 
@@ -199,7 +213,52 @@ chordsSongForEb = \chordmode {
     \formChordsForEb \chordsSecondEnding 
     \formChordsForEb \chordsSecondEnding 
     \formChordsForEb \chordsSecondEnding 
+    \formChordsForEb \chordsSecondEnding 
     \formChordsForEb
+}
+
+introCommon = \relative c'' { 
+    r8 bf\xmf df [ ef ] ||
+    r8 bf df [ ef ]  r bf df [ ef ] | r bf df [ ff ]  ef df bf af | 
+    g a g4-. a-- g8 f | r2 
+
+    r8 bf\xmf df [ ef ] |
+    r8 bf df [ ef ]  r bf df [ ef ] | r bf df [ ff ]  ef df bf af | 
+    fs gs fs4-. gs-- fs8 e | r2 
+
+    r8 g\xmf bf [ c ] |
+    r8 g bf [ c ]  r g bf [ c ] | r g bf [ df ]  c bf g f | 
+    e fs e4-. fs-- e8 d |  
+}
+introFirstEnding = \relative c'' { 
+    r2 r8 bf\xmf df [ ef ] ||  
+}
+introSecondEnding = \relative c' { 
+    r2  
+}
+introCommonForEb = \relative c'' { 
+    r8 bf\xmf df [ ef ] ||
+    r8 bf df [ ef ]  r bf df [ ef ] | r bf df [ ff ]  ef df bf af | 
+    g a g4-. a-- g8 f | r2 
+
+    r8 bf\xmf df [ ef ] |
+    r8 bf df [ ef ]  r bf df [ ef ] | r bf df [ ff ]  ef df bf af | 
+    gf af gf4-. af-- gf8 ff | r2 
+
+    r8 g\xmf bf [ c ] |
+    r8 g bf [ c ]  r g bf [ c ] | r g bf [ df ]  c bf g f | 
+    e fs e4-. fs-- e8 d |  
+}
+
+intro = {
+    \introCommon
+    \introFirstEnding
+    \introSecondEnding
+}
+introForEb = {
+    \introCommonForEb
+    \introFirstEnding
+    \introSecondEnding
 }
 
 headCommon = \relative c' { 
@@ -207,7 +266,7 @@ headCommon = \relative c' {
     r8 bf df [ ef ] r2 | r4 ff->\xf ef8 df r af\xmf | g a g4-. a-- g8 f | r2 
 
     r8 f af [ bf ] |
-    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f->\xf ff } ef4 r8 af,\xmf | gf8 af gf4-. gs-- fs8 e | r2 
+    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f->\xf ff } ef4-. r8 gs,\xmf | fs8 gs fs4-. gs-- fs8 e | r2 
 
     r8 g bf [ c ] |
     r8 c ef [ f ] r2 | r8 cs->\xf r a ~ 4. f8\xmf | e8 fs e4-. fs-- e8 d | 
@@ -223,19 +282,19 @@ headCommonForEb = \relative c' {
     r8 bf df [ ef ] r2 | r4 ff-> ef8 df r af | g a g4-. a-- g8 f | r2 
 
     r8 f af [ bf ] |
-    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f-> ff } ef4 r8 af, | gf8 af gf4-. af-- gf8 ff | r2 
+    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f-> ff } ef4-. r8 af, | gf8 af gf4-. af-- gf8 ff | r2 
 
     r8 g bf [ c ] |
-    r8 c ef [ f ] r2 | r8 cs-> r a ~ 4. f8 | ff8 gf ff4-. fs-- e8 d? | 
+    r8 c ef [ f ] r2 | r8 cs-> r a ~ 4. f8 | e8 fs e4-. fs-- e8 d? | 
 }
 
 head = {
-    \headCommonForEb
+    \headCommon
     \headFirstEnding
     \headSecondEnding
 }
 headForEb = {
-    \headCommon
+    \headCommonForEb
     \headFirstEnding
     \headSecondEnding
 }
@@ -246,11 +305,11 @@ twosFirst = \relative c' {
 }
 twosSecond = \relative c' { 
     r4 r8 g\xmf ~ | 
-    g8 bf c df ~ 8 ef f gf ~ | 8 af bf cf ~ 8 c df ef | R1 | r2 
+    g8 bf c df ~ 8 ef f gf ~ | 8 af bf cf ~ 8 df ef f | R1 | r2 
 }
 twosSecondForEb = \relative c' { 
     r4 r8 g\xmf ~ | 
-    g8 bf c df ~ 8 ef f gf ~ | 8 af bf cf ~ 8 c df ef | R1 | r2 
+    g8 bf c df ~ 8 ef f gf ~ | 8 af bf cf ~ 8 df ef f | R1 | r2 
 }
 twosThirdCommon = \relative c' { 
     r4 r8 f\xf ~ | 
@@ -294,8 +353,8 @@ twosForBb = {
 }
 twosForEb = { 
     \twosCommonForEb
-    \twosFirstEnding
-    \twosSecondEnding
+    \transpose c, c \twosFirstEnding
+    \transpose c c,, \twosSecondEnding
 }
 
 
@@ -306,7 +365,7 @@ lineCommon = \relative c'' {
 }
 lineCommonHarmony = \relative c'' { 
     r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
-    2 g | ef f | ef d | 2 b4 c4 ~ |
+    2 g, | ef' f | ef d | 2 b4 c4 ~ |
     2 bf | a b | as2\xmf a | 
 }
 lineCommonForEb = \relative c'' { 
@@ -314,8 +373,16 @@ lineCommonForEb = \relative c'' {
     bf2 ef, | gf af | bf?1 | af2 g4 ef4 ~ |
     ef2 c | ef f | gf1 |
 }
+lineCommonHarmonyForEb = \relative c'' { 
+    r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
+    2 g, | ef' f | ef d | 2 b4 c4 ~ |
+    2 bf | a b | bf2\xmf a | 
+}
 lineFirstEnding = \relative c' { 
     d1\xmf ||
+}
+lineFirstEndingHarmony = \relative c { 
+    fs2\xmf f
 }
 lineSecondEnding = \relative c' { 
     d2.\xmf
@@ -325,32 +392,48 @@ lineSecondEndingHarmony = \relative c {
 }
 
 line = \relative c'' { 
-    \lineCommon
-    \lineFirstEnding
-    \lineSecondEnding
+    << 
+        { 
+            \lineCommon 
+            \lineFirstEnding
+            \lineSecondEnding
+        } \\ {
+            \lineCommonHarmony 
+            \lineFirstEndingHarmony
+            \lineSecondEndingHarmony
+        }
+    >>
 }
 lineForEb = \relative c'' { 
-    \lineCommonForEb
-    \lineFirstEnding
-    \lineSecondEnding
+    << 
+        { 
+            \lineCommonForEb
+            \lineFirstEnding
+            \lineSecondEnding
+        } \\ {
+            \lineCommonHarmonyForEb
+            \lineFirstEndingHarmony
+            \lineSecondEndingHarmony
+        }
+    >>
 }
 
 outCommon = \relative c'' { 
     r4 r8 f->\xf || 
-    r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r4 r8 
+    r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r2 
 
-    f'8 r8 ef r bf | 
-    df4-> ef-. r2 | r4 r8 ff8 ef df cf bf | af4-- g8 fs8 r2 | r4 r8 
+    r4 r8 f'8 |
+    r8 ef r bf  df4-> ef-. | r4 r8 ff8  r ef df [ bf ] | gs4-- g8 fs8 r2 | r4 r8 
 
     f' r ef r b | 
     d4-> c-. r2 | r2 ff8-> ef df bf |
 }
 outCommonForEb = \relative c'' { 
     r4 r8 f-> || 
-    r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r4 r8 
+    r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r2
 
-    f'8 r8 ef r bf | 
-    df4-> ef-. r2 | r4 r8 ff8 ef df cf bf | af4-- g8 gf8 r2 | r4 r8 
+    r4 r8 f' |
+    r8 ef r bf df4-> ef-. | r4 r8 ff8 r ef df [ bf ] | af4-- g8 gf8 r2 | r4 r8 
 
     f' r ef r b | 
     d4-> c-. r2 | r2 ff8-> ef df bf |
@@ -383,18 +466,21 @@ outForEb = \relative c'' {
 }
 
 melody = \relative c' {
+    \intro
     \head
     \line
     \twos
     \out
 }
 melodyForBb = \relative c' {
+    \introForEb
     \headForEb
     \lineForEb
     \twosForBb
     \outForBb
 }
 melodyForEb = \relative c' {
+    \introForEb
     \headForEb
     \lineForEb
     \twosForEb
@@ -632,10 +718,16 @@ basslineCoda = \relative c {
                 \time 4/4
                 s1*7
                 s2
+                \introCommon
+                r2
+                \introCommon 
+                r2
+
                 \headCommon
                 r2
                 \headCommon 
                 \headSecondEnding
+
                 \lineCommon
                 \lineFirstEnding
                 << 
@@ -658,6 +750,10 @@ basslineCoda = \relative c {
             }
             \new Staff \transpose c c { 
                 s1*8
+                <>\p
+                \bassline
+                \bassline
+
                 <>\mf
                 \bassline
                 \bassline
