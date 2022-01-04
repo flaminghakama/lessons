@@ -18,7 +18,7 @@ halfDiminishedArpeggioGMinor = \relative c' {
         c8 ) ef ( fs ) a (  
         ef8 ) fs ( a ) c ( | 
         fs,8 ) a ( c ) ef ( 
-        a,8 ) c ( ef ) a ( |
+        a,8 ) c ( ef ) a, ( |
         fs1 ) 
     }
     \relative c''' { 

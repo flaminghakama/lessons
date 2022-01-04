@@ -539,7 +539,9 @@ basslineCoda = \relative c {
                 \chordsSong 
                 \include "ly/ily/chord-names-properties.ily"
             }
-            \new Staff \transpose c c { 
+            \new Staff \with {
+                \consists "Merge_rests_engraver"
+            } \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.2)
                 \new Voice = "lead" <<
@@ -590,8 +592,10 @@ basslineCoda = \relative c {
             \new ChordNames \transpose c c  { 
                 \chordsSongForBb   
                 \include "ly/ily/chord-names-properties.ily"
-            }
-            \new Staff \transpose c c { 
+            } 
+            \new Staff \with {
+                \consists "Merge_rests_engraver"
+            } \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.2)
                 \new Voice = "lead" <<
@@ -643,7 +647,9 @@ basslineCoda = \relative c {
                 \chordsSongForEb 
                 \include "ly/ily/chord-names-properties.ily"
             }
-            \new Staff \transpose c c { 
+            \new Staff \with {
+                \consists "Merge_rests_engraver"
+            } \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.2)
                 \new Voice = "lead" <<
@@ -689,6 +695,11 @@ basslineCoda = \relative c {
         <<
             \new ChordNames \transpose c c,  { 
                 s1*8
+                % "Intro"
+                <>\mf
+                \formChords
+                \formChords
+
                 % "Head"
                 <>\mp
                 \formChords
@@ -740,7 +751,7 @@ basslineCoda = \relative c {
                     }
                 >>
                 \twosCommon
-                cs8 8 8 8 8 8 
+                r2. 
                 \twosCommon
                 r2
                 \outCommon
