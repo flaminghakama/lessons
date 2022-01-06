@@ -27,7 +27,7 @@ mv blue-steps*.midi midi
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #8
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #22
@@ -63,17 +63,6 @@ structure = \relative c' {
     \time 4/4
     \partial 4*2
     s2 
-    \startSectionNoBarline "Intro"
-    \bar "[|:"
-    \repeat volta 2 { 
-        s1*4 \break
-        s1*4 \break
-        s1*3 
-    } 
-    \alternative { 
-        { s1 \bar ":|]" }
-        { s1 \break }
-    }
 
     \startSectionNoBarline "Head"
     \bar "[|:"
@@ -115,23 +104,19 @@ structure = \relative c' {
 
     \startSectionNoBarline "Out"
     \bar ":|][|:"
+    \repeat volta 2 { 
         s1*4 \break
         s1*4 \break
-        s1*2 \toCoda s1*2 \bar ":|]" \break 
+        s1*2 
+    }
+    \alternative { 
+        { s1*2 \bar ":|]" \break }
+        { s1*2 }
+    }
+
+    s1*2 
+    \bar "|." 
 }
-structureCoda = \relative c' { 
-
-    \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark #'extra-offset = #'( -12  . -1 ) 
-    \once \override Score.RehearsalMark #'font-size = #8
-    \mark \markup { \musicglyph #"scripts.coda" }
-
-    \key bf \major
-    %\hideTimeSignature
-    \time 4/4
-    s1*4 \bar "|."
-}
-
 
 chordsSecondEnding = \chordmode { 
     d2:maj7 f:7 ||
@@ -139,13 +124,13 @@ chordsSecondEnding = \chordmode {
 
 formChordsForC = \chordmode {
     bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | gs2:m7.7+ b:m7 | e:7 g:aug7 | 
+    ef1:7 | df:7 | gs2:m b:m7 | e:7 g:aug7 | 
     c1:m7 | f:aug7/cs | fs2:7 a:7 | d:maj7 f:7 ||
 }
 
 formChordsCommon = \chordmode {
     bf2:7 bf:7/af | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m7.7+ b:m7 | e:7 g:aug7 | 
+    ef1:7 | df:7 | af2:m b:m7 | e:7 g:aug7 | 
     c1:m7 | f:aug7/cs | 
 }
 formChordsFirstEnding = \chordmode {
@@ -158,13 +143,13 @@ formChords = \chordmode {
 
 formChordsForBb = \chordmode {
     bf2:7 ef:1.3.5.7.8+.10+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m7.7+ cf:m7 | ff:7 g:aug7 | 
+    ef1:7 | df:7 | af2:m cf:m7 | ff:7 g:aug7 | 
     c1:m7 | f:aug7/df | gf2:7 a:7 | d:maj7 f:7 ||
 }
 
 formChordsForEb = \chordmode {
     bf2:7 af:1.3.5.7.8+.10+.12+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m7.7+ cf:m7 | ff:7 g:aug7 | 
+    ef1:7 | df:7 | af2:m cf:m7 | ff:7 g:aug7 | 
     c1:m7 | f:aug7/df | gf2:7 a:7 | d:maj7 f:7 ||
 }
 
@@ -187,7 +172,6 @@ chordsSong = \chordmode {
     \set noChordSymbol = ##f
     s2
     \formChordsForC \chordsSecondEnding  
-    \formChordsForC \chordsSecondEnding  
     \formChordsForC \chordsSecondEnding
     \formChordsForC \chordsSecondEnding 
     \formChordsForC
@@ -199,7 +183,6 @@ chordsSongForBb = \chordmode {
     \set noChordSymbol = ##f
     s2
     \formChordsForBb \chordsSecondEnding 
-    \formChordsForBb \chordsSecondEnding 
     \formChordsForBb \chordsSecondEnding
     \formChordsForBb \chordsSecondEnding 
     \formChordsForBb
@@ -210,7 +193,6 @@ chordsSongForEb = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s2
-    \formChordsForEb \chordsSecondEnding 
     \formChordsForEb \chordsSecondEnding 
     \formChordsForEb \chordsSecondEnding 
     \formChordsForEb \chordsSecondEnding 
@@ -365,7 +347,7 @@ lineCommon = \relative c'' {
 }
 lineCommonHarmony = \relative c'' { 
     r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
-    2 g, | ef' f | ef d | 2 b4 c4 ~ |
+    2 g | ef f | ef d | 2 b4 c4 ~ |
     2 bf | a b | as2\xmf a | 
 }
 lineCommonForEb = \relative c'' { 
@@ -375,7 +357,7 @@ lineCommonForEb = \relative c'' {
 }
 lineCommonHarmonyForEb = \relative c'' { 
     r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
-    2 g, | ef' f | ef d | 2 b4 c4 ~ |
+    2 g | ef f | ef d | 2 b4 c4 ~ |
     2 bf | a b | bf2\xmf a | 
 }
 lineFirstEnding = \relative c' { 
@@ -466,25 +448,25 @@ outForEb = \relative c'' {
 }
 
 melody = \relative c' {
-    \intro
     \head
     \line
     \twos
     \out
+    \outCoda
 }
 melodyForBb = \relative c' {
-    \introForEb
     \headForEb
     \lineForEb
     \twosForBb
     \outForBb
+    \outCodaForEb
 }
 melodyForEb = \relative c' {
-    \introForEb
     \headForEb
     \lineForEb
     \twosForEb
     \outForEb
+    \outCodaForEb
 }
 
 
@@ -537,6 +519,7 @@ basslineCoda = \relative c {
         <<
             \new ChordNames \transpose c c  { 
                 \chordsSong 
+                \codaChords
                 \include "ly/ily/chord-names-properties.ily"
             }
             \new Staff \with {
@@ -554,31 +537,6 @@ basslineCoda = \relative c {
             % }
         >>
     }
-
-    \score { 
-        \header { 
-            title = ""
-            poet = ""
-            composer = ""
-        }
-        <<
-            \new ChordNames \transpose c c { \codaChords }
-            \new Staff \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \override Stem.length-fraction = #(magstep 1.2)
-                \new Voice = "lead" <<
-                    \structureCoda
-                    \outCoda
-                >>
-            }            
-        >>
-        \layout {
-            indent = 3\cm
-            ragged-right = ##t
-            ragged-last = ##t
-            short-indent = .25\cm
-        }    
-    }
 }
 
 \book {
@@ -590,7 +548,8 @@ basslineCoda = \relative c {
     \score {
         \transpose bf, c <<
             \new ChordNames \transpose c c  { 
-                \chordsSongForBb   
+                \chordsSongForBb  
+                \codaChordsForEb 
                 \include "ly/ily/chord-names-properties.ily"
             } 
             \new Staff \with {
@@ -608,31 +567,6 @@ basslineCoda = \relative c {
             % }
         >>
     }
-
-    \score { 
-        \header { 
-            title = ""
-            poet = ""
-            composer = ""
-        }
-        \transpose bf, c <<
-            \new ChordNames \transpose c c { \codaChordsForEb }
-            \new Staff \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \override Stem.length-fraction = #(magstep 1.2)
-                \new Voice = "lead" <<
-                    \structureCoda
-                    \outCodaForEb
-                >>
-            }            
-        >>
-        \layout {
-            indent = 3\cm
-            ragged-right = ##t
-            ragged-last = ##t
-            short-indent = .25\cm
-        }    
-    }
 }
 
 \book {
@@ -645,6 +579,7 @@ basslineCoda = \relative c {
         \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \chordsSongForEb 
+                \codaChordsForEb
                 \include "ly/ily/chord-names-properties.ily"
             }
             \new Staff \with {
@@ -663,30 +598,6 @@ basslineCoda = \relative c {
         >>
     }
 
-    \score { 
-        \header { 
-            title = ""
-            poet = ""
-            composer = ""
-        }
-        \transpose ef c <<
-            \new ChordNames \transpose c c { \codaChordsForEb }
-            \new Staff \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \override Stem.length-fraction = #(magstep 1.2)
-                \new Voice = "lead" <<
-                    \structureCoda
-                    \outCodaForEb
-                >>
-            }            
-        >>
-        \layout {
-            indent = 3\cm
-            ragged-right = ##t
-            ragged-last = ##t
-            short-indent = .25\cm
-        }    
-    }
 }
 
 \book {
@@ -695,10 +606,6 @@ basslineCoda = \relative c {
         <<
             \new ChordNames \transpose c c,  { 
                 s1*8
-                % "Intro"
-                <>\mf
-                \formChords
-                \formChords
 
                 % "Head"
                 <>\mp
@@ -729,10 +636,6 @@ basslineCoda = \relative c {
                 \time 4/4
                 s1*7
                 s2
-                \introCommon
-                r2
-                \introCommon 
-                r2
 
                 \headCommon
                 r2
@@ -761,9 +664,6 @@ basslineCoda = \relative c {
             }
             \new Staff \transpose c c { 
                 s1*8
-                <>\p
-                \bassline
-                \bassline
 
                 <>\mf
                 \bassline
