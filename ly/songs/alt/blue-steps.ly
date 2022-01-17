@@ -1,4 +1,4 @@
-\version "2.19.81"
+\version "2.23.2"
 
 titleLeft = "Blue"
 titleRight = "Steps"
@@ -124,13 +124,13 @@ chordsSecondEnding = \chordmode {
 
 formChordsForC = \chordmode {
     bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | gs2:m b:m7 | e:7 g:aug7 | 
+    ef1:7 | df:7 | gs2:m7.7+ b:7 | e:maj7 g:7 | 
     c1:m7 | f:aug7/cs | fs2:7 a:7 | d:maj7 f:7 ||
 }
 
 formChordsCommon = \chordmode {
     bf2:7 bf:7/af | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m b:m7 | e:7 g:aug7 | 
+    ef1:7 | df:7 | af2:m7.7+ b:7 | e:maj7 g:7 | 
     c1:m7 | f:aug7/cs | 
 }
 formChordsFirstEnding = \chordmode {
@@ -143,13 +143,13 @@ formChords = \chordmode {
 
 formChordsForBb = \chordmode {
     bf2:7 ef:1.3.5.7.8+.10+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m cf:m7 | ff:7 g:aug7 | 
+    ef1:7 | df:7 | af2:m7.7+ cf:7 | ff:maj7 g:7 | 
     c1:m7 | f:aug7/df | gf2:7 a:7 | d:maj7 f:7 ||
 }
 
 formChordsForEb = \chordmode {
     bf2:7 af:1.3.5.7.8+.10+.12+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m cf:m7 | ff:7 g:aug7 | 
+    ef1:7 | df:7 | af2:m7.7+ cf:7 | ff:maj7 g:7 | 
     c1:m7 | f:aug7/df | gf2:7 a:7 | d:maj7 f:7 ||
 }
 
@@ -206,10 +206,10 @@ introCommon = \relative c'' {
 
     r8 bf\xmf df [ ef ] |
     r8 bf df [ ef ]  r bf df [ ef ] | r bf df [ ff ]  ef df bf af | 
-    fs gs fs4-. gs-- fs8 e | r2 
+    fss gs fss4-. gs-- fs8 e | r2 
 
     r8 g\xmf bf [ c ] |
-    r8 g bf [ c ]  r g bf [ c ] | r g bf [ df ]  c bf g f | 
+    r8 g bf [ c ]  r g bf [ c ] | r g bf [ df ]  c bf g f? | 
     e fs e4-. fs-- e8 d |  
 }
 introFirstEnding = \relative c'' { 
@@ -225,7 +225,7 @@ introCommonForEb = \relative c'' {
 
     r8 bf\xmf df [ ef ] |
     r8 bf df [ ef ]  r bf df [ ef ] | r bf df [ ff ]  ef df bf af | 
-    gf af gf4-. af-- gf8 ff | r2 
+    g af g4-. af-- gf8 ff | r2 
 
     r8 g\xmf bf [ c ] |
     r8 g bf [ c ]  r g bf [ c ] | r g bf [ df ]  c bf g f | 
@@ -248,10 +248,10 @@ headCommon = \relative c' {
     r8 bf df [ ef ] r2 | r4 ff->\xf ef8 df r af\xmf | g a g4-. a-- g8 f | r2 
 
     r8 f af [ bf ] |
-    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f->\xf ff } ef4-. r8 gs,\xmf | fs8 gs fs4-. gs-- fs8 e | r2 
+    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f->\xf ff } ef4-. r8 gs,\xmf | fss8 gs fss4-. gs-- fs8 e | r2 
 
-    r8 g bf [ c ] |
-    r8 c ef [ f ] r2 | r8 cs->\xf r a ~ 4. f8\xmf | e8 fs e4-. fs-- e8 d | 
+    r8 g bf? [ c ] |
+    r8 c ef [ f ] r2 | r8 cs->\xf r a ~ 4. f?8\xmf | e8 fs e4-. fs-- e8 d | 
 }
 headFirstEnding = \relative c' { 
     r2 r8 f\xmf af [ bf ] ||  
@@ -264,10 +264,10 @@ headCommonForEb = \relative c' {
     r8 bf df [ ef ] r2 | r4 ff-> ef8 df r af | g a g4-. a-- g8 f | r2 
 
     r8 f af [ bf ] |
-    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f-> ff } ef4-. r8 af, | gf8 af gf4-. af-- gf8 ff | r2 
+    r8 bf df [ ef ] r2 | \tuplet 3/2 { r4 f-> ff } ef4-. r8 af, | g8 af g4-. af-- gf8 ff | r2 
 
     r8 g bf [ c ] |
-    r8 c ef [ f ] r2 | r8 cs-> r a ~ 4. f8 | e8 fs e4-. fs-- e8 d? | 
+    r8 c ef [ f ] r2 | r8 cs-> r a ~ 4. f?8 | e8 fs e4-. fs-- e8 d? | 
 }
 
 head = {
@@ -347,7 +347,7 @@ lineCommon = \relative c'' {
 }
 lineCommonHarmony = \relative c'' { 
     r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
-    2 g | ef f | ef d | 2 b4 c4 ~ |
+    2 g | ef f | g fs | e b4 c4 ~ |
     2 bf | a b | as2\xmf a | 
 }
 lineCommonForEb = \relative c'' { 
