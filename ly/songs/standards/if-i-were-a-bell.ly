@@ -46,11 +46,12 @@ for file in pdf/songs/standards/if-i-were-a-bell*.pdf ; do op $file ; done
   ragged-last-bottom = ##t
 
   #(define fonts
-    (make-pango-font-tree "Marker Felt" 
+    (make-pango-font-tree "Marker Felt"
                           "Highlander ITC TT" 
                           "LilyJAZZText"
                            (/ myStaffSize 20)))
 }
+%                          "Blue Highway Bold"
 
 \include "ly/ily/layout-songs.ily"
 
@@ -58,8 +59,8 @@ voltaAllXButLast = \markup { \text \italic \large { All X but last } }
 voltaLast = \markup { \text \italic \large { Last X } }
 
 structureForm = \relative c' { 
-    \once \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 ) 
-    \key f \ major
+    \override Score.RehearsalMark #'extra-offset = #'( -3 . -1.4 ) 
+    \key f \major
     \partial 2*1 s2
     \startSection "A"
     s1*4 \break
@@ -140,26 +141,31 @@ lyricsHeadOne = \lyricmode {
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
-    \repeat unfold 2 { \skip 1 } 
-    Ask me how do I feel from this chem -- is -- try les -- son I'm learn -- ing
-    Well sir, all I can say is if I were a bridge I'd be bur -- ning!
+    \repeat unfold 6 { \skip 1 } 
+    from this chem -- is -- try les -- son I'm learn -- ing
+    \repeat unfold 11 { \skip 1 } 
+    bridge I'd be bur -- ning!
 
     Yes, I knew my mo -- ral would crack
     From the won -- der -- ful way that you looked!
-    Boy, if I were a duck I'd quack!
-    And if I were a goose I'd be cooked!
+    \repeat unfold 5 { \skip 1 } 
+    duck I'd quack!
+    \repeat unfold 5 { \skip 1 } 
+    goose I'd be cooked!
 
-    Ask me how do I feel, ask me now that we're fond -- ly ca -- ress -- ing
-    Pall, if I were a sa -- lad I know I'd be splash -- ing my dres -- sing
+    \repeat unfold 6 { \skip 1 } 
+    ask me now that we're fond -- ly ca -- ress -- ing
+    Well, if I were a sa -- lad I know I'd be splash -- ing my dres -- sing
     Ask me how to des -- cribe this whole beau -- ti -- ful thing
-    Well, if I were a bell I'd go ding dong, ding dong ding!
+    Well, 
+    \repeat unfold 12 { \skip 1 } 
 }
 
 \header {
     title = \title
     composer = \markup \italic { "composed by" \composerName }
     arranger = "" %\markup \italic { "lyrics by" \lyricistName }
-    poet = "Eb Alto Saxophone"
+    poet = "    Eb Alto Saxophone"
     instrumentName = \poet
 }
 
@@ -167,7 +173,7 @@ lyricsHeadTwo = \lyricmode {
   \bookOutputSuffix "for-C"
     \header {
         subtitle = ""
-        poet = "Concert Lead Sheet"
+        poet = "    Concert Lead Sheet"
         instrumentName = \poet
     }
     \score {
@@ -180,6 +186,8 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
+                        \override Beam.damping = #2.75 
+                        \override Stem.length-fraction = #(magstep 1.01) 
                         \structureForm
                         \melodyForm
                 >>
@@ -187,6 +195,47 @@ lyricsHeadTwo = \lyricmode {
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { 
                     \lyricsHeadOne 
+                } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    \lyricsHeadTwo 
+                } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        subtitle = ""
+        poet = "    Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                s2 || \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                        \override Beam.damping = #2.75 
+                        \override Stem.length-fraction = #(magstep 1.01) 
+                        \structureForm
+                        \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    %\lyricsHeadOne 
                 } 
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -204,14 +253,14 @@ lyricsHeadTwo = \lyricmode {
 
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "for-Bb"
     \header {
         subtitle = ""
-        poet = "Eb Lead Sheet"
+        poet = "    Bb Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        \transpose ef, c <<
+        \transpose bf, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 s2 || \chordsForm
@@ -220,6 +269,8 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
+                        \override Beam.damping = #2.75 
+                        \override Stem.length-fraction = #(magstep 1.01) 
                         \structureForm
                         \melodyForm
                 >>
