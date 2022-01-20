@@ -112,7 +112,7 @@ chordsLastTwoBarsForEb = \chordmode {
 }
 
 formChordsCommon = \chordmode {
-    bf2:7 bf:7/af | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
     ef1:7 | df:7 | af2:m7.7+ b:7 | e:maj7 g:7 | 
     c1:m7 | f:aug7/cs | 
 }
@@ -550,30 +550,6 @@ basslineCoda = \relative c {
                 s1*7
                 s2
 
-                \headCommon
-                r2
-                \headCommon 
-                \headSecondEnding
-
-                \lineCommon
-                \lineFirstEnding
-                << 
-                    { 
-                        \lineCommon 
-                        \lineSecondEnding
-                    } \\ {
-                        \lineCommonHarmony 
-                        \lineSecondEndingHarmony
-                    }
-                >>
-                \twosCommon
-                r2. 
-                \twosCommon
-                r2
-                \outCommon
-                \outFirstEndingForMidi
-                \outCommon
-                \outCoda
             }
             \new Staff \transpose c c { 
                 s1*8
