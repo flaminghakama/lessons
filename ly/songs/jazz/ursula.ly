@@ -1,19 +1,19 @@
 \version "2.19.81"
 
-titleLeft = "United"
+titleLeft = "Ursula"
 titleRight = ""
-title = "United"
-composerName = "W. Shorter"
+title = "Ursula"
+composerName = "H. Land"
 
 %{
 
-killPreview ; rm united*pdf ;  lilypond ly/songs/jazz/united.ly  ; for file in united*.pdf ; do op $file ; done  
+killPreview ; rm ursula*pdf ;  lilypond ly/songs/jazz/ursula.ly  ; for file in ursula*.pdf ; do op $file ; done  
 
 killPreview
-rm united*pdf
-lilypond ly/songs/jazz/united.ly
-mv united*.pdf pdf/songs/jazz
-for file in pdf/songs/jazz/united*.pdf ; do op $file ; done  
+rm ursula*pdf
+lilypond ly/songs/jazz/ursula.ly
+mv ursula*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/ursula*.pdf ; do op $file ; done  
 
 %}
 
@@ -29,7 +29,7 @@ for file in pdf/songs/jazz/united*.pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #6
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -55,59 +55,164 @@ for file in pdf/songs/jazz/united*.pdf ; do op $file ; done
 \include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
-    \key f \major 
-    \tempo 4=200
-    \time 3/4
+
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark #'extra-offset = #'( -3 . -3 )
+    %\override Score.RehearsalMark #'extra-offset = #'( -3 . -3 )
 
-    \partial 8*1
-    s8
+    \key f \minor 
+    \tempo 4=128
+    \time 2/4
+    s2 
 
+    \time 4/4
+    \startSectionNoBarline "A"
     \bar "[|:"
     \repeat volta 2 { 
-        s2.*4 \break
-        s2.*4 \break
-        s2.*4 \break
-        s2.*4 \break
+        s1*4 \break
+        s1*4 \break
+        s1*2     
+        \bar "||"
+        \time 2/4 
     }
-    \bar ":|]" 
+    \alternative { 
+        { s2 \bar ":|]" }
+        { s2 \bar "||" \break }
+    }
+    \startSection "B"
+    \time 4/4
+    s1*4 \break
+    s1*4 \break 
+    s1*3
+    \bar "||"     
+    \time 2/4
+    s4 <>_"D.S. al Fine" s4
+    \bar "|."
 }
 
+chordsA = \chordmode { 
+    s2 ||
+    f1:m7 | f:m6 | bf2:m7 af:m7 | s df:9 | 
+    g2:13 fs:m7 | gs:m7 a:maj7 | d4:9 bf:9.11+ b2:9.11+ | bf:9 a:aug7 |
+    af2:6 g:aug7 | fs4:6 f:7 e2:maj7 | s2 | 
+}
+chordsAForBb = \chordmode { 
+    s2 ||
+    f1:m7 | f:m6 | bf2:m7 af:m7 | s df:9 | 
+    g2:13 gf:m7 | af:m7 a:maj7 | d4:9 bf:9.11+ b2:9.11+ | bf:9 a:aug7 |
+    af2:6 g:aug7 | gf4:6 f:7 ff2:maj7 | s2 | 
+}
+chordsAForEb = \chordmode { 
+    s2 ||
+    f1:m7 | f:m6 | bf2:m7 af:m7 | s df:9 | 
+    g2:13 gf:m7 | af:m7 bff:maj7 | d4:9 bf:9.11+ cf2:9.11+ | bf:9 a:aug7 |
+    af2:6 g:aug7 | gf4:6 f:7 ff2:maj7 | s2 | 
+}
+chordsB = \chordmode { 
+    e2:maj7 ||
+    b1:m7 | e:9 | b:m7 | e:9 | 
+    e1:m7 | a:9 | e:m7 | a:9 | 
+    d1:9.11+ | g:9.11+ | c:9.11+ | b4:aug9 c:9.11+ 
+}
+chordsBForBb = \chordmode { 
+    ff2:maj7 ||
+    cf1:m7 | ff:9 | cf:m7 | ff:9 | 
+    e1:m7 | a:9 | e:m7 | a:9 | 
+    d1:9.11+ | g:9.11+ | c:9.11+ | b4:aug9 c:9.11+ 
+}
+chordsBForEb = \chordmode { 
+    ff2:maj7 ||
+    cf1:m7 | ff:9 | cf:m7 | ff:9 | 
+    ff1:m7 | bff:9 | ff:m7 | bff:9 | 
+    d1:9.11+ | g:9.11+ | c:9.11+ | cf4:aug9 c:9.11+ 
+}
 chordsForm = \chordmode { 
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
-    \set noChordSymbol = ##f
-    s8 ||
-    e2.:m7.5- | a:7.9- | d:m | b:m7.5- | 
-    e2.:m7.5- | a:7.9- | d:m | g:7 | 
-    c2.:m7 | f:7 | bf:maj7 | af4.:m7 df:7 | 
-    gf2.:maj7 | g4.:m7 c:7 | f2.:maj7 | a:7.9-.13- ||
+    %\set noChordSymbol = ##t
+    \chordsA 
+    \chordsB
+}
+chordsFormForBb = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    %\set noChordSymbol = ##t
+    \chordsAForBb
+    \chordsBForBb
+}
+chordsFormForEb = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    %\set noChordSymbol = ##t
+    \chordsAForEb
+    \chordsBForEb
 }
 
 melodyIntro = \relative c' {
 }
 
-melodyACommon = \relative c' {
-    d8 || g4-. 4-. 4-. | g8 e c4-- e8 d | R2. | r2 r8 d8 |
-    g4-. 4-. 4-. | g8 e c4-- e8 d | R2. | r2 r8 d8 |
-    g4-. 4-. 4-. | g8 e c4-- bf8 a | R2. | af'8 f df4-- cf8 bf | 
-    R2. | a'8 f c4-- bf8 a | R2. | R2. | 
+melodyACommon = \relative c'' {
+    g8 af4 c,8 || g'1 | 
+    r4 \tuplet 3/2 { f16 [ ( g f  } e8 ) ] f g af bf  |   
+    c8 df4 f,8 bf2 ~ | 2. r4 | 
+    gs8 a4 cs,8  gs' fs e ds ~ | 8 cs b cs ~ 2 |
+    fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
+    r2 \tuplet 3/2 4 { r8 r f  b ds gs  | e, as ds  gs ds cs } ds2_"Fine" |
+    g,8 af4 c,8 ||
+}
+melodyACommonForBb = \relative c'' {
+    g8 af4 c,8 || g'1 | 
+    r4 \tuplet 3/2 { f16 [ ( g f  } e8 ) ] f g af bf  |   
+    c8 df4 f,8 bf2 ~ | 2. r4 | 
+    af8 bff4 df,8  af' gf ff ef ~ | 8 df cf df ~ 2 |
+    fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
+    r2 \tuplet 3/2 4 { r8 r f  b ef af  | ff, bf ef  af, ef df } ef2_"Fine" |
+    g8 af4 c,8 ||
+}
+melodyACommonForEb = \relative c'' {
+    g8 af4 c,8 || g'1 | 
+    r4 \tuplet 3/2 { f16 [ ( g f  } e8 ) ] f g af bf  |   
+    c8 df4 f,8 bf2 ~ | 2. r4 | 
+    af8 bff4 df,8  af' gf ff ef ~ | 8 df cf df ~ 2 |
+    fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
+    r2 \tuplet 3/2 4 { r8 r f,  b ef af  | ff, bf ef  af ef df } ef2_"Fine" |
+    g8 af4 c,8 ||
 }
 
-melodyAFirst = \relative c'' { 
+melodyAFirst = \relative c''{ 
 }
 
 melodyASecond = \relative c'' { 
 }
 
-melodyBridge = \relative c''' {
+melodyBridge = \relative c'' {
+    r8 as b [ d ] ||
+    e2 ~ 8 d4 \tuplet 3/2 { e16 ( d cs ) } | d8 cs b as  b d fs d | 
+    e2 ~ 8 d4 \tuplet 3/2 { e16 ( d cs ) } | d8 cs b as  b d e a, |
+    g2 r8 g4 \tuplet 3/2 { a16 ( g fs ) } | g8 fs e ds  e g a e |
+    g2 r8 g4 \tuplet 3/2 { a16 ( g fs ) } | g8 fs e ds  e g a as |
+    b4. gs8 r e \tuplet 3/2 { c8 e gs } | 
+    e'4. cs8 r a \tuplet 3/2 { f8 a cs } | 
+    a'4. fs8 r d \tuplet 3/2 { bf8 d fs } | g4 fs  
 }
-
-melodyBridgeForBb = \relative c''' {
+melodyBridgeForBb = \relative c' {
+    r8 bf cf [ eff ] ||
+    ff2 ~ 8 eff4 \tuplet 3/2 { ff16 ( eff df ) } | eff8 df cf bf  cf eff gf eff | 
+    ff2 ~ 8 eff4 \tuplet 3/2 { ff16 ( eff df ) } | eff8 df cf bf  cf eff ff bff, |
+    g2 r8 g'4 \tuplet 3/2 { a16 ( g fs ) } | g8 fs e ds  e g a e |
+    g2 r8 g4 \tuplet 3/2 { a16 ( g fs ) } | g8 fs e ds  e g a as |
+    b4. gs8 r e \tuplet 3/2 { c8 e gs } | 
+    e'4. cs8 r a \tuplet 3/2 { f8 a cs } | 
+    a'4. fs8 r d \tuplet 3/2 { bf8 d fs } | g4 fs  
 }
-
-melodyBridgeForAlto = \relative c'' {
+melodyBridgeForEb = \relative c' {
+    r8 bf cf [ eff ] ||
+    ff2 ~ 8 eff4 \tuplet 3/2 { ff16 ( eff df ) } | eff8 df cf bf  cf eff gf eff | 
+    ff2 ~ 8 eff4 \tuplet 3/2 { ff16 ( eff df ) } | eff8 df cf bf  cf eff ff bff, |
+    aff2 r8 aff'4 \tuplet 3/2 { bff16 ( aff gf ) } | aff8 gf ff ef  ff aff bff ff |
+    aff2 r8 aff4 \tuplet 3/2 { bff16 ( aff gf ) } | aff8 gf ff ef  ff aff bff cff |
+    b4. gs8 r e \tuplet 3/2 { c8 e gs } | 
+    e'4. cs8 r a \tuplet 3/2 { f8 a cs } | 
+    a4. fs8 r d \tuplet 3/2 { bf8 d fs } | g4 fs  
 }
 
 melodyALast = \relative c'' {
@@ -115,14 +220,17 @@ melodyALast = \relative c'' {
 
 melody = \relative c' { 
     \melodyACommon
+    \melodyBridge
 }
 
 melodyForBb = \relative c' { 
-    \melodyACommon
+    \melodyACommonForBb
+    \melodyBridgeForBb
 }
 
 melodyForAlto = \relative c' { 
-    \melodyACommon
+    \melodyACommonForEb
+    \melodyBridgeForEb
 }
 
 \book {
@@ -165,7 +273,7 @@ melodyForAlto = \relative c' {
         \transpose bf, c <<
             \new ChordNames \transpose g g { 
                 \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
-                \chordsForm 
+                \chordsFormForBb
             }
             \new Staff = "lead" \transpose g g {
                 \include "ly/ily/staff-properties.ily"
@@ -192,7 +300,7 @@ melodyForAlto = \relative c' {
         \transpose ef, c <<
             \new ChordNames \transpose g g { 
                 \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
-                \chordsForm 
+                \chordsFormForEb
             }
             \new Staff = "lead" \transpose g g {
                 \include "ly/ily/staff-properties.ily"
