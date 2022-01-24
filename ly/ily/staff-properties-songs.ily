@@ -1,7 +1,8 @@
-\version "2.23.2"
+\version "2.19.81"
                 \autoPageBreaksOff
                 \numericTimeSignature 
                 \compressEmptyMeasures
+                %\compressMMRests
                 \override MultiMeasureRest.expand-limit = #1
                 \accidentalStyle modern-voice-cautionary
                 \override Accidental.hide-tied-accidental-after-break = ##t
