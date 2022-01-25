@@ -92,7 +92,7 @@ melodyACommon = \relative c' {
     d8 || g4-. 4-. 4-. | g8 e c4-- e8 d | R2. | r2 r8 d8 |
     g4-. 4-. 4-. | g8 e c4-- e8 d | R2. | r2 r8 d8 |
     g4-. 4-. 4-. | g8 e c4-- bf8 a | R2. | af'8 f df4-- cf8 bf | 
-    R2. | g'8 f c4-- bf8 a | R2. | R2. | 
+    R2. | g'8 e c4-- bf8 a | R2. | R2. | 
 }
 
 melodyAFirst = \relative c'' { 
