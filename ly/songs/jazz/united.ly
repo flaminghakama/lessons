@@ -79,8 +79,8 @@ chordsForm = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s8 ||
-    e2.:m7.5- | a:7.9- | d:m | b:m7.5- | 
-    e2.:m7.5- | a:7.9- | d:m | g:7 | 
+    e2.:m7.5- | a:7.9+ | d:m | b:m7.5- | 
+    e2.:m7.5- | a:7.9+ | d:m7 | g:7 | 
     c2.:m7 | f:7 | bf:maj7 | af4.:m7 df:7 | 
     gf2.:maj7 | g4.:m7 c:7 | f2.:maj7 | a:7.9-.13- ||
 }
@@ -92,7 +92,7 @@ melodyACommon = \relative c' {
     d8 || g4-. 4-. 4-. | g8 e c4-- e8 d | R2. | r2 r8 d8 |
     g4-. 4-. 4-. | g8 e c4-- e8 d | R2. | r2 r8 d8 |
     g4-. 4-. 4-. | g8 e c4-- bf8 a | R2. | af'8 f df4-- cf8 bf | 
-    R2. | a'8 f c4-- bf8 a | R2. | R2. | 
+    R2. | g'8 f c4-- bf8 a | R2. | R2. | 
 }
 
 melodyAFirst = \relative c'' { 
