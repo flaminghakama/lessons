@@ -73,12 +73,12 @@ structure = \relative c' {
     s1*4 \break
     s1*4 \bar "||" \break
     s1*4 \break
-    s1*4 \bar "||" \break
+    s1*4 \bar "||" \pageBreak
 
     s1*4 \break
     s1*4 \bar "||" \break
     s1*4 \break
-    s1*4 \bar "||" \pageBreak
+    s1*4 \bar "||" \break
     s1*4 \break
     s1*4 \bar "||" \break
     s1*4 \break
@@ -108,13 +108,25 @@ melodyInEb = \relative c {
     d8 a r a8 2 | r r4 r8 a |
     
     d8 e fs g  a fs g a16 g | fs8 d a g  gs fs' e d | 
-    \tuplet 3/2 { cs8 d cs } b a  g b, d fs | r e4. r4 \tuplet 3/2 { r8 e fs } |
+    \tuplet 3/2 { cs16 [ d cs } b8 ] a af g b, d fs | r e4. r4 \tuplet 3/2 { r8 e fs } |
     
     \tuplet 3/2 { g8 a fs } \tuplet 3/2 { g8 e e } r2 | r8 a r b  cs d \tuplet 3/2 { b cs a } | 
     r8 a r4 r e'8 fs | g b, d fs  e d cs b | 
 
     d4 b8 g fs e4. | d'4 bf8 a g a bf d |
-    cs8 a b cs a fs4. | r4 
+    cs8 a b cs a fs4. | r4  e16 g b d a'8 fs4. ||
+
+    cs4. b8 cs b4. | e4. d8 cs d e fs | d a g f fs d' r4 | r2 r4 r8 b8 | 
+    d8 b e f fs d a g | fs d'4. c8 e, a c | b bf a af g ef d c | b g'4. r4 r8 g |
+
+    bf8 b c cs d b g f | d'2 b8 gs f d | 
+    fs a b cs e d \tuplet 3/2 { cs16 [ ( d cs } b8 ) ] | d4 as8 fs cs'4 r8 a | 
+
+    cs8 b cs b fs e fs4 | c'8 bf c bf f ef f4 | b4. a8 b a e8 8 ~ | 4 r r8 e4. ~ || 
+
+
+    e2 \grace { ds8 ( } e2 ) | \grace { ds8 ( } e2 ) \grace { ds8 ( } e2 ) | 
+    \grace { ds8 ( } e8 ) b' e fs  b a e b ~ | 4 r r2 
 
 }
 melody = \transpose c ef \melodyInEb
