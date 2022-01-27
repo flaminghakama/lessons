@@ -119,7 +119,7 @@ melodyInEb = \relative c {
     cs4. b8 cs b4. | e4. d8 cs d e fs | d a g f fs d' r4 | r2 r4 r8 b8 | 
     d8 b e f fs d a g | fs d'4. c8 e, a c | b bf a af g ef d c | b g'4. r4 r8 g |
 
-    bf8 b c cs d b g f | d'2 b8 gs f d | 
+    bf8 b c cs d b g e | d'2 b8 gs f d | 
     fs a b cs e d \tuplet 3/2 { cs16 [ ( d cs } b8 ) ] | d4 as8 fs cs'4 r8 a | 
 
     cs8 b cs b fs e fs4 | c'8 bf c bf f ef f4 | b4. a8 b a e8 8 ~ | 4 r r8 e4. ~ || 
