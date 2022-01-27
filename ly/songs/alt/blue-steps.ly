@@ -175,31 +175,31 @@ chordsSongForEb = \chordmode {
 }
 
 headCommon = \relative c'' { 
-    f->\xf || 
+    f\xf || 
     r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r2 
 
     r4 r8 f'8 |
-    r8 ef r bf  df4-> ef-. | r4 r8 ff8  r ef df [ bf ] | gs4-- g8 fs8 r2 | r4 r8 
+    r8 ef r bf  df4-- ef-. | r4 r8 ff8  r ef df [ bf ] | gs4-- g8 fs8 r2 | r4 r8 
 
     f' r ef r b | 
-    d4-> c-. r2 | r2 ff8-> ef df bf |
+    d4-- c-. r2 | r2 ff8 ef df bf |
 }
 headCommonForEb = \relative c'' { 
-    f-> || 
+    f || 
     r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r2
 
     r4 r8 f' |
-    r8 ef r bf df4-> ef-. | r4 r8 ff8 r ef df [ bf ] | af4-- g8 gf8 r2 | r4 r8 
+    r8 ef r bf df4-- ef-. | r4 r8 ff8 r ef df [ bf ] | af4-- g8 gf8 r2 | r4 r8 
 
     f' r ef r b | 
-    d4-> c-. r2 | r2 ff8-> ef df bf |
+    d4-- c-. r2 | r2 ff8 ef df bf |
 }
 
 headFirstEnding = \relative c'' {
-    r2 r4 a8 cs-> | r4 r8 d-> r4 r8 f->
+    r2 r4 a8 cs | r4 r8 d r4 r8 f
 }
 headFirstEndingForMidi = \relative c'' {
-    r2 r4 a8 cs-> | r4 r8 d-> 
+    r2 r4 a8 cs | r4 r8 d 
 }
 headCoda = \relative c' { 
     R1 | r2 r4 r8 e\xff ~ | 8 fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
