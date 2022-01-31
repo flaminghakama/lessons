@@ -185,7 +185,7 @@ headCommon = \relative c'' {
     d4-- c-. r2 | r2 ff8 ef df bf |
 }
 headCommonForEb = \relative c'' { 
-    f || 
+    f\xf || 
     r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r2
 
     r4 r8 f' |
