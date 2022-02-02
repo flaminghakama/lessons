@@ -41,28 +41,28 @@ voiceone = \relative c' {
 	g, ( e' c' b c ) e, ( c' e, ) g, ( e' c' b c ) e, ( c' e, ) |
 	g, ( fis' c' b c ) fis, ( c' fis, ) g, ( fis' c' b c ) fis, ( c' fis, ) |
 	g, ( g' b a b ) g ( b g ) g, ( g' b a b ) g ( b fis ) |
-	g, ( e' b' a b ) g ( fis g e ) g ( fis g b, ) d ( cis b ) |
+	g, ( e' b' a b ) g ( fis g e ) g ( fis g b, ) \breathe d ( cis b  |
 	% 6
-	cis ( g' a g a ) g ( a g ) cis, ( g' a g a ) g ( a g ) |
-	fis ( a d cis d ) a ( g a ) fis ( a g ) a ( d, fis e d ) |
-	e, b' g' fis g b, g' b, e, b' g' fis g b, g' b, |
-	e, cis' d e d cis b a g' fis e d' cis b a g |
-	fis e d d' a d fis, a d, e fis a g fis e d |
+	cis ) g' ( a g a ) g ( a g cis, ) g' ( a g a ) g ( a g |
+	fis ) a ( d cis d ) a ( g a fis ) a ( g  a d, ) \breathe fis ( e d ) |
+	e, ( b' g' fis g ) b, ( g' b, ) e, ( b' g' fis g ) b, ( g' b, ) |
+	e, ( cis' d e d ) cis ( b a g' fis e ) d' ( cis b a g ) |
+	fis ( e d d' a ) d ( fis, a ) d, ( e fis a g ) fis ( e d ) |
 	% 11
-	gis d f e f d gis d b' d, f e f d gis d |
-	c e a b c a e d c e a b c a fis! e |
-	dis fis dis fis a fis a fis dis fis dis fis a fis a fis |
-	g fis e g fis g a fis g fis e d c b a g |
-	fis c' d c d c d c fis, c' d c d c d c |
+	gis ( d f e f ) \breathe d ( gis d b'  d,  f e f ) \breathe d ( gis d ) |
+	c ( e a b c ) a ( e d ) c ( e a b c ) a ( fis e ) |
+	dis ( fis dis fis a ) \breathe fis ( a fis dis fis dis fis a ) \breathe fis ( a fis ) |
+	g ( fis e g fis ) g ( a fis ) g ( fis e  d  c ) b ( a g ) |
+	fis ( c' d c d ) c ( d c ) fis, ( c' d c d ) \breathe c ( d c ) |
 	% 16
-	g b f' e f b, f' b, g b f' e f b, f' b, |
-	g c e d e c e c g c e d e c e c |
-	g fis' c' b c fis, c' fis, g, fis' c' b c fis, c' fis, |
-	g, d' b' a b g fis e d c b a g fis e d |
-	cis a' e' fis g e fis g cis,, a' e' fis g e fis g | \pageBreak
+	g ( b f' e f ) b, ( f' b, ) g ( b f' e f ) b, ( f' b, ) |
+	g ( c e d e ) c ( e c ) g ( c e d e ) \breathe c ( e c ) |
+	g ( fis' c' b c ) fis, ( c' fis, ) g, ( fis' c' b c ) fis, ( c' fis, ) |
+	g, ( d' b' a b ) g ( fis e ) d ( c b a g ) \breathe fis ( e d ) |
+	cis ( a' e' fis g ) e ( fis g ) cis,, ( a' e' fis g ) e ( fis g ) | \pageBreak
 	% 21
 	c,,! a' d e fis d e fis c, a' d e fis d e fis |
-	c, a' d fis a cis d8\fermata~ d16 a, b c! d e fis g |
+	c, a' d fis a cis d8 \laissezVibrer \fermata d16 a, b c! d e fis g |
 	a fis d e fis g a b c a fis g a b c d |
 	ees d cis d d c b c c a fis e! d a b c |
 	d, a' d fis a b c a b g d c b g a b |
@@ -86,7 +86,7 @@ voiceone = \relative c' {
 	g' a, d, a' g' a, g' a, g' a, d, a' g' a, g' a, |
 	% 41
 	fis' c d, c' fis c fis c fis c d, c' fis c fis c |
-	<g, b' g'>1\fermata | \bar "|."
+	\grace { g,16 ( d' b' ) } \fermata g'1 | \bar "|."
 }
 
 
