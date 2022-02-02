@@ -64,7 +64,7 @@ voiceone = \relative c' {
 	c,,! ( a' d e fis ) d ( e fis ) c, ( a' d e fis ) d ( e fis ) |
 	c, ( a' d fis a ) cis ( d8 \laissezVibrer \fermata d16 ) a, ( b c! d e fis g |
 	a fis ) d ( e fis g a b c a ) fis ( g a b c d ) |
-	ees d cis d d c b c c a fis e! d a b c |
+	ees ( d cis d ) d ( c b c ) c ( a fis e d a b c ) |
 	d, a' d fis a b c a b g d c b g a b |
 	% 26
 	d, g b d g a b g cis bes a bes bes a gis a |
