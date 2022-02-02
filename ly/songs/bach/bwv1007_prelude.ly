@@ -73,15 +73,15 @@ voiceone = \relative c' {
 	d8 ) \breathe c''16 ( b a g fis e d ) c' ( b a g fis e d |
 	c ) b' ( a g fis e d c b ) a' ( g fis e d c b |
 	% 31
-	a ) g' ( fis e fis ) a ( d, a' e  a  fis a g ) \breathe a ( e a |  \break
-	fis ) a ( d, a' g a e a fis a d, a' g ) a ( e a |
-	fis ) a ( d, a' e a fis a g ) \breathe a a a ( b a d, a' ) | \break
-	a a ( b a  c a d, a' b ) a ( c a d a b a |
+	a ) g' ( fis e fis ) \breathe a ( d, a' e  a  fis a g ) a ( e a | 
+	fis ) a ( d, a' g a e a fis a d, a' g ) \breathe a ( e a |
+	fis ) a ( d, a' e a fis a g ) a a a ( b a d, a' ) |
+	a \breathe a ( b a  c a d, a' b ) a ( c a d a b a |
     c ) \breathe a ( b a c a ) a a ( b ) a a a ( b a g a ) |
 	% 36
     a \breathe a ( g a ) a a ( fis a g ) a ( fis a g a e a |
 	fis ) \breathe a ( d, e ) f ( d ) fis ( d ) g ( d ) gis ( d ) a' ( d, ) bes' ( d, ) |
-	b'! ( d, ) c' ( d, ) cis' ( d, ) d' ( d, ) ees' ( d, ) e' ( d, ) f' ( d, ) fis' ( d, ) \breathe |
+	b'! ( d, ) c' ( d, ) cis' ( d, ) d' ( d, ) ees' ( d, ) e' ( d, ) f' ( d, ) fis' ( d, ) \breathe | \break
 	g' ( b, d, b' g' ) b, ( g'  b, ) g' ( b, d, b' g' ) b, ( g' b, ) |
 	g' ( a, d, a' g' ) a, ( g'  a, ) g' ( a, d, a' g' ) a, ( g' a, ) |
 	% 41
