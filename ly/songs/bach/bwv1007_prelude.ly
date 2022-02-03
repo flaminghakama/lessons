@@ -16,7 +16,7 @@ titleFull = "Suite #1 for Violoncello"
 instrumentName = ""
 composerName = "Johann Sebastian Bach (1685-1750)"
 copyright = \markup { \tiny "public domain" }
-arranger = ""
+arranger = "arranged by Elaine Paul"
 
 \header {
   title =   "Suite for Violoncello #1"
@@ -44,12 +44,12 @@ voiceone = \relative c' {
 	g, ( e' b' a b ) g ( fis g e ) g ( fis g b, ) d ( cis b  |
 	% 6
 	cis ) g' ( a g a ) g ( a g cis, ) g' ( a g a ) g ( a g |
-	fis ) a ( d cis d ) a ( g a fis ) a ( g  a d, ) \breathe fis ( e d ) |
+	fis ) a ( d cis d ) a ( g a fis ) a ( g  a d, ) fis ( e d ) \breathe |
 	e, ( b' g' fis g ) b, ( g' b, ) e, ( b' g' fis g ) b, ( g' b, ) |
 	e, ( cis' d e d ) cis ( b a g' fis e ) d' ( cis b a g ) |
-	fis ( e d d' a ) d ( fis, a ) d, ( e fis a g ) fis ( e d ) |
+	fis ( e d d' a ) d ( fis, a ) d, ( e fis a g ) fis ( e d ) \breathe |
 	% 11
-	gis ( d f e f ) \breathe d ( gis d b'  d,  f e f ) \breathe d ( gis d ) |
+	gis ( d f e f ) d ( gis d b'  d,  f e f ) \breathe d ( gis d ) |
 	c ( e a b c ) a ( e d ) c ( e a b c ) a ( fis e ) |
 	dis ( fis dis fis a ) fis ( a fis dis fis dis fis a ) \breathe fis ( a fis ) |
 	g ( fis e g fis ) g ( a fis ) g ( fis e  d  c ) b ( a g ) |
@@ -75,9 +75,9 @@ voiceone = \relative c' {
 	% 31
 	a ) g' ( fis e fis ) \breathe a ( d, a' e  a  fis a g ) a ( e a | 
 	fis ) a ( d, a' g a e a fis a d, a' g ) \breathe a ( e a |
-	fis ) a ( d, a' e a fis a g ) a a a ( b a d, a' ) |
+	fis ) a ( d, a' e a fis a g ) \breathe a a a ( b a d, a' ) |
 	a \breathe a ( b a  c a d, a' b ) a ( c a d a b a |
-    c ) \breathe a ( b a c a ) a a ( b ) a a a ( b a g a ) |
+    c ) a ( b a c a ) \breathe a a ( b ) a a a ( b a g a ) |
 	% 36
     a \breathe a ( g a ) a a ( fis a g ) a ( fis a g a e a |
 	fis ) \breathe a ( d, e ) f ( d ) fis ( d ) g ( d ) gis ( d ) a' ( d, ) bes' ( d, ) |
@@ -111,7 +111,7 @@ voiceone = \relative c' {
     \header {
         poet = "    Eb Alto or Baritone Sax"
         instrumentName = \poet
-        subtitle = "(transposed down a half step to Ab)"
+        subtitle = "(transposed up a half step to Ab)"
     }
     \score {
         \new Staff \transpose e f \transpose ees, c 
