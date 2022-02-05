@@ -16,8 +16,9 @@ killPreview
 rm blue-steps*pdf
 lilypond ly/songs/alt/blue-steps.ly
 mv blue-steps*.pdf  pdf/songs/alt
-#for file in pdf/songs/alt/blue-steps*pdf ; do open -a Preview $file ; done
 mv blue-steps*.midi midi
+a pdf/songs/alt/blue-steps-for-C.pdf &
+#for file in pdf/songs/alt/blue-steps*pdf ; do open -a Preview $file ; done
 
 %}
 
@@ -112,8 +113,8 @@ chordsLastTwoBarsForEb = \chordmode {
 }
 
 formChordsCommon = \chordmode {
-    bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m7.7+ b:7 | e:maj7 g:7 | 
+    bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:maj7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:maj7 b:7 | e:maj7 g:7 | 
     c1:m7 | f:aug7/cs | 
 }
 formChords = \chordmode {
@@ -121,13 +122,13 @@ formChords = \chordmode {
     \chordsLastTwoBars
 }
 formChordsForBb = \chordmode {
-    bf2:7 ef:1.3.5.7.8+.10+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m7.7+ cf:7 | ff:maj7 g:7 | 
+    bf2:7 ef:1.3.5.7.8+.10+ | ef2:7 gf:7 | a:7 d:maj7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:maj7 cf:7 | ff:maj7 g:7 | 
     c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
 }
 formChordsForEb = \chordmode {
-    bf2:7 af:1.3.5.7.8+.10+.12+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:m7.7+ cf:7 | ff:maj7 g:7 | 
+    bf2:7 af:1.3.5.7.8+.10+.12+ | ef2:7 gf:7 | a:7 d:maj7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:maj7 cf:7 | ff:maj7 g:7 | 
     c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
 }
 
@@ -179,7 +180,7 @@ headCommon = \relative c'' {
     r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r2 
 
     r4 r8 f'8 |
-    r8 ef r bf  df4-- ef-. | r4 r8 ff8  r ef df [ bf ] | gs4-- g8 fs8 r2 | r4 r8 
+    r8 ef r bf  df4-- ef-. | r4 r8 ff8  r ef df [ bf ] | af4-- g8 fs8 r2 | r4 r8 
 
     f' r ef r b | 
     d4-- c-. r2 | r2 ff8 ef df bf |

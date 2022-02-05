@@ -77,7 +77,7 @@ voiceone = \relative c' {
 	fis ) a ( d, a' g a e a fis a d, a' g ) \breathe a ( e a |
 	fis ) a ( d, a' e a fis a g ) \breathe a a a ( b a d, a' ) |
 	a \breathe a ( b a  c a d, a' b ) a ( c a d a b a |
-    c ) a ( b a c a ) \breathe a a ( b ) a a a ( b a g a ) |
+    c ) a ( b a c a ) \breathe a a ( b a ) a a ( b a g a ) |
 	% 36
     a \breathe a ( g a ) a a ( fis a g ) a ( fis a g a e a |
 	fis ) \breathe a ( d, e ) f ( d ) fis ( d ) g ( d ) gis ( d ) a' ( d, ) bes' ( d, ) |
