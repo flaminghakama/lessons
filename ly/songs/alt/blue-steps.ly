@@ -26,6 +26,7 @@ a pdf/songs/alt/blue-steps-for-C.pdf &
 
   top-margin = #2
   right-margin = #14
+  left-margin = #4
 
   % First page spacing after header
   markup-system-spacing.padding = #8
@@ -34,10 +35,10 @@ a pdf/songs/alt/blue-steps-for-C.pdf &
   top-system-spacing.minimum-distance = #22
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+  system-system-spacing.basic-distance = #20
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #24
+  score-system-spacing.minimum-distance = #30
 
   page-breaking = #ly:minimal-breaking
 
@@ -51,8 +52,10 @@ a pdf/songs/alt/blue-steps-for-C.pdf &
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout.ily"
-\include "ly/ily/hideMelody.ily"
+\layout { 
+    indent = .75\cm
+    short-indent = .25\cm
+}
 
 structure = \relative c' { 
 
@@ -74,7 +77,7 @@ structure = \relative c' {
     } 
     \alternative { 
         { s1*2 \bar ":|]" }
-        { s1*2 \break }
+        { s1 s2.... \toCoda s32 \break }
     }
 
     \startSectionNoBarline "Twos"
@@ -101,6 +104,18 @@ structure = \relative c' {
     }
     \bar ":|]" 
 }
+structureCoda = \relative c' { 
+
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once \override Score.RehearsalMark #'extra-offset = #'( -11 . -4 ) 
+    \once \override Score.RehearsalMark #'font-size = #8
+    \mark \markup { \musicglyph #"scripts.coda" }
+
+    \key bf \major
+    \time 4/4
+        s1*2
+    \bar "|." 
+}
 
 chordsLastBar = \chordmode { 
     d2:maj7 f:7 ||
@@ -113,8 +128,8 @@ chordsLastTwoBarsForEb = \chordmode {
 }
 
 formChordsCommon = \chordmode {
-    bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:maj7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:maj7 b:7 | e:maj7 g:7 | 
+    bf2:7 f:1.3.5.7.8+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:7 b:7 | e:maj7 g:aug7 | 
     c1:m7 | f:aug7/cs | 
 }
 formChords = \chordmode {
@@ -122,13 +137,13 @@ formChords = \chordmode {
     \chordsLastTwoBars
 }
 formChordsForBb = \chordmode {
-    bf2:7 ef:1.3.5.7.8+.10+ | ef2:7 gf:7 | a:7 d:maj7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:maj7 cf:7 | ff:maj7 g:7 | 
+    bf2:7 ef:1.3.5.7.8+.10+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
     c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
 }
 formChordsForEb = \chordmode {
-    bf2:7 af:1.3.5.7.8+.10+.12+ | ef2:7 gf:7 | a:7 d:maj7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:maj7 cf:7 | ff:maj7 g:7 | 
+    bf2:7 af:1.3.5.7.8+.10+.12+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
     c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
 }
 
@@ -136,13 +151,13 @@ codaChords = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    fs2:7 a:7 | d:maj7.7+ f2:7 | fs2:7 a:7 | d:maj7.7+ f4:7 bf:6 ||
+    fs2:7 a:7 | d:maj7.7+ f4:7 bf:6 ||
 }
 codaChordsForEb = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    gf2:7 a:7 | d:maj7.7+ f:7 | gf2:7 a:7 | d:maj7.7+ f4:7 bf:6 ||
+    gf2:7 a:7 | d:maj7.7+ f4:7 bf:6 ||
 }
 
 chordsSong = \chordmode { 
@@ -202,11 +217,11 @@ headFirstEnding = \relative c'' {
 headFirstEndingForMidi = \relative c'' {
     r2 r4 a8 cs | r4 r8 d 
 }
-headCoda = \relative c' { 
-    R1 | r2 r4 r8 e\xff ~ | 8 fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
+melodyCoda = \relative c' { 
+    e8\ff fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
 }
-headCodaForEb = \relative c' { 
-    R1 | r2 r4 r8 ff ~ | 8 gf af a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
+melodyCodaForEb = \relative c' { 
+    ff8\ff gf af a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
 }
 
 head = \relative c'' { 
@@ -286,23 +301,23 @@ twosForEb = {
 
 lineCommon = \relative c'' { 
     r2 bf\xmp | df ef | e1 | ef2 df4 bf ~ | 
-    bf2 ef, | gf af | bf?1 | gs2 g4 ef4 ~ |
+    bf2 ef, | gf af | a1 | gs2 g4 ef4 ~ |
     ef2 c | ef f | fs1\xmf | 
 }
 lineCommonHarmony = \relative c'' { 
     r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
-    2 g | ef f | g fs | e b4 c4 ~ |
+    2 df | ef cf | c ds | e b4 c4 ~ |
     2 bf | a b | as2\xmf a | 
 }
 lineCommonForEb = \relative c'' { 
     r2 bf | df ef | e1 | ef2 df4 bf ~ | 
-    bf2 ef, | gf af | bf?1 | af2 g4 ef4 ~ |
+    bf2 ef, | gf af | bff1 | af2 g4 ef4 ~ |
     ef2 c | ef f | gf1 |
 }
 lineCommonHarmonyForEb = \relative c'' { 
     r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
-    2 g | ef f | ef d | 2 b4 c4 ~ |
-    2 bf | a b | bf2\xmf a | 
+    2 df | ef cf | c ef | ff b,4 c4 ~ |
+    2 bf | a cf | bf2\xmf a | 
 }
 lineFirstEnding = \relative c' { 
     d1\xmf ||
@@ -439,6 +454,22 @@ basslineCoda = \relative c {
             % }
         >>
     }
+    \score {
+        \new StaffGroup <<
+            \new ChordNames \transpose c c  { 
+                \codaChords
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+        >>
+    }
 }
 
 \book {
@@ -475,6 +506,22 @@ basslineCoda = \relative c {
             % }
         >>
     }
+    \score {
+        \new StaffGroup \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \codaChordsForEb
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCodaForEb
+                >>
+            }
+        >>
+    }
 }
 
 \book {
@@ -509,6 +556,22 @@ basslineCoda = \relative c {
             % \new Lyrics \with { alignAboveContext = "staff" } {
             %     \lyricsto "lead" { \lyricsHeadOne } 
             % }
+        >>
+    }
+    \score {
+        \new StaffGroup \transpose ef c <<
+            \new ChordNames \transpose c c  { 
+                \codaChordsForEb
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCodaForEb
+                >>
+            }
         >>
     }
 }
