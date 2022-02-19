@@ -44,7 +44,8 @@ structure = \relative c' {
     \key d \major
     \time 3/4
     \partial 4*1 s4
-    s2.*12
+    \bar "||"
+    s2.*8
     \bar "||"
 }
 
@@ -52,28 +53,65 @@ chordsHead = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
+    s4 | d2. | a:7 | s | d |
+    d2. | g | d2 a4:7 | d2. |
 }
 
 melodyHead = \relative c'' { 
     a8 8 || b4 a d | cs2 a8 8 | 
-    b4 a e' | d2 a8 8 | a'4 fs d | 
-    cs4 b g'8 8 | fs4 d e | d2. 
+    b4 a e' | d2 a8 8 | \break 
+    a'4 fs d | 
+    cs8 8 \fermata b4 g'8 8 | fs4 d e | d2. 
 }
 
 lyricsHead = \lyricmode {
     Hap -- py birth -- day to you
     Hap -- py birth -- day to you
-    Hap -- py birth -- day dear some -- one
+    Hap -- py birth -- day dear A -- bi -- gail
     Hap -- py birth -- day to you
 
 }
 
 \book {
-	\bookOutputSuffix "in-C"
+	\bookOutputSuffix "for-C"
 
     \header {
     	title = \title
     	composer = \composerName
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+
+    \score {
+        \transpose c ef, <<
+            \new ChordNames \transpose c c { \chordsHead }
+        	\new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose c c <<
+                        \structure
+                        \melodyHead
+                    >>
+                    \noPageBreak
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHead } 
+            }
+        >>
+    }
+
+}
+
+\book {
+	\bookOutputSuffix "for-Eb"
+
+    \header {
+    	title = \title
+    	composer = \composerName
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
     }
 
     \score {
