@@ -117,6 +117,24 @@ melody = \relative c' {
     \melodyForm
 }
 
+melodyForEb = \relative c' { 
+    f4 c'4. af8 | bf2. | af4. bf | f2 r8 c8 |
+    f4 c'4. af8 | bf2. | af4. bf | f2. |
+    ef4 4 g | ef2. | df4. ef | f2. | 
+    ef4 4 g | ef2. | df4. af' | f2. ||
+
+    R2.*7 | 
+    r4 r f,8 af ||
+    c8 ef4-. 4 df8 | c4-. 4 bf8 g | af8 4-. g ef8 | f2 f8 af | 
+    c4-. ef4. df8 | c4. c8 bf [ g ] | af8 4-. g ef8 | f8 [ 8 ] 8 4. ||
+    ef'4 4 g | ef2. | df4. ef | f2. | 
+    ef4 4 g | ef2. | df4. af' | f2. ||
+}
+
+melody = \relative c' { 
+    \melodyForm
+}
+
 \book {
   \bookOutputSuffix "for-C"
     \header {
@@ -165,7 +183,35 @@ melody = \relative c' {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \melody
+                    \melodyForEb
+                >>
+                \noPageBreak
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Eb-low-bridge"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(with low bridge)"
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsHead 
+            }
+            \new Staff = "lead" \transpose ef, c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \melodyForEb
                 >>
                 \noPageBreak
             }
