@@ -86,10 +86,35 @@ structure = \relative c' {
 
 }
 
-chordsSong = \chordmode { 
+chordsSongI = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
+
+    f1 | s | s | s | 
+    f1 | s | c:7 | s | 
+    g1:m7 | s | s | s | 
+    f1:/a | af:dim7 | g:m7 | c:7 ||
+
+    f1 | s | s | s | 
+    f1 | f:7 | bf | d:7 | 
+    g1:m7 | b:dim7 | f/c | f | 
+    g1:7 | d:7 | f | c:7 ||
+}
+chordsSongII = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+    f1 | s | s | s | 
+    f1 | s | c:7 | s | 
+    g1:m7 | s | s | s | 
+    g1:m7 | c:7 | f2 d:m7 | g:m7 c:7 ||
+
+    f1 | s | s | s | 
+    f1 | f:7 | bf | s | 
+    bf1 | b:dim7 | f/c | a2:m7 d:7 | 
+    g1:7 | d:7 | f | c:7 ||
 }
 
 melodyInEb = \relative c {
@@ -193,7 +218,8 @@ melody = \transpose c ef \melodyInEb
         \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsSong 
+                \chordsSongI
+                \chordsSongII
             }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
