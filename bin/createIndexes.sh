@@ -1,7 +1,7 @@
 
 write_header(){
     FILE=$INDEX
-    NAME=`perl -e '$name = $ARGV[0];$name =~ s/\.pdf//g;$name =~ s/(\w+)/\u$1/g;$name =~ s/-/ /g;print "$name\n";' $1`
+    NAME=`perl -e '$name = $ARGV[0];$name =~ s|\./pdf||g;$name =~ s|(\w+)|\u$1|g;$name =~ s|-| |g;print "$name\n";' $1`
     echo "<html>" > $FILE
     echo "<head><title>Directory listing of $NAME</title></head>" >> $FILE
     echo "<body>" >> $FILE
