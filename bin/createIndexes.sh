@@ -30,7 +30,7 @@ append_style(){
 
 append_list(){
     FILE=$INDEX
-    NAME=`perl -e '$name = $ARGV[0];$name =~ s|\.\/pdf\/||g;$name =~ s|(\w+)|\u$1|g;$name =~ s|-| |g;print "$name\n";' $1`
+    NAME=`perl -e '$name = $ARGV[0];$name =~ s|\.\/pdf\/||g;$name =~ s|\/| ~ |g;$name =~ s|(\w+)|\u$1|g;$name =~ s|-| |g;print "$name\n";' $1`
     echo "    <h2>$NAME</h2>" >> $FILE
     echo "    <ul>" >> $FILE
     for file in `ls -1` ; do 
