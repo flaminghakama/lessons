@@ -55,12 +55,17 @@ append_footer(){
 
 STARTING_DIR=`pwd`
 INDEX=index.html
+DIR=""
 for dir in `find . -type d | grep pdf` ; do 
 	cd $dir 
-
-	write_header $dir
+    if [ "$dir" == "./pdf" ] ; then 
+        DIR="Lessons"
+    else 
+        DIR=$dir
+    fi
+    write_header $DIR
 	append_style
-	append_list $dir
+	append_list $DIR
 	append_footer
 
 	cd $STARTING_DIR
