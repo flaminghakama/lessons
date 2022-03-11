@@ -116,6 +116,22 @@ chordsSongII = \chordmode {
     bf1 | b:dim7 | f/c | a2:m7 d:7 | 
     g1:7 | d:7 | f | c:7 ||
 }
+chordsSongIII = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+    f1 | s | s | s | 
+    f1 | s | c:7 | s | 
+    g1:m7 | s | s | c:7 | 
+    a1:m7 | d:7 | g:m7 | c:7 ||
+
+    f1 | s | s | s | 
+    f1 | f:7 | bf | s | 
+    bf1 | b:dim7 | f | a2:m7 d:7 | 
+    g1:7 | c:7 | f2: d:7 | g:m7 c:7 ||
+}
+
 
 melodyInEb = \relative c {
     d4-. r r cs8 d ~ | 4 r fs4-. a-. | e'2 ~ 8 r ef d ~ | 4 r r2 | 
@@ -218,8 +234,8 @@ melody = \transpose c ef \melodyInEb
         \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsSongI
-                \chordsSongII
+                \chordsSongIII
+                \chordsSongIII
             }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
