@@ -117,7 +117,7 @@ melody = \relative c' {
     \melodyForm
 }
 
-melodyForEb = \relative c' { 
+melodyLowBridge = \relative c' { 
     f4 c'4. af8 | bf2. | af4. bf | f2 r8 c8 |
     f4 c'4. af8 | bf2. | af4. bf | f2. |
     ef4 4 g | ef2. | df4. ef | f2. | 
@@ -183,7 +183,7 @@ melody = \relative c' {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \melodyForEb
+                    \melody
                 >>
                 \noPageBreak
             }
@@ -211,7 +211,7 @@ melody = \relative c' {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \melodyForEb
+                    \melodyLowBridge
                 >>
                 \noPageBreak
             }
