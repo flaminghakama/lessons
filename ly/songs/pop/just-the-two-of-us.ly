@@ -234,6 +234,43 @@ melodySaxSolo = \relative c' {
     af8. f16 ~ 4  r8 f'' ~ 8 \tuplet 3/2 { bf,16 ( cf bf ) } |
     \tuplet 3/2 { af16 ( bf af ) } f16 ef  f af r8 r2 |
 }
+melodySaxSoloForEb = \relative c'' { 
+    r4 bf8 c ~ 4 ef,8 f16 ef | 
+    af8. f16 ~  8 ef  f af  bf16 16 af bf ||
+
+    c16 ef r8  f ef  f r  r4 | 
+    r2  bf,16 c8.  ef,8 f | 
+    af8. f16 ~  8 af  bf16 c ef8  r16 f ef f ~ |
+    f8 ef  af, f ~  4 r | 
+
+    r4  r8 af'  bf af  \slurUp \grace { af8 ( } c8 [ ) r16 bf ] ~ |
+    bf16 af8 f16 ~  8 ef  bf16 c8.  ef,8 f | \slurNeutral
+    af8. f16 ~  4  r16 cf' ( bf ) af   \tuplet 6/4 { cf16 ( bf af  f ef c ) }  |
+    af'8 bf8 \grace { bf8 ( } c8 ) ef,  f af  bf16 c ef8 ||
+
+    r4  f16 16 ef8  af f  bf [ af16 \slurUp \grace { bf8 ( } c16 ~ ] | 
+    c16 ) af8 f16 ~  8 ef  f4  r | \slurNeutral
+    r8. cf'16 ~  8. af16  
+        \tuplet 3/2 { bf32 ( cf bf } af16 ) f ef  
+        \tuplet 3/2 { af32 ( bf af } f16 ) ef df |
+    c8 ef16 f ~  8 ef16 c  
+        \tuplet 3/2 { bf32 ( cf bf } af16 ) f ef 
+        c ef f8 |
+
+    af8. f16 ~  4  r8 f'' ~  \tuplet 3/2 { f8 [ ef \slurUp \grace { cf8 ( } c8 ) } ] |
+    \tuplet 3/2 { bf16 ( c bf } af8 )  
+        \grace { cf8 ( } c8 ) r  
+        df16 c bf af 
+        gf8 [ af16 \grace { ef8 ( } f16 ] ~ |
+    f8. ) ef32 c  
+        \tuplet 3/2 { cf32 bf af } f16 af8  
+        bf8 af      
+        \grace { af8 ( } c16 ) ef f af ~ | 
+    af16 f8.  ef8 f  r8 c, ef [ f ] | 
+
+    af8. f16 ~ 4  r8 f'' ~ 8 \tuplet 3/2 { bf,16 ( cf bf ) } |
+    \tuplet 3/2 { af16 ( bf af ) } f16 ef  f af r8 r2 |
+}
 
 melodySong = \relative c' { 
     \melodyIntro
@@ -245,6 +282,17 @@ melodySong = \relative c' {
     \melodyChorus
     \melodyChorusShort r4
     \melodySaxSolo
+}
+melodySongForEb = \relative c' { 
+    \melodyIntro
+    \melodyVerse
+    \melodyChorus r2
+    \melodyBridge
+    \melodyInterlude
+    \melodyVerseThree
+    \melodyChorus
+    \melodyChorusShort r4
+    \melodySaxSoloForEb
 }
 
 lyricsHeadOne = \lyricmode {
@@ -363,67 +411,67 @@ lyricsHeadThree = \lyricmode {
     }
 }
 
-% \book {
-%   \bookOutputSuffix "for-Bb"
-%     \header {
-%         subtitle = ""
-%         poet = "Bb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         \transpose bf, c <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong 
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \override Stem.length-fraction = #(magstep 1.2)
-%                     \structure
-%                     \melodySong
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadTwo } 
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        subtitle = ""
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
 
-% \book {
-%   \bookOutputSuffix "for-Eb"
-%     \header {
-%         subtitle = ""
-%         poet = "Eb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         \transpose ef c <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong 
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \override Stem.length-fraction = #(magstep 1.2)
-%                     \structure
-%                     \melodySong
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadTwo } 
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        subtitle = ""
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \melodySongForEb
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
 
