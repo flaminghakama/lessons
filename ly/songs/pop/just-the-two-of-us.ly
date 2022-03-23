@@ -67,16 +67,22 @@ structure = \relative c' {
 
     \break
 
-    \bar "[|:"
-    \startSectionNoBarline "Verse"
+    \startSectionNoBarline "Verse I"
     s1*8
-    \startSection "Chorus"    
-    s1*8
-    \bar ":|]"
 
     \pageBreak
 
-    \startSectionNoBarline "Bridge"
+    \startSection "Chorus"    
+    s1*8
+
+    \startSection "Verse II"
+    s1*8
+    \startSection "Chorus"    
+    s1*8
+
+    \pageBreak 
+
+    \startSection "Bridge"
     s1*7
     \bar "||"
     \time 6/4
@@ -86,7 +92,7 @@ structure = \relative c' {
     \time 4/4
     s1*4
 
-    \startSection "Verse"
+    \startSection "Verse III"
     s1*8
 
     \startSection "Chorus"
@@ -110,21 +116,72 @@ structure = \relative c' {
     \bar "|."    
 }
 
+
+chordsCell = \chordmode { 
+    df2:maj7 c:aug7 | f:m7 ef4:m7 af:7 | df2:maj7 c:aug7 | f1:m7 | 
+}
+
+chordsIntro = \chordmode { 
+    \chordsCell
+    \chordsCell
+}
+
+chordsVerse = \chordmode { 
+    \chordsCell
+    \chordsCell
+}
+
+chordsChorus = \chordmode { 
+    \chordsCell
+    \chordsCell
+}
+
+chordsBridge = \chordmode {
+    df2:maj7 c:aug7 | b:maj7 bf:7 | a:maj7 af:7 | cs:maj7 fs2:13 | 
+    df2:maj7 c:aug7 | b:maj7 bf:7 | a:maj7 af:7 | cs:maj7 fs1:13 | 
+}
+chordsBridgeForEb = \chordmode {
+    df2:maj7 c:aug7 | cf:maj7 bf:7 | bff:maj7 af:7 | df:maj7 gf2:13 | 
+    df2:maj7 c:aug7 | cf:maj7 bf:7 | bff:maj7 af:7 | df:maj7 gf1:13 | 
+}
+
+chordsInterlude = \chordmode { 
+    \chordsCell
+}
+
 chordsSong = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-
+    \chordsIntro
+    \chordsVerse
+    \chordsChorus
+    \chordsVerse
+    \chordsChorus
+    \chordsBridge
+    \chordsInterlude
+    \chordsVerse
+    \chordsChorus
+    \chordsChorus
+    \chordsChorus
+    \chordsChorus
 }
-
-
-chordsIntro = \chordmode { 
-}
-
-chordsVerse = \chordmode { 
-}
-
-chordsBridge = \chordmode { 
+chordsSongForEb = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    \chordsIntro
+    \chordsVerse
+    \chordsChorus
+    \chordsVerse
+    \chordsChorus
+    \chordsBridgeForEb
+    \chordsInterlude
+    \chordsVerse
+    \chordsChorus
+    \chordsChorus
+    \chordsChorus
+    \chordsChorus
 }
 
 melodyIntro = \relative c''' { 
@@ -182,6 +239,17 @@ melodyBridge = \relative c''' {
     bf8 af16 gf ~  16 ef8 bf'16 ~ 4 r |
     af8 gf16 ff ~  16 df8 af'16 ~ 16 gf af8 ~ 8 gf |
     f8. af16 ~ 8 ef' ~ 2 ~ 4. r8  |         
+}
+melodyVerseTwo = \relative c'' { 
+    r8 af16 16 ~ 16 8 g16 ~  8  8 af bf16 c ~ |
+    c4  ef8 c  f ef16 \grace { df8 ( } c16 ~  8 ) bf16 af ~ | 
+    af8. 16  c16 bf8 16 ~  16 af8 \grace { c8 ( } cf16 ~ 8 ) bf | 
+    f4. r8 r2 ||
+
+    r8 g16 af ~  16 8.  g8 16 af ~  16 bf8. | 
+    c4  ef8 c16 ef ~ 8 df c bf | 
+    af8 r   c16 bf af bf ~  8 af16 cf (   bf8 ) af | 
+    f4. r8 
 }
 melodyInterlude = \relative c'' { 
     s1*4
@@ -276,6 +344,8 @@ melodySong = \relative c' {
     \melodyIntro
     \melodyVerse
     \melodyChorus r2
+    \melodyVerseTwo
+    \melodyChorus r2
     \melodyBridge
     \melodyInterlude
     \melodyVerseThree
@@ -286,6 +356,8 @@ melodySong = \relative c' {
 melodySongForEb = \relative c' { 
     \melodyIntro
     \melodyVerse
+    \melodyChorus r2
+    \melodyVerseTwo
     \melodyChorus r2
     \melodyBridge
     \melodyInterlude
@@ -318,8 +390,25 @@ lyricsHeadOne = \lyricmode {
     Just the two of us
     You and I
 
+
+    We look for love, no time for tears
+    Wast -- ed wa -- ter's all that is
+    And it don't make no flo -- wers grow
+    Good things might come to those who wait
+    Not for those who wait too late 
+    We got -- ta go for all we know
+
+    Just the two of us
+    We can make it if we try
+    Just the two of us
+    (Just the two of us)
+    Just the two of us
+    Build -- ing cast -- les in the sky
+    Just the two of us
+    You and I
+
     \repeat unfold 28 { \skip 1 }
-    \repeat unfold 18 { \skip 1 }
+    \repeat unfold 16 { \skip 1 }
 
     I hear the crys -- tal rain -- drops fall
     On the win -- dow down the hall
@@ -351,13 +440,6 @@ lyricsHeadTwo = \lyricmode {
 
     \repeat unfold 28 { \skip 1 }
 
-    We look for love, no time for tears
-    Wast -- ed wa -- ter's all that is
-    And it don't make no flo -- wers grow
-    Good things might come to those who wait
-    Not for those who wait too late 
-    \repeat unfold 1 { \skip 1 }
-    We got -- ta go for all we know
 
     \repeat unfold 42 { \skip 1 }
 }
@@ -422,7 +504,7 @@ lyricsHeadThree = \lyricmode {
         \transpose bf, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForEb
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -454,7 +536,7 @@ lyricsHeadThree = \lyricmode {
         \transpose ef c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForEb
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
