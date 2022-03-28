@@ -517,7 +517,7 @@ lyricsHarmonyTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "Vocal-in-D"
+  \bookOutputSuffix "in-D-Vocal"
     \header {
         subtitle = "(Rado key)"
         poet = "Concert Lead Sheet"
