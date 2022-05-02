@@ -2,43 +2,76 @@
 
 \include "english.ly"
 
-chordsSong = \chordmode { 
-    % \set chordChanges = ##t 
-    % \set chordNameExceptions = #flamingChordExceptions
-    % \set noChordSymbol = ##f
-    bf1 | bf:7 | ef:6 | ef:m6 |
-    bf2. e4:dim7 | f2:9 f:aug7 | bf/d df:dim7 | c:m7 f:7 ||
+songForm = \relative c' {
 
-    bf1 | bf:7 | ef:6 | ef:m6 |
-    bf2. e4:dim7 | f2:9 f:aug7 | bf1 | e:m7.5- a:7.9- ||
+    \time 4/4
+    \key bf \major
 
-    d1:m | e2:m7.5- a:7.9- | d1:m | e2:m7.5- a:7.9- |
-    d1:m | e2:m7.5- a:7.9- | d1:m | c2:m7 ef4/f f:7 |
+    \bar "[|:"
+    \repeat volta 2 { 
+        s1*4 \break
+        s1*3
+    }
+    \alternative { 
+        {
+            s1 \bar ":|]"
+        } {
+            s1 
+        }
+    } 
 
-    bf1 | bf:7 | ef:6 | ef:m6 |
-    bf2. e4:dim7 | f1:9 | bf | s ||
+    s1*4 \break
+    s1*4 \break
+
+    s1*4 \break
+    s1*4
+    \bar "|."
 }
 
-melodySong = \relative c' { 
-    c1 d e f g a \break 
-    b1 a g d8 ef e f d'8 4 df8 | c2 d8 4 df8 | c2 d8 4 df8 | c1 | 
-    d,8 ef e f a8 4 af8 | g2 a8 4 af8 | g1 ~ | 2 r ||
-
-    d8 ef e f d'8 4 df8 | c2 d8 4 df8 | c2 d8 4 df8 | c1 | 
-    d,8 ef e f a8 4 af8 | g2 8 f g4 | bf1 ~ | 2 r ||
-
-    d8 e d e d4 a | bf4 2. | a8 bf a bf a4 f | e1 | 
-    d'8 e d e d4 a | bf4 2. | a8 bf a bf a4 f | ef1 | 
-
-    d8 ef e f d'8 4 df8 | c2 d8 4 df8 | c2 d8 4 df8 | c1 | 
-    d,8 ef e f a8 4 af8 | g2 8 f g4 | bf1 ~ | 2 r ||
+songChords = \chordmode {
+    fs2:7 b:7 | e:7 a:7 | d:7 g:7 | c:7 f:7 | 
+    bf1:7 | bf:7 | bf:7 | bf:7 | bf:7 | 
+    d:7.5- | d:7.5- | g:7.5- | g:7.5- | 
+    c:7.5- | c:7.5- | f:7.5- | f:7.5- | 
+    gf2:7 b:7 | e:7 a:7 | d:7 g:7 | c:7 f:7 | 
+    bf1:7 | bf:7 | bf:7 | bf:7 | bf:7 | 
 }
+
+
+melodyA = \relative c'' {
+    e8 ( ds e ) a ds,4. cs8 | d? ( cs d ) g cs,4. b8 | 
+    c8 ( b c ) f b,4. a8 | bf? ( a bf ) ef a,4. r8 |
+    
+    r4 df8 ( c ) gf'( f ) df c  | g ( af2.. ) | 
+    r4 r8 f g ( af4. ~ | 2. ) 
+}
+
+bridge = << 
+    \relative c' { 
+        \stemDown \tieDown c8 | d8 c d af' ~  af2 ~ | af1 | df,8 b df g f2 ~ | f2.. bf,8 |
+        c bf c fs ~ fs2 ~ | fs1 | b,8 a b f' ef2 ~ | ef2..  
+    } \\ 
+    \relative c'' { 
+        \stemUp s8 | s2 s4 s8 c | d8 c d af' ~ af2 | s1 | df,8 b df g f2 | 
+        s2 s4 s8 bf, | c bf c fs ~ fs2 | s1 | b,8 a b f' ef4. 
+    } 
+>>
+
+melody = \relative c'' {
+    \melodyA \relative c'' { r8 ds } ||
+    \relative c'' { af2. \repeatTie r8 }
+    \bridge 
+    \melodyA r4
+}  
 
 \book {
     \score {
         <<
-            \new ChordNames \chordsSong
-            \new Staff \melodySong
+            \new ChordNames \songChords
+            \new Staff <<
+                \songForm
+                \melody
+            >>
         >>
     }
 }
