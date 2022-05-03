@@ -74,14 +74,12 @@ structure = \relative c' {
         s1*16
         \break
 
-        \key f \minor
         \startSection "C"
         s1*16
         \bar ":|]"
     }
     \pageBreak
 
-    \key f \major
     \startSectionNoBarline "D"
     s1*4 \break
     s1*4 \break
@@ -125,8 +123,8 @@ chordsC = \chordmode {
     f1:m | s | s | s | 
     f1:m | s | s | s | 
     
-    f1:m | s2 c:7 | f1:m | s2 c:7 |
-    f1:m | s2 c:7 | f1:m | s |
+    f1:m6 | s2 c:7.9- | f1:m6 | s2 c:7.9- |
+    f1:m6 | s2 c:7.9- | f1:m6 | s |
 }
 
 chordsD = \chordmode { 
@@ -202,9 +200,9 @@ themeCSteelDrumPartTwo = \relative c {
 }
 
 themeCTrumpet = \relative c'' { 
-    r4 d2. ~ | 2 cs4 r | 
-    r4 d2. ~ | 2 cs4 r | 
-    r4 d2. ~ | 2 cs4 r | 
+    r4 d2. ~ | 2 df4 r | 
+    r4 d2. ~ | 2 df4 r | 
+    r4 d2. ~ | 2 df4 r | 
     r8 d4. 4. 8 ~ | 4 r r2 |
 }
 
