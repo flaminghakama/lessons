@@ -61,7 +61,7 @@ structure = \relative c' {
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
 
-    \key b \minor
+    \key f \major
     \tempo "Hot Swing" 4=260
     \time 4/4
     \startSectionNoBarline "A"
@@ -74,12 +74,14 @@ structure = \relative c' {
         s1*16
         \break
 
+        \key f \minor
         \startSection "C"
         s1*16
         \bar ":|]"
     }
     \pageBreak
 
+    \key f \major
     \startSectionNoBarline "D"
     s1*4 \break
     s1*4 \break
@@ -94,6 +96,7 @@ structure = \relative c' {
 
     \pageBreak
 
+    \key df \major
     \startSection "F"
     s1*4 \break
     s1*4 \break
@@ -110,10 +113,63 @@ structure = \relative c' {
     \bar "|."    
 }
 
-themeAForEb = \relative c'' { 
-    \key b \minor
-    \time 4/4
+chordsA = \chordmode { 
+    d1:m | s | s | s |
+    d1:m | s | a:7.8+9+ | s | 
 
+    d1:m | s | s | s | 
+    bf2:7 b:dim7 | d:m7 d:7 | g:7 c:7 | f1 |
+}
+
+chordsC = \chordmode { 
+    f1:m | s | s | s | 
+    f1:m | s | s | s | 
+    
+    f1:m | s2 c:7 | f1:m | s2 c:7 |
+    f1:m | s2 c:7 | f1:m | s |
+}
+
+chordsD = \chordmode { 
+    c1:7 | s | f | s | 
+    c1:7 | s | f | s | 
+    bf1:maj7 | bf:m7 | f | d:7 | 
+    g1:9 | c:7 | f | s | 
+}
+
+chordsE = \chordmode { 
+    c1:7 | s | f | s | 
+    c1:7 | s | f | fs:dim7 | 
+    bf1 | b:dim7 | f | d:7 | 
+    g1:9 | c:7 | f2 a:7 | d1:m |
+}
+
+chordsF = \chordmode { 
+    df:1 | s | af:7 | 
+    df:1 | s | gf | af:7 | 
+    df:1 | s | gf | c | 
+    gf2 g:dim7 | bf1:7 | bf:m7 ef:7 |  
+}
+
+chordsG = \chordmode { 
+    df:1 | s | af:7 | 
+    df:1 | s | gf | af:7 | 
+    df:1 | s | gf | c | 
+    gf:2 g:dim7 | bf:7 | bf:m7 ef:7 |  
+}
+
+chordsSong = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    \chordsA
+    \chordsA
+    \chordsC
+    \chordsD
+    \chordsE
+    \chordsF
+}
+
+themeAInEb = \relative c'' { 
     fs4 b fs b | fs8 b4 fs8 ~ 8 es fs4 | fs8 e fs e  r cs e [ ef ] | d4. b8 ~ 4 r | 
 
     fs'4 b fs b | fs8 b4 fs8 ~ 8 es fs4 | e4 4 ~ 8 ds8 e4 | a8 g r fs r e4. |
@@ -124,19 +180,21 @@ themeAForEb = \relative c'' {
     c4 b es,8 fs4 d8 ~ | 2 r |
 }
 
-themeBForEb = \relative c'' { 
+themeBInEb = \relative c'' { 
     r8 fs r d fs4 r | r8 fs r d fs4 r | r8 fs r d es fs r d ~ | 4. b8 ~ 4 r | 
     r8 fs' r d fs4 r | r8 fs r d fs4 r | r8 fs r d es fs r e ~ | 4. a,8 ~ 4 r | 
     r8 fs' r d fs4 r | r8 fs r d fs4 r | r8 fs r d es fs r d ~ | 4. b8 ~ 4 r |
     g8 b d4 gs,8 b d4 | es8 fs r b ~ 4 r | b,8 d fs b es, fs r d ~ | 2 r | 
 }
 
-themeCSteelDrum = \relative c' { 
+themeCSteelDrumPartOne = \relative c' { 
     r4. g8 ~ 8 f c'4 ~ | 8 f, g4  8 af f4 | 
     f4. af8 ~ 8 f g4 ~ | 8 f af4 g af | 
     f4. af8 ~ 8 f g4 ~ | 8 f af4 g af | 
     f4 af8 f g4 af8 f  | g4 af8 f  g4 af |     
+}
 
+themeCSteelDrumPartTwo = \relative c {
     f4. af8 ~ 8 f g4 ~ | 8 f af4 g af | 
     f4. af8 ~ 8 f g4 ~ | 8 f af4 g af | 
     f4. af8 ~ 8 f g4 ~ | 8 f af f  g f af g |  
@@ -144,8 +202,6 @@ themeCSteelDrum = \relative c' {
 }
 
 themeCTrumpet = \relative c'' { 
-    s1*8  \break
-
     r4 d2. ~ | 2 cs4 r | 
     r4 d2. ~ | 2 cs4 r | 
     r4 d2. ~ | 2 cs4 r | 
@@ -193,22 +249,40 @@ themeF = \relative c'' {
 themeG = \relative c'' {
     c8 8 r4 c8 8 r4 | c8 8 r4 c8 8 r4 | 
     c4 e2 f8 df | %<< { 
-        af f e ef d4-. %} \\ { af8 a bf b c4 } >> 
+        af f ff ef d4-. %} \\ { af8 a bf b c4 } >> 
             r4 |   
 
-    c'8 8 r b c8 8 r b | c c r b c c r b | 
+    c'8 8 r b c8 8 r b | c c r b c c r4 | 
+    df,4 4 ~ 8 bf df bf | df bf df bf af bf r4 | 
     df4 4 ~ 8 bf df bf | df bf df bf af bf r4 | 
     df4 4 ~ 8 bf df bf | df bf df bf af bf r4 | 
-    df4 4 ~ 8 bf df bf | df bf df bf af bf r4 | 
-    fs8 g b c f, af b? c | df8 df,8 r df8 4-. r | 
+    gf?8 g b c f, af b? c | df8 df,8 r df8 4-. r | 
+}
+
+melody = { 
+    \transpose c ef, {
+        \themeAInEb 
+        \themeBInEb 
+    }
+    \transpose c, c \themeCSteelDrumPartOne
+    <<
+        \themeCTrumpet \\
+        \transpose c, c \themeCSteelDrumPartTwo
+    >> 
+    \themeD
+    \themeE
+    \themeF
+    \themeG
+    R1*8
 }
 
 melodyInEb = { 
-    \themeAForEb 
-    \themeBForEb 
+    \themeAInEb 
+    \themeBInEb 
+    \transpose ef, c \themeCSteelDrumPartOne
     \transpose ef, c <<
         \themeCTrumpet \\
-        \themeCSteelDrum
+        \themeCSteelDrumPartTwo
     >> 
     \transpose ef, c {
         \themeD
@@ -227,6 +301,32 @@ melodyInEb = {
 }
 
 \book {
+  \bookOutputSuffix "for-C"
+    \header {
+        subtitle = ""
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \transpose c c \structure
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
   \bookOutputSuffix "for-Eb"
     \header {
         subtitle = ""
@@ -234,14 +334,20 @@ melodyInEb = {
         instrumentName = \poet
     }
     \score {
-        \new Staff = "voice" \transpose c c { 
-            \include "ly/ily/staff-properties.ily"
-            \autoPageBreaksOff
-            \new Voice = "lead" <<
-                \override Stem.length-fraction = #(magstep 1.2)
-                \structure
-                \melodyInEb
-            >>
-        }
+        \transpose c c <<
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \transpose ef c \structure
+                    \melodyInEb
+                >>
+            }
+        >>
     }
 }
