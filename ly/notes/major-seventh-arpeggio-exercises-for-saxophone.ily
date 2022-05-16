@@ -16,10 +16,10 @@ majorSeventhArpeggioC = \relative c' {
         b8 ) c ( e ) g (  c,2 ) |
         c8 e ( g ) b (  e, ) g ( b ) c (  |
         g8 ) b ( c ) e (  b8 ) c ( e ) g, ( 
-        c1 ) |
+        c2. )  8 b ( |
     }
     \relative c''' { 
-        e8 c ( b ) g (  c ) b ( g ) e (  |
+        e8 ) c ( b ) g (  c ) b ( g ) e (  |
         b'8 ) g ( e ) c (  g' ) e ( c ) b ( |
         e8 ) c ( b ) g (  c2 ) |
         c8 b ( g ) e (  b' ) g ( e ) c ( |
@@ -151,18 +151,19 @@ majorSeventhArpeggioFSharp = \relative c' {
         fs8 as ( cs ) es (         
         as,8 ) cs ( es ) fs, ( | 
         cs'8 ) es ( fs, ) as ( 
-        es ) fs, ( as ) cs ( | 
-        fs1 ) 
+        es' ) fs, ( as ) cs ( | 
+        fs,1 ) 
     }
     \relative cs'' { 
-        fs8 es' ( cs ) as (  es' ) cs ( as ) fs ( | 
+        fs8 es' ( cs ) as (  es' ) cs ( as ) fs ( |
         cs'8 ) as ( fs ) es (  as ) fs ( es ) cs ( | 
-        fs2 ) 8 es ( cs ) as (  |
-        es'8 ) cs ( as ) fs (  
-        cs'8 ) as ( fs ) es (  |
-        as8 ) fs ( es ) cs ( 
-        fs8 ) es ( cs ) as ( |
-        fs'1 ) | 
+        fs2 )  8  es ( cs ) as (  |
+        es'8 ) cs ( as ) fs ( 
+        cs'8 ) as ( fs ) es ( | 
+        as8 ) fs ( es ) cs (  
+        fs8 ) es ( cs ) as (  |
+        es'8 ) cs ( as ) cs ( 
+        fs2 )
     }
     \bar "||"
 }
@@ -198,10 +199,11 @@ majorSeventhArpeggioAFlat = \relative c' {
         g8 ) af ( c ) ef (  af,2 ) |
         af8 c ( ef ) g ( c, ) ef ( g ) af ( |
         ef8 ) g ( af ) c ( g ) af ( c ) ef (  |
-        af,8 ) c ( ef ) g, ( af2 ) |
+        af,8 ) c ( ef ) g, ( af2 ~ |
     }
     \relative c''' { 
-        ef8 c ( af ) g (   c ) af ( g ) ef (  |
+        af2. ) r8 af ( | 
+        ef'8 ) c ( af ) g (   c ) af ( g ) ef (  |
         af8 ) g ( ef ) c (   g'8 ) ef ( c ) af ( |
         ef' ) c ( af ) g (   c8 ) af ( g ) ef ( |
         af ) g ( ef ) c (   g' ) ef ( c ) g' ( |
@@ -220,11 +222,12 @@ majorSeventhArpeggioBFlat = \relative c' {
         bf,2 ) 8 d ( f ) a (  |
         d, ) f ( a ) bf ( 
         f8 ) a ( bf ) d (  |
-        a8 ) bf ( d ) f ( 
-        bf,2 ) |
+        a8 ) bf ( d ) f (  bf, ) d ( f ) a, ( | 
+        bf2.. ) 
     }
     \relative c''' { 
-        f8 d ( bf ) a ( d ) bf ( a ) f ( |
+        bf8 ( |
+        f'8 ) d ( bf ) a ( d ) bf ( a ) f ( |
         bf8 ) a ( f ) d (  a' ) f ( d ) bf (|
         f'8 ) d ( bf ) a (  d ) bf ( a ) f ( |
         bf2 ) 8  a ( f ) d ( |
@@ -248,10 +251,10 @@ majorSeventhArpeggioB = \relative c' {
         ds,8 ) fs ( as ) b (  |
         fs8 ) as ( b ) ds (  
         as8 ) b ( ds ) fs, ( | \noBreak
-        b1 ) |
+        b2. ) 8 as ( |
     }
     \relative c''' { 
-        ds8  b ( as ) fs (  b ) as ( fs ) ds (  |
+        ds8 ) b ( as ) fs (  b ) as ( fs ) ds (  |
         as'8 ) fs ( ds ) b (  fs' ) ds ( b ) as ( |
         ds8 ) b ( as ) fs (  b2 ) |
         b8 as ( fs ) ds ( 
