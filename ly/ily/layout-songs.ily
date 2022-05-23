@@ -11,4 +11,10 @@
         \override Glissando.thickness = #1.8
         %\override StringNumber.stencil = ##f
     }
+    \context { 
+        \Staff 
+        \RemoveAllEmptyStaves 
+   }
 }
+
+
