@@ -83,7 +83,7 @@ rehearsalMarkTweaksForC = \relative c' {
 rehearsalMarkTweaksForBb = \relative c' { 
     \override Score.RehearsalMark #'extra-offset = #'( -4 . 2 )
     s1*16  
-    \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
+    \override Score.RehearsalMark #'extra-offset = #'( -5 . -1 )
 }
 
 rehearsalMarkTweaksForEb = \relative c' { 
@@ -105,7 +105,7 @@ melodyFirstEnding = \relative c'' {
 melodySecondEnding = \relative c'' { 
     d2 ~ 8 a4 g16 f | g2. d4 | 
     fs4. 8 ~ 4 4 ~ | 8 4. 4 4 |
-    f4. 8 ~ 4 4 ~ | 8 4. 4 4 |
+    f?4. 8 ~ 4 4 ~ | 8 4. 4 4 |
 }
 
 melody = \relative c'' { 
