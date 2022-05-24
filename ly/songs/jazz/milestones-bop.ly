@@ -61,7 +61,7 @@ structure = \relative c' {
     s1*4
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
+    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -3 )
 
     \bar "[|:"
 
@@ -75,16 +75,61 @@ structure = \relative c' {
         { s1 \break }    
     }
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -4 )
     \startSection "B"
     s1*4 \break
     s1*4 \break
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
+    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -3 )
     \startSection "A"
     s1*4 \break
     s1*4 
     \bar "|."
+}
+
+rehearsalMarkTweaksForC = \relative c' { 
+    s1*8
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -7 . -3 )
+    % "A"
+    s1*9
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
+    % "B"
+    s1*8 \break
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -3 )
+    % "A"
+}
+
+rehearsalMarkTweaksForBb = \relative c' { 
+    s1*8
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -4 . -2 )
+    % "A"
+    s1*9
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . -3 )
+    % "B"
+    s1*8 \break
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . -3 )
+    % "A"
+}
+
+rehearsalMarkTweaksForEb = \relative c' { 
+    s1*8
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -3 )
+    % "A"
+    s1*9
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -4 )
+    % "B"
+    s1*8 \break
+
+    \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -4 )
+    % "A"
 }
 
 melodyIntro = \relative c' { 
@@ -163,6 +208,7 @@ chordsForm = \chordmode {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForC
                     \melody
                 >>
                 \noPageBreak
@@ -193,6 +239,7 @@ chordsForm = \chordmode {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForBb
                     \melody
                 >>
                 \noPageBreak
@@ -223,6 +270,7 @@ chordsForm = \chordmode {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForEb
                     \melody
                 >>
                 \noPageBreak
