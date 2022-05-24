@@ -88,17 +88,17 @@ structure = \relative c' {
 }
 
 melodyIntro = \relative c' { 
-    r8 c r4 g'8 e f g | af4 c8 bf ~ 4 r | 
-    r8 ef, f [ g ] bf g af bf | cf4 ef8 df ~ 4 r | 
-    f8 ef d c bf4 g8 gf ~ | 2. r4 |
+    r8 c d [ e ] g8 e f g | af8 c4 bf8 ~ 4 r | 
+    r8 ef, f [ g ] bf g af bf | cf8 ef4 df8 ~ 4 r | 
+    f8 ef d c bf4 g8 gf ~ | 2 r |
     f4 d8 ef f4 g | bf8 af g f ef4 d |
 }
 
 melodyA = \relative c' { 
-    r8 d \tuplet 3/2 { ef8 g bf } f'4 ef8 gf, ~ | 2. r8 af |
+    r8 d \tuplet 3/2 { ef8 g bf } f'8 ef4 gf,8 ~ | 2 r4 r8 af |
     f8 g d ef f g \tuplet 3/2 { gs8 a bf } | cf8 df4 bf8 \tuplet 3/2 { cf8 bf g } af4 |
-    r8 f' \tuplet 3/2 { ef8 bf g } gf'8 ff gf ff | d4 a8 fs cs' as r4 |
-    r8 d, \tuplet 3/2 { ef8 g bf } f'4 ef8 d ~ | 2 r || 
+    r8 f' \tuplet 3/2 { ef8 bf g } gf'8 ff gf ff | d4 \tuplet 3/2 { a8 fs d } cs'8 as r4 |
+    r8 d, \tuplet 3/2 { ef8 g bf } f'8 ef4 d8 ~ | 2 r || 
 }
 
 melodyASecondEnding = \relative c'' { 
@@ -106,10 +106,10 @@ melodyASecondEnding = \relative c'' {
 }
 
 melodyB = \relative c'' { 
-    cs4 r8 e a, b r c ~ | 4 \tuplet 3/2 { a8 fs d } b'4 r8 a |
-    c8 d b4 a8 b g fs ~ | 4 \tuplet 3/2 { r8 d e } f8 e r d' | 
-    r8 c r b r a4. | \tuplet 3/2 { gs8 b a ~ } 4 r r8 c ~ |
-    c4 \tuplet 3/2 { af8 f df } \tuplet 3/2 { c'8 a bf } r8 cs ~ |
+    cs4. e8 a, b4 c8 ~ | 4 \tuplet 3/2 { a8 fs d } b'4 r8 a |
+    c8 d b4 a8 b g fs ~ | 4 \tuplet 3/2 { b,8 d e } f8 e r4 | 
+    d'8 c r b r a4. | \tuplet 3/2 { gs8 b a ~ } 4 r2 |
+    c4 \tuplet 3/2 { af8 f df } r8 a' bf4 |
     cs4 \tuplet 3/2 { a8 fs d } \tuplet 3/2 { cs'8 d as } b4 | 
 }
 
