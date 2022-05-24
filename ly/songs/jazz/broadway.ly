@@ -87,7 +87,7 @@ melodyALickOneTwo = \relative c'' {
     b8 a4. ~ 4  b8 a ~ | 4  r8 fs' r e cs [ a  ] | 
 }
 melodyALickTwo = \relative c'' { 
-    cs8 e4. ~ 4  c8 e, ~ | 4 r8 c'8 ~ 8 a b c | 
+    cs8 e4. ~ 4  cs8 e, ~ | 4 r8 c'8 ~ 8 a b c | 
     b8 a r4 a2 | 
 }
 melodyAFirstEnding = \relative c'' { 
