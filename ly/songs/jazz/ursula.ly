@@ -29,7 +29,7 @@ for file in pdf/songs/jazz/ursula*.pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #6
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -82,11 +82,57 @@ structure = \relative c' {
     \time 4/4
     s1*4 \break
     s1*4 \break 
-    s1*3
-    \bar "||"     
-    \time 2/4
-    s4 <>_"D.S. al Fine" s4
+    s1*4 \break
+
+    \startSection "A"
+    s1*6 \break
+    s1*4     
+    \bar "||"
+    \time 2/4 
+    s2
     \bar "|."
+}
+
+rehearsalMarkTweaksForC = \relative c' { 
+    s2 
+    \override Score.RehearsalMark #'extra-offset = #'( -1 . 1 )
+    % "A"
+    s1*11
+    
+    \override Score.RehearsalMark #'extra-offset = #'( -1 . 2 )
+    % "B"
+    s1*12    
+
+    \override Score.RehearsalMark #'extra-offset = #'( -3 . -3 )
+    %  "A"
+}
+
+rehearsalMarkTweaksForBb = \relative c' { 
+    s2 
+    \override Score.RehearsalMark #'extra-offset = #'( -1 . 1 )
+    % "A"
+    s1*11
+    
+    \override Score.RehearsalMark #'extra-offset = #'( -1 . 3 )
+    % "B"
+    s1*12    
+
+    \override Score.RehearsalMark #'extra-offset = #'( -3 . -3 )
+    %  "A"
+}
+
+rehearsalMarkTweaksForEb = \relative c' { 
+    s2 
+    \override Score.RehearsalMark #'extra-offset = #'( -1 . 1 )
+    % "A"
+    s1*11
+    
+    \override Score.RehearsalMark #'extra-offset = #'( -1 . 3 )
+    % "B"
+    s1*12    
+
+    \override Score.RehearsalMark #'extra-offset = #'( -3 . -2 )
+    %  "A"
 }
 
 chordsA = \chordmode { 
@@ -131,6 +177,7 @@ chordsForm = \chordmode {
     %\set noChordSymbol = ##t
     \chordsA 
     \chordsB
+    \chordsA
 }
 chordsFormForBb = \chordmode { 
     \set chordChanges = ##f 
@@ -138,6 +185,7 @@ chordsFormForBb = \chordmode {
     %\set noChordSymbol = ##t
     \chordsAForBb
     \chordsBForBb
+    \chordsAForBb
 }
 chordsFormForEb = \chordmode { 
     \set chordChanges = ##f 
@@ -145,9 +193,7 @@ chordsFormForEb = \chordmode {
     %\set noChordSymbol = ##t
     \chordsAForEb
     \chordsBForEb
-}
-
-melodyIntro = \relative c' {
+    \chordsAForEb
 }
 
 melodyACommon = \relative c'' {
@@ -156,8 +202,7 @@ melodyACommon = \relative c'' {
     c8 df4 f,8 bf2 ~ | 2. r4 | 
     gs8 a4 cs,8  gs' fs e ds ~ | 8 cs b cs ~ 2 |
     fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
-    r2 \tuplet 3/2 4 { r8 r f  b ds gs  | e, as ds  gs ds cs } ds2_"Fine" |
-    g,8 af4 c,8 ||
+    r2 \tuplet 3/2 4 { r8 r f  b ds gs  | e, as ds  gs ds cs } ds2 |
 }
 melodyACommonForBb = \relative c'' {
     g8 af4 c,8 || g'1 | 
@@ -165,8 +210,7 @@ melodyACommonForBb = \relative c'' {
     c8 df4 f,8 bf2 ~ | 2. r4 | 
     af8 bff4 df,8  af' gf ff ef ~ | 8 df cf df ~ 2 |
     fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
-    r2 \tuplet 3/2 4 { r8 r f  b ef af  | ff, bf ef  af, ef df } ef2_"Fine" |
-    g8 af4 c,8 ||
+    r2 \tuplet 3/2 4 { r8 r f  b ef af  | ff, bf ef  af, ef df } ef2 |
 }
 melodyACommonForEb = \relative c'' {
     g8 af4 c,8 || g'1 | 
@@ -174,14 +218,14 @@ melodyACommonForEb = \relative c'' {
     c8 df4 f,8 bf2 ~ | 2. r4 | 
     af8 bff4 df,8  af' gf ff ef ~ | 8 df cf df ~ 2 |
     fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
-    r2 \tuplet 3/2 4 { r8 r f,  b ef af  | ff, bf ef  af ef df } ef2_"Fine" |
-    g8 af4 c,8 ||
+    r2 \tuplet 3/2 4 { r8 r f,  b ef af  | ff, bf ef  af ef df } ef2 |
 }
 
 melodyAFirst = \relative c''{ 
+    g8 af4 c,8 ||
 }
-
-melodyASecond = \relative c'' { 
+melodyALast = \relative c''{ 
+    r4 r ||
 }
 
 melodyBridge = \relative c'' {
@@ -215,22 +259,28 @@ melodyBridgeForEb = \relative c' {
     a4. fs8 r d \tuplet 3/2 { bf8 d fs } | g4 fs  
 }
 
-melodyALast = \relative c'' {
-}
-
 melody = \relative c' { 
     \melodyACommon
+    \melodyAFirst
     \melodyBridge
+    \melodyACommon
+    \melodyALast
 }
 
 melodyForBb = \relative c' { 
     \melodyACommonForBb
+    \melodyAFirst
     \melodyBridgeForBb
+    \melodyACommonForBb
+    \melodyALast
 }
 
 melodyForAlto = \relative c' { 
     \melodyACommonForEb
+    \melodyAFirst
     \melodyBridgeForEb
+    \melodyACommonForEb
+    \melodyALast
 }
 
 \book {
@@ -253,6 +303,7 @@ melodyForAlto = \relative c' {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForC
                     \melody
                 >>
             }
@@ -280,6 +331,7 @@ melodyForAlto = \relative c' {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForBb
                     \melodyForBb
                 >>
             }
@@ -307,6 +359,7 @@ melodyForAlto = \relative c' {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForEb
                     \melodyForAlto
                 >>
             }
