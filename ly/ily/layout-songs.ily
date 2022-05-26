@@ -15,6 +15,10 @@
         \Staff 
         \RemoveAllEmptyStaves 
    }
+    \context { 
+        \DrumStaff 
+        \RemoveAllEmptyStaves 
+   }
 }
 
 
