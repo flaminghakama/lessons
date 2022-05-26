@@ -169,7 +169,7 @@ melodyIntroLick = \relative c'' {
     c4. a8 r f c4 | df4. gf8 r bf ef4 | 
 }
 melodyIntroLickEnd = \relative c'' {
-    d4. a8 r f d4 | d8 f d' f a4-^ r | 
+    d4. a8 r f d4 | d8 f b f' a4-^ r | 
 }
 melodyHead = \relative c' {
     r8 c d [ e ] f g a4 | cf2 ~ 8 df, \tuplet 3/2 { f8 af cf } |
@@ -181,7 +181,7 @@ melodyHead = \relative c' {
     fs2 ~ 8 d e fs | g8 4. ~ 8 e fs g | 
     a2 ~ 8 fs g a | d4 \tuplet 3/2 { g,8 bf d } bf8 4. | 
 
-    c4 \tuplet 3/2 { f,8 a c } a2 | bf4 \tuplet 3/2 { ef,8 g bf } g2 |
+    c4 \tuplet 3/2 { f,8 a c } a2 | bf4 \tuplet 3/2 { ef,8 g bf } g8 4. |
     af4 \tuplet 3/2 { df,8 f af } f2 | g1 | gs |
 }
 melodyEnd = \relative c'' {
