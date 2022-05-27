@@ -1,3 +1,13 @@
+lowRegisterOneDiatonic = \relative c'' { 
+    \key c \major
+    \time 3/4
+    \tempo 4=96
+    g2.\p\< f e\ff ~ e ~ e ~ \fermata e | R2. | \break 
+    f2.\p\< e d\ff ~ d ~ d ~ \fermata d | R2. | \break 
+    e2.\p\< d c\ff ~ c ~ c ~ \fermata c | R2. | \break 
+    \bar "|."
+}
+
 lowRegisterOne = \relative c'' { 
     \key c \major
     \time 3/4
@@ -13,6 +23,14 @@ lowRegisterOne = \relative c'' {
     \bar "|."
 }
 
+lowRegisterTwoDiatonic = \relative c'' { 
+    \key c \major
+    \time 3/4
+    \tempo 4=96
+    g2.\p\< f e\ff ~ e\> ~ e\pp ~ e ~ \fermata e | R2. | \break 
+    f2.\p\< e d\ff ~ d\> ~ d\pp ~ d ~ \fermata d | R2. | \break 
+    e2.\p\< d c\ff ~ c\> ~ c\pp ~ c ~ \fermata c | R2. | \break 
+}
 lowRegisterTwo = \relative c'' { 
     \key c \major
     \time 3/4

@@ -4,7 +4,7 @@
 titleLeft = "Low Register Exercises"
 titleRight = "for Saxophone"
 title = "Low Register Exercises for Saxophone"
-composerName = "D. Elaine Alt"
+composerName = "Elaine Alt"
 \include "../scores/flaming-libs/flaming-paper.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
 \include "../scores/flaming-libs/flaming-markup.ily"

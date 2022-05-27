@@ -127,7 +127,7 @@ lowDs = \markup \center-align \line {
     \center-column \pad-markup #0 {
         \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
             (lh . ())
-            (cc . (one two three four five))
+            (cc . (one two three four five six))
             (rh . (ees))
         )
         \huge "D#"
@@ -138,7 +138,7 @@ lowEb = \markup \center-align \line {
     \center-column \pad-markup #0 {
         \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
             (lh . ())
-            (cc . (one two three four five))
+            (cc . (one two three four five six))
             (rh . (ees))
         )
         \huge "Eb"
@@ -326,7 +326,7 @@ midDs = \markup \center-align \line {
     \center-column \pad-markup #0 {
         \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
             (lh . (T))
-            (cc . (one two three four five))
+            (cc . (one two three four five six))
             (rh . (ees))
         )
         \huge "D#"
@@ -337,7 +337,7 @@ midEb = \markup \center-align \line {
     \center-column \pad-markup #0 {
         \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
             (lh . (T))
-            (cc . (one two three four five))
+            (cc . (one two three four five six))
             (rh . (ees))
         )
         \huge "Eb"

@@ -11,6 +11,42 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
+                    \lowRegisterOneDiatonic
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "1. Diatonic Crescendo"  " " }
+            }
+        }
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \lowRegisterTwoDiatonic
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "2. Diatonic Crescendo and Decrescendo"  " " }
+            }
+        }
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
                     \lowRegisterOne
                 }
             >>
@@ -18,7 +54,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "1. Crescendo"  " " }
+                piece = \markup \center-column { "3. Chromatic Crescendo"  " " }
             }
         }
 
@@ -35,7 +71,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "2. Crescendo and Decrescendo"  " " }
+                piece = \markup \center-column { "2. Chromatic Crescendo and Decrescendo"  " " }
             }
         }
 %{

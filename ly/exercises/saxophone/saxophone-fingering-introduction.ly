@@ -13,12 +13,9 @@ composerName = "D. Elaine Alt"
 %{
 
 rm saxophone-fingering-introduction.pdf
-lilypond ly/saxophone-fingering-introduction.ly
-op saxophone-fingering-introduction.pdf 
-python ~/git/part-format/bookify-8page.py saxophone-fingering-introduction.pdf saxophone-fingering-introduction-printable.pdf manual
-mv saxophone-fingering-introduction.pdf pdf
-mv saxophone-fingering-introduction-printable.pdf pdf/printable
-op pdf/printable/saxophone-fingering-introduction-printable.pdf 
+lilypond ly/exercises/saxophone/saxophone-fingering-introduction.ly
+mv saxophone-fingering-introduction.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/saxophone-fingering-introduction.pdf 
 
 %}
 
@@ -26,7 +23,7 @@ op pdf/printable/saxophone-fingering-introduction-printable.pdf
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
+    copyright = \markup { \tiny "copyright © 2022 Elaine Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -119,6 +116,19 @@ equinoxNotes = \relative c'' {
     r8 d8 ~ 4 4 4 | 4 ~ 8 c ef c ef4 | 
     c4 ~ 8 8 ~ 4 4 ~ | 2 ~ 4 r8 g8
 }
+
+pitchesInEquinoxForEb = \relative c' { 
+    e1 c' a d b
+}
+
+pitchesInEquinoxFingeringsAlto = \relative c' { 
+    s1^\lowE |
+    s1^\midC |
+    s1^\lowA | 
+    s1^\midD |
+    s1^\midB
+}
+
 equinoxFingeringsAlto = \relative c' { 
     s8^\lowE ||
     s8^\midC s^\lowA s2. | \break s2. s8 s | 
@@ -160,6 +170,21 @@ blueTraneBreaks = \relative c'' {
     s1*4 \break
     s1*4 \break
 }
+
+pitchesInBlueTraneForEb = \relative c' { 
+    e1 g b a c e d 
+}
+
+pitchesInBlueTraneFingeringsAlto = \relative c' { 
+    s1^\lowE |
+    s1^\lowG |
+    s1^\midB | 
+    s1^\lowA |
+    s1^\midC |
+    s1^\midE |
+    s1^\midD
+}
+
 blueTraneNotes = \relative c'' { 
     g8 bf [ d bf c ~ ] ||
 
@@ -193,15 +218,35 @@ mrPcBreaks = \relative c'' {
     s1*4 \break
     s1*4 \break
 }
+mrPCChords = \chordmode {
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    c1:m | s | s | s | 
+    f1:m | s | c:m | s | 
+    af1:7 | g:7 | c:m | s |  
+}
+
 mrPcNotes = \relative c'' {
     c8 c d d ef ef f f | g4. f8 ef c r bf | c2 bf4. c8 ~ | 4 r r2 | 
     f8 f g g af af bf bf | c4. bf8 af f r ef | c2 bf4. c8 ~ | 4 r ef8 c ef gf | 
     r8 f4. ~ 4. gf8 | r8 f4 ef8 c4 bf | c2 bf4. c8 ~ | 4 r r2 |
 }
-mrPcFingeringsAlto = \relative c' { 
-    s4^\lowA s^\midB s^\midC s^\midD | s4.^\midE s8 s2 | s^\lowA s^\lowG | \break s1 |
-    s4^\midD s^\midE s^\midF s^\midG | s4.^\midA  s8 s2 | \break s1 | s2 s8^\midC s^\lowA s s^\midEb |
-    s8 s2..^\midD | \break s1 | s1 | s1
+pitchesInMrPCForEb = \relative c'' { 
+    a1 b c d e g, f' g a ef 
+}
+
+pitchesInMrPCFingeringsAlto = \relative c' { 
+    s1^\lowA |
+    s1^\midB | 
+    s1^\midC |
+    s1^\midD |
+    s1^\midE |
+    s1^\lowG |
+    s1^\midF | 
+    s1^\midG |
+    s1^\midA |
+    s1^\midEb |
 }
 %}
 
@@ -228,11 +273,18 @@ mrPcFingeringsAlto = \relative c' {
                 }
             >>
         }
+        \paper {
+            % Spacing in between systems
+            system-system-spacing.basic-distance = #28
+
+            % Space after score, before the next score
+            %score-system-spacing.minimum-distance = #13
+        }
     }
 
     \bookpart {
         \header {
-            title = ""
+            %title = ""
             subtitle = "Basic Accidental Fingerings"
         }
         \score {
@@ -246,51 +298,55 @@ mrPcFingeringsAlto = \relative c' {
                 }
             >>
         }
+        \paper {
+            % Spacing in between systems
+            system-system-spacing.basic-distance = #28
+
+            % Space after score, before the next score
+            %score-system-spacing.minimum-distance = #13
+        }
     }
 
     \bookpart {
-        \header {
-            title = ""
-            subtitle = "Equinox"
-            composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "   Concert"
-        }
         \score {
+            \header {
+                %title = ""
+                subtitle = "Pitches in Equinox"
+                poet = ""
+                composer = ""
+            }
             << 
                 \include "ly/ily/score-properties.ily"
-                \new ChordNames \transpose c c { 
-                    \equinoxChords
-                }
-                \new Staff \transpose c c {
+                \new Staff \transpose ef ef {
                     \include "ly/ily/staff-properties.ily"
                     <<
-                        \equinoxStructure 
-                        \equinoxNotes
-                        \equinoxBreaks
+                        \pitchesInEquinoxForEb
+                        \pitchesInEquinoxFingeringsAlto
                     >>
                 }
             >>
-        }
-    }
-    \bookpart {
-        \header {
-            title = ""
-            subtitle = "Equinox"
-            composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "   Eb Alto Saxophone"
+            \layout { 
+                indent = 3\cm
+            }
         }
         \score {
+            \header {
+                title = ""
+                subtitle = "Equinox"
+                composer = \markup { \italic "composed by" "John Coltrane" }
+                poet = "Eb Alto Sax"
+            }
             << 
                 \include "ly/ily/score-properties.ily"
                 \new ChordNames \transpose ef c { 
-                    %\equinoxChords
+                    \equinoxChords
                 }
                 \new Staff \transpose ef c {
                     \include "ly/ily/staff-properties.ily"
                     <<
                         \equinoxStructure 
                         \equinoxNotes
-                        \equinoxFingeringsAlto
+                        \equinoxBreaks
                     >>
                 }
             >>
@@ -300,13 +356,33 @@ mrPcFingeringsAlto = \relative c' {
         }
     }
     \bookpart {
-        \header {
-            title = ""
-            subtitle = "Blue Train"
-            composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "   Concert"
+       \score {
+            \header {
+                subtitle = "Pitches in Blue Trane"
+                composer = ""
+                poet = ""
+            }
+            << 
+                \include "ly/ily/score-properties.ily"
+                \new Staff \transpose ef ef {
+                    \include "ly/ily/staff-properties.ily"
+                    <<
+                        \pitchesInBlueTraneForEb
+                        \pitchesInBlueTraneFingeringsAlto
+                    >>
+                }
+            >>
+            \layout { 
+                indent = 3\cm
+            }
         }
-        \score {
+         \score {
+            \header {
+                title = ""
+                subtitle = "Blue Train"
+                composer = \markup { \italic "composed by" "John Coltrane" }
+                poet = "Eb Alto Sax"
+            }
             << 
                 \include "ly/ily/score-properties.ily"
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -314,7 +390,7 @@ mrPcFingeringsAlto = \relative c' {
                 \new ChordNames \transpose ef c { 
                     \blueTraneChords
                 }
-                \new Staff \transpose c c {
+                \new Staff \transpose ef c {
                     \include "ly/ily/staff-properties.ily"
                     <<
                         \blueTraneStructure 
@@ -325,24 +401,21 @@ mrPcFingeringsAlto = \relative c' {
             >>
         }
     }
+
     \bookpart {
-        \header {
-            title = ""
-            subtitle = "Blue Train"
-            composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "   Eb Alto Saxophone"
-        }
-        \score {
+       \score {
+            \header {
+                subtitle = "Pitches in Mr. P. C."
+                composer = ""
+                poet = ""
+            }
             << 
                 \include "ly/ily/score-properties.ily"
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose ef c {
+                \new Staff \transpose ef ef {
                     \include "ly/ily/staff-properties.ily"
                     <<
-                        \blueTraneStructure 
-                        \blueTraneNotes
-                        \blueTraneFingeringsAlto
+                        \pitchesInMrPCForEb
+                        \pitchesInMrPCFingeringsAlto
                     >>
                 }
             >>
@@ -350,26 +423,26 @@ mrPcFingeringsAlto = \relative c' {
                 indent = 3\cm
             }
         }
-    }
-
-    \bookpart {
-        \header {
-            title = ""
-            subtitle = "Mr. P.C."
-            composer = \markup { \italic "composed by" "John Coltrane" }
-            poet = "   Eb Alto Saxophone"
-        }
         \score {
+            \header {
+                title = ""
+                subtitle = "Mr. P. C."
+                composer = \markup { \italic "composed by" "John Coltrane" }
+                poet = "Eb Alto Sax"
+            }
             << 
                 \include "ly/ily/score-properties.ily"
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new ChordNames \transpose ef c { 
+                    \mrPCChords
+                }
                 \new Staff \transpose ef c {
                     \include "ly/ily/staff-properties.ily"
                     <<
                         \mrPcStructure 
+                        \mrPcBreaks
                         \mrPcNotes
-                        \mrPcFingeringsAlto
                     >>
                 }
             >>
