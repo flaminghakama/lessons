@@ -91,7 +91,7 @@ melodyBLower = \relative c'' {
 
 melodyC = \relative c' { 
     cs8 as16 b cs8 d fs a r cs | r e cs2.\trill |
-    r8 gs \tuplet 3/2 { a8 cs e } gs8 e r cs ~ | 1\trill |
+    r8 gs \tuplet 3/2 { a8 cs e } gs8 e r cs ~ | 2.\trill r4 |
 }
 
 melody = \relative c'' { 
