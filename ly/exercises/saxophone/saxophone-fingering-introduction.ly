@@ -162,7 +162,7 @@ blueTraneChords = \chordmode {
     s8 s2 ||
     c1:m7 | s | s | s |
     f1:m7 | s | c:m7 | s | 
-    g1:m7 | f2:m7 bf:7 | c1:m7 | s |
+    g1:m7 | s | c1:m7 | s |
 }
 blueTraneBreaks = \relative c'' { 
     s8*5 
@@ -358,7 +358,7 @@ pitchesInMrPCFingeringsAlto = \relative c' {
     \bookpart {
        \score {
             \header {
-                subtitle = "Pitches in Blue Trane"
+                subtitle = "Pitches in Blue Train"
                 composer = ""
                 poet = ""
             }

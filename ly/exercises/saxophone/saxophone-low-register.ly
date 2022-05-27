@@ -13,9 +13,9 @@ composerName = "Elaine Alt"
 %{
 
 rm saxophone-low-register.pdf
-lilypond ly/saxophone-low-register.ly 
-mv saxophone-low-register.pdf pdf
-python ~/git/part-format/bookify-8page.py pdf/saxophone-low-register.pdf pdf/printable/saxophone-low-register.pdf manual
+lilypond ly/exercises/saxophone/saxophone-low-register.ly 
+mv saxophone-low-register.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/saxophone-low-register.pdf
 
 %}
 
