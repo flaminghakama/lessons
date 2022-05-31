@@ -131,16 +131,16 @@ chordsAbove = \chordmode {
     %\set noChordSymbol = ##t
     s1*4
     s1*4
-    f1:7 | ef:7 | f:7 | ef:7 | 
-    f1:7 | ef:7 | 
+    f1:7 | ef:m7 | f:7 | ef:m7 | 
+    f1:7 | ef:m7 | 
     
     f1 | af2:m df:7 | g1:m | c:7 | 
     fs2:m b:7 | e1 | fs2:m b:aug7 | e1:m | 
     fs1:m | g:m | d:7 | g2:m c:7 | 
-    f1:7 | ef:7 | df:7 | g:m | c:aug7 |
+    f1:7 | ef:m7 | df:7 | g:m | c:aug7 |
 
-    f1:7 | ef:7 | f:7 | ef:7 | 
-    f1:7 | ef:7 | f | s |
+    f1:7 | ef:m7 | f:7 | ef:m7 | 
+    f1:7 | ef:m7 | f | s |
 }
 
 chordsFormForBb = \chordmode { 
