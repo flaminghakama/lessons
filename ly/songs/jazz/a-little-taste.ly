@@ -92,18 +92,20 @@ melodyA = \relative c' {
     ef4-. 4-. 8 f ef df | r2 r4 bf'-. | 
 
     c2.. d8 | r4 r8 a r d r c | 
-    bf4. g8 bf c bf df ~ | 2. c4-. ||
+    bf4 4 8 c bf df ~ | 2. c4-. ||
 }
 
 melodyBCommon = \relative c'' { 
-    af4. 8 r2 | r8 g af [ c ~ ]  4 bf8 g ~ | 
+    af4. 8 r2 | r8 g af [ c ~ ]  4 bf | 
     g1 | r8 fs g [ bf ~ ] 4 af4-. |
 }
 
 melodyB = \relative c'' { 
     \melodyBCommon
-    r8 g af [ e' ~ ]  4 df8 c ~ | 4 g8 f ef c r4 | 
-    r8 bf' d [ df ]  c af f bf, | r2 r4  
+    \transpose g c \relative c'' { 
+        r8 d \tuplet 3/2 { ef8 g bf } b8 af r g ~ | g8. d16 bf16 g bf c d8 f r4 | 
+        r8 fs a [ af ] g ef c f, | r2 r4
+    }
 }
 
 melodyC = \relative c' { 
@@ -115,10 +117,30 @@ melodyC = \relative c' {
 melodyCoda = \relative c' {
     ef4 ||
     f2.. fs8 | R1 | 
-    r8 ef \tuplet 3/2 { g8 af bf } g8 bf d f ~ | 4 d8 bf e df r4 | 
-
-    r8 g r ef r c r f | r d r bf r g r af ~ | 
-    af4 g8 ef af g ef ef ||
+    \transpose g c \relative c'' { 
+        r4 bf8 c d ef f g ~ | 4 f cs8 d r4 | 
+    }
+    <<
+        \relative c'' { r8 g r ef r c r f | r d r bf r g } \\
+        \relative c' { r8 ef r c r af r d | r bf r g r ef }
+    >>  \relative c'' {  
+            r af ~ | 
+        af4 g8 ef af g ef ef ||
+    }
+}
+melodyCodaForEb = \relative c' {
+    ef4 ||
+    f2.. fs8 | R1 | 
+    \transpose g c \relative c'' { 
+        r4 bf8 c d ef f g ~ | 4 f cs8 d r4 | 
+    }
+    <<
+        \relative c''' { r8 g r ef r c r f | r d r bf r g } \\
+        \relative c'' { r8 ef r c r af r d | r bf r g r ef }
+    >>  \relative c'' {  
+            r af ~ | 
+        af4 g8 ef af g ef ef ||
+    }
 }
 
 melody = \relative c'' { 
@@ -128,6 +150,15 @@ melody = \relative c'' {
     \melodyA
     \melodyC
     \melodyCoda
+}
+
+melodyForEb = \relative c'' { 
+    \accidentalStyle default
+    \melodyA
+    \melodyB
+    \melodyA
+    \melodyC
+    \melodyCodaForEb
 }
 
 chordsForm = \chordmode { 
@@ -162,7 +193,7 @@ chordsForm = \chordmode {
         subtitle = ""
     }
     \score {
-        \transpose c c <<
+        \transpose c g <<
             \new ChordNames \transpose c c { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm 
@@ -192,7 +223,7 @@ chordsForm = \chordmode {
         subtitle = ""
     }
     \score {
-        \transpose bf, c <<
+        \transpose c g \transpose bf, c <<
             \new ChordNames \transpose c c { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm 
@@ -222,7 +253,7 @@ chordsForm = \chordmode {
         subtitle = ""
     }
     \score {
-        \transpose ef, c <<
+        \transpose c g \transpose ef c <<
             \new ChordNames \transpose c c { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm 
@@ -234,7 +265,7 @@ chordsForm = \chordmode {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \melody
+                    \melodyForEb
                 >>
                 \noPageBreak
             }
