@@ -37,7 +37,7 @@ append_list(){
         if [ "$file" != "index.html" ] ; then
             if [ "$file" != "README.md" ] ; then
                 if [ "$file" != "manifest.js" ] ; then
-                    NAME=`perl -e '$name = $ARGV[0];$name =~ s/\.pdf//g;$name =~ s/(\w+)/\u$1/g;$name =~ s/-/ /g;print "$name\n";' $file`
+                    NAME=`perl -e '$name = $ARGV[0];$name =~ s/\.pdf//g;$name =~ s/\.html//g;$name =~ s/(\w+)/\u$1/g;$name =~ s/-/ /g;print "$name\n";' $file`
                     echo "        <li><a href='$file'>$NAME</a></li>" >> $FILE
                 fi
             fi
