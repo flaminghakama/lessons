@@ -56,7 +56,7 @@ for file in pdf/songs/jazz/sweet-love-of-mine*.pdf ; do op $file ; done
 
 structure = \relative c' { 
     \key c \minor 
-    \tempo "Bossa"
+    \tempo "Bossa" 4=148
     \startSection "Intro/Coda"
     \bar "[|:"
     \partial 8*3 s4.

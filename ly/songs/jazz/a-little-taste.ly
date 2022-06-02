@@ -61,7 +61,7 @@ structure = \relative c' {
     %\override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
 
     \key ef \major 
-    \tempo 4=136
+    \tempo 4=184
     \partial 4*1 s4 
     \startSectionNoBarline "A"
     \bar "[|:"
