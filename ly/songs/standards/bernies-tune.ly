@@ -27,7 +27,7 @@ for file in pdf/songs/standards/bernie*pdf ; do open -a Preview $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #2
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -52,14 +52,14 @@ for file in pdf/songs/standards/bernie*pdf ; do open -a Preview $file ; done
 
 \include "ly/ily/layout-songs.ily"
 
-strcture = \relative c' { 
+structure = \relative c' { 
     \key d \minor
     s1*4 \break
-    s1*4 \bar "||"
+    s1*4 \bar "||" \break
     s1*4 \break
-    s1*4 \bar "||"
+    s1*4 \bar "||" \break
     s1*4 \break
-    s1*4 \bar "||"
+    s1*4 \bar "||" \break
     s1*4 \break
     s1*4 
     \bar "|."
@@ -159,7 +159,7 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
+                    \structure
                     \melodyForm
                 >>
             }
@@ -191,7 +191,7 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \strcture
+                    \structure
                     \melodyForm
                 >>
             }
