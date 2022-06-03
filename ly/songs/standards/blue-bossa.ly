@@ -40,6 +40,7 @@ for file in pdf/songs/standards/blue-bossa*pdf ; do open -a Preview $file ; done
 
   page-breaking = #ly:minimal-breaking
 
+  ragged-right = ##f
   ragged-bottom = ##t
   ragged-last-bottom = ##t
 
@@ -220,7 +221,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
    }
     \score {
@@ -239,7 +241,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
     }
 }
@@ -300,7 +303,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
    }
     \score {
@@ -319,7 +323,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
     }
 }
@@ -381,7 +386,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
    }
     \score {
@@ -400,7 +406,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
     }
 }
@@ -464,7 +471,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
    }
     \score {
@@ -483,7 +491,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
     }
 }
@@ -545,7 +554,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
     }
     \score {
@@ -564,7 +574,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
     }
 }
@@ -627,7 +638,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
     }
     \score {
@@ -646,7 +658,8 @@ lyricsHeadThree = \lyricmode {
             }
         >>
         \layout { 
-            indent = 1.25\cm
+            short-indent = 0.25\cm
+            indent = 0.25\cm
         }
     }
 }
