@@ -9,6 +9,7 @@
         \override Glissando.minimum-length = #3
         \override Glissando.springs-and-rods = #ly:spanner::set-spacing-rods
         \override Glissando.thickness = #1.8
+        \override Glissando.style = #'zigzag
         %\override StringNumber.stencil = ##f
     }
     \context { 
