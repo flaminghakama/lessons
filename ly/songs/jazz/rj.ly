@@ -73,8 +73,8 @@ structure = \relative c' {
     \bar "[|:"
     s1*4 \break
     s1*4 \break
-    s1*7 \break
-    s1*4
+    s1*6 \break
+    s1*5
     \bar ":|]"
 }
 
@@ -93,7 +93,7 @@ chordsForm = \chordmode {
     bf1:7.5- | s | f | bf | 
     ef1:7 | e:m7.5- | a:7 | g:7 | 
     c1:7 | f | b:m7.5- | bf:m7 | 
-    b1:m11 | g:maj7.11+ | bf2:7.5- s | bf1:7.5- | s | s | 
+    b1:m11 | g:maj7.11+ | bf:7.5- | s | s | s | 
     ef1 |||
 }
 

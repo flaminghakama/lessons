@@ -54,6 +54,13 @@ for file in pdf/songs/jazz/newcomer*.pdf ; do op $file ; done
 
 \include "ly/ily/layout-songs.ily"
 
+structureIntro = \relative c' { 
+    \tempo "Rubato" 4=56
+    \partial 8 s8
+    \startSection "Intro"
+
+}
+
 structure = \relative c' { 
     \tempo "Ballad" 4=56
     \partial 8 s8
@@ -78,6 +85,13 @@ structure = \relative c' {
     \bar "|."
 }
 
+chordsIntro = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+}
+
 chordsForm = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
@@ -85,17 +99,31 @@ chordsForm = \chordmode {
 
     s8
 
-    g1:7.5- | af:7.5- | a:7.5- | bf2:7.5- e:9.5- | 
+    g1:7.5- | af:7.5- | a:7.5- | bf2:7.5- e:7.9+ | 
     df1:maj7 | d2:m7.5- g:aug7 | b1:maj7 | s ||
 
-    a1:7.5- | bf:7.5- | b:7.5- | b2:6 e:7.5- | 
-    df1:maj7 | d2:m7.5- g:7.9- | c1:maj7 | s ||
+    a1:7.5- | bf:7.5- | b:7.5- | bf2:maj13.11+ e:7.9+ | 
+    df1:maj7 | d2:m7.5- g:7 | c1:maj7 | s ||
 
     af1:aug7.7+/g | s | c2:maj7 f:7 | e:m11 a:aug7.5-.9- |
     df1:maj7 | g2:m7.5- c:7.9- | df1:maj7 | d2:m7.5- g:7.9- ||
 
-    g1:7.5- | af:7.5- | a:7.5- | bf2:7.5- e:9.5- | 
+    g1:7.5- | af:7.5- | a:7.5- | bf2:7.5- e:7.9+ | 
     df1:maj7 | d2:m7.5- g:aug7 | b1:maj7 | s ||
+}
+
+melodyIntro = \relative c'' { 
+    g16 gs | a2. a8 g \grace { gs ( } | a2. ) a16 g |
+    a8 d c4 a4.  g ~ | 4 a8 f ~ 2 | 
+    r4 r8 f g4 f8 g | af4 bf4 ~ 4. c16 df | 
+    c2\trill \grace { bf16 [ af f df ] c [ df c bf ] } | 
+        c2 c'16 [ df \tuplet 3/2 { c16 df c ] } \tuplet 6/4 { bf16 af f  df c af } | 
+    f4 af b \glissando f'8 \glissando af  ~ | 4. g16 f g4 r |
+
+    d'32 b g f  d c b16 ~ 4 \grace { c16 cs }  d4 \grace { e16 f } g  |   
+    e8 b \repeat tremolo 6 { e,16 b' } |
+    \tuplet 3/2 { a'16 g e  d c a ~ } a8 \tuplet 3/2 { c16 a g } d8. g16 e4 ~ | 1 |  
+    s1*2 | s2..
 }
 
 melodyACommon = \relative c'' { 
