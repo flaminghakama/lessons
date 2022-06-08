@@ -98,7 +98,7 @@ chordsForm = \chordmode {
     c1:m | df | af | d2:m7.5- g:aug7 | 
     c1:m | f:7 | d2:m7.5- g:aug7 | c1:m || 
 
-    bf1:m9 | a:9 | af:6 | s | 
+    bf1:m9 | a:9/ef | af:6 | s | 
     a1:m7.5- | d:7 | d:m7.5- | g:aug7 ||
 
     c1:m | df | af | d2:m7.5- g:aug7 | 
