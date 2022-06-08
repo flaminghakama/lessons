@@ -137,7 +137,7 @@ melodyThirdEnding = \relative c' {
 melodyBridge = \relative c' <<
     \relative c'' { 
         \override Glissando.style = #'zigzag
-        r8 b c [ bf ]  a c g fs ~ | 4. 8 r4 f ~ | 2 \glissando cf' 8 f, r4 | R1 |
+        r8 b c [ bf ]  a c g fs! ~ | 4. 8 r4 f ~ | 2 \glissando cf' 8 f, r4 | R1 |
         r8 a bf [ af ]  g bf gf f | e4. 8 r4 ds ~ | 2  a'8 ds, r4 | r2 
     } \\
     \relative c'' { 
@@ -150,7 +150,7 @@ melodyBridge = \relative c' <<
 melodyBridgeForFlats = \relative c' <<
     \relative c'' { 
         \override Glissando.style = #'zigzag
-        r8 b c [ bf ]  a c g fs ~ | 4. 8 r4 f ~ | 2 \glissando cf' 8 f, r4 | R1 |
+        r8 b c [ bf ]  a c g fs! ~ | 4. 8 r4 f ~ | 2 \glissando cf' 8 f, r4 | R1 |
         r8 a bf [ af ]  g bf gf f | e4. 8 r4 ef ~ | 2  bff'8 ef, r4 | r2 
     } \\
     \relative c'' { 
