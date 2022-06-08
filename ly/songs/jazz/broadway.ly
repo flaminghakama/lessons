@@ -96,7 +96,7 @@ melodyAFirstEnding = \relative c'' {
 
 melodyBridge = \relative c'' { 
     e8 fs r a, ~ 4 e'8 fs | r a,4. e'8 fs4. | e8 d e d ~ 2 | R1 | 
-    d8 e r g, ~ 4 d'8 e | r g,4. d'8 e4. | d8 c d c ~ 2 | cs8 b cs b r cs4. ||
+    d8 e r g, ~ 4 d'8 e | r g,4. d'8 e4. | d8 c d c ~ 2 | cs8 b cs b r e4. ||
 }
 
 melody = \relative c' { 
