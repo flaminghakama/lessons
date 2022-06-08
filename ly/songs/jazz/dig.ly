@@ -3,7 +3,7 @@
 titleLeft = "Dig"
 titleRight = ""
 title = "Dig"
-composerName = "C. Brown"
+composerName = "M. Davis"
 
 %{
 
