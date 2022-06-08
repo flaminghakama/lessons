@@ -105,7 +105,7 @@ chordsForm = \chordmode {
     a1:7.5- | bf:7.5- | b:7.5- | bf2:maj13.11+ e:7.9+ | 
     df1:maj7 | d2:m7.5- g:7 | c1:maj7 | s ||
 
-    af1:aug7.7+/g | s | c2:maj7 f:7 | e:m11 a:aug7.5-.9- |
+    g1:13.9- | s | c2:maj7 f:7/ef | e:m11 a:aug7.5-.9- |
     df1:maj7 | g2:m7.5- c:7.9- | df1:maj7 | d2:m7.5- g:7.9- ||
 
     g1:7.5- | af:7.5- | a:7.5- | bf2:7.5- e:7.9+ | 
