@@ -134,23 +134,49 @@ lyricsHeadOne = \lyricmode {
     to do the town up.
 
     You saw the glow and be -- came 
-    just like a moth to a flame.
+    much like a moth to a flame.
 
-    You did the town all good. 
+    You did the whole town up. 
 
-    And 
-    I wait -- ed for you.
-    We danced the night a -- way.
+    And I wait -- ed for you.
+    You danced the night a -- way.
 
-    I wait -- ed for you.
+    How won -- der -- ful to 
     En -- joy a gay time 
-    night or day -- time.
+    night and day -- time.
 
-    Must be a lot one can do 
-    it seems.
+    Must be a lot one can say and do. 
 
     But I wait -- ed for you
-    Now you come wait for me.
+    Now you can wait for me.
+}
+
+lyricsHeadTwo = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+
+    I wait -- ed for you
+    to have your -- self a thrill.
+
+    I wait -- ed for you
+    to do the town up.
+
+    You saw the light and be -- came 
+    just like a moth to a flame.
+
+    You did the town up good. 
+
+    So I wait -- ed for you.
+    To pass the night a -- way.
+
+    How won -- der -- ful to
+    en -- joy a gay time 
+    night and day -- time.
+
+    There must be some -- thing that you __ came
+
+    So I wait -- ed for you
+    Now you can wait for me.
 }
 
 \header {
@@ -186,6 +212,9 @@ lyricsHeadOne = \lyricmode {
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
         >>
         \layout { 
             indent = 1.25\cm
