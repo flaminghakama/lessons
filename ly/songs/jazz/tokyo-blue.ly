@@ -28,7 +28,16 @@ for file in pdf/songs/jazz/tokyo-blue*pdf pdf/songs/jazz/printable/tokyo-blue*pd
     arranger = \markup \italic { "Transcribed by " \arrangerName }
 }
 
-\include "ly/ily/layout-songs.ily"
+\layout { 
+    indent = 1.00\cm
+    short-indent = 0.25\cm
+    \context {
+        \Score
+        \override StaffGrouper.staff-staff-spacing.padding = #0
+        \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+    }
+}
+
 
 \paper {
 
@@ -326,7 +335,6 @@ melodySongInEb = \relative c' {
             \new Staff = "lead" \transpose ef ef {
                 \include "ly/ily/staff-properties.ily"
                 %\autoPageBreaksOff
-                \compressEmptyMeasures
                 <<
                     \transpose ef c \structure
                     \melodySongInEb
