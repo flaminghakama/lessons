@@ -28,6 +28,7 @@ for file in pdf/songs/jazz/tokyo-blue*pdf pdf/songs/jazz/printable/tokyo-blue*pd
     arranger = \markup \italic { "Transcribed by " \arrangerName }
 }
 
+\include "ly/ily/layout-songs.ily"
 
 \paper {
 
@@ -35,7 +36,7 @@ for file in pdf/songs/jazz/tokyo-blue*pdf pdf/songs/jazz/printable/tokyo-blue*pd
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #12
+  markup-system-spacing.padding = #10
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #20
@@ -60,46 +61,56 @@ for file in pdf/songs/jazz/tokyo-blue*pdf pdf/songs/jazz/printable/tokyo-blue*pd
 
 structure = \relative c' { 
     \key c \major
-    s1*4
+    s1*2 \break s1*2
 
     \startSection "1"
-    s1*4 
-    s1*4 
-    s1*4 
+    s1*2 \break
+    s1*2 \break
+    s1*2 \break
+    s1*3 \break
+    s1*3 \pageBreak
 
     \startSection "2"
-    s1*4 
-    s1*4 
-    s1*4 
+    s1*3 \break
+    s1*3 \break
+    s1*4 \break
+    s1*2
 
     \startSection "3"
-    s1*4 
-    s1*4 
-    s1*4 
+    s1*1 \break 
+    s1*3 \break
+    s1*3 \break
+    s1*3 \break
+    s1*2
 
     \startSection "4"
-    s1*4 
-    s1*4 
-    s1*4 
+    s1*1 \pageBreak 
+    s1*3 \break
+    s1*3 \break
+    s1*3 \break
+    s1*2
 
     \startSection "5"
-    s1*4 
-    s1*4 
-    s1*4 
+    s1*1 \break
+    s1*3 \break
+    s1*3 \break
+    s1*3 \break
+    s1*2
 
     \startSectionWithLabel "6" "Piano"
     \bar "||"
-    s1 s1*11
+    s1 \pageBreak R1*11
     \bar "||"
-    s1*12
+    R1*12
     \bar "||"
-    s1*12
-    \bar "||"
+    R1*12
+    \bar "||" \break
 
     \startSectionWithLabel "9" "Bass"
-    s1*12 
+    R1*12 
     \bar "||"
-    s1*12 
+    R1*11
+    s1 
     \bar "||"
 
     \startSection "11"
@@ -157,7 +168,7 @@ melodySongInEb = \relative c' {
         } \\
         { 
             R1*4 
-            \breakPart
+           
         } 
     >>
 
@@ -177,10 +188,9 @@ melodySongInEb = \relative c' {
     b'16 a cs,8 ~  8 b16 cs  e a gs8 ~  8 [ \tuplet 3/2 { fs16 gs fs ] } | 
 
     a16 b, cs d ~  4  r  r8 \tuplet 3/2 { e16 fs a } | 
-    cf8 8  8 [ b ]  a16 b32 a g16 a32 g  e16 d b a | 
+    c8 8  8 [ b ]  a16 b32 a g16 a32 g  e16 d b a | 
     cs16 e cs b  a4 ~  8 fs16 a  cs a e8 ~ |
     e4  \tuplet 3/2 { b'8 a b ~ } 4  r ||
-    \pageBreakPart
 
     %2
     r4  r16 a d ef  a e ef d ~  4 ~ |
@@ -204,7 +214,7 @@ melodySongInEb = \relative c' {
 
     %3
     a8 b  \tuplet 3/2 { cs8 e fs ~ }  16 8 r16  fs e a gs | 
-    b16 a cf b ~  16 fs b a ~  8 g16 a  fs [ \tuplet 3/2 { g32 fs 
+    b16 a c b ~  16 fs b a ~  8 g16 a  fs [ \tuplet 3/2 { g32 fs 
         \set stemRightBeamCount = #1
         e } 
         \set stemLeftBeamCount = #1
@@ -214,7 +224,7 @@ melodySongInEb = \relative c' {
 
     r8 a8  e'8 [ 8 ] ~  8 d16 c  cs d e c | 
     d8 c ~  8 a16 c  ef d c a  d c a g | 
-    b16 a c a ~  16 d8 a16 ~  16 e'8 a,16 ~ 4 | 
+    b16 a cs a ~  16 d8 a16 ~  16 e'8 a,16 ~ 4 | 
     r16 cs e fs  gs a b a  gs4 ~  8. fs16 | 
 
     a8 8 ~  4 ~  8 fs16 e  cs'4 | 
@@ -227,7 +237,7 @@ melodySongInEb = \relative c' {
     cs16 e16 16 16  d e8. ~  4  r8 e16 fs ||
 
     %4
-    a16 c cs d  ef e8. ~  2 | \pageBreakPart
+    a16 c cs d  ef e8. ~  2 | 
     r8 e,16 fs  a c cs d  ef e8. ~  4 | 
     r8 e,16 fs  a c cs d  \tuplet 3/2 { ef8 e, a }  \tuplet 6/4 { c16 cs d cs d cs } | 
     d16 cs a b  g4 ~  4  r8 b16 a | 
@@ -244,12 +254,12 @@ melodySongInEb = \relative c' {
 
     %5
     cs16 d ef e  e4  d16 a cs a ~  4 ~  | 
-    a8 [ \tuplet 3/2 { e16 a c ] }  d16 e8.  d16 a c e  d8 cs16 a | 
+    a8 [ \tuplet 3/2 { e16 a c ] }  d16 e8.  d16 a c e  d8 c16 a | 
     \tuplet 3/2 { cs8 a cs } \tuplet 3/2 { d16 [ cs c } b8 ~ ]  4  r8 cs16 a | 
     bf16 b g e  g a8 e16  \tuplet 3/2 { g8 fs e }  f8 [ \tuplet 3/2 { e16 d b ] } |
 
     a16 fs'8. ~  16 d e d ~  4  r8 \tuplet 3/2 { g16 a b } | 
-    cf8 8  4 ~  16 a b a ~  a [ \tuplet 3/2 { g32 a
+    c8 8  4 ~  16 a b a ~  a [ \tuplet 3/2 { g32 a
         \set stemRightBeamCount = #1
         g 
         \set stemLeftBeamCount = #1 
@@ -267,10 +277,10 @@ melodySongInEb = \relative c' {
         e16 fs ]  e d b e, ||
 
     %6
-    cs'16 e8. ~  4  r2 | \pageBreakPart R1*11 |
-    R1*12 | 
-    R1*12 | 
-    \breakPart
+    cs'16 e8. ~  4  r2 | 
+    <>\xp R1*11 |
+    <>\xp R1*12 | 
+    <>\xp R1*12 | 
 
     %9
     R1*12
@@ -291,7 +301,7 @@ melodySongInEb = \relative c' {
     a32 e a b a e a b   a32 e a b a e a b   a32 b a g e8 ~  8 b16 e | 
     cs16 e fs gs  a b gs8 ~  4 ~  8. fs16 | 
 
-    cs'8 8 ~  16 a g e  cs'4  r | \breakPart
+    cs'8 8 ~  16 a g e  cs'4  r |
     cs8 e  d cs  a e  gs a ~ | 
     8 a,  \tuplet 3/2 { g'8 b a }  fs8 a,  f' b | 
     a8 a,  c8. b16 ~ \fermata 4. \glissando b,8 
@@ -316,6 +326,7 @@ melodySongInEb = \relative c' {
             \new Staff = "lead" \transpose ef ef {
                 \include "ly/ily/staff-properties.ily"
                 %\autoPageBreaksOff
+                \compressEmptyMeasures
                 <<
                     \transpose ef c \structure
                     \melodySongInEb
@@ -323,8 +334,8 @@ melodySongInEb = \relative c' {
             }
         >>
         \layout { 
-            indent = 4.25\cm
-            short-indent = 1.25\cm
+            % indent = 4.25\cm
+            % short-indent = 1.25\cm
             \context {
                 \Score
                 \override StaffGrouper.staff-staff-spacing.padding = #0
