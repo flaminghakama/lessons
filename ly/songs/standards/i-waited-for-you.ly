@@ -81,16 +81,16 @@ chordsForm = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
 
-    a1:m7.5-/d | d:13.9- | g:maj9 | bf2:m7 ef:7 |
+    a1:m7.5-/d | d:13 | g:maj9 | bf2:m7 ef:7 |
     a1:m7.5-/d | d:13 | g:maj9 | af2:m7 df:7 |
 
     c1 | c2:m7 f:7 | bf1 | bf2:m7 ef:7 | 
     e1:m7.5- | a:7.8+.9+ | fs2:m7 b:7 | f:m7 bf:7 | 
 
-    a1:m7.5-/d | d:13.9- | g:maj9 | bf2:m7 ef:7 |
+    a1:m7.5-/d | d:13 | g:maj9 | bf2:m7 ef:7 |
     a1:m7.5-/d | d:13 | g:maj9 | af2:m7 df:7 |
 
-    c2 b4:m7.5- a:m | g2 fs4:m7 b:7 | e2:m7.5- e2:m7.5-/d | cs:m7.5-.9 fs:7.9- |  
+    c2 b4:m7.5- a:m | g2 fs4:m7 b:7 | e2:m e2:m7.5-/d | cs:m7.5-.9 fs:7.9- |  
     a2:m7.5- d:7 | f:7 e:7 | a:m7 d:7 | g1 | 
 }
 
@@ -105,13 +105,13 @@ melodyB = \relative c'' {
     R1 || 
     r4 d b g | \tuplet 3/2 { d'4 bf g } c2 | 
     r4 c a f | \tuplet 3/2 { c'4 af f } bf2 |
-    r4 g a bf | c2. \tuplet 3/2 { bf8 ( c b ) } | 
+    r4 g a bf | c2. \tuplet 3/2 { bf8 ( c bf ) } | 
     a1 | r2 r4 d, |  
 }
 melodyC = \relative c'' { 
     r8 bf4 af8 bf af4. ||
-    r4 g a b | d e2 b4 | 
-    a2. d,4 | ef2. d4 |
+    r4 g a b | c d2 b4 | 
+    a2. <d, a'>4 | <ds fs>2. d4 |
     d'2. \tuplet 3/2 { c8 g ef } | b'8 ( \grace { bf16 a } gs4. ~ 4. ) d8 | 
     b'4. d8 b4. d,8 | g2. r4 
 }
