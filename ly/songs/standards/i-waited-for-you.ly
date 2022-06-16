@@ -111,7 +111,7 @@ melodyB = \relative c'' {
 melodyC = \relative c'' { 
     r8 bf4 af8 bf af4. ||
     r4 g a b | c d2 b4 | 
-    a2. <d, a'>4 | <ds fs>2. d4 |
+    a2. <d, g>4 | <ds fs>2. d4 |
     d'2. \tuplet 3/2 { c8 g ef } | b'8 ( \grace { bf16 a } gs4. ~ 4. ) d8 | 
     b'4. d8 b4. d,8 | g2. r4 
 }
@@ -196,6 +196,76 @@ lyricsHeadTwo = \lyricmode {
     }
     \score {
         \transpose c c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        subtitle = ""
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        subtitle = ""
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm
