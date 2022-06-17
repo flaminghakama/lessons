@@ -58,15 +58,15 @@ structure = \relative c' {
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
     
-    \key c \major 
     %\tempo 4=240
     \time 3/4
 
-    \override Score.RehearsalMark #'extra-offset = #'( -5 . -1 )
+    \override Score.RehearsalMark #'extra-offset = #'( -4 . -2 )
     \startSectionNoBarline "A"
     \bar "[|:"
     \repeat volta 2 { 
         s2.*3 
+        \bar "||"
         \time 4/4 
         s1 \break
         s1*4 \break
@@ -76,7 +76,7 @@ structure = \relative c' {
         { s1*2 \bar ":|]" }
         { s1*2 \bar "[|:" \break } 
     }
-    \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
+    \override Score.RehearsalMark #'extra-offset = #'( -4 . -2 )
     \startSectionNoBarline "B"
     \repeat volta 2 { 
         s1*4 \break
@@ -87,10 +87,11 @@ structure = \relative c' {
         { s1*2 \break } 
     }
 
-    \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+    \override Score.RehearsalMark #'extra-offset = #'( -3 . 3 )
     \startSection "A"
     \time 3/4
     s2.*3 
+    \bar "||"
     \time 4/4 
     s1 \break
     s1*4 \break
@@ -105,10 +106,10 @@ chordsA= \chordmode {
 }
 chordsB = \chordmode { 
     g1:maj7 | c:maj7 | f:maj7 | bf:maj7 | 
-    ef1:maj7 | af:maj7 | g:maj7 | s || g:maj7 | c1:maj7 ||
+    ef1:maj7 | af:maj7 | g:maj7 | s || g1:maj7 | c1:maj7 ||
 }
 chordsForm = \chordmode { 
-    \set chordChanges = ##t 
+    \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     \chordsA
@@ -120,8 +121,8 @@ chordsForm = \chordmode {
 
 melodyA = \relative c'' { 
     d2. | c | bf | af2 gf4 r8 f ~ | 
-    f1 ~ | 2 f8 af r bf | f ef f2. ~ | 2 f8 af bf ef, | 
-    f1 | r2 bf8 c r f16 c |
+    f1 ~ | 4 r f8 af4 bf8 | f ef f2. ~ | 4 r f8 af bf ef, | 
+    f1 ~ | 4 r bf8 c4 ef16 c |
 }
 melodyAFirstEnding = \relative c'' { 
     f1 ~ | 2 \tuplet 3/2 { r4 e ef } |
@@ -154,6 +155,12 @@ melody = \relative c' {
     \melodyASecondEnding    
 }
 
+% \layout {
+%     \context {
+%         \Score
+%         proportionalNotationDuration = #(ly:make-moment 1/8)
+%     }
+% }
 
 \book {
   \bookOutputSuffix "for-C"
@@ -176,6 +183,7 @@ melody = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
+                    \key c \major 
                     \structure
                     \melody
                 >>
@@ -206,6 +214,7 @@ melody = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
+                    \key bf \major 
                     \structure
                     \melody
                 >>
@@ -236,6 +245,7 @@ melody = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
+                    \key ef \major 
                     \structure
                     \melody
                 >>
