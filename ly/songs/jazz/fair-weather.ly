@@ -15,7 +15,7 @@ lilypond ly/songs/jazz/fair-weather.ly
 mv fair-weather*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/fair-weather*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"fixing chord" ; git push 
+git add . ; git commit -m"merging harmony lines" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -156,7 +156,7 @@ melodyCommon = \relative c' {
 melodyFirstEnding = \relative c'' { 
     g8 ~ |
     g2 ~ \tuplet 3/2 { g4 f e } | d1 | r2 g8 a g a ~ | 1 |
-    r2 a8 b a b ~ | 2. a4 | g2 ~ \tuplet 3/2 { g4 f e } | f2. g4 ||
+    r2 a8 b a b ~ | 2. a8 g ~ | 2 ~ \tuplet 3/2 { g4 f e } | f2. g4 ||
 }
 melodySecondEnding = \relative c'' { 
     g8 ~ | 
@@ -171,7 +171,7 @@ melodyAOut = \relative c' {
     c4. a8 r e r d | ds2 b'8 c b a |
     g2 \glissando \tuplet 3/2 { d'4 c b } | bf4 \glissando f'2 r4 |
 
-    bf,,4 c8 f e f16 e d8 g | r2 r4 r8 g | 
+    f,8 bf, c f ef f16 ef d8 g | r2 r4 r8 g | 
     r8 bf, d [ g ] f g16 f e8 a | r2 r4 r8 a | 
 
     r8 c, e [ a ] g a16 g fs8 b ~ | 2. a8 g ~ | 
