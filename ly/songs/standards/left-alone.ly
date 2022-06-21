@@ -82,9 +82,8 @@ structure = \relative c' {
 }
 
 chordsA = \chordmode { 
-    f2:maj7 g:m7 | a:7.9+ \tuplet 3/2 { c4:7 bf:7 af:7 } | 
-    f2:7.9+ bf:7 | a:maj7 d:7.9+ |
-    df2:maj7 bf:m7 | g:m7 c:7 |
+    a2:m b4:m7 e:aug7.5- | c2:13.11+ f:maj7 | 
+    b2:
 }
 
 chordsB = \chordmode { 

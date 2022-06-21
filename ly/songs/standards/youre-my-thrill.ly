@@ -58,8 +58,8 @@ structure = \relative c' {
     \key d \minor
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT    
-    %\override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
 
+    \override Score.RehearsalMark #'extra-offset = #'( -3 . -2 )
     \startSectionNoBarline "A"
     \bar "[|:"
     \repeat volta 2 { 
@@ -67,6 +67,7 @@ structure = \relative c' {
     }
     \bar ":|]" \break
 
+    \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
     \startSectionNoBarline "B"
     s1*4 \break
     s1*4 \break
@@ -98,8 +99,8 @@ melodyA = \relative c'' {
     a4 g ef g | bf a2. | d,8. 16 8. 16 f4 f | d4 4 f2 | 
 }
 melodyB = \relative c' {
-    d1 \glissando | c' | c4 bf cs, d | c' bf2. | 
-    e,1 \glissando | d' | d4 cs gs a8 8 | c4 bf c bf ||
+    d1 | c' | c4 bf cs, d | c' bf2. | 
+    e,1 | d' | d4 cs gs a8 8 | c4 bf c bf ||
 }
 melodyCoda = \relative c'' {
     d1 | 1 | 1 ~ | 1 ||
@@ -122,8 +123,8 @@ lyricsHeadOne = \lyricmode {
     you send chills right through me
     when I look at you 'cause you're my thrill
 
-    Hm -- mmm  Noth -- ing seems to mat -- ter
-    Hm -- mmm  Here's my heart on a sil -- ver plat -- ter.
+    Mmm -- mmm  Noth -- ing seems to mat -- ter
+    Mmm -- mmm  Here's my heart on a sil -- ver plat -- ter.
 
     Where's my will?
     Why this strange de -- si -- re
@@ -151,6 +152,76 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
+  \bookOutputSuffix "in-A-for-C"
+    \header {
+        subtitle = "(Billie Holiday key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose d' a <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-C"
+    \header {
+        subtitle = "(Nat King Cole key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose d' bf <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
   \bookOutputSuffix "for-C"
     \header {
         subtitle = ""
@@ -159,6 +230,78 @@ lyricsHeadTwo = \lyricmode {
     }
     \score {
         \transpose c c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-A-for-Bb"
+    \header {
+        subtitle = "(Billie Holiday key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c 
+        \transpose d' a <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-Bb"
+    \header {
+        subtitle = "(Nat King Cole key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c 
+        \transpose d' bf <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm
@@ -229,6 +372,78 @@ lyricsHeadTwo = \lyricmode {
     }
     \score {
         \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-A-for-Eb"
+    \header {
+        subtitle = "(Billie Holiday key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c 
+        \transpose d' a <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-Eb"
+    \header {
+        subtitle = "(Nat King Cole key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c 
+        \transpose d' bf <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm
