@@ -123,7 +123,7 @@ chordsSecond = \chordmode {
 }
 chordsCoda = \chordmode { 
     d1:m7.5- | g:7 | fs:m7.5- | f:m7 |
-    e1:m7 | ef:dim7 | d:m7 | g:aug7.9+ | c:maj7 ||
+    e1:m7 | ef:dim7 | d:m7 | g:13.9- | c:maj7 ||
 }
 chordsForm = \chordmode { 
     \set chordChanges = ##f
