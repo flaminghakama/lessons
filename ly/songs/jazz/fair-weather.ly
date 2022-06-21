@@ -15,7 +15,8 @@ lilypond ly/songs/jazz/fair-weather.ly
 mv fair-weather*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/fair-weather*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"rebuilding" ; git push 
+git add . ; git commit -m"fixing chord" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
@@ -206,9 +207,13 @@ melodyCoda = \relative c'' {
 harmonyIntro = \relative c' {
     s1*8 
 }
-harmonyCommon = \relative c' { 
+harmonyOriginalCommon = \relative c' { 
     g1 | gs1 | g | cs2.. e8 ~ | 
     e1 | ds4 r ds4 8 d ~ | 1 | df2. r8   
+}
+harmonyCommon = \relative c' { 
+    g1 | gs1 | g | cs2.. e8 ~ | 
+    e2 ~ 8 cs d ds ~ | 4 r ds4 8 d ~ | d2 8 f e d | df2. r8   
 }
 harmonyFirstEnding = \relative c' { 
     af8  ~ | 
