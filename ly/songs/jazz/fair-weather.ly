@@ -15,6 +15,8 @@ lilypond ly/songs/jazz/fair-weather.ly
 mv fair-weather*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/fair-weather*.pdf ; do op $file ; done  
 
+git add . ; git commit -m"rebuilding" ; git push 
+
 %}
 
 
@@ -112,7 +114,7 @@ chordsIntro= \chordmode {
 }
 chordsCommon= \chordmode { 
     c1:maj7 | e:7 | bf:7.5- | a:aug7 | 
-    fs1:m7.5- | b:7 | e:m7.5- | ef:7 |
+    fs1:m7.5- | b:7.13- | e:m7.5- | ef:7 |
     af1 | d2:m7 g:7 | e1:m7.5- | a:7 |
 }
 chordsFirst= \chordmode { 
