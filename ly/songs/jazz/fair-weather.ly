@@ -111,9 +111,9 @@ chordsIntro= \chordmode {
     g1:13 | s | s2.. g8:7.9- | s1 ||
 }
 chordsCommon= \chordmode { 
-    c1:maj7 | e:7 | bf:7 | a:7 | 
+    c1:maj7 | e:7 | bf:7.5- | a:aug7 | 
     fs1:m7.5- | b:7 | e:m7.5- | ef:7 |
-    af1:maj7 | d2:m7 g:7 | e1:m7.5- | a:7 |
+    af1 | d2:m7 g:7 | e1:m7.5- | a:7 |
 }
 chordsFirst= \chordmode { 
     fs1:m7.5- | b:7 | e2:m7 a:7 | d:m7 g:7 ||
@@ -162,7 +162,7 @@ melodySecondEnding = \relative c'' {
 }
 
 melodyAOut = \relative c' { 
-    e8 e ds e r g4  fs16 f | e8  e ds e r bf'4  a16 af |
+    e8 e ds e r g4. \glissando | e8  e ds e r bf'4. \glissando |
     g8 bf, d e ~ 8 g gs a | r2 r8 a bf [ b ] |
 
     c4. a8 r e r d | ds2 b'8 c b a |
@@ -176,7 +176,7 @@ melodyAOut = \relative c' {
 }
 
 melodyAOutGriffin = \relative c' { 
-    e8 e ds e r g4  fs16 f | e8  e ds e r bf'4  a16 af |
+    e8 e ds e r g4. \glissando | e8  e ds e r bf'4. \glissando |
     g8 bf, d e ~ 8 g gs a | r2 r8 a bf [ b ] |
 
     c4. a8 r e r d | ds2 b'8 c b a |
@@ -206,7 +206,7 @@ harmonyIntro = \relative c' {
 }
 harmonyCommon = \relative c' { 
     g1 | gs1 | g | cs2.. e8 ~ | 
-    e1 | ds4 r ds4 8 d ~ | 1 | cs2. r8   
+    e1 | ds4 r ds4 8 d ~ | 1 | df2. r8   
 }
 harmonyFirstEnding = \relative c' { 
     af8  ~ | 
@@ -248,7 +248,7 @@ harmonyGriffinCoda = \relative c' {
     \tuplet 3/2 { f'4 d e } f2 | e2.. 8 ~ |  
 
     e1 | af8 c g bf  f af ef f | g1 | af | 
-    f1 | af2. b8 ~ | 1 ||
+    f1 | af2.. b8 ~ | 1 ||
 }
 
 
