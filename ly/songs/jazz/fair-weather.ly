@@ -32,7 +32,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -114,15 +114,15 @@ chordsIntro= \chordmode {
     g1:13 | s | s2.. g8:7.9- | s1 ||
 }
 chordsCommon= \chordmode { 
-    c1:maj7 | e:7 | bf:7.5- | a:aug7 | 
-    fs1:m7.5- | b:7.13- | e:m7.5- | ef:7 |
-    af1 | d2:m7 g:7 | e1:m7.5- | a:7 |
+    c1:maj7 | e:7 | bf:13.5- | a:aug7 | 
+    fs1:m7.5- | b:7.13- | e:m9.5- | ef:7 |
+    af1 | d2:m7 g:7 | e1:m9.5- | a:7 |
 }
 chordsFirst= \chordmode { 
     fs1:m7.5- | b:7 | e2:m7 a:7 | d:m7 g:7 ||
 }
 chordsSecond = \chordmode { 
-    d1:m7.5- | g:7 | c1 | s ||
+    d1:m7.5- | g:13.9- | c1 | s ||
 }
 chordsCoda = \chordmode { 
     d1:m7.5- | g:7 | fs:m7.5- | f:m7 |
@@ -171,7 +171,7 @@ melodyAOut = \relative c' {
     c4. a8 r e r d | ds2 b'8 c b a |
     g2 \glissando \tuplet 3/2 { d'4 c b } | bf4 \glissando f'2 r4 |
 
-    f,8 bf, c f ef f16 ef d8 g | r2 r4 r8 g | 
+    f,8 bf, c f e f16 e d8 g | r2 r4 r8 g | 
     r8 bf, d [ g ] f g16 f e8 a | r2 r4 r8 a | 
 
     r8 c, e [ a ] g a16 g fs8 b ~ | 2. a8 g ~ | 
@@ -213,7 +213,7 @@ harmonyOriginalCommon = \relative c' {
 }
 harmonyCommon = \relative c' { 
     g1 | gs1 | g | cs2.. e8 ~ | 
-    e2 ~ 8 cs d ds ~ | 4 r ds4 8 d ~ | d2 8 f e d | df2. r8   
+    e2 ~ 8 cs d ds ~ | 4 r ds4 8 d ~ | d2 8 fs e d | df2. r8   
 }
 harmonyFirstEnding = \relative c' { 
     af8  ~ | 
