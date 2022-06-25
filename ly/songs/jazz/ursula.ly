@@ -61,22 +61,28 @@ structure = \relative c' {
 
     \key f \minor 
     \tempo 4=128
-    \time 2/4
+    \time 4/4
+    \partial 4*2
     s2 
 
-    \time 4/4
     \startSectionNoBarline "A"
     \bar "[|:"
     \repeat volta 2 { 
         s1*4 \break
         s1*4 \break
-        s1*2     
+        s1     
         \bar "||"
-        \time 2/4 
+        \time 2/4
+        s2 
+        \bar "||"
+        \time 4/4 
     }
     \alternative { 
-        { s2 \bar ":|]" }
-        { s2 \bar "||" \break }
+        { s1 \bar ":|]" }
+        { 
+            \time 4/4 
+            s1 \bar "||" \break 
+        }
     }
     \startSection "B"
     \time 4/4
@@ -86,10 +92,13 @@ structure = \relative c' {
 
     \startSection "A"
     s1*6 \break
-    s1*4     
+    s1*3     
     \bar "||"
     \time 2/4 
     s2
+    \bar "||"
+    \time 4/4 
+    s1
     \bar "|."
 }
 
@@ -139,34 +148,34 @@ chordsA = \chordmode {
     s2 ||
     f1:m7 | f:m6 | bf2:m7 af:m7 | s df:9 | 
     g2:13 fs:m7 | gs:m7 a:maj7 | d4:9 bf:9.11+ b2:9.11+ | bf:9 a:aug7 |
-    af2:6 g:aug7 | fs4:6 f:7 e2:maj7 | s2 | 
+    af2:6 g:aug7 | fs4:6 f:7 | e1:maj7 | 
 }
 chordsAForBb = \chordmode { 
     s2 ||
     f1:m7 | f:m6 | bf2:m7 af:m7 | s df:9 | 
     g2:13 gf:m7 | af:m7 a:maj7 | d4:9 bf:9.11+ b2:9.11+ | bf:9 a:aug7 |
-    af2:6 g:aug7 | gf4:6 f:7 ff2:maj7 | s2 | 
+    af2:6 g:aug7 | gf4:6 f:7 | ff1:maj7 | 
 }
 chordsAForEb = \chordmode { 
     s2 ||
     f1:m7 | f:m6 | bf2:m7 af:m7 | s df:9 | 
     g2:13 gf:m7 | af:m7 bff:maj7 | d4:9 bf:9.11+ cf2:9.11+ | bf:9 a:aug7 |
-    af2:6 g:aug7 | gf4:6 f:7 ff2:maj7 | s2 | 
+    af2:6 g:aug7 | gf4:6 f:7 | ff1:maj7 | 
 }
 chordsB = \chordmode { 
-    e2:maj7 ||
+    e1:maj7 ||
     b1:m7 | e:9 | b:m7 | e:9 | 
     e1:m7 | a:9 | e:m7 | a:9 | 
     d1:9.11+ | g:9.11+ | c:9.11+ | b4:aug9 c:9.11+ 
 }
 chordsBForBb = \chordmode { 
-    ff2:maj7 ||
+    ff1:maj7 ||
     cf1:m7 | ff:9 | cf:m7 | ff:9 | 
     e1:m7 | a:9 | e:m7 | a:9 | 
     d1:9.11+ | g:9.11+ | c:9.11+ | b4:aug9 c:9.11+ 
 }
 chordsBForEb = \chordmode { 
-    ff2:maj7 ||
+    ff1:maj7 ||
     cf1:m7 | ff:9 | cf:m7 | ff:9 | 
     ff1:m7 | bff:9 | ff:m7 | bff:9 | 
     d1:9.11+ | g:9.11+ | c:9.11+ | cf4:aug9 c:9.11+ 
@@ -202,7 +211,7 @@ melodyACommon = \relative c'' {
     c8 df4 f,8 bf2 ~ | 2. r4 | 
     gs8 a4 cs,8  gs' fs e ds ~ | 8 cs b cs ~ 2 |
     fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
-    r2 \tuplet 3/2 4 { r8 r f  b ds gs  | e, as ds  gs ds cs } ds2 |
+    r2 \tuplet 3/2 4 { r8 r f  b ds gs  | e, as ds  gs ds cs } | ds2 
 }
 melodyACommonForBb = \relative c'' {
     g8 af4 c,8 || g'1 | 
@@ -210,7 +219,7 @@ melodyACommonForBb = \relative c'' {
     c8 df4 f,8 bf2 ~ | 2. r4 | 
     af8 bff4 df,8  af' gf ff ef ~ | 8 df cf df ~ 2 |
     fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
-    r2 \tuplet 3/2 4 { r8 r f  b ef af  | ff, bf ef  af, ef df } ef2 |
+    r2 \tuplet 3/2 4 { r8 r f  b ef af  | ff, bf ef  af ef df } | ef2 
 }
 melodyACommonForEb = \relative c'' {
     g8 af4 c,8 || g'1 | 
@@ -218,14 +227,20 @@ melodyACommonForEb = \relative c'' {
     c8 df4 f,8 bf2 ~ | 2. r4 | 
     af8 bff4 df,8  af' gf ff ef ~ | 8 df cf df ~ 2 |
     fs8 e \tuplet 3/2 { c8 e fs } af2 | f2 4. 8 | 
-    r2 \tuplet 3/2 4 { r8 r f,  b ef af  | ff, bf ef  af ef df } ef2 |
+    r2 \tuplet 3/2 4 { r8 r f,  b ef af  | ff, bf ef  af ef df } | ef2 
 }
 
 melodyAFirst = \relative c''{ 
     g8 af4 c,8 ||
 }
+melodyASecond = \relative c''{ 
+    ds2
+}
+melodyASecondForFlats = \relative c' { 
+    ef2
+}
 melodyALast = \relative c''{ 
-    r4 r ||
+    r2 ||
 }
 
 melodyBridge = \relative c'' {
@@ -243,7 +258,7 @@ melodyBridgeForBb = \relative c' {
     ff2 ~ 8 eff4 \tuplet 3/2 { ff16 ( eff df ) } | eff8 df cf bf  cf eff gf eff | 
     ff2 ~ 8 eff4 \tuplet 3/2 { ff16 ( eff df ) } | eff8 df cf bf  cf eff ff bff, |
     g2 r8 g'4 \tuplet 3/2 { a16 ( g fs ) } | g8 fs e ds  e g a e |
-    g2 r8 g4 \tuplet 3/2 { a16 ( g fs ) } | g8 fs e ds  e g a as |
+    g2 r8 g4 \tuplet 3/2 { a16 ( g fs ) } | g8 fs e ds  e g? a bf |
     b4. gs8 r e \tuplet 3/2 { c8 e gs } | 
     e'4. cs8 r a \tuplet 3/2 { f8 a cs } | 
     a'4. fs8 r d \tuplet 3/2 { bf8 d fs } | g4 fs  
@@ -253,7 +268,7 @@ melodyBridgeForEb = \relative c' {
     ff2 ~ 8 eff4 \tuplet 3/2 { ff16 ( eff df ) } | eff8 df cf bf  cf eff gf eff | 
     ff2 ~ 8 eff4 \tuplet 3/2 { ff16 ( eff df ) } | eff8 df cf bf  cf eff ff bff, |
     aff2 r8 aff'4 \tuplet 3/2 { bff16 ( aff gf ) } | aff8 gf ff ef  ff aff bff ff |
-    aff2 r8 aff4 \tuplet 3/2 { bff16 ( aff gf ) } | aff8 gf ff ef  ff aff bff cff |
+    aff2 r8 aff4 \tuplet 3/2 { bff16 ( aff gf ) } | aff8 gf ff ef  ff aff a bf |
     b4. gs8 r e \tuplet 3/2 { c8 e gs } | 
     e'4. cs8 r a \tuplet 3/2 { f8 a cs } | 
     a4. fs8 r d \tuplet 3/2 { bf8 d fs } | g4 fs  
@@ -262,6 +277,7 @@ melodyBridgeForEb = \relative c' {
 melody = \relative c' { 
     \melodyACommon
     \melodyAFirst
+    \melodyASecond
     \melodyBridge
     \melodyACommon
     \melodyALast
@@ -270,6 +286,7 @@ melody = \relative c' {
 melodyForBb = \relative c' { 
     \melodyACommonForBb
     \melodyAFirst
+    \melodyASecondForFlats
     \melodyBridgeForBb
     \melodyACommonForBb
     \melodyALast
@@ -278,6 +295,7 @@ melodyForBb = \relative c' {
 melodyForAlto = \relative c' { 
     \melodyACommonForEb
     \melodyAFirst
+    \melodyASecondForFlats
     \melodyBridgeForEb
     \melodyACommonForEb
     \melodyALast
