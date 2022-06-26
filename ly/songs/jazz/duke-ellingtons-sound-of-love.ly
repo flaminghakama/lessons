@@ -15,7 +15,7 @@ lilypond ly/songs/jazz/duke-ellingtons-sound-of-love.ly
 mv duke-ellingtons-sound-of-love*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/duke-ellingtons-sound-of-love*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"merging harmony lines" ; git push 
+git add . ; git commit -m"actual first working version of sound of love" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 
@@ -148,10 +148,13 @@ chordsFormForEb = \chordmode {
     \chordsBForEb
 }
 
-melodyA = \relative c' {
+melodyIntro = \relative c'' {
     \once \override Staff.NoteHead.style = #'slash
-    g2.
-    \tuplet 3/2 { r8 c, df } | ef2.. df8 | f8 4. ~ 4 
+    bf2.
+}
+
+melodyA = \relative c' {
+    \tuplet 3/2 { r8 c df } | ef2.. df8 | f8 4. ~ 4 
     \tuplet 3/2 { r8 c df } | ef2 ~ 8 c df f | af gf4. ~ 4  
     \tuplet 3/2 { r8 f gf } | cf2. ~ \tuplet 3/2 { cf8 bf af } | ff8 4. ~ 4 
     r8 a | bf4. af8 \tuplet 3/2 { f4 df c } | cf2 r4
@@ -182,16 +185,21 @@ melodyBForEb = \relative c' {
 
 melody = \relative c' { 
     \accidentalStyle default
+    \melodyIntro
     \melodyA
     \melodyB
 }
 
 melodyForBb = \relative c' { 
-    \melody
+    \transpose c bf, \melodyIntro
+    \melodyA
+    \melodyB
 }
 
 melodyForAlto = \relative c' { 
-    \melody
+    \transpose c ef, \melodyIntro
+    \melodyA
+    \melodyB
 }
 
 \book {
