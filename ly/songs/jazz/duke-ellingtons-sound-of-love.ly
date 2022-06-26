@@ -103,7 +103,7 @@ rehearsalMarkTweaksForEb = \relative c' {
 
 chordsA = \chordmode { 
     af1:13.9- ||
-    df:maj7.9 | af:13-9 | df:maj7.9 | f:7.8+.9+ | 
+    df:maj7.9 | af:13.-9 | df:maj7.9 | f:7.8+.9+ | 
     bf1:7.9- | gf:7.9- | df:maj7.9 | bf1:7.9- | 
     ef1:m9 | af:13 | e4:maj7 ef:13 d:maj7 af:7.5- | df1:maj7.9 ||
 }
@@ -158,7 +158,7 @@ melodyA = \relative c' {
     \tuplet 3/2 { r8 c df } | ef2 ~ 8 c df f | af gf4. ~ 4  
     \tuplet 3/2 { r8 f gf } | cf2. ~ \tuplet 3/2 { cf8 bf af } | ff8 4. ~ 4 
     r8 a | bf4. af8 \tuplet 3/2 { f4 df c } | cf2 r4
-    a8 bf | f'8 4. ~ 4 \tuplet 3/2 { r8 a, bf } | \tuplet 3/2 { f'8 af f ~ } 4 ~ 4
+    a8 bf | f'8 4. ~ 4 \tuplet 3/2 { r8 a, bf } | f'8 af16 f ~ 4 ~ 4
     r8 af, | b4 c df d | ef2. r4 || 
 }
 melodyAForBb = \relative c'' {
