@@ -15,7 +15,7 @@ lilypond ly/songs/jazz/duke-ellingtons-sound-of-love.ly
 mv duke-ellingtons-sound-of-love*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/duke-ellingtons-sound-of-love*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"actual first working version of sound of love" ; git push 
+git add . ; git commit -m"fixing chord spellings and melody rhythms sound of love" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 
@@ -103,7 +103,7 @@ rehearsalMarkTweaksForEb = \relative c' {
 
 chordsA = \chordmode { 
     af1:13.9- ||
-    df:maj7.9 | af:13.-9 | df:maj7.9 | f:7.8+.9+ | 
+    df:maj7.9 | af:13.9- | df:maj7.9 | f:7.8+.9+ | 
     bf1:7.9- | gf:7.9- | df:maj7.9 | bf1:7.9- | 
     ef1:m9 | af:13 | e4:maj7 ef:13 d:maj7 af:7.5- | df1:maj7.9 ||
 }
