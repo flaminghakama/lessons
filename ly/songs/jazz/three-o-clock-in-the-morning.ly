@@ -20,6 +20,10 @@ lilypond ly/songs/jazz/three-o-clock-in-the-morning.ly
 mv three-o-clock-in-the-morning*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/three-o-clock-in-the-morning*pdf ; do open -a Preview $file ; done
 
+git add . ; git commit -m"transposed to Bb" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
+
 %}
 
 atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scripts.coda" }
@@ -201,28 +205,29 @@ melody = \transpose c ef \melodyInEb
 %     }
 % }
 
-% \book {
-%   \bookOutputSuffix "for-Bb"
-%     \header {
-%         poet = "    Bb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         <<
-%             \new ChordNames \transpose bf c  { 
-%                 \include "ly/ily/chord-names-properties.ily" 
-%                 \chordsSong  
-%             }
-%             \new Staff \transpose bf, c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 <<
-%                     \structure
-%                     \melody
-%                 >>
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        poet = "    Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf,, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSongIII
+                \chordsSongIII
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melody
+                >>
+            }
+        >>
+    }
+}
 
 \book {
   \bookOutputSuffix "for-Eb"
