@@ -210,6 +210,7 @@ melody = \transpose c ef \melodyInEb
     \header {
         poet = "    Bb Lead Sheet"
         instrumentName = \poet
+        subtitle = "Dexter Gordon solo transcription)"
     }
     \score {
         \transpose bf,, c <<
@@ -234,6 +235,7 @@ melody = \transpose c ef \melodyInEb
     \header {
         poet = "    Eb Lead Sheet"
         instrumentName = \poet
+        subtitle = "Dexter Gordon solo transcription)"
     }
     \score {
         \transpose ef, c <<
