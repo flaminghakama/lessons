@@ -122,13 +122,19 @@ chordsForm = \chordmode {
 melodyA = \relative c'' { 
     d2. | c | bf | af2 gf4 r8 f ~ | 
     f1 ~ | 4 r f8 af4 bf8 | f ef f2. ~ | 4 r f8 af bf ef, | 
-    f1 ~ | 4 r bf8 c4 ef16 c |
+    f1 ~ | 4 r 
+}
+melodyADouble = \relative c'' { 
+    bf8 c4 ef16 c |
+}
+melodyAFirstEndingDouble = \relative c'' { 
+    f1 ~ | 2  
 }
 melodyAFirstEnding = \relative c'' { 
-    f1 ~ | 2 \tuplet 3/2 { r4 e ef } |
+    \tuplet 3/2 { r4 e ef } |
 }
 melodyASecondEnding = \relative c'' { 
-    f1 ~ | 2. r4 |
+    f1 ~ | 2. r4 || 
 }
 
 melodyBridgeCommon = \relative c'' { 
@@ -143,16 +149,86 @@ melodyBridgeSecondEnding = \relative c' {
     fs8 b2.. | b8 e2.. || 
 }
 
-melody = \relative c' { 
+melody = {
     \accidentalStyle default
     \melodyA
+    \melodyADouble
+    \melodyAFirstEndingDouble
     \melodyAFirstEnding
     \melodyASecondEnding
     \melodyBridgeCommon
     \melodyBridgeFirstEnding
     \melodyBridgeSecondEnding
     \melodyA
-    \melodyASecondEnding    
+    \melodyADouble
+    \melodyASecondEnding
+}
+
+harmonyA = \relative c'' { 
+    g2. | f | ef | df2 cf4 r8 af ~ | 
+    af2.. bf8 ~ | 2 r2 | r d4 r8 cs ~ | 2. r4 | 
+    r2 r8 c c [ df ] | r2 
+}  
+
+harmonyAFirstEnding = \relative c' { 
+    f1 ~ | 2 r2 |
+}
+
+harmonyBridgeFirstEnding = \relative c' { 
+    fs8 2.. ~ | 2. r4 
+}
+harmonyBridgeSecondEnding = \relative c' { 
+    fs8 2.. | 8 b2.. || 
+}
+harmonyBridgeFirstEndingLeadSheet = \relative c' { 
+    s8 fs2.. ~ | 2. r4 
+}
+harmonyBridgeSecondEndingLeadSheet = \relative c' { 
+    s8 fs2.. | 8 b2.. || 
+}
+
+harmony = \relative c' { 
+    \accidentalStyle default
+    \harmonyA
+    \transpose c c, \melodyADouble
+    \harmonyAFirstEnding
+    \transpose c c, \melodyASecondEnding
+    \melodyBridgeCommon
+    \harmonyBridgeFirstEnding
+    \harmonyBridgeSecondEnding
+    \harmonyA
+    \transpose c c, \melodyADouble
+    \transpose c c, \melodyASecondEnding    
+}
+
+lead = {
+    \accidentalStyle default
+    << 
+        \melodyA \\
+        \harmonyA
+    >>
+    \melodyADouble
+    \melodyAFirstEndingDouble
+    <<
+        \melodyAFirstEnding \\
+        { r2 }
+    >>
+    \melodyASecondEnding
+    \melodyBridgeCommon
+    <<
+        \melodyBridgeFirstEnding \\
+        \harmonyBridgeFirstEndingLeadSheet
+    >>
+    <<
+        \melodyBridgeSecondEnding \\
+        \harmonyBridgeSecondEndingLeadSheet
+    >>
+    << 
+        \melodyA \\
+        \harmonyA
+    >>
+    \melodyADouble
+    \melodyASecondEnding
 }
 
 % \layout {
@@ -185,7 +261,38 @@ melody = \relative c' {
                 <<
                     \key c \major 
                     \structure
-                    \melody
+                    \lead
+                >>
+                \noPageBreak
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "harmony-for-Eb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Harmony for Eb"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm 
+            }
+            \new Staff 
+            \with { \consists "Merge_rests_engraver" } 
+            \keepWithTag #'(C) \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \key c \major 
+                    \structure
+                    \harmony
                 >>
                 \noPageBreak
             }
@@ -216,7 +323,7 @@ melody = \relative c' {
                 <<
                     \key bf \major 
                     \structure
-                    \melody
+                    \lead
                 >>
                 \noPageBreak
             }
@@ -247,7 +354,7 @@ melody = \relative c' {
                 <<
                     \key ef \major 
                     \structure
-                    \melody
+                    \lead
                 >>
                 \noPageBreak
             }
