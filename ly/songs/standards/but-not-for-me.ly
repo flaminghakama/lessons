@@ -59,149 +59,313 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c' { 
 
-    \key f \major
+    \key a \major
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT    
     %\override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
 
-    \partial 4*1 s4 
+    \startSectionNoBarline "Verse"
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*3 \pageBreak
 
-    
-    \startSectionNoBarline "A"
+    s1
+    \once \override Score.RehearsalMark #'extra-offset = #'( -7 . -2 )
+    \startSectionNoBarline "Chorus"
     \repeat volta 2 { 
     \bar "[|:"
         s1*4 \break
         s1*4 \break
-
-        \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
-        \startSection "A"
         s1*4 \break
         s1*4 \break
 
+        \once \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
         \startSection "B"
         s1*4 \break
         s1*4 \break
+        s1*4 \break
+        s1*4 
+    }
+    \bar ":|]"
+    \pageBreak
 
-        \startSection "A"
+    \once \override Score.RehearsalMark #'extra-offset = #'( -2 . 0 )
+    \startSectionNoBarline "Solo Changes"
+    \repeat volta 2 { 
+    \bar "[|:"
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+
+        \startSection ""
+        s1*4 \break
+        s1*4 \break
         s1*4 \break
         s1*4 
     }
     \bar ":|]"
 }
 
-chordsA = \chordmode { 
-    f2:maj7 g:m7 | a:7.9+ \tuplet 3/2 { c4:7 bf:7 af:7 } | 
-    f2:7.9+ bf:7 | a:maj7 d:7.9+ |
-    df2:maj7 bf:m7 | g:m7 c:7 |
+structureCondensed = \relative c' { 
+
+    \key a \major
+    s1
+
+    \override Score.RehearsalMark.self-alignment-X = #LEFT    
+    \once \override Score.RehearsalMark #'extra-offset = #'( -4 . -2 )
+    \startSectionNoBarline "A"
+    \repeat volta 2 { 
+    \bar "[|:"
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+
+        \once \override Score.RehearsalMark #'extra-offset = #'( -3 . -2 )
+        \startSection "B"
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+    }
 }
 
-chordsB = \chordmode { 
-    bf2:m7 ef:7 | df:maj7 gf:7 |
-    af2:maj7 df:maj7 | c:m7 b:7 |
-    bf2:m7 df:7.11+ | gf:7 b:9 | 
-    e2:aug7 a:7.9+ | d:7 g4:m7 c:7 || 
+chordsVerse = \chordmode { 
+    a2 e:aug | cs:m7 fs:aug7 | b:m cs:m | d b4:m7 e:7 | 
+    a2 fs:m7 | b:m7 e:7 | a fs:m7 | ef:m7 af:7 | 
+    df2 af:aug | f:m7.5- bf:7 | ef:m7 f:m7 | gf:maj7 ef4:m7 af:7 | 
+    df2 bf:m7 | ef:m7 af:7 | df1:maj7 | fs:aug7 |
+    b1:m7 | e:7 | cs:m7 | fs:m7 | 
+    b1:m7 | e:7 | fs2:m7 b:7 | e1:7 |
 }
+
+chordsCommon = \chordmode { 
+    b1:7 | b2:m7 e:7 | a1 | fs:m7 | 
+    b1:7 | b2:m7 e:7 | e1:m7 | a:7 | 
+}
+
+chordsFirstEnding = \chordmode { 
+    d1:maj7 | g:7 | cs:m7 | fs:m7 |
+    b1:7 | s | b2:m7 f:7 | e1:7 | 
+}
+
+chordsSecondEnding = \chordmode { 
+    d1:maj7 | g:7 | cs2:m7 fs:m7 | b1:7 |
+    b1:m7 | e:13 | a1 | s | 
+}
+
+chordsSolosCommon = \chordmode { 
+    b2:7 bs:7 | es:maj7 gs:7 | cs:maj7 e:7 | a:maj7 fs:m7 |
+    b2:7 bs:7 | es:maj7 gs:7 | cs:maj7 e:7 | a:maj7 e4:m7 a:7 |  
+}
+chordsSolosFirstEnding = \chordmode { 
+    d1:maj7 | d2:m7 g:7 | cs1:m7 | fs:m7 | 
+    b1:7 | s | b:m7 | e:7 |  
+}
+chordsSolosSecondEnding = \chordmode { 
+    d1:maj7 | d2:m7 g:7 | cs1:m7 | fs:m7 | 
+    b1:m7 | e:7 | a2:maj7 bs:7 | es:maj7 e:7 |  
+}
+
+
+chordsSolosCommonForFlats = \chordmode { 
+    b2:7 c:7 | f:maj7 gs:7 | cs:maj7 e:7 | a:maj7 fs:m7 |
+    b2:7 c:7 | f:maj7 gs:7 | cs:maj7 e:7 | a:maj7 e4:m7 a:7 |  
+}
+chordsSolosFirstEndingForFlats = \chordmode { 
+    d1:maj7 | d2:m7 g:7 | cs1:m7 | fs:m7 | 
+    b1:7 | s | b:m7 | e:7 |  
+}
+chordsSolosSecondEndingForFlats = \chordmode { 
+    d1:maj7 | d2:m7 g:7 | cs1:m7 | fs:m7 | 
+    b1:m7 | e:7 | a2:maj7 c:7 | f:maj7 e:7 |  
+}
+
+
+
 
 chordsForm = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    s4 
-    \chordsA 
-    f2 d:m7 | a4:7.9+ d:13 g:7.9+ c:13 || 
-    \chordsA 
-    gf2:maj7 e:7.9- | f1:maj7 ||
-    \chordsB
-    \chordsA
-    gf2:maj7 e:7.9- | f1:maj7 ||
+    \chordsVerse
+
+    \chordsCommon
+    \chordsFirstEnding
+    \chordsCommon
+    \chordsSecondEnding
+
+    \chordsSolosCommon
+    \chordsSolosFirstEnding
+    \chordsSolosCommon
+    \chordsSolosSecondEnding
 }
 
-melodyA = \relative c' { 
-    c4 || c' a2. | r4 bf8 c \tuplet 3/2 { e4 d c } | 
-    af1 | r4 g8 af c4 bf8 af | 
-    f2 2 | 4 4 \tuplet 3/2 { e4 f g } | 
+chordsCondensed = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+    s1
+    \chordsSolosCommon
+    \chordsSolosFirstEnding
+    \chordsSolosCommon
+    \chordsSolosSecondEnding
 }
-melodyB = \relative c' {
-    f4 || f'2 2 ~ | 4 4 \tuplet 3/2 { f4 ef df } | 
-    ef4. 8 af2 | r4 ef4 \tuplet 3/2 { ef4 df c } | 
-    df4. 8 g2 | r4 df4 \tuplet 3/2 { df4 c bf } | 
-    c1 ~ | 2 r4 
+
+chordsCondensedForFlats = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+    s1
+    \chordsSolosCommonForFlats
+    \chordsSolosFirstEndingForFlats
+    \chordsSolosCommonForFlats
+    \chordsSolosSecondEndingForFlats
 }
+
+melodyIntro= \relative c' { 
+    r8 e r e8 8 4. | 8 d4 8 ~ 2 | 
+    r8 cs r cs8 4 4 | 4 b8 8 ~ 4 cs | 
+    a4. e'8 ~ 2 | r8 gs,4 a8 b4 cs8 a ~ | 
+    a4. fs'8 ~ 2 | R1 | 
+
+    r8 gs4 16 16 4 4 | 4 fs8 8 ~ 2 | 
+    r8 f4 8 4 4 | 4 ef8 8 ~ 4 f | 
+    df8 af'4. ~ 2 | r8 c,4 df8 ef f4 df8 ~ | 
+    df8 2.. | r4 cs bs8 cs4 ds8 ~ | 
+
+    ds8 cs e4 ~ 8 d cs b | e4 d r8 cs4 b8 | 
+    e8 4. ~ 4 fs | a2 gs4 e | 
+    r8 cs8 4 ~ 8 b e4 | r8 d cs4 ~ 4. b8 | 
+    cs8 a2.. | 
+}
+
+melodyAOne = \relative c' { 
+    r4 b4 cs b ||
+    cs2. b4 | a4. b8 cs4 b8 cs ~ | 1 | r4 b cs b |      
+    cs2. b4 | a4. b8 cs4 b8 cs ~ | 1 | r4 cs d e |      
+
+}
+melodyFirstEnding = \relative c' {
+    f2 fs4 a ~ | 4 r8 b, cs4 d | ds2 e4 a ~ | 4 r8 a, b cs4. | 
+    cs8 d4 a'8 ~ 2 ~ | 4 4 fs d8 b ~ | 1 |  
+}
+melodyFirstEndingForFlats = \relative c' {
+    es2 fs4 a ~ | 4 r8 b, cs4 d | ds2 e4 a ~ | 4 r8 a, b cs4. | 
+    cs8 d4 a'8 ~ 2 ~ | 4 4 fs d8 b ~ | 1 |  
+}
+
+melodyATwo = \relative c' { 
+    r4 b4 cs b ||
+    cs2. b4 | a4. b8 cs4 b8 cs ~ | 1 | r4 cs4 4 b8 cs ~ |      
+    cs2. b4 | a8 b4. cs4 b8 cs ~ | 1 | r4 cs d e |      
+
+}
+
+melodySecondEnding = \relative c' {
+    f2 fs4 a ~ | 4 b, cs d | ds2 e4 b' ~ | 8 a4. fs4 d | 
+    cs1 | e | a ~ | 4 r r2 ||
+}
+melodySecondEndingForFlats = \relative c' {
+    es2 fs4 a ~ | 4 b, cs d | ds2 e4 b' ~ | 8 a4. fs4 d | 
+    cs1 | e | a ~ | 4 r r2 ||
+}
+
 melodyForm = \relative c'' { 
     \accidentalStyle default
-    \melodyA
-    \relative c'' { a1 ~ | 2 r4 } 
-    \melodyA
-    \relative c' { f1 | r2 r4 } 
-    \melodyB
-    \melodyA
-    \relative c' { f1 | R1 } 
+    \melodyIntro
+    \melodyAOne
+    \melodyFirstEnding
+    \melodyATwo
+    \melodySecondEnding
+
+    <>\xp \comp #16
+    <>\xp \comp #16
+    <>\xp \comp #16
+    <>\xp \comp #16
+    <>\xp \comp #16
+    <>\xp \comp #16
+    <>\xp \comp #16
+    <>\xp \comp #16
+}
+
+melodyCondensed= \relative c'' { 
+    \accidentalStyle default
+
+    \melodyAOne
+    \melodyFirstEndingForFlats
+    \melodyAOne
+    \melodySecondEndingForFlats
 }
 
 lyricsVerse = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    Old man sunshine, listen you
+    Old man suns -- hine, lis -- ten you
     Don't you tell me dreams come true
-    Just try it, and I'll start a riot
+    Just try it, and I'll start a ri -- ot
 
-    Beatrice Fairfax, don't you dare
-    Ever tell me, he will care
-    I'm certain, it's the final curtain
+    Be -- at -- rice Fair -- fax, don't you dare
+    Ev -- er tell me, he will care
+    I'm cer -- tain, it's the fi -- nal cur -- tain
 
-    I never wanna hear
-    From any cheerful Pollyannas
-    Who tell you Fate supplies a mate
-    It's all bananas
+    I ne -- ver wan -- na hear
+    From a -- ny cheer -- ful Pol -- ly -- an -- nas
+    Who tell you Fate sup -- plies a mate
+    It's all ba -- na -- nas
 }
 
 lyricsChorusOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    They're writing songs of love
+    They're wri -- ting songs of love
     But not for me
-    A lucky star's above
+    A lu -- cky star's a -- bove
     But not for me
 
     With love to lead the way
     I found more clouds of gray
-    Than any Russian play
-    Could guarantee
+    Than a -- ny Rus -- sian play
+    Could gua -- ran -- tee
 
     I was a fool to fall
     And get that way
-    Hi-ho, alas! and al-
-    So, lack-a-day
+    Hi- ho, a -- las! and al -- so, lack- a- day
 
-    But still I can't dismiss
-    The memory of his kiss
+    But still I can't dis -- miss
+    The memo -- ry of his kiss
     I guess he's not for me
-
 }
 
 lyricsChorusTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    He's knocking on a door
-    But not for me
+    He's knock -- ing on a door
+    \repeat unfold 4 { \skip 1 }
     He'll plan a two by four
-    But not for me
+    \repeat unfold 4 { \skip 1 }
 
     I've heard that love's a game
-    I'm puzzled just the same
+    I'm puz -- zled just the same
     Was I the moth or flame
     I'm all at sea
 
-    It started off so swell
-    This "let's pretend"
-    It all began so well
+    It start -- ed off so swell
+    This "\"let's" pre -- "tend\""
+    It all be -- gan so well
     But what an end
 
-    The climax of a plot
-    Should be a marriage knot
+    The cli -- max of a plot
+    Should be a mar -- riage knot
     But there's no knot for me
 }
 
@@ -214,9 +378,9 @@ lyricsChorusTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-A-for-C"
     \header {
-        subtitle = "(Charles Mingus changes)"
+        subtitle = "(Judy Garland key)"
         poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
@@ -236,11 +400,17 @@ lyricsChorusTwo = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsVerse
+                    \lyricsChorusOne
+                } 
             }
-            % \new Lyrics \with { alignAboveContext = "staff" } {
-            %     \lyricsto "lead" { \lyricsHeadTwo } 
-            % }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    \repeat unfold 75 { \skip 1 }
+                    \lyricsChorusTwo
+                } 
+            }
         >>
         \layout { 
             indent = 1.25\cm
@@ -249,33 +419,56 @@ lyricsChorusTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "condensed-in-Eb-for-C"
     \header {
-        subtitle = "(Charles Mingus changes)"
+        subtitle = "(John Coltrane Changes)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose a, ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCondensed
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \structureCondensed
+                    \melodyCondensed
+                >>
+            }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "condensed-in-Eb-for-Bb"
+    \header {
+        subtitle = "(John Coltrane Changes)"
         poet = "Bb Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        \transpose bf, c <<
+        \transpose bf, c \transpose a, ef <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm
+                \chordsCondensedForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
-                    \structure
-                    \melodyForm
+                    \structureCondensed
+                    \melodyCondensed
                 >>
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
-            }
-            % \new Lyrics \with { alignAboveContext = "staff" } {
-            %     \lyricsto "lead" { \lyricsHeadTwo } 
-            % }
         >>
         \layout { 
             indent = 1.25\cm
@@ -284,33 +477,27 @@ lyricsChorusTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "condensed-in-Eb-for-Eb"
     \header {
-        subtitle = "(Charles Mingus changes)"
+        subtitle = "(John Coltrane Changes)"
         poet = "Eb Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        \transpose ef, c <<
+        \transpose ef, c \transpose a, ef <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm
+                \chordsCondensedForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
-                    \structure
-                    \melodyForm
+                    \structureCondensed
+                    \melodyCondensed
                 >>
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
-            }
-            % \new Lyrics \with { alignAboveContext = "staff" } {
-            %     \lyricsto "lead" { \lyricsHeadTwo } 
-            % }
         >>
         \layout { 
             indent = 1.25\cm
