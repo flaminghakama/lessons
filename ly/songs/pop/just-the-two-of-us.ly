@@ -408,7 +408,7 @@ lyricsHeadOne = \lyricmode {
     You and I
 
     \repeat unfold 28 { \skip 1 }
-    \repeat unfold 16 { \skip 1 }
+    \repeat unfold 18 { \skip 1 }
 
     I hear the crys -- tal rain -- drops fall
     On the win -- dow down the hall
