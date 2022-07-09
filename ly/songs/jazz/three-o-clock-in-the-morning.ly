@@ -20,7 +20,7 @@ lilypond ly/songs/jazz/three-o-clock-in-the-morning.ly
 mv three-o-clock-in-the-morning*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/three-o-clock-in-the-morning*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"transposed to Bb" ; git push 
+git add . ; git commit -m"fixing rhythm" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 
@@ -34,7 +34,7 @@ atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scrip
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -153,9 +153,9 @@ melodyInEb = \relative c {
     d8 a r a8 2 | r r4 r8 a |
     
     d8 e fs g  a fs g a16 g | fs8 d b g  gs fs' e d | 
-    \tuplet 3/2 { cs16 [ d cs } b8 ] a af g b, d fs | r e4. r4 \tuplet 3/2 { r8 e fs } |
+    \tuplet 3/2 { cs16 [ d cs } b8 ] a af g b, d fs | r e4. r4 \tuplet 3/2 { e8 fs g } |
     
-    \tuplet 3/2 { g8 a fs } \tuplet 3/2 { g8 e e } r2 | r8 a r b  cs d \tuplet 3/2 { b cs a } | 
+    \tuplet 3/2 { a fs g } \tuplet 3/2 { e8 e r } r2 | r8 a r b  cs d \tuplet 3/2 { b cs a } | 
     r8 a r4 r e'8 fs | g b, d fs  e d cs b | 
 
     d4 b8 g fs e4. | d'4 bf8 a g a bf d |
@@ -181,36 +181,37 @@ melody = \transpose c ef \melodyInEb
     composer = \composerName
 }
 
-% \book {
-%   \bookOutputSuffix "for-C"
-%     \header {
-%         poet = "    Concert Pitch"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily" 
-%                 \chordsSong 
-%             }
-%             \new Staff \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 <<
-%                     \structure
-%                     \melody
-%                     \noPageBreak
-%                 >>
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "for-C"
+    \header {
+        poet = "    Concert Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Dexter Gordon solo transcription)"
+    }
+    \score {
+        \transpose c, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSongIII
+                \chordsSongIII
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melody
+                >>
+            }
+        >>
+    }
+}
 
 \book {
   \bookOutputSuffix "for-Bb"
     \header {
         poet = "    Bb Lead Sheet"
         instrumentName = \poet
-        subtitle = "Dexter Gordon solo transcription)"
+        subtitle = "(Dexter Gordon solo transcription)"
     }
     \score {
         \transpose bf,, c <<
@@ -235,7 +236,7 @@ melody = \transpose c ef \melodyInEb
     \header {
         poet = "    Eb Lead Sheet"
         instrumentName = \poet
-        subtitle = "Dexter Gordon solo transcription)"
+        subtitle = "(Dexter Gordon solo transcription)"
     }
     \score {
         \transpose ef, c <<
