@@ -10,10 +10,10 @@ composerName = "Ben Paul"
 killPreview ; rm lolo-*.pdf ; lilypond ly/songs/jazz/lolo.ly ; for file in lolo-*pdf ; do op $file ; done
 
 killPreview
-rm tin-din-deo*pdf
+rm lolo*pdf
 lilypond ly/songs/jazz/lolo.ly 
-mv lolo-for-*pdf pdf/songs/jazz
-for file in pdf/songs/jazz/lolo-for-*pdf ; do op $file ; done  
+mv lolo-*pdf pdf/songs/jazz
+for file in pdf/songs/jazz/lolo-*pdf ; do op $file ; done  
 
 git add . ; git commit -m"renotating" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
@@ -200,7 +200,7 @@ melodyBottom = \relative c''' {
     \header {
         title = \title
         composer = \markup \italic { "composed by" \composerName }
-        poet = "Concert Bottom"
+        poet = "Concert Bottom "
         instrumentName = \poet
         subtitle = "2022-06-02"
     }
