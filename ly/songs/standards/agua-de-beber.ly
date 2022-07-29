@@ -22,6 +22,9 @@ lilypond ly/songs/standards/agua-de-beber.ly
 mv agua-de-beber*pdf pdf/songs/standards
 for file in pdf/songs/standards/agua-de-beber*pdf ; do op $file ; done 
 
+git add . ; git commit -m"fixing wrong notes" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 \paper {
@@ -95,9 +98,9 @@ chordsSong = \chordmode {
 }
 
 melodyIntro = \relative c'' { 
-    d8 a g a r4 r8 c | d ef d ef d4 c8 a | 
-    d8 a g a r4 r8 c | d ef d ef d4 c8 a | 
-    d8 a g a r2 | a8 g a2. |
+    c8 a g a r4 r8 c | d ef d ef d4 c8 a | 
+    c8 a g a r4 r8 c | d ef d ef d4 c8 a | 
+    c8 a g a r2 | a8 g a2. |
     a8 g a2. | R1 || 
 
 }
