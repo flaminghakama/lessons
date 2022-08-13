@@ -23,14 +23,14 @@ rhythmsEighthsExerciseFourMajor = \relative c' {
     \key g \major
     \time 3/4
     c8 d b c r4 | r8 c d [ b ] e4 | g4 r8 g g4 |   
-    fs?4 r8 e d4 | d8 a' e fs g4 
+    fs4 r8 e d4 | d8 a' e fs g4 
     \bar "|." 
 }
 
 rhythmsEighthsExerciseFiveMajor = \relative c'' { 
     \key g \major
     \time 4/4
-    r8 g g [ d ] d4 r | g8 8 d c b4 r | r8 a' g [ fs? ] a4 r | r8 g8 fs4 e8 d4. | b8 c4 fs8 g4 r  
+    r8 g g [ d ] d4 r | g8 8 d c b4 r | r8 a' g [ fs ] a4 r | r8 g8 fs4 e8 d4. | b8 c4 fs8 g4 r  
     \bar "|." 
 }
 

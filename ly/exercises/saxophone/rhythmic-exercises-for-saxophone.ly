@@ -13,10 +13,10 @@ composerName = "D. Elaine Alt"
 %{
 
 rm rhythmic-exercises-for-saxophone.pdf
-lilypond ly/rhythmic-exercises-for-saxophone.ly 
-python ~/git/part-format/bookify-7page.py rhythmic-exercises-for-saxophone.pdf rhythmic-exercises-for-saxophone-printable.pdf automatic
-mv rhythmic-exercises-for-saxophone.pdf pdf
-mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
+lilypond ly/exercises/saxophone/rhythmic-exercises-for-saxophone.ly 
+#python ~/git/part-format/bookify-7page.py rhythmic-exercises-for-saxophone.pdf rhythmic-exercises-for-saxophone-printable.pdf automatic
+mv rhythmic-exercises-for-saxophone.pdf pdf/exercises/saxophone
+#mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
 
 %}
 
@@ -97,6 +97,7 @@ mv rhythmic-exercises-for-saxophone-printable.pdf pdf/printable
         \markup \title-page-markup "Saxophone" \composerName \title
     }
 
+   \include "ly/bookparts/rhythm/saxophone/rhythms-eighths-introduction.ily"
    \include "ly/bookparts/rhythm/saxophone/rhythms-eighths.ily"
    \include "ly/bookparts/rhythm/saxophone/rhythms-syncopated-straight.ily"
    \include "ly/bookparts/rhythm/saxophone/rhythms-careless-whisper.ily"
