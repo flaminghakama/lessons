@@ -12,12 +12,12 @@ composerName = "Elaine Paul"
 
 %{
 
-rm diminished-arpeggio-exercises-for-saxophone.pdf
-lilypond ly/exercises/saxophone/diminished-arpeggio-exercises-for-saxophone.ly
-mv diminished-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
-op pdf/exercises/saxophone/diminished-arpeggio-exercises-for-saxophone.pdf
+rm arpeggio-exercises-diminished-for-saxophone.pdf
+lilypond ly/exercises/saxophone/arpeggio-exercises-diminished-for-saxophone.ly
+mv arpeggio-exercises-diminished-for-saxophone.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/arpeggio-exercises-diminished-for-saxophone.pdf
 
-git add . ; git commit -m"adding enharmonics" ; git push 
+git add . ; git commit -m"renaming" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -68,7 +68,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/diminished-arpeggio-exercises-for-saxophone.ily"
+\include "ly/notes/arpeggio-exercises-diminished-for-saxophone.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -99,5 +99,5 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     %     \markup \title-page-markup "Saxophone" \composerName \title
     % }
 
-    \include "ly/bookparts/diminished-arpeggio-exercises-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises-diminished-for-saxophone.ily"
 }
