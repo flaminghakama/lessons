@@ -17,6 +17,9 @@ lilypond ly/exercises/saxophone/diminished-arpeggio-exercises-for-saxophone.ly
 mv diminished-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/diminished-arpeggio-exercises-for-saxophone.pdf
 
+git add . ; git commit -m"adding enharmonics" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 
