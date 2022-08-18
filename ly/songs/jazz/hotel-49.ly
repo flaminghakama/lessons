@@ -15,6 +15,9 @@ lilypond ly/songs/jazz/hotel-49.ly
 mv hotel-49*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/hotel-49*.pdf ; do op $file ; done  
 
+git add . ; git commit -m"spacing" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 

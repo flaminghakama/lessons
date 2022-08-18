@@ -15,7 +15,7 @@ lilypond ly/songs/jazz/ugetsu.ly
 mv ugetsu*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/ugetsu*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"new song" ; git push 
+git add . ; git commit -m"spacing" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -32,7 +32,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #0
+  markup-system-spacing.padding = #6
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #19
@@ -112,11 +112,11 @@ rehearsalMarkTweaksForC = \relative c' {
     \override Score.RehearsalMark.self-alignment-X = #LEFT
     s4
 
-    \override Score.RehearsalMark #'extra-offset = #'( -4 . -5 )
+    %\override Score.RehearsalMark #'extra-offset = #'( -4 . -5 )
     % "A"
     s1*12
         
-    \override Score.RehearsalMark #'extra-offset = #'( -4 . -2 )
+    \override Score.RehearsalMark #'extra-offset = #'( -4 . -4 )
     % B
 }
 
@@ -139,7 +139,7 @@ chordsForm = \chordmode {
     e1:maj7 | bf:7 | a:maj7 | ds2:m7.5- gs:7.11+ | 
 
     cs1:m7.7+ | d:maj9 | 
-    cs2:m7.11 fs4:7 a:maj9 | af:7.9- g:maj7 gf:7.11+ fs:7.11+ ||
+    cs2:m7.11 fs4:7 a:maj9 | af:7.9- g:maj7 gf:7.11+ f:7.11+ ||
 
     e1:maj9/b | b:1.4.5.7.9.13 | 
     e1:maj9/b | b:1.4.5.7.9.13 | 
@@ -147,17 +147,23 @@ chordsForm = \chordmode {
     e1:maj9/b | b:1.4.5.7.9.13 | 
 }
 
-chordsFormForBb = \chordmode { 
+chordsFormForFlats= \chordmode { 
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
-    \chordsForm
-}
-chordsFormForEb = \chordmode { 
-    \set chordChanges = ##f 
-    \set chordNameExceptions = #flamingChordExceptions
-    %\set noChordSymbol = ##t
-    \chordsForm
+    s4 ||
+    
+    e1:maj7 | d:maj7 | e:maj7 | d:maj7 | 
+
+    e1:maj7 | bf:7 | a:maj7 | ef2:m7.5- af:7.11+ | 
+
+    df1:m7.7+ | d:maj9 | 
+    df2:m7.11 gf4:7 a:maj9 | af:7.9- g:maj7 gf:7.11+ f:7.11+ ||
+
+    e1:maj9/b | b:1.4.5.7.9.13 | 
+    e1:maj9/b | b:1.4.5.7.9.13 | 
+    e1:maj9/b | b:1.4.5.7.9.13 | 
+    e1:maj9/b | b:1.4.5.7.9.13 | 
 }
 
 chordRhythm =\new Voice \with {
@@ -227,7 +233,75 @@ melodyForEb = \relative c' {
             \new RhythmicStaff \with {
                     \remove "Staff_symbol_engraver"
                     \remove "Time_signature_engraver" 
-                    \magnifyStaff #4/7
+                    \magnifyStaff #5/7
+                } {
+                \chordRhythm
+            }
+            \new Staff = "lead" \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c { 
+                \chordsFormForFlats
+            }
+            \new RhythmicStaff \with {
+                    \remove "Staff_symbol_engraver"
+                    \remove "Time_signature_engraver" 
+                    \magnifyStaff #5/7
+                } {
+                \chordRhythm
+            }
+            \new Staff = "lead" \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose ef c <<
+            \new ChordNames \transpose c c { 
+                \chordsFormForFlats
+            }
+            \new RhythmicStaff \with {
+                    \remove "Staff_symbol_engraver"
+                    \remove "Time_signature_engraver" 
+                    \magnifyStaff #5/7
                 } {
                 \chordRhythm
             }
