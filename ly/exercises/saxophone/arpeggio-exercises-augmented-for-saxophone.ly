@@ -17,13 +17,16 @@ lilypond ly/exercises/saxophone/arpeggio-exercises-augmented-for-saxophone.ly
 mv arpeggio-exercises-augmented-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/arpeggio-exercises-augmented-for-saxophone.pdf
 
+git add . ; git commit -m"renaming" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2020 Elaine Paul Alt" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2022 Elaine Paul Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -41,7 +44,7 @@ op pdf/exercises/saxophone/arpeggio-exercises-augmented-for-saxophone.pdf
     markup-system-spacing.padding = #2
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #4
+    top-system-spacing.minimum-distance = #12
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18
