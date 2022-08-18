@@ -1,9 +1,9 @@
 \version "2.19.83"
 \include "english.ly"
 
-titleLeft = "Half-Diminished Arpeggio Exercises"
+titleLeft = "Minor Seventh Arpeggio Exercises"
 titleRight = "for Saxophone"
-title = "Half-Diminished Arpeggios Exercises for Saxophone"
+title = "Minor Seventh Arpeggios Exercises for Saxophone"
 composerName = "Elaine Paul"
 \include "../scores/flaming-libs/flaming-paper.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
@@ -12,9 +12,10 @@ composerName = "Elaine Paul"
 
 %{
 
-rm half-diminished-arpeggio-exercises-for-saxophone.pdf
-lilypond ly/exercises/saxophone/half-diminished-arpeggio-exercises-for-saxophone.ly
-mv half-diminished-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
+rm arpeggio-exercises-minor-seventh-for-saxophone.pdf
+lilypond ly/exercises/saxophone/arpeggio-exercises-minor-seventh-for-saxophone.ly
+mv arpeggio-exercises-minor-seventh-for-saxophone.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/arpeggio-exercises-minor-seventh-for-saxophone.pdf
 
 %}
 
@@ -40,7 +41,7 @@ mv half-diminished-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
     markup-system-spacing.padding = #2
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #12
+    top-system-spacing.minimum-distance = #8
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18
@@ -64,7 +65,7 @@ mv half-diminished-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/half-diminished-arpeggio-exercises-for-saxophone.ily"
+\include "ly/notes/arpeggio-exercises/minor-seventh-for-saxophone.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,5 +96,5 @@ mv half-diminished-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
     %     \markup \title-page-markup "Saxophone" \composerName \title
     % }
 
-    \include "ly/bookparts/half-diminished-arpeggio-exercises-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises/minor-seventh-for-saxophone.ily"
 }

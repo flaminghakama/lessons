@@ -68,7 +68,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/arpeggio-exercises-diminished-for-saxophone.ily"
+\include "ly/notes/arpeggio-exercises/diminished-for-saxophone.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -99,5 +99,5 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     %     \markup \title-page-markup "Saxophone" \composerName \title
     % }
 
-    \include "ly/bookparts/arpeggio-exercises-diminished-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises/diminished-for-saxophone.ily"
 }

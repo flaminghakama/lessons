@@ -12,12 +12,12 @@ composerName = "Elaine Paul"
 
 %{
 
-rm major-seventh-arpeggio-exercises-for-saxophone.pdf
-lilypond ly/exercises/saxophone/major-seventh-arpeggio-exercises-for-saxophone.ly
-mv major-seventh-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
+rm arpeggio-exercises-major-seventh-for-saxophone.pdf
+lilypond ly/exercises/saxophone/arpeggio-exercises-major-seventh-for-saxophone.ly
+mv arpeggio-exercises-major-seventh-for-saxophone.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/arpeggio-exercises-major-seventh-for-saxophone.pdf
 
 %}
-
 
 \header {
     source = ""
@@ -64,7 +64,7 @@ mv major-seventh-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/major-seventh-arpeggio-exercises-for-saxophone.ily"
+\include "ly/notes/arpeggio-exercises/major-seventh-for-saxophone.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,5 +95,5 @@ mv major-seventh-arpeggio-exercises-for-saxophone.pdf pdf/exercises/saxophone
     %     \markup \title-page-markup "Saxophone" \composerName \title
     % }
 
-    \include "ly/bookparts/major-seventh-arpeggio-exercises-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises/major-seventh-for-saxophone.ily"
 }

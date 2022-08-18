@@ -12,9 +12,10 @@ composerName = "Elaine Paul"
 
 %{
 
-rm dominant-arpeggio-exercises-for-saxophone.pdf
-lilypond ly/dominant-arpeggios-exercises-for-saxophone.ly 
-mv dominant-arpeggio-exercises-for-saxophone.pdf pdf
+rm arpeggio-exercises-dominant-for-saxophone.pdf
+lilypond ly/exercises/saxophone/arpeggio-exercises-dominant-for-saxophone.ly
+mv arpeggio-exercises-dominant-for-saxophone.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/arpeggio-exercises-dominant-for-saxophone.pdf
 
 %}
 
@@ -64,7 +65,7 @@ mv dominant-arpeggio-exercises-for-saxophone.pdf pdf
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/dominant-arpeggio-exercises-for-saxophone.ily"
+\include "ly/notes/arpeggio-exercises/dominant-for-saxophone.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,5 +96,5 @@ mv dominant-arpeggio-exercises-for-saxophone.pdf pdf
     %     \markup \title-page-markup "Saxophone" \composerName \title
     % }
 
-    \include "ly/bookparts/dominant-arpeggio-exercises-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises/dominant-for-saxophone.ily"
 }
