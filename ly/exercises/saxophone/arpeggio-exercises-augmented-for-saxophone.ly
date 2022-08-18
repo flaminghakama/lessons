@@ -12,12 +12,14 @@ composerName = "Elaine Paul"
 
 %{
 
+killPreview ; rm arpeggio-exercises-augmented-for-saxophone.pdf ; lilypond ly/exercises/saxophone/arpeggio-exercises-augmented-for-saxophone.ly ; op arpeggio-exercises-augmented-for-saxophone.pdf 
+
 rm arpeggio-exercises-augmented-for-saxophone.pdf
 lilypond ly/exercises/saxophone/arpeggio-exercises-augmented-for-saxophone.ly
 mv arpeggio-exercises-augmented-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/arpeggio-exercises-augmented-for-saxophone.pdf
 
-git add . ; git commit -m"renaming" ; git push 
+git add . ; git commit -m"enhancing" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

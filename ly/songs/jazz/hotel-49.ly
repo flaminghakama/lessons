@@ -54,6 +54,34 @@ for file in pdf/songs/jazz/hotel-49*.pdf ; do op $file ; done
 
 \include "ly/ily/layout-songs.ily"
 
+
+\layout {
+    \context {
+        \Staff
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 0)
+            )
+    }
+    \context {
+        \RhythmicStaff
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 1)
+            )
+    }
+    \context {
+        \ChordNames
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 0)
+            )
+    }
+}
+
 structure = \relative c' { 
 
     \key g \minor
@@ -238,12 +266,13 @@ melodyForEb = \relative c' {
     \score {
         <<
             \new ChordNames \transpose c c { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
+                %\override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
                 \chordsForm
             }
             \new RhythmicStaff \with {
                     \remove "Staff_symbol_engraver"
                     \remove "Time_signature_engraver" 
+                    \magnifyStaff #5/7
                 } {
                 %\override Score.BarLine.break-visibility = ##(#f #f #f)
                 \chordRhythm
@@ -273,12 +302,13 @@ melodyForEb = \relative c' {
     \score {
         \transpose bf, c <<
             \new ChordNames \transpose c c { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
+                %\override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
                 \chordsForm
             }
             \new RhythmicStaff \with {
                     \remove "Staff_symbol_engraver"
                     \remove "Time_signature_engraver" 
+                    \magnifyStaff #5/7
                 } {
                 %\override Score.BarLine.break-visibility = ##(#f #f #f)
                 \chordRhythm
@@ -308,12 +338,13 @@ melodyForEb = \relative c' {
     \score {
         \transpose ef, c <<
             \new ChordNames \transpose c c { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
+                %\override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
                 \chordsForm
             }
             \new RhythmicStaff \with {
                     \remove "Staff_symbol_engraver"
                     \remove "Time_signature_engraver" 
+                    \magnifyStaff #5/7
                 } {
                 %\override Score.BarLine.break-visibility = ##(#f #f #f)
                 \chordRhythm

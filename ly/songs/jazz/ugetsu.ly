@@ -57,56 +57,67 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
+
+\layout {
+    \context {
+        \Staff
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 0)
+            )
+    }
+    \context {
+        \RhythmicStaff
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 1)
+            )
+    }
+    \context {
+        \ChordNames
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 0)
+            )
+    }
+}
+
 structure = \relative c' { 
 
-    \key g \minor
+    \key e \major
     \tempo 4=220
     \time 4/4
-    s1 
+    \partial 4 s4
     \startSectionNoBarline "A"
     \bar "[|:"
     \repeat volta 2 { 
         s1*4 \break
-        s1*6 \break
+        s1*4 \break
+        s1*4 \break
     }
-    \alternative { 
-        { s1*2 \bar ":|]" }
-        { s1*2 \break }
+    \bar ":|][|:"
+    \startSectionNoBarline "B"
+    \repeat volta 2 { 
+        s1*4 \break
+        s1*4 \break
     }
-    \startSection "B"
-    s1*4 \break
-    s1*4 \break
-    s1*2
-
-    \startSection "A"
-    s1*4 \break
-    s1*4 \break
-    s1*4 \break
-    
-    \startSection "C"
-    s1*8 
-    \bar "|."
+    \bar ":|]"
 }
 
 rehearsalMarkTweaksForC = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    s1 
+    s4
 
     \override Score.RehearsalMark #'extra-offset = #'( -4 . -5 )
     % "A"
-    s1*13
+    s1*12
         
     \override Score.RehearsalMark #'extra-offset = #'( -4 . -2 )
     % B
-    s1*10 
-
-    \once \override Score.RehearsalMark #'extra-offset = #'( -4 . -10 )
-    % A 
-    s1*12
-
-    \override Score.RehearsalMark #'extra-offset = #'( -4 . -3 )
-    % C
 }
 
 rehearsalMarkTweaksForBb = \relative c' { 
@@ -121,21 +132,19 @@ chordsForm = \chordmode {
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
-    s1 ||
-    g1:m | d:m | g:m | d:m | 
-    g1:m | d:m | g:m | d:m | 
-    c2:m7 f:7 | bf:m7 ef:7 | a1:m7 | d:7 || a:m7 | d:7 ||
+    s4 ||
+    
+    e1:maj7 | d:maj7 | e:maj7 | d:maj7 | 
 
-    g1:maj7 | s | g:m7 | c:7 | 
-    f1:maj7 | s | f:m7 | bf:7 | 
-    ef1:maj7 | d:7 ||
+    e1:maj7 | bf:7 | a:maj7 | ds2:m7.5- gs:7.11+ | 
 
-    g1:m | d:m | g:m | d:m | 
-    g1:m | d:m | g:m | d:m | 
-    c2:m7 f:7 | bf:m7 ef:7 | a1:m7 | d:7 ||
+    cs1:m7.7+ | d:maj9 | 
+    cs2:m7.11 fs4:7 a:maj9 | af:7.9- g:maj7 gf:7.11+ fs:7.11+ ||
 
-    g1:m | d:9 | g:m | d:9 | 
-    g1:m | d:7 | g:m | s ||
+    e1:maj9/b | b:1.4.5.7.9.13 | 
+    e1:maj9/b | b:1.4.5.7.9.13 | 
+    e1:maj9/b | b:1.4.5.7.9.13 | 
+    e1:maj9/b | b:1.4.5.7.9.13 | 
 }
 
 chordsFormForBb = \chordmode { 
@@ -155,63 +164,42 @@ chordRhythm =\new Voice \with {
         \consists "Pitch_squash_engraver"
     } \relative c' {
     \improvisationOn
-    <>^\markup { " " } R1  || 
-    r2 c4. 8 ~ | 2 r | 
-    r2 c4. 8 ~ | 2 r | 
-    r2 c4. 8 ~ | 2 r | 
-    r2 c4. 8 ~ | 2 r | 
-    \comp #8
-    s2. r8 c8 | R1 || s1*2
+    <>^\markup { " " } s4  || 
+    r4 r8 c8 ~ 2 | 
+    r4 r8 c8 ~ 2 | 
+    r4 r8 c8 ~ 2 | 
+    r4 r8 c8 ~ 2 | 
 
-    s1*8 | \comp #3 r8 c | R1 || 
+    r4 r8 c8 ~ 2 | 
+    r4 r8 c8 ~ 2 | 
+    r4 r8 c8 ~ 2 | 
+    s1 | 
 
-    r2 c4. 8 ~ | 2 r | 
-    r2 c4. 8 ~ | 2 r | 
-    r2 c4. 8 ~ | 2 r | 
-    r2 c4. 8 ~ | 2 r | 
+    r4 r8 c8 ~ 2 | 
+    r4 r8 c8 ~ 2 | 
+    s1*2 ||
 
-    s1*4 ||
-
-    r4 r8 c ~ 2 | r4 r8 c ~ 2 | 
-    r4 r8 c ~ 2 | r4 r8 c ~ 2 | 
-    r4 r8 c ~ 2 | r4 r8 c ~ 2 | 
-    c4 r r2 | R1 ||
+    r8 c4. 4. 8 ~ | 1 | 
+    c2 4. 8 ~ | 1 | 
+    r8 c4. 4. 8 ~ | 1 | 
+    c2 4. 8 ~ | 1 | 
 }
 
 
-melodyA = \relative c'' {
-    r8 a fs [ g ] a bf c d ~ ||
-    d1 ~ | 2 f8 d c d ~ | 1 | r8 a fs [ g ] a bf c d ~ | 
-    d1 ~ | 2 g8 d c d ~ | 1 ~ | 4 r g, bf | 
-    d4. c16 bf a2 | r8 c bf [ af ] g2 |
-}
-melodyAFirstEnding = \relative c'' {
-    r4 b ~ 8 a g fs | r a fs [ g ] a bf c d \laissezVibrer 
-}
-melodyASecondEndingB = \relative c'' {
-    r4 b ~ 8 a g fs ~ | 2  g4 a8 b ~ ||
-    b2 ~ 8 d, ds e ~ | 1 | 
-    r4 bf' ~ 8 a g bf | r bf4. a4 g8 a ~ | 2 ~ 8 c, cs d ~ | 1 | 
-    r4 af'4 ~ 8 g f af | r af4. g4 f8 g ~ | 1 |
-}
-melodyAThirdEndingC = \relative c'' {
-    r4 b ~ 8 a g fs ~ | 4 r <g bf,>4 <a c,>8 <d, bf> ~ ||
-    <d bf>1 | <e c> | <fs d> | <e c> | 
-    <d bf>1 | <c a> | <bf g>4 \comp #7 ||
-}
-melodyAThirdEndingCForEb = \relative c' {
-    r4 b ~ 8 a g fs ~ | 4 r <g' bf,>4 <a c,>8 <d, bf> ~ ||
-    <d bf>1 | <e c> | <fs d> | <e c> | 
-    <d bf>1 | <c a> | <bf g>4 \comp #7 ||
-}
-
-melody = \relative c' { 
+melody = \relative c'' { 
     \accidentalStyle default
-    \melodyA
-    \melodyAFirstEnding
-    \melodyASecondEndingB
-    \melodyA
-    \melodyAThirdEndingC
+    b4 || ds2. b8 cs ~ | 2 r8 cs fs [ cs ] |
+    ds2 r8 cs8 fs [ b,8 ] | cs2 r8 ds cs [ gs ] ~ | 
+
+    gs2 ~ 8 cs b gs ~ | 2 ~ 8 e fs gs ~ | 
+    gs2 r8 e a [ cs ] | b4 a d, fs8 ds ~ | 
+
+    ds2 ~ 8 cs ds e ~ | 2 ~ 8 ds e fs ~ | 
+    fs2 r4 gs | a b c d ||
+
+    b1\startTrillSpan ~ | 1 ~ | 1 ~ | 1\stopTrillSpan |  
+    <>\xmf
+    \comp #16
 }
 
 melodyForBb = \relative c' { 
@@ -219,14 +207,7 @@ melodyForBb = \relative c' {
 }
 
 melodyForEb = \relative c' { 
-    \accidentalStyle default
-    \transpose c c, { 
-    \melodyA
-    \melodyAFirstEnding
-    \melodyASecondEndingB
-    \melodyA
-    }
-    \melodyAThirdEndingCForEb
+    \melody
 }
 
 \book {
@@ -241,14 +222,13 @@ melodyForEb = \relative c' {
     \score {
         <<
             \new ChordNames \transpose c c { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
                 \chordsForm
             }
             \new RhythmicStaff \with {
                     \remove "Staff_symbol_engraver"
                     \remove "Time_signature_engraver" 
+                    \magnifyStaff #4/7
                 } {
-                %\override Score.BarLine.break-visibility = ##(#f #f #f)
                 \chordRhythm
             }
             \new Staff = "lead" \transpose c c {
@@ -264,72 +244,3 @@ melodyForEb = \relative c' {
     }
 }
 
-\book {
-  \bookOutputSuffix "for-Bb"
-    \header {
-        title = \title
-        composer = \composerName
-        poet = "Bb Lead Sheet"
-        instrumentName = \poet
-        subtitle = ""
-    }
-    \score {
-        \transpose bf, c <<
-            \new ChordNames \transpose c c { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
-                \chordsForm
-            }
-            \new RhythmicStaff \with {
-                    \remove "Staff_symbol_engraver"
-                    \remove "Time_signature_engraver" 
-                } {
-                %\override Score.BarLine.break-visibility = ##(#f #f #f)
-                \chordRhythm
-            }
-            \new Staff = "lead" \transpose c c {
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structure
-                    \rehearsalMarkTweaksForC
-                    \melody
-                >>
-            }
-        >>
-    }
-}
-
-\book {
-  \bookOutputSuffix "for-Eb"
-    \header {
-        title = \title
-        composer = \composerName
-        poet = "Eb Lead Sheet"
-        instrumentName = \poet
-        subtitle = ""
-    }
-    \score {
-        \transpose ef, c <<
-            \new ChordNames \transpose c c { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.6
-                \chordsForm
-            }
-            \new RhythmicStaff \with {
-                    \remove "Staff_symbol_engraver"
-                    \remove "Time_signature_engraver" 
-                } {
-                %\override Score.BarLine.break-visibility = ##(#f #f #f)
-                \chordRhythm
-            }
-            \new Staff = "lead" \transpose c c {
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structure
-                    \rehearsalMarkTweaksForC
-                    \melodyForEb
-                >>
-            }
-        >>
-    }
-}
