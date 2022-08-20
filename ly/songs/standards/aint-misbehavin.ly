@@ -53,7 +53,7 @@ for file in pdf/songs/standards/aint*pdf ; do open -a Preview $file ; done
 \include "ly/ily/layout-songs.ily"
 
 strcture = \relative c' { 
-    \key d \minor
+    \key ef \major
     s1*4 \break
     s1*4 \bar "||"
     s1*4 \break
