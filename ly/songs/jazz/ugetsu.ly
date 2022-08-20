@@ -15,7 +15,7 @@ lilypond ly/songs/jazz/ugetsu.ly
 mv ugetsu*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/ugetsu*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"spacing" ; git push 
+git add . ; git commit -m"ugetsu" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -195,7 +195,7 @@ chordRhythm =\new Voice \with {
 melody = \relative c'' { 
     \accidentalStyle default
     b4 || ds2. b8 cs ~ | 2 r8 cs fs [ cs ] |
-    ds2 r8 cs8 fs [ b,8 ] | cs2 r8 ds cs [ gs ] ~ | 
+    ds2 r8 cs8 ds [ b8 ] | cs2 r8 ds cs [ gs ] ~ | 
 
     gs2 ~ 8 cs b gs ~ | 2 ~ 8 e fs gs ~ | 
     gs2 r8 e a [ cs ] | b4 a d, fs8 ds ~ | 
