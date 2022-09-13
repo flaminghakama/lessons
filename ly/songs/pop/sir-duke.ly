@@ -21,6 +21,9 @@ lilypond ly/songs/pop/sir-duke.ly
 mv sir-duke*pdf pdf/songs/pop
 for file in pdf/songs/pop/sir-duke*pdf ; do op $file ; done 
 
+git add . ; git commit -m"sir duke" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 \paper {
@@ -29,7 +32,7 @@ for file in pdf/songs/pop/sir-duke*pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
