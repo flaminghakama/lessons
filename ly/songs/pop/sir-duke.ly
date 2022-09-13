@@ -57,12 +57,21 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
+\layout { 
+    \context {
+        \Score
+        \override Glissando.style = #'trill
+    }
+}
+
+
+
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
 
     \key b \major
-    \tempo 4=96
+    \tempo 4=104
     \time 4/4
     \startSectionNoBarline "Intro"
     \bar "[|:"
@@ -70,15 +79,21 @@ structure = \relative c' {
     \bar ":|]"
     \break
 
+    \once \override Score.RehearsalMark #'extra-offset = #'( -8 . -1 ) 
     \startSectionNoBarline "Verse"
     s1*8
 
+    \once \override Score.RehearsalMark #'extra-offset = #'( -13.4 . -3 ) 
     \startSection "Pre-chorus"    
     s1*4
+    \break
 
+    \once \override Score.RehearsalMark #'extra-offset = #'( -8 . -2.6 ) 
     \startSection "Chorus"    
     s1*8
+    \break
 
+    \once \override Score.RehearsalMark #'extra-offset = #'( -8 . 1.6 ) 
     \startSection "Bridge"    
     s1*8
 
@@ -157,7 +172,7 @@ chordsSong = \chordmode {
 
     \chordsChorus
 }
-chordsSongForEb = \chordmode { 
+chordsSongForFlats = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -178,13 +193,13 @@ chordsSongForEb = \chordmode {
 melodyIntro = \relative c' { 
     b4 ds fs8. b16 r4 |
     gs,8 8  b16 ( as b8 )  ds16 ( d ds gs ) r4 | 
-    g,8 8  b b  d16 ( cs d8 )  g8. fs16 | 
+    g,8 8  b b  d16 ( cs d8 ) \hideNotes \grace { c4 \glissando } \unHideNotes g'8. fs16 | 
     R1 
 }
 melodyIntroForFlats = \relative c' { 
     b4 ds fs8. b16 r4 |
     gs,8 8  b16 ( as b8 )  ds16 ( css ds gs ) r4 | 
-    g,8 8  b b  d16 ( cs d8 )  g8. fs16 | 
+    fss,8 8  ass ass  css16 ( bss css8 ) \hideNotes \grace { c4 \glissando } \unHideNotes fss8. fs16 | 
     R1 
 }
 melodyVerse = \relative c'' { 
@@ -196,10 +211,10 @@ melodyVerse = \relative c'' {
 }
 melodyVerseForFlats = \relative c' { 
     r4  ds8 fs  gs fs  ds cs | b cs4 gs8 ~ 8 r gs b |
-    d8 cs b g b d ( cs ) 8 ~ | 2 r | 
+    css8 bss ass fss ass css ( cs ) 8 ~ | 2 r | 
 
     r4  ds16 fs8 gs16 ~  8 fs16 ds ~  16 cs8 b16 ~ | 8 cs4 gs8 r fs gs [ b ] |
-    d8 ( cs ) b [ r16 g16 ] b8 d ( cs ) 8 ~ | 4. bs8 ~ 4 r16 as b16 16 |
+    css8 ( bss ) ass [ r16 fss16 ] ass8 css ( cs ) 8 ~ | 4. bs8 ~ 4 r16 as b16 16 |
 }
 melodyPrechorus = \relative c'' { 
     b8 8  bf8 8  a8 16 gs ~  8 8 | a8 8  as8 16 b  r4  r16 as b16 16 | 
@@ -216,22 +231,22 @@ melodyChorus = \relative c'' {
     r4 gs8 fs fs ds gs16 ( fs8. ) | ds4 cs16 ( b gs8 ) b4 gs8 ( fs ) |
 }
 melodyBridge = \relative c' { 
-    b4  r16 b ( ds cs )  r cs ( gs' ) fs  r fs ( \glissando fs,16 gs ) |
-    b8 cs16 ( d   ds ) fs ( gs  b )  r cs ( d ds )  r4 | 
+    b4  r16 b ( ds cs )  r cs ( gs' ) fs  r8  \grace { fs16 \glissando ( } fs,16 gs ) |
+    b16 ( gs ) cs ( d   ds ) fs ( gs  b )  r cs ( d ds )  r4 | 
     gs8. ds16  r8 fs ~ 8 cs4 ds8 |
     cs16 ( b ) gs ( fs )  cs' ( b gs ) b ~  4 r | 
     ds8 cs16 ( b )  cs ( b gs ) b  (  gs  fs ) gs8 ~  16 fs ( ds fs ) | 
-    ds16 ( cs ) ds ( cs )  b ( cs b ) gs ~  8 fs  r4 |
-    \grace { fs'16 ( \glissando } fs,16 gs ) b ( cs  ds ) fs ( gs ) b   r gs ( b8 ~  16 ) gs8 \mordent ( fs16 ) |
+    ds16 ( cs  ds ) cs (  b cs b ) gs ~  8 fs  r4 |
+    \grace { fs'16 ( \glissando } fs,16 gs ) b ( cs  ds ) fs ( gs ) b   r gs ( b8 ~  16 [ ) gs8*1/2 s16\mordent ( fs16 ] ) |
     gs8. fs16 ( ~  16 \mordent ds ) fs8 ~  8 fs'16 16  r4 |
 }
 melodyBridgeForFlats = \relative c' { 
-    b4  r16 b ( ds cs )  r cs ( gs' ) fs  r fs ( \glissando fs,16 gs ) |
-    b8 cs16 ( css   ds ) fs ( gs  b )  r cs ( css ds )  r4 | 
+    b4  r16 b ( ds cs )  r cs ( gs' ) fs  r8 \grace { fs \glissando ( } fs,16 gs ) |
+    b16 ( gs ) cs ( css   ds ) fs ( gs  b )  r cs ( css ds )  r4 | 
     gs8. ds16  r8 fs ~ 8 cs4 ds8 |
     cs16 ( b ) gs ( fs )  cs' ( b gs ) b ~  4 r | 
     ds8 cs16 ( b )  cs ( b gs ) b  (  gs  fs ) gs8 ~  16 fs ( ds fs ) | 
-    ds16 ( cs ) ds ( cs )  b ( cs b ) gs ~  8 fs  r4 |
+    ds16 ( cs ds ) cs ( b cs b ) gs ~  8 fs  r4 |
     \grace { fs'16 ( \glissando } fs,16 gs ) b ( cs  ds ) fs ( gs ) b   r gs ( b8 ~  16 ) gs8 \mordent ( fs16 ) |
     gs8. fs16 ( ~  16 \mordent ds ) fs8 ~  8 fs'16 16  r4 |
 }
@@ -377,7 +392,7 @@ lyricsHeadThree = \lyricmode {
         \transpose as, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSongForEb 
+                \chordsSongForFlats 
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -411,7 +426,7 @@ lyricsHeadThree = \lyricmode {
         \transpose ds, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSongForEb 
+                \chordsSongForFlats 
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
