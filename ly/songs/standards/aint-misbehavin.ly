@@ -19,6 +19,9 @@ lilypond ly/songs/standards/aint*.ly
 mv aint*.pdf pdf/songs/standards
 for file in pdf/songs/standards/aint*pdf ; do open -a Preview $file ; done
 
+git add . ; git commit -m"fixing key signature" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 \paper {

@@ -15,7 +15,7 @@ lilypond ly/songs/jazz/ugetsu.ly
 mv ugetsu*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/ugetsu*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"ugetsu" ; git push 
+git add . ; git commit -m"fixing pitch" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
