@@ -21,7 +21,7 @@ lilypond ly/songs/pop/sir-duke.ly
 mv sir-duke*pdf pdf/songs/pop
 for file in pdf/songs/pop/sir-duke*pdf ; do op $file ; done 
 
-git add . ; git commit -m"sir duke" ; git push 
+git add . ; git commit -m"layout" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -60,7 +60,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \layout { 
     \context {
         \Score
-        \override Glissando.style = #'trill
+        \override Glissando.style = #'line
     }
 }
 
@@ -231,23 +231,25 @@ melodyChorus = \relative c'' {
     r4 gs8 fs fs ds gs16 ( fs8. ) | ds4 cs16 ( b gs8 ) b4 gs8 ( fs ) |
 }
 melodyBridge = \relative c' { 
-    b4  r16 b ( ds cs )  r cs ( gs' ) fs  r8  \grace { fs16 \glissando ( } fs,16 gs ) |
-    b16 ( gs ) cs ( d   ds ) fs ( gs  b )  r cs ( d ds )  r4 | 
+    b4  r16 b ( ds cs )  r cs ( gs' ) fs  r8  \grace { fs16 \glissando } fs,16 ( gs ) |
+    b16 ( \override NoteHead.style = #'cross gs ) \revert NoteHead.style 
+        cs ( d   ds ) fs ( gs  b )  r cs ( d ds )  r4 | 
     gs8. ds16  r8 fs ~ 8 cs4 ds8 |
     cs16 ( b ) gs ( fs )  cs' ( b gs ) b ~  4 r | 
     ds8 cs16 ( b )  cs ( b gs ) b  (  gs  fs ) gs8 ~  16 fs ( ds fs ) | 
     ds16 ( cs  ds ) cs (  b cs b ) gs ~  8 fs  r4 |
-    \grace { fs'16 ( \glissando } fs,16 gs ) b ( cs  ds ) fs ( gs ) b   r gs ( b8 ~  16 [ ) gs8*1/2 s16\mordent ( fs16 ] ) |
+    \grace { cs'16 \glissando } fs,16 ( gs ) b ( cs  ds ) fs ( gs ) b   r gs ( b8 ~  16 [ ) gs8*1/2 s16\mordent ( fs16 ] ) |
     gs8. fs16 ( ~  16 \mordent ds ) fs8 ~  8 fs'16 16  r4 |
 }
 melodyBridgeForFlats = \relative c' { 
-    b4  r16 b ( ds cs )  r cs ( gs' ) fs  r8 \grace { fs \glissando ( } fs,16 gs ) |
-    b16 ( gs ) cs ( css   ds ) fs ( gs  b )  r cs ( css ds )  r4 | 
+    b4  r16 b ( ds cs )  r cs ( gs' ) fs  r8 \grace { fs \glissando } fs,16 ( gs ) |
+    b16 ( \override NoteHead.style = #'cross gs ) \revert NoteHead.style 
+        cs ( css   ds ) fs ( gs  b )  r cs ( css ds )  r4 | 
     gs8. ds16  r8 fs ~ 8 cs4 ds8 |
     cs16 ( b ) gs ( fs )  cs' ( b gs ) b ~  4 r | 
     ds8 cs16 ( b )  cs ( b gs ) b  (  gs  fs ) gs8 ~  16 fs ( ds fs ) | 
     ds16 ( cs ds ) cs ( b cs b ) gs ~  8 fs  r4 |
-    \grace { fs'16 ( \glissando } fs,16 gs ) b ( cs  ds ) fs ( gs ) b   r gs ( b8 ~  16 ) gs8 \mordent ( fs16 ) |
+    \grace { cs'16 \glissando } fs,16 ( gs ) b ( cs  ds ) fs ( gs ) b   r gs ( b8 ~  16 ) gs8 \mordent ( fs16 ) |
     gs8. fs16 ( ~  16 \mordent ds ) fs8 ~  8 fs'16 16  r4 |
 }
 
