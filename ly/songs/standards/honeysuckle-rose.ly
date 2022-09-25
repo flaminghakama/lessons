@@ -20,6 +20,9 @@ lilypond ly/songs/standards/honeysuckle-rose.ly
 mv honeysuckle-rose*pdf pdf/songs/standards
 for file in pdf/songs/standards/honeysuckle-rose*pdf ; do op $file ; done 
 
+git add . ; git commit -m"additional keys" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 \paper {
@@ -58,13 +61,11 @@ structure = \relative c' {
     \key f \major
     \tempo "Medium, with a lift"
 
-    s1*8 \break
-
     \bar "[|:"
 
     \repeat volta 2 { 
         \mark \markup \box "A"
-        s1*4 \break
+        s1 \noBreak s1 \noBreak s1 \noBreak s1 \break
         s1*4 \bar "||" \break
 
         \mark \markup \box "A"
@@ -112,7 +113,7 @@ chordsForm = \chordmode {
         f2  df:7 | g4:m7 gf:7 f2:6 ||
 }
 chordsSong = \chordmode { 
-    \chordsIntro
+    %\chordsIntro
     \chordsForm
 }
 
@@ -135,7 +136,7 @@ melodyHead = \relative c'' {
         f1 ~ | 2 ~ 8 r r4 ||
 }
 melodySong = \relative c' { 
-    \melodyIntro
+    %\melodyIntro
     \melodyHead
 }
 
@@ -190,11 +191,10 @@ lyricsHeadTwo = \lyricmode {
     instrumentName = \poet
 }
 
-
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-F-for-C"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
@@ -219,9 +219,9 @@ lyricsHeadTwo = \lyricmode {
     }
 }
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-F-for-Bb"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "Bb Lead Sheet"
         instrumentName = \poet
     }
@@ -246,9 +246,9 @@ lyricsHeadTwo = \lyricmode {
     }
 }
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-F-for-Eb"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "Eb Lead Sheet"
         instrumentName = \poet
     }
@@ -343,6 +343,202 @@ lyricsHeadTwo = \lyricmode {
                 \chordsSong 
             }
             \new Staff = "voice" \transpose f, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-C"
+    \header {
+        subtitle = "(In Bb)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose f bf  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose f bf { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-B-for-C"
+    \header {
+        subtitle = "(In B)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose f b  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose f b { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Db-for-C"
+    \header {
+        subtitle = "(In Db)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose f, df  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose f, df { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-C"
+    \header {
+        subtitle = "(In Eb)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose f ef  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose f ef { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-E-for-C"
+    \header {
+        subtitle = "(In E)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose f e  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose f e { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Gb-for-C"
+    \header {
+        subtitle = "(In Gb)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose f gf  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose f gf { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Ab-for-C"
+    \header {
+        subtitle = "(In Ab)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose f af  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose f af { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
