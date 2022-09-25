@@ -15,7 +15,7 @@ lilypond ly/songs/jazz/st-thomas.ly
 mv st-thomas*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/st-thomas*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"fixing pitch" ; git push 
+git add . ; git commit -m"transposed for Eb" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
