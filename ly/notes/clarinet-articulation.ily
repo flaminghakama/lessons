@@ -177,7 +177,7 @@ articulationExerciseFive = \relative c'' {
         e16 f16 g16 f16  e16 f16 g16 f16 e4 r4 |
         e16 a g f  b a g d'  c2 |
 
-        b16 a16 g16 a16  b16 a16 g16 a16 b4 r4 |
+        b'16 a16 g16 a16  b16 a16 g16 a16 b4 r4 |
         c16 b16 a16 b16  c16 b16 a16 b16 c4 r4 |
         d16 c16 b16 c16  d16 c16 b16 c16 d4 r4 |
         e16 d16 c16 d16  e16 d16 c16 d16 e4 r4 |
