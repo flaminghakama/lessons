@@ -30,7 +30,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -141,9 +141,9 @@ lyricsHeadOne = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-Eb-for-C" 
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         instrumentName = "Concert Lead Sheet"
         poet = \instrumentName
     }
@@ -169,15 +169,122 @@ lyricsHeadOne = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-Eb-for-Bb"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
+        arranger = ""
+        instrumentName = "Bb Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        <<
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose bf, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-Eb"
+    \header {
+        subtitle = "(original key)"
         arranger = ""
         instrumentName = "Eb Lead Sheet"
         poet = \instrumentName
     }
     \score {
         <<
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose ef, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "in-Bb-for-C" 
+    \header {
+        subtitle = "(Tender Tim key)"
+        instrumentName = "Concert Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        \transpose ef bf, <<
+            \new ChordNames \transpose c c  { 
+                                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+                                \chordsForm 
+                            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-Bb"
+    \header {
+        subtitle = "(Tender Tim key)"
+        arranger = ""
+        instrumentName = "Bb Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        \transpose ef bf <<
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose bf, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \strcture
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-Eb"
+    \header {
+        subtitle = "(Tender Tim key)"
+        arranger = ""
+        instrumentName = "Eb Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        \transpose ef bf, <<
             \new ChordNames \transpose ef c  { 
                 \include "ly/ily/chord-names-properties.ily" 
                 \chordsForm 
