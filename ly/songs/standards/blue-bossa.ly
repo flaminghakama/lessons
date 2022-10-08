@@ -4,7 +4,7 @@ titleLeft = "Blue"
 titleRight = "Bossa"
 title = "Blue Bossa"
 composerName = "K. Dorham"
-lyricistName = ""
+lyricistName = "J. Cartwright"
 
 \include "../../../../scores/flaming-libs/flaming-paper.ily"
 \include "../../../../scores/flaming-libs/flaming-markup.ily"
@@ -12,6 +12,8 @@ lyricistName = ""
 \include "../../../../scores/flaming-libs/flaming-dynamics.ily"
 
 %{
+
+killPreview ; rm blue-bossa*pdf ; lilypond ly/songs/standards/blue-bossa*.ly ; for file in blue-bossa*pdf ; do open -a Preview $file ; done
 
 killPreview
 rm blue-bossa*pdf
@@ -36,13 +38,13 @@ for file in pdf/songs/standards/blue-bossa*pdf ; do open -a Preview $file ; done
   system-system-spacing.basic-distance = #18
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #13
+  score-system-spacing.minimum-distance = #20
 
   page-breaking = #ly:minimal-breaking
 
   ragged-right = ##f
-  ragged-bottom = ##t
-  ragged-last-bottom = ##t
+  ragged-bottom = ##f
+  ragged-last-bottom = ##f
 
   #(define fonts
     (make-pango-font-tree "Marker Felt" 
@@ -56,6 +58,8 @@ for file in pdf/songs/standards/blue-bossa*pdf ; do open -a Preview $file ; done
 structureFirst = \relative c' { 
     \key c \minor
     \partial 4 s4
+    \override Score.RehearsalMark.self-alignment-X = #RIGHT
+    \override Score.RehearsalMark #'extra-offset = #'( 0 . 2 )
     \startSectionNoBarline "Head"
     \bar "[|:"
     s1*4 \break
@@ -71,6 +75,8 @@ structureMiddle = \relative c' {
 structureLast = \relative c' { 
     \override Staff.TimeSignature #'stencil = ##f  
     \key c \minor
+    \override Score.RehearsalMark.self-alignment-X = #RIGHT
+    \override Score.RehearsalMark #'extra-offset = #'( 0 . 2 )
     \startSectionNoBarline "Solos"
     \bar ":|][|:"
     s1*4 \break
@@ -391,7 +397,7 @@ lyricsHeadThree = \lyricmode {
         }
    }
     \score {
-        \transpose ef c <<
+        \transpose ef, c <<
             \new ChordNames \transpose c c {
                 \include "ly/ily/chord-names-properties.ily" 
                 \chordsLast
