@@ -21,6 +21,10 @@ lilypond ly/songs/standards/blue-bossa*.ly
 mv blue-bossa*.pdf pdf/songs/standards
 for file in pdf/songs/standards/blue-bossa*pdf ; do open -a Preview $file ; done
 
+./bin/createIndexes.sh
+git add . ; git commit -m"fixing octave for Eb solos, tweaking rehearsal mark layout" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 \paper {

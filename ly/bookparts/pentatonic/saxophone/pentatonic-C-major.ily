@@ -1,9 +1,9 @@
     \bookpart {
 
         \header {
-            % title = ""
-            subtitle = "Part 1 of 3: A Minor"
-            % composer = ""
+            title = ""
+            subtitle = "C Major"
+            composer = ""
         }
         \score {
             << 
@@ -11,7 +11,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseZeroAMinor
+                    \pentatonicExerciseZeroCMajor
                 }
             >>
             \header {
@@ -28,7 +28,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseOneAMinor
+                    \pentatonicExerciseOneCMajor
                 }
             >>
             \header {
@@ -45,7 +45,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseTwoAMinor
+                    \pentatonicExerciseTwoCMajor
                 }
             >>
             \header {
@@ -62,7 +62,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseThreeAMinor
+                    \pentatonicExerciseThreeCMajor
                 }
             >>
             \header {
@@ -79,7 +79,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseFourAMinor
+                    \pentatonicExerciseFourCMajor
                 }
             >>
             \header {
@@ -96,14 +96,14 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseFiveAMinor
+                    \pentatonicExerciseFiveCMajor
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "5. Blues Licks"  " " }
+                piece = \markup \center-column { "6. Blues Licks"  " " }
             }
         }
 
@@ -113,7 +113,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseSixAMinor
+                    \pentatonicExerciseSixCMajor
                 }
             >>
             \header {
