@@ -24,8 +24,6 @@ pentatonicExerciseZeroDMinor = \relative c' {
     \bar "|."
 }
 
-
-
 pentatonicExerciseOneDMinor = \relative c' { 
     \key d \minor
     \time 4/4

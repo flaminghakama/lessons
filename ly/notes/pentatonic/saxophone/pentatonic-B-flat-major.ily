@@ -1,26 +1,29 @@
-pentatonicExerciseZeroGMajor = \relative c'' { 
-    \key g \major
+pentatonicExerciseZeroBbMajor = \relative c' { 
+    \key bf \major
     \time 4/4
-    
-    <g g'>1 | <a a'> | <b b'> | <d d'> | <e e'> | 
+    <bf bf'>1 | <c c'> | <d d'> | <f f'> | <g g'> | 
     \bar "||" 
-    b,1 | d | e  
-    \bar "||" \break    
+    bf'1 | c | d | f
+    \bar "||" \break
     \time 3/4
-    g2 a4 | b d e | g2 e4 | d b a | g2. |
-    g'2 e4 | d b a | g2 a4 | b d e | g2. | 
+    bf,,,2 c4 | d f g | bf2 g4 | f d c | bf2. |
+    bf'2 c4 | d f g | bf2 g4 | f d c | bf2. | \break
+    bf'2 g4 | f d c | bf2 c4 | d f g | bf2. | 
+    bf,2 g4 | f d c | bf2 c4 | d f g | bf2. | 
     \bar "||" \break
     \time 4/4
-    g,8 b a d  b e d g | e a g2. |  
-    g8 d e b  d a b g | a e g2. |
+    bf,8 d c f  d g f bf | g c bf2. | 
+    bf8 d c f  d g f bf | g c bf2. | 
+    bf8 f g d  f c d bf | c g bf2. |
     \bar "||" \break
-    g8 e a g  b a d b | e d g2. | 
-    g8 a e g  d e b d | a b g2. |
+    bf8 g c bf  d c f d | g f bf2. | 
+    bf8 d g, bf  f g d f | c d bf2. |
+    bf8 d g, bf  f g d f | c d bf2. |
     \bar "|."
 }
 
-pentatonicExerciseOneGMajor = \relative c' { 
-    \key g \major
+pentatonicExerciseOneBbMajor = \relative c' { 
+    \key bf \major
     \time 3/4
     \tuplet 3/2 4 { 
         c4 c8  d c d  e d e | 
@@ -46,8 +49,8 @@ pentatonicExerciseOneGMajor = \relative c' {
     \bar "|."
 }
 
-pentatonicExerciseTwoGMajor = \relative c' { 
-    \key g \major
+pentatonicExerciseTwoBbMajor = \relative c' { 
+    \key bf \major
     \time 3/4
     c4 \tuplet 3/2 4 { 
         e8 d c  g' e d  | a' g e }  
@@ -82,8 +85,8 @@ pentatonicExerciseTwoGMajor = \relative c' {
     \bar "|." 
 }
 
-pentatonicExerciseThreeGMajor = \relative c'' { 
-    \key g \major
+pentatonicExerciseThreeBbMajor = \relative c'' { 
+    \key bf \major
     \time 4/4
     a2  g8 e d c | 
     a'8 g e d  c' a g e |
@@ -111,8 +114,8 @@ pentatonicExerciseThreeGMajor = \relative c'' {
     \bar "|." 
 }
 
-pentatonicExerciseFourGMajor = \relative c'' { 
-    \key g \major
+pentatonicExerciseFourBbMajor = \relative c'' { 
+    \key bf \major
     \time 4/4
     a1 
     \tuplet 3/2 4 {
@@ -146,8 +149,8 @@ pentatonicExerciseFourGMajor = \relative c'' {
     \bar "|." 
 }
 
-pentatonicExerciseFiveGMajor = \relative c'' {
-    \key g \major
+pentatonicExerciseFiveBbMajor = \relative c'' {
+    \key bf \major
     \time 6/4
     ef8 e g ef   d [ c a g ]  a2 |
     a8 g ef d  c [ d e g ]  a2 | 
@@ -170,8 +173,8 @@ pentatonicExerciseFiveGMajor = \relative c'' {
     \bar "|."
 }
 
-pentatonicExerciseSixGMajor = \relative c'' {
-    \key g \major
+pentatonicExerciseSixBbMajor = \relative c'' {
+    \key bf \major
     \time 4/4
     a8 c, d ef  e g a c |
     d8 ef e g  a8 c d ef |

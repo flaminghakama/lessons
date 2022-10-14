@@ -2,16 +2,16 @@
 
         \header {
             title = ""
-            subtitle = "B Minor"
+            subtitle = "Bb Major"
             composer = ""
         }
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseZeroBMinor
+                    \pentatonicExerciseZeroBbMajor
                 }
             >>
             \header {
@@ -26,9 +26,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseTwoBMinor
+                    \pentatonicExerciseOneBbMajor
                 }
             >>
             \header {
@@ -39,14 +39,13 @@
             }
         }
 
-
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseTwoBMinor
+                    \pentatonicExerciseTwoBbMajor
                 }
             >>
             \header {
@@ -61,9 +60,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseThreeBMinor
+                    \pentatonicExerciseThreeBbMajor
                 }
             >>
             \header {
@@ -80,7 +79,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseFourBMinor
+                    \pentatonicExerciseFourBbMajor
                 }
             >>
             \header {
@@ -95,9 +94,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseFiveBMinor
+                    \pentatonicExerciseFiveBbMajor
                 }
             >>
             \header {
@@ -112,9 +111,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseSixBMinor
+                    \pentatonicExerciseSixBbMajor
                 }
             >>
             \header {

@@ -11,14 +11,14 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseOneGMinor
+                    \pentatonicExerciseZeroGMinor
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "1. Two Adjacent Notes"  " " }
+                piece = \markup \center-column { "1. Basic Patterns"  " " }
             }
         }
 
@@ -35,7 +35,24 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "2. Three Adjacent Notes"  " " }
+                piece = \markup \center-column { "2. Two Adjacent Notes"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseTwoGMinor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "3. Three Adjacent Notes"  " " }
             }
         }
 
@@ -52,7 +69,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "3. Four Adjacent Notes"  " " }
+                piece = \markup \center-column { "4. Four Adjacent Notes"  " " }
             }
         }
 
@@ -69,7 +86,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "4. Five Adjacent Notes"  " " }
+                piece = \markup \center-column { "5. Five Adjacent Notes"  " " }
             }
         }
 
@@ -86,7 +103,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "5. Blues Licks"  " " }
+                piece = \markup \center-column { "6. Blues Licks"  " " }
             }
         }
 
@@ -103,7 +120,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "6. Full Range"  " " }
+                piece = \markup \center-column { "7. Full Range"  " " }
             }
         }
         %}

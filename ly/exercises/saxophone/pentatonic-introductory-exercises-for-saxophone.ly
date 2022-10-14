@@ -19,7 +19,7 @@ mv pentatonic-introductory-exercises-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/pentatonic-introductory-exercises-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"starting introductory pentatonic exercises" ; git push 
+git add . ; git commit -m"adding d minor and f major pentatonic exercises" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -76,11 +76,14 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/pentatonic/saxophone/pentatonic-D-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-F-major.ily"
 
-% \include "ly/notes/pentatonic/saxophone/pentatonic-E-minor.ily"
-% \include "ly/notes/pentatonic/saxophone/pentatonic-D-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-E-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-G-major.ily"
 
-% \include "ly/notes/pentatonic/saxophone/pentatonic-B-minor.ily"
-% \include "ly/notes/pentatonic/saxophone/pentatonic-G-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-G-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-B-flat-major.ily"
+
+\include "ly/notes/pentatonic/saxophone/pentatonic-B-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-D-major.ily"
 
 % \include "ly/notes/pentatonic/saxophone/pentatonic-F-sharp-minor.ily"
 % \include "ly/notes/pentatonic/saxophone/pentatonic-C-minor.ily"

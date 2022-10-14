@@ -1,3 +1,23 @@
+pentatonicExerciseZeroGMinor = \relative c'' { 
+    \key g \minor
+    \time 4/4
+    <g g'>1 | <bf bf'> | <c c'> | <d d'> | <f f'> 
+    \bar "||" 
+    bf,,1 | c | d | f | 
+    \bar "||" \break
+    \time 3/4
+    g2 bf4 | c d f | g2 f4 | d c bf | g2. |
+    g'2 f4 | d c bf | g2 bf4 | c d f | g2. |
+    \bar "||" \break
+    \time 4/4
+    g,8 c bf d  c f d g | f bf g2. | 
+    g8 d f c  d bf c g | bf f g2. |
+    \bar "||" \break
+    g8 f bf g  c bf d c | f d g2. | 
+    g8 bf f g  d f c d | bf c g2. |
+    \bar "|."
+}
+
 pentatonicExerciseOneGMinor = \relative c'' { 
     \key g \minor
     \time 4/4
