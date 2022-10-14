@@ -2,17 +2,16 @@
 
         \header {
             title = ""
+            subtitle = "F Major"
             composer = ""
-            subtitle = "2. D Minor"
         }
-
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseZeroAMinor
+                    \pentatonicExerciseZeroFMajor
                 }
             >>
             \header {
@@ -23,14 +22,13 @@
             }
         }
 
-
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose d d { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseOneDMinor
+                    \pentatonicExerciseOneFMajor
                 }
             >>
             \header {
@@ -45,9 +43,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose d d { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseTwoDMinor
+                    \pentatonicExerciseTwoFMajor
                 }
             >>
             \header {
@@ -62,9 +60,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose d d { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseThreeDMinor
+                    \pentatonicExerciseThreeFMajor
                 }
             >>
             \header {
@@ -79,9 +77,9 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose d d { 
+                \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseFourDMinor
+                    \pentatonicExerciseFourFMajor
                 }
             >>
             \header {
@@ -91,14 +89,14 @@
                 piece = \markup \center-column { "5. Five Adjacent Notes"  " " }
             }
         }
- 
-         \score {
+
+        \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose d d { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseFiveDMinor
+                    \pentatonicExerciseFiveFMajor
                 }
             >>
             \header {
@@ -109,13 +107,13 @@
             }
         }
 
-         \score {
+        \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new Staff \transpose d d { 
+                \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \pentatonicExerciseSixDMinor
+                    \pentatonicExerciseSixFMajor
                 }
             >>
             \header {
@@ -125,4 +123,4 @@
                 piece = \markup \center-column { "7. Full Range"  " " }
             }
         }
-   }
+    }

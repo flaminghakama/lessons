@@ -1,5 +1,5 @@
-pentatonicExerciseZeroCMajor = \relative c' { 
-    \key c \major
+pentatonicExerciseZeroGMajor = \relative c' { 
+    \key g \major
     \time 4/4
     <c c'>1 | <d d'> | <e e'> | <g g'> | <a a'> | 
     \bar "||" 
@@ -13,8 +13,7 @@ pentatonicExerciseZeroCMajor = \relative c' {
     \bar "||" \break
     \time 4/4
     c,8 e d g  e a g c | a d c2. | 
-    c8 e d g  e a g c | a d c2. | 
-    c8 g a e  g d e c | d a c2. |
+    c'8 g a e  g d e c | d a c2. |
     \bar "||" \break
     c8 a d c  e d g e | a g c2. | 
     c8 e a, c  g a e g | d e c2. |
@@ -22,8 +21,8 @@ pentatonicExerciseZeroCMajor = \relative c' {
     \bar "|."
 }
 
-pentatonicExerciseOneCMajor = \relative c' { 
-    \key c \major
+pentatonicExerciseOneGMajor = \relative c' { 
+    \key g \major
     \time 3/4
     \tuplet 3/2 4 { 
         c4 c8  d c d  e d e | 
@@ -49,8 +48,8 @@ pentatonicExerciseOneCMajor = \relative c' {
     \bar "|."
 }
 
-pentatonicExerciseTwoCMajor = \relative c' { 
-    \key c \major
+pentatonicExerciseTwoGMajor = \relative c' { 
+    \key g \major
     \time 3/4
     c4 \tuplet 3/2 4 { 
         e8 d c  g' e d  | a' g e }  
@@ -85,8 +84,8 @@ pentatonicExerciseTwoCMajor = \relative c' {
     \bar "|." 
 }
 
-pentatonicExerciseThreeCMajor = \relative c'' { 
-    \key c \major
+pentatonicExerciseThreeGMajor = \relative c'' { 
+    \key g \major
     \time 4/4
     a2  g8 e d c | 
     a'8 g e d  c' a g e |
@@ -114,8 +113,8 @@ pentatonicExerciseThreeCMajor = \relative c'' {
     \bar "|." 
 }
 
-pentatonicExerciseFourCMajor = \relative c'' { 
-    \key c \major
+pentatonicExerciseFourGMajor = \relative c'' { 
+    \key g \major
     \time 4/4
     a1 
     \tuplet 3/2 4 {
@@ -149,8 +148,8 @@ pentatonicExerciseFourCMajor = \relative c'' {
     \bar "|." 
 }
 
-pentatonicExerciseFiveCMajor = \relative c'' {
-    \key c \major
+pentatonicExerciseFiveGMajor = \relative c'' {
+    \key g \major
     \time 6/4
     ef8 e g ef   d [ c a g ]  a2 |
     a8 g ef d  c [ d e g ]  a2 | 
@@ -173,8 +172,8 @@ pentatonicExerciseFiveCMajor = \relative c'' {
     \bar "|."
 }
 
-pentatonicExerciseSixCMajor = \relative c'' {
-    \key c \major
+pentatonicExerciseSixGMajor = \relative c'' {
+    \key g \major
     \time 4/4
     a8 c, d ef  e g a c |
     d8 ef e g  a8 c d ef |

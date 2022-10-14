@@ -38,4 +38,40 @@
                 piece = \markup \center-column { "C Major"  " " }
             }
         }
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroDMinor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "2. D Minor"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroFMajor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "F Major"  " " }
+            }
+        }
+
     }
