@@ -15,7 +15,8 @@ lilypond ly/songs/tony/rumba.ly
 mv rumba*.pdf pdf/songs/tony
 for file in pdf/songs/tony/rumba*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"placeholder" ; git push 
+./bin/createIndexes.sh 
+git add . ; git commit -m"first draft of Tony" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -102,10 +103,12 @@ structure = \relative c' {
     \startSection "Transition 1"
     s1*8
 
-    \break
+    \breakPart
 
     \startSection "A1"
     s1*8
+
+    \pageBreakScore
 
     \startSection "Sax Fill"
     s1*2
@@ -122,11 +125,15 @@ structure = \relative c' {
     \startSection "Sax Fill"
     s1*4
 
+    \pageBreakScore
+
     \startSection "B2"
     s1*8
 
     \startSection "Sax Fill"
     s1*4
+
+    \pageBreakPart
 
     \startSection "Transition 2"
     s1*4
@@ -137,17 +144,17 @@ structure = \relative c' {
     \startSection "C1"
     s1*8
 
+    \pageBreakScore
+
     \startSection "Pre-Chorus 2"
     s1*4
 
-    \startSection "C2"
-    s1*12
+    \startSection "Occonal"
+    s1*8
 
     \startSection "Montuno"
     s1*8
 
-    \startSection "Occonal"
-    s1*8
 
 }
 
@@ -165,6 +172,10 @@ rehearsalMarkTweaksForBb = \relative c' {
 
 rehearsalMarkTweaksForEb = \relative c' { 
     \rehearsalMarkTweaksForC
+}
+
+chordsPreChorus = \chordmode { 
+    c1:7| e:m7.5- | a:7.9- | d2:m7 df:7 |    
 }
 
 chordsForm = \chordmode { 
@@ -201,30 +212,26 @@ chordsForm = \chordmode {
     % Sax Fill
     s1*4
 
-    \pageBreak
-
     % Transition
     b1:6 | s | s | s |    
 
     % Pre-Chorus
-    e1:7| s | s | s |    
+    \chordsPreChorus
 
     % C1
     fs1:7 | s | s | s |    
     b1:6 | s | b:7 | s |    
 
     % Pre-Chorus
-    e1:7| s | s | s |    
+    \chordsPreChorus
 
-    % C2
-    fs1:7 | s | s | s |    
-    b1:6 | s | s | s |    
+    % Occonal is double prechorus sax, then prechorus 
+    \chordsPreChorus
+    \chordsPreChorus
 
     % Montuno
     s1*8
 
-    % Occonal
-    s1*8
 
 }
 
@@ -298,10 +305,10 @@ melodyCOnePartTwo = \relative c' {
 
 melodyCTwoPartOne = \relative c' { 
     \accidentalStyle default
-    e8 16 cs' ~  16 b8 as16 ~  8 r  r8. fs16 |
+    e8. c'16 ~  16 b8 as16 ~  8 r  r8. fs16 |
     e8 16 16  cs'8. b16  8 as4 r8 | 
     \tuplet 3/2 4 { as8 8 8  8 8 a ~ } a4  r8. a16 | 
-    gs16 8 16  16 8 16 ~  16 gs8. r4 |  
+    gs16 8 16  16 8 16 ~  16 g8. r4 |  
 }
 
 melodyCTWoPartTwo = \relative c' { 
@@ -338,7 +345,105 @@ melody = \relative c' {
     \melodyCOnePartTwo
 
     \melodyCTwoPartOne
-    \melodyCTWoPartTwo
+    % \melodyCTWoPartTwo
+}
+
+
+
+saxIntroLick = \relative c, { 
+    \accidentalStyle default
+    r8 e16 ( f || 
+    g4 ) r8. g16 r g8.  r8 e16 ( f | 
+    g4 ) r8. bf16 r g8.  r8 e16 ( f | 
+    g4 ) r8. g16 r g8.  r8 bf16 ( g |
+    f2. ) 
+}
+
+saxIntro = \relative c, { 
+    \accidentalStyle default
+    R1*3 | r2 r4 
+    \saxIntroLick
+    \saxIntroLick
+    \saxIntroLick r8 d ( |
+    
+    g4 ) r r2 | d1\mp\< ~ | 1 ~ | 1*3/4 s4\ff |
+    d''1\p\< ~ | 1 ~ | 1\mf \> ~ | 2.*2/3 s4\p r4 
+}
+
+saxAOne = \relative c, { 
+    \accidentalStyle default
+    r2 r4  r8 e16 ( f | 
+    g4 ) r8. bf16 r g8.  r4 | 
+    r2 r4  r8 bf16 ( g |
+    f2.. d8 |
+
+    g4 ) r r  r8 e16 ( f | 
+    g4 ) r8. bf16 r g8.  r4 | 
+    r2 r4  r8 bf16 ( g |
+    f2. ) \comp #1 |   
+}
+
+saxBOne = \relative c'' { 
+    \transpose c d \saxAOne
+}
+
+saxPreChorus = \relative c'' { 
+    \accidentalStyle default
+    \comp #16
+ }
+
+saxCOnePartOne = \relative c' { 
+    \accidentalStyle default
+    \comp #16
+}
+
+saxCOnePartTwo = \relative c' { 
+    \accidentalStyle default
+    \comp #32
+}
+
+saxCTwoPartOne = \relative c' { 
+    \accidentalStyle default
+    \comp #15
+}
+
+saxOcconal = \relative c { 
+    r8 bf16 c || e16 8 16 ~  16 8 16  e4  r8 e16 g |
+    bf16 g8 e16 ~ 16 8 ef16  d4  r8. bf16 | 
+    a8 g'4. ~ 8 e cs bf |
+    f4 c'8. af16 ~ af4 
+
+}
+
+sax = \relative c' { 
+
+    \saxIntro
+
+    \saxAOne
+    \comp #7 r4
+    \saxAOne
+    \comp #15 r4
+
+    \saxBOne
+    \comp #15 r4
+    \saxBOne
+    \comp #15 r4
+
+    \saxPreChorus
+
+    <>\ppp
+
+    \saxCOnePartOne
+    <>\fff
+    \saxCOnePartTwo
+
+    <>\mf
+    \saxCTwoPartOne
+
+    <>\mp
+    \saxOcconal
+    \saxOcconal
+    % \saxCTWoPartTwo
 }
 
 melodyForBb = \relative c' { 
@@ -350,7 +455,7 @@ melodyForEb = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "Lead-Sheet-for-C"
     \header {
         title = \title
         composer = \composerName
@@ -359,7 +464,7 @@ melodyForEb = \relative c' {
         subtitle = ""
     }
     \score {
-        <<
+        \keepWithTag #'(Part PDF) <<
             \new ChordNames \transpose c c { 
                 \chordsForm
             }
@@ -377,6 +482,86 @@ melodyForEb = \relative c' {
                     \structure
                     \rehearsalMarkTweaksForC
                     \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "Sax-for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Saxophone (Concert)"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \keepWithTag #'(Part PDF) <<
+            \new ChordNames \transpose c c { 
+                \chordsForm
+            }
+            % \new RhythmicStaff \with {
+            %         \remove "Staff_symbol_engraver"
+            %         \remove "Time_signature_engraver" 
+            %         \magnifyStaff #5/7
+            %     } {
+            %     \chordRhythm
+            % }
+            \new Staff = "lead" \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \clef bass
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \sax
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "Score-for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Score (Concert)"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \keepWithTag #'(Score PDF) <<
+            \new Staff = "lead" \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \clef treble
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new ChordNames \transpose c c { 
+                \chordsForm
+            }
+            % \new RhythmicStaff \with {
+            %         \remove "Staff_symbol_engraver"
+            %         \remove "Time_signature_engraver" 
+            %         \magnifyStaff #5/7
+            %     } {
+            %     \chordRhythm
+            % }
+            \new Staff = "lead" \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \clef bass
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \sax
                 >>
             }
         >>
