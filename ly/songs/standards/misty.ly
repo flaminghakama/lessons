@@ -4,7 +4,7 @@ titleLeft = "Misty"
 titleRight = ""
 title = "Misty"
 composerName = "E. Garner"
-lyricistName = ""
+lyricistName = "E. Garner"
 
 \include "../../../../scores/flaming-libs/flaming-paper.ily"
 \include "../../../../scores/flaming-libs/flaming-markup.ily"
@@ -33,7 +33,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -66,11 +66,12 @@ structure = \relative c' {
     \startSectionNoBarline "A"
     \bar "[|:"
     \repeat volta 2 { 
-        s1*6
+        s1*3 \break
+        s1*3 \break
     }
     \alternative {
-        { s2  \bar ":|]"  \break } 
-        { s2 }
+        { s1*2  \bar ":|]" } 
+        { s1*2 }
     }
     \startSection "B"
     s1*4 \break
@@ -97,25 +98,27 @@ chordsSong = \chordmode {
     ef2:maj7 c:m7 | f:m7 bf:7 | g:m7 c:7 | f:m7 bf:7 ||
 }
 
-melodyIntro = \relative c'' { 
-    c8 a g a r4 r8 c | d ef d ef d4 c8 a | 
-    c8 a g a r4 r8 c | d ef d ef d4 c8 a | 
-    c8 a g a r2 | a8 g a2. |
-    a8 g a2. | R1 || 
-
-}
+melodyACommon = \relative c'' { 
+   bf8 g || 
+    d2. bf8 c | df c'8 8 8  8 bf g ef | 
+    c2 \tuplet 3/2 4 { r8 g af  c ef g } | bf8 8 8 af  bf4. af8 | 
+    g4 ~ \tuplet 3/2 4 { g8 af bf } ef,4 ~ \tuplet 3/2 4 { ef8 f g } | af8 c,4  8 \tuplet 3/2 2 { d4 ef f } | 
+ }
 melodyHead = \relative c'' { 
-    r4 a8 c r e r ef ~ || 
-    ef2 e4. c8 ~ | 2 ~ 8 a4 c8 ~ | 8 a2.. | r4 a8 c r e r g ~ | 
-    g2 ~ 8 a4 e8 ~ | 2 ~ 8 d4 e8 ~ | 1 | r4 a,8 c r e r ef ~ | 
-    ef4. e8 ~ 4.  c8 ~ | 2 ~ 8 a4 c8 ~ | 8 a2.. | r2 r4 r8 d | 
-    c8 8 r c8 ~ 8 d c b ~ | 2 a8 b4 c8 ~ | 8 b a2. | r4 a8 8 c e d4 ~ ||
+    \melodyACommon
+    g1 ~ | 2. bf8 g ||
+    ef1  | \tuplet 3/2 2 { r4 ef f  g bf c } ||
 
-    d1 ~ | 4 e8 d c a c4 ~ | 8 a8 8 8 r2 | r4 a8 8 c e d4 ~ | 
-    d1 ~ | 4 e8 d c a c4 ~ | 8 a8 8 8 r2 | R1 ||
+    df8 8 8 8 ~ 2 ~ | 4 df8 ef \tuplet 3/2 2 { ff4 ef df } |
+    c8 8 8 8 ~ 2 | \tuplet 3/2 2 { r4 ef, f  af bf c } |
+    d8 8 8 c  d2 ~ | 8 8 8 c \tuplet 3/2 { f4 d c } | 
+    bf1 ~ | 2. 
+    
+    \melodyACommon
+    ef,1 | R1 | 
 }
+
 melodySong = \relative c' { 
-    \melodyIntro
     \melodyHead
 }
 
@@ -123,39 +126,31 @@ lyricsHeadOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
+    Look at me, I'm as help -- less as a kit -- ten up a tree
+    And I feel like I'm cling -- ing to a cloud, I can't un -- der -- stand
+    I get mis -- ty, just hol -- ding your hand.  Walk my
 
-    di ba duh dun  
-    ba di ba di ba daa bah beh
+    near
 
-    di ba duh dun  
-    ba di ba di ba daa bah beh
+    You can say that you're lead -- ing me on
+    But it's just what I want you to do
+    Don't you no -- tice how hope -- less -- ly I'm lost
+    That's why I'm fol -- low -- ing you
 
-    di ba duh dun  
-    da bu daa
-    da bu daa
-
-    Eu quis a -- mar, mas tive m -- e -- do
-    E quis sal -- var meu cor -- a -- ção
-    Ma -- so a -- mor sa -- \markup { "be um" } se -- gre -- do
-    O me -- do po -- de ma -- tar o seu cor -- a -- ção
-
-    Á -- gua de be -- ber
-    Á -- gua de be -- ber ca -- ma -- rá
-    Á -- gua de be -- ber
-    Á -- gua de be -- ber ca -- ma -- rá
-
+    On my own, would I wan -- der through this won -- der -- land a -- lone
+    Ne -- ver know -- ing my right foot from my left, my hat from my glove
+    I'm too mis -- ty, and too much in love.  
 }
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    \repeat unfold 34 { \skip 1 }
+    \repeat unfold 2 { \skip 1 }
 
-    Eu nun -- ca fiz coi -- sa tão cer -- ta
-    En -- trei pra co -- la do per -- dão
-    A min -- ha ca -- sa vive a -- ber -- ta
-    \skip 1 
-    Ab -- ri to -- das as por -- tas do cor -- a -- ção
+    way, and a thou -- sand vi -- o -- lins be -- gin to play
+    Or it might be the sound of your hel -- lo, that mu -- sic I hear
+    \repeat unfold 4 { \skip 1 }
+    the mo -- ment you're 
 }
 lyricsHeadThree = \lyricmode {
     \override LyricText.font-family = #'typewriter
@@ -164,10 +159,6 @@ lyricsHeadThree = \lyricmode {
     \repeat unfold 34 { \skip 1 }
     \repeat unfold 38 { \skip 1 }
 
-    Eu sempre tive uma certeza
-    Que só me deu desilusão
-    É que o amor é uma tristeza
-    Muita mágoa demais para um coração
 }
 
 \header {
@@ -179,9 +170,9 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-Eb-for-C"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
@@ -211,9 +202,9 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-Eb-for-Bb"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "Bb Lead Sheet"
         instrumentName = \poet
     }
@@ -243,14 +234,14 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-Eb-for-Eb"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "Eb Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        \transpose ef c <<
+        \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
@@ -273,4 +264,102 @@ lyricsHeadThree = \lyricmode {
         >>
     }
 }
+
+
+\book {
+  \bookOutputSuffix "in-Bb-for-C"
+    \header {
+        subtitle = "(Ula key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef bf <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-Bb"
+    \header {
+        subtitle = "(Ula key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef bf \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-Eb"
+    \header {
+        subtitle = "(Ula key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef bf \transpose ef c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \melodySong
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
+
 
