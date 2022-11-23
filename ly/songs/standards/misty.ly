@@ -22,6 +22,7 @@ lilypond ly/songs/standards/misty.ly
 mv misty*pdf pdf/songs/standards
 for file in pdf/songs/standards/misty*pdf ; do op $file ; done 
 
+./bin/createIndexes.sh 
 git add . ; git commit -m"fixing wrong notes" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 

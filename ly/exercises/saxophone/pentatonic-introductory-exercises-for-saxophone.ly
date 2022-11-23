@@ -19,7 +19,7 @@ mv pentatonic-introductory-exercises-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/pentatonic-introductory-exercises-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding d minor and f major pentatonic exercises" ; git push 
+git add . ; git commit -m"adding introductory pentatonic exercises G minor, Bb major, B minor, D major" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
