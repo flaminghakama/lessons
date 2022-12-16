@@ -15,8 +15,6 @@ composerName = "L. Morgan"
 killPreview
 rm morgan-the-pirate*pdf
 lilypond ly/songs/jazz/morgan-the-pirate.ly
-python ~/git/part-format/combine-1Page-1Page.py morgan-the-pirate-for-C.pdf morgan-the-pirate-for-Bb.pdf morgan-the-pirate-for-C-and-Bb.pdf
-python ~/git/part-format/combine-1Page-1Page.py morgan-the-pirate-for-C.pdf morgan-the-pirate-for-Eb.pdf morgan-the-pirate-for-C-and-Eb.pdf
 mv morgan-the-pirate*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/morgan-the-pirate*pdf ; do open -a Preview $file ; done
 
@@ -159,7 +157,7 @@ melodyIntro = \relative c'' {
 
 melodyTop = \relative c' {
     bf8 8 ef g bf\rest af ~ | 4 g8 af \tuplet 3/2 { g8 ef c } | bf8 8 ef f bf\rest f ~ | 2. |
-    bf,8 8 ef gf bf\rest af ~ | 4 gf8 af \tuplet 3/2 { g8 ef cf } | bf2. |
+    bf,8 8 ef gf bf\rest af ~ | 4 gf8 af \tuplet 3/2 { gf8 ef cf } | bf2. |
     \tuplet 3/2 { bf'8 8 af } e8 af bf af ||
 
     bf,8 8 ef g bf\rest af ~ | 4 g8 af \tuplet 3/2 { g8 ef c } | bf8 8 ef g bf\rest f ~ | 2. |
@@ -172,7 +170,7 @@ melodyTop = \relative c' {
     f4 ef8 g c,4 | f ef8 gf c,4 | f8 8 bf4 bf8\rest f | bf\rest f bf\rest f bf,4 || 
 
     bf8 8 ef g bf\rest af ~ | 4 g8 af \tuplet 3/2 { g8 ef c } | bf8 8 ef f bf\rest f ~ | 2. |
-    bf,8 8 ef gf bf\rest af ~ | 4 gf8 af \tuplet 3/2 { g8 ef cf } | bf2. |
+    bf,8 8 ef gf bf\rest af ~ | 4 gf8 af \tuplet 3/2 { gf8 ef cf } | bf2. |
     \tuplet 3/2 { bf'8 8 af } e8 af bf af ||
 
     bf,8 8 ef g bf\rest af ~ | 4 g8 af \tuplet 3/2 { g8 ef c } | bf8 8 ef g bf\rest f ~ | 2. |
@@ -182,7 +180,7 @@ melodyTop = \relative c' {
 melodyBottom = \relative c' {
     bf8 8 ef g s f ~ | 4 ef8 f \tuplet 3/2 { ef8 ef c } | bf8 8 ef f s c ~ | 2. |
     bf8 8 ef gf s f ~ | 4 ef8 f \tuplet 3/2 { ef8 c af } | g2. |
-    \tuplet 3/2 { bf'8 8 af } e8 af bf af ||
+    \tuplet 3/2 { af'8 8 gf } d8 gf af gf ||
 
     bf,8 8 ef g s f ~ | 4 ef8 f \tuplet 3/2 { ef8 ef c } | bf8 8 ef f s c ~ | 2. |
     bf8 8 ef bf' s df, ~ | 4 c8 df \tuplet 3/2 { c8 bf af } | bf2. ~ | 2. ||
@@ -195,7 +193,7 @@ melodyBottom = \relative c' {
 
     bf8 8 ef g s f ~ | 4 ef8 f \tuplet 3/2 { ef8 ef c } | bf8 8 ef f s c ~ | 2. |
     bf8 8 ef gf s f ~ | 4 ef8 f \tuplet 3/2 { ef8 c af } | g2. |
-    \tuplet 3/2 { bf'8 8 af } e8 af bf af ||
+    \tuplet 3/2 { af'8 8 gf } d8 gf af gf ||
 
     bf,8 8 ef g s f ~ | 4 ef8 f \tuplet 3/2 { ef8 ef c } | bf8 8 ef f s c ~ | 2. |
     bf8 8 ef bf' s df, ~ | 4 c8 df \tuplet 3/2 { c8 bf af } | bf2. ~ | 2. ||
