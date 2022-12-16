@@ -101,6 +101,23 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s8 ||
+    g2:7 bf:7 | a:7 gs:7 | g:7 bf:7 | a:7 gs:7 |
+    g2:7 bf:7 | a:7 gs:7 | g1:7 | gs:13 || gs:13 ||
+
+
+    g1:7 | s | c:7 | s | 
+    f1:7 | s | bf:7 | ef:7 ||
+
+    g2:7 bf:7 | a:7 gs:7 | g:7 bf:7 | a:7 gs:7 |
+    g2:7 bf:7 | a:7 gs:7 | g1:7 | gs:13 |
+    cs1:7.5- | s ||
+}
+
+chordsSongForFlats = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s8 ||
     g2:7 bf:7 | a:7 af:7 | g:7 bf:7 | a:7 af:7 |
     g2:7 bf:7 | a:7 af:7 | g1:7 | af:13 || af:13 ||
 
@@ -149,11 +166,11 @@ melody = {
 \book {
   \bookOutputSuffix "for-C"
     \header {
-        poet = "    Concert Pitch"
+        poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        <<
+        \transpose c ef <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
@@ -170,105 +187,26 @@ melody = {
     }
 }
 
-% \book {
-%   \bookOutputSuffix "for-Bb"
-%     \header {
-%         poet = "    Bb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         <<
-%             \new ChordNames \transpose bf c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong  
-%             }
-%             \new Staff \transpose bf, c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 <<
-%                     \structure
-%                     \melody
-%                 >>
-%             }
-%         >>
-%     }
-
-%     \score {
-%         \header {
-%             piece = " "
-%         }
-%         <<
-%             \new ChordNames \transpose bf, c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsCoda 
-%             }
-%             \new Staff \transpose bf, c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 <<
-%                     \structureCoda
-%                     \melodyCoda
-%                 >>
-%             }
-%         >>
-%         \layout { 
-%             indent = 2.15\cm
-%             short-indent = 1.25\cm
-%             \context {
-%                 \Score
-%                 \override StaffGrouper.staff-staff-spacing.padding = #0
-%                 \override StaffGrouper.staff-staff-spacing.basic-distance = #0
-%             }
-%         }
-%     }
-% }
-
-% \book {
-%   \bookOutputSuffix "for-Eb"
-%     \header {
-%         poet = "    Eb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         <<
-%             \new ChordNames \transpose ef c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong 
-%             }
-%             \new Staff \transpose ef, c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 <<
-%                     \structure
-%                     \melody
-%                 >>
-%             }
-%         >>
-%     }
-
-%     \score {
-%         \header {
-%             piece = " "
-%         }
-%         <<
-%             \new ChordNames \transpose ef, c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsCoda 
-%             }
-%             \new Staff \transpose ef, c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 <<
-%                     \structureCoda
-%                     \melodyCoda
-%                 >>
-%             }
-%         >>
-%         \layout { 
-%             indent = 2.15\cm
-%             short-indent = 1.25\cm
-%             \context {
-%                 \Score
-%                 \override StaffGrouper.staff-staff-spacing.padding = #0
-%                 \override StaffGrouper.staff-staff-spacing.basic-distance = #0
-%             }
-%         }
-%     }
-% }
-
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongForFlats 
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melody
+                    \noPageBreak
+                >>
+            }
+        >>
+    }
+}
