@@ -1,4 +1,4 @@
-diatonicExerciseOneCMajor = \relative c' { 
+diatonicExerciseOneBbMajor = \transpose c bf \relative c { 
     \key c \major
     \time 3/4
     c8 e g e c4 | 
@@ -30,7 +30,7 @@ diatonicExerciseOneCMajor = \relative c' {
     \bar "||"
 }
 
-diatonicExerciseTwoCMajor = \relative c' { 
+diatonicExerciseTwoBbMajor = \transpose c bf \relative c { 
     \key c \major
     \time 4/4
     c8 d e g  d e f a | 
@@ -46,11 +46,11 @@ diatonicExerciseTwoCMajor = \relative c' {
     c8 a g f  b g f e | 
     a8 f e d  g e d c | 
     f8 d c b  e c b a | 
-    d8 b a g c2
+    d8 b a g c2 
     \bar "||"
 }
 
-diatonicExerciseThreeCMajor = \relative c' { 
+diatonicExerciseThreeBbMajor = \transpose c bf \relative c { 
     \key c \major
     \time 4/4
     c8 d e f  g f e c | 
@@ -78,8 +78,6 @@ diatonicExerciseThreeCMajor = \relative c' {
     f8 e d c  b c d f | 
     e8 d c b  a b c e | 
     d8 c b a  g a b d |
-    c1
+    c1 
     \bar "||"
-}
-
-
+}    

@@ -18,7 +18,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "1. Triads"  " " }
+                piece = \markup \center-column { "Triads"  " " }
             }
         }
 
@@ -35,7 +35,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "2. 1-2-3-5"  " " }
+                piece = \markup \center-column { "1-2-3-5"  " " }
             }
         }
 
@@ -52,7 +52,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "4. 1-2-3-4-5"  " " }
+                piece = \markup \center-column { "1-2-3-4-5"  " " }
             }
         }
 

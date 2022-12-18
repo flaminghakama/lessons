@@ -1,15 +1,6 @@
-diatonicExerciseOneCMajor = \relative c' { 
+diatonicExerciseOneAMajor = \transpose c a \relative c' { 
     \key c \major
     \time 3/4
-    c8 e g e c4 | 
-    d8 f a f d4 | 
-    e8 g b g e4 | 
-    f8 a c a f4 | 
-    g8 b d b g4 | 
-    a8 c e c a4 | 
-    b8 d f d b4 | 
-    c2. | \break
-
     c8 e g e c4 | 
     d8 f a f d4 | 
     e8 g b g e4 | 
@@ -30,14 +21,9 @@ diatonicExerciseOneCMajor = \relative c' {
     \bar "||"
 }
 
-diatonicExerciseTwoCMajor = \relative c' { 
+diatonicExerciseTwoAMajor = \transpose c a \relative c' { 
     \key c \major
     \time 4/4
-    c8 d e g  d e f a | 
-    e8 f g b  f g a c | 
-    g8 a b d  a b c e | 
-    b8 c d f c2 | \break
-
     c8 d e g  d e f a | 
     e8 f g b  f g a c | 
     g8 a b d  a b c e | 
@@ -46,22 +32,13 @@ diatonicExerciseTwoCMajor = \relative c' {
     c8 a g f  b g f e | 
     a8 f e d  g e d c | 
     f8 d c b  e c b a | 
-    d8 b a g c2
+    d8 b a g c2 
     \bar "||"
 }
 
-diatonicExerciseThreeCMajor = \relative c' { 
+diatonicExerciseThreeAMajor = \transpose c a \relative c' { 
     \key c \major
     \time 4/4
-    c8 d e f  g f e c | 
-    d8 e f g  a g f d | 
-    e8 f g a  b a g e | 
-    f8 g a b  c b a f | 
-    g8 a b c  d c b g | 
-    a8 b c d  e d c a | 
-    b8 c d e  f e d b | 
-    c1 | \break
-
     c8 d e f  g f e c | 
     d8 e f g  a g f d | 
     e8 f g a  b a g e | 
@@ -78,8 +55,7 @@ diatonicExerciseThreeCMajor = \relative c' {
     f8 e d c  b c d f | 
     e8 d c b  a b c e | 
     d8 c b a  g a b d |
-    c1
+    c1 
     \bar "||"
+
 }
-
-

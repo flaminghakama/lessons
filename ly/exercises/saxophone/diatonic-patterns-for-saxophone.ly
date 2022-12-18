@@ -19,7 +19,7 @@ mv diatonic-patterns-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/diatonic-patterns-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding introductory pentatonic exercises G minor, Bb major, B minor, D major" ; git push 
+git add . ; git commit -m"adding diatonic exercise in C, G and F" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -73,8 +73,10 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/diatonic/saxophone/diatonic-C-major.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-F-major.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-G-major.ily"
-% \include "ly/notes/diatonic/saxophone/diatonic-B-flat-major.ily"
-% \include "ly/notes/diatonic/saxophone/diatonic-D-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-B-flat-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-D-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-E-flat-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-A-major.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -107,6 +109,10 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     \include "ly/bookparts/diatonic/saxophone/diatonic-C-Major.ily"
     \include "ly/bookparts/diatonic/saxophone/diatonic-G-Major.ily"
     \include "ly/bookparts/diatonic/saxophone/diatonic-F-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-D-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-B-flat-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-A-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-E-flat-Major.ily"
 }
 
 

@@ -17,7 +17,17 @@ diatonicExerciseOneFMajor = \transpose c f \relative c' {
     f8 d b d f4 | 
     e8 c a c e4 | 
     d8 b g b d4 
+    c2. \break
+
+    c''8 a f a c4 | 
+    b8 g e g b4 | 
+    a8 f d f a4 | 
+    g8 e c e g4 | 
+    f8 d b d f4 | 
+    e8 c a c e4 | 
+    d8 b g b d4 
     c2.
+    \bar "||"
 }
 
 diatonicExerciseTwoFMajor = \transpose c f \relative c' { 
@@ -31,7 +41,13 @@ diatonicExerciseTwoFMajor = \transpose c f \relative c' {
     c8 a g f  b g f e | 
     a8 f e d  g e d c | 
     f8 d c b  e c b a | 
-    d8 b a g c2 ||
+    d8 b a g c2 \break
+
+    c''8 a g f  b g f e | 
+    a8 f e d  g e d c | 
+    f8 d c b  e c b a | 
+    d8 b a g c2
+    \bar "||"
 }
 
 diatonicExerciseThreeFMajor = \transpose c f \relative c' { 
@@ -53,5 +69,15 @@ diatonicExerciseThreeFMajor = \transpose c f \relative c' {
     f8 e d c  b c d f | 
     e8 d c b  a b c e | 
     d8 c b a  g a b d |
-    c1 ||
+    c1 \break
+
+    c''8 b a g  f g a c | 
+    b8 a g f  e f g b | 
+    a8 g f e  d e f a | 
+    g8 f e d  c d e g | 
+    f8 e d c  b c d f | 
+    e8 d c b  a b c e | 
+    d8 c b a  g a b d |
+    c1
+    \bar "||"
 }

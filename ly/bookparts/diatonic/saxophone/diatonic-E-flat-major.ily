@@ -1,9 +1,9 @@
     \bookpart {
 
         \header {
-            %title = ""
-            subtitle = "C Major"
-            %composer = ""
+            title = ""
+            subtitle = "Eb Major"
+            composer = ""
         }
         \score {
             << 
@@ -11,8 +11,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \diatonicExerciseOneCMajor
-                    \noPageBreak
+                    \diatonicExerciseOneEbMajor
                 }
             >>
             \header {
@@ -29,8 +28,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \diatonicExerciseTwoCMajor
-                    \noPageBreak
+                    \diatonicExerciseTwoEbMajor
                 }
             >>
             \header {
@@ -47,7 +45,7 @@
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \diatonicExerciseThreeCMajor
+                    \diatonicExerciseThreeEbMajor
                 }
             >>
             \header {
@@ -64,7 +62,7 @@
         %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose c c { 
         %             \include "ly/ily/staff-properties.ily"
-        %             \diatonicExerciseFourCMajor
+        %             \diatonicExerciseFourEbMajor
         %         }
         %     >>
         %     \header {
@@ -81,7 +79,7 @@
         %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose a a { 
         %             \include "ly/ily/staff-properties.ily"
-        %             \diatonicExerciseFiveCMajor
+        %             \diatonicExerciseFiveEbMajor
         %         }
         %     >>
         %     \header {
@@ -98,7 +96,7 @@
         %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose a a { 
         %             \include "ly/ily/staff-properties.ily"
-        %             \diatonicExerciseSixCMajor
+        %             \diatonicExerciseSixEbMajor
         %         }
         %     >>
         %     \header {
