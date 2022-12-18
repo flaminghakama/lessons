@@ -11,15 +11,15 @@ composerName = "Elaine Paul"
 \include "../scores/flaming-libs/flaming-chords.ily"
 
 %{
-killPreview ; rm diatonic-patterns-for-saxophone*.pdf ; lilypond ly/exercises/saxophone/diatonic-patterns-for-saxophone.ly  ; op diatonic-patterns-for-saxophone.pdf 
+killPreview ; rm diatonic-exercises-for-saxophone*.pdf ; lilypond ly/exercises/saxophone/diatonic-exercises-for-saxophone.ly  ; op diatonic-exercises-for-saxophone.pdf 
 
-rm diatonic-patterns-for-saxophone*.pdf
-lilypond ly/exercises/saxophone/diatonic-patterns-for-saxophone.ly
-mv diatonic-patterns-for-saxophone.pdf pdf/exercises/saxophone
-op pdf/exercises/saxophone/diatonic-patterns-for-saxophone.pdf
+rm diatonic-exercises-for-saxophone*.pdf
+lilypond ly/exercises/saxophone/diatonic-exercises-for-saxophone.ly
+mv diatonic-exercises-for-saxophone.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/diatonic-exercises-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding diatonic exercise in C, G and F" ; git push 
+git add . ; git commit -m"adding diatonic exercise in C, G, F, D, Bb, A and Eb" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
