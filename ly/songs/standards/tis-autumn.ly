@@ -62,7 +62,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c' { 
     \key bf \major
-    \tempo "Ballad" 4=68
+    \tempo "Ballad" 4=72
     \partial 4
     s4
     s1*3
@@ -277,7 +277,7 @@ lyricsCoda = \lyricmode {
 \book {
   \bookOutputSuffix "for-Bb"
     \header {
-        subtitle = "(original key)"
+        subtitle = ""
         poet = "Bb Lead Sheet"
         instrumentName = \poet
     }
@@ -331,7 +331,7 @@ lyricsCoda = \lyricmode {
 \book {
   \bookOutputSuffix "for-Eb"
     \header {
-        subtitle = "(original key)"
+        subtitle = ""
         poet = "Eb Lead Sheet"
         instrumentName = \poet
     }
