@@ -106,16 +106,16 @@ chordsSong = \chordmode {
     af8 d:m7.5-.9 ||
     df1:m9 | c:m9 | b:m9 ||
 
-    c1:m | f:aug7 | bf2 c:m7 | d:m d:7 |
+    c1:m | f:aug7 | bf2 c:m7 | d:m g:7 |
     c2:m f:7 | g:m c:7 | f1:7 | bf2 g:7 ||
 
-    c1:m | f:aug7 | bf2 c:m7 | d:m d:7 |
+    c1:m | f:aug7 | bf2 c:m7 | d:m g:7 |
     c2:m f:7 | g:m c:7 | f1:7 | bf2 bf:7 ||
 
     f2:m bf:7 | f:m bf:7 | ef f4:m bf:7 | ef1 |
     g2:m c:7 | g:m c:7 | c1:m | s2 f:7 ||
 
-    c1:m | f:aug7 | bf2 c:m7 | d:m d:7 |
+    c1:m | f:aug7 | bf2 c:m7 | d:m g:7 |
     c2:m f:7 | g:m c:7 | f1:7 | bf2. g4:7 ||
 }
 
