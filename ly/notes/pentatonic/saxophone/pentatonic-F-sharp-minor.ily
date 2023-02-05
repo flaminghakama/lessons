@@ -1,3 +1,22 @@
+pentatonicExerciseZeroFSharpMinor = \relative c' { 
+    \key fs \minor
+    \time 4/4
+    <fs fs'>1 | <a a'> | <b b'> | <cs cs'> | <e e'> 
+    \bar "||" 
+    b,1 | cs | e | 
+    \bar "||" \break
+    \time 3/4
+    fs2 a4 | b cs e | fs2 e4 | cs b a | fs2. |
+    \bar "||" \break
+    \time 4/4
+    fs8 b a cs  b e cs fs | e a fs2. | 
+    fs8 cs e b  cs a b fs | a e fs2. |
+    \bar "||" \break
+    fs8 e a fs  b a cs b | e cs fs2. | 
+    fs8 a e fs  cs e b cs | a b fs2. |
+    \bar "|."
+}
+
 pentatonicExerciseOneFSharpMinor = \relative c' { 
     \key fs \minor
     \time 4/4

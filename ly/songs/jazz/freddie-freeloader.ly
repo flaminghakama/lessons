@@ -21,6 +21,7 @@ lilypond ly/songs/jazz/freddie-freeloader.ly
 mv freddie-freeloader*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/freddie-freeloader*pdf ; do open -a Preview $file ; done
 
+./bin/createIndexes.sh 
 git add . ; git commit -m"new song" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 

@@ -115,6 +115,30 @@ melodyForFlats = \relative c' {
     f2. r4 | r2 r8 f af [ bf ] ||
 }
 
+melodySimplified = \relative c' {
+    f8 af [ bf ] ||
+    b8 c b bf  af f af bf | 4 af8 c r f, af [ bf ] |
+    b8 c b bf  af f af bf | r2 r8 f af [ bf ] |
+
+    bf8 cf bf bf  af f af bf | 4 af8 cf r f, af [ bf ] |
+    b8 c  b bf af f af bf | r2 r8 f af [ bf ] |
+
+    r8 bf4. ~ 8 f af bf | r8 bf4. af8 f ef f ~ | 
+    f2. r4 | r2 r8 f af [ bf ] ||
+}
+
+melodySimplifiedForFlats = \relative c' {
+    f8 af [ bf ] ||
+    cf8 c cf c bf8 af f af bf | 4 af8 c r f, af [ bf ] |
+    cf8 c cf c bf8 af f af bf | r2 r8 f af [ bf ] |
+
+    bf8 cf bf bf af f af bf | 4 af8 cf r f, af [ bf ] |
+    cf8 c cf c bf8 af f af bf | r2 r8 f af [ bf ] |
+
+    r8 bf4. ~ 8 f af bf | r8 bf4. af8 f8 ef f ~ | 
+    f2. r4 | r2 r8 f af [ bf ] ||
+}
+
 
 \header {
     title = \title
@@ -189,6 +213,31 @@ melodyForFlats = \relative c' {
                 <<
                     \structure
                     \melody
+                    \noPageBreak
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "simplified-in-F-for-Eb"
+    \header {
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(simplified)"
+    }
+    \score {
+        \transpose ef c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melodySimplified
                     \noPageBreak
                 >>
             }
