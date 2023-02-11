@@ -107,16 +107,16 @@ chordsSong = \chordmode {
     df1:m9 | c:m9 | b:m9 ||
 
     c1:m | f:aug7 | bf2 c:m7 | d:m g:7 |
-    c2:m f:7 | g:m c:7 | f1:7 | bf2 g:7 ||
+    c2:m f:7.9- | g:m c:7 | c2:m7 f:7 | bf2 g:7 ||
 
     c1:m | f:aug7 | bf2 c:m7 | d:m g:7 |
-    c2:m f:7 | g:m c:7 | f1:7 | bf2 bf:7 ||
+    c2:m f:7.9- | g:m c:7 | c2:m7 f:7 | bf2 bf:7 ||
 
     f2:m bf:7 | f:m bf:7 | ef f4:m bf:7 | ef1 |
     g2:m c:7 | g:m c:7 | c1:m | s2 f:7 ||
 
     c1:m | f:aug7 | bf2 c:m7 | d:m g:7 |
-    c2:m f:7 | g:m c:7 | f1:7 | bf2. g4:7 ||
+    c2:m f:7.9- | g:m c:7 | c2:m7 f:7 | bf2. g4:7 ||
 }
 
 chordsCoda = \chordmode { 
@@ -139,12 +139,12 @@ melodyHead = \relative c'' {
     g4. ||
     bf16 g bf8 ~ 4 g r8 ef16 d | df8 a'4 g8 ~ 2 |
     r8 a4 f16 d  f8 4. | r8 a4 f16 d b2 |
-    r8 g'8 ~ \tuplet 3/2 { g8 d g } d2 | r8 c \tuplet 3/2 { bf8 d c' } a2 |
+    r8 g'8 ~ \tuplet 3/2 { g8 ef f } d2 | r8 c \tuplet 3/2 { bf8 d c' } a2 |
     g16 bf g8 ~ 8 ef  d16 f d8 ~ 8 c | g bf4. r2 ||
 
     r8. g'16  \tuplet 3/2 { bf8 g bf } g4. ef8 | \tuplet 3/2 { d4 df a' } g2 |
     r4 a8 f16 d f8 4. | r4 a8 f16 d b2 | 
-    r4 r8 g' ef16 g d8 ~ 4 | r8. c16 \tuplet 3/2 { bf8 d c' } a2 | 
+    r4 r8 g' ef16 f d8 ~ 4 | r8. c16 \tuplet 3/2 { bf8 d c' } a2 | 
     r4 g16 bf g16. ef32 d16 f d8 ~ 8 c | g bf4. r4 \tuplet 3/2 { r8 bf' f } ||
 
     af4. 16 bf g8 4. | r8. b,16 c cs d bf' g8 4. | 
@@ -154,7 +154,7 @@ melodyHead = \relative c'' {
 
     r8. g'16 bf c bf g ~ 4. ef16 d | df8 a'4 g8 ~ 2 | 
     r8 a16 f a8. f16 d2 | r8 f16 a ~ \tuplet 3/2 { a8 f d } b2 | 
-    r4 r8 g' ef g16 d ~ 4 | \tuplet 3/2 4 { r4 c8  bf d c' } a2 | 
+    r4 r8 g' ef f16 d ~ 4 | \tuplet 3/2 4 { r4 c8  bf d c' } a2 | 
     r4 g16 bf g16. ef32 d16 f d8 ~ 8 c | g bf4. r2 || 
 }
 
