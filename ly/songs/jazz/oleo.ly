@@ -15,6 +15,9 @@ lilypond ly/songs/jazz/oleo.ly
 mv oleo*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/oleo*.pdf ; do op $file ; done  
 
+git add . ; git commit -m"adding song" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 
