@@ -22,7 +22,7 @@ mv footprints*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/footprints*pdf ; do open -a Preview $file ; done
 
 ./bin/createIndexes.sh 
-git add . ; git commit -m"new song" ; git push 
+git add . ; git commit -m"wayne" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -213,7 +213,7 @@ bassLick = \relative c {
     c4 g' c ef2 ~ 8 g, | 
 }
 bassLickSub = \relative c { 
-    c4 g' c ef2 ~ 8 f, | 
+    c4 f c' ef2 ~ 8 f, | 
 }
 bassLickTurnaround = \relative c { 
     c4 g' c e ~ 8 c g e | 
