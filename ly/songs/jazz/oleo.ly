@@ -108,7 +108,7 @@ melodyAFirstEnding = \relative c'' {
     d4. f,8 d' c a f ||
 }
 melodyASecondEnding = \relative c'' {
-    d8 bf c bf r2 | 
+    df8 bf c bf r2 | 
 }
 
 melody = \relative c' { 
