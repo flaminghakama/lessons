@@ -108,22 +108,22 @@ chordsSong = \chordmode {
     f2:m7.5- af:m7 | b:m7 bf:7 | ef1:maj7 | d2:m7.5- g:7 ||
 }
 
-solo = \relative c'' { 
-    r8 bf \tuplet 3/2 { ef8 g cf } bf8 g ef bf | 
-    g'8 ef r g af bf cf df | 
-    d8 ef d8. c16  b8 af g f ||
+solo = \relative c' { 
+    r8 bf ( \tuplet 3/2 { ef8 g b } bf8 ) g ( ef bf ) | 
+    g'8 ( ef ) r g af bf cf df | 
+    d8 ( ef d8. )  c16  ( b8 ) af g f ||
 
-    ef8 c4. r4 r8 g' ( | af ) f4. r2 | 
-    R1 | bf16 ( cf df8 ~ 8 c16 cf  bf8 ) g e c |
+    ef8 ( c4.-> ) r4 r8 g' ( | af f4. ) r2 | 
+    R1 | bf16 ( cf df8 ~ 8 c16 cf  bf8 ) g ( e c ) |
 
-    f8 c r ef  f8 g af bf | cf df cf bf  r fs d [ bf ] |
-    g'4 ef f2 | r2 r4 r8 af ( ||
+    f8 ( c ) r ef  f8 g af bf | cf df ( cf ) bf  r fs d [ ( bf ] ) |
+    g'4 ( ef ) f2 | r2 r4 r8 af ( ||
 
-    g8 ) d f16 gf32 f ef8 c4 b8 d | c d ef f g af g4 | 
-    R1 | df4. af'8  g f e c | 
+    g8 ) d ( f16 gf32 f ef8 c4 ) b8 d | c d ef f g af ( g4 ) | 
+    R1 | df4 ~ ( 816 ef32 g af'8  g ) f e c ( | 
 
-    f8 c d e  f g af bf | cf df cf bf r fs d4 | 
-    g4 bf,8 ef ~ 2 | r4 r8  
+    f8 c ) d e  f  g af bf | cf ( df cf ) bf r fs ( d4 ) | 
+    \grace { fs8 ( } g4 ) bf,8 ( ef ~ 2 ) | r4 r8  
 
 
 }
@@ -146,6 +146,30 @@ melody = \relative c' {
     }
     \score {
         \transpose c c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melody
+                    \noPageBreak
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        poet = "Bb Tenor Saxophone"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf,, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
