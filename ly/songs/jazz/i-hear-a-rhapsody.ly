@@ -106,6 +106,8 @@ chordsSong = \chordmode {
 
     c2:m7 fs:7 | f:m7 bf:7 | ef1:maj7 | df:7 c:aug7 |
     f2:m7.5- af:m7 | b:m7 bf:7 | ef1:maj7 | d2:m7.5- g:7 ||
+
+    c1:m7
 }
 
 solo = \relative c' { 
@@ -113,19 +115,36 @@ solo = \relative c' {
     g'8 ( ef ) r g af bf cf df | 
     d8 ( ef d8. )  c16  ( b8 ) af g f ||
 
+
     ef8 ( c4.-> ) r4 r8 g' ( | af f4. ) r2 | 
     R1 | bf16 ( cf df8 ~ 8 c16 cf  bf8 ) g ( e c ) |
 
     f8 ( c ) r ef  f8 g af bf | cf df ( cf ) bf  r fs d [ ( bf ] ) |
     g'4 ( ef ) f2 | r2 r4 r8 af ( ||
 
+
     g8 ) d ( f16 gf32 f ef8 c4 ) b8 d | c d ef f g af ( g4 ) | 
-    R1 | df4 ~ ( 816 ef32 g af'8  g ) f e c ( | 
+    R1 | df4 ~ ( 16 ef32 g af8  g ) f e c ( | 
 
     f8 c ) d e  f  g af bf | cf ( df cf ) bf r fs ( d4 ) | 
-    \grace { fs8 ( } g4 ) bf,8 ( ef ~ 2 ) | r4 r8  
+    \grace { fs8 ( } g4 ) bf,8 ( ef ~ 2 ) | r4 r8. af32 ( bf  f8 ) ef ( d ) c ||  
 
 
+    bf8 g ( bf ) d  r c bf4 | c8 ( b c ) d  ef f fs  a |
+    bf8 cs16 d c8 bf r g ef ( [ d ] ) | cs8 f a g  f ef d c |
+
+    bf8 g f bf ~ 4 r | r8. c'16 ( d8. df32 c  b8 ) af ( g4 ) |
+    r2 g8 ( af16 g f8 ) ef | d4 r8 d  g f ef d ||
+
+
+    c4 g8 a b d ef g | f g af bf c ef ( d ) c | 
+    bf4 ( g8 ) f ef f g bf | \tuplet 3/2 { df,8 ( g af }  g8 ) f  e ef'4 df8 ( |
+
+    c8 ) f,4. r2 | r8 b, cs16. f32 b8  cs8 d16 cs b8 bf | 
+    r8 g f [ ef ] d ef g bf |  d8 ( ef d8. )  c16  ( b4 ) a8 b  ||
+
+
+    c4. d8 c4.  
 }
 melody = \relative c' {
     \solo
