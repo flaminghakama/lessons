@@ -117,7 +117,7 @@ solo = \relative c' {
 
 
     ef8 ( c4.-> ) r4 r8 g' ( | af f4. ) r2 | 
-    R1 | bf16 ( cf df8 ~ 8 c16 cf  bf8 ) g ( e c ) |
+    R1 | bf32 ( cf df8. ~ 8 c16 cf  bf8 ) g ( e c ) |
 
     f8 ( c ) r ef  f8 g af bf | cf df ( cf ) bf  r fs d [ ( bf ] ) |
     g'4 ( ef ) f2 | r2 r4 r8 af ( ||
@@ -140,9 +140,8 @@ solo = \relative c' {
     c4 g8 a b d ef g | f g af bf c ef ( d ) c | 
     bf4 ( g8 ) f ef f g bf | \tuplet 3/2 { df,8 ( g af }  g8 ) f  e ef'4 df8 ( |
 
-    c8 ) f,4. r2 | r8 b, cs16. f32 b8  cs8 d16 cs b8 bf | 
+    c8 ) f,4. r2 | r8 cf ( df [ ) \grace { f8 ( } cf'8 ] )  df8 ( d16 df cf8 ) bf | 
     r8 g f [ ef ] d ef g bf |  d8 ( ef d8. )  c16  ( b4 ) a8 b  ||
-
 
     c4. d8 c4.  
 }
