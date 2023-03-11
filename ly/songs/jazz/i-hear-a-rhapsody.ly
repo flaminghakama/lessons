@@ -22,7 +22,7 @@ lilypond ly/songs/jazz/i-hear-a-rhapsody.ly
 mv i-hear-a-rhapsody*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/i-hear-a-rhapsody*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"new song" ; git push 
+git add . ; git commit -m"first draft of first chorus" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -77,12 +77,15 @@ structure = \relative c' {
     \bar "||"
     s1*4 \break 
     s1*4 \break 
+    \startSection "A"
     \bar "||"
     s1*4 \break 
     s1*4 \break 
+    \startSection "B"
     \bar "||"
     s1*4 \break 
     s1*4 \break 
+    \startSection "A"
     \bar "||"
     s1*4 \break 
     s1*4 \break 
@@ -124,7 +127,7 @@ solo = \relative c' {
 
 
     g8 ) d ( f16 gf32 f ef8 c4 ) b8 d | c d ef f g af ( g4 ) | 
-    R1 | df4 ~ ( 16 ef32 g af8  g ) f e c ( | 
+    R1 | df4. ( \grace { ef16 g } af8  g ) f e c ( | 
 
     f8 c ) d e  f  g af bf | cf ( df cf ) bf r fs ( d4 ) | 
     \grace { fs8 ( } g4 ) bf,8 ( ef ~ 2 ) | r4 r8. af32 ( bf  f8 ) ef ( d ) c ||  
