@@ -40,7 +40,8 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   top-system-spacing.minimum-distance = #24
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+  system-system-spacing.minimum-distance = #0
+  system-system-spacing.padding = #0
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #13
@@ -64,7 +65,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+    \override Score.RehearsalMark #'extra-offset = #'( -4 . -2.6 )
 
     \override Beam.damping = #2.75 
     \override Stem.length-fraction = #(magstep 1.2)
@@ -88,11 +89,14 @@ structure = \relative c' {
     \startSection "A"
     \bar "||"
     s1*4 \break 
-    s1*4 \break 
+    s1*4 
     \bar "||"
+
+    s1
+
 }
 
-chordsSong = \chordmode { 
+chordsSongRealBook = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -113,6 +117,27 @@ chordsSong = \chordmode {
     c1:m7
 }
 
+chordsSong = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    b2:m7 bf:7 | ef1 | d2:m7.5- g:7 ||
+
+    c1:m7 | f2:m7 bf:7 | ef:maj7 af:7 | g:m7.5- c:7.9- |
+    f2:m7 af:m7 | cf:m7 bf:7 | ef1:maj7 | d2:m7.5- g:aug9 ||
+
+    c1:m7 | f2:m7 bf:7 | ef:maj7 af:7 | g2:m7.5- c:7.9- |
+    f2:m7 af:m7 | cf:m7 bf:7 | ef1:maj7 | a2:m7.5- d:7.9- ||
+
+    g1:m7 | a2:m7.5- d:7.9- | g1:m7 | c2:m7 f:7 |
+    bf1:maj7 | f:m7 | d2:m7.5- g:7.9- | g1:aug9 ||
+
+    c1:m7 | f2:m7 bf:7 | ef:maj7 af:7 | g:m7.5- c:7.9- |
+    f2:m7 af:m7 | cf:m7 bf:7 | ef1:maj7 | d2:m7.5- g:aug9 ||
+
+    c1:m7
+}
+
 solo = \relative c' { 
     r8 bf ( \tuplet 3/2 { ef8 g b } bf8 ) g ( ef bf ) | 
     g'8 ( ef ) r g af bf cf df | 
@@ -126,8 +151,8 @@ solo = \relative c' {
     g'4 ( ef ) f2 | r2 r4 r8 af ( ||
 
 
-    g8 ) d ( f16 gf32 f ef8 c4 ) b8 d | c d ef f g af ( g4 ) | 
-    R1 | df4. ( \grace { ef16 g } af8  g ) f e c ( | 
+    g8 ) d ( f [ \grace { gf16 f } ef8 ] c4 ) b8 d | c d ef f g af ( g4 ) | 
+    R1 | df4 ( ~ 8 [ \grace { ef16 g } af8 ]  g ) f e c ( | 
 
     f8 c ) d e  f  g af bf | cf ( df cf ) bf r fs ( d4 ) | 
     \grace { fs8 ( } g4 ) bf,8 ( ef ~ 2 ) | r4 r8. af32 ( bf  f8 ) ef ( d ) c ||  
@@ -143,7 +168,7 @@ solo = \relative c' {
     c4 g8 a b d ef g | f g af bf c ef ( d ) c | 
     bf4 ( g8 ) f ef f g bf | \tuplet 3/2 { df,8 ( g af }  g8 ) f  e ef'4 df8 ( |
 
-    c8 ) f,4. r2 | r8 cf ( df [ ) \grace { f8 ( } cf'8 ] )  df8 ( d16 df cf8 ) bf | 
+    c8 ) f,4. r2 | r8 cf ( df [ ) \grace { f8 ( } cf'8 ] )  df8 ( d16 df cf?8 ) bf | 
     r8 g f [ ef ] d ef g bf |  d8 ( ef d8. )  c16  ( b4 ) a8 b  ||
 
     c4. d8 c4.  
