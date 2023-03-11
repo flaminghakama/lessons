@@ -136,7 +136,7 @@ solo = \relative c' {
     bf8 g ( bf ) d  r c bf4 | c8 ( b c ) d  ef f fs  a |
     bf8 cs16 d c8 bf r g ef ( [ d ] ) | cs8 f a g  f ef d c |
 
-    bf8 g f bf ~ 4 r | r8. c'16 ( d8. df32 c  b8 ) af ( g4 ) |
+    bf8 f g bf ~ 4 r | r8. c'16 ( d8. df32 c  b8 ) af ( g4 ) |
     r2 g8 ( af16 g f8 ) ef | d4 r8 d  g f ef d ||
 
 
