@@ -138,7 +138,7 @@ melodyReal = \relative c'' {
     c2 \tuplet 3/2 { bf4 df, f } | c'4. \glissando a8 ~ 2 | 
 
     r8 bf4. a4 af | bf a8 af ~ 2 | 
-    r8 b4. bf4 a | b af8 a ~ 2  | 
+    r8 b4. bf4 a | b bf8 a ~ 2  | 
 
     c2 ~ 8 a f e ~ | 2 cs4 d8 g ~ | 
     g1 ~ | 1 |     
@@ -152,7 +152,7 @@ melodyScher = \relative c'' {
     c2 \tuplet 3/2 { bf4 f df } | c'4 b2. |  
 
     r8 bf4. a4 af | bf a8 af ~ 2 | 
-    r8 b4. bf4 a | b af8 a ~ 2  | 
+    r8 b4. bf4 a | b bf8 a ~ 2  | 
 
     c2 ~ \tuplet 3/2 {  c4 a f } | e2 cs4 d | 
     << \relative c'' { g1 ~ | 1 } \\
@@ -164,10 +164,10 @@ melodyDexter = \relative c'' {
     bf2 af8 c, ef g | r e2.. | 
     
     r8 g4. 4 4 | 4. 8 r g4 8 | 
-    c2 bf8 df, f c' | r bf2.. | 
+    c2 bf8 df, f c' | r a2.. | 
 
     r8 bf4. a4 af | bf a8 af ~ 4 r | 
-    r8 b4. bf4 a | b af8 a ~ 4 r | 
+    r8 b4. bf4 a | b bf8 a ~ 4 r | 
 
     c2 r8 a4 f8 | e2 r8 e4 f8 | 
     g4. ( gs16 a bf2 ) | ef,4. ( f16 g af2 ) |
