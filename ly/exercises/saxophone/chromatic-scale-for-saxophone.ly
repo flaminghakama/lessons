@@ -13,9 +13,12 @@ composerName = "Elaine Paul"
 %{
 
 
-rm chromatic-exercises-for-saxophone.pdf
-lilypond ly/exercises/chromatic-scale-for-saxophone.ly 
-mv chromatic-scale-for-saxophone*.pdf pdf/exercises
+rm chromatic-scale-for-saxophone.pdf ; lilypond ly/exercises/saxophone/chromatic-scale-for-saxophone.ly ; open -a Preview chromatic-scale-for-saxophone*.pdf 
+
+
+rm chromatic-scale-for-saxophone.pdf
+lilypond ly/exercises/saxophone/chromatic-scale-for-saxophone.ly 
+mv chromatic-scale-for-saxophone*.pdf pdf/exercises/saxophone
 
 %}
 

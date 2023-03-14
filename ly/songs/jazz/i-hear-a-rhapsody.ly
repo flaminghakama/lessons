@@ -22,7 +22,7 @@ lilypond ly/songs/jazz/i-hear-a-rhapsody.ly
 mv i-hear-a-rhapsody*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/i-hear-a-rhapsody*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"first draft of first chorus" ; git push 
+git add . ; git commit -m"updated chords" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -216,6 +216,30 @@ melody = \relative c' {
     }
     \score {
         \transpose bf,, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melody
+                    \noPageBreak
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        poet = "Eb Alto Saxophone"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
