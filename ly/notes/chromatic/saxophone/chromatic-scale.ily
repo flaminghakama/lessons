@@ -33,7 +33,7 @@ chromaticExerciseMiddleOne = \relative c'' {
     \time 6/8
     b8 c cs d df c | b4. r  |
     c8 cs d ef d df | c4. r  | 
-    cs8 d ds e df d | df4. r  |
+    cs8 d ds e ef d | df4. r  |
 }
 chromaticExerciseUpperOne = \relative c'' { 
     \accidentalStyle modern-voice
