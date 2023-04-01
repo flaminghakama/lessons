@@ -181,7 +181,7 @@ shoutMelody = \relative c'' {
     ef2.. 8 | r ef8 8 [ 8 ] r gf4.  | 
 
     ef4 \comp #3 | \comp #12 | 
-    \comp #16 | 
+    <>\xf \comp #16 | 
 }
 
 
