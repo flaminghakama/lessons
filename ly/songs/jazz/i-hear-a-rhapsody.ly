@@ -59,7 +59,28 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
                            (/ myStaffSize 20)))
 }
 
-\include "ly/ily/layout-songs.ily"
+\layout { 
+    indent = 1.00\cm
+    short-indent = 0.25\cm
+    \context {
+        \Score
+        \override StaffGrouper.staff-staff-spacing.padding = #0
+        \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+        \override Glissando.minimum-length = #3
+        \override Glissando.springs-and-rods = #ly:spanner::set-spacing-rods
+        \override Glissando.thickness = #1.8
+        \override Glissando.style = #'zigzag
+        %\override StringNumber.stencil = ##f
+    }
+    \context { 
+        \Staff 
+        \RemoveAllEmptyStaves 
+   }
+    \context { 
+        \DrumStaff 
+        \RemoveAllEmptyStaves 
+   }
+}
 \include "ly/ily/hideMelody.ily"
 
 structure = \relative c' { 
@@ -73,7 +94,13 @@ structure = \relative c' {
     \key c \minor
     \time 4/4
 
+    \set Score.currentBarNumber = #30
+    \override Score.BarNumber.break-visibility = ##(#f #f #t)
+
+    \bar ""
+
     s1*3 
+
     \startSection "A"
     \bar "||"
     s1*4 \break 
@@ -173,9 +200,43 @@ solo = \relative c' {
 
     c4. d8 c4.  
 }
-melody = \relative c' {
-    \solo
+soloPhrases = \relative c' { 
+    s8 <>^"1" s2.. |
+    s4. <>^"2" s8 s2 | s1 ||
+
+
+    s2.. <>^"3" s8 | s1 | 
+    s1 | <>^"4" s1 |
+
+    s4. <>^"5" s8 s2 | s1 |
+    s1 | s2.. <>^"6" s8 ||
+
+
+    s1 | s |
+    s1 | <>^"7" s1 | 
+
+    s1 | s | 
+    s1 | s4 s8. <>^"8" s16 s2 ||  
+
+
+    s1 | <>^"9" s1 |
+    s2 s8 <>^"10" s4. | s1 |
+
+    s1 | s8. <>^"11" s16 s2. |
+    s1 | s ||
+
+    <>^"12" s1 | s |
+    s1 | <>^"13" s1 | 
+
+    s1 | s8 <>^"14" s2.. |
+    s8 <>^"15" s2.. | s1 ||
+
+    s2..
 }
+melody = <<
+    \solo
+    \soloPhrases
+>>
 
 
 \header {
