@@ -16,13 +16,12 @@ killPreview
 
 rm i-hear-a-rhapsody*pdf ; lilypond ly/songs/jazz/i-hear-a-rhapsody.ly ; for file in i-hear-a-rhapsody*pdf ; do open -a Preview $file ; done
 
-
 rm i-hear-a-rhapsody*pdf
 lilypond ly/songs/jazz/i-hear-a-rhapsody.ly
 mv i-hear-a-rhapsody*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/i-hear-a-rhapsody*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"updated chords" ; git push 
+git add . ; git commit -m"added phrase numbers" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -235,7 +234,7 @@ soloPhrases = \relative c' {
 }
 melody = <<
     \solo
-    \soloPhrases
+    %\soloPhrases
 >>
 
 
