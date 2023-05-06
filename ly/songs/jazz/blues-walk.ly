@@ -2,7 +2,7 @@
 
 titleLeft = "Blues"
 titleRight = "Walk"
-title = "Blues' Walk"
+title = "Blues Walk"
 composerName = "C. Brown"
 
 \include "../../../../scores/flaming-libs/flaming-paper.ily"
