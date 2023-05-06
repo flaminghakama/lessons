@@ -99,7 +99,14 @@ melody = \relative c'' {
     r8 bf4.-> ~ 4. g8 ( | f ) bf, r4 r4 r8 bf'8-> | 
     r8 bf4-> g8 f4 ef8 cs ( | d ) f g f ~ 4 r4 |
 
-    f8 af4.-> ~ 4 f8 af-> ~ | 4. f8 af f a bf-> |
+    % <<
+    %     \relative c' {
+            f8 af4.-> ~ 4 f8 af-> ~ | 4. f8 af f a bf-> |
+    %     } \\
+    %     \relative c' {
+    %         f8 e4. ~ 4 f8 e-> ~ | 4. f8 e f cf bf-> |
+    %     } 
+    % >>
     R1 | r2 r4 r8 bf8-> ||
 }
 
