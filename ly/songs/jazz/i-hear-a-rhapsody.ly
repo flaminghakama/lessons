@@ -21,7 +21,7 @@ lilypond ly/songs/jazz/i-hear-a-rhapsody.ly
 mv i-hear-a-rhapsody*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/i-hear-a-rhapsody*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"added phrase numbers" ; git push 
+git add . ; git commit -m"reverting phrase numbers" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
