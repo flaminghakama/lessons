@@ -130,7 +130,7 @@ chordsForm = \chordmode {
     \chordsCommon
     b1:m7 | e:7.9- | a:m7 | d:7.9- |
     \chordsCommon
-    g1:m7 | c:7 | b | s | f | s |
+    g1:m7 | c:7 | fs | s | f | s |
 }
 
 \book {
