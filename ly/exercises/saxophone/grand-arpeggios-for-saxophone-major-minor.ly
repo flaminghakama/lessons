@@ -13,10 +13,13 @@ composerName = "Elaine Paul"
 %{
 
 rm grand-arpeggios-for-saxophone-major-minor.pdf
-lilypond ly/grand-arpeggios-for-saxophone-major-minor.ly
-~/git/part-format/bookify-6page.sh grand-arpeggios-for-saxophone-major-minor.pdf grand-arpeggios-for-saxophone-major-minor-printable.pdf
-mv grand-arpeggios-for-saxophone-major-minor.pdf pdf
-mv grand-arpeggios-for-saxophone-major-minor-printable.pdf pdf/printable
+lilypond ly/exercises/saxophone/grand-arpeggios-for-saxophone-major-minor.ly
+# ~/git/part-format/bookify-6page.sh grand-arpeggios-for-saxophone-major-minor.pdf grand-arpeggios-for-saxophone-major-minor-printable.pdf
+
+mv grand-arpeggios-for-saxophone-major-minor.pdf pdf/exercises/saxophone
+# mv grand-arpeggios-for-saxophone-major-minor-printable.pdf pdf/printable
+
+op pdf/exercises/saxophone/grand-arpeggios-for-saxophone-major-minor.pdf
 
 %}
 
@@ -66,7 +69,7 @@ mv grand-arpeggios-for-saxophone-major-minor-printable.pdf pdf/printable
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/grand-arpeggios.ily"
+\include "ly/notes/arpeggio-exercises/grand-for-saxophone.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -97,6 +100,6 @@ mv grand-arpeggios-for-saxophone-major-minor-printable.pdf pdf/printable
     %     \markup \title-page-markup "Saxophone" \composerName \title
     % }
 
-    \include "ly/bookparts/grand-arpeggios-major.ily"
-    \include "ly/bookparts/grand-arpeggios-minor.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-major-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-minor-for-saxophone.ily"
 }

@@ -65,7 +65,7 @@ python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-clarinet.pdf p
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/grand-arpeggios.ily"
+\include "ly/notes/arpeggio-exercises/grand-for-clarinet.ily"
             
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,5 +95,5 @@ python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-clarinet.pdf p
         \markup \title-page-markup "Clarinet" \composerName \title
     }
 
-    \include "ly/bookparts/grand-arpeggios-major-clarinet.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-major-for-clarinet.ily"
 }

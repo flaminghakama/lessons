@@ -13,8 +13,10 @@ composerName = "Elaine Paul"
 %{
 
 rm grand-arpeggios-for-saxophone-major-sixth.pdf
-lilypond ly/grand-arpeggios-for-saxophone-major-sixth.ly 
-mv grand-arpeggios-for-saxophone-major-sixth.pdf pdf
+lilypond ly/exercises/saxophone/grand-arpeggios-for-saxophone-major-sixth.ly 
+mv grand-arpeggios-for-saxophone-major-sixth.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/grand-arpeggios-for-saxophone-major-sixth.pdf 
+
 
 %}
 
@@ -64,7 +66,7 @@ mv grand-arpeggios-for-saxophone-major-sixth.pdf pdf
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/grand-arpeggios.ily"
+\include "ly/notes/arpeggio-exercises/grand-for-saxophone.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,5 +97,5 @@ mv grand-arpeggios-for-saxophone-major-sixth.pdf pdf
     %     \markup \title-page-markup "Saxophone" \composerName \title
     % }
 
-    \include "ly/bookparts/grand-arpeggios-major-sixth.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-major-sixth-for-saxophone.ily"
 }

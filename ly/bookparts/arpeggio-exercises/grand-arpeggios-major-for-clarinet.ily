@@ -127,6 +127,14 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
+                \transpose c ef \grandArpeggioMajorTwo
+            }
+
+            \new ChordNames \transpose c ef { 
+                \grandArpeggioMajorChords 
+            }
+            \new Staff {
+                \include "ly/ily/staff-properties.ily"
                 \transpose c ef \grandArpeggioMajor
             }
         >>
@@ -189,7 +197,7 @@
             }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c' b \grandArpeggioMajorTwo
+                \transpose c' b \grandArpeggioMajor
             }
         >>
     }
@@ -276,6 +284,13 @@
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
                 \transpose c cs \grandArpeggioMajorTwo
+            }
+            \new ChordNames \transpose c cs { 
+                \grandArpeggioMajorChords 
+            }
+            \new Staff {
+                \include "ly/ily/staff-properties.ily"
+                \transpose c cs \grandArpeggioMajor
             }
         >>
     }

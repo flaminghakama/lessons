@@ -13,9 +13,10 @@ composerName = "Elaine Paul"
 %{
 
 rm grand-arpeggios-for-saxophone.pdf
-lilypond ly/grand-arpeggios-for-saxophone.ly 
-mv grand-arpeggios-for-saxophone.pdf pdf
-python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-saxophone.pdf pdf/printable/grand-arpeggios-for-saxophone.pdf manual
+lilypond ly/exercises/saxophone/grand-arpeggios-for-saxophone.ly 
+mv grand-arpeggios-for-saxophone.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/grand-arpeggios-for-saxophone.pdf 
+# python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-saxophone.pdf pdf/printable/grand-arpeggios-for-saxophone.pdf manual
 
 %}
 
@@ -65,7 +66,7 @@ python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-saxophone.pdf 
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/grand-arpeggios.ily"
+\include "ly/notes/arpeggio-exercises/grand-for-saxophone.ily"
             
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,8 +96,8 @@ python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-saxophone.pdf 
         \markup \title-page-markup "Saxophone" \composerName \title
     }
 
-    \include "ly/bookparts/grand-arpeggios-major.ily"
-    \include "ly/bookparts/grand-arpeggios-minor.ily"
-    \include "ly/bookparts/grand-arpeggios-major-sixth.ily"
-    \include "ly/bookparts/grand-arpeggios-minor-diminished.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-major-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-minor-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-major-sixth-for-saxophone.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-minor-diminished-for-saxophone.ily"
 }

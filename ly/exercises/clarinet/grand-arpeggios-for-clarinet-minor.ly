@@ -65,7 +65,7 @@ op pdf/exercises/grand-arpeggios-for-clarinet-minor.pdf
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/grand-arpeggios.ily"
+\include "ly/notes/arpeggio-exercises/grand-for-clarinet.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -105,5 +105,5 @@ op pdf/exercises/grand-arpeggios-for-clarinet-minor.pdf
     %     \markup \title-page-markup "Clarinet" \composerName \title
     % }
 
-    \include "ly/bookparts/grand-arpeggios-minor-clarinet.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-minor-for-clarinet.ily"
 }

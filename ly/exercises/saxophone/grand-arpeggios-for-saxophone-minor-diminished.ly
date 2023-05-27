@@ -64,7 +64,7 @@ mv grand-arpeggios-for-saxophone-minor-diminished.pdf pdf
 \include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
-\include "ly/notes/grand-arpeggios.ily"
+\include "ly/notes/arpeggio-exercises/grand-for-saxophone.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,5 +95,5 @@ mv grand-arpeggios-for-saxophone-minor-diminished.pdf pdf
     %     \markup \title-page-markup "Saxophone" \composerName \title
     % }
 
-    \include "ly/bookparts/grand-arpeggios-minor-diminished.ily"
+    \include "ly/bookparts/arpeggio-exercises/grand-arpeggios-minor-diminished-for-saxophone.ily"
 }
