@@ -12,9 +12,10 @@ composerName = "Elaine Paul"
 
 %{
 
-rm pdf/exercises/grand-arpeggios-for-saxophone-minor.pdf
-lilypond ly/exercises/grand-arpeggios-for-saxophone-minor.ly 
-mv grand-arpeggios-for-saxophone-minor.pdf pdf/exercises
+rm grand-arpeggios-for-saxophone-minor.pdf
+lilypond ly/exercises/saxophone/grand-arpeggios-for-saxophone-minor.ly 
+mv grand-arpeggios-for-saxophone-minor.pdf pdf/exercises/saxophone
+op pdf/exercises/saxophone/grand-arpeggios-for-saxophone-minor.pdf
 
 %}
 

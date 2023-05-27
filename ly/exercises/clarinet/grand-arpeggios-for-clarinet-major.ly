@@ -12,10 +12,11 @@ composerName = "Elaine Paul Alt"
 
 %{
 
-rm pdf/exercises/grand-arpeggios-for-clarinet.pdf
-lilypond ly/exercises/grand-arpeggios-for-clarinet-major.ly 
-mv grand-arpeggios-for-clarinet.pdf pdf/exercises
-python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-clarinet.pdf pdf/printable/grand-arpeggios-for-clarinet.pdf manual
+rm pdf/exercises/clarinet/grand-arpeggios-for-clarinet-major.pdf
+lilypond ly/exercises/clarinet/grand-arpeggios-for-clarinet-major.ly 
+mv grand-arpeggios-for-clarinet-major.pdf pdf/exercises/clarinet
+op pdf/exercises/clarinet/grand-arpeggios-for-clarinet-major.pdf
+# python ~/git/part-format/bookify-8page.py pdf/grand-arpeggios-for-clarinet.pdf pdf/printable/grand-arpeggios-for-clarinet.pdf manual
 
 %}
 
