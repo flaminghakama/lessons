@@ -23,6 +23,7 @@ lilypond ly/songs/jazz/vipers-drag.ly
 mv vipers-drag*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/vipers-drag*pdf ; do open -a Preview $file ; done
 
+./bin/createIndexes.sh 
 git add . ; git commit -m"new song" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
