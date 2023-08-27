@@ -88,11 +88,14 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/pentatonic/saxophone/pentatonic-C-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-E-flat-major.ily"
 
+\include "ly/notes/pentatonic/saxophone/pentatonic-F-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-A-flat-major.ily"
+
 \include "ly/notes/pentatonic/saxophone/pentatonic-F-sharp-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-A-major.ily"
 
-% %\include "ly/notes/pentatonic/saxophone/pentatonic-C-sharp-minor.ily"
-% \include "ly/notes/pentatonic/saxophone/pentatonic-F-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-C-sharp-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-E-major.ily"
 
 % \include "ly/notes/pentatonic/saxophone/pentatonic-B-flat-minor.ily"
 % \include "ly/notes/pentatonic/saxophone/pentatonic-E-flat-minor.ily"
