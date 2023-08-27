@@ -227,7 +227,7 @@ lyricsEnglishOne = \lyricmode {
 }
 %}
 \book {
-  \bookOutputSuffix "english-for-C"
+  \bookOutputSuffix "for-C"
     \header {
         subtitle = ""
         poet = "Concert Pitch"
