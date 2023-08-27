@@ -93,6 +93,28 @@ chordsSong = \chordmode {
     \formChords
 }
 
+intro = \relative c'' {
+    g8 | a2.. g8 | e4.. fs16 g4. fs8 | 
+    b,8 ds4. ~ 8. fs16 g4 ~ | 4.. fs16 g4. fs8 | 
+    a2 ds4 b | e4. ds16 b ds2 | cs1 |
+
+    r4 ds8 b e ds fs4 ~ | 4 ds8 b e4 a ~ | 
+    a4 g2. ~ | 1 | R | 
+    g1 | c,1 ||
+
+
+    g8 af8 \tuplet 3/2 { af8 c bf } f'2 | ef4. c16 ef bf8 c ef4 ~ | 
+    ef1 | d |
+    g8 af c ef f2 ~ | 8 ef16 c f4 ~ 4 af8 g | 
+    ef4 c4 4 4 | 4 ef2. |
+    r2 d ~ | 1 |
+    R1 | g' ~ ||
+     
+
+
+}
+
+
 head = \relative c'' { 
     r4 \tuplet 3/2 { d8 cs b } a b cs e | d2.. b8 | 
     \tuplet 3/2 { cs4 4 8 b } \tuplet 3/2 { cs4 4 8 b } | g1 ~ |
