@@ -1,3 +1,29 @@
+pentatonicExerciseZeroAMinor = \relative c' { 
+    \key a \minor
+    \time 4/4
+    <a a'>1 | <c c'> | <d d'> | <e e'> | <g g'> 
+    \bar "||" 
+    a'1 | c | d | e,,, | g
+    \bar "||" \break
+    \time 3/4
+    a2 c4 | d e g | a2 g4 | e d c | a2. |
+    a'2 c4 | d e g | a2 g4 | e d c | a2. |
+    a'2 g4 | e d c | a2 c4 | d e g | a2. | 
+    a,2 g4 | e d c | a2 c4 | d e g | a2. |
+    \bar "||" \break
+    \time 4/4
+    a,8 d c e  d g e a | g c a2. | 
+    a8 d c e  d g e a | g c a2. | 
+    a8 e g d  e c d a | c g a2. | \break
+    a8 e g d  e c d a | c g a2. |
+    \bar "||" 
+    a8 g c a  d c e d | g e a2. | \break
+    a8 g c a  d c e d | g e a2. | 
+    a8 c g a  e g d e | c d a2. |
+    a8 c g a  e g d e | c d a2. |
+    \bar "|."
+}
+
 pentatonicExerciseOneAMinor = \relative c' { 
     \key a \minor
     \time 4/4
