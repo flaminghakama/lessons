@@ -19,7 +19,7 @@ mv pentatonic-introductory-exercises-for-clarinet.pdf pdf/exercises/clarinet
 op pdf/exercises/clarinet/pentatonic-introductory-exercises-for-clarinet.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding introductory pentatonic exercises 3 and 4 accidentals" ; git push 
+git add . ; git commit -m"initial introductory pentatonic exercises 0, 1, and 2 accidentals" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

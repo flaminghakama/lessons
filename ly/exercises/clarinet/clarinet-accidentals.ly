@@ -9,6 +9,19 @@ composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-markup.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
 
+%{
+
+rm clarinet-accidentals.pdf ; lilypond ly/exercises/clarinet/clarinet-accidentals.ly ; mv clarinet-accidentals.pdf pdf/exercises/clarinet/ ; open -a Preview pdf/exercises/clarinet/clarinet-accidentals.pdf 
+
+
+rm clarinet-accidentals.pdf
+lilypond ly/exercises/clarinet/clarinet-accidentals.ly 
+mv clarinet-accidentals.pdf pdf/exercises/clarinet/
+open -a Preview pdf/exercises/clarinet/clarinet-accidentals.pdf 
+
+
+%}
+
 \header {
     source = ""
     style = ""
@@ -50,6 +63,9 @@ composerName = "D. Elaine Alt"
 \include "ly/ily/clarinet-fingerings.ily"    
 \include "ly/ily/layout.ily"
 
+
+plus = \markup { \fontsize #5 "+" } 
+
 clarTabScale = #0.8
 exerciseOne = \relative c' { 
     \key c \major
@@ -57,7 +73,7 @@ exerciseOne = \relative c' {
     \bar "[|:"
     fs8 [ ( f ] )  fs [ ( f ] ) fs [ ( f ] ) fs [ ( f ] ) 
     \bar ":|][|:"
-    fs8^\midGbAlt [ ( f ] )  fs^"+" [ ( f ] ) fs^"+" [ ( f ] ) fs^"+" [ ( f ] ) 
+    fs8^\midGbAlt [ ( f ] )  fs^\plus [ ( f ] ) fs^\plus [ ( f ] ) fs^\plus [ ( f ] ) 
     \bar ":|][|:" \break
     g8 [ ( fs ] )  g [ ( f ] ) g8 [ ( fs ] )  g [ ( f ] ) 
     \bar ":|][|:"
@@ -75,7 +91,7 @@ exerciseTwo = \relative c' {
     \bar "[|:"
     b8 [ ( bf ] )  b [ ( bf ] ) b [ ( bf ] ) b [ ( bf ] ) 
     \bar ":|][|:"
-    b?8^\lowBAlt [ ( bf ] )  b^"+" [ ( bf ] ) b^"+" [ ( bf ] ) b^"+" [ ( bf ] ) 
+    b?8^\lowBAlt [ ( bf ] )  b^\plus [ ( bf ] ) b^\plus [ ( bf ] ) b^\plus [ ( bf ] ) 
     \bar ":|][|:" \break
     c8 [ ( b ] )  c [ ( bf ] ) c [ ( b ] ) c [ ( bf ] ) 
     \bar ":|][|:"
