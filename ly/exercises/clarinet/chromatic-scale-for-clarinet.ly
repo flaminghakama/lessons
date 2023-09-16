@@ -12,10 +12,13 @@ composerName = "D. Elaine Alt"
 
 %{
 
+rm chromatic-exercises-for-clarinet.pdf ; lilypond ly/exercises/clarinet/chromatic-scale-for-clarinet.ly  ; mv chromatic-scale-for-clarinet*.pdf pdf/exercises/clarinet ; open -a Preview pdf/exercises/clarinet/chromatic-scale-for-clarinet.pdf
+
 
 rm chromatic-exercises-for-clarinet.pdf
-lilypond ly/exercises/chromatic-scale-for-clarinet.ly 
-mv chromatic-scale-for-clarinet*.pdf pdf/exercises
+lilypond ly/exercises/clarinet/chromatic-scale-for-clarinet.ly 
+mv chromatic-scale-for-clarinet*.pdf pdf/exercises/clarinet
+open -a Preview pdf/exercises/clarinet/chromatic-scale-for-clarinet.pdf
 
 %}
 
