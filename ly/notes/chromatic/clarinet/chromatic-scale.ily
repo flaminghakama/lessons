@@ -20,7 +20,7 @@ chromaticExerciseLowerOne = \relative c {
     b8 c cs d df c | b4. r  |
     c8 cs d ef d df | c4. r  | \break
 
-    cs8 d ds e df d | df4. r  |
+    cs8 d ds e ef d | df4. r  |
     d8 ds e f e ef | d4. r  |
     ds8 e f gf^\plus f e | ef4. r  | \break
 
