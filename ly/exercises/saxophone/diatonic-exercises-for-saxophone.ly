@@ -77,6 +77,8 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/diatonic/saxophone/diatonic-D-major.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-E-flat-major.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-A-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-E-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-A-flat-major.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -113,6 +115,8 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     \include "ly/bookparts/diatonic/saxophone/diatonic-B-flat-Major.ily"
     \include "ly/bookparts/diatonic/saxophone/diatonic-A-Major.ily"
     \include "ly/bookparts/diatonic/saxophone/diatonic-E-flat-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-E-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-A-flat-Major.ily"
 }
 
 
