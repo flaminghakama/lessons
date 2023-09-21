@@ -19,7 +19,7 @@ mv diatonic-exercises-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/diatonic-exercises-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"expanding diatonic exercise to E and Ab" ; git push 
+git add . ; git commit -m"expanding diatonic exercise to all keys" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
