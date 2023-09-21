@@ -109,7 +109,7 @@ melodyACommon = \relative c'' {
     df8 bf r4 r c8 bf ~ | 4  af8 c,  df e g bf | 
     
     cf8 df bf cf  af f r4 | d16 ef32 d bf8  ef bf   e16 f32 e bf8  f' ef | 
-    af8 f gf af  a b cs a  | af gf b a  r f df [ <ef c> ~ ] |
+    af8 f gf af  a b cs a  | af? gf b a  r f df [ <ef c> ~ ] |
     <ef c>2. r4 | 
 }
 melodyACommonForFlats = \relative c'' { 
@@ -145,7 +145,7 @@ melody = \relative c'' {
 
     %  Head
     \melodyACommon 
-    R1
+    \melodyAPickup
 
     \melodyB
     \melodyACommon
@@ -158,7 +158,7 @@ melodyForFlats = \relative c'' {
 
     %  Head
     \melodyACommonForFlats 
-    R1
+    \melodyAPickup
 
     \melodyB
     \melodyACommonForFlats
@@ -177,7 +177,7 @@ chordsForm = \chordmode {
     g1:m7.5- | c:7.9- |  
     f1:m7.5- | bf:7.9- |  
     ef1:m7.5- | af:7.9- |  
-    df1:maj7 | s || s ||
+    df1:maj9 | s || s ||
 
     af1:m7 | df:7 | af2:m7 g:7 | gf1:maj7 |   
     bf1:m7 | ef:7 | bf2:m7 a:7 | af1:7 |   
@@ -185,7 +185,7 @@ chordsForm = \chordmode {
     g1:m7.5- | c:7.9- |  
     f1:m7.5- | bf:7.9- |  
     ef1:m7.5- | af:7.9- |  
-    df1:maj7 | s ||
+    df1:maj9 | s ||
 }
 
 \book {
