@@ -58,13 +58,13 @@ structureIntro = \relative c' {
 
     \key df \major 
 
-    \once \override Score.MetronomeMark #'extra-offset = #'( -6 . 1 )
-    \tempo 4=212
+    \once \override Score.MetronomeMark #'extra-offset = #'( -5 . 2 )
+    \tempo 4.=108
 
     \time 6/8
 
     \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \once \override Score.RehearsalMark #'extra-offset = #'( 10 . 0  )
+    \once \override Score.RehearsalMark #'extra-offset = #'( 10 . -2  )
     \startSection "Drums"
     \repeat volta 2 { 
         \bar "[|:"  
@@ -81,7 +81,7 @@ structureIntro = \relative c' {
         }
     }
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( 0 . 0  )
+    \once \override Score.RehearsalMark #'extra-offset = #'( 0 . -0.5  )
     \startSection "Bass"
     \repeat volta 2 { 
         \bar "[|:"  
@@ -99,32 +99,42 @@ structureIntro = \relative c' {
         }
     }
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( 0 . 0  )
+    \once \override Score.RehearsalMark #'extra-offset = #'( 0 . -0.5 )
     \startSection "Melody"
     s2.*4 \break
     s2.*4 \break
 
     \startSection ""
     s2.*4 \break
-    s2.*4 \break
+    s2.*3 
+    <>_\markup \huge "Fine"
+    s2. \break
 
     \once \override Score.RehearsalMark #'extra-offset = #'( 4 . 2 )
     \startSection "Drums"
     s2.*4 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark #'extra-offset = #'( 1 . 2  )
-    \startSection "Modulation"
-
-    \once \override Score.MetronomeMark #'extra-offset = #'( -3 . 0.4 )
+    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . 1.4 )
+    \startSectionWithLabel 
+        "Modulation"
+        \markup {
+            \lower #0.4 \concat {
+                \tiny \general-align #Y #DOWN \note {4} #1
+                \tiny " = 212"
+            }
+        }
+    \once \override Score.MetronomeMark #'extra-offset = #'( -4 . 0.4 )
     \tempo \markup {
-        \concat {
+        \lower #1 \concat {
+            " "
             \smaller \general-align #Y #DOWN \note {4.} #1
             " = "
             \smaller \general-align #Y #DOWN \note {2} #1
-         }
+        }
     }
     \time 4/4
+    \bar "||"
     s1*3
 }
 structureHead = \relative c' { 
@@ -133,13 +143,11 @@ structureHead = \relative c' {
     
     %\override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
 
-    \tempo 4=212
-
     s1
 
     \startSectionNoBarline "A"
     \repeat volta 2 { 
-        \bar "[|:"
+        \bar "S[|:"
         s1*2 \break
         s1*3 \break
         s1*2  }
@@ -161,7 +169,20 @@ structureHead = \relative c' {
     \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
     \startSection "A"
     s1*4 \break
-    s1*4
+    s1*3 
+    <>_\markup \center-column {
+        \line { 
+            "Solos: D.S."
+            \box "A" \box "A" \box "B" \box "A"  
+        }
+        " "
+        \line { 
+            "Head: D.S."
+            \box "A" \box "A" \box "B" \box "A"
+        }
+        "then D.C. al Fine"
+    } 
+    s1 
     \bar "|."
 }
 structure = \relative c' { 
@@ -192,11 +213,29 @@ melodyIntroBassline = \relative c' {
     df,4 af'8 df8 [ 8 ] r8 | r8 df, [ af' ]  df [ cf cf ]
     df,4 af'8 df8 [ 8 ] r8 | r8 df, [ af' ]  df [ cf cf ]
 }
+melodyIntroTrumpetForC = \relative c'' {
+    r4. r8 bf c ||
+    df4. ~ 8 bf g | e4.  df'8 c bf |
+    cf4 8 r8 ef, \tieUp bf' ~ | 4. ~ 4 \tieNeutral af8 | 
+
+
+    a8 4 r4. | r4 df,8 af'?4*1/2 
+        \once \override Script.script-priority = #-100
+        <>^\turn^\markup { \flat } s8 gf8 | 
+    f2. | r4. r8 bf c ||
+    
+    df4. ~ 8 bf g | e4.  df'8 c bf |
+    cf4 8 r8 ef, bf' ~ | 4. ~ 4 af8 | 
+    a4. df,4 af'8 ~ | 4. ~ 4 e8 | 
+    f8 ef? f ~ 4. ~ | 2. ||  
+}
 melodyIntroTrumpet = \relative c'' {
     r4. r8 bf c ||
     df4. ~ 8 bf g | e4.  df'8 c bf |
-    cf4 8 r8 ef, bf' ~ | 4. ~ 4 af8 | 
-    a8 8 r r4. | r4 df,8 af'8 ~ 32 bf af g gf8 | 
+    cf4 8 r8 ef, \tieUp bf' ~ | 4. ~ 4 \tieNeutral af8 | 
+    bff8 4 r4. | r4 df,8 af'4*1/2 
+        \once \override Script.script-priority = #-100
+        <>^\turn^\markup { \flat } s8 gf8 | 
     f2. | r4. r8 bf c ||
     
     df4. ~ 8 bf g | e4.  df'8 c bf |
@@ -210,7 +249,7 @@ melodyIntro = {
     \compp #8
     \melodyIntroBassline    
     \clef treble
-    \melodyIntroTrumpet
+    \melodyIntroTrumpetForC
     <>\xmp
     \compp #8
 
@@ -229,21 +268,29 @@ melodyIntroFlats = {
     \comp #12
 }
 melodyAPickup = \relative c' { 
-    r8 c ef16 f32 ef c8  df8 ef f af  ||
+    r8 c ef8*1/3 [ s8*2/3 \mordent c8 ]  df8 ef f af  ||
 }
 melodyACommon = \relative c'' { 
     \melodyAPickup
     df8 bf r4 r c8 bf ~ | 4  af8 c,  df e g bf | 
     
-    cf8 df bf cf  af f r4 | d16 ef32 d bf8  ef bf   e16 f32 e bf8  f' ef | 
+    cf8 df bf cf  af f r4 | d8*1/3 [ s8*2/3 \mordent bf8  ef8*1/3 s8*2/3 \mordent bf8 ]   e8*1/3 [ s8*2/3 \mordent bf8 f' ef ] | 
     af8 f gf af  a b cs a  | af? gf b a  r f df [ <ef c> ~ ] |
     <ef c>2. r4 | 
 }
-melodyACommonForFlats = \relative c'' { 
+melodyACommonForBb = \relative c'' { 
     \melodyAPickup
     df8 bf r4 r c8 bf ~ | 4  af8 c,  df e g bf | 
     
-    cf8 df bf cf  af f r4 | d16 ef32 d bf8  ef bf   e16 f32 e bf8  f' ef | 
+    cf8 df bf cf  af f r4 | d8*1/3 [ s8*2/3 \mordent bf8  ef8*1/3 s8*2/3 \mordent bf8 ]   e8*1/3 [ s8*2/3 \mordent bf8  f' ef ] | 
+    af8 f gf af  bff cf df bff  | af gf cf bff  r f df [ <ef c> ~ ] |
+    <ef c>2. r4 | 
+}
+melodyACommonForEb = \relative c'' { 
+    \melodyAPickup
+    df8 bf r4 r c8 bf ~ | 4  af8 c,  df e g bf | 
+    
+    cf8 df bf cf  af f r4 | \stemDown d8*1/3 [ s8*2/3 \mordent bf8  ef8*1/3 s8*2/3 \mordent bf8 ] \stemNeutral  e8*1/3 [ s8*2/3 \mordent bf8  f' ef ] | 
     af8 f gf af  bff cf df bff  | af gf cf bff  r f df [ <ef c> ~ ] |
     <ef c>2. r4 | 
 }
@@ -280,17 +327,31 @@ melody = \relative c'' {
     \comp #4
 }
 
-melodyForFlats = \relative c'' { 
+melodyForBb = \relative c'' { 
     \accidentalStyle default
     %  Intro
     \melodyIntroFlats
 
     %  Head
-    \melodyACommonForFlats 
+    \melodyACommonForBb 
     \melodyAPickup
 
     \melodyB
-    \melodyACommonForFlats
+    \melodyACommonForBb
+    \comp #4
+}
+
+melodyForEb = \relative c'' { 
+    \accidentalStyle default
+    %  Intro
+    \melodyIntroFlats
+
+    %  Head
+    \melodyACommonForEb 
+    \melodyAPickup
+
+    \melodyB
+    \melodyACommonForEb
     \comp #4
 }
 
@@ -373,7 +434,7 @@ chordsForm = \chordmode {
         subtitle = ""
     }
     \score {
-        \transpose c g \transpose bf, c <<
+        \transpose c c \transpose bf, c <<
             \new ChordNames \transpose c c { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm 
@@ -385,7 +446,7 @@ chordsForm = \chordmode {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \melodyForFlats
+                    \melodyForBb
                 >>
                 \noPageBreak
             }
@@ -403,7 +464,7 @@ chordsForm = \chordmode {
         subtitle = ""
     }
     \score {
-        \transpose c g \transpose ef c <<
+        \transpose c c \transpose ef, c <<
             \new ChordNames \transpose c c { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm 
@@ -415,7 +476,7 @@ chordsForm = \chordmode {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \melodyForFlats
+                    \melodyForEb
                 >>
                 \noPageBreak
             }
