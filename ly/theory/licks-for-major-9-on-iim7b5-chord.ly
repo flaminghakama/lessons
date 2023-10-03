@@ -91,7 +91,7 @@ exampleSeven = \relative c'' {
 }
 exampleSevenFixed = \relative c'' { 
     r8 c bf [ af ] g f ef c | ef' c d bf  af g f d | 
-    f'8 ef df? c bf a g f | e g bf c ef df4. | 
+    f'8 ef df? c bf a g f | e g bf c ef? df4. | 
 }
 exampleOne = \relative c'' { 
     c4 af f ef8 af ~ | 4 f d c8 g' ~ | 4 a bf a8 df | r df c2. |
@@ -151,16 +151,8 @@ exampleFive = \relative c' {
             \exampleChords
             \exampleChords
             \exampleChords
-
             \exampleChords
             \exampleChords
-
-            \exampleChords
-            \exampleChords
-
-            \exampleChords
-            \exampleChords
-
             \exampleChords
             \exampleChords
             \exampleChords
@@ -169,7 +161,8 @@ exampleFive = \relative c' {
         \new Staff {
             \numericTimeSignature
             \key f \minor
-            \mark "1. Worked First Time"
+            %\mark "1. Worked First Time"
+            \mark "1."
             \exampleOne \break
             \mark "2."
             \exampleTwo \break
@@ -179,27 +172,15 @@ exampleFive = \relative c' {
             \exampleFour \break
             \mark "5."
             \exampleFive \break
-
-            \mark "6. Did Not Work"
-            \exampleSix \break
-            \mark "6. Fixed"
+            \mark "6."
             \exampleSixFixed \break
-
-            \mark "7. Did Not Work"
-            \exampleSeven \break
-            \mark "7. Fixed"
+            \mark "7."
             \exampleSevenFixed \break
-            
-            \mark "8. Did Not Work"
-            \exampleEight \break
-            \mark "8. Fixed"
+            \mark "8."
             \exampleEightFixed \break
-            
-            \mark "9. Did Not Work"
-            \exampleNine \break
-            \mark "9. Fixed"
+            \mark "9."
             \exampleNineFixed \break
-            \mark "9. Fixed Another Way"
+            \mark "9. Another Way"
             \exampleNineFixedAgain \break
         }
     >>
