@@ -239,63 +239,85 @@ melody = \relative c'' {
     }
 }
 
-% \book {
-%   \bookOutputSuffix "for-Bb"
-%     \header {
-%         title = \title
-%         composer = \composerName
-%         poet = "Bb Lead Sheet"
-%         instrumentName = \poet
-%         subtitle = ""
-%     }
-%     \score {
-%         \transpose bf, c <<
-%             \new ChordNames \transpose c c { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsForm
-%             }
-%             \new Staff 
-%             \with { \consists "Merge_rests_engraver" } 
-%             \keepWithTag #'(C) \transpose c c {
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 <<
-%                     \structure
-%                     \melody
-%                 >>
-%                 \noPageBreak
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm 
+            }
+            \new Staff 
+            \with { \consists "Merge_rests_engraver" } 
+            \keepWithTag #'(C) \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \melody
+                >>
+                \noPageBreak
+            }
+            % \new Staff 
+            % \with { \consists "Merge_rests_engraver" } 
+            % \keepWithTag #'(C) \transpose c c {
+            %     \include "ly/ily/staff-properties.ily"
+            %     \autoPageBreaksOff
+            %     <<
+            %         \structure
+            %         \bassline
+            %     >>
+            %     \noPageBreak
+            % }
+        >>
+    }
+}
 
-% \book {
-%   \bookOutputSuffix "for-Eb"
-%     \header {
-%         title = \title
-%         composer = \composerName
-%         poet = "Eb Lead Sheet"
-%         instrumentName = \poet
-%         subtitle = ""
-%     }
-%     \score {
-%         \transpose ef, c <<
-%             \new ChordNames \transpose c c { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsForm
-%             }
-%             \new Staff 
-%             \with { \consists "Merge_rests_engraver" } 
-%             \keepWithTag #'(C) \transpose c c {
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 <<
-%                     \structure
-%                     \melody
-%                 >>
-%                 \noPageBreak
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose ef c <<
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm 
+            }
+            \new Staff 
+            \with { \consists "Merge_rests_engraver" } 
+            \keepWithTag #'(C) \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \melody
+                >>
+                \noPageBreak
+            }
+            % \new Staff 
+            % \with { \consists "Merge_rests_engraver" } 
+            % \keepWithTag #'(C) \transpose c c {
+            %     \include "ly/ily/staff-properties.ily"
+            %     \autoPageBreaksOff
+            %     <<
+            %         \structure
+            %         \bassline
+            %     >>
+            %     \noPageBreak
+            % }
+        >>
+    }
+}
 
