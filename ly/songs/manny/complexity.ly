@@ -98,10 +98,10 @@ chordsForm = \chordmode {
     d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
     d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
         d2:m7.5- g:7 | c1:maj7 ||
-        d2:m7 g:7 | a2:m7.5- e:m7.5- ||
+        d2:m7 g:7 | a2:m7.5- d:aug7.9+ ||
     
     g1.:m9 | fs:m9 | f:m9 | fs2:m9 b:7 | 
-    f2:7 bf:7 | fs:m7 b:7 | f:7 e4:m7.5- a:7.5-.9- || 
+    f2:m7 bf:7 | fs:7 b:7 | f4:m7 bf:7 e:m7.5- a:7.5-.9- || 
 
     d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
     d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
@@ -111,7 +111,7 @@ chordsForm = \chordmode {
 }
 
 firstEndingLick = \relative c' {
-    c16 ef \tuplet 3/2 { e16 g b }  d df c e   b bf c a'  fs4 
+    \tuplet 6/4 { e16 c ef  e g b }  d df c e   b bf c a'  fs4 
 }
 
 
@@ -168,11 +168,11 @@ melodyAFirstEnding = \relative c'' {
 }
 melodyASecondEnding = \relative c'' { 
     r4  \tuplet 3/2 { b16 [ c b } bf16 d ]  a8 af16 g r4 |
-    a16 gs a b  c b c d  e ds e gs  a4 ||
+    a16 gs a b  c b c d  a'16 [ d, \tuplet 3/2 { fs16 a d ] }  bf16 fs a af   ||
 }
 melodyAThirdEnding = \relative c'' { 
     r4  \tuplet 3/2 { b16 [ c b } bf16 d ]  a8 af16 g r4 |
-    a16 gs a b  c b c d  a'16 [ d, \tuplet 3/2 { fs16 a d ] }  bf16 fs a af   ||
+    \firstEndingLick
 }
 melodyB = \relative c'' { 
     g4 8 bf d f  a8 bf a ~ 4. | 
@@ -184,7 +184,6 @@ melodyB = \relative c'' {
 
     r4  \tuplet 3/2 { cs'16 [ ds cs } c16 b ]  bf16 fs g gs  a4 |
     r4 bf16 af c, ef  g16 [ \tuplet 3/2 { d'32 e d } b16 d ]  cs4 | 
-
 }
 
 melody = \relative c'' { 

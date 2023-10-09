@@ -1,3 +1,7 @@
+plus = \markup { \fontsize #5 "+" } 
+
+plusLow = \markup { \translate #'(0 . -1.6) \fontsize #5 "+" }
+  
 chromaticExerciseBottomOne = \relative c' { 
     \accidentalStyle modern-voice
     \accidentalStyle Score.default
@@ -15,23 +19,23 @@ chromaticExerciseLowerOne = \relative c' {
     \key c \major
     \time 6/8
     d8 ds e f e ef | d4. r  |
-    ds8 e f gf f e | ef4. r  | 
-    e8 f fs g gf f | e4. r | \break
+    ds8 e f gf^\plusLow f e | ef4. r  | 
+    e8 f fs^\plus g gf^\plusLow f | e4. r | \break
  
-    f8 fs g af g gf | f4. r  |
+    f8 fs^\plusLow g af g gf^\plusLow | f4. r  |
     fs8 g gs a af g | gf4. r  | 
     g8 gs a bf a af | g4. r  | \break
 
     gs8 a as b bf a | af4. r  |
-    a8 as b c b bf | a4. r  | 
-    as8 b c df c b | bf4. r  
+    a8 as b c^\plusLow b bf | a4. r  | 
+    as8 b c^\plusLow df c^\plusLow b | bf4. r  
     \bar "|."
 }
 chromaticExerciseMiddleOne = \relative c'' { 
     \accidentalStyle modern-voice
     \key c \major
     \time 6/8
-    b8 c cs d df c | b4. r  |
+    b8 c^\plusLow cs d df c^\plusLow | b4. r  |
     c8 cs d ef d df | c4. r  | 
     cs8 d ds e ef d | df4. r  |
 }
@@ -41,16 +45,16 @@ chromaticExerciseUpperOne = \relative c'' {
     \time 6/8
 
     d8 ds e f e ef | d4. r | 
-    ds8 e f gf f e | ef4. r | 
-    e8 f fs g gf f | e4. r | \break
+    ds8 e f gf^\plusLow f e | ef4. r | 
+    e8 f fs^\plus g gf^\plusLow f | e4. r | \break
 
-    f8 fs g af g gf | f4. r | 
+    f8 fs^\plus g af g gf^\plusLow | f4. r | 
     fs8 g gs a af g | gf4. r | 
     g8 gs a bf a af | g4. r | \break
 
     gs8 a as b bf a | af4. r | 
-    a8 as b c b bf | a4. r | 
-    as8 b c df c b | bf4. r  
+    a8 as b c^\plusLow b bf | a4. r | 
+    as8 b c^\plusLow df c^\plusLow b | bf4. r  
     \bar "|."
 }
 chromaticExerciseTopOne = \relative c''' { 
@@ -58,7 +62,7 @@ chromaticExerciseTopOne = \relative c''' {
     \key c \major
     \time 6/8
 
-    b8 c cs d df c | b4. r  |
+    b8 c^\plusLow cs d df c^\plusLow | b4. r  |
     c8 cs d ef d df | c4. r  | 
     cs8 d ds e df d | df4. r  | 
     d8 ds e f e ef | d4. r | 
