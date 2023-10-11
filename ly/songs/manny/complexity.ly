@@ -56,34 +56,62 @@ for file in pdf/songs/manny/complexity*.pdf ; do op $file ; done
 
 structure = \relative c' { 
     \key c \major 
+    \once \override Score.MetronomeMark #'extra-offset = #'( -7 . -2.5 )
     \tempo 4=240
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+    \once \override Score.RehearsalMark #'extra-offset = #'( -2.5 . -3 )
     \startSection "A"
     \time 4/4
     \bar "[|:"
     \repeat volta 2 { 
+        s8. 
+    \once \override Score.MetronomeMark #'extra-offset = #'( -3 . 1 )
+            \tempo \markup { \bold \huge "Bop" } s16 s2. | s1*3
         s1*4 \break
-        s1*2 
+        s1*4
+        s1*2 \break
     }
     \alternative { 
         { s1*2 \bar ":|]" }
         { s1*2 \break }    
     }
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( -2 . 0 )
+    \once \override Score.RehearsalMark #'extra-offset = #'( -6.5 . 5.5 )
     \startSection "B"
-    \time 12/8
-    s1.*3 
-    \bar "||"
-    \time 4/4
-    s1*4 
+    \once \override Score.MetronomeMark #'extra-offset = #'( -3.5 . 0.5 )
+    \tempo \markup \line {
+        \lower #0.01 \concat {
+            " "
+            \smaller \general-align #Y #DOWN \note {2} #1
+            " = "
+            \smaller \general-align #Y #DOWN \note {4.} #1
+        }
+        \bold \huge "Afro-latin" 
+    }
+    \time 6/8
+    s2.*6 \break
 
+    \once \override Score.MetronomeMark #'extra-offset = #'( -4 . 1 )
+    \tempo \markup {
+        \lower #0.01 \concat {
+            " "
+            \smaller \general-align #Y #DOWN \note {4.} #1
+            " = "
+            \smaller \general-align #Y #DOWN \note {2} #1
+        }
+        \bold \huge "Bop" 
+    }
+
+    \time 4/4
+    \bar "||"
+    s1*8 
     \pageBreak
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . -3 )
     \startSection "A"
+    s1*4 \break
+    s1*4 \break
     s1*4 \break
     s1*4
     \bar "|."
@@ -94,24 +122,59 @@ chordsForm = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
 
-    d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
-    d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
-    d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
-        d2:m7.5- g:7 | c1:maj7 ||
-        d2:m7 g:7 | a2:m7.5- d:aug7.9+ ||
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7 | 
+        c1:maj7 | s ||
+        a1:m7.5- | d:aug7.9+ ||
     
-    g1.:m9 | fs:m9 | f:m9 | fs2:7 b:7 | 
-    f2:m7 bf:7 | fs:7 b:7 | f4:m7 bf:7 e:m7.5- a:7.5-.9- || 
+    g2.:m9 | s | 
+    fs2.:m9 | s | 
+    f2.:m9 | s | 
 
-    d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
-    d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
-    d2:m7.5- g:7.5-.9- | e:m7.5- a:7.5-.9- |
-    d2:m7.5- g:7 | c1:maj7 ||
+    fs1:7 | b:7 | 
+    f1:m7 | bf:7 | 
+    fs1:7 | b:7 | 
+    f2:m7 bf:7 | e:m7.5- a:7.5-.9- || 
 
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7 | c1:maj7  | s ||
+}
+chordsFormForFlats = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7 | 
+        c1:maj7 | s ||
+        a1:m7.5- | d:aug7.9+ ||
+    
+    g2.:m9 | s | 
+    gf2.:m9 | s | 
+    f2.:m9 | s | 
+
+    gf1:7 | cf:7 | 
+    f1:m7 | bf:7 | 
+    gf1:7 | cf:7 | 
+    f2:m7 bf:7 | e:m7.5- a:7.5-.9- || 
+
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7.5-.9- | e:m7.5- | a:7.5-.9- |
+    d1:m7.5- | g:7 | c1:maj7  | s ||
 }
 
 firstEndingLick = \relative c' {
-    \tuplet 6/4 { e16 c ef  e g b }  d df c e   b bf c a'  fs4 
+    \tuplet 3/2 4 { e?8 c ef  e g b }  d8 df c e |  b bf c a'  fs2 
+}
+firstEndingLickForFlats = \relative c' {
+    \tuplet 3/2 4 { e?8 c ef  e g b }  d8 df c e |  cf bf c a'?  fs2 
 }
 
 
@@ -119,25 +182,22 @@ bassACommon = \relative c' {
     d2 a4 af | g2 ds | e g4 gs | a2  e4 ef |
     d2 a4 af | g2 ds | e g4 gs | a2  e4 ef |
     d2 a4 af | g2 ds | e g4 gs | a2  e4 ef |
+    d2 a4 af | g2 d | 
 }
 bassAFirstEnding = \relative c' { 
-    d2 a4 af | g2 d | 
     \transpose c c, \firstEndingLick
 }
 bassASecondEnding = \relative c' { 
-    d2 a4 af | g2 d | 
     a8. e16  c8 cs  d g4. || 
 }
 bassAThirdEnding = \relative c' { 
     \bassAFirstEnding
 }
 bassB = \relative c' { 
-
-    g4 d' g  a8 g a ~ 4. |     
-    fs4 cs' fs  gs8 fs gs ~ 4. |     
-    f4 c' f  g8 f g ~ 4. |     
-    \comp #4
-    \comp #16
+    g8 d' g  a g a ~ | 2. |     
+    fs8 cs' fs  gs fs gs ~  | 2. |     
+    f4 c' f  g f g ~ | 2. |     
+    \comp #32
 }
 
 bassline = \relative c'' { 
@@ -151,39 +211,89 @@ bassline = \relative c'' {
 }
 
 
-melodyACommon = \relative c'' { 
-    r4  \tuplet 3/2 { b16 [ c b } bf16 d ]  a8 af16 g r4 |
-    r8. d'16  e d b d   cs bf g gs  a4 | 
-
-    r4  \tuplet 3/2 { b16 [ c b } bf16 d ]  a8 af16 g r4 |
-    r8. d'16  e d b d   cs bf g gs  a4 | 
-
-    r4  \tuplet 3/2 { b16 [ c b } bf16 d ]  a8 af16 g r4 |
-    r8. d'16  e d b d   cs bf g gs  a4 | 
-
+melodyALickOne = \relative c'' { 
+    r2  \tuplet 3/2 { b8 c b } bf8 d | a4 af8 g r2 |
 }
-melodyAFirstEnding = \relative c'' { 
-    r4  \tuplet 3/2 { b16 [ c b } bf16 d ]  a8 af16 g r4 |
+melodyALickOneRepeat = \relative c'' { 
+    r2  \tuplet 3/2 { b?8 c b } bf8 d | a4 af8 g r2 |
+}
+melodyALickTwo = \relative c' { 
+    r4. d'8  e d b d   cs bf g gs  a2 | 
+}
+
+melodyACommon = \relative c'' { 
+    \melodyALickOne
+    \melodyALickTwo
+    \melodyALickOneRepeat
+    \melodyALickTwo
+    \melodyALickOneRepeat
+    \melodyALickTwo
+    \melodyALickOneRepeat
+}
+melodyAFirstEnding = { 
     \firstEndingLick
 }
-melodyASecondEnding = \relative c'' { 
-    r4  \tuplet 3/2 { b16 [ c b } bf16 d ]  a8 af16 g r4 |
-    a16 gs a b  c b c d  a'16 [ d, \tuplet 3/2 { fs16 a d ] }  bf16 fs a af   ||
+secondEndingLick = \relative c'' { 
+    a8 gs a b  c b c d  | a' d, \tuplet 3/2 { fs8 a d }  bf8 fs a af  ||
+}
+melodyASecondEnding = { 
+    \secondEndingLick
+}
+melodyASecondEndingForEb = { 
+    \transpose c c, \secondEndingLick
 }
 melodyAThirdEnding = \relative c'' { 
-    r4  \tuplet 3/2 { b16 [ c b } bf16 d ]  a8 af16 g r4 |
     \firstEndingLick
 }
-melodyB = \relative c'' { 
-    g4 8 bf d f  a8 bf a ~ 4. | 
-    fs,4 8 a cs e  gs8 a gs ~ 4. | 
-    f,4 8 af c ef  g8 af g ~ 4. | 
+melodyBPartOne = \relative c'' { 
+    g4 8  bf d f  | a bf a ~ 4. | 
+    fs,4 8  a cs e | gs a gs ~  4. | 
+    f,4 8  af c ef | g af g ~  4. | 
+}
+melodyBPartOneForFlats = \relative c'' { 
+    g4 8  bf d f  | a bf a ~ 4. | 
+    gf,4 8  bff df ff | af bff af ~  4. | 
+    f,?4 8  af c ef | g af g ~  4. | 
+}
+melodyBLickOne = \relative c'' { 
+    r2 \tuplet 3/2 { cs8 ds cs } c8 b |  bf8 fs g gs  a2 |
+}
+melodyBLickOneForFlats = \relative c'' { 
+    r2 \tuplet 3/2 { df8 ef df } c8 cf |  bf8 gf g af  bff2 |
+}
+melodyBPartTwo = { 
+    \melodyBLickOne
+    \relative c'' {
+        r2  bf8 af c, ef  | \grace { fs8 ( } g8 ) c gf c  f,2 | 
+    }  
 
-    r4  \tuplet 3/2 { cs,16 [ ds cs } c16 b ]  bf16 fs g gs  a4 |
-    r4 bf16 af c, ef  \grace { fs8 ( } g16 ) c fs, c'  f,4 |   
+    \melodyBLickOne
+    \relative c'' {
+        r2  bf8 af c, ef  | g8 [ \tuplet 3/2 { d'16 e d ] } b8 d  cs2 | 
+    }
+}
+melodyBPartTwoForFlats = { 
+    \melodyBLickOneForFlats
+    \relative c'' {
+        r2  bf8 af c, ef  | \grace { fs8 ( } g8 ) c gf c  f,2 | 
+    }  
 
-    r4  \tuplet 3/2 { cs'16 [ ds cs } c16 b ]  bf16 fs g gs  a4 |
-    r4 bf16 af c, ef  g16 [ \tuplet 3/2 { d'32 e d } b16 d ]  cs4 | 
+    \melodyBLickOneForFlats
+    \relative c'' {
+        r2  bf8 af c, ef  | g8 [ \tuplet 3/2 { d'16 e? d ] } b?8 d  cs2 | 
+    }
+}
+melodyB = { 
+    \melodyBPartOne
+    \melodyBPartTwo
+}
+melodyBForBb = \relative c'' { 
+    \melodyBPartOneForFlats
+    \melodyBPartTwoForFlats
+}
+melodyBForEb = \relative c'' { 
+    \transpose c c, \melodyBPartOneForFlats
+    \melodyBPartTwoForFlats
 }
 
 melody = \relative c'' { 
@@ -194,6 +304,24 @@ melody = \relative c'' {
     \melodyB
     \melodyACommon
     \melodyAThirdEnding
+}
+melodyForBb = \relative c'' { 
+    \accidentalStyle default
+    \melodyACommon
+    \firstEndingLickForFlats
+    \melodyASecondEndingForEb
+    \melodyBForBb
+    \melodyACommon
+    \firstEndingLickForFlats
+}
+melodyForEb = \relative c'' { 
+    \accidentalStyle default
+    \melodyACommon
+    \firstEndingLickForFlats
+    \melodyASecondEndingForEb
+    \melodyBForEb
+    \melodyACommon
+    \firstEndingLickForFlats
 }
 
 
@@ -251,7 +379,7 @@ melody = \relative c'' {
         \transpose bf, c <<
             \new ChordNames \transpose c c { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
+                \chordsFormForFlats
             }
             \new Staff 
             \with { \consists "Merge_rests_engraver" } 
@@ -260,7 +388,7 @@ melody = \relative c'' {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \melody
+                    \melodyForBb
                 >>
                 \noPageBreak
             }
@@ -289,10 +417,10 @@ melody = \relative c'' {
         subtitle = ""
     }
     \score {
-        \transpose ef c <<
+        \transpose ef, c <<
             \new ChordNames \transpose c c { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
+                \chordsFormForFlats
             }
             \new Staff 
             \with { \consists "Merge_rests_engraver" } 
@@ -301,7 +429,7 @@ melody = \relative c'' {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \melody
+                    \melodyForEb
                 >>
                 \noPageBreak
             }
