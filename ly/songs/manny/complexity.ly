@@ -60,13 +60,13 @@ structure = \relative c' {
     \tempo 4=240
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark #'extra-offset = #'( -2.5 . -3 )
+    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . -2.5 )
     \startSection "A"
     \time 4/4
     \bar "[|:"
     \repeat volta 2 { 
         s8. 
-    \once \override Score.MetronomeMark #'extra-offset = #'( -3 . 1 )
+    \once \override Score.MetronomeMark #'extra-offset = #'( -2.5 . 1 )
             \tempo \markup { \bold \huge "Bop" } s16 s2. | s1*3
         s1*4 \break
         s1*4
@@ -178,26 +178,27 @@ firstEndingLickForFlats = \relative c' {
 }
 
 
-bassACommon = \relative c' { 
-    d2 a4 af | g2 ds | e g4 gs | a2  e4 ef |
-    d2 a4 af | g2 ds | e g4 gs | a2  e4 ef |
-    d2 a4 af | g2 ds | e g4 gs | a2  e4 ef |
-    d2 a4 af | g2 d | 
+bassACommon = \relative c { 
+    d2 a'4 af | g2 ds | e g4 gs | a2  e4 ef | \break
+    d2 a'4 af | g2 ds | e g4 gs | a2  e4 ef | \break
+    d2 a'4 af | g2 ds | e g4 gs | a2  e4 ef |
+    d2 a'4 af | g2 d | 
 }
 bassAFirstEnding = \relative c' { 
     \transpose c c, \firstEndingLick
 }
 bassASecondEnding = \relative c' { 
-    a8. e16  c8 cs  d g4. || 
+    a4. e8  c4 cs  | d g2. || 
 }
 bassAThirdEnding = \relative c' { 
     \bassAFirstEnding
 }
-bassB = \relative c' { 
-    g8 d' g  a g a ~ | 2. |     
-    fs8 cs' fs  gs fs gs ~  | 2. |     
-    f4 c' f  g f g ~ | 2. |     
-    \comp #32
+bassB = \relative c { 
+    g4 d' g  | a8 g a ~ 4. |     
+    fs,4 cs' fs  | gs8 fs gs ~ 4. |     
+    f,4 c' f  | g8 f g ~ 4. |     
+    <>\xmf \comp #16 \break
+    <>\xmf \comp #16
 }
 
 bassline = \relative c'' { 
@@ -348,6 +349,48 @@ melodyForEb = \relative c'' {
                 <<
                     \structure
                     \melody
+                >>
+                \noPageBreak
+            }
+            % \new Staff 
+            % \with { \consists "Merge_rests_engraver" } 
+            % \keepWithTag #'(C) \transpose c c {
+            %     \include "ly/ily/staff-properties.ily"
+            %     \autoPageBreaksOff
+            %     <<
+            %         \structure
+            %         \bassline
+            %     >>
+            %     \noPageBreak
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "Bass-for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Bass"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose c c <<
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm 
+            }
+            \new Staff 
+            \with { \consists "Merge_rests_engraver" } 
+            \keepWithTag #'(C) \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \clef bass 
+                <<
+                    \structure
+                    \bassline
                 >>
                 \noPageBreak
             }
