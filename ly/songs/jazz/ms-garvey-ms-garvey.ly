@@ -27,11 +27,11 @@ atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scrip
 
 \paper {
 
-  top-margin = #2
+  top-margin = #4
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -97,12 +97,12 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
  
-    f2:m d:m7.5- | g:m7 c:7 |
-    f2:m d:m7.5- | g:m7 c:7 ||
+    f2:m d:m7.5- | g:m7.5- c:7 |
+    f2:m d:m7.5- | g:m7.5- c:7 ||
 
     
-    f2:m d:m7.5- | g:m7 c:7 |
-    f2:m d:m7.5- | g:m7 c:7 |
+    f2:m d:m7.5- | g:m7.5- c:7 |
+    f2:m d:m7.5- | g:m7.5- c:7 |
 
     f1:m | s | 
     c1:7 | s || 
@@ -120,20 +120,17 @@ melodyLickPickup = \relative c'' {
 melodyLickOne = \relative c'' { 
     \melodyLickPickup 
     r4 c8 8  r4 \tuplet 3/2 { r8 f, af } | 
-    \override Script.padding = #1
     \tuplet 3/2 { bf8 8 af } bf8 [ r16 c ] bf8.*2/3 [ s16 \turn af16 ]  \tuplet 3/2 { f8 ef f } |
     R1 | r2
 }
 melodyLickTwo = \relative c'' { 
     \melodyLickPickup 
     r4 c8 8  r4 \tuplet 3/2 { r8 f, af } | 
-    \override Script.padding = #1
     \tuplet 3/2 { bf8 8 af } bf8 [ r16 c ] bf8.*2/3 [ s16 \turn af16 ] \tuplet 3/2 { bf8 af c } |
     R1*2 | 
 }
 melodyLickThree = \relative c'' {
     r4 f4 ~ 4 ef8 c | 
-    \override Script.padding = #1
     bf8.*2/3 [ s16 \turn af16 ]  \tuplet 3/2 { bf8 f af ~ } 4 c,8 cs | 
     d8 bf'4. ~ 2 ~ | 4 r 
 }
@@ -141,7 +138,6 @@ melodyLickFour = \relative c'' {
     \melodyLickPickup 
     r4 c8 8  r4 \tuplet 3/2 { r8 f, af } | 
     \tuplet 3/2 { bf8 8 af } bf8 [ r16 c ]  bf8.*2/3 [ s16 \turn af16 ]  \tuplet 3/2 { f8 ef f } |
-    \override Script.padding = #0.5
     r4 \tuplet 3/2 { f'8 ef c } cf8.*2/3 [ s16 \turn af16 ] \tuplet 3/2 { f8 ef f } | 
         r2 \melodyLickPickup || 
         R1 ||
@@ -173,6 +169,7 @@ melody = {
             }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Script.padding = #0.5
                 <<
                     \structure
                     \melody
@@ -197,6 +194,7 @@ melody = {
             }
             \new Staff \transpose bf, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Script.padding = #0.5
                 <<
                     \structure
                     \melody
@@ -220,6 +218,7 @@ melody = {
             }
             \new Staff \transpose ef, c { 
                 \include "ly/ily/staff-properties.ily"
+                \override Script.padding = #1.5
                 <<
                     \structure
                     \melody
