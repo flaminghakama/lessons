@@ -3,7 +3,7 @@
 titleLeft = "Ms. Garvey,"
 titleRight = "Ms. Garvey"
 title = "Ms. Garvey, Ms. Garvey!!"
-composerName = "J. Marshall"
+composerName = "R. Hargrove"
 
 \include "../../../../scores/flaming-libs/flaming-paper.ily"
 \include "../../../../scores/flaming-libs/flaming-markup.ily"
@@ -104,13 +104,13 @@ chordsSong = \chordmode {
     f2:m d:m7.5- | g:m7.5- c:7 |
     f2:m d:m7.5- | g:m7.5- c:7 |
 
-    f1:m | s | 
+    bf1:m | s | 
     c1:7 | s || 
 
     f1:m | s | 
     bf1:7 | s |
 
-    g1:m7.5- | df2:7 c:7 | 
+    g1:m7.5- | c:7 | 
     f1:m | c:7 || f:m  ||
 }
 
