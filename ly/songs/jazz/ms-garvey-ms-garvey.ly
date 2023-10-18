@@ -104,7 +104,7 @@ chordsSong = \chordmode {
     f2:m d:m7.5- | g:m7.5- c:7 |
     f2:m d:m7.5- | g:m7.5- c:7 |
 
-    bf1:m | s | 
+    f1:m | s | 
     c1:7 | s || 
 
     f1:m | s | 
