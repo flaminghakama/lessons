@@ -100,5 +100,5 @@ open -a Preview pdf/exercises/clarinet/chromatic-scale-for-clarinet.pdf
     %     \markup \title-page-markup "clarinet" \composerName \title
     % }
 
-    \include "ly/bookparts/chromatic/clarinet/chromatic-lower-register.ily"
+    \include "ly/bookparts/chromatic/clarinet/chromatic.ily"
 }

@@ -19,6 +19,7 @@ rm chromatic-scale-for-saxophone.pdf ; lilypond ly/exercises/saxophone/chromatic
 rm chromatic-scale-for-saxophone.pdf
 lilypond ly/exercises/saxophone/chromatic-scale-for-saxophone.ly 
 mv chromatic-scale-for-saxophone*.pdf pdf/exercises/saxophone
+open -a Preview pdf/exercises/saxophone/chromatic-scale-for-saxophone*.pdf 
 
 %}
 
