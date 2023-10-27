@@ -13,7 +13,7 @@ composerName = "Elaine Alt"
 
 %{
 
-rm arpeggio-patterns-for-all-the-things.pdf ; lilypond ly/theory/arpeggio-patterns-for-all-the-things.ly ; op arpeggio-patterns-for-all-the-things.pdf 
+rm arpeggio-patterns-for-all-the-things.pdf ; lilypond ly/theory/arpeggio-patterns-for-all-the-things.ly ; for file in arpeggio-patterns-for-all-the-things* ; do op $file ; done 
 
 
 rm arpeggio-patterns-for-all-the-things.pdf
@@ -68,6 +68,28 @@ op pdf/theory/arpeggio-patterns-for-all-the-things.pdf
         \Score
         \omit BarNumber
     }
+}
+
+structure = \relative c'' {
+    \numericTimeSignature
+    \key af \major
+    s1*8
+    \bar "||"
+    s1*8
+    \bar "||"
+    s1*8
+    \bar "||"
+    s1*12
+    \bar "|."
+
+    s1*8
+    \bar "||"
+    s1*8
+    \bar "||"
+    s1*8
+    \bar "||"
+    s1*12
+    \bar "|."
 }
 
 
@@ -160,18 +182,110 @@ patternOne = {
     \transpose c af, \patternOneAugmented
     \bar "||" \break
 
-    \transpose c, f \patternOneMinor
+    \transpose c f, \patternOneMinor
     \transpose c bf, \patternOneMinor
     \transpose c ef, \patternOneDominant
     \transpose c af, \patternOneMajor
     \transpose c df \patternOneMajor
     \transpose c gf, \patternOneDominant
     \transpose c c \patternOneHalfDiminished
-    \transpose c, f \patternOneDominant
+    \transpose c f \patternOneDominant
     \transpose c bf, \patternOneMinor
     \transpose c ef \patternOneDominant
     \transpose c af, \patternOneMajor
     \transpose c af, \patternOneMajorSecondMeasure
+    \bar "||" \break
+}
+patternOneForBb = {
+
+    \transpose c f, \patternOneMinor
+    \transpose c bf, \patternOneMinor
+    \transpose c ef, \patternOneDominant
+    \transpose c af, \patternOneMajor
+    \transpose c df, \patternOneMajor
+    \transpose c g, \patternOneDominant
+    \transpose c c \patternOneMajor
+    \transpose c c \patternOneMajorSecondMeasure
+    \bar "||" \break
+
+    \transpose c c \patternOneMinor
+    \transpose c f \patternOneMinor
+    \transpose c bf, \patternOneDominant
+    \transpose c ef, \patternOneMajor
+    \transpose c af, \patternOneMajor
+    \transpose c d, \patternOneDominant
+    \transpose c g, \patternOneMajor
+    \transpose c g, \patternOneMajorSecondMeasure
+    \bar "||" \break
+
+    \transpose c a, \patternOneMinor
+    \transpose c d \patternOneDominant
+    \transpose c g \patternOneMajor
+    \transpose c g \patternOneMajorSecondMeasure
+    \transpose c fs \patternOneMinor
+    \transpose c b, \patternOneDominant
+    \transpose c e \patternOneMajor
+    \transpose c af, \patternOneAugmented
+    \bar "||" \break
+
+    \transpose c f, \patternOneMinor
+    \transpose c bf, \patternOneMinor
+    \transpose c ef, \patternOneDominant
+    \transpose c af, \patternOneMajor
+    \transpose c df \patternOneMajor
+    \transpose c gf, \patternOneDominant
+    \transpose c c \patternOneHalfDiminished
+    \transpose c f, \patternOneDominant
+    \transpose c bf, \patternOneMinor
+    \transpose c ef \patternOneDominant
+    \transpose c af, \patternOneMajor
+    \transpose c af, \patternOneMajorSecondMeasure
+    \bar "||" \break
+}
+patternOneForEb = {
+
+    \transpose c f \patternOneMinor
+    \transpose c bf, \patternOneMinor
+    \transpose c ef \patternOneDominant
+    \transpose c af, \patternOneMajor
+    \transpose c df \patternOneMajor
+    \transpose c g \patternOneDominant
+    \transpose c c \patternOneMajor
+    \transpose c c \patternOneMajorSecondMeasure
+    \bar "||" \break
+
+    \transpose c c \patternOneMinor
+    \transpose c f \patternOneMinor
+    \transpose c bf, \patternOneDominant
+    \transpose c ef \patternOneMajor
+    \transpose c af \patternOneMajor
+    \transpose c d \patternOneDominant
+    \transpose c g \patternOneMajor
+    \transpose c g \patternOneMajorSecondMeasure
+    \bar "||" \break
+
+    \transpose c a, \patternOneMinor
+    \transpose c d \patternOneDominant
+    \transpose c g, \patternOneMajor
+    \transpose c g, \patternOneMajorSecondMeasure
+    \transpose c fs, \patternOneMinor
+    \transpose c b, \patternOneDominant
+    \transpose c e \patternOneMajor
+    \transpose c af \patternOneAugmented
+    \bar "||" \break
+
+    \transpose c f \patternOneMinor
+    \transpose c bf \patternOneMinor
+    \transpose c ef \patternOneDominant
+    \transpose c af \patternOneMajor
+    \transpose c df \patternOneMajor
+    \transpose c gf, \patternOneDominant
+    \transpose c c \patternOneHalfDiminished
+    \transpose c f \patternOneDominant
+    \transpose c bf \patternOneMinor
+    \transpose c ef \patternOneDominant
+    \transpose c af \patternOneMajor
+    \transpose c af \patternOneMajorSecondMeasure
     \bar "||" \break
 }
 
@@ -221,6 +335,98 @@ patternTwo = {
     \transpose c af, \patternTwoMajorSecondMeasure
     \bar "||" \break
 }
+patternTwoForBb = {
+
+    \transpose c f, \patternTwoMinor
+    \transpose c bf, \patternTwoMinor
+    \transpose c ef, \patternTwoDominant
+    \transpose c af, \patternTwoMajor
+    \transpose c df, \patternTwoMajor
+    \transpose c g, \patternTwoDominant
+    \transpose c c \patternTwoMajor
+    \transpose c c \patternTwoMajorSecondMeasure
+    \bar "||" \break
+
+    \transpose c c \patternTwoMinor
+    \transpose c f, \patternTwoMinor
+    \transpose c bf, \patternTwoDominant
+    \transpose c ef \patternTwoMajor
+    \transpose c af, \patternTwoMajor
+    \transpose c d \patternTwoDominant
+    \transpose c g, \patternTwoMajor
+    \transpose c g, \patternTwoMajorSecondMeasure
+    \bar "||" \break
+
+    \transpose c a, \patternTwoMinor
+    \transpose c d, \patternTwoDominant
+    \transpose c g, \patternTwoMajor
+    \transpose c g, \patternTwoMajorSecondMeasure
+    \transpose c fs, \patternTwoMinor
+    \transpose c b, \patternTwoDominant
+    \transpose c e, \patternTwoMajor
+    \transpose c af, \patternTwoAugmented
+    \bar "||" \break
+
+    \transpose c f, \patternTwoMinor
+    \transpose c bf, \patternTwoMinor
+    \transpose c ef \patternTwoDominant
+    \transpose c af, \patternTwoMajor
+    \transpose c df, \patternTwoMajor
+    \transpose c gf, \patternTwoDominant
+    \transpose c c \patternTwoHalfDiminished
+    \transpose c f, \patternTwoDominant
+    \transpose c bf, \patternTwoMinor
+    \transpose c ef, \patternTwoDominant
+    \transpose c af, \patternTwoMajor
+    \transpose c af, \patternTwoMajorSecondMeasure
+    \bar "||" \break
+}
+patternTwoForEb = {
+
+    \transpose c f \patternTwoMinor
+    \transpose c bf, \patternTwoMinor
+    \transpose c ef \patternTwoDominant
+    \transpose c af, \patternTwoMajor
+    \transpose c df \patternTwoMajor
+    \transpose c g, \patternTwoDominant
+    \transpose c c \patternTwoMajor
+    \transpose c c \patternTwoMajorSecondMeasure
+    \bar "||" \break
+
+    \transpose c c \patternTwoMinor
+    \transpose c f \patternTwoMinor
+    \transpose c bf, \patternTwoDominant
+    \transpose c ef \patternTwoMajor
+    \transpose c af, \patternTwoMajor
+    \transpose c d \patternTwoDominant
+    \transpose c g, \patternTwoMajor
+    \transpose c g, \patternTwoMajorSecondMeasure
+    \bar "||" \break
+
+    \transpose c a, \patternTwoMinor
+    \transpose c d \patternTwoDominant
+    \transpose c g, \patternTwoMajor
+    \transpose c g, \patternTwoMajorSecondMeasure
+    \transpose c fs \patternTwoMinor
+    \transpose c b, \patternTwoDominant
+    \transpose c e \patternTwoMajor
+    \transpose c af \patternTwoAugmented
+    \bar "||" \break
+
+    \transpose c f \patternTwoMinor
+    \transpose c bf, \patternTwoMinor
+    \transpose c ef \patternTwoDominant
+    \transpose c af \patternTwoMajor
+    \transpose c df \patternTwoMajor
+    \transpose c gf, \patternTwoDominant
+    \transpose c c \patternTwoHalfDiminished
+    \transpose c f \patternTwoDominant
+    \transpose c bf, \patternTwoMinor
+    \transpose c ef \patternTwoDominant
+    \transpose c af, \patternTwoMajor
+    \transpose c af, \patternTwoMajorSecondMeasure
+    \bar "||" \break
+}
 
 
 
@@ -234,21 +440,92 @@ patternTwo = {
     }
 }
 
- % No Accidentals
-\score { 
-    \new StaffGroup <<
-        \new ChordNames { 
-            \set chordChanges = ##t 
-            \set chordNameExceptions = #flamingChordExceptions
-            \set noChordSymbol = ##f
-            \exampleChords
-            \exampleChords
-        }
-        \new Staff {
-            \autoPageBreaksOff
-            \patternOne
-            \pageBreak
-            \patternTwo
-        }
-    >>
+\book {
+  \bookOutputSuffix "for-C"
+    \header {
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score { 
+        \new StaffGroup <<
+            \new ChordNames { 
+                \set chordChanges = ##t 
+                \set chordNameExceptions = #flamingChordExceptions
+                \set noChordSymbol = ##f
+                \exampleChords
+                \exampleChords
+            }
+            \new Staff {
+                <<
+                    \structure 
+                    {
+                        \autoPageBreaksOff
+                        \patternOne
+                        \pageBreak
+                        \patternTwo
+                    }
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+    \bookOutputSuffix "for-Bb"
+    \header {
+        poet = "Bb Transposition"
+        instrumentName = \poet
+    }
+    \score { 
+        \new StaffGroup \transpose bf, c <<
+            \new ChordNames { 
+                \set chordChanges = ##t 
+                \set chordNameExceptions = #flamingChordExceptions
+                \set noChordSymbol = ##f
+                \exampleChords
+                \exampleChords
+            }
+            \new Staff {
+                <<
+                    \structure 
+                    {
+                        \autoPageBreaksOff
+                        \patternOneForBb
+                        \pageBreak
+                        \patternTwoForBb
+                    }
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+    \bookOutputSuffix "for-Eb"
+    \header {
+        poet = "Eb Transposition"
+        instrumentName = \poet
+    }
+    \score { 
+        \new StaffGroup \transpose ef c <<
+            \new ChordNames { 
+                \set chordChanges = ##t 
+                \set chordNameExceptions = #flamingChordExceptions
+                \set noChordSymbol = ##f
+                \exampleChords
+                \exampleChords
+            }
+            \new Staff {
+                <<
+                    \structure 
+                    {
+                        \autoPageBreaksOff
+                        \patternOneForEb
+                        \pageBreak
+                        \patternTwoForEb
+                    }
+                >>
+            }
+        >>
+    }
 }
