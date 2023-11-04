@@ -160,7 +160,7 @@ chromaticExerciseUpperTwoAdvanced = \relative c'' {
     \accidentalStyle modern-voice
     \key c \major
     \time 4/4
-    b8 c cs d ef d df b^RH |
+    b8 c cs d ef d df b^\RH |
     c8^\LH cs^\RH d ds e ef d c   |
     cs8 d ds e f e ef cs! |
     d8 ds e f gf^\plus f e d |
