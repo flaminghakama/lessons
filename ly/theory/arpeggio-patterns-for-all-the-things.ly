@@ -16,10 +16,10 @@ composerName = "Elaine Alt"
 rm arpeggio-patterns-for-all-the-things.pdf ; lilypond ly/theory/arpeggio-patterns-for-all-the-things.ly ; for file in arpeggio-patterns-for-all-the-things* ; do op $file ; done 
 
 
-rm arpeggio-patterns-for-all-the-things.pdf
+rm arpeggio-patterns-for-all-the-things*.pdf
 lilypond ly/theory/arpeggio-patterns-for-all-the-things.ly
-mv arpeggio-patterns-for-all-the-things.pdf pdf/theory
-op pdf/theory/arpeggio-patterns-for-all-the-things.pdf 
+mv arpeggio-patterns-for-all-the-things*.pdf pdf/theory
+for file in pdf/theory/arpeggio-patterns-for-all-the-things*.pdf ; do op $file ; done  
 
 %}
 

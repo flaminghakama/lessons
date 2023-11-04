@@ -145,7 +145,7 @@ chromaticExerciseLowerTwoAdvanced = \relative c' {
     ds8 e f fs^\plus g gf^\plus f ds! |
     e8 f fs^\plus g af g gf e |
     f8 fs^\plus g gs a af g f  |
-    fs8^\plus g gs a bf a af fs |
+    fs8^\plus g gs a bf a af fs? |
     g8 gs a as b bf a g |
     gs8 a as b c^\plus b bf gs! |
     a8 as b c^\plus df c^\plus b a |
@@ -169,7 +169,7 @@ chromaticExerciseUpperTwoAdvanced = \relative c'' {
     ds8 e f fs^\plus g gf^\plus f ds! |
     e8 f fs^\plus g af g gf e |
     f8 fs^\plus g gs a af g f  |
-    fs8^\plus g gs a bf a af fs |
+    fs8^\plus g gs a bf a af fs? |
     g8 gs a as b bf a g |
     gs8 a as b c^\plus b bf gs! |
     a8 as b c^\plus df c^\plus b a |
