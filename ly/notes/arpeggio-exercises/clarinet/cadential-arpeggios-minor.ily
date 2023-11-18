@@ -178,6 +178,22 @@ twoFiveOneMinorThreeVersionThree = \relative c' {
         \bar "||"
     }
 }
+twoFiveOneMinorThreeVersionFour = \relative c' {
+    \key c \minor
+    \relative c' { 
+        d8 f af c  b g f d | c ef g ef c2 | 
+        f8 af c d  f d b g | c g ef g c2 | \break
+        af8 c d f  g f d b | c ef g b c2  |
+        c,8 d f af  b g f d | c ef c b c2 | \break
+    }
+    \relative c'' { 
+        d8 c af f  d f g b | c b c ef c2 | 
+        c8 af f d  b d f g | c b g ef c2 | \break
+        af'8 f d c  b d f g | ef' c g ef c2 |  
+        f'8 d c af  g b d f | g ef c g c2
+        \bar "||"
+    }
+}
 
 
 twoFiveOneMinorFourVersionThreeNotes = \relative c' {

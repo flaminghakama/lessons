@@ -144,7 +144,7 @@
                 \include "ly/ily/staff-properties.ily"
                 \transpose c c, \twoFiveOneMinorOneVersionTwo \break
                 \transpose c c, \twoFiveOneMinorTwo \break
-                \transpose c c, \twoFiveOneMinorThreeVersionTwo \break
+                \transpose c c, \twoFiveOneMinorThreeVersionFour \break
                 \transpose c c, \twoFiveOneMinorFourVersionThree
                 \pageBreak
             }
