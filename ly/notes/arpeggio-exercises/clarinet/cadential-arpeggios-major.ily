@@ -114,7 +114,7 @@ twoFiveOneMajorThreeVersionTwo = \relative c' {
         d8 f a c  b g f d | c e g e c2 | 
         f,8 a c d  f d b g | c g e g c2  | \break
         a8 c d f  g f d b | c e g a c2 |
-        c8 d f a  b g f d | c a' g e c2 | \break
+        c,8 d f a  b g f d | c a' g e c2 | \break
     }
     \relative c' { 
         d8 c a f  d f g b | c a c e c2  | 

@@ -16,12 +16,12 @@ composerName = "D. Elaine Alt"
 %{
 
 rm cadential-arpeggios-for-saxophone-major.pdf
-lilypond ly/cadential-arpeggios-for-saxophone-major.ly
+lilypond ly/exercises/saxophone/cadential-arpeggios-for-saxophone-major.ly
 op cadential-arpeggios-for-saxophone-major.pdf 
-python ~/git/part-format/bookify-16page.py cadential-arpeggios-for-saxophone-major.pdf cadential-arpeggios-for-saxophone-major-printable.pdf automatic
-mv cadential-arpeggios-for-saxophone-major.pdf pdf
-mv cadential-arpeggios-for-saxophone-major-printable.pdf pdf/printable
-op pdf/printable/cadential-arpeggios-for-saxophone-major-printable.pdf 
+#python ~/git/part-format/bookify-16page.py cadential-arpeggios-for-saxophone-major.pdf cadential-arpeggios-for-saxophone-major-printable.pdf automatic
+mv cadential-arpeggios-for-saxophone-major.pdf pdf/saxophone
+#mv cadential-arpeggios-for-saxophone-major-printable.pdf pdf/printable
+#op pdf/printable/cadential-arpeggios-for-saxophone-major-printable.pdf 
 
 %}
 
@@ -71,7 +71,7 @@ op pdf/printable/cadential-arpeggios-for-saxophone-major-printable.pdf
     } 
 }
 
-\include "ly/notes/cadential-arpeggios-major.ily"
+\include "ly/notes/arpeggio-exercises/saxophone/cadential-arpeggios-major.ily"
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,4 +85,4 @@ op pdf/printable/cadential-arpeggios-for-saxophone-major-printable.pdf
     \markup \title-page-markup "" "" \titleTitlePage
 }
 
-\include "ly/bookparts/cadential-arpeggios-major.ily"
+\include "ly/bookparts/arpeggio-exercises/saxophone/cadential-arpeggios-major.ily"

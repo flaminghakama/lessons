@@ -2,9 +2,9 @@
 \include "english.ly"
 
 titleLeft = "Cadential Arpeggios"
-titleRight = "for Saxophone"
-titleTitlePage = \markup \center-column { \titleLeft \concat { \titleRight "," } "in Minor" }
-titleFull = "Cadential Arpeggios for Saxophone"
+titleRight = "for Clarinet"
+titleTitlePage = \markup \center-column { \titleLeft \concat { \titleRight "," }  "in Minor" }
+titleFull = "Cadential Arpeggios for Clarinet"
 composerName = "D. Elaine Alt"
 \include "../scores/flaming-libs/flaming-paper.ily"
 \include "../scores/flaming-libs/flaming-chords.ily"
@@ -15,20 +15,20 @@ composerName = "D. Elaine Alt"
 
 %{
 
-rm cadential-arpeggios-for-saxophone-minor.pdf
-lilypond ly/exercises/saxophone/cadential-arpeggios-for-saxophone-minor.ly
-op cadential-arpeggios-for-saxophone-minor.pdf 
-#python ~/git/part-format/bookify-16page.py cadential-arpeggios-for-saxophone-minor.pdf cadential-arpeggios-for-saxophone-minor-printable.pdf automatic
-mv cadential-arpeggios-for-saxophone-minor.pdf pdf/exercises/saxophone
-#mv cadential-arpeggios-for-saxophone-minor-printable.pdf pdf/printable
-#op pdf/printable/cadential-arpeggios-for-saxophone-minor-printable.pdf 
+rm cadential-arpeggios-for-clarinet-minor.pdf ; lilypond ly/exercises/clarinet/cadential-arpeggios-for-clarinet-minor.ly ; op cadential-arpeggios-for-clarinet-minor.pdf 
+
+
+rm cadential-arpeggios-for-clarinet-minor.pdf
+lilypond ly/exercises/clarinet/cadential-arpeggios-for-clarinet-minor.ly
+mv cadential-arpeggios-for-clarinet-minor.pdf pdf/exercises/clarinet
+op pdf/exercises/clarinet/cadential-arpeggios-for-clarinet-minor.pdf 
 
 %}
 
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
+    copyright = \markup { \tiny "copyright © 2023 Elaine Alt" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold \titleFull  }
     poet = ""
@@ -54,10 +54,8 @@ mv cadential-arpeggios-for-saxophone-minor.pdf pdf/exercises/saxophone
 
   page-breaking = #ly:minimal-breaking
 
-  first-page-number = #13
-
   #(define fonts
-    (make-pango-font-tree "Century Schoolbook L" 
+    (make-pango-font-tree "Baskerville" 
                           "Highlander ITC TT" 
                           "Papyrus"
                            (/ myStaffSize 20)))
@@ -73,22 +71,18 @@ mv cadential-arpeggios-for-saxophone-minor.pdf pdf/exercises/saxophone
     } 
 }
 
-\include "ly/notes/arpeggio-exercises/saxophone/cadential-arpeggios-minor.ily"
+\include "ly/notes/arpeggio-exercises/clarinet/cadential-arpeggios-minor.ily"
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \header {
-    instrumentName = "Saxophone"
+    instrumentName = "Clarinet"
     poet = \instrumentName
 }
 
-%\bookpart { 
-%    \markup \title-page-markup "" "" \titleTitlePage
-%}
-
-
-\paper { 
-    first-page-number = #1
+\bookpart { 
+    \markup \title-page-markup "" "" \titleTitlePage
 }
-\include "ly/bookparts/arpeggio-exercises/saxophone/cadential-arpeggios-minor.ily"
+
+\include "ly/bookparts/arpeggio-exercises/clarinet/cadential-arpeggios-minor.ily"
