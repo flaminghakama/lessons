@@ -20,7 +20,7 @@ lilypond ly/songs/jazz/shoe-shine-boy.ly
 mv shoe-shine-boy*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/shoe-shine-boy*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"fixing chords" ; git push 
+git add . ; git commit -m"second chorus and Eb version" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 
@@ -63,13 +63,14 @@ atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scrip
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    %\override Score.RehearsalMark #'extra-offset = #'( -3 . -2.5 )
+    \override Score.RehearsalMark #'extra-offset = #'( -3 . -1 )
 
     \override Beam.damping = #2.75 
     \override Stem.length-fraction = #(magstep 1.2)
 
     \key f \major
     \time 4/4
+    \once \override Score.RehearsalMark #'extra-offset = #'( -2 . 0 )
     \startSection "Chorus 1 A"
     s1*4 \break
     s1*4 \bar "||" \break
@@ -83,6 +84,7 @@ structure = \relative c' {
     s1*4 \break
     s1*4 \bar "||" \pageBreak
 
+    \once \override Score.RehearsalMark #'extra-offset = #'( -2 . 0 )
     \startSection "Chorus 2 A"
     s1*4 \break
     s1*4 \bar "||" \break
