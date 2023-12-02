@@ -20,7 +20,7 @@ lilypond ly/songs/jazz/shoe-shine-boy.ly
 mv shoe-shine-boy*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/shoe-shine-boy*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"first chorus" ; git push 
+git add . ; git commit -m"fixing chords" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 
@@ -97,12 +97,12 @@ chordsSongI = \chordmode {
 
     f2 d:m | g:m7 c:7 | 
     f d:m | g:m7 c:7 | 
-    f2  d:7 | d:m7 g:7 | 
+    f2 d:7 | a:m7 d:7 | 
     g2:m7 c:7 | f1  ||
 
     f2 d:m | g:m7 c:7 | 
     f d:m | g:m7 c:7 | 
-    f2  d:7 | d:m7 g:7 | 
+    f2 d:7 | a:m7 d:7 | 
     g2:m7 c:7 | f1  ||
 
     a1:7 | s | d:m | s | 
@@ -110,7 +110,7 @@ chordsSongI = \chordmode {
 
     f2 d:m | g:m7 c:7 | 
     f d:m | g:m7 c:7 | 
-    f2  d:7 | d:m7 g:7 | 
+    f2 d:7 | a:m7 d:7 | 
     g2:m7 c:7 | f1  ||
 
 
@@ -148,10 +148,10 @@ melody = \relative c' {
     c8 f r c  f4  df | c  a'2.  ||
 
     % 1 B
-    a,2  r4  a8 cs | e4  f8 g16 f  e4  a, ~ | 
-    a4  r  d8 e f g16 f | e8 c a f  d4-.  b' ~ | 
+    a,2  r4  a8 cs | e4  \tuplet 3/2 { f8 g f }  e4  a, ~ | 
+    a4  r  d8 e \tuplet 3/2 { f8 g f } | e8 c a f  d4-.  b' ~ | 
 
-    b4. r8  d8 e f g16 f | d8 b a g  a4-.  bf ~ | 
+    b4  r  d8 e \tuplet 3/2 { f8 g f } | d8 b a g  a4-.  bf ~ | 
     bf4  r   c8 e g c | a f d bf  g f g a ||
 
 
@@ -160,7 +160,7 @@ melody = \relative c' {
     c8 a c a  c a c a | c4 4  4.  gs8 |
 
     a8 c d f ~ 4  r  | e8 c a4  d-.  d8 e |
-    f8 g16 f d8 bf  g4  f8 g | c2 r || 
+    \tuplet 3/2 { f8 g f } d8 bf  g4  f8 g | c2 r || 
 
 }
 
