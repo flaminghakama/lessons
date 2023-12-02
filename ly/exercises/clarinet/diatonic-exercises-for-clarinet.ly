@@ -77,6 +77,14 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/diatonic/clarinet/diatonic-D-major.ily"
 \include "ly/notes/diatonic/clarinet/diatonic-E-flat-major.ily"
 \include "ly/notes/diatonic/clarinet/diatonic-A-major.ily"
+\include "ly/notes/diatonic/clarinet/diatonic-E-major.ily"
+\include "ly/notes/diatonic/clarinet/diatonic-A-flat-major.ily"
+\include "ly/notes/diatonic/clarinet/diatonic-B-major.ily"
+\include "ly/notes/diatonic/clarinet/diatonic-D-flat-major.ily"
+\include "ly/notes/diatonic/clarinet/diatonic-F-sharp-major.ily"
+\include "ly/notes/diatonic/clarinet/diatonic-G-flat-major.ily"
+\include "ly/notes/diatonic/clarinet/diatonic-C-sharp-major.ily"
+\include "ly/notes/diatonic/clarinet/diatonic-C-flat-major.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -113,6 +121,17 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     \include "ly/bookparts/diatonic/clarinet/diatonic-B-flat-Major.ily"
     \include "ly/bookparts/diatonic/clarinet/diatonic-A-Major.ily"
     \include "ly/bookparts/diatonic/clarinet/diatonic-E-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/clarinet/diatonic-E-Major.ily"
+    \include "ly/bookparts/diatonic/clarinet/diatonic-A-flat-Major.ily"
+    \include "ly/bookparts/diatonic/clarinet/diatonic-B-Major.ily"
+    \include "ly/bookparts/diatonic/clarinet/diatonic-D-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/clarinet/diatonic-F-sharp-Major.ily"
+    \include "ly/bookparts/diatonic/clarinet/diatonic-G-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/clarinet/diatonic-C-sharp-Major.ily"
+    \include "ly/bookparts/diatonic/clarinet/diatonic-C-flat-Major.ily"
 }
 
 
