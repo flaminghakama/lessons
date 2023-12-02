@@ -19,7 +19,7 @@ mv diatonic-exercises-for-clarinet.pdf pdf/exercises/clarinet
 op pdf/exercises/clarinet/diatonic-exercises-for-clarinet.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding diatonic exercise in C, G, F, D, Bb, A and Eb" ; git push 
+git add . ; git commit -m"adding the rest of the diatonic exercises" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

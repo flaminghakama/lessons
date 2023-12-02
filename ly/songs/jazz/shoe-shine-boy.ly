@@ -63,28 +63,36 @@ atCoda = <>^\markup { \translate #'( -10 . 1.75) \huge \bold \musicglyph #"scrip
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark #'extra-offset = #'( -3 . -2.5 )
+    %\override Score.RehearsalMark #'extra-offset = #'( -3 . -2.5 )
 
     \override Beam.damping = #2.75 
     \override Stem.length-fraction = #(magstep 1.2)
 
     \key f \major
     \time 4/4
+    \startSection "Chorus 1 A"
     s1*4 \break
     s1*4 \bar "||" \break
+    \startSection "A"
     s1*4 \break
     s1*4 \bar "||" \break
+    \startSection "B"
     s1*4 \break
     s1*4 \bar "||" \break
+    \startSection "A"
     s1*4 \break
     s1*4 \bar "||" \pageBreak
 
+    \startSection "Chorus 2 A"
     s1*4 \break
     s1*4 \bar "||" \break
+    \startSection "A"
     s1*4 \break
     s1*4 \bar "||" \break
+    \startSection "B"
     s1*4 \break
     s1*4 \bar "||" \break
+    \startSection "A"
     s1*4 \break
     s1*4 \bar "||" \break
 
@@ -162,6 +170,37 @@ melody = \relative c' {
     a8 c d f ~ 4  r  | e8 c a4  d-.  d8 e |
     \tuplet 3/2 { f8 g f } d8 bf  g4  f8 g | c2 r || 
 
+
+
+    % 2 A1
+    d8 f a c  \tuplet 3/2 { a16 c a } f8 d f | a c \tuplet 3/2 { a16 c a } f8  df4 r |
+    r4 \tuplet 3/2 { c8 f a } c4  r8 a | g f d bf  g f d a' | 
+
+    c8 a c a  c4.  e8 ~ | 4  d8 c  a g d e | 
+    f8 g a d  df4  8 c ~ | 2  r ||
+
+    % 2 A2
+    d8 a d d  a a d4 | bf8 d bf bf  d4.  bf8 | 
+    a8 a d a  a d a a | d d bf d  bf4  d8 d |
+
+    df8 8 c4 ~  4  r  | e2   d4-. \tuplet 3/2 { a'8 g f } | 
+    d8 bf g d  a'4.  f8 ~ | 2  r4 f8  a ||
+
+    % 2 B  
+    cs8 e f e  cs bf a4  | cs4. e8  r4  r8 a, |
+    d8 e \tuplet 3/2 { f8 g f }  d bf g d | a'4.  d8  r4  r8 d8 |
+
+    b8 c d e  f e d bf | a4.  d8  r4  r8 g, | 
+    c8 d e f  g e \tuplet 3/2 { f8 g f } | d8 bf g d  a'4  r ||
+
+
+    % 2 A3
+    d4-. f-. a4 r | d,4-. f-.  g8 a r f | 
+    d4-. \tuplet 3/2 { f8 g f }  d4-.  e8 f | d bf g4-.  f8 a f4-. |
+
+    e8 f a c  e4  r  | d4-.  a8 c  r4  c8 d | 
+    e8 f c a  f4  c'8 a | f4 r r2 ||
+
 }
 
 \header {
@@ -180,6 +219,7 @@ melody = \relative c' {
         \transpose c, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
+                \chordsSongI
                 \chordsSongI
             }
             \new Staff \transpose c c { 
@@ -205,6 +245,7 @@ melody = \relative c' {
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily" 
                 \chordsSongI
+                \chordsSongI
             }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -217,27 +258,28 @@ melody = \relative c' {
     }
 }
 
-% \book {
-%   \bookOutputSuffix "for-Eb"
-%     \header {
-%         poet = "    Eb Lead Sheet"
-%         instrumentName = \poet
-%         subtitle = "(Lester Young solo transcription)"
-%     }
-%     \score {
-%         \transpose ef, c <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily" 
-%                 \chordsSongI
-%             }
-%             \new Staff \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 <<
-%                     \structure
-%                     \melody
-%                 >>
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        poet = "    Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Lester Young solo transcription)"
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSongI
+                \chordsSongI
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melody
+                >>
+            }
+        >>
+    }
+}
 
