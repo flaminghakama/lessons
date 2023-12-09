@@ -5,6 +5,7 @@ titleRight = "Man"
 title = "The Umbrella Man"
 composerName = "J. Cavanaugh, L. Stock & V. Rose"
 lyricistName = "J. Cavanaugh, L. Stock & V. Rose"
+subtitle = "(as played by Dizzy Gillespie)"
 
 
 \include "../../../../scores/flaming-libs/flaming-paper.ily"
@@ -14,12 +15,12 @@ lyricistName = "J. Cavanaugh, L. Stock & V. Rose"
 
 %{
 
-killPreview ; rm umbrella-man*pdf ; lilypond ly/songs/standards/umberella-man.ly ; open -a Preview umberella-man-for-*.pdf
+killPreview ; rm umbrella-man*pdf ; lilypond ly/songs/standards/umbrella-man.ly ; open -a Preview umbrella-man-for-*.pdf
 
 killPreview
 rm umbrella-man*pdf
-lilypond ly/songs/standards/umberella-man.ly
-mv umberella-man*.pdf pdf/songs/standards
+lilypond ly/songs/standards/umbrella-man.ly
+mv umbrella-man*.pdf pdf/songs/standards
 for file in pdf/songs/standards/umbrella-man*pdf ; do open -a Preview $file ; done
 
 %}
@@ -216,7 +217,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "for-C"
     \header {
-        subtitle = ""
+        subtitle = "(as played by Dizzy Gillespie)"
         instrumentName = "Concert Lead Sheet"
         poet = \instrumentName
     }
@@ -247,7 +248,7 @@ lyricsHeadTwo = \lyricmode {
 % \book {
 %   \bookOutputSuffix "for-Eb"
 %     \header {
-%         subtitle = ""
+%         subtitle = "(as played by Dizzy Gillespie)"
 %         arranger = ""
 %         instrumentName = "Eb Lead Sheet"
 %         poet = \instrumentName
