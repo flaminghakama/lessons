@@ -56,7 +56,7 @@ for file in pdf/songs/standards/umbrella-man*pdf ; do open -a Preview $file ; do
 \include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
-    \key d \minor
+    \key bf \major
 
     \time 3/4 
     \set Timing.baseMoment = #(ly:make-moment 1/4)
