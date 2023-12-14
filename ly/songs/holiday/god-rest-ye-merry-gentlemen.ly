@@ -387,7 +387,7 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "in-F-minor-for-Eb"
+  \bookOutputSuffix "in-B-minor-for-Eb"
     \header {
         poet = "Eb Lead Sheet"
         instrumentName = \poet
