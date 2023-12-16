@@ -91,17 +91,17 @@ songChords = \chordmode {
 
     s4 ||
 
-    f2:m7 ef:7 | df:maj7 c:m7 | 
-    f2:m7 ef:7 | df:maj7 c:m7 | 
+    f2:m7 d:m7.5- | bf:m7 ef:7 | 
+    f2:m7 ef:7 | c1:7 | 
 
-    f2:m7 ef:7 | df:maj7 c:m7 | 
-    f2:m7 ef:7 | df:maj7 c:7.9- | 
+    f2:m7 d:m7.5- | bf:m7 ef:7 | 
+    f2:m7 ef:7 | c1:7 | 
 
     bf2:m7 ef:7 | af:maj7 df:maj7 | 
-    g2:7 df:7 | c:7.9- gf:7 | 
+    bf2:m7 ef:7 | c1:7 | 
 
     f1:m7 | g2:m7.5- c:7 |
-    f2:m7 d:m7.5- | df:7 c:7 | 
+    f2:m7 bf:m7 | ef1:7 | 
 
     f2:m7 bf:7 | g:m7.5- c:7 |
     f1:m7 | c:7 ||  f1:m7 | s ||
