@@ -107,12 +107,12 @@ chordsSongI = \chordmode {
 
     f2 d:m | g:m7 c:7 | 
     f d:m | g:m7 c:7 | 
-    f2 d:7 | a:m7 d:7 | 
+    f1 | d:7 |  
     g2:m7 c:7 | f1  ||
 
     f2 d:m | g:m7 c:7 | 
     f d:m | g:m7 c:7 | 
-    f2 d:7 | a:m7 d:7 | 
+    f1 | d:7 |  
     g2:m7 c:7 | f1  ||
 
     a1:7 | s | d:m | s | 
@@ -120,7 +120,7 @@ chordsSongI = \chordmode {
 
     f2 d:m | g:m7 c:7 | 
     f d:m | g:m7 c:7 | 
-    f2 d:7 | a:m7 d:7 | 
+    f1 | d:7 |  
     g2:m7 c:7 | f1  ||
 
 
@@ -146,23 +146,23 @@ melody = \relative c' {
     c8 f r c  f4  d  | f  df  f  df  | 
     c8 f r c  f4  a8 g | f d bf g  a4.  g8 |
 
-    e8 f a c  e4.  d8 | c8 bf g d  bf' g a f | 
-    e8 f g gs  a4  d,8 f ~ | 2  r || 
+    e8 f a c  e4.  d8 | c8 a f d  bf' g a f | 
+    d8 e f g   a4  d,8 f ~ | 2  r || 
 
     % 1 A2
 
     c'4  c'8 a ~ 4  r  | r  d, \glissando d'4-.  r8 a |
     g8 f d e  f g a g | f d c g  a c a g |
 
-    e8 f a c  e d c g | a g f g  a4 r |
-    c8 f r c  f4  df | c  a'2.  ||
+    e8 f a c  e d c a | f d e fs  a4 r |
+    c8 f r c  f4  df8 c | r4  a'2.  ||
 
     % 1 B
-    a,2  r4  a8 cs | e4  \tuplet 3/2 { f8 g f }  e4  a, ~ | 
-    a4  r  d8 e \tuplet 3/2 { f8 g f } | e8 c a f  d4-.  b' ~ | 
+    a,2  r4  a8 cs | e8 f ~  \tuplet 3/2 { f8 g f }  e4  a, ~ | 
+    a4  r  d8 e \tuplet 3/2 { f8 g f } | e8 d a f  d4-.  b' ~ | 
 
     b4  r  d8 e \tuplet 3/2 { f8 g f } | d8 b a g  a4-.  bf ~ | 
-    bf4  r   c8 e g c | a f d bf  g f g a ||
+    bf4  r   c8 e g c | a f d bf  g d f a ||
 
 
     % 1 A3 
@@ -170,7 +170,7 @@ melody = \relative c' {
     c8 a c a  c a c a | c4 4  4.  gs8 |
 
     a8 c d f ~ 4  r  | e8 c a4  d-.  d8 e |
-    \tuplet 3/2 { f8 g f } d8 bf  g4  f8 g | c2 r || 
+    \tuplet 3/2 { f8 g f } d8 bf  g4  f8 a | c2 r || 
 
 
 
