@@ -5,6 +5,9 @@
             subtitle = "C# Major"
             composer = ""
         }
+
+        \markup \instructionCSharp
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT

@@ -5,6 +5,9 @@
             subtitle = "Eb Major"
             composer = ""
         }
+
+        \markup \instructionEb
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -31,6 +34,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseTwoEbMajor
+                    \pageBreak 
                 }
             >>
             \header {

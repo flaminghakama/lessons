@@ -5,6 +5,9 @@
             subtitle = "Cb Major"
             composer = ""
         }
+
+        \markup \instructionCb
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT

@@ -5,6 +5,27 @@
             subtitle = "Ab Major"
             composer = ""
         }
+
+        \markup \instructionAb
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOn
+                    \diatonicFingeringExampleAbMajor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Example Fingerings"  " " }
+            }
+        }
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -13,6 +34,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseOneAbMajor
+                    \pageBreak
                 }
             >>
             \header {
@@ -31,7 +53,6 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseTwoAbMajor
-                    \pageBreak
                 }
             >>
             \header {

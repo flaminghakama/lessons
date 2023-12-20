@@ -1,3 +1,24 @@
+lh = { <>^\markup { \bold " L" } }
+rh = { <>^\markup { \bold " R" } }
+lrh = { <>^\markup { \bold "L-R" } }
+rlh = { <>^\markup { \bold "R-L" } }
+
+instructionB = \markup {
+    \fill-line {
+        \center-column {
+            \null
+            \null
+            "Since the note D# can only be played with the Right hand,"
+            "when it is preceded or followed by the note C#,"
+            "we finger the note C# with the Left hand." 
+            \null
+            "Likewise, when we need to play the note C# with the Left hand,"
+            "and it is preceded or followed by the note B,"
+            "we finger the note B with the Right hand."
+        }
+    }
+}
+
 diatonicExerciseOneBMajor = \transpose c b \relative c { 
     \key c \major
     \time 3/4
@@ -39,7 +60,7 @@ diatonicExerciseTwoBMajor = \transpose c b \relative c {
     b8 c d f c2 | \break
 
     c'8 a g f  b g f e | 
-    a8 f e d  g e d c | 
+    a8 f e \lh d  g e \lh d \rh c | 
     f8 d c b  e c b a | 
     d8 b a g c2 | \break
 
@@ -58,17 +79,17 @@ diatonicExerciseThreeBMajor = \transpose c b \relative c {
     e8 f g a  b a g e | 
     f8 g a b  c b a f | 
     g8 a b c  d c b g | 
-    a8 b c d  e d c a | 
-    b8 c d e  f e d b | 
+    a8 b \rh c \lh d  e \lh d \rh c a | 
+    b8 \rh c \lh  d e  f e \lh d b | 
     c1 | \break
 
     c'8 b a g  f g a c | 
     b8 a g f  e f g b | 
-    a8 g f e  d e f a | 
-    g8 f e d  c d e g | 
-    f8 e d c  b c d f | 
-    e8 d c b  a b c e | 
-    d8 c b a  g a b d |
+    a8 g f e  \lh d e f a | 
+    g8 f e \lh d  \rh c \lh d e g | 
+    f8 e \lh d \rh c  b c d f | 
+    e8 \lh d \rh c b  a b c e | 
+    \lh d8 \rh c b a  g a b d |
     c1 | \break
 
     c8 b a g  f g a c | 
