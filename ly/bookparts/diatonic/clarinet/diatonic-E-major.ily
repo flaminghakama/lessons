@@ -5,6 +5,27 @@
             subtitle = "E Major"
             composer = ""
         }
+
+        \markup \instructionE        
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOn
+                    \diatonicFingeringExampleEMajor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Example Fingerings"  " " }
+            }
+        }
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -13,6 +34,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseOneEMajor
+                    \pageBreak
                 }
             >>
             \header {
@@ -31,7 +53,6 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseTwoEMajor
-                    \pageBreak
                 }
             >>
             \header {
