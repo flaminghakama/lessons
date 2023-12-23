@@ -14,7 +14,7 @@ title = "Jingle Bells"
 
 %{
 
-killPreview ; rm jingle-bells*pdf ; lilypond ly/songs/holiday/jingle-bells.ly ; for file in jingle-bells*pdf ; do op $file ; done 
+    killPreview ; rm jingle-bells*pdf ; lilypond ly/songs/holiday/jingle-bells.ly ; for file in jingle-bells*pdf ; do op $file ; done 
 
 killPreview
 rm pdf/songs/holiday/jingle-bells*
@@ -92,7 +92,7 @@ structure = \relative c' {
 }
 
 songChords = \chordmode { 
-    
+
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -139,7 +139,7 @@ lyricsHeadTwo = \lyricmode {
     Fells on bob -- tail ring, 
     \repeat unfold 2 { \skip 1 }
     Mak -- ing spir -- its bright,what 
-    fin it is to 
+    fun it is to 
 }
 
 \header {
