@@ -92,8 +92,8 @@ structure = \relative c' {
 }
 
 songChords = \chordmode { 
-
-    \set chordChanges = ##t
+    
+    \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
 
