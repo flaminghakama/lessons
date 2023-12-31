@@ -12,9 +12,14 @@ composerName = "John H. Hopkins, Jr."
 
 %{
 
-rm we-three-kings-*pdf    
-lilypond ly/songs/we-three-kings.ly
-op we-three-kings-for-Eb.pdf
+killPreview ; rm we-three-kings*pdf ; lilypond ly/songs/holiday/we-three-kings.ly ; for file in we-three-kings*pdf ; do op $file ; done 
+
+killPreview
+rm pdf/songs/holiday/we-three-kings*
+lilypond ly/songs/holiday/we-three-kings.ly 
+mv we-three-kings*pdf pdf/songs/holiday
+for file in pdf/songs/holiday/we-three-kings*pdf ; do op $file ; done 
+
 %}
 
 \paper {
@@ -51,8 +56,9 @@ op we-three-kings-for-Eb.pdf
 structure = \relative c' { 
     \time 6/8
     \key d \minor
-    s2.*8 
-    \bar "||"
+    s2.*4 \break
+    s2.*5 \break 
+    \bar "||"  
     s2.*8 
     \bar "|."
 }
@@ -62,17 +68,17 @@ chordsForm = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     d2.:m | 4. a:7 | d2.:m | 4. a:7 | 
-    f4. c | f2. | g4.:m a | d:m c ||
+    f4. c | f2. | g4.:m a | d2.:m | c ||
     f2. | bf4. f | f2. | bf4. f |
     f4. g:m | bf g:m | f2. | bf4. f ||
 }
 
 melody = \relative c'' { 
     a4 g8 f4 d8 | e f e d4. | 
-    a'4 g8 f4 d8 | e f e d4. | \break
+    a'4 g8 f4 d8 | e f e d4. |
 
     f4 8 g4 8 | a4 8 c ( bf ) a | 
-    g8 a g f4 e8 | d4. \breath e4 ( g8 ) ||
+    g8 a g f4 e8 | d2. | \breath e4. ( ~ 4 g8 ) ||
 
     f4 8 4 c8 | f4 d8 f4. | 
     f4 8 4 c8 | f4 d8 f4. | 
@@ -139,7 +145,6 @@ lyricsHeadFive = \lyricmode {
     instrumentName = \poet
 }
 
-
 \book {
   \bookOutputSuffix "for-C"
     \header {
@@ -175,9 +180,40 @@ lyricsHeadFive = \lyricmode {
     }
 }
 
-\layout { 
-    indent = 2.15\cm
-    short-indent = 1.25\cm
+
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        poet = "Bb Lead Sheet"
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c  { \chordsForm }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadThree } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadFour } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadFive } 
+            }
+        >>
+    }
 }
 
 \book {
