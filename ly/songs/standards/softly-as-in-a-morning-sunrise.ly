@@ -3,8 +3,8 @@
 titleLeft = "Softly, As In"
 titleRight = "A Morning Sunrise"
 title = "Softly, As In A Morning Sunrise"
-composerName = "J. Ricardel"
-lyricistName = "R. Evans"
+composerName = "S. Romberg"
+lyricistName = "O. Hammerstein II"
 
 \include "../../../../scores/flaming-libs/flaming-paper.ily"
 \include "../../../../scores/flaming-libs/flaming-markup.ily"
