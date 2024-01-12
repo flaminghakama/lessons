@@ -125,6 +125,52 @@ structureCab = \relative c' {
     \noPageBreak
 }
 
+structureManny = \relative c' { 
+
+    \override Score.RehearsalMark.self-alignment-X = #RIGHT
+    \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.2)
+
+    \key d \minor
+    \time 4/4
+    \tempo 4=108
+
+    \startSection "A"
+    \repeat volta 2 { 
+        \bar "[|:"
+        s1*4 \break 
+        s1*2 
+    }
+    \alternative { 
+        { s1*2 \bar ":|]" }
+        { s1*2 }
+    }\break 
+    
+    \startSection "B"
+    \bar ":|]"
+    s1*4 \break 
+    s1*4 \break
+
+    \tempo 4=220
+    \startSection "C"
+    \bar "[|:"
+    s1*4 \break 
+    s1*4 \break 
+    \startSection "D"
+    \bar ":|]"
+    s1*4  
+    s1*4 \break 
+    \startSection "C"
+    s1*4  
+    s1*3 <>_\markup \center-column {
+        "D.C. al Fine" 
+    } s1 
+    \bar "||"
+    \noPageBreak
+}
+
 atCoda = <>^\markup { \translate #'( -12 . 1.75) \huge \bold \musicglyph #"scripts.coda" }
 
 structureCoda = \relative c' { 
@@ -143,6 +189,14 @@ chordsACab = \chordmode {
     d1:m | s | bf:9 | s | 
     g1:m6 | s2 a:aug7 | d1:m6 | s || d1:m6 | s ||
 }
+chordsAManny = \chordmode { 
+    d1:m | s | bf:9 | s | 
+    g1:m6 | s2 a:aug7 | d1:m6 | s || s2 a:aug7 | d1:m6 | s ||
+}
+chordsBManny = \chordmode { 
+    d1:m9 | s | g1:m9 | s |
+    a:aug7 | s | d:m | s ||
+}
 chordsBFats = \chordmode { 
     d1:m9 | s | s | s | 
     g1:m9 | s | a:aug7 | s ||
@@ -153,6 +207,49 @@ chordsBCab = \chordmode {
     a1:aug7 | s | s | s | 
     a1:7.13- | s | d:m | s ||
 }
+
+chordsCFats = \chordmode { 
+    ef2 c:7 | f:m7 bf:7 | 
+    ef2 c:7 | f:m7 bf:7 | 
+    ef2 c:7 | f:m7 bf:7 | 
+    ef2 af:13 | ef/g bf:aug7  | 
+
+    ef2 c:7 | f:m7 bf:7 | 
+    ef2 c:7 | f:m7 bf:7 | 
+    g2:7 c:7 | f:m7 bf:7 | 
+    ef2 af:13 | ef1 | 
+
+    ef2:7 bf:7 | ef:7 bf:7 | 
+    ef2:7 bf:7 | ef:7 ef:aug7 | 
+    af1:9 | s | 
+    bf2:7 af:maj7 | df:6 bf:aug9 |   
+
+    ef2 c:7 | f:m7 bf:7 | 
+    ef2 c:7 | f:m7 bf:7 | 
+    g2:7 c:7 | f:m7 bf:7 | 
+    ef2 af:13 | ef bf:aug7 | 
+}
+
+chordsCManny = \chordmode { 
+    d2 b:7 | e:m7 a:7 | 
+    d2 b:7 | e:m7 a:7 | 
+    d2 b:7 | e:m7 a:7 | 
+    d2 g:13 | d/fs a:aug7  | 
+
+    d2 b:7 | e:m7 a:7 | 
+    d2 b:7 | e:m7 a:7 | 
+    fs2:6 b:7 | e:m7 a:7 | 
+    d2 g:13 | d/fs a:aug7  | 
+
+    fs1:7 | s | b:7 | s | 
+    e:7 | s | a:7 | s |
+
+    d2 b:7 | e:m7 a:7 | 
+    d2 b:7 | e:m7 a:7 | 
+    d2 b:7 | e:m7 a:7 | 
+    d2 c:7 | f1 | 
+}
+
 
 chordsSolosCab = \chordmode { 
     d1:m | s | bf:9.11+ | s | 
@@ -210,6 +307,11 @@ melodyACab = \relative c'' {
     r8 d r d r d r d | r d r d f4-. d | af1 ~ | 2. r4 | 
     r8 g r g r g r g | r g r g a4. f8 | d1 ~ | 2 r || d1 ~ | 2 
 }
+melodyAManny = \relative c'' {
+    r8 d r d r d r d | r d r d f4-. d | af1 ~ | 2. r4 | 
+    r8 g r g r g r g | a af g gf f4 e8 d ~ | 1 ~ | 2 r ||
+        a af g gf f4 e4 | d8 e f g a f a4 | af8 f af4 g8 f d 
+}
 
 melodyBFats = \relative c'' {
     c8 ||
@@ -218,16 +320,21 @@ melodyBFats = \relative c'' {
     g'4 f d f | g f8 d ~ 8 f4. | 
     a4 r r8 a8 8 [ 8 ] | a4 r r2 ||
 }
+melodyBManny = \relative c'' {
+    c8 ||
+    d4 c a c | d c8 a ~ 8 c4. |
+    g'4 f d f | g f8 d ~ 8 f4. | 
+    r8 a8 8 [ 8 ] a4 r | r a8 8 8 4 r |
+    d8 e f g a f a4 | af8 f af4 g8 f d
+}
 
 melodyBCab = \relative c'' {
     r8 c r4 ||
-    d4 c a8 c cs4 | d c4 a8 c r4 |
-    d4 c a8 c cs4 | d c8 a r c d4 |
-    g4 f d f8 fs | g4 f8 d ~ 8 f g4 | 
+    d4 c a8 c cs4 | d c8 a8 r c d4 |
     g4 f d f | g4 f8 d ~ 8 f g4 |
-    g8 8 f4-. ds8 8 cs4-. | b8 8 a4-. g8 8 f4-. |  
-    g'8 8 f4-. ds8 8 cs4-. | b8 8 a4-. g8 8 f4-. |  
-    r8 d' r d r d r d | r d r d a'4-. f4 | d1  | r8 d r d r d r4 | 
+    r8 c c [ c ] c4 r | 
+    r8 c, c [ c ] c4 r | 
+
 }
 
 melodyCodaCab = \relative c'' {
