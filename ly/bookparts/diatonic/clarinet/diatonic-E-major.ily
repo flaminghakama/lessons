@@ -16,6 +16,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicFingeringExampleEMajor
+                    \pageBreak
                 }
             >>
             \header {
@@ -34,7 +35,6 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseOneEMajor
-                    \pageBreak
                 }
             >>
             \header {
@@ -53,6 +53,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseTwoEMajor
+                    \pageBreak
                 }
             >>
             \header {

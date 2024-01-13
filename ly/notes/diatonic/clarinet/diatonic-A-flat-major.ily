@@ -103,7 +103,7 @@ diatonicExerciseThreeAbMajor = \transpose c af \relative c {
     f8 g a b  c b a f | 
     g8 a b c  d c b g | 
     a8 b c d  e d c a | 
-    b8 c d e  f e d b | 
+    b8 c d e  \lh f e d b | 
     c1 | \break
 
     c8 d e f  g f e c | 
@@ -119,7 +119,7 @@ diatonicExerciseThreeAbMajor = \transpose c af \relative c {
     b8 a g \lh f  e \lh f g b | 
     a8 g \lh f e  d e f a | 
     g8 \lh f e d  c d \lh e g | 
-    \lh f8 e d c  b c d f | 
+    \lh f8 e d c  b c d \lh f | 
     e8 d c b  a b c e | 
     d8 c b a  g a b d |
     c1 
