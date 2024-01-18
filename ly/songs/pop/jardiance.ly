@@ -93,20 +93,19 @@ chordsHead = \chordmode {
 
     % "Verse"
     s4
-    s1*7
-    s2.
+    e1 | a | b:7 | cs:m7 | 
+    fs2:m gs:m | a1 | s |     
+    b2.:7 ||
 
     % "Chorus"
     \time 4/4 
-    s1*4
+    e1 | cs:m7 | fs:m7 | b:13 ||
 
     % "Bridge"
-    s1*4
+    e1 | cs:m7 | fs:m7 | b:13 ||
 
     % "Coda"
-    s1 
-    s2
-    s1*3
+    e1 | cs2:m7 | fs1:m7 | b:13 | e:1.2.3.5.7+ ||
 }
 
 melodyVerseOne = \relative c'' { 
