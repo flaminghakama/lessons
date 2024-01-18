@@ -94,7 +94,7 @@ chordsHead = \chordmode {
     % "Verse"
     s4
     e1 | a | b:7 | cs:m7 | 
-    fs2:m gs:m | a1 | s |     
+    fs2:m7 e:maj7 | a1:maj7.11+ | s |     
     b2.:7 ||
 
     % "Chorus"
@@ -105,7 +105,7 @@ chordsHead = \chordmode {
     e1 | cs:m7 | fs:m7 | b:13 ||
 
     % "Coda"
-    e1 | cs2:m7 | fs1:m7 | b:13 | e:1.2.3.5.7+ ||
+    e1 | cs2:m7 | fs1:m7 | b:13 | e  ||
 }
 
 melodyVerseOne = \relative c'' { 
@@ -125,7 +125,7 @@ melodyBridge = \relative c'' {
 }
 melodyCoda = \relative c'' { 
     r4 b8 8  4 e, | ds8 e4 gs8 | 
-    r8 a a [ a ]  4 gs8 e | fs4 a gs4 8 fs ~ | 4 r r2 || 
+    r8 a a [ a ]  4 gs8 e | fs4 gs fs4 8 e ~ | 4 r r2 || 
 }
 
 melodyHead = \relative c' { 
