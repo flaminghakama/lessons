@@ -22,7 +22,7 @@ lilypond ly/songs/standards/autumn-leaves.ly
 mv autumn-leaves*pdf pdf/songs/standards
 for file in pdf/songs/standards/autumn-leaves*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing wrong notes" ; git push 
+git add . ; git commit -m"adding song" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

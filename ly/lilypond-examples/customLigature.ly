@@ -67,7 +67,8 @@
 
 %  If you still want to use implicit relative combination, 
 %  just think about the correct octavation of the note following your ligature 
-%  as being relative to the note preceding the ligature 
+%  as being relative to the note preceding the ligature,
 %  since that is how Lilypond is thinking of it.
 
+HTH, 
 
