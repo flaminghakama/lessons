@@ -1,3 +1,29 @@
+tonicArpeggioBb = \relative c' { 
+    \key bf \major
+    \time 2/4
+    \tuplet 3/2 4 { 
+        bf8 d f  bf d f  |
+        bf f d  bf f d |
+        } bf2 
+
+    \tuplet 3/2 4 {
+        bf''8 d f  d bf f  |
+        d8 bf f } bf,4 
+    \bar "||" \break
+
+    \time 4/4
+    bf8 ( f' ) d ( bf' ) 
+    f8 ( d' ) bf ( f' ) | 
+    d8 ( bf' ) f ( d')
+    bf8 ( f' ) d ( f, ) | 
+
+    bf8 ( d, ) f ( bf, ) 
+    d8 ( f, ) bf ( d, ) |
+    f8 ( bf, ) d ( f ) 
+    bf2 | 
+    \bar "|."
+}
+
 diatonicExerciseOneBbMajor = \transpose c bf \relative c { 
     \key c \major
     \time 3/4

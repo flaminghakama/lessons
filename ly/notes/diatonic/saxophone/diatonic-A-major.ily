@@ -1,3 +1,27 @@
+tonicArpeggioA = \relative c'' { 
+    \key a \major
+    \time 2/4
+    \tuplet 3/2 4 { 
+        a8 cs e  a cs e |
+        cs8 a e  cs a e | 
+    } 
+    a2 |
+    \tuplet 3/2 4 { 
+        a8 e cs  e a cs | 
+    } 
+    a2 |
+
+    \bar "||"
+    \time 4/4 
+    a8 ( e' ) cs ( a' )  
+    e8 ( cs' ) a ( e' ) |
+    cs8 ( e, ) a ( cs, ) 
+    e8 ( a, ) cs ( e, ) | 
+    a8 ( cs, ) e ( cs' )
+    a2 
+    \bar "|."
+}
+
 diatonicExerciseOneAMajor = \transpose c a \relative c' { 
     \key c \major
     \time 3/4

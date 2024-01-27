@@ -1,20 +1,24 @@
-tonicArpeggioG = \relative c' { 
+tonicArpeggioG = \relative c'' { 
     \key c \major
     \time 2/4
     \tuplet 3/2 4 { 
         g8 b d  g b d |
-        c8 e c  g e c | 
-        g e c } c'4 
-    \bar "||"
+        b8 g d  b g d | 
+    } 
+    g2 |
+    \tuplet 3/2 4 { 
+        g8 d b  d g b | 
+    } 
+    g2 |
 
-    c,8 ( g' ) e ( c' )  | 
-    g8 ( e' ) c ( g' ) | 
-    e8 ( c' ) g ( e') |
-    c2 | 
-    c8 ( e, ) g ( c, ) | 
-    e8 ( g, ) c ( e, ) |
-    g8 ( c, ) e ( c' ) | 
-    c,2 | 
+    \bar "||"
+    \time 4/4 
+    g8 ( d' ) b ( g' )  
+    d8 ( b' ) g ( d' ) |
+    b8 ( d, ) g ( b, ) 
+    d8 ( g, ) b ( d, ) | 
+    g8 ( b, ) d ( b' )
+    g2 
     \bar "|."
 }
 

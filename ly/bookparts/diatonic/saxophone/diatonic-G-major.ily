@@ -15,7 +15,6 @@
                     \key c \major
                     \time 4/4
                     \transpose c c \articulationExerciseScale
-                    \transpose c, c \articulationExerciseScale
                     \bar "|."
                     \noPageBreak
                 }
@@ -37,7 +36,6 @@
                     \key c \major
                     \time 4/4
                     \transpose c c \syncopationExerciseScale
-                    \transpose c, c \syncopationExerciseScale
                     \bar "|."
                     \noPageBreak
                 }
@@ -73,13 +71,13 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new ChordNames \transpose c f { 
+                \new ChordNames \transpose c g { 
                     \tonicArpeggioChords 
                 }
                 \new Staff {
                     \include "ly/ily/staff-properties.ily"
                     \transpose c c \tonicArpeggioG
-                    \pageBreak
+                    \noPageBreak
                 }
             >>
             \header {
@@ -100,7 +98,7 @@
                 \new Staff {
                     \include "ly/ily/staff-properties.ily"
                     \domiantArpeggioD
-                    \noPageBreak
+                    \pageBreak
                 }
             >>
             \header {
@@ -115,12 +113,12 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
-                \new ChordNames \transpose c f { 
+                \new ChordNames \transpose c g { 
                     \grandArpeggioMajorChords 
                 }
-                \new Staff \transpose c f { 
+                \new Staff \transpose c g { 
                     \include "ly/ily/staff-properties.ily"
-                    \grandArpeggioMajor
+                    \grandArpeggioMajorTwo
                     \noPageBreak
                 }
             >>

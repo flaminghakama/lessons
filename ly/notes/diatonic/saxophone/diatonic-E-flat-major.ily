@@ -1,3 +1,25 @@
+tonicArpeggioEb = \relative c' { 
+    \key ef \major
+    \time 2/4
+    \tuplet 3/2 4 { 
+        ef8 g bf  ef g bf  |
+         ef bf g  ef bf g |
+        } ef2 
+
+    \tuplet 3/2 4 {
+        ef8 bf g' } ef4 
+    \bar "||" \break
+
+    \time 4/4
+    ef8 ( bf' ) g ( ef' ) 
+    bf8 ( g' ) ef ( bf' ) | 
+    g8 ( ef' ) bf ( ef, ) 
+    g8 ( bf, ) ef ( g, ) |
+    bf8 ( ef, ) g ( bf, ) 
+    ef2 
+    \bar "|."
+}
+
 diatonicExerciseOneEbMajor = \transpose c ef \relative c' { 
     \key c \major
     \time 3/4

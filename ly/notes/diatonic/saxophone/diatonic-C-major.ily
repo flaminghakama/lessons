@@ -62,13 +62,14 @@ tonicArpeggioC = \relative c' {
         g8 e c } c'4 
     \bar "||" \break
 
-    c,8 ( g' ) e ( c' ) |
+    \time 4/4
+    c,8 ( g' ) e ( c' ) 
     g8 ( e' ) c ( g' ) | 
-    e8 ( c' ) g ( e') |
+    e8 ( c' ) g ( e') 
     c2 | 
-    c8 ( e, ) g ( c, ) | 
+    c8 ( e, ) g ( c, ) 
     e8 ( g, ) c ( e, ) |
-    g8 ( c, ) e ( c' ) |
+    g8 ( c, ) e ( c' ) 
     c,2 | 
     \bar "|."
 }

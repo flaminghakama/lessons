@@ -28,7 +28,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2022 Elaine Paul" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2022-4 Elaine Paul" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""

@@ -1,3 +1,23 @@
+tonicArpeggioD = \relative c' { 
+    \key d \major
+    \time 2/4
+    \tuplet 3/2 4 { 
+        d8 fs a  d fs a  |
+        d8 a fs  d a fs |
+        } d2 
+
+    \bar "||" \break
+
+    \time 4/4
+    d8 ( a' ) fs ( d' ) 
+    a8 ( fs' ) d ( a' ) | 
+    fs8 ( d' ) a ( d, )  
+    fs8 ( a, ) d ( fs, ) |
+    a8 ( d, ) fs ( fs' ) 
+    d2 
+    \bar "|."
+}
+
 diatonicExerciseOneDMajor = \transpose c d \relative c' { 
     \key c \major
     \time 3/4
