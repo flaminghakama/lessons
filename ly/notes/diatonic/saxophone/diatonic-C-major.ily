@@ -1,3 +1,78 @@
+articulationExerciseScale = \relative c' { 
+    r4 
+    c16 16 16 16 
+    d16 16 16 16 
+    e16 16 16 16 |
+    f16 16 16 16 
+    g16 16 16 16 
+    a16 16 16 16 
+    b16 16 16 16 |
+
+    c16 16 16 16 
+    b16 16 16 16
+    a16 16 16 16
+    g16 16 16 16 |
+    f16 16 16 16 
+    e16 16 16 16
+    d16 16 16 16
+    c16 16 16 16 | \noBreak
+    c1 
+}
+
+syncopationExerciseScale = \relative c' { 
+    r4 
+    c16 8 16 
+    d16 8 16 
+    e16 8 16 |
+    f16 8 16 
+    g16 8 16 
+    a16 8 16 
+    b16 8 16 |
+    c16 b8 g16 
+    b16 a8 f16 
+    a16 g8 e16 
+    g16 f8 d16 |
+    f16 e8 c16  
+    e16 d8 b16 
+    d16 c8 b16 
+    c4
+}
+
+scaleInThirdsMajorNotes = \relative c' { 
+        r4 c8 e  d f e g | f a g b  a c b d | c a b g  a f g e | f d c2. | 
+}
+
+tonicArpeggioChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    c1
+}
+
+tonicArpeggioC = \relative c' { 
+    \key c \major
+    \time 2/4
+    \tuplet 3/2 4 { 
+        c8 e g  c e g  |
+         c g e  c g e |
+        } c2 
+
+    \tuplet 3/2 4 {
+        c''8 e c  g e c  |
+        g8 e c } c'4 
+    \bar "||" \break
+
+    c,8 ( g' ) e ( c' ) |
+    g8 ( e' ) c ( g' ) | 
+    e8 ( c' ) g ( e') |
+    c2 | 
+    c8 ( e, ) g ( c, ) | 
+    e8 ( g, ) c ( e, ) |
+    g8 ( c, ) e ( c' ) |
+    c,2 | 
+    \bar "|."
+}
+
 diatonicExerciseOneCMajor = \relative c' { 
     \key c \major
     \time 3/4
@@ -27,7 +102,7 @@ diatonicExerciseOneCMajor = \relative c' {
     e8 c a c e4 | 
     d8 b g b d4 
     c2.
-    \bar "||"
+    \bar "|."
 }
 
 diatonicExerciseTwoCMajor = \relative c' { 
@@ -47,7 +122,7 @@ diatonicExerciseTwoCMajor = \relative c' {
     a8 f e d  g e d c | 
     f8 d c b  e c b a | 
     d8 b a g c2
-    \bar "||"
+    \bar "|."
 }
 
 diatonicExerciseThreeCMajor = \relative c' { 
@@ -79,7 +154,7 @@ diatonicExerciseThreeCMajor = \relative c' {
     e8 d c b  a b c e | 
     d8 c b a  g a b d |
     c1
-    \bar "||"
+    \bar "|."
 }
 
 

@@ -86,6 +86,11 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/diatonic/saxophone/diatonic-C-sharp-major.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-C-flat-major.ily"
 
+\include "ly/notes/saxophone-articulation.ily"
+\include "ly/notes/arpeggio-exercises/grand-for-saxophone.ily"
+\include "ly/notes/arpeggio-exercises/dominant-for-saxophone.ily"
+
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \layout { 
@@ -115,20 +120,20 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     % }
 
     \include "ly/bookparts/diatonic/saxophone/diatonic-C-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-G-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-G-Major.ily"
     \include "ly/bookparts/diatonic/saxophone/diatonic-F-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-D-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-B-flat-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-A-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-E-flat-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-E-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-A-flat-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-B-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-D-flat-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-F-sharp-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-G-flat-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-C-sharp-Major.ily"
-    \include "ly/bookparts/diatonic/saxophone/diatonic-C-flat-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-D-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-B-flat-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-A-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-E-flat-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-E-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-A-flat-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-B-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-D-flat-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-F-sharp-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-G-flat-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-C-sharp-Major.ily"
+    % \include "ly/bookparts/diatonic/saxophone/diatonic-C-flat-Major.ily"
 }
 
 

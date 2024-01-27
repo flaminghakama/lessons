@@ -132,7 +132,15 @@ lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    \repeat unfold 34 { \skip 1 }
+
+    Some day I'll find my love, 
+    some -- one to call my own.
+    And I'll know her the mo -- men we meet, 
+    For my heart will start skip -- ping a beat.
+
+    Some day we'll say and do, 
+    Things we've been longing to do, 
+    Though she's  
 
 }
 lyricsHeadThree = \lyricmode {
