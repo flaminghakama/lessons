@@ -122,7 +122,7 @@ melodyRealBook = \relative c'' {
     r4 c'8 8  g'4 a | <af f,>8 <g ef,> <f d,> <d bf,> <f d,>4 <g ef,> | 
     r4 c,8 8  g'4 a | <af c,>8 <g bf,> <f af,> <d bf> <f af,>4 <g bf,> | 
 
-    r4 c,8 8 g'4 af | f f,8 8 <c' af> <d bf>4 f,8 ~ | 2 r | R1 |
+    r4 c,8 8 g'4 af | f f,8 8 <c' af,> <d bf,>4 f,8 ~ | 2 r | R1 |
 }
 melodyRealBookForBb = \relative c'' { 
     \override Beam.damping = #2.75 
