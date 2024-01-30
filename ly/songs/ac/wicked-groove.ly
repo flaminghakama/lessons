@@ -61,14 +61,39 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 structure = \relative c'' { 
     \tempo 4=120
     \key a \major
-    
-    \startSection "Quarter Notes"
+
+    \time 4/4
+    s1
+    \time 3/4
+    s2.
+    \time 2/4
+    s2
+
+    \bar "||"
+    \time 4/4
+    s1
+    \time 3/4
+    s2.
+    \time 2/4
+    s2
+    \break 
+
+    \startSectionWithLabel "A" "4X"
     \bar "[|:"
     \time 4/4
     s1
     \time 3/4
     s2.
     \time 2/4
+    s2 \break
+
+    \startSectionWithLabel "B" "Melody"
+    \bar ":|][|:"
+    \time 4/4
+    s1
+    \time 3/4
+    s2.
+    \time 2/4
     s2
     \time 4/4
     s1
@@ -78,86 +103,98 @@ structure = \relative c'' {
     s2
     \break 
 
-    \startSection "Dotted Quarter Notes"
-    \bar ":|][|:" 
-    \time 9/8
-    s1*9/8*4
-    \break 
+    \startSectionWithLabel "C" "Chorus"
+    \bar ":|][|:"
+    \time 4/4
+    s1
+    \time 3/4
+    s2.
+    \time 2/4
+    s2
 
-    \startSection \markup \center-column {
-        "Dotted Quarter Notes"
-        "Aligned with Kick"
-    }
-    \bar ":|][|:" 
-    \time 9/8
-    s1*9/8*4
-    \bar ":|]" \break 
+    \bar "||"
+    \time 4/4
+    s1
+    \time 3/4
+    s2.
+    \time 2/4
+    s2 \break
 
+    \bar "||"
+    \time 4/4
+    s1
+    \time 3/4
+    s2.
+    \time 2/4
+    s2
+
+    \bar "||"
+    \time 4/4
+    s1
+    \time 3/4
+    s2.
+    \time 2/4
+    s2
+
+    \bar ":|]"
 }
 
 chordsForm = \chordmode { 
 
-    % "Drum Solo"
-    s1*16
-    
-    % "Add Bass"
-    s1*16
-
-    % A
-    e1:m7 | s | fs:7/e | s | 
-    b1:7.13- | s | ef:7.9+.11+ | s2 f:9 ||
-    
-    % B
-    c1:13 | s | b:7 | s | s | s || f:9 | c:m7.5-/f ||
-
-    % A
-    e1:m7 | s | fs:7/e | s | 
-    b1:7.13- | s | ef:7.9+.11+ | s2 f:9 ||
-        
-    % B
-    c1:13 | s | b:7 | s | s | s || f:9 | c:m7.5-/f ||
-
-    % A
-    e1:m7 | s | fs:7/e | s | 
-    b1:7.13- | s | ef:7.9+.11+ | s2 f:9 ||
-
-    % "Coda"
-    e1:m | s | s | s ||
 }
 chordsForFlats = \chordmode { 
     \chordsForm
 }
 
-melodyAFiveFour = \relative c'' {
+bassANineFour = \relative c'' {
+    <>^\markup \bold "Bass"
+    r4 a4  cs a8 e' | r8 e,4 gs8 ~ 8 [ e ~ ] | 8 gs e'4-. |
+    fs,4 d  e d8 d' | r8 e,4 gs8 ~ 8 [ e ~ ] | 8 gs e'4-. | 
+}
+
+melodyBNineFour = \relative c'' {
+    % 4/4
+    r4   a   cs  e8 cs8 |
+    % 3/4 + 2/4
+    \autoBeamOff r8 cs  b8 \autoBeamOn 4 e8 ~  | 8 fs  e4-.  |
+    % 4/4
+    e8 [ d8 ]  4  4  e8 d |
+    % 3/4 + 2/4
+    \autoBeamOff r8 cs  b8 \autoBeamOn 4 8 ~  | 2 |
+}
+melodyCNineFour = \relative c'' {
+    % 4/4
+    cs4 a2 r4 | 
+    % 3/4 + 2/4
+    r4 r8 b4 8 ~ | 8 a8 b4 | 
 
     % 4/4
-    r4   a   cs  e8 cs8 ~  |
-    % 5/4
-    cs8 [ 8 ]  b8 4 e8 ~  | 8 fs  e4  |
+    a8 fs ~ 2. | 
+    % 3/4 + 2/4
+    r4 r8 b4  8 ~ | 8 a8 b4 |
+
     % 4/4
-    e8 [ d8 ]  4  4  e8 d ~ |
-    % 5/4 
-    d8 [ cs ]  b8 4 8 ~  4  r4 |
+    cs1 | 
+    % 3/4 + 2/4
+    r4 r8 b4 8 ~ | 8 a8 b4 | 
+
+    % 4/4
+    a8 fs ~ 2. | 
+    % 3/4 + 2/4
+    r4 r8 b4  8 ~ | 8 a8 b4 |
+
 }
-clicksAFiveFour = \relative c''' {
+clicksNineFour = \relative c'' {
     % 4/4
-    a4   4  4  8 8 |
-    % 5/4
-    r8 a8  r a  r a  r a  a4 |
-    % 4/4
-    a4  4  4  8 8 |
-    % 5/4
-    r8 a8  r a  r a  r a  a4 |
+    e4   4  4  8 8 |
+    % 3/4 + 2/4
+    r8 e8  r e  r e  r e  e4 |
 }
-kickAFiveFour = \relative c' {
+kickNineFour = \relative c' {
     % 4/4
-    a4\repeatTie  4 ~ 8 4. |
+    r4 d4  r8 4. |
     % 5/4
-    a4. 4. 4. 8 ~ |
-    % 4/4
-    a4  4 ~ 8 4. |
-    % 5/4 
-    a4. 4. 4. 8\laissezVibrer|
+    d4. 4. 4. 8 |
 }
 
 melodyANineEight = \relative c'' {
@@ -235,45 +272,21 @@ melody = {
             %     \include "ly/ily/chord-names-properties.ily"
             %     \chordsForm
             % }
-            \new Staff = "lead" \with {
-                instrumentName = "Clicks"
-            } \transpose e e {
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structure
-                    { 
-                        \clicksAFiveFour
-                        \clicksANineEight
-                        \clicksANineEightRealigned
-                    }
-                >>
-            }
             \new Staff \with { 
-                instrumentName = "Melody"
+                % instrumentName = "Melody"
             } \transpose e e {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
                     \structure
                     { 
-                        \melodyAFiveFour
-                        \melodyANineEight
-                        \melodyANineEightRealigned
-                    }
-                >>
-            }
-            \new Staff \with { 
-                instrumentName = "Kick"
-            } \transpose e e {
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structure
-                    { 
-                        \kickAFiveFour
-                        \kickANineEight
-                        \kickANineEightRealigned
+                        \bassANineFour
+                        << 
+                            \clicksNineFour \\
+                            \kickNineFour
+                        >>
+                        \melodyBNineFour
+                        \melodyCNineFour
                     }
                 >>
             }
