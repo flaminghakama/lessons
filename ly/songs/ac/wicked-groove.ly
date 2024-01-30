@@ -196,6 +196,12 @@ kickNineFour = \relative c' {
     % 5/4
     d4. 4. 4. 8 |
 }
+kickNineFourForFlats = \relative c' {
+    % 4/4
+    r4 ds4  r8 4. |
+    % 5/4
+    ds4. 4. 4. 8 |
+}
 
 melodyANineEight = \relative c'' {
 
@@ -268,6 +274,43 @@ melody = {
         subtitle = "(Kopolo)"
     }
     \score {
+        \transpose c bf, <<
+            % \new ChordNames \transpose e e { 
+            %     \include "ly/ily/chord-names-properties.ily"
+            %     \chordsForm
+            % }
+            \new Staff \with { 
+                % instrumentName = "Melody"
+            } \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    { 
+                        \bassANineFour
+                        \transpose bf, c << 
+                            \clicksNineFour \\
+                            \kickNineFour
+                        >>
+                        \melodyBNineFour
+                        \melodyCNineFour
+                    }
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Kopolo)"
+    }
+    \score {
         <<
             % \new ChordNames \transpose e e { 
             %     \include "ly/ily/chord-names-properties.ily"
@@ -285,6 +328,43 @@ melody = {
                         << 
                             \clicksNineFour \\
                             \kickNineFour
+                        >>
+                        \melodyBNineFour
+                        \melodyCNineFour
+                    }
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Kopolo)"
+    }
+    \score {
+        \transpose ef bf, <<
+            % \new ChordNames \transpose e e { 
+            %     \include "ly/ily/chord-names-properties.ily"
+            %     \chordsForm
+            % }
+            \new Staff \with { 
+                % instrumentName = "Melody"
+            } \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    { 
+                        \transpose bf, bf \bassANineFour
+                        \transpose bf, ef << 
+                            \clicksNineFour \\
+                            \kickNineFourForFlats
                         >>
                         \melodyBNineFour
                         \melodyCNineFour
