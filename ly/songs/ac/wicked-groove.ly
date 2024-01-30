@@ -3,7 +3,7 @@
 titleLeft = "Wicked"
 titleRight = "Groove"
 title = "Wicked Groove"
-composerName = "Kopolo"
+composerName = "Orchéstre Baka de Gbiné"
 
 %{
 
@@ -265,6 +265,7 @@ melody = {
         composer = \markup \italic { "composed by" \composerName }
         poet = "Concert Lead Sheet"
         instrumentName = \poet
+        subtitle = "(Kopolo)"
     }
     \score {
         <<
