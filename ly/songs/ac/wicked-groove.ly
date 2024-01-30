@@ -265,7 +265,7 @@ melody = {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "lead-sheet-for-C"
     \header {
         title = \title
         composer = \markup \italic { "composed by" \composerName }
@@ -302,7 +302,7 @@ melody = {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "lead-sheet-for-Bb"
     \header {
         title = \title
         composer = \markup \italic { "composed by" \composerName }
@@ -339,7 +339,7 @@ melody = {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "lead-sheet-for-Eb"
     \header {
         title = \title
         composer = \markup \italic { "composed by" \composerName }
