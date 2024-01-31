@@ -12,12 +12,13 @@ composerName = "H. Hancock"
 
 %{
 
-rm watermelon-man*pdf ; lilypond ly/songs/jazz/watermelon-man.ly ; for file in watermelon-man*pdf pdf/songs/jazz/printable/watermelon-man*pdf ; do op $file ; done
+killPreview ; rm watermelon-man*pdf ; lilypond ly/songs/jazz/watermelon-man.ly ; for file in watermelon-man*pdf pdf/songs/jazz/printable/watermelon-man*pdf ; do op $file ; done
 
+killPreview
 rm watermelon-man*pdf
 lilypond ly/songs/jazz/watermelon-man.ly
 mv watermelon-man*.pdf  pdf/songs/jazz
-for file in pdf/songs/jazz/watermelon-man*pdf pdf/songs/jazz/printable/watermelon-man*pdf ; do op $file ; done
+for file in pdf/songs/jazz/watermelon-man*pdf ; do op $file ; done
 
 %}
 
@@ -37,7 +38,7 @@ for file in pdf/songs/jazz/watermelon-man*pdf pdf/songs/jazz/printable/watermelo
   system-system-spacing.basic-distance = #18
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #13
+  score-system-spacing.minimum-distance = #36
 
   page-breaking = #ly:minimal-breaking
 
@@ -66,8 +67,17 @@ structureRealBook = \relative c' {
     \bar ":|]"
 }
 
+structureHeadHuntersRiff = \relative c' { 
+    \startSection "Headhunters Riff"
+    \key f \major
+    \time 4/4
+    \bar "[|:" 
+    s1*4 
+    \bar ":|]"
+}
+
 structureHeadHunters = \relative c' { 
-    \startSection "Headhunters Version"
+    \startSection "Headhunters Head"
     \key f \major
     \time 4/4
     \bar "[|:" 
@@ -91,6 +101,12 @@ chordsFormRealBook = \chordmode {
     
     c1:7 | bf:7 | c1:7 | bf:7 |
     c1:7 | bf:7 | f:7 | s | 
+}
+chordsRiffHeadhunters = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    af1:7 | s | s | s |
 }
 chordsFormHeadhunters = \chordmode { 
     \set chordChanges = ##t 
@@ -143,6 +159,10 @@ melodyRealBookForEb = \relative c'' {
     r4 c,8 8 g'4 af | f f8 8 <c' af> <d bf>4 f,8 ~ | 2 r | R1 |
 }
 
+melodyHeadHeadhuntersRiff = \relative c'' { 
+    R1 | gf8 af bf df  c4 af8 gf ~ | 1 ~ | 1 | 
+}
+
 melodyHeadHeadhuntersPartOne = \relative c'' { 
     \override Beam.damping = #2.75 
     \override Stem.length-fraction = #(magstep 1.2)
@@ -161,7 +181,7 @@ melodyHeadHeadhuntersPartTwo = \relative c'' {
     r2 r4 c,8 8 | g'4. af8 r2 | r2 af8 g f d | f4. g8 r2 | 
 
     r2 r8 c,4 8 | g'2 ~ 8 af8 r4 | R1 | ef8 d c bf  c d r ef ~ | 
-    ef1 ~ | 4 \tuplet 3/2 { f8 gf f } ef4 df8 c ~ | 4 df8 bf ~ 2 ~ | 4 r r8 ef4. ~ ||
+    ef1 ~ | 4 \tuplet 3/2 { f8 gf f } ef4 df8 c ~ | 4 df8 bf ~ 2 ~ | 4 r r8 ef4. \laissezVibrer ||
 }
 melodyHeadHeadhuntersPartTwoForEb = \relative c' { 
     \override Beam.damping = #2.75 
@@ -174,7 +194,6 @@ melodyHeadHeadhuntersPartTwoForEb = \relative c' {
     r2 r8 c,4 8 | g'2 ~ 8 af8 r4 | R1 | ef'8 d c bf  c d r ef ~ | 
     ef1 ~ | 4 \tuplet 3/2 { f8 gf f } ef4 df8 c ~ | 4 df8 bf ~ 2 ~ | 4 r r8 ef4. \laissezVibrer ||
 }
-
 
 hits = \relative c'' {
     \override Beam.damping = #2.75 
@@ -189,9 +208,43 @@ hits = \relative c'' {
     R1 | r2 r8 b r c | 
     
     r8 e r4 r2 | r2 r8 c r bf | 
+    R1 | r2 r8 d, r ef \laissezVibrer |
+    
+    s1 | s | s | r8 c r b  r bf4. ||
+}
+hitsForEb = \relative c'' {
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.2)
+
+    r2 r4 r8 g ||
+
+    R1 | r2 r8 gf r f | 
+    R1 | r2 r8 b r c | 
+    
+    r8 e r4 r2 | r2 r8 c r bf | 
+    R1 | r2 r8 b r c | 
+    
+    r8 e r4 r2 | r2 r8 c r bf | 
     R1 | r2 r8 d r ef \laissezVibrer |
     
-    s1 | s | s | r8 c r b  r bf4. \laissezVibrer ||
+    s1 | s | s | r8 c r cf  r bf4. ||
+}
+hitsForBb = \relative c''' {
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.2)
+
+    r2 r4 r8 g ||
+
+    R1 | r2 r8 gf r f | 
+    R1 | r2 r8 b, r c | 
+    
+    r8 e r4 r2 | r2 r8 c r bf | 
+    R1 | r2 r8 b r c | 
+    
+    r8 e r4 r2 | r2 r8 c r bf | 
+    R1 | r2 r8 d r ef \laissezVibrer |
+    
+    s1 | s | s | r8 c r cf  r bf4. ||
 }
 
 \layout {
@@ -223,9 +276,31 @@ hits = \relative c'' {
                 \new Voice <<
                     \structureRealBook
                     \melodyRealBook
+                    \noPageBreak
                 >>
             }
         >>
+    }
+    \score {
+        \transpose c c <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsRiffHeadhunters
+            }
+            \new Staff { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \structureHeadHuntersRiff
+                    \melodyHeadHeadhuntersRiff
+                >>
+            }
+        >>
+        \layout {
+            % indent = 4\cm
+            ragged-right = ##f
+            ragged-last = ##f
+            % short-indent = .25\cm
+        }    
     }
     \score {
         \transpose c c <<
@@ -275,6 +350,27 @@ hits = \relative c'' {
         \transpose bf, c <<
             \new ChordNames { 
                 \include "ly/ily/chord-names-properties.ily"
+                \chordsRiffHeadhunters
+            }
+            \new Staff { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \structureHeadHuntersRiff
+                    \melodyHeadHeadhuntersRiff
+                >>
+            }
+        >>
+        \layout {
+            % indent = 4\cm
+            ragged-right = ##f
+            ragged-last = ##f
+            % short-indent = .25\cm
+        }    
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsFormHeadhunters
             }
             \new Staff { 
@@ -285,7 +381,7 @@ hits = \relative c'' {
                         \melodyHeadHeadhuntersPartOne
                         <<
                             \melodyHeadHeadhuntersPartTwo \\
-                            \transpose c c, \hits
+                            \transpose c c, \hitsForBb
                         >>
                     }
                 >>
@@ -319,6 +415,27 @@ hits = \relative c'' {
         \transpose ef, c <<
             \new ChordNames { 
                 \include "ly/ily/chord-names-properties.ily"
+                \chordsRiffHeadhunters
+            }
+            \new Staff { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \structureHeadHuntersRiff
+                    \melodyHeadHeadhuntersRiff
+                >>
+            }
+        >>
+        \layout {
+            % indent = 4\cm
+            ragged-right = ##f
+            ragged-last = ##f
+            % short-indent = .25\cm
+        }    
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
                 \chordsFormHeadhunters
             }
             \new Staff { 
@@ -329,7 +446,7 @@ hits = \relative c'' {
                         \melodyHeadHeadhuntersPartOne
                         <<
                             \melodyHeadHeadhuntersPartTwoForEb \\
-                            \transpose c c, \hits
+                            \transpose c c, \hitsForEb
                         >>
                     }
                 >>
