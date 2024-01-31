@@ -79,9 +79,6 @@ structureHeadHunters = \relative c' {
     s1*4 \break
     s1*4 \break
     s1*4
-    \bar "||"
-    \time 3/4
-    s2.
     \bar ":|]"
 }
 
@@ -110,7 +107,6 @@ chordsFormHeadhunters = \chordmode {
 
     c1:7 | s | bf:7 | s | 
     af1:7 | s | s | s |
-    s2. ||
 }
 
 melodyRealBook = \relative c'' { 
@@ -165,8 +161,7 @@ melodyHeadHeadhuntersPartTwo = \relative c'' {
     r2 r4 c,8 8 | g'4. af8 r2 | r2 af8 g f d | f4. g8 r2 | 
 
     r2 r8 c,4 8 | g'2 ~ 8 af8 r4 | R1 | ef8 d c bf  c d r ef ~ | 
-    ef1 ~ | 4 \tuplet 3/2 { f8 gf f } ef4 df8 c ~ | 4 df8 bf ~ 2 ~ | 4 r r8 ef4. ~ | 
-    ef2. ||
+    ef1 ~ | 4 \tuplet 3/2 { f8 gf f } ef4 df8 c ~ | 4 df8 bf ~ 2 ~ | 4 r r8 ef4. ~ ||
 }
 melodyHeadHeadhuntersPartTwoForEb = \relative c' { 
     \override Beam.damping = #2.75 
@@ -177,8 +172,7 @@ melodyHeadHeadhuntersPartTwoForEb = \relative c' {
     r2 r4 c,8 8 | g'4. af8 r2 | r2 af8 g f d | f4. g8 r2 | 
 
     r2 r8 c,4 8 | g'2 ~ 8 af8 r4 | R1 | ef'8 d c bf  c d r ef ~ | 
-    ef1 ~ | 4 \tuplet 3/2 { f8 gf f } ef4 df8 c ~ | 4 df8 bf ~ 2 ~ | 4 r r8 ef4. ~ | 
-    ef2. ||
+    ef1 ~ | 4 \tuplet 3/2 { f8 gf f } ef4 df8 c ~ | 4 df8 bf ~ 2 ~ | 4 r r8 ef4. \laissezVibrer ||
 }
 
 
@@ -197,8 +191,7 @@ hits = \relative c'' {
     r8 e r4 r2 | r2 r8 c r bf | 
     R1 | r2 r8 d r ef \laissezVibrer |
     
-    s1 | s | s | r8 c r b  r bf4. ~ | 
-    2. ||
+    s1 | s | s | r8 c r b  r bf4. \laissezVibrer ||
 }
 
 \layout {

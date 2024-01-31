@@ -139,7 +139,24 @@ structure = \relative c'' {
     \bar ":|]"
 }
 
+chordsCell = \chordmode { 
+    a1 | e3. | s2 |
+    d1 | e2. | s2 | 
+}
+
 chordsForm = \chordmode { 
+    s1 | s2. | s2 |
+    s1 | s2. | s2 |
+
+    % "A" "4X"
+    s1 | s2. | s2 |
+
+    % "B" "Melody"
+    \chordsCell
+
+    % "C" "Chorus"
+    \chordsCell
+    \chordsCell
 
 }
 chordsForFlats = \chordmode { 
@@ -160,11 +177,11 @@ melodyBNineFour = \relative c'' {
     % 4/4
     e8 [ d8 ]  4  4  e8 d |
     % 3/4 + 2/4
-    \autoBeamOff r8 cs  b8 \autoBeamOn 4 8 ~  | 2 |
+    \autoBeamOff r8 cs  b8 \autoBeamOn 4 8 ~  | 4 a8 b |
 }
 melodyCNineFour = \relative c'' {
     % 4/4
-    cs4 a2 r4 | 
+    cs2. r4 | 
     % 3/4 + 2/4
     r4 r8 b4 8 ~ | 8 a8 b4 | 
 
