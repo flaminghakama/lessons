@@ -59,7 +59,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/ily/layout-songs.ily"
 
 structure = \relative c' { 
-    \key ef \major
+    \key ef \minor
     \partial 2 s2
     \startSection "A"
     \repeat volta 2 { 
