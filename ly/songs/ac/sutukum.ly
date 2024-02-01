@@ -280,7 +280,7 @@ tenorATwo = \relative c'' {
 }
 tenorILick = \relative c''' {
     gs16 [ fs r gs ~ ]  8 r  fs16 [ e r fs ~ ]  8 r |
-    e16 [ ds r ds ]  r e [ ds cs ]  ds ds e fs ~  8 r |
+    e16 [ ds r e ]  r e [ ds cs ]  ds ds e fs ~  8 r |
 }
 tenorI = \relative c''' {
     \tenorILick
