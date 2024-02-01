@@ -58,101 +58,217 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
-structure = \relative c'' { 
-    \tempo 4=120
+cellStructure = \relative c' {
+    \time 5/4
+    s1*5/4
+    \bar "||"
+    \time 4/4
+    s1
+    \bar "||"
+}
+
+
+structureLeadSheet = \relative c'' { 
+
     \key a \major
-
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
-    \bar "||"
-
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
+    
+    \once \override Score.MetronomeMark #'extra-offset = #'( -7 . 1 )
+    \tempo 4=180
+    
+    \cellStructure
+    \cellStructure
     \break 
 
-    \startSectionWithLabel "A" "2X"
+    \startSectionWithLabel "A" "4X"
     \bar "[|:"
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
-    \bar "||"
-
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
-    \break
+    \cellStructure
+    \cellStructure
+    \break 
 
     \startSectionWithLabel "B" "Melody"
     \bar ":|][|:"
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
-    \bar "||"
 
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
+    \cellStructure
+    \cellStructure
+    \break 
 
-
-    \bar "||"
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
-    \bar "||"
-
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
+    \cellStructure
+    \cellStructure
     \break 
 
     \startSectionWithLabel "C" "Chorus"
     \bar ":|][|:"
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
-    \bar "||"
 
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
+    \cellStructure
+    \cellStructure
+    \break 
 
-    \bar "||"
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
-    \bar "||"
+    \cellStructure
+    \cellStructure
+    \break 
 
-    \time 5/4
-    s1*5/4
-    \bar "||"
-    \time 4/4
-    s1
     \bar ":|]"
 }
+
+structurePart = \relative c'' { 
+    \tempo 4=120
+    \key a \major
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSectionWithLabel "A" "4X"
+    \bar "[|:"
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSection "B"
+    \bar ":|][|:"
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSection "C"
+    \bar ":|]"
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSectionWithLabel "A1" "3X"
+    \bar ":|][|:"
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSection "B1"
+    \bar ":|]"
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break
+    
+    \startSection "C1"
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+
+    \pageBreak
+
+    \startSection "D"
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSection "E"
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSection "C2"
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSectionWithLabel "A2" "Open solos"
+    \bar "[|:"
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \bar ":|]"
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break
+
+    \startSection "B2"
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+
+    \pageBreak
+
+    \startSectionWithLabel "C3" "(2nd C2)"
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSection "D2"
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \startSection "C4"
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \break 
+
+    \cellStructure
+    \cellStructure
+    \bar "|."
+}
+
 
 chordsCell = \chordmode { 
     a1*5/4 | e1 |
@@ -179,11 +295,19 @@ chordsForFlats = \chordmode {
 }
 
 bassANineFour = \relative c'' {
-    <>^\markup \bold "Bass"
-    r4 a4  cs a8 e' r e,8 ~ | 8 gs8 ~ 8 [ e ~ ] 8 gs e'4-. |
+    
+    r4 <>^\markup \bold "Bass" a4  cs a8 e' r e,8 ~ | 8 gs8 ~ 8 [ e ~ ] 8 gs e'4-. |
     fs,4 d  e d8 d' r8 e,8 ~ | 8 gs8 ~ 8 [ e ~ ] 8 gs e'4-. | 
 }
 
+melodyBCommon = \relative c'' {
+    % 5/4
+    r4   a   cs  e8 [ cs8 ] r cs |
+    % 4/4
+    b8  4 e8 ~  8 fs  e4-.  |
+    % 5/4
+    e8 d8   4  4  e8 d r cs |
+}
 melodyBNineFour = \relative c'' {
     % 5/4
     r4   a   cs  e8 [ cs8 ] r cs |
@@ -203,9 +327,21 @@ melodyBNineFour = \relative c'' {
     % 4/4
     b8  4 8 ~  4 a8 b |
 }
-melodyCNineFour = \relative c'' {
-    % 5/4
-    cs2. r2 | 
+melodyBZero = \relative c'' {
+    \melodyBCommon
+    % 4/4
+    b8  4 8 ~  2 |
+}
+
+melodyBOne = \relative c'' {
+    \melodyBZero
+    \melodyBCommon
+    % 4/4
+    b8  4 8 ~  4 a8 b |
+    cs1 r4
+}
+
+melodyCCell = \relative c'' {
     % 4/4
     r8 b4 8 ~ 8 a8 b4 | 
 
@@ -216,6 +352,86 @@ melodyCNineFour = \relative c'' {
 
     % 5/4
     cs1 r4 | 
+}
+
+melodyCCommon = \relative c'' {
+    \melodyCCell
+    % 4/4
+    r8 b4 8 ~  8 a8 b4 | 
+
+    % 5/4
+    a8 fs ~ 2 r | 
+    % 4/4
+    r8 b4  8 ~  8 a8 b4 |
+}
+melodyCNineFour = \relative c'' {
+    % 5/4
+    cs2. r2 | 
+    % 4/4
+    r8 b4 8 ~ 8 a8 b4 | 
+
+    % 5/4
+    a8 fs ~ 2 r|
+    % 4/4
+    r8 b4  8 ~  8 a8 b4 |
+
+    % 5/4
+    cs1 r4 | 
+    % 4/4
+    r8 b4 8 ~  8 a8 b4 | 
+
+    % 5/4
+    a8 fs ~ 2 r | 
+    % 4/4
+    r8 b4  8 ~  8 a8 b4 |
+
+}
+tenorCZero = \relative c'' {
+    % 5/4
+    R1*5/4 | 
+    \melodyCCommon
+    cs4 a2. r4 |
+}
+tenorCOne = \relative c'' {
+    \melodyCCommon
+    cs2. r2 
+}
+tenorDZero = \relative c'' {
+    \melodyCCell
+    R1 | 
+    R1*5/4 | r8 e4 8 ~ 8 8 4 |
+}
+tenorE = \relative c'' {
+    d8 e cs2 r | R1 | 
+    R1*5/4 | r8 e,4 8 ~ 8 8 4 | 
+    d8 e cs2 r | R1 | 
+    R1*5/4 | r8 e4 8 ~ 8 8 4 |   
+}
+tenorCTwo = \relative c' {
+    d8 e cs2 r | 
+    \melodyCCommon
+}
+tenorATwo = \relative c'' { 
+    cs4 2 \comp #2 | \comp #4 | \comp #5 | \comp #4
+    <>\xp R1*5/4 | R1 | <>\xp R1*5/4 | R1 | 
+    <>\xp R1*5/4 | R1 | <>\xp R1*5/4 | R1 | 
+    <>\xp R1*5/4 | R1 | <>\xp R1*5/4 | R1 | 
+}
+tenorCThree = \relative c' {
+    \melodyCCommon
+}
+tenorDTwoLick = \relative c' {
+    R1*5/4 | r8 e4 8 ~ 8 8 4 | d8 e cs2 r2 | 
+}
+tenorDTwo = \relative c' {
+    cs2. r2 | 
+    \transpose c, c \melodyCCell | R1 | 
+    \tenorDTwoLick | R1 | 
+    \tenorDTwoLick | R1 | 
+    \tenorDTwoLick | 
+}
+tenorCFour = \relative c'' {
+    \melodyCCell
     % 4/4
     r8 b4 8 ~  8 a8 b4 | 
 
@@ -224,7 +440,18 @@ melodyCNineFour = \relative c'' {
     % 4/4
     r8 b4  8 ~  8 a8 b4 |
 
+    % 5/4
+    a2. ~ 2 ~ |  
+    % 4/4
+    a1 ~ | 
+
+    % 5/4
+    a2. ~ 2 ~ |  
+    % 4/4
+    a1 | 
 }
+
+
 clicksNineFour = \relative c'' {
     % 5/4
     e4   4  4  8 8  r e |
@@ -299,10 +526,33 @@ kickANineEightRealigned = \relative c' {
 
 
 
-melodyB = \relative c''' {
-}
+tenor = \relative c'' {
 
-melody = {
+    \bassANineFour
+
+    % "A"
+    <<
+        { \clicksNineFour \clicksNineFour } \\
+        { \kickNineFour \kickNineFour }
+    >>
+
+    \melodyBZero
+    \tenorCZero
+
+    % "A1" "3X"
+    R1 | 
+    R1*5/4 | R1 | 
+
+    \melodyBOne
+    \tenorCOne
+    \tenorDZero
+    \tenorE
+    \tenorCTwo
+    \tenorATwo
+    \melodyBOne
+    \tenorCThree
+    \tenorDTwo
+    \tenorCFour
 }
 
 \book {
@@ -326,7 +576,7 @@ melody = {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \structure
+                    \structureLeadSheet
                     { 
                         \bassANineFour
                         \transpose bf, c << 
@@ -368,7 +618,7 @@ melody = {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \structure
+                    \structureLeadSheet
                     { 
                         \bassANineFour
                         \transpose bf bf << 
@@ -410,7 +660,7 @@ melody = {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \structure
+                    \structureLeadSheet
                     { 
                         \transpose bf, bf \bassANineFour
                         \transpose bf, ef << 
@@ -432,3 +682,33 @@ melody = {
         >>
     }
 }
+
+\book {
+  \bookOutputSuffix "tenor-for-Bb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Bb Tenor Saxophone"
+        instrumentName = \poet
+        subtitle = "(Kopolo)"
+    }
+    \score {
+        <<
+            % \new ChordNames \transpose e e { 
+            %     \include "ly/ily/chord-names-properties.ily"
+            %     \chordsForm
+            % }
+            \new Staff \with { 
+                % instrumentName = "Melody"
+            } \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structurePart
+                    \tenor
+                >>
+            }
+        >>
+    }
+}
+
