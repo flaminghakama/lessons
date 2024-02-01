@@ -62,94 +62,109 @@ structure = \relative c'' {
     \tempo 4=120
     \key a \major
 
-    \time 4/4
-    s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2
-
+    \time 5/4
+    s1*5/4
     \bar "||"
     \time 4/4
     s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2
-    \break 
+    \bar "||"
 
-    \startSectionWithLabel "A" "4X"
-    \bar "[|:"
+    \time 5/4
+    s1*5/4
+    \bar "||"
     \time 4/4
     s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2 \break
+    \break 
+
+    \startSectionWithLabel "A" "2X"
+    \bar "[|:"
+    \time 5/4
+    s1*5/4
+    \bar "||"
+    \time 4/4
+    s1
+    \bar "||"
+
+    \time 5/4
+    s1*5/4
+    \bar "||"
+    \time 4/4
+    s1
+    \break
 
     \startSectionWithLabel "B" "Melody"
     \bar ":|][|:"
+    \time 5/4
+    s1*5/4
+    \bar "||"
     \time 4/4
     s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2
+    \bar "||"
+
+    \time 5/4
+    s1*5/4
+    \bar "||"
     \time 4/4
     s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2
+
+
+    \bar "||"
+    \time 5/4
+    s1*5/4
+    \bar "||"
+    \time 4/4
+    s1
+    \bar "||"
+
+    \time 5/4
+    s1*5/4
+    \bar "||"
+    \time 4/4
+    s1
     \break 
 
     \startSectionWithLabel "C" "Chorus"
     \bar ":|][|:"
-    \time 4/4
-    s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2
-
+    \time 5/4
+    s1*5/4
     \bar "||"
     \time 4/4
     s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2 \break
+    \bar "||"
 
+    \time 5/4
+    s1*5/4
     \bar "||"
     \time 4/4
     s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2
 
+    \bar "||"
+    \time 5/4
+    s1*5/4
     \bar "||"
     \time 4/4
     s1
-    \time 3/4
-    s2.
-    \time 2/4
-    s2
+    \bar "||"
 
+    \time 5/4
+    s1*5/4
+    \bar "||"
+    \time 4/4
+    s1
     \bar ":|]"
 }
 
 chordsCell = \chordmode { 
-    a1 | e3. | s2 |
-    d1 | e2. | s2 | 
+    a1*5/4 | e1 |
+    d1*5/4 | e1 | 
 }
 
 chordsForm = \chordmode { 
-    s1 | s2. | s2 |
-    s1 | s2. | s2 |
+    s1*5/4 | s1 |
+    s1*5/4 | s1 |
 
     % "A" "4X"
-    s1 | s2. | s2 |
+    \chordsCell
 
     % "B" "Melody"
     \chordsCell
@@ -165,59 +180,68 @@ chordsForFlats = \chordmode {
 
 bassANineFour = \relative c'' {
     <>^\markup \bold "Bass"
-    r4 a4  cs a8 e' | r8 e,4 gs8 ~ 8 [ e ~ ] | 8 gs e'4-. |
-    fs,4 d  e d8 d' | r8 e,4 gs8 ~ 8 [ e ~ ] | 8 gs e'4-. | 
+    r4 a4  cs a8 e' r e,8 ~ | 8 gs8 ~ 8 [ e ~ ] 8 gs e'4-. |
+    fs,4 d  e d8 d' r8 e,8 ~ | 8 gs8 ~ 8 [ e ~ ] 8 gs e'4-. | 
 }
 
 melodyBNineFour = \relative c'' {
+    % 5/4
+    r4   a   cs  e8 [ cs8 ] r cs |
     % 4/4
-    r4   a   cs  e8 cs8 |
-    % 3/4 + 2/4
-    \autoBeamOff r8 cs  b8 \autoBeamOn 4 e8 ~  | 8 fs  e4-.  |
+    b8  4 e8 ~  8 fs  e4-.  |
+    % 5/4
+    e8 d8   4  4  e8 d r cs |
     % 4/4
-    e8 [ d8 ]  4  4  e8 d |
-    % 3/4 + 2/4
-    \autoBeamOff r8 cs  b8 \autoBeamOn 4 8 ~  | 4 a8 b |
+    b8  4 8 ~  2 |
+
+
+    r4   a   cs  e8 [ cs8 ] r cs |
+    % 4/4
+    b8  4 e8 ~  8 fs  e4-.  |
+    % 5/4
+    e8 d8   4  4  e8 d r cs |
+    % 4/4
+    b8  4 8 ~  4 a8 b |
 }
 melodyCNineFour = \relative c'' {
+    % 5/4
+    cs2. r2 | 
     % 4/4
-    cs2. r4 | 
-    % 3/4 + 2/4
-    r4 r8 b4 8 ~ | 8 a8 b4 | 
+    r8 b4 8 ~ 8 a8 b4 | 
 
+    % 5/4
+    a8 fs ~ 2 r2 |
     % 4/4
-    a8 fs ~ 2. | 
-    % 3/4 + 2/4
-    r4 r8 b4  8 ~ | 8 a8 b4 |
+    r8 b4  8 ~  8 a8 b4 |
 
+    % 5/4
+    cs1 r4 | 
     % 4/4
-    cs1 | 
-    % 3/4 + 2/4
-    r4 r8 b4 8 ~ | 8 a8 b4 | 
+    r8 b4 8 ~  8 a8 b4 | 
 
+    % 5/4
+    a8 fs ~ 2 r2 | 
     % 4/4
-    a8 fs ~ 2. | 
-    % 3/4 + 2/4
-    r4 r8 b4  8 ~ | 8 a8 b4 |
+    r8 b4  8 ~  8 a8 b4 |
 
 }
 clicksNineFour = \relative c'' {
+    % 5/4
+    e4   4  4  8 8  r e |
     % 4/4
-    e4   4  4  8 8 |
-    % 3/4 + 2/4
-    r8 e8  r e  r e  r e  e4 |
+    r8 e  r e  r e  e4 |
 }
 kickNineFour = \relative c' {
-    % 4/4
-    r4 d4  r8 4. |
     % 5/4
-    d4. 4. 4. 8 |
+    r4 d4  r8 4. 4 |
+    % 4/4
+    r8 4. 4. 8 |
 }
 kickNineFourForFlats = \relative c' {
-    % 4/4
-    r4 ds4  r8 4. |
     % 5/4
-    ds4. 4. 4. 8 |
+    r4 ds4  r8 4. 4 |
+    % 4/4
+    r8 ds4. 4. 8 |
 }
 
 melodyANineEight = \relative c'' {
@@ -306,8 +330,13 @@ melody = {
                     { 
                         \bassANineFour
                         \transpose bf, c << 
-                            \clicksNineFour \\
-                            \kickNineFour
+                            {
+                                \clicksNineFour
+                                \clicksNineFour
+                            } \\ {
+                                \kickNineFour
+                                \kickNineFour
+                            }
                         >>
                         \melodyBNineFour
                         \melodyCNineFour
@@ -342,9 +371,14 @@ melody = {
                     \structure
                     { 
                         \bassANineFour
-                        << 
-                            \clicksNineFour \\
-                            \kickNineFour
+                        \transpose bf bf << 
+                            {
+                                \clicksNineFour
+                                \clicksNineFour
+                            } \\ {
+                                \kickNineFour
+                                \kickNineFour
+                            }
                         >>
                         \melodyBNineFour
                         \melodyCNineFour
@@ -380,9 +414,16 @@ melody = {
                     { 
                         \transpose bf, bf \bassANineFour
                         \transpose bf, ef << 
-                            \clicksNineFour \\
-                            \kickNineFourForFlats
+                            {
+                                \clicksNineFour
+                                \clicksNineFour
+                            } \\ {
+                                \kickNineFourForFlats
+                                \kickNineFourForFlats
+                            }
                         >>
+
+
                         \melodyBNineFour
                         \melodyCNineFour
                     }
