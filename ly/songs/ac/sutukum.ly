@@ -4,6 +4,7 @@ titleLeft = "Sutukum"
 titleRight = ""
 title = "Sutukum "
 composerName = "transcribed by AC"
+arrangerName = "renotated by Elaine Paul"
 
 %{
 
@@ -60,16 +61,21 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c'' { 
     \key a \major
+
+
+    \once \override Score.MetronomeMark #'extra-offset = #'( -8 . 1 )
     \tempo 4=120
     \time 4/4
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-
+    
+    \override Score.RehearsalMark #'extra-offset = #'( 2 . -2 )
     \startSection "Intro"
     \partial 4 
     s4 
     s1*9 \break
     
+    \override Score.RehearsalMark #'extra-offset = #'( -4 . 0.4 )
     \startSection "A"
     s1*4 \break
 
@@ -84,7 +90,9 @@ structure = \relative c'' {
 
 
     \startSection "C1"
-    s1*3 \break
+    s1*3
+
+    \pageBreak
 
     \startSection "D1"
     \bar "[|:"
@@ -92,9 +100,7 @@ structure = \relative c'' {
 
     \startSectionWithLabel "A1" "guitar solo"
     \bar ":|][|:"
-    s1*4 
-
-    \pageBreak
+    s1*4 \break
 
     \startSectionWithLabel "E" "Tenor solo"
     \bar ":|][|:"
@@ -110,9 +116,13 @@ structure = \relative c'' {
     \startSection "D2"
     s1*4 \break
 
-    \startSectionWithLabel "G" "Vamp until cue"
+    \startSection "G" 
+    s1*2
+    \startSectionWithLabel "" "Vamp until cue"
     \bar "[|:"
-    s1*4 
+    s1*2 
+
+    \pageBreak
 
     \startSection "H"
     \bar ":|]"
@@ -125,8 +135,6 @@ structure = \relative c'' {
     \startSectionWithLabel "" "Alto cue"
     \bar ":|]"
     s1*4
-
-    \pageBreak
 
     \startSectionWithLabel "A2" "both horns solo"
     \bar "[|:"
@@ -144,6 +152,25 @@ structure = \relative c'' {
 chordsForm = \chordmode { 
 }
 
+guitarIntro = \relative c''' {
+    a16 gs fs e ||
+    d16 cs8 b16 ~  16 cs8 d16  e4  a16 gs fs e |
+    d16 cs8 b16 ~  16 cs8 e16  a,4  a'16 gs fs e |
+    d16 cs8 b16 ~  16 cs8 d16  e4  a16 gs fs e |
+    d16 cs8 b16 ~  16 cs8 e16  a,4  8 b |
+
+    cs8. 16 ~ 16 d8 fs16  e4  a16 gs fs e |
+    d16 cs8 b16 ~  16 cs8 e16  a,4  8 b |
+    cs8. 16 ~ 16 d8 fs16  e4  a16 gs fs e |
+    d16 cs8 b16 ~  16 cs8 e16  a,4  r8 \grace { e'8 ( d } cs16 ) b | 
+
+    a8. gs16  r fs [ gs a \laissezVibrer]  
+}
+tenorIntro = \relative c' {
+    r4 ||
+    R1 | R1 | R1 | R1 | R1 | R1 | R1 | R1 | 
+    r2
+}
 tenorA = \relative c' {
     r8 fs gs [ as ] || 
     ds,8. cs16 ~ 8 ds ~ 8 fs gs as |
@@ -224,7 +251,7 @@ tenorDTwo = \relative c'' {
 }    
 tenorG = \relative c'' {
     R1*2 | 
-    \tuplet 3/2 8 { 
+    \tuplet 6/4 4 { 
         b16 as gs  b as gs  b as gs  b as gs  
         b16 as gs  b as gs  b as gs  b as gs  
         b'16 as gs  b as gs  b as gs  b as gs  
@@ -244,7 +271,7 @@ tenorH = \relative c'' {
     b16 [ r8 fs16 ]  r8 b16 16  r2 | 
 }
 tenorIPickupLick = \relative c'' {
-    r16 e [ r e ]  r e8.  r16 ds [ r ds ]  r d8. |
+    r16 e [ r e ]  r e8.  r16 ds [ r ds ]  r ds8. |
     r16 cs [ r cs ]  r b [ as8 ]  b4  r |
 }
 tenorATwo = \relative c'' {
@@ -265,9 +292,7 @@ tenorI = \relative c''' {
     e16 [ ds r e ]  r e [ cs8 ]  r2 |
     \fermata fs1
 }
-melody = {
-    r4 ||
-    R1*8 | r2 
+tenor = {
     \tenorA
     \tenorB
     \tenorC
@@ -291,6 +316,7 @@ melody = {
     \header {
         title = \title
         composer = \markup \italic { \composerName }
+        arranger = \markup \italic { \arrangerName }
         poet = "Bb Tenor Saxophone"
         instrumentName = \poet
         subtitle = ""
@@ -308,7 +334,13 @@ melody = {
                 \autoPageBreaksOff
                 <<
                     \transpose bf, c \structure
-                    \melody
+                    {
+                        <<
+                            \transpose bf, c \guitarIntro \\
+                            \tenorIntro
+                        >>
+                        \tenor
+                    }
                 >>
             }
         >>
