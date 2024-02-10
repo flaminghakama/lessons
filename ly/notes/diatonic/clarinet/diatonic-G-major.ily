@@ -1,3 +1,31 @@
+tonicArpeggioG = \relative c' { 
+    \key c \major
+    \time 2/4
+    \tuplet 3/2 4 { 
+        g8 b d  g b d |
+        g8 d b  g d b | 
+    } 
+    g2 |
+    \tuplet 3/2 4 { 
+        g''8 b d  b g d | 
+        b8 g d  b g d' |
+    } 
+    g2 |
+
+    \bar "||"
+    \time 4/4 
+    g,8 ( d' ) b ( g' )  
+    d8 ( b' ) g ( d' ) |
+    b8 ( g' ) d ( b' )
+    g8 ( d' ) b ( d, ) |
+
+    g8 ( b, ) d ( g, )
+    b8 ( d, ) g ( b, ) |
+    d8 ( g, ) b ( d ) 
+    g,2
+    \bar "|."
+}
+
 diatonicExerciseOneGMajor = \transpose c g \relative c { 
     \key c \major
     \time 3/4

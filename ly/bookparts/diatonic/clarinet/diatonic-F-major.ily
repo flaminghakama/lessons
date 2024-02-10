@@ -5,6 +5,134 @@
             subtitle = "F Major"
             composer = ""
         }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c f, { 
+                    \include "ly/ily/staff-properties.ily"
+                    \key c \major
+                    \time 4/4
+                    \transpose c c \articulationExerciseScale
+                    \transpose c, c \articulationExerciseScale
+                    \bar "|."
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Articulations"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c f, { 
+                    \include "ly/ily/staff-properties.ily"
+                    \key c \major
+                    \time 4/4
+                    \transpose c c \syncopationExerciseScale
+                    \transpose c, c \syncopationExerciseScale
+                    \bar "|."
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Syncopation"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c f { 
+                    \include "ly/ily/staff-properties.ily"
+                    \key c \major
+                    \transpose c c, \scaleInThirdsMajorNotes
+                    \scaleInThirdsMajorNotes
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Scale in Thirds"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new ChordNames \transpose c f { 
+                    \tonicArpeggioChords 
+                }
+                \new Staff {
+                    \include "ly/ily/staff-properties.ily"
+                    \transpose c c \tonicArpeggioF
+                    \pageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Tonic Arpeggio"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new ChordNames \transpose c c { 
+                    \domiantArpeggioChords 
+                }
+                \new Staff {
+                    \include "ly/ily/staff-properties.ily"
+                    \domiantArpeggioC
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Dominant Arpeggio"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \new ChordNames \transpose c f { 
+                    \grandArpeggioMajorChords 
+                }
+                \new Staff \transpose c f { 
+                    \include "ly/ily/staff-properties.ily"
+                    \grandArpeggioMajor
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Grand Arpeggio"  " " }
+            }
+        }
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -13,6 +141,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseOneFMajor
+                    \pageBreak
                 }
             >>
             \header {
@@ -31,7 +160,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseTwoFMajor
-                    \pageBreak
+                    \noPageBreak
                 }
             >>
             \header {
@@ -50,6 +179,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseThreeFMajor
+                    \noPageBreak
                 }
             >>
             \header {

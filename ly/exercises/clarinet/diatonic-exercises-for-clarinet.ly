@@ -86,6 +86,10 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/diatonic/clarinet/diatonic-C-sharp-major.ily"
 \include "ly/notes/diatonic/clarinet/diatonic-C-flat-major.ily"
 
+\include "ly/notes/clarinet-articulation.ily"
+\include "ly/notes/arpeggio-exercises/grand-for-clarinet.ily"
+\include "ly/notes/arpeggio-exercises/dominant-for-clarinet.ily"
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \layout { 
@@ -132,6 +136,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
     \include "ly/bookparts/diatonic/clarinet/diatonic-C-sharp-Major.ily"
     \include "ly/bookparts/diatonic/clarinet/diatonic-C-flat-Major.ily"
+
 }
 
 

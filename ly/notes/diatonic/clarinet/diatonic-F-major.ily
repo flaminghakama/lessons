@@ -1,3 +1,29 @@
+
+tonicArpeggioF = \relative c { 
+    \key c \major
+    \time 2/4
+    \tuplet 3/2 4 { 
+        f8 a c  f a c  |
+        f8 c a  f8 c a  |
+    }
+    f2 |
+    \tuplet 3/2 4 { 
+        f'8 a c  f a c  |
+        f8 c a  f8 c a  |
+    }
+    f2 |
+    \bar "||"
+
+    \time 4/4
+    f,8 ( c' )  a ( f' )  c ( a' )  f ( c' ) | 
+    a8 ( f' )  c ( a' )  f ( c' )  a ( f' )  |
+    c8 ( f, )  a ( c, )  f ( a, )  c ( f, ) |
+    a8 ( c, )  f ( a, )  c ( f, )  a8 ( c )  | 
+    f1 
+    \bar "|."
+}
+
+
 diatonicExerciseOneFMajor = \transpose c f \relative c { 
     \key c \major
     \time 3/4
