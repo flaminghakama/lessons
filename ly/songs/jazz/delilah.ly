@@ -21,7 +21,7 @@ lilypond ly/songs/jazz/delilah.ly
 mv delilah*pdf pdf/songs/jazz
 for file in pdf/songs/jazz/delilah*pdf ; do op $file ; done 
 
-git add . ; git commit -m"all parts" ; git push 
+git add . ; git commit -m"enharmonics" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -789,7 +789,7 @@ bassSong = \relative c {
         \transpose bf, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong
+                \chordsSongForBb
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
