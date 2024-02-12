@@ -224,24 +224,26 @@ chordsLick = \chordmode {
     fs2:m7 fs:m6 | fs4.:m7 fs:m6 fs4:m | 
 }
 chordsASecondHalf = \chordmode { 
-    b1:m7 | gs2:m7.5- cs:7 | fs1:m7 | 
+    b1:m7 | gs4:m7.5- cs2.:7 | fs1:m7 | 
 }
 chordsA = \chordmode { 
     fs1:m7 | s | s | s | 
     \chordsASecondHalf
+}
+chordsAForFlats = \chordmode { 
+    gf1:m7 | s | s | s | 
+    cf1:m7 | af4:m7.5- df2.:7 | gf1:m7 | 
 }
 
 chordsBridge = \chordmode { 
     b1:m7 | s | cs:7 | s | 
     d1:6 | s | g:7.5- | s | 
 }
-
-
-chordsAForFlats = \chordmode { 
-    gf1:m7 | s | s | s | 
-    cf1:m7 | af2:m7.5- df:7 | gf1:m7 | 
+chordsBridgeForBb = \chordmode { 
+    b1:m7 | s | df:7 | s | 
+    d1:6 | s | g:7.5- | s | 
 }
-chordsBridgeForFlats = \chordmode { 
+chordsBridgeForEb = \chordmode { 
     cf1:m7 | s | df:7 | s | 
     d1:6 | s | g:7.5- | s | 
 }
@@ -316,14 +318,24 @@ chordsSong = \chordmode {
     \chordsBridge
     \chordsA
 }
-chordsSongForFlats = \chordmode { 
+chordsSongForBb = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s1*16
+
+    \chordsA s1 || s1 ||
+    \chordsBridgeForBb
+    \chordsA
+}
+chordsSongForEb = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s1*16
 
     \chordsAForFlats s1 || s1 ||
-    \chordsBridgeForFlats
+    \chordsBridgeForEb
     \chordsAForFlats
 }
 
@@ -404,6 +416,11 @@ melodyBridgeFirstHalfInEbForFlats = \relative c' {
     \tuplet 3/2 { cf4 df ef } bf'2 ~ | 
     \tuplet 3/2 { bf4 af gf } f4 ef8 d ~ | 8 ef f2. ~ | 2. r8
 }
+melodyBridgeFirstHalfForBb = \relative c' { 
+    ds8 ||
+    \tuplet 3/2 { e4 fs gs } ds'2 ~ | 
+    \tuplet 3/2 { ds4 cs b } as4 gs8 g ~ | 8 af bf2. ~ | 2. r8
+}
 melodyBridgeSecondHalfInEbForFlats = \relative c' { 
     as8 | 
     \tuplet 3/2 { b4 cs ds } cs'2 ~ | 4. b8  \tuplet 3/2 { fs4 es ds } | 
@@ -480,7 +497,7 @@ harmonyForBb = \relative c'' {
         \harmonyAEndInEb r4
         \harmonySecondEndingInEb r8
     }
-    \transpose c ds \melodyBridgeFirstHalfInEbForFlats
+    \transpose c bf, \melodyBridgeFirstHalfForBb
     \transpose c ef \melodyBridgeSecondHalfInEbForBb
     \melodyBridgeEndForHarmony
     \transpose c ds { 
@@ -516,7 +533,7 @@ secondHarmonyForBb = \relative c'' {
         \secondHarmonyAEndInEb r4
         \secondHarmonySecondEndingInEb r8 
     }
-    \transpose c ds \melodyBridgeFirstHalfInEbForFlats
+    \transpose c bf, \melodyBridgeFirstHalfForBb
     \transpose c ds \melodyBridgeSecondHalfInEb
     \melodyBridgeEndForHarmony
     \transpose c ds {
@@ -718,7 +735,7 @@ bassSong = \relative c {
         \transpose bf, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong
+                \chordsSongForBb
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -745,7 +762,7 @@ bassSong = \relative c {
         \transpose ef c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSongForFlats
+                \chordsSongForEb
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -799,7 +816,7 @@ bassSong = \relative c {
         \transpose ef c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSongForFlats
+                \chordsSongForEb
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
