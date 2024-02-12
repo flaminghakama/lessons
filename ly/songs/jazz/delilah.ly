@@ -21,7 +21,7 @@ lilypond ly/songs/jazz/delilah.ly
 mv delilah*pdf pdf/songs/jazz
 for file in pdf/songs/jazz/delilah*pdf ; do op $file ; done 
 
-git add . ; git commit -m"first draft of lead sheet" ; git push 
+git add . ; git commit -m"all parts" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -328,16 +328,16 @@ chordsSongForFlats = \chordmode {
 }
 
 melodyAPickup = \relative c' { 
-    \tuplet 3/2 { r4 fs a } ||
+    \tuplet 3/2 { r4 cs e } ||
 }
-melodyACommon = \relative c'' { 
-    b2 2 | \tuplet 3/2 2 { r4 d cs  b cs a } |
-    b2 2 | \tuplet 3/2 2 { r4 d cs  b cs a } |
-    \tuplet 3/2 2 { g4 a fs } g2 | cs4 2 a4 | 
-    g2\startTrillSpan fs\stopTrillSpan ~ | 2  
+melodyACommon = \relative c' { 
+    fs2 2 | \tuplet 3/2 2 { r4 a gs  fs gs e } |
+    fs2 2 | \tuplet 3/2 2 { r4 a gs  fs gs e } |
+    \tuplet 3/2 2 { d4 e cs } d2 | fs4 2 es4 | 
+    d2\startTrillSpan cs\stopTrillSpan ~ | 2  
 }
 melodySecondEnding = \relative c' {
-    fs2.\repeatTie
+    cs2.\repeatTie
 }
 
 harmonyIntroLickInEb = \relative c'' { 
