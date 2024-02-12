@@ -165,7 +165,6 @@ breaksGuitar = \relative c' {
 breaksMelody = \relative c' { 
 
     s1*16
-    \break
 
     % "A"
     s1*4 \break 
@@ -224,7 +223,7 @@ chordsLick = \chordmode {
     fs2:m7 fs:m6 | fs4.:m7 fs:m6 fs4:m | 
 }
 chordsASecondHalf = \chordmode { 
-    b1:m7 | gs4:m7.5- cs2.:7 | fs1:m7 | 
+    b1:m7 | gs4:m7.5- cs2.:7.9- | fs1:m7 | 
 }
 chordsA = \chordmode { 
     fs1:m7 | s | s | s | 
@@ -232,7 +231,7 @@ chordsA = \chordmode {
 }
 chordsAForFlats = \chordmode { 
     gf1:m7 | s | s | s | 
-    cf1:m7 | af4:m7.5- df2.:7 | gf1:m7 | 
+    cf1:m7 | af4:m7.5- df2.:7.9- | gf1:m7 | 
 }
 
 chordsBridge = \chordmode { 
@@ -389,7 +388,7 @@ secondHarmonyLickInEb = \relative c' {
     c,4 bf'8 af r af ( gf4-. ) | 
 }
 secondHarmonyAEndInEb = \relative c'' {
-    af1 | 4 2 4 | ef2\startTrillSpan df\stopTrillSpan ~ | 2. 
+    af1 | 4 2 4 | ef2\startTrillSpan f\stopTrillSpan ~ | 2. 
 }
 secondHarmonySecondEndingInEb = \relative c' {
     df2.\repeatTie 
@@ -397,6 +396,11 @@ secondHarmonySecondEndingInEb = \relative c' {
 
 secondHarmonyBridgeOutLickInEb = \relative c' { 
     e8 fs ~ 4.  f16 ( ef |
+    c4. ) bf'8 ( af4-. ) 4-. | 
+    c,4 bf'8 af r af ( gf4-. ) | 
+}
+secondHarmonyBridgeOutLickInEbForC = \relative c' { 
+    ff8 gf ~ 4.  f16 ( ef |
     c4. ) bf'8 ( af4-. ) 4-. | 
     c,4 bf'8 af r af ( gf4-. ) | 
 }
@@ -411,7 +415,7 @@ melodyBridgeFirstHalfInEb = \relative c' {
     \tuplet 3/2 { cf4 df ef } bf'2 ~ | 
     \tuplet 3/2 { bf4 af gf } f4 ef8 d ~ | 8 ef f2. ~ | 2. r8
 }
-melodyBridgeFirstHalfInEbForFlats = \relative c' { 
+melodyBridgeFirstHalfInEbForC = \relative c' { 
     bf8 ||
     \tuplet 3/2 { cf4 df ef } bf'2 ~ | 
     \tuplet 3/2 { bf4 af gf } f4 ef8 d ~ | 8 ef f2. ~ | 2. r8
@@ -426,7 +430,7 @@ melodyBridgeSecondHalfInEbForFlats = \relative c' {
     \tuplet 3/2 { b4 cs ds } cs'2 ~ | 4. b8  \tuplet 3/2 { fs4 es ds } | 
 }
 melodyBridgeSecondHalfInEbForBb = \relative c' { 
-    as8 | 
+    as?8 | 
     \tuplet 3/2 { b4 cs ds } cs'2 ~ | 4. b8  \tuplet 3/2 { fs4 es ds } | 
 }
 melodyBridgeSecondHalfInEb = \relative c' { 
@@ -440,11 +444,11 @@ melodyBridgeEndForHarmony = \relative c'' {
     g1 ~ | 4
 }
 melodyBridgeCommonInEb = { 
-    \melodyBridgeFirstHalfInEbForFlats
+    \melodyBridgeFirstHalfInEb
     \melodyBridgeSecondHalfInEbForFlats
 }
 melodyBridge = \relative c'' { 
-    \melodyBridgeFirstHalfInEbForFlats
+    \melodyBridgeFirstHalfInEb
     \melodyBridgeSecondHalfInEbForFlats
     g1 ~ | 2 
 }
@@ -506,9 +510,30 @@ harmonyForBb = \relative c'' {
         \harmonyAEndInEb r4
     }
 }
+harmonyForC = \relative c'' {
+    R1*11 | r2 r8 
+    \transpose c ds {
+        \harmonyIntroLickInEb
+        \harmonyLickInEb
+
+        \harmonyLickInEb
+        \harmonyLickInEb
+        \harmonyAEndInEb r4
+        \harmonySecondEndingInEb r8
+    }
+    \transpose c ds \melodyBridgeFirstHalfInEb
+    \transpose c ds \melodyBridgeSecondHalfInEb
+    \melodyBridgeEndForHarmony
+    \transpose c ds { 
+        \harmonyBridgeOutLickInEbForBb
+        \harmonyLickInEb
+        \harmonyAEndInEb r4
+    }
+}
 
 secondHarmonyInEb = \relative c'' {
-    R1*11 | r2 r8 
+    R1*8 | 
+    R1*3 | r2 r8 
     \secondHarmonyIntroLickInEb
     \secondHarmonyLickInEb
 
@@ -521,6 +546,29 @@ secondHarmonyInEb = \relative c'' {
     \secondHarmonyBridgeOutLickInEb
     \secondHarmonyLickInEb
     \secondHarmonyAEndInEb r4
+}
+secondHarmonyForC = {
+    R1*8 | 
+    R1*3 | r2 r8 
+    \transpose c ds { 
+        \secondHarmonyIntroLickInEb
+        \secondHarmonyLickInEb
+
+        \secondHarmonyLickInEb
+        \secondHarmonyLickInEb
+        \secondHarmonyAEndInEb r4
+        \secondHarmonySecondEndingInEb r8 
+    }
+    \transpose c ds { 
+        \melodyBridgeFirstHalfInEb
+        \melodyBridgeSecondHalfInEb
+    }
+    \melodyBridgeEndForHarmony
+    \transpose c ds { 
+        \secondHarmonyBridgeOutLickInEbForC
+        \secondHarmonyLickInEb
+        \secondHarmonyAEndInEb r4
+    }
 }
 secondHarmonyForBb = \relative c'' {
     R1*11 | r2 r8 
@@ -620,7 +668,7 @@ bassSong = \relative c {
         \bassLick 
         \bassLick
     }
-    b4. cs8 d4 f | fs4 2 f4 | 
+    b4. cs8 d4 es | fs4 2 es4 | 
     \repeat percent 2 {
         \bassLick 
     }
@@ -683,7 +731,7 @@ bassSong = \relative c {
                         \melodySecondEnding r8
 
                         \transpose c ds { 
-                            \melodyBridgeFirstHalfInEbForFlats
+                            \melodyBridgeFirstHalfInEb
                             \melodyBridgeSecondHalfInEb
                         }
                         \melodyBridgeEnd
@@ -779,6 +827,35 @@ bassSong = \relative c {
 }
 
 \book {
+  \bookOutputSuffix "Harmony-I-for-C"
+    \header {
+        subtitle = ""
+        poet = "Harmony I in C"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c c, <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \clef bass
+                    \structureKey
+                    \structureCommon
+                    \breaksHarmony
+                    \harmonyForC
+                >>
+            }
+        >>
+    }
+}
+
+
+\book {
   \bookOutputSuffix "Harmony-II-for-Bb"
     \header {
         subtitle = ""
@@ -826,6 +903,34 @@ bassSong = \relative c {
                     \structureCommon
                     \breaksHarmony
                     \transpose c ef \secondHarmonyInEb
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "Harmony-II-for-C"
+    \header {
+        subtitle = ""
+        poet = "Harmony II in C"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c c, <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \clef bass
+                    \structureKey
+                    \structureCommon
+                    \breaksHarmony
+                    \secondHarmonyForC
                 >>
             }
         >>
