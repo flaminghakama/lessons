@@ -1,9 +1,11 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "Ugetsu"
 titleRight = ""
-title = "Ugetsu"
+titleFull = "Ugetsu"
 composerName = "C. Walton"
+arranger = ""
+copyright = ""
 
 %{
 
@@ -20,11 +22,9 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -112,11 +112,11 @@ rehearsalMarkTweaksForC = \relative c' {
     \override Score.RehearsalMark.self-alignment-X = #LEFT
     s4
 
-    %\override Score.RehearsalMark #'extra-offset = #'( -4 . -5 )
+    %\override Score.RehearsalMark.extra-offset = #'( -4 . -5 )
     % "A"
     s1*12
         
-    \override Score.RehearsalMark #'extra-offset = #'( -4 . -4 )
+    \override Score.RehearsalMark.extra-offset = #'( -4 . -4 )
     % B
 }
 
@@ -226,8 +226,8 @@ melodyForEb = \relative c' {
         subtitle = ""
     }
     \score {
-        <<
-            \new ChordNames \transpose c c { 
+        \transpose e d <<
+            \new ChordNames { 
                 \chordsForm
             }
             \new RhythmicStaff \with {
@@ -260,7 +260,7 @@ melodyForEb = \relative c' {
         subtitle = ""
     }
     \score {
-        \transpose bf, c <<
+        \transpose bf, c  \transpose e d <<
             \new ChordNames \transpose c c { 
                 \chordsFormForFlats
             }
@@ -294,7 +294,7 @@ melodyForEb = \relative c' {
         subtitle = ""
     }
     \score {
-        \transpose ef c <<
+        \transpose ef c \transpose e d <<
             \new ChordNames \transpose c c { 
                 \chordsFormForFlats
             }
