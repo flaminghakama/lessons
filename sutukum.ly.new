@@ -72,52 +72,56 @@ structure = \relative c'' {
     \startSection "Intro"
     \partial 4 
     s4 
-    s1*9
+    s1*9 \break
     
     \override Score.RehearsalMark.extra-offset = #'( -4 . 0.4 )
     \startSection "A"
-    s1*4
+    s1*4 \break
 
     \startSection "B"
-    s1*7
+    s1*7 \break
 
     \startSection "C"
-    s1*3
+    s1*3 \break
 
     \startSection "D"
-    s1*10
+    s1*10 \break
 
 
     \startSection "C1"
     s1*3
 
+    \pageBreak
+
     \startSection "D1"
     \bar "[|:"
-    s1*4
+    s1*4 \break
 
     \startSectionWithLabel "A1" "guitar solo"
     \bar ":|][|:"
-    s1*4
+    s1*4 \break
 
     \startSectionWithLabel "E" "Tenor solo"
     \bar ":|][|:"
-    s1*4
+    s1*4 \break
 
     \startSection "F"
     \bar ":|]"
     s1*5
 
     \startSection "C2"
-    s1*3
+    s1*3 \break
     
     \startSection "D2"
-    s1*4
+    s1*4 \break
 
     \startSection "G" 
     s1*2
     \startSectionWithLabel "" "Vamp until cue"
     \bar "[|:"
     s1*2 
+
+    \pageBreak
 
     \startSection "H"
     \bar ":|]"
@@ -144,180 +148,6 @@ structure = \relative c'' {
     \bar "|."
 }
 
-breaksAndMarksForAlto = \relative c'' { 
-    \once \override Score.MetronomeMark.extra-offset = #'( -8 . 1 )
-    \override Score.RehearsalMark.extra-offset = #'( 2 . -2 )
-    % "Intro"
-    s4 
-    s1*9 \break
-    
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "A"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "B"
-    s1*7 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 0 )
-    % "C"
-    s1*3 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "D"
-    s1*7 
-    \pageBreak
-    s1*3 
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "C1"
-    s1*3
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "D1"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % guitar solo"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "Tenor solo"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "F"
-    s1*5
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "C2"
-    s1*3 \break
-    
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "D2"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "G" 
-    s1*2
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "Vamp until cue"
-    s1*2 
-
-    \pageBreak
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "H"
-    s1*4
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
-    % "Alto Solo"
-    s1*2
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
-    % "Alto cue"
-    s1*4
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -2 . 1 )
-    % "A2" "both horns solo"
-    s1*2
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 1 . 2 )
-    % "On cue"
-    s1*2
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -6 . 2 )
-    % "Ending"
-    s1*13
-}
-
-breaksAndMarksForTenor = \relative c'' { 
-    \once \override Score.MetronomeMark.extra-offset = #'( -8 . 1 )
-    \override Score.RehearsalMark.extra-offset = #'( 2 . -2 )
-    % "Intro"
-    s4 
-    s1*9 \break
-    
-    \override Score.RehearsalMark.extra-offset = #'( -4 . 2 )
-    % "A"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 2 )
-    % "B"
-    s1*7 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 0 )
-    % "C"
-    s1*3 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 0 )
-    % "D"
-    s1*10 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . -1 )
-    % "C1"
-    s1*3
-
-    \pageBreak
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "D1"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % guitar solo"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "Tenor solo"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 2 )
-    % "F"
-    s1*5
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "C2"
-    s1*3 \break
-    
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "D2"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 2 )
-    % "G" 
-    s1*2
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "Vamp until cue"
-    s1*2 
-
-    \pageBreak
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "H"
-    s1*4
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
-    % "Alto Solo"
-    s1*2
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
-    % "Alto cue"
-    s1*4
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
-    % " "both horns solo"
-    s1*2
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 2 )
-    % "On cue"
-    s1*2
-
-    \once \override Score.RehearsalMark.extra-offset = #'( -6 . 2 )
-    % "Ending"
-    s1*13
-}
-
 chordsForm = \chordmode { 
 }
 
@@ -333,9 +163,7 @@ guitarIntro = \relative c''' {
     cs8. 16 ~ 16 d8 fs16  e4  a16 gs fs e |
     d16 cs8 b16 ~  16 cs8 e16  a,4  r8 \grace { e'8 ( d } cs16 ) b | 
 
-    a8. gs16  r fs [ gs a 
-        % laissezVibrer 
-        ]
+    a8. gs16  r fs [ gs a \laissezVibrer
 }
 tenorIntro = \relative c' {
     r4 ||
@@ -343,24 +171,16 @@ tenorIntro = \relative c' {
     r2
 }
 
-tenorAMelody = \relative c' {
+melodyA = \relative c' {
     r8 fs gs [ as ] || 
     ds,8. cs16 ~ 8 ds ~ 8 fs gs as |
     ds,8. cs16 ~ 8 ds ~ 8 fs gs as |
     ds,8. cs16 ~ 8 ds ~ 8 fs gs as |
-    ds,8. cs16 ~ 4
+    ds,8. cs16 ~ 4 r2 |
 }
 tenorA = {
-    \tenorAMelody
-    r2 
-}
-
-altoAMelody = \relative c'' {
-    r8 as b [ cs ] || 
-    fs,8. es16 ~ 8 fs ~ 8 as b cs |
-    fs,8. es16 ~ 8 fs ~ 8 as b cs |
-    fs,8. es16 ~ 8 fs ~ 8 as b cs |
-    fs,8. es16 ~ 4
+    \melodyA
+    r2 |
 }
 
 tenorB = \relative c'' {
@@ -372,7 +192,7 @@ tenorB = \relative c'' {
 altoB = \relative c'' {
     fs8 as  cs16 b8 gs16 || 
     as2 r | R1*2 | r2  fs8 as  cs16 b8 cs16 |
-    as2 r | R1 | as16 8.  b8 cs16 16  4
+    as2 r | R1 | a16 8.  b8 cs16 16  4      
 }
 
 
@@ -384,7 +204,7 @@ tenorC = \relative c''' {
 }
 altoC = \relative c''' {
     ds16-> 8-> 16-> ||
-    cs8-> 16-> b ~  16 16 as8 ~  8 r  ds,8 16 16 |
+    cs8-> 16-> b ~  16 16 as8  r4  ds8 16 16 |
     cs8 16 b  r8 ds8  8 cs  b16 cs8 b16 | 
     as8 b16 gs ~  16 b gs as  as4  
 }
@@ -409,7 +229,7 @@ altoD = \relative c'' {
     b16 8 gs16  b b as16 16  4 r | r2 r4 r8 cs16 16 |
     b16 8 gs16  b b as16 16  4 r | r2 r4 r8 cs16 16 |
     b16 8 gs16  b b as16 16  4 r | r2 r4 r8 cs16 16 |
-    b16 8 gs16  b b as16 16  4 r | as16 8.  b8 cs16 16  4
+    b16 8 gs16  b b as16 16  4 r | a16 8.  b8 cs16 16  4
 }
 
 
@@ -419,7 +239,12 @@ tenorCOne = \relative c''' {
     b8 as16 b  r8 b8 8 as  gs16 as8 gs16 | 
     fs8 gs16 e ~  16 fs e fs  fs8 8  r4 | 
 }
-altoCOne = \altoC
+altoCOne = \relative c''' {
+    ds16-> 8-> 16-> ||
+    cs8-> 16-> b ~  16 16 as8  r4  ds,8 16 16 |
+    cs8 16 b  r8 ds8  8 cs  b16 cs8 b16 | 
+    as8 b16 gs ~  16 b gs as  
+}
 
 tenorDOne = \relative c'' {
     r2  r8 ds  fs16 e8 16 | 
@@ -429,16 +254,14 @@ tenorDOne = \relative c'' {
 }
 altoDOne = \relative c' {
     ds8 es ||
-    fs8 16 es ~  es16 16 fs16 16  fs4  r | r2  fs'8 as  cs16 b8 gs16 |
+    fs8 16 es ~  16 16 fs16 16  fs4 r | r2  fs'8 as  cs16 b8 gs16 |
     as2  r | r
 }
 
-tenorAOne = { 
-    \tenorAMelody
-}
 
+tenorAOne = \melodyA
 altoAOne = \relative c' {
-    \altoAMelody
+    \transpose ef bf \melodyA
     fs2 
 }
 
@@ -450,8 +273,8 @@ tenorE = \relative c'' {
     \tuplet 3/2 4 { fs8 fs e  e e ds } ds4 r8. e16 ||
 }
 altoE = \relative c'' {
-    r4  r8 fs16 16  8-. as-.  r4 | r  r8 fs16 16  8-. as-.  r4 | 
-    r4  r8 fs16 16  8-. as-.  r4 | r  r8 fs16 16  8-. as-.   
+    r4  r8 fs16 16  8-. as-.  r | r  r8 fs16 16  8-. as-.  r | 
+    r4  r8 fs16 16  8-. as-.  r | r  r8 fs16 16  8-. as-.   
 }
 
 tenorF = \relative c'' {
@@ -463,10 +286,10 @@ tenorF = \relative c'' {
 }
 altoF = \relative c'' {
     r8. b16 |
-    b8 16 as ~  16 gs as gs ~  4   r8. ds''16 |
-    ds16 [ r ds cs ~ ]  16 b cs as ~  8 cs16 16  16 b8 as16 |
+    b8 16 as ~  16 gs as gs ~  4   r8. ds'16 |
+    ds8 [ r ds cs ~ ]  16 b cs as ~  8 cs16 16  16 b8 as16 |
     gs4  b16 as8 gs16  fs4  as16 gs8 fs16 |
-    ds8. es16 ~  8 fs8  2 |
+    ds8. es16 ~  8 fs  2 |
     as,16 8 16  b8 cs16 16 ~ 8 r 
 }
 
@@ -489,12 +312,12 @@ tenorDTwo = \relative c'' {
     <ds b>8 16 <cs as> ~  16 16 <ds b>16 16  4  r  |
 }    
 altoDTwo = \relative c'' {
-    b16 8 gs16  b b as16 16  4  fs | r2 r4 r8 cs'16 16 |
-    b16 8 gs16  b b as16 16  4  fs | r2 r4 r8 cs'16 16 |
+    b16 8 gs16  b b as16 16  4  fs | r2 r4 r8 cs16 16 |
+    b16 8 gs16  b b as16 16  4  fs | r2 r4 r8 cs16 16 |
 }    
 
 tenorG = \relative c'' {
-    R1*2  | 
+    R1*2 | 
     \tuplet 6/4 4 { 
         b16 as gs  b as gs  b as gs  b as gs  
         b16 as gs  b as gs  b as gs  b as gs  
@@ -529,7 +352,7 @@ altoH = \relative c''' {
     cs16 16 16 ds  b b b cs  as as as b  gs gs gs as |
     fs8 es ~  \tuplet 3/2 { es8 ds es }  fs4  r16 fs es ds |
     cs16 b as gs  r [ as r cs ]  fs,4 r |
-    fs'8 [ r16 cs ]  r8 fs16 16   r2 ||
+    fs'8 r16 cs  r8 fs16 16  r2 ||
 }
 
 
@@ -548,7 +371,7 @@ altoIPickupLick = \relative c'' {
 }
 altoATwo = \relative c'' {
     \comp #8
-    \altoIPickupLick
+    \tenorIPickupLick
 }
 
 tenorILick = \relative c''' {
@@ -576,7 +399,7 @@ altoI = \relative c''' {
     \altoILick
     \altoIPickupLick
     \altoILick
-    b16 [ as r b ~ ]  8 r  as16 [ es r as ~ ]  8 r |
+    b16 [ as r b ~ ]  8 r  as16 [ e r as ~ ]  8 r |
     gs16 [ fs r gs ]  r fs [ es8 ]  r2 |
     \fermata fs1
 }
@@ -601,7 +424,7 @@ tenor = {
 
 
 alto = {
-    \altoAMelody
+    \transpose ef bf \melodyA
     \altoB
     \altoC r4
     \altoD
@@ -637,15 +460,14 @@ alto = {
             % }
             \new Staff \with { 
                 % instrumentName = "Melody"
-            } \transpose c c {
+            } \transpose e e {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
                     \transpose ef, c \structure
-                    \breaksAndMarksForAlto
                     {
                         <<
-                            \magnifyMusic 0.75 { \transpose ef c \guitarIntro } \\
+                            \transpose ef, c \guitarIntro \\
                             \tenorIntro
                         >>
                         \alto
@@ -656,39 +478,38 @@ alto = {
     }
 }
 
-\book {
-  \bookOutputSuffix "tenor-sax-in-Bb"
-    \header {
-        title = \title
-        composer = \markup \italic { \composerName }
-        arranger = \markup \italic { \arranger }
-        poet = "Bb Tenor Saxophone"
-        instrumentName = \poet
-        subtitle = ""
-    }
-    \score {
-        <<
-            % \new ChordNames \transpose e e { 
-            %     \include "ly/ily/chord-names-properties.ily"
-            %     \chordsForm
-            % }
-            \new Staff \with { 
-                % instrumentName = "Melody"
-            } \transpose e e {
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \transpose bf, c \structure
-                    \breaksAndMarksForTenor
-                    {
-                        <<
-                                \magnifyMusic 0.75 { \transpose bf, c \guitarIntro } \\
-                            \tenorIntro
-                        >>
-                        \tenor
-                    }
-                >>
-            }
-        >>
-    }
-}
+% \book {
+%   \bookOutputSuffix "tenor-sax-in-Bb"
+%     \header {
+%         title = \title
+%         composer = \markup \italic { \composerName }
+%         arranger = \markup \italic { \arranger }
+%         poet = "Bb Tenor Saxophone"
+%         instrumentName = \poet
+%         subtitle = ""
+%     }
+%     \score {
+%         <<
+%             % \new ChordNames \transpose e e { 
+%             %     \include "ly/ily/chord-names-properties.ily"
+%             %     \chordsForm
+%             % }
+%             \new Staff \with { 
+%                 % instrumentName = "Melody"
+%             } \transpose e e {
+%                 \include "ly/ily/staff-properties.ily"
+%                 \autoPageBreaksOff
+%                 <<
+%                     \transpose bf, c \structure
+%                     {
+%                         <<
+%                             \transpose bf, c \guitarIntro \\
+%                             \tenorIntro
+%                         >>
+%                         \tenor
+%                     }
+%                 >>
+%             }
+%         >>
+%     }
+% }

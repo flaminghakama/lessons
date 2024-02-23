@@ -15,6 +15,7 @@ killPreview ; rm gigolo.mwe*pdf ;  lilypond ly/songs/jazz/gigolo.mwe.ly  ; for f
 %}
 
 \include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
 \include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
