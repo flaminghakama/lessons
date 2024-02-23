@@ -1,9 +1,11 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "Wicked"
 titleRight = "Groove"
-title = "Wicked Groove"
+titleFull = "Wicked Groove"
 composerName = "Orchéstre Baka de Gbiné"
+arranger = "renotated by Elaine Paul"
+copyright = ""
 
 %{
 
@@ -21,11 +23,9 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 %}
 
 
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
-\include "../../../../scores/flaming-libs/flaming-voltas.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -72,7 +72,7 @@ structureLeadSheet = \relative c'' {
 
     \key a \major
     
-    \once \override Score.MetronomeMark #'extra-offset = #'( -7 . 1 )
+    \once \override Score.MetronomeMark.extra-offset = #'( -7 . 1 )
     \tempo 4=180
     
     \cellStructure
@@ -452,6 +452,69 @@ tenorCFour = \relative c'' {
 }
 
 
+altoDZero = \relative c'' {
+    r4  e  gs  cs8 b4  cs8 | b1 |  
+    r4  cs4  4  8 b4  cs8  | b1 |
+    r4 e4 2 r4 | r8 b4 8 ~ 8 cs ds4 | 
+    cs8 ds  cs4  b  e,2 | fs r |  
+}
+altoCOne = \relative c'' {
+    R1*5/4
+    \transpose ef bf \melodyCCell
+    r8 fs4  8 ~ 8 e fs4 | e8 cs ~ 2 r | R1 |
+}
+
+altoE = \relative c''' {
+    r4 e4 2 r4 | r8 b4  8 ~ 8 cs ds4 | 
+    cs8 ds  cs4  a  e2 | fs2 r |
+    r4 e4 2 r4 | r8 b4  8 ~ 8 cs ds4 | 
+    cs8 ds  cs4  a  e2 | fs2 r |      
+}
+altoATwo = \relative c'' { 
+    \comp #5 | \comp #4 | \comp #5 |  \comp #2  r8 b8 4
+    r2 r4 b8 8 r4 | r2 r8 b8 4 |
+    r2 r4 b8 8 r4 | r2 r8 b8 4 |
+    <>\xp R1*5/4 | R1 | <>\xp R1*5/4 | r2 r8 b8 4 |
+    r2 r4 b8 8 r4 | r2 r8 b8 4 |
+    r2 r4 b8 8 r4 | R1 | 
+}
+altoBTwo = \relative c'' {
+    <>\xp R1*5/4 | R1 | <>\xp R1*5/4 | R1 |
+    \transpose ef bf \relative c'' { 
+        r4   a   cs  e8 [ cs8 ] r cs |
+        % 4/4
+        b8  4 e8 ~  8 fs  e4-.  |
+        % 5/4
+        e8 d8   4  4  e8 d r cs |
+        % 4/4
+        b8  4 8 ~  4 a8 b |
+    }
+}
+altoCThree = \relative c''' {
+    gs1 r4 | r8 fs4  8 ~ 8 e fs4 | e1 r4 | r8 fs4  8 ~ 8 e fs4 |
+    gs1 r4 | r8 fs4  8 ~ 8 e fs4 | e8 cs ~ 2 r2 | R1 | 
+}
+altoDTwo = \relative c'' {
+    r4 e gs cs8 b4 cs8 | b8 2.. |
+    r4 cs4 4 8 b4 cs8 | b1 |
+    r4 e4 2 r4 | r8 b4  8 ~ 8 cs ds4 | 
+    cs8 ds  cs4  b  e,2 | fs2 r | 
+
+    r4 e'4 2 r4 | r8 b4  8 ~ 8 cs ds4 | 
+    cs8 ds  cs4  a  e2 | fs2 r | 
+    r4 e'4 2 r4 | r8 b4  8 ~ 8 cs ds4 | 
+    cs8 ds  cs4  a  e2 | fs2 r | 
+}
+altoCFour = \relative c'' {
+    R1*5/4 | r8 fs4  8 ~ 8 e fs4 | 
+    e8 cs2.. r4 | r8 fs4  8 ~ 8 e fs4 | 
+    gs1 r4 | r8 fs4  8 ~ 8 e fs4 | 
+    e8 cs2.. r4 | r8 fs4  8 ~ 8 e fs4 | 
+    b1 ~ 4 ~ | 1 ~ | 
+    b1 ~ 4 ~ | 1 | 
+}
+
+
 clicksNineFour = \relative c'' {
     % 5/4
     e4   4  4  8 8  r e |
@@ -525,6 +588,58 @@ kickANineEightRealigned = \relative c' {
 }
 
 
+
+alto = \relative c'' {
+
+    \transpose ef bf, \bassANineFour
+
+    % "A"
+    <<
+        { \clicksNineFour \clicksNineFour } \\
+        { \kickNineFourForFlats \kickNineFourForFlats }
+    >>
+
+    % "B"
+    <>\xp
+    R1*5/4 | R1 | 
+    R1*5/4 | R1 | 
+    
+    % "C"
+    \transpose ef bf \tenorCZero
+
+    % "A1" "3X"
+    <>\xp
+    R1 | 
+    R1*5/4 | R1 | 
+
+    % "B1"
+    <>\xp
+    R1*5/4 | R1 | 
+    R1*5/4 | R1 | 
+    <>\xp
+    R1*5/4 | R1 | 
+    R1*5/4 | R1 | 
+
+    % "C1"
+    \altoCOne
+
+    \altoDZero
+    \altoE
+
+    % "C2"
+    <>\xp    
+    R1*5/4 | R1 | 
+    R1*5/4 | R1 | 
+    <>\xp    
+    R1*5/4 | R1 | 
+    R1*5/4 | R1 | 
+
+    \altoATwo
+    \altoBTwo
+    \altoCThree
+    \altoDTwo
+    \altoCFour
+}
 
 tenor = \relative c'' {
 
@@ -677,6 +792,35 @@ tenor = \relative c'' {
                         \melodyBNineFour
                         \melodyCNineFour
                     }
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "alto-for-Eb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Eb Alto Saxophone"
+        instrumentName = \poet
+        subtitle = "(Kopolo)"
+    }
+    \score {
+        <<
+            % \new ChordNames \transpose e e { 
+            %     \include "ly/ily/chord-names-properties.ily"
+            %     \chordsForm
+            % }
+            \new Staff \with { 
+                % instrumentName = "Melody"
+            } \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \transpose a e \structurePart
+                    \alto
                 >>
             }
         >>
