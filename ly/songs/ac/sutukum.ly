@@ -17,7 +17,7 @@ lilypond ly/songs/ac/sutukum.ly
 mv sutukum*.pdf pdf/songs/ac
 for file in pdf/songs/ac/sutukum*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"fixing note" ; git push 
+git add . ; git commit -m"adding alto part" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

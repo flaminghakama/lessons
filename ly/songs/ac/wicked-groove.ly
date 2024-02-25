@@ -17,7 +17,7 @@ lilypond ly/songs/ac/wicked-groove.ly
 mv wicked-groove-*pdf pdf/songs/ac
 for file in pdf/songs/ac/wicked-groove-*pdf ; do op $file ; done  
 
-git add . ; git commit -m"renotating" ; git push 
+git add . ; git commit -m"adding alto part" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
