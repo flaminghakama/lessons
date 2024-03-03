@@ -1,15 +1,15 @@
-\version "2.19.83"
+\version "2.24.0"
 
 titleLeft = "Deli"
 titleRight = "lah"
-title = "Delilah"
+titleFull = "Delilah"
 composerName = "V. Young"
+arranger = ""
+copyright = ""
 
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
-
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 %{
 
@@ -72,7 +72,7 @@ structureCommon = \relative c' {
     \time 4/4
     s1*16
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . -2 ) 
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -2 ) 
     \startSection "A"
     \repeat volta 2 { 
         \bar "[|:"
@@ -84,12 +84,12 @@ structureCommon = \relative c' {
         { s1 }
     }
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . -2 ) 
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -2 ) 
     \startSection "B"
     s1*4 
     s1*4
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( -3 . -2 ) 
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -2 ) 
     \startSection "A"
     s1*4 
     s1*4
@@ -938,7 +938,7 @@ bassSong = \relative c {
 }
 
 \book {
-  \bookOutputSuffix "Guiter-for-C"
+  \bookOutputSuffix "Guitar-for-C"
     \header {
         subtitle = ""
         poet = "Guitar"
