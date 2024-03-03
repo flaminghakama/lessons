@@ -170,7 +170,7 @@ chordsIntro = \chordmode {
     s4. ||
     s4. bf4:6 af:6 gf8:6 | s1 | 
     s4. af4:6 g:6 gf8:6 | f4:6 e2:6 s8 ef:6 |
-    s4. d2:6 df8:7 | s4. c2:7.9-  f8:6 | 
+    s4. d2:7 df8:6 | s4. c2:7.9-  f8:6 | 
     r1 | s4. c2:7.9+ s8 ||
 }
 
@@ -189,7 +189,7 @@ chordsForm = \chordmode {
     ef1:maj7 | af2:m7 df:7 | gf1:maj7 | g2:m7 c:7 ||
 
     f1:maj7 | g2:m7 c:7 | f1:maj7 | bf2:m7 ef:7 | 
-    a2:m7 af:13 | g:m7 c:7 | f1:6 | af2:m7 df:7 ||
+    a2:m7 af:13 | g:m7 c:7 | f1:6 | g2:m7 c:7  ||
 }
 
 chordsCoda = \chordmode { 
