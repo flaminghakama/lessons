@@ -113,7 +113,7 @@ chordsSong = \chordmode {
     ef2:maj7 af:7 | g:m7 c4:7 c:aug7 | f2:m7 bf:7 | g:m7.5- c:7.9- | 
     f1:m7 | bf2:1.4.5.7 bf:7 | ef1:1.3.5.6.9 | f2:m7 bf:7 ||
 }
-chordsSongBette = \chordmode { 
+chordsSongBette = \transpose ef g \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -233,15 +233,47 @@ lyricsHeadTwo = \lyricmode {
     instrumentName = \poet
 }
 
+% \book {
+%   \bookOutputSuffix "in-G-for-C"
+%     \header {
+%         subtitle = "(Bette key)"
+%         poet = "Concert Lead Sheet"
+%         instrumentName = \poet
+%     }
+%     \score {
+%         \transpose ef g <<
+%             \new ChordNames \transpose c c  { 
+%                 \include "ly/ily/chord-names-properties.ily"
+%                 \chordsSong
+%             }
+%             \new Staff = "voice" \transpose c c { 
+%                 \include "ly/ily/staff-properties.ily"
+%                 \autoPageBreaksOff
+%                 \new Voice = "lead" <<
+%                     \override Stem.length-fraction = #(magstep 1.2)
+%                     \structure
+%                     \transpose g ef \melodyBette
+%                 >>
+%             }
+%             \new Lyrics \with { alignAboveContext = "staff" } {
+%                 \lyricsto "lead" { \lyricsHeadOne } 
+%             }
+%             \new Lyrics \with { alignAboveContext = "staff" } {
+%                 \lyricsto "lead" { \lyricsHeadTwo } 
+%             }
+%         >>
+%     }
+% }
+
 \book {
-  \bookOutputSuffix "in-G-for-C"
+  \bookOutputSuffix "in-Eb-for-C"
     \header {
-        subtitle = "(Bette key)"
+        subtitle = "(real book key)"
         poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        \transpose ef g <<
+        \transpose ef ef <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong
@@ -252,7 +284,7 @@ lyricsHeadTwo = \lyricmode {
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
-                    \transpose g ef \melodyBette
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -265,99 +297,67 @@ lyricsHeadTwo = \lyricmode {
     }
 }
 
-% \book {
-%   \bookOutputSuffix "in-Eb-for-C"
-%     \header {
-%         subtitle = "(real book key)"
-%         poet = "Concert Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         \transpose ef ef <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \override Stem.length-fraction = #(magstep 1.2)
-%                     \structure
-%                     \melody
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadTwo } 
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "in-Eb-for-Bb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c \transpose ef ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
 
-% \book {
-%   \bookOutputSuffix "in-Eb-for-Bb"
-%     \header {
-%         subtitle = "(Elaine key)"
-%         poet = "Bb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         \transpose bf, c \transpose ef ef <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \override Stem.length-fraction = #(magstep 1.2)
-%                     \structure
-%                     \melody
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadTwo } 
-%             }
-%         >>
-%     }
-% }
-
-% \book {
-%   \bookOutputSuffix "in-Eb-for-Eb"
-%     \header {
-%         subtitle = "(real book key)"
-%         poet = "Eb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         \transpose ef, c \transpose ef ef <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \override Stem.length-fraction = #(magstep 1.2)
-%                     \structure
-%                     \melody
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadTwo } 
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "in-Eb-for-Eb"
+    \header {
+        subtitle = "(real book key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c \transpose ef ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
 
