@@ -33,7 +33,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -113,7 +113,7 @@ chordsSong = \chordmode {
     ef2:maj7 af:7 | g:m7 c4:7 c:aug7 | f2:m7 bf:7 | g:m7.5- c:7.9- | 
     f1:m7 | bf2:1.4.5.7 bf:7 | ef1:1.3.5.6.9 | f2:m7 bf:7 ||
 }
-chordsSongBette = \transpose ef g \chordmode { 
+chordsSongBette = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -166,33 +166,37 @@ melody = \relative c' {
 melodyBette = \relative c'' { 
     r4 \tuplet 3/2 4 { e4 8  4 8  4 8 } ||
     e8 r d8. 16 ~ 2 | r4 \tuplet 3/2 4 { e4 8  4 8 ~ 8 8 d } | 
-
-
     e8 r  d8 ~ \tuplet 3/2 { d8 16 ~ } 2 | r4 \tuplet 3/2 4 { f4 g8  e4 f8 } d8 e | 
     \tuplet 3/2 { c8 r b } a4 ~ 4. r8 | d4 a2 b8. d16 ~ | 
-
     d1 | 
 
-    \transpose g ef \relative c'' {
-        r4     c8 8  8 8 8 8 || 
+
+    r4 \tuplet 3/2 4 { e4 8  4 8  4 8 } ||
+    e4 d8. 16 ~ 4. r8 | r4 \tuplet 3/2 4 { e4 8  4 8  4 8 } | 
+    e4  \tuplet 3/2 { d4 8 ~ } 4. r8  | r4 \tuplet 3/2 4 { f4 g8  e4 f8  d4 e8 } | 
+    \tuplet 3/2 { c4 b8 } a4 ~ 4 r | d4 a2  \tuplet 3/2 { b4 d8 ~ } | 
+    d1 | 
 
 
+    r4 g, a af8 g ~ ||
+    g4 4 e'4 ~ \tuplet 3/2 4 { 4 d8 | 
+    b4 8 ~ } 4 ~ 8 r \tuplet 3/2 4 { r8 b d  | 
+    c4 8 ~ } 8 [ ~ \tuplet 3/2 { 8 fs16 ] ~ } 4 ~ \tuplet 3/2 { 8 8 ( e ) } |
+    d2 r8 d \tuplet 3/2 { e4 d8 } | 
 
-        bf4 f2 g8 ef ~ | 1 
+    cs4 ~ \tuplet 3/2 { 4 8 } g'4 ~ \tuplet 3/2 { 8 fs ( d ) } |
+    \tuplet 3/2 { e8 [ d16 ~ } 8 ] ~ 4 ~ 4 \tuplet 3/2 { r4 d8 } |     
+    \tuplet 3/2 4 { fs4 g8  fs4 g8 } e4 d8 8 |
 
-        r4 ef f e ||
-        ef4 4 c'4. bf8 | g8 4. ~ 4 8 bf | af8 4. d4. c8 | bf2   r8 bf c [ bf ] | 
-        a4. 8 ef'4. d8 | bf8 4. ~ 4 r8 bf | d ef d ef c4. d8 | c4 
 
-        c8 8  8 8 8 8 || 
-        c4 bf8 8 ~ 2 | r4 c8 8  8 8 8 8 | 4 bf8 8 ~ 2 | r4 df8 ef  c df bf c | 
-        af8 g f2. | 
-        bf4 f2 g8 ef ~ | 1 
-        R1 
-    }
+    r4 \tuplet 3/2 4 { e4 8  4 8  4 8 } ||
+    e4 \tuplet 3/2 { d4 8 ~ } 2  | r4 \tuplet 3/2 4 { e4 8  4 8 } e8. 16 ~ | 
+    e8 4 d8 2 | r4 \tuplet 3/2 4 { f4 g8  e4 f8  d4 e8 } | 
+    r16 c8. b8. a16 ~ 4. r8 | d4 a2 \tuplet 3/2 { b8 ( g ) a ( } | 
+    g1 ~ | 2 ) r ||  
 }
 
-lyricsHeadOne = \lyricmode {
+lyricsHeadOnePartOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
@@ -201,6 +205,11 @@ lyricsHeadOne = \lyricmode {
     Since this is the per -- fect spot to learn
     Teach me to -- night
     Start -- ing  with the A B 
+}
+
+lyricsHeadOnePartThree = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
 
     Teach me to -- night
     The sky's a black board
@@ -217,9 +226,6 @@ lyricsHeadOne = \lyricmode {
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
-
-    \repeat unfold 6 { \skip 1 }
-
     C of it
     Right down to the X Y Z of it
     Help me solve the my -- ste -- ry of it
@@ -233,37 +239,38 @@ lyricsHeadTwo = \lyricmode {
     instrumentName = \poet
 }
 
-% \book {
-%   \bookOutputSuffix "in-G-for-C"
-%     \header {
-%         subtitle = "(Bette key)"
-%         poet = "Concert Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         \transpose ef g <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \override Stem.length-fraction = #(magstep 1.2)
-%                     \structure
-%                     \transpose g ef \melodyBette
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadTwo } 
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "in-G-for-C"
+    \header {
+        subtitle = "(Bette key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose g g <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \transpose ef g \chordsSongBette
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structureBette
+                    \transpose g g \melodyBette
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    \lyricsHeadOnePartOne
+                    \lyricsHeadTwo
+                    \lyricsHeadOnePartThree 
+                } 
+            }
+        >>
+    }
+}
 
 \book {
   \bookOutputSuffix "in-Eb-for-C"
@@ -288,10 +295,16 @@ lyricsHeadTwo = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsHeadOnePartOne
+                    \lyricsHeadOnePartThree 
+                } 
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
+                \lyricsto "lead" { 
+                    \repeat unfold 6 { \skip 1 }
+                    \lyricsHeadTwo 
+                } 
             }
         >>
     }
@@ -320,10 +333,16 @@ lyricsHeadTwo = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsHeadOnePartOne
+                    \lyricsHeadOnePartThree 
+                } 
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
+                \lyricsto "lead" { 
+                    \repeat unfold 6 { \skip 1 }
+                    \lyricsHeadTwo 
+                } 
             }
         >>
     }
@@ -352,10 +371,16 @@ lyricsHeadTwo = \lyricmode {
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOne } 
+                \lyricsto "lead" { 
+                    \lyricsHeadOnePartOne
+                    \lyricsHeadOnePartThree 
+                } 
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
+                \lyricsto "lead" { 
+                    \repeat unfold 6 { \skip 1 }
+                    \lyricsHeadTwo 
+                } 
             }
         >>
     }
