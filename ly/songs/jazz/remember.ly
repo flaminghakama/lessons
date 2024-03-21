@@ -3,8 +3,8 @@
 titleLeft = "Remember"
 titleRight = ""
 titleFull = "Remember"
-composerName = "H. Mobley"
-arranger = ""
+composerName = "compsoed by I. Berlin"
+arranger = "arranged by H. Mobley"
 copyright = ""
 
 %{
