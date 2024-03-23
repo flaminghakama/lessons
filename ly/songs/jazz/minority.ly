@@ -212,14 +212,14 @@ harmonyIntro = \relative c'' {
 
 melodyHead = \relative c'' { 
     g2.. f8 | r2 d8 e f g | a2 4. g8 | a8 c4 a8 ~ 2 | 
-    g2.. f8 | r2 g8 a bf c | d2 4. c8 | d8 f4 d8 ~ 2 | 
+    g2.. f8 | r2 f8 g bf c | d2 4. c8 | d8 f4 d8 ~ 2 | 
     c4-. r c4. bf8 | c8 ef4 c8 ~ 2 | r8 bf r4 bf4. af8 | bf8 df4 bf8 ~ 2 | 
     af2 4. 8 | r2 f8 gf r af | a2 4. 8 | r2 c8 af e c ||
 }
 
 harmonyHead = \relative c' { 
     e2.. d8 | r2 d8 e f g | f2 e4. d8 | df8 e4 bf8 ~ 2 | 
-    e2.. d8 | r2 g8 a bf c | bf2 a4. g8 | gf8 a4 ef8 ~ 2 | 
+    e2.. d8 | r2 g8 g bf c | bf2 a4. g8 | gf8 a4 ef8 ~ 2 | 
     af4-. r af4. g8 | af8 bf4 g8 ~ 2 | r8 gf r4 gf4. f8 | gf8 af4 f8 ~ 2 | 
     ff2 4. 8 | r2 f8 gf r af | f2 4. e8 | r2 c'8 af e c ||  
 }
