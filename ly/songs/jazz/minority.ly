@@ -230,7 +230,7 @@ bassTransition = \relative c {
 }
 
 melody = {
-    \accidentalStyle default
+    \accidentalStyle modern-cautionary
     << 
         \melodyIntro \\
         \harmonyIntro
@@ -244,7 +244,7 @@ melody = {
 }
 
 melodyForFlats = {
-    \accidentalStyle default
+    \accidentalStyle modern-cautionary
     << 
         \melodyIntro \\
         \harmonyIntro
