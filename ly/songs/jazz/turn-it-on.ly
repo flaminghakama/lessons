@@ -108,6 +108,7 @@ structure = \relative c' {
 
 rehearsalMarkTweaksForC = \relative c' { 
 
+    \once \override Score.MetronomeMark.extra-offset = #'( 0 .0 )
     \override Score.RehearsalMark.self-alignment-X = #LEFT
     s1*4
 
@@ -140,36 +141,9 @@ chordsForm = \chordmode {
     f1:7.9+ | ef:7.9+ | bf:7 | s ||
 }
 
-
-
-chordRhythm =\new Voice \with {
-        \consists "Pitch_squash_engraver"
-    } \relative c' {
-    \improvisationOn
-    <>^\markup { " " } s4  || 
-    r4 r8 c8 ~ 2 | 
-    r4 r8 c8 ~ 2 | 
-    r4 r8 c8 ~ 2 | 
-    r4 r8 c8 ~ 2 | 
-
-    r4 r8 c8 ~ 2 | 
-    r4 r8 c8 ~ 2 | 
-    r4 r8 c8 ~ 2 | 
-    s1 | 
-
-    r4 r8 c8 ~ 2 | 
-    r4 r8 c8 ~ 2 | 
-    s1*2 ||
-
-    r8 c4. 4. 8 ~ | 1 | 
-    c2 4. 8 ~ | 1 | 
-    r8 c4. 4. 8 ~ | 1 | 
-    c2 4. 8 ~ | 1 | 
-}
-
-
 basslineIntro = \relative c { 
-    \accidentalStyle default
+    \accidentalStyle modern-cautionary
+    \customScripts #flaming-articulations
     bf16 cf || 
     bf16 [ bf r bf ]  f'8 [ r16 f ]  af16 af af bf  r8 bf,16 cf |
     bf16 [ bf r bf ]  f'8 [ r16 f ]  bf16 af8 f16  r16 f, af a |
@@ -178,7 +152,8 @@ basslineIntro = \relative c {
 }
 
 melodyTop = \relative c'' { 
-    \accidentalStyle default
+    \accidentalStyle modern-cautionary
+    \customScripts #flaming-articulations
     r16 bf g' g || 
     f4-.  r  r  r16 bf, g' g | 
     f4-.  r  r  r16 bf, g' g | 
@@ -197,7 +172,8 @@ melodyTop = \relative c'' {
 }
 
 melodyBottom = \relative c'' { 
-    \accidentalStyle default
+    \accidentalStyle modern-cautionary
+    \customScripts #flaming-articulations
     r16 bf ef ef || 
     d4-.  r  r  r16 bf ef ef | 
     d4-.  r  r  r16 bf ef ef | 
