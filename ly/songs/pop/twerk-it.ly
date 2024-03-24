@@ -9,13 +9,13 @@ copyright = ""
 
 %{
 
-killPreview ; rm twerk-it*pdf ;  lilypond ly/songs/jazz/twerk-it.ly  ; for file in twerk-it*.pdf ; do op $file ; done  
+killPreview ; rm twerk-it*pdf ;  lilypond ly/songs/pop/twerk-it.ly  ; for file in twerk-it*.pdf ; do op $file ; done  
 
 killPreview
 rm twerk-it*pdf
-lilypond ly/songs/jazz/twerk-it.ly
-mv twerk-it*.pdf pdf/songs/jazz
-for file in pdf/songs/jazz/twerk-it*.pdf ; do op $file ; done  
+lilypond ly/songs/pop/twerk-it.ly
+mv twerk-it*.pdf pdf/songs/pop
+for file in pdf/songs/pop/twerk-it*.pdf ; do op $file ; done  
 
 git add . ; git commit -m"fixing pitch" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
@@ -105,7 +105,7 @@ structure = \relative c' {
 
 
     \startSection "Vocal"
-    s1*4
+    s1*4 \break
 
     \startSection "Head"
     \repeat volta 2 { 
@@ -237,7 +237,7 @@ pianoVoice = \relative c'' {
     bf16 c d c  bf4  a16 d g, c  f, bf e, g ||
 }
 
-melody = \relative c'' { 
+melodyBottom = \relative c' { 
     \accidentalStyle modern-cautionary
     \customScripts #flaming-articulations
     c16 d8 c16  d8 [ \tuplet 3/2 { 16 16 16 } ]  c16 d8 c16  r16 d r8 |
@@ -246,7 +246,7 @@ melody = \relative c'' {
     c16 d8 c16  d8 c16 d  r16 c d8  f16 16 r8 ||
     c16 d8 c16  d8 c16 d  r16 c d8  f4 ||
 }
-harmony = \relative c'' { 
+melodyTop = \relative c'' { 
     \accidentalStyle modern-cautionary
     \customScripts #flaming-articulations
     g16 a8 g16  a8 [ \tuplet 3/2 { 16 16 16 } ]  g16 a8 g16  r16 a r8 |
@@ -303,8 +303,8 @@ harmony = \relative c'' {
                             \pianoVoice
                         >>
                         << 
-                            \melody \\
-                            \harmony 
+                            \melodyTop \\
+                            \melodyBottom 
                         >>
                     }
                 >>
@@ -360,8 +360,8 @@ harmony = \relative c'' {
                             \pianoVoice
                         >>
                         << 
-                            \melody \\
-                            \harmony 
+                            \melodyTop \\
+                            \melodyBottom
                         >>
                     }
                 >>
@@ -417,8 +417,8 @@ harmony = \relative c'' {
                             \pianoVoice
                         >>
                         << 
-                            \melody \\
-                            \harmony 
+                            \melodyTop \\
+                            \melodyBottom
                         >>
                     }
                 >>
