@@ -1,21 +1,21 @@
 \version "2.24.0"
 
-titleLeft = "Minority"
-titleRight = ""
-titleFull = "Minority"
-composerName = "G. Gryce"
+titleLeft = "D Minor"
+titleRight = "Nine"
+titleFull = "D Minor Nine"
+composerName = "D. Boyce"
 arranger = ""
 copyright = ""
 
 %{
 
-killPreview ; rm minority*pdf ;  lilypond ly/songs/jazz/minority.ly  ; for file in minority*.pdf ; do op $file ; done  
+killPreview ; rm d-minor-nine*pdf ;  lilypond ly/songs/pop/d-minor-nine.ly  ; for file in d-minor-nine*.pdf ; do op $file ; done  
 
 killPreview
-rm minority*pdf
-lilypond ly/songs/jazz/minority.ly
-mv minority*.pdf pdf/songs/jazz
-for file in pdf/songs/jazz/minority*.pdf ; do op $file ; done  
+rm d-minor-nine*pdf
+lilypond ly/songs/pop/d-minor-nine.ly
+mv d-minor-nine*.pdf pdf/songs/pop
+for file in pdf/songs/pop/d-minor-nine*.pdf ; do op $file ; done  
 
 git add . ; git commit -m"changing accidental style" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
@@ -87,175 +87,137 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c' { 
 
-    \key f \minor
-    \tempo 4=254
+    \key d \minor
+    \tempo 4=132
     \time 4/4
 
-    \startSection "Intro"
-    \repeat volta 2 { 
-        s1*4 \break 
-        s1*3 
-    }
-    \alternative {
-        { s1 \endRepeat }
-        { s1 }
-    }
-    \startSection "Head"
+    \partial 4
+    \startSection "Bass" 
+    s4 
     \startRepeat
-    s1*4 \break
-    s1*4 \break
-    s1*4 \break
-    s1*4 \break
+    s1*4
+    \break
+    
+    \startSection "Groove" 
+    \endRepeat
+    s1*4
+    \break
+    s1*4
+    \break
 
-    \startSectionWithLabel "Interlude" "Play 4X"
-    \doubleRepeat
-    s1*4 
+    \startSection "Head" 
+    \startRepeat
+    s1*8 
+    \break 
+
+    \startSection ""
+    s1*8
+
+    \startSection ""
+    \grace { s8 }
+    s1*4 \break
+    s1*4
     \endRepeat
 }
 
 rehearsalMarkTweaksForC = \relative c' { 
 
-    \once \override Score.MetronomeMark.extra-offset = #'( -6 . 0 )
+    \once \override Score.MetronomeMark.extra-offset = #'( -5 . 1 )
     \override Score.RehearsalMark.self-alignment-X = #LEFT
 
-    \override Score.RehearsalMark.extra-offset = #'( 4 . -2 )
-    %  "Intro"
-    s1*4 
-    s1*3 
-    s1
-    s1 
+    \override Score.RehearsalMark.extra-offset = #'( 3 . 0 )
+    s4 
+    % "Bass" 
+    s1*4
+    
+    \override Score.RehearsalMark.extra-offset = #'( -2 . 3 )
+    % "Groove" 
+    s1*8
 
-    \override Score.RehearsalMark.extra-offset = #'( -7 . -2 )
-    %  "Head"
-    s1*4 
-    s1*4 
-    s1*4 
-    s1*4 
+    \override Score.RehearsalMark.extra-offset = #'( -6 . -2 )
+    % "Head" 
+    s1*8
+    s1*8
+    \grace { s8 }
+    s1*8
 
-    \override Score.RehearsalMark.extra-offset = #'( -9 . 1 )
-    % "Interlude" "Play 4X"
-    s1*4 
 }
 
 rehearsalMarkTweaksForBb = \relative c' { 
-    \once \override Score.MetronomeMark.extra-offset = #'( -6 . 0 )
-    \override Score.RehearsalMark.self-alignment-X = #LEFT
-
-    \override Score.RehearsalMark.extra-offset = #'( 4 . -2 )
-    %  "Intro"
-    s1*4 
-    s1*3 
-    s1
-    s1 
-
-    \override Score.RehearsalMark.extra-offset = #'( -7 . -2 )
-    %  "Head"
-    s1*4 
-    s1*4 
-    s1*4 
-    s1*4 
-
-    \override Score.RehearsalMark.extra-offset = #'( -9 . 1 )
-    % "Interlude" "Play 4X"
-    s1*4 
 }
 
 rehearsalMarkTweaksForEb = \relative c' { 
-    \once \override Score.MetronomeMark.extra-offset = #'( -6 . 0 )
-    \override Score.RehearsalMark.self-alignment-X = #LEFT
 
-    \override Score.RehearsalMark.extra-offset = #'( 4 . -2 )
-    %  "Intro"
-    s1*4 
-    s1*3 
-    s1
-    s1 
-
-    \override Score.RehearsalMark.extra-offset = #'( -6 . -4 )
-    %  "Head"
-    s1*4 
-    s1*4 
-    s1*4 
-    s1*4 
-
-    \override Score.RehearsalMark.extra-offset = #'( -7 . 0 )
-    % "Interlude" "Play 4X"
-    s1*4 
 }
 
 chordsForm = \chordmode { 
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
+    s4 ||
+    s1*4
+    s1*4
+    s1*4
+    d1:m9 | a:m/c | d:m9 | a:m/c | 
+    d1:m9 | a:m/c | d:m9 | a:m/c | 
 
-    f1:m13 | s | s | s |
-    f1:m13 | s | s | s || s || 
+    d1:m9 | a:m/c | d:m9 | a:m/c | 
+    d1:m9 | a:m/c | d:m9 | a:m/c | 
 
-    f1:m9 | d:m7.5-.9 | g:m7.5-.9 | c:7.9-.13 |
-    f1:m9 | d:m7.5-.9 | c:m9 | f:13 |
-    bf1:m9 | ef:13 | af:m9 | df:13 | 
-    gf:m9 | cf:7.11+ | g:m7.5-.9 | c:aug7 ||
-
-    f1:m6 | gf:7 | f:m6 | gf:7 |
-
+    \grace { s8 }
+    d1:m9 | a:m/c | d:m9 | a:m/c | 
+    d1:m9 | a:m/c | d:m9 | a:m/c | 
 }
 
-melodyIntro = \relative c'' { 
-    c1 ~ | 8 af bf c  bf af bf c ~ | 1 ~ | 8 af bf c  bf af bf f ~ | 
-    f1 ~ | 8 ef f af  f ef f f ~ | 1 | r2 ef'4. df8 || R1 ||
-}
-
-harmonyIntro = \relative c'' { 
-    g1 ~ | 8 ef f g  f ef f g ~ | 1 ~ | 8 ef f g  f ef f c ~ | 
-    c1 ~ | 8 bf c ef c bf c c ~ | 1 | r2 c'2 || R1 ||
-}
-
-melodyHead = \relative c'' { 
-    g2.. f8 | r2 d8 e f g | a2 4. g8 | a8 c4 a8 ~ 2 | 
-    g2.. f8 | r2 f8 g bf c | d2 4. c8 | d8 f4 d8 ~ 2 | 
-    c4-. r c4. bf8 | c8 ef4 c8 ~ 2 | r8 bf r4 bf4. af8 | bf8 df4 bf8 ~ 2 | 
-    af2 4. 8 | r2 f8 gf r af | a2 4. 8 | r2 c8 af e c ||
-}
-
-harmonyHead = \relative c' { 
-    e2.. d8 | r2 d8 e f g | f2 e4. d8 | df8 e4 bf8 ~ 2 | 
-    e2.. d8 | r2 f8 g bf c | bf2 a4. g8 | gf8 a4 ef8 ~ 2 | 
-    af4-. r af4. g8 | af8 bf4 g8 ~ 2 | r8 gf r4 gf4. f8 | gf8 af4 f8 ~ 2 | 
-    ff2 4. 8 | r2 f8 gf r af | f2 4. e8 | r2 c'8 af e c ||  
-}
-
-bassTransition = \relative c {
-    f2 c4 f | gf4. df'8 r bf r gf |   
-    f2 c4 f | gf4. df'8 r bf r gf |   
-}
-
-melody = {
-    \customScripts #flaming-articulations
+bassIntro = \relative c {
     \accidentalStyle modern-cautionary
-    << 
-        \melodyIntro \\
-        \harmonyIntro
-    >>
-    <<
-        \melodyHead \\
-        \harmonyHead
-    >>
-    \clef bass
-    \bassTransition
+    \customScripts #flaming-articulations
+    g4 ||
+    d4. a'8 \grace { c8 \glissando } e4 a,8 c ~ | 2.  g8 [ ( a ] ) |
+    d,4. a'8 \grace { c8 \glissando } e4 a,8 c ~ | 2.  g8 [ ( a ] ) |
 }
 
-melodyForFlats = {
-    \customScripts #flaming-articulations
+groove = \relative c'' {
     \accidentalStyle modern-cautionary
-    << 
-        \melodyIntro \\
-        \harmonyIntro
-    >>
-    <<
-        \melodyHead \\
-        \harmonyHead
-    >>
-    \transpose c, c \bassTransition
+    \customScripts #flaming-articulations
+    \comp #12
+    r2   r8 <e c> (  <d b> [ ) 8 ( ] || 
+
+
+    <c a> ) 8 (  <d b> ) 8 (  <e c>4 ) r4 | e1\startTrillSpan ~ | 
+    e1 ~  | 1\stopTrillSpan ||
+}
+
+
+melody = \relative c'' {
+    \accidentalStyle modern-cautionary
+    \customScripts #flaming-articulations
+    R1 | r4 \acciaccatura { d8 } e2. ~ | 4. d16 c  r16 \grace { d8 ( } e8. ~ 8 ) d16 c |
+
+    r8 a16 g  e4 ~  16 [ \grace { g8 ( } a8. ] ~ 4 ~ | 
+
+    a1 ~ | a2 ) r | 
+
+    R1*2 || 
+
+    
+    R1 | r8 \grace { d8 ( } e4. ~ 4. ) d8 |
+    
+    c8 e4 d16 c  \tuplet 3/2 { a8 g e }  g8 \grace { g8 ( } a ) | 
+        \grace { g8 ( } a4. ) \tuplet 3/2 { g16 e d }  c8 \grace { d8 ( } e4 ) \grace { d8 ( } e8 ~ |
+    
+    e1 ) | R1*2 | r2 r8 a8-. c-. [ d-. ] ||
+
+
+    \grace { d8 ( } e8 ) g  a-. a16 ( b )  g2 |
+    \grace { g8 ( } a8 ) g e d   \grace { d8 ( } e8 ) d-. c a-. |
+
+    \grace { a8 ( } b1 ~ | 2 ~ \tuplet 3/2 { 4 ) a8 }  b16 a b8 ~ | 
+
+    b8 a16 b  \grace { b8 ( } \tuplet 3/2 { c8 ) b a }  g16 f g8  \grace { g8 ( } a16 ) g e8\startTrillSpan ~ | 
+    e1*7/8 s8 \stopTrillSpan | 
+
+    R1*2 ||  
 }
 
 
@@ -269,7 +231,7 @@ melodyForFlats = {
         subtitle = ""
     }
     \score {
-        \transpose bf bf <<
+        \transpose d d <<
             \new ChordNames { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm
@@ -282,7 +244,13 @@ melodyForFlats = {
                 <<
                     \structure
                     \rehearsalMarkTweaksForC
-                    \melody
+                    {
+                        \clef bass
+                        \bassIntro
+                        \clef treble
+                        \groove
+                        \melody
+                    }
                 >>
             }
         >>
@@ -311,8 +279,12 @@ melodyForFlats = {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \rehearsalMarkTweaksForBb
-                    \melodyForFlats
+                    \rehearsalMarkTweaksForC
+                    {
+                        \transpose c,, c \bassIntro
+                        \groove
+                        \melody
+                    }
                 >>
             }
         >>
@@ -341,10 +313,15 @@ melodyForFlats = {
                 \autoPageBreaksOff
                 <<
                     \structure
-                    \rehearsalMarkTweaksForEb
-                    \melodyForFlats
+                    \rehearsalMarkTweaksForC
+                    {
+                        \transpose c, c \bassIntro
+                        \groove
+                        \melody
+                    }
                 >>
             }
         >>
     }
 }
+
