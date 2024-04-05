@@ -132,7 +132,7 @@ melody = \relative c'' {
     af,4. f8 g4. f8 | af4. f8 g4. ef8 | g4. ef8 f4. ef8 | g4. ef8 f4. ef8 | 
     af4. f8 g4. f8 | af4. f8 g4. ef8 | ef'1 ~ | 2 r ||
 
-    f4. 8 ef4. 8 | df4. 8 c4. 8 | ef4. 8 df4. 8 | c4. 8 b2 | 
+    f4. 8 ef4. 8 | df4. 8 c4. 8 | ef4. 8 df4. 8 | c4. 8 bf2 | 
     af4. f8 g4. f8 | af4. f8 g4 c | af1 ~ | 2 r ||
 }
 melodyForE = \relative c'' { 
@@ -147,7 +147,7 @@ melodyForE = \relative c'' {
     af4. f8 g4. f8 | af4. f8 g4. ef8 | g4. ef8 f4. ef8 | g4. ef8 f4. ef8 | 
     af4. f8 g4. f8 | af4. f8 g4. ef8 | ef'1 ~ | 2 r ||
 
-    f4. 8 ef4. 8 | df4. 8 c4. 8 | ef4. 8 df4. 8 | c4. 8 b2 | 
+    f4. 8 ef4. 8 | df4. 8 c4. 8 | ef4. 8 df4. 8 | c4. 8 bf2 | 
     af4. f8 g4. f8 | af4. f8 g4 c | af1 ~ | 2 r ||
 }
 
