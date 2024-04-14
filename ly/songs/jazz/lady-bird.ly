@@ -100,6 +100,41 @@ structure = \relative c' {
     \bar ":|]"
 }
 
+structureDameron = \relative c' { 
+
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+
+    \override Beam.damping = #2.75 
+    \override Stem.length-fraction = #(magstep 1.15)
+
+    \key c \major
+    \time 4/4
+    \mark \markup \box "Intro"
+
+    \partial 8
+    s8 
+
+    s1*8 
+}
+
+melodyIntro = \relative c'' {
+    bf8 ||
+    r8 bf8 4 ~ 4. g8 | r2 r4 r8 bf8 |
+    r8 bf8 4 ~ 4. g8 | r2 r8 g4. | 
+    a4. c8 ~ 4. a8 | r8 b4. ~ 4 r | 
+    e,4. a8 ~ 4. d,8 | r8 e4. 4 r8  
+}
+
+tenorIntro = \relative c' {
+    f8 ||
+    r8 f8 4 ~ 4. e8 | r2 r4 r8 f8 |
+    r8 f8 4 ~ 4. e8 | r2 r8 g4. | 
+    a4. c8 ~ 4. a8 | r8 b4. ~ 4 r | 
+    e,4. a8 ~ 4. d,8 | r8 e4. 4 r8  
+}
+
+
 chordsReal = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
