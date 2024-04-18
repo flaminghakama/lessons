@@ -38,7 +38,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   top-system-spacing.minimum-distance = #24
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #19
+  system-system-spacing.basic-distance = #0
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #0
@@ -137,7 +137,7 @@ structureCoda = \relative c' {
 rehearsalMarkTweaksForC = \relative c' { 
     \once \override Score.MetronomeMark.extra-offset = #'( -6 . 0 )
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark.extra-offset = #'( 4 . -2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( 1 . -2 )
     s1*4 
     s1*4 
     \once \override Score.RehearsalMark.extra-offset = #'( -4 . -2 )
@@ -181,14 +181,14 @@ chordsForm = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
 
-    c1:maj7 | s | d:maj7 | s | df:maj7 | s | 
+    c1:7 | s | d:maj7 | s | df:maj7 | s | 
     c1:maj7 | s | cf:maj7 | s | bf:maj7 | g:aug7 | 
     c1:m7 | f:7 | c1:m7 | f:7 || c1:m | s ||
 
     af1:7 | d2:m7 g:aug7 | c1:1.4.5.7 | bf2:m7 ef:7 | 
     a1:m | d:7 | g:aug7.9 | R1 ||
 
-    c1:maj7 | s | d:maj7 | s | df:maj7 | s |  c:maj7 | s | 
+    c1:7 | s | d:maj7 | s | df:maj7 | s |  c:maj7 | s | 
     cf1:maj7 | s | bf:maj7 | g:aug7 | c:m7 | f:7 | c:m7 | f:7 ||
 }
 chordsFormForFlats = \chordmode { 
@@ -196,14 +196,14 @@ chordsFormForFlats = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
 
-    c1:maj7 | s | eff:maj7 | s | df:maj7 | s | 
+    c1:7 | s | eff:maj7 | s | df:maj7 | s | 
     c1:maj7 | s | cf:maj7 | s | bf:maj7 | g:aug7 | 
     c1:m7 | f:7 | c1:m7 | f:7 || c1:m | s ||
 
     af1:7 | d2:m7 g:aug7 | c1:1.4.5.7 | bf2:m7 ef:7 | 
     bff1:m | eff:7 | g:aug7.9 | R1 ||
 
-    c1:maj7 | s | d:maj7 | s | df:maj7 | s |  c:maj7 | s | 
+    c1:7 | s | eff:maj7 | s | df:maj7 | s |  c:maj7 | s | 
     cf1:maj7 | s | bf:maj7 | g:aug7 | c:m7 | f:7 | c:m7 | f:7 ||
 }
 
@@ -221,22 +221,23 @@ bassIntro = \transpose b, c \relative c {
 
 
 melodyIntro = \relative c'' { 
-    r4 r8 a  r a4 g8 | a4 8 g  a4 g8 a | r4 r8 a  r a4 g8 | a4 r4
+    r4 r8 a  r a4\turn  g8 | a4 a8\turn g  a4 g8 a | r4 r8 a  r a4\turn g8 | a4 r4
 }
 harmonyIntro = \relative c' { 
-    r4 r8 d  r d4 c8 | d4 8 c  d4 c8 d | r4 r8 d  r d4 c8 | d4 r4
+    r4 r8 <e bf>  r <e bf>4 r8 | <e bf>4 <d a>  <e bf>4 <d a>8 <e g,> | 
+    r4 r8 <e bf>  r <e bf>4 <d a>8 | <e g,>4 r4
 }
 
 melodyACommon = \relative c' { 
-    e4 f ||
-    g1 ~ | 2 a4. g16 a | fs1 ~ | 1 | 
-    f1 ~ | 2 g4 f | e1 ~ | 2. 4 | 
+    e?4 f ||
+    g1 ~ | 2 a4. g16 a | fs1 ~ | 2.  4 | 
+    f1 ~ | 2 g4 f | e1 ~ | 2 r4 e | 
     ef1 ~ | 2 f4 ef | d1 |
 }
 melodyACommonForFlats = \relative c' { 
-    e4 f ||
-    g1 ~ | 2 a4. g16 a | gf1 ~ | 1 | 
-    f1 ~ | 2 g4 f | e1 ~ | 2. 4 | 
+    e?4 f ||
+    g1 ~ | 2 a4. g16 a | gf1 ~ | 2. 4 | 
+    f1 ~ | 2 g4 f | e1 ~ | 2 r4 e | 
     ef1 ~ | 2 f4 ef | d1 |
 }
 melodyACommonPartTwo = \relative c'' { 
@@ -244,29 +245,38 @@ melodyACommonPartTwo = \relative c'' {
     r8 ef r ef ~ 4 c8 bf | c4. 8 r2 |
 }
 harmonyACommonPartTwo = \transpose b, c \relative c' { 
-    r8 <fs a,> r <fs as,> ~ 4 <d fs,>8 <b e,> | <d fs,>4. 8 r2 | 
-    r8 <fs a,> r <fs as,> ~ 4 <d fs,>8 <b e,> | <d fs,>4. 8 r2 | 
+    r8 <fs a> r <fs as> ~ 4 <d fs>8 <b e> | <d fs>4. 8 r2 | 
+    r8 <fs a> r <fs as> ~ 4 <d fs>8 <b e> | <d fs>4. 8 r2 | 
 }
 melodyAFirstEndings = \relative c' {
      r2 e4 f || c'4. 8 r2 | r2 
 }
-melodyBridge = \relative c'' {
+melodyBridgePartOne = \relative c'' {
     r8 c r bf ||
-    af8 g gf f  ef gf bf df | d4-. 4-. ef-- d8 c ~ | 1 ~ | 2. a8 b | 
+    af8 g gf f  ef gf bf df | d4-. 4-. ef--  
+}
+melodyBridgePartTwo = \relative c'' {
+        d8 c ~ | 1 ~ | 2. 
+}
+harmonyBridgePartTwo = \relative c' {
+        d8 <ef g,>~ | 4. 8 ~ 4.  <df g,>8 ~ | 2. 
+}
+melodyBridgePartThree = \relative c'' {
+        a8 b | 
     c2. a8 c | d4. c8  d c d g, ~ | 2 bf8 g f g | r2 
 }
 
 harmonyACommon = \relative c' { 
     s2 ||
-    e1 ~ | 1 | d ~ | 1 | 
-    df1 ~ | 1 | c1 | 1 | 
-    cf1 ~ | 1 | bf1 | 
+    <e bf>1 ~ | 1 | <d a> ~ | 1 | 
+    <df af>1 ~ | 1 | <c g>1 ~ | 2 r4 s4 | 
+    <cf gf>1 ~ | 1 | <bf f>1 | 
 }
 harmonyACommonForFlats = \relative c' { 
     s2 ||
-    e1 ~ | 1 | eff ~ | 1 | 
-    df1 ~ | 1 | c1 | 1 | 
-    cf1 ~ | 1 | bf1 | 
+    <e bf>1 ~ | 1 | <eff bff> ~ | 1 | 
+    <df af>1 ~ | 1 | <c g>1 ~ | 2 r4 s4 | 
+    <cf gf>1 ~ | 1 | <bf f>1 | 
 }
 
 
@@ -284,7 +294,12 @@ melody = {
         \harmonyACommonPartTwo
     >>
     \melodyAFirstEndings
-    \melodyBridge
+    \melodyBridgePartOne
+    <<
+        \melodyBridgePartTwo \\
+        \harmonyBridgePartTwo
+    >>
+    \melodyBridgePartThree
     <<
         \melodyACommon \\
         \harmonyACommon
@@ -305,10 +320,15 @@ melodyForFlats = {
         \harmonyACommonPartTwo
     >>
     \melodyAFirstEndings
-    \melodyBridge
+    \melodyBridgePartOne
     <<
-        \melodyACommon \\
-        \harmonyACommon
+        \melodyBridgePartTwo \\
+        \harmonyBridgePartTwo
+    >>
+    \melodyBridgePartThree
+    <<
+        \melodyACommonForFlats \\
+        \harmonyACommonForFlats
     >>
     <<
         \melodyACommonPartTwo \\
@@ -347,7 +367,7 @@ melodyForFlats = {
                         \bassIntro
                         \clef treble
                         <<
-                            \melodyIntro 
+                            \melodyIntro \\
                             \harmonyIntro
                         >>
                         \melody
@@ -418,7 +438,7 @@ melodyForFlats = {
                         \transpose c, c \bassIntro
                         \clef treble
                         <<
-                            \melodyIntro 
+                            \melodyIntro \\
                             \harmonyIntro
                         >>
                         \melodyForFlats
@@ -489,7 +509,7 @@ melodyForFlats = {
                         \transpose c, c \bassIntro
                         \clef treble
                         <<
-                            \melodyIntro 
+                            \melodyIntro \\
                             \harmonyIntro
                         >>
                         \melodyForFlats
