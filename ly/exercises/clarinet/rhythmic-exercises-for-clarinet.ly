@@ -1,30 +1,32 @@
-\version "2.19.15"
-\include "english.ly"
+\version "2.24.0"
 
 titleLeft = "Rhythmic Exercises"
 titleRight = "for Clarinet"
-title = "Rhythmic Exercises for Clarinet"
+titleFull = "Rhythmic Exercises for Clarinet"
 composerName = "Elaine Alt"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+arranger = ""
+copyright = ""
 
 %{
 
+rm rhythmic-exercises-for-clarinet.pdf ; lilypond ly/exercises/clarinet/rhythmic-exercises-for-clarinet.ly ; op rhythmic-exercises-for-clarinet.pdf
+
 rm rhythmic-exercises-for-clarinet.pdf
-lilypond ly/rhythmic-exercises-for-clarinet.ly 
-#python ~/git/part-format/bookify-7page.py rhythmic-exercises-for-clarinet.pdf rhythmic-exercises-for-clarinet-printable.pdf automatic
-mv rhythmic-exercises-for-clarinet.pdf pdf
-#mv rhythmic-exercises-for-clarinet-printable.pdf pdf/printable
+lilypond ly/exercises/clarinet/rhythmic-exercises-for-clarinet.ly 
+mv rhythmic-exercises-for-clarinet.pdf pdf/exercises/clarinet
+op pdf/exercises/clarinet/rhythmic-exercises-for-clarinet.pdf
 
 %}
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2021 Elaine Paul" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -63,7 +65,6 @@ mv rhythmic-exercises-for-clarinet.pdf pdf
 }
 
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/rhythms-eighths.ily"
@@ -100,6 +101,6 @@ mv rhythmic-exercises-for-clarinet.pdf pdf
    \include "ly/bookparts/rhythm/clarinet/rhythms-eighths.ily"
    % \include "ly/bookparts/rhythm/clarinet/rhythms-syncopated-straight.ily"
    % \include "ly/bookparts/rhythm/clarinet/rhythms-careless-whisper.ily"
-   % \include "ly/bookparts/rhythm/clarinet/rhythms-syncopation.ily"
-   % \include "ly/bookparts/rhythm/clarinet/rhythms-sixteenths.ily"
+   \include "ly/bookparts/rhythm/clarinet/rhythms-syncopation.ily"
+   \include "ly/bookparts/rhythm/clarinet/rhythms-sixteenths.ily"
 }

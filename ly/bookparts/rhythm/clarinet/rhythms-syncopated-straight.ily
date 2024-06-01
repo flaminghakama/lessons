@@ -1,3 +1,4 @@
+\version "2.24.0"
 
     \bookpart {
         \header {

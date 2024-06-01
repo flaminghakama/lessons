@@ -1,3 +1,4 @@
+\version "2.24.0"
 
     \bookpart {
         \header {
@@ -9,7 +10,7 @@
             << 
                 \new Staff { 
                     \include "ly/ily/staff-properties.ily"
-                    \aMinorRhythmsSyncopation
+                    \transpose a a, \aMinorRhythmsSyncopation
                 }
             >>
             \header {
@@ -23,7 +24,7 @@
             << 
                 \new Staff { 
                     \include "ly/ily/staff-properties.ily"
-                    \fMajorRhythmsSyncopation
+                    \transpose f f, \fMajorRhythmsSyncopation
                 }
             >>
             \header {
@@ -65,7 +66,7 @@
             << 
                 \new Staff { 
                     \include "ly/ily/staff-properties.ily"
-                    \bMinorRhythmsSyncopation
+                    \transpose b e \bMinorRhythmsSyncopation
                     \pageBreak
                 }
             >>
@@ -73,21 +74,21 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "5. B Minor"  " " }
+                piece = \markup \center-column { "5. E Minor"  " " }
             }
         }
         \score {
             << 
                 \new Staff { 
                     \include "ly/ily/staff-properties.ily"
-                    \dMajorRhythmsSyncopation
+                    \transpose d a,, \dMajorRhythmsSyncopation
                 }
             >>
             \header {
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "6. D Major"  " " }
+                piece = \markup \center-column { "6. A Major"  " " }
             }
         }
         \score {
@@ -107,7 +108,7 @@
 
         \score {
             << 
-                \new Staff \transpose c cs { 
+                \new Staff \transpose c cs, { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseNineMajor 
                 }

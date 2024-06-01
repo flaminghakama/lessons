@@ -1,3 +1,5 @@
+\version "2.24.0"
+
     \bookpart {
 
         \header {
@@ -6,7 +8,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g c { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseOneMajor
@@ -23,7 +25,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseThreeMajor 
@@ -40,7 +42,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseFourMajor 
@@ -57,7 +59,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g bf, { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseTwoMajor
@@ -74,7 +76,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c d { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseSixMajor 
@@ -91,7 +93,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c d { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsEighthsExerciseSevenMajor 
@@ -108,7 +110,7 @@
         % \score {
         %     << 
         %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose g a { 
         %             \include "ly/ily/staff-properties.ily"
         %             \rhythmsEighthsExerciseFiveMajor 
