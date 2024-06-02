@@ -81,7 +81,7 @@
             << 
                 \new Staff { 
                     \include "ly/ily/staff-properties.ily"
-                    \transpose d a,, \dMajorRhythmsSyncopation
+                    \transpose d a, \dMajorRhythmsSyncopation
                 }
             >>
             \header {
