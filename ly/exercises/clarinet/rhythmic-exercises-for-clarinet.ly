@@ -11,6 +11,7 @@ copyright = ""
 
 killPreview; rm rhythmic-exercises-for-clarinet.pdf ; lilypond ly/exercises/clarinet/rhythmic-exercises-for-clarinet.ly ; op rhythmic-exercises-for-clarinet.pdf
 
+killPreview
 rm rhythmic-exercises-for-clarinet.pdf
 lilypond ly/exercises/clarinet/rhythmic-exercises-for-clarinet.ly 
 mv rhythmic-exercises-for-clarinet.pdf pdf/exercises/clarinet
