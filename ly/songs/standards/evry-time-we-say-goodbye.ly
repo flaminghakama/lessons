@@ -18,7 +18,7 @@ lilypond ly/songs/standards/evry-time-we-say-goodbye.ly
 mv evry-time-we-say-goodbye*pdf pdf/songs/standards
 for file in pdf/songs/standards/evry-time-we-say-goodbye*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing wrong notes" ; git push 
+git add . ; git commit -m"every times" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -78,7 +78,8 @@ structure = \relative c' {
 
     \startSection ""
     s1*3 s2.. \toCoda s8 
-    s1*4
+    s1*4 
+    \bar "||"
 }
 
 structureCoda = \relative c' { 
@@ -121,17 +122,17 @@ chordsSong = \chordmode {
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
-    ef1:maj7 | f2:m7 bf:7 | g:m7.5- c:7.9- | f:m7 bf:7 |
+    ef1:maj7 | f2:m7 bf:7 | g:m7.5- c:7.9- | f:m7 bf4:7 bf:7/af|
     g2:m7.5- c:7.9- | f:m7 bf:7 | bf:m7 ef:7 | af:m7 df:9 ||
 
     ef2:/g gf:dim7 | f:m7.5- bf:7 | bf:m7 ef:7 | af1:maj7 |
     af2:m7 df:9 | ef1:maj7 | b:9 | f2:m7.5-/bf bf:7 ||
 
-    ef1:maj7 | f2:m7 bf:7 | g:m7.5- c:7.9- | f:m7 bf:7 |
+    ef1:maj7 | f2:m7 bf:7 | g:m7.5- c:7.9- | f:m7 bf4:7 bf:7/af |
     g2:m7.5- c:7.9- | f:m7 bf:7 | bf:m7 ef:7 | af:m7 df:9 ||
 
     ef2:/g gf:dim7 | f:m7.5- bf:7 | ef:7 af:maj7 | af2:m7 df:9 | 
-    ef2:maj7 c:7 | f:9 bf:7 | ef gf:dim7 | f:m7 bf:7 ||
+    ef2:maj7 c:7 | f:9 af4:/bf bf:7| ef2 gf:dim7 | f:m7 bf:7 ||
           
 }
 
