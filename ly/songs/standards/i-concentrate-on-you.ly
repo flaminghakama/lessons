@@ -18,7 +18,7 @@ lilypond ly/songs/standards/i-concentrate-on-you.ly
 mv i-concentrate-on-you*pdf pdf/songs/standards
 for file in pdf/songs/standards/i-concentrate-on-you*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing chords" ; git push 
+git add . ; git commit -m"fixing notes" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -128,7 +128,7 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
     ef1:6 | ef:maj7 | bf:7 | s | ef:m7 | df2:m7 gf:9 | cf1:6 | af2:m7 af:m7/gf | 
-    f1:m7.5- | bf:7 | ef:m6 | c:m75- | f:7 | bf:7 | ef:6 | f2:m7 bf:7 ||
+    f1:m7.5- | bf:7 | ef:m6 | c:m7.5- | f:7 | bf:7 | ef:6 | f2:m7 bf:7 ||
 
     ef1:6 | ef:maj7 | bf:7 | s | ef:m7 | df2:m7 gf:9 | cf1:6 | s2 cf/bf | 
     af1:m7 | df:7 | gf:maj7 | b:maj7 | f:7 | bf:7 | ef2:6 af:6 | ef ef:7 ||
