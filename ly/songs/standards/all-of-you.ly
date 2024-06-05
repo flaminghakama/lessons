@@ -123,7 +123,7 @@ chordsSong = \chordmode {
     af1/ef | ef | f:m7.5- | bf:7.9- | 
     af1/ef | ef | af:m7 | df:7 ||
 
-    ef1 | c:7.9- | f:m7 | b2.:7 bf4:7/af | 
+    ef1 | c:7.9- | f:m7 | bf2.:7 bf4:7/af | 
     g1:m7 | c:7.9- | f:m7 | bf:7 ||
 
     af1/ef | ef | f:m7.5- | bf:7.9- | 
@@ -143,7 +143,7 @@ chordsSongVolOne = \chordmode {
     af1:m6 | ef:maj7 | f:m7.5- | bf:7.9- | 
     af1:m6 | ef:maj7| af:m7 | df:7 ||
 
-    g1:m7 | gf:dim7 | f:m7 | b:7 | 
+    g1:m7 | gf:dim7 | f:m7 | bf:7 | 
     ef2:maj7 d:7 | g:m7.5-/df c:7.9- | f1:m7 | bf:7 ||
 
     af1:m6 | ef:maj7 | f:m7.5- | bf:7.9- | 
