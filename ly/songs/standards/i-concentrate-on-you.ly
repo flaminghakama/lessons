@@ -127,17 +127,23 @@ chordsSong = \chordmode {
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
-    ef1:6 | ef:maj7 | bf:7 | s | ef:m7 | df2:m7 gf:9 | cf1:6 | af2:m7 af:m7/gf | 
-    f1:m7.5- | bf:7 | ef:m6 | c:m7.5- | f:7 | bf:7 | ef:6 | f2:m7 bf:7 ||
+    ef1:maj7 | s | bf:7.13- | s | ef:m7 | df2:m7 gf:9 | cf1:6 | af2:m7 af:m7/gf | 
+    f1:m7.5- | bf:7 | ef:m7 | c:m7.5- | b:7 | bf:7.13- | ef:6 | f2:m7 bf:7 ||
 
-    ef1:6 | ef:maj7 | bf:7 | s | ef:m7 | df2:m7 gf:9 | cf1:6 | s2 cf/bf | 
-    af1:m7 | df:7 | gf:maj7 | b:maj7 | f:7 | bf:7 | ef2:6 af:6 | ef ef:7 ||
+    ef1:maj7 | s | bf:7.13- | s | ef:m7 | df2:m7 gf:9 | cf1:6 | s2 cf/bf | 
+    af1:m7 | df:7 | gf:maj7 | cf:maj7 | f:7 | bf:7.13- | ef2:6 af:6 | ef ef:7 ||
 
     af1:maj7 | af:m7 | ef | g2:m7 c:7 | f1:m7 | bf:7 | ef:maj7 | ef:7 | 
-    af1:maj7 | df:7 | gf2:maj7 gf/f | ef:m7 ef:m/df | c1:m7.5- | f:7 | bf2:6 bf:maj7 | bf1:7 ||
+    af1:maj7 | df:7 | gf2:maj7 gf/f | ef:m7 ef:m/df | c1:m7.5- | f:7 | bf | bf1:7 ||
 
-    ef1 | ef:maj7 | a:m7.5- | d:7 | bf:m7 | ef2:7 af:maj7 | d1:m7.5- | g:7 |
-    g1:m7.5- | c:aug7 | f:m | fs:dim7 | f:7.5-/cf | bf:7 | ef | f2:m7 bf:7 ||
+    ef1:maj7 | af:7.11+ | g:m7 | c:7.11+ | f:m7 | bf2:7 af:7 | a1:m7.5- | d:aug7 |
+    g1:m7.5- | c:aug7 | f:m | fs:dim7 | f:7.5-/cf | bf:7.13- | ef | f2:m7 bf:7 ||
+}
+chordsSongForFlats = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    %\set noChordSymbol = ##t
+    \chordsSong
 }
 
 chordsSongVolThree = \chordmode { 
@@ -161,12 +167,12 @@ chordsCoda = \chordmode {
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
-    f1:7.5-/cf | bf:7 | ef2:6 af:6 | ef1:6 | 
-    f1:m7 | s | bf:7.9- | s2 e:9 | ef1:6.9 | s | s | s ||
+    f1:7.5-/cf | bf:7.13- | ef2:6 af:6 | ef1:6 | 
+    f1:m7 | s | bf:13.9- | s2 e:9 | ef1:6.9 | s | s | s ||
 }
 
 melody = \relative c' { 
-    \accidentalStyle default
+    \accidentalStyle modern
 
     r4 bf c ef | d2. c4 | d4. 8 2 ~ | 2. r4 | 
     r4 ef \tuplet 3/2 { gf4 af bf } | af2. gf4 | af1 ~ | 2. r4 |
@@ -329,7 +335,7 @@ lyricsCoda = \lyricmode {
         \transpose bf, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -386,7 +392,7 @@ lyricsCoda = \lyricmode {
         \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
