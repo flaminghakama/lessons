@@ -119,7 +119,7 @@ chordsSong = \chordmode {
     a1:m7 | d:9 | g:maj7 | b2:m7 e:7 | a1:m7 | d2:7 d:7/c | b1:m7 | e:7.9- ||
 
     a1:m7 | d:m7 | a:m7 | d:7 | g:maj7.11+ | c:13 | b:m7 | e:7.9- | 
-    a1:m7 | c2:m7 f:7 | g1:maj7 | b2:7 bf:dim7 | a1:m9 | d:7 | g | b2:m7.5- e:7.9- ||
+    a1:m7 | c2:m7 f:9 | g1:maj7 | b2:m7 bf:dim7 | a1:m9 | d:13 | g | b2:m7.5- e:7.9- ||
         g2 a:m7 | a:m7/d g ||
 
 }
