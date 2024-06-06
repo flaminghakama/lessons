@@ -18,7 +18,7 @@ lilypond ly/songs/standards/easy-to-love.ly
 mv easy-to-love*pdf pdf/songs/standards
 for file in pdf/songs/standards/easy-to-love*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing notes" ; git push 
+git add . ; git commit -m"fixing chords" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -115,11 +115,11 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
 
-    a1:m7 | d:m7 | a:m7 | d:7 | g:maj7 | c:9 | b:m7 | e:7.9- | 
-    a1:m7 | d:9 | g:maj7 | b2:m7 e:7 | a1:m7 | d2.:7 d4:7/c | b1:m7 | s2 e:7.9- ||
+    a1:m7 | d:m7 | a:m7 | d:7 | g:maj7.11+ | c:13.11+ | b:m7 | e:7.9- | 
+    a1:m7 | d:9 | g:maj7 | b2:m7 e:7 | a1:m7 | d2:7 d:7/c | b1:m7 | e:7.9- ||
 
-    a1:m7 | d:m7 | a:m7 | d:7 | g:maj7.11+ | c:9 | b:m7 | e:7.9- | 
-    a1:m7 | c2:m7 f:7 | g:maj7 g:maj7/b | b1:dim7 | a:m7 | d:7 | g | b2:m7.5- e:7.9- ||
+    a1:m7 | d:m7 | a:m7 | d:7 | g:maj7.11+ | c:13 | b:m7 | e:7.9- | 
+    a1:m7 | c2:m7 f:7 | g1:maj7 | b2:7 bf:dim7 | a:m9 | d:7 | g | b2:m7.5- e:7.9- ||
         g2 a:m7 | a:m7/d g ||
 
 }
@@ -130,17 +130,16 @@ chordsSongVolOne = \transpose c g \chordmode {
     %\set noChordSymbol = ##t
 
     d1:m7 | g:m7 | d:m7 | g:7 | 
-    c1:maj7 | f:7 | e:m7 | a:7.5- ||
+    c1:maj7 | f:7 | e:m7 | f:7 ||
 
-    d1:m7 | g:7 | c2:maj7 f:maj7 | e:m7 a:7 | 
-    d1:m7 | g:7 | e:m7 | ef:dim7 ||
+    d1:m7 | g:7 | c:maj7 | a:7 | 
+    d1:m7 | g:7 | e:m7 | a:7 ||
 
     d1:m7 | g:m7 | d:m7 | g:7 | 
-    c1:maj7 | f:7 | e:m7 | a:7.5- ||
+    c1:maj7 | f:7 | e:m7 | a:7 ||
 
-    a1:7 | d:m7 | f:m6 | c:maj7 | 
-    e2:7 ef:dim7 | d1:m7 | g:7 | c2:6 f:7 | e:m7 a:7.9- ||
-        g2 a:m7 | a:m7/d g ||
+    d1:m7 | f:m6 | c:maj7 | e2:7 ef:dim7 | 
+    d1:m7 | g:7 | c:6 | s ||
 }
 
 melody = \relative c' { 
@@ -149,7 +148,7 @@ melody = \relative c' {
     d2 cs4 d | a' af g fs | e2 \tuplet 3/2 { ds2 e4 } | d'1 ||
 
     d1 | e,2. fs4 | b4 4 2 ~ | 4 r r2 |
-    r4 d d,4. 8 | ef8 4 8 e4 8 f ~ | 4 4 2 ~ | 4 r r2 ||
+    r4 d d,4. 8 | ef8 4 8 e4 8 fs ~ | 4 4 2 ~ | 4 r r2 ||
 
     e1 | a,2. b4 | c2 \tuplet 3/2 { b2 c4 } | fs2. e4 |
     d2 cs4 d | a' af g fs | e2 \tuplet 3/2 { ds2 e4 } | e'2. b4 ||
@@ -295,6 +294,38 @@ lyricsHeadTwo = \lyricmode {
     }
 }
 
+\book {
+  \bookOutputSuffix "in-G-Vol-I-for-C"
+    \header {
+        subtitle = "(Vol. I changes)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+   \score {
+        \transpose g g <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongVolOne
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
 
 \book {
   \bookOutputSuffix "in-C-Vol-I-for-C"
