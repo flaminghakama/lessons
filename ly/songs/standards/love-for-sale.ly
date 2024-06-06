@@ -18,7 +18,7 @@ lilypond ly/songs/standards/love-for-sale.ly
 mv love-for-sale*pdf pdf/songs/standards
 for file in pdf/songs/standards/love-for-sale*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing notes" ; git push 
+git add . ; git commit -m"for sale" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -59,7 +59,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
-structureVolIII = \relative c' { 
+structure = \relative c' { 
 
     \key ef \major
     \time 4/4
@@ -77,16 +77,9 @@ structureVolIII = \relative c' {
     s1*8 \break
 
     \startSection "A"
-    s1*16 
-    \bar "||"
-}
-
-structure = \relative c' { 
-
-    \structureVolIII 
-    \pageBreak 
-
-    s1*8 
+    s1*11 
+    s2.. \toCoda s8
+    s1*4
     \bar "||"
 }
 
@@ -96,8 +89,9 @@ structureCoda = \relative c' {
     \once \override Score.RehearsalMark.font-size = #8 
     \mark \markup { \musicglyph #"scripts.coda" }
     \key ef \major
-    s1*6 \break 
-    s1*6
+    s1*4 \break 
+    s1*4 \break 
+    s1*4
     \bar "|."    
 }
 
@@ -142,16 +136,21 @@ chordsSong = \chordmode {
     ef1:7 | s | bf:m | s | ef:7 | s | bf:m | s | 
     ef1:m7 | af:7 | df:7 | gf:7 | c:m7.5- | f:aug7 | bf:m | bf:m7 ||
 
-    ef1:m7 | af:7 | df:maj7 | f2:m7.5- bf:7 | 
-    ef1:m7 | af:7 | df:maj7 | bf:m7 | 
-    bf1:7 | s | ef:m | s | 
-    g1:m7.5- | c:7 | f:m7.5- | bf:7.9- ||
+    ef1:m7 | af:7 | df2:maj7 ef:m7 | f:m7.5- bf:7 | 
+    ef1:m7 | af:7 | df:maj7 ef:m7 | df:maj7/f bf:m7 | 
+    bf1:7 | b2:7 bf:7 | ef:m | c:m7.5- | 
+    g2:m7.5- c:7 | g:m7.5- c:7 | fs2:m7 b:7 | f:m7.5- bf:7.9- ||
 
     ef1:7 | s | bf:m | s | ef:7 | s | bf:m | s | 
-    ef1:m7 | af:7 | df:7 | gf:7 | c:m7.5- | f:aug7 | bf:m | bf:m7/af |
+    ef1:m7 | af:7 | df:7 | gf:7 | c:m7.5- | f:aug7 | bf:m | s ||
+}
+chordsCoda = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    %\set noChordSymbol = ##t
+    c:m7.5- | f:aug7 | bf:m | bf:m7/af |
     g2:m7.5- g:m7.5-/f | ef1:7 | ef2:m7 ef:m7/df | c:m7.5- f:aug7 | 
     bf1:m | ef:7 | bf | s ||
-
 }
 
 chordsSongVolThree = \chordmode { 
@@ -174,7 +173,7 @@ chordsSongVolThree = \chordmode {
     ef1 | ef2:m7 d:7 | df1 | df2:m7 gf:7 | c1:m7.5- | b:7 | bf:m | s ||
 }
 
-melodyCommon = \relative c'' { 
+melody = \relative c'' { 
     \accidentalStyle default
 
     bf1 ~ | 2. g4 | f1 ~ | 1 | r4 bf8 8 4 4 | 4 2 g4 | f1 ~ | 2 r | 
@@ -193,10 +192,8 @@ melodyCommon = \relative c'' {
 }
 melodyCoda = \relative c'' { 
     \accidentalStyle default
-    f1 ( ~ | 2 ~ 8 df bf g | bf c df ef f4 4 | 2. ) df4 | bf1 ~ | 1 ~ | 1 ~ | 4 r r2 ||
-}
-melodyForFlats = \relative c'' { 
-    \melodyCommon
+    f1 ~ | 2. df4 | bf1 ~ | 2 r |
+    f'1 ( ~ | 2 ~ 8 df bf g | bf c df ef f4 4 | 2. ) df4 | bf1 ~ | 1 ~ | 1 ~ | 4 r r2 ||
 }
 
 lyricsHeadOne = \lyricmode {
@@ -249,7 +246,9 @@ lyricsHeadTwo = \lyricmode {
 lyricsCoda = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
+    Love For Sale.
 
+    Love For Sale.
 }
 
 \header {
@@ -280,10 +279,7 @@ lyricsCoda = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForC
-                    {
-                        \melodyCommon
-                        \melodyCoda
-                    }
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -293,6 +289,30 @@ lyricsCoda = \lyricmode {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
             % }
         >>
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCoda
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout {
+            indent = 2\cm
+        }
     }
 }
 
@@ -316,10 +336,7 @@ lyricsCoda = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForBb
-                    {
-                        \melodyCommon
-                        \melodyCoda
-                    }
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -329,6 +346,30 @@ lyricsCoda = \lyricmode {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
             % }
         >>
+    }
+
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCoda
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout {
+            indent = 2\cm
+        }
     }
 }
 
@@ -352,10 +393,7 @@ lyricsCoda = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForEb
-                    {
-                        \melodyCommon
-                        \melodyCoda
-                    }
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -365,6 +403,30 @@ lyricsCoda = \lyricmode {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
             % }
         >>
+    }
+
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCoda
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout {
+            indent = 2\cm
+        }
     }
 }
 
@@ -387,9 +449,9 @@ lyricsCoda = \lyricmode {
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
-                    \structureVolIII
+                    \structure
                     \rehearsalMarkTweaksForC
-                    \melodyCommon
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -399,6 +461,30 @@ lyricsCoda = \lyricmode {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
             % }
         >>
+    }
+
+    \score {
+        \transpose c c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCoda
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout {
+            indent = 2\cm
+        }
     }
 }
 
