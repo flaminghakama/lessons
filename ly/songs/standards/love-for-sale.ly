@@ -18,7 +18,7 @@ lilypond ly/songs/standards/love-for-sale.ly
 mv love-for-sale*pdf pdf/songs/standards
 for file in pdf/songs/standards/love-for-sale*pdf ; do op $file ; done 
 
-git add . ; git commit -m"for sale" ; git push 
+git add . ; git commit -m"reformatting coda" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -138,7 +138,7 @@ chordsSong = \chordmode {
 
     ef1:m7 | af:7 | df2:maj7 ef:m7 | f:m7.5- bf:7 | 
     ef1:m7 | af:7 | df:maj7 ef:m7 | df:maj7/f bf:m7 | 
-    bf1:7 | b2:7 bf:7 | ef:m | c:m7.5- | 
+    bf1:7 | b2:7 bf:7 | ef1:m | c:m7.5- | 
     g2:m7.5- c:7 | g:m7.5- c:7 | fs2:m7 b:7 | f:m7.5- bf:7.9- ||
 
     ef1:7 | s | bf:m | s | ef:7 | s | bf:m | s | 
