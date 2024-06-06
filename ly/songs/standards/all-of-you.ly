@@ -18,7 +18,7 @@ lilypond ly/songs/standards/all-of-you.ly
 mv all-of-you*pdf pdf/songs/standards
 for file in pdf/songs/standards/all-of-you*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing notes" ; git push 
+git add . ; git commit -m"changing chord" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -129,7 +129,7 @@ chordsSong = \chordmode {
     af1/ef | ef | f:m7.5- | bf:7.9- | 
     af1/ef | ef | g:m7 | c:7 ||
 
-    af1:1.4.5 | a2:m7.5- d:7.9- | g:aug7 df:9 | c1:7 | 
+    af1:maj7.11+ | a2:m7.5- d:7.9- | g:aug7 df:9 | c1:7 | 
     f2:m c:7/g | f:m/af bf:7 | ef1 | f2:m7 bf:7 ||  
         ef2 df4:6 d:6 | ef1:6.9 ||
 
