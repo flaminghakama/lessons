@@ -198,7 +198,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "in-G-for-C"
     \header {
-        subtitle = "(fake book key)"
+        subtitle = "(original key)"
         poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
@@ -231,7 +231,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "in-G-for-Bb"
     \header {
-        subtitle = "(fake book key)"
+        subtitle = "(original key)"
         poet = "Bb Lead Sheet"
         instrumentName = \poet
     }
@@ -264,7 +264,7 @@ lyricsHeadTwo = \lyricmode {
 \book {
   \bookOutputSuffix "in-G-for-Eb"
     \header {
-        subtitle = "(fake book key)"
+        subtitle = "(original key)"
         poet = "Eb Lead Sheet"
         instrumentName = \poet
     }
@@ -347,6 +347,105 @@ lyricsHeadTwo = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-C"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose g f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Bb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c \transpose g f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForBb
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Eb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c \transpose g f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForEb
                     \melody
                 >>
             }
