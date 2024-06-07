@@ -124,8 +124,44 @@ chordsSong = \chordmode {
     a1:m | b2:m7.5- e:7 | a:m e:7 | a1:m | 
     g1:m9 | c:7 | f2:maj7 c:aug7 | f1:maj7 ||
 
-    ds1:dim7 | c/e | f:6 | fs:dim7 | 
+    ef1:dim7 | c/e | f:6 | fs:dim7 | 
     c2:/g af:7 | d:7.9- g:7 | c1 | b2:m7.5- e:7 ||
+}
+chordsSongForFlats = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    %\set noChordSymbol = ##t
+
+    s2 ||
+    a1:m | b2:m7.5- e:7 | a:m e:7 | a1:m | 
+    g1:m9 | c:7 | f2:maj7 c:aug7 | f1:maj7 ||
+
+    d2:m7 b:7.5- | e1:7 | e:7.9- | a2:m a:m/g | 
+    fs1:m7.5- | f2:7 b:7.9- | e:7 f:7.5- | e1:7 || 
+
+    a1:m | b2:m7.5- e:7 | a:m e:7 | a1:m | 
+    g1:m9 | c:7 | f2:maj7 c:aug7 | f1:maj7 ||
+
+    ef1:dim7 | c/e | f:6 | gf:dim7 | 
+    c2:/g af:7 | d:7.9- g:7 | c1 | b2:m7.5- e:7 ||
+}
+chordsSongForA = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    %\set noChordSymbol = ##t
+
+    s2 ||
+    a1:m | b2:m7.5- e:7 | a:m e:7 | a1:m | 
+    fss1:m9 | bs:7 | es2:maj7 bs:aug7 | es1:maj7 ||
+
+    d2:m7 b:7.5- | e1:7 | e:7.9- | a2:m a:m/g | 
+    fs1:m7.5- | es2:7 b:7.9- | e:7 es:7.5- | e1:7 || 
+
+    a1:m | b2:m7.5- e:7 | a:m e:7 | a1:m | 
+    fss1:m9 | bs:7 | es2:maj7 bs:aug7 | es1:maj7 ||
+
+    ds1:dim7 | c/e | es:6 | fs:dim7 | 
+    bs2:/fss gs:7 | d:7.9- g:7 | c1 | b2:m7.5- e:7 ||
 }
 
 chordsSongVolOne = \chordmode { 
@@ -244,7 +280,7 @@ lyricsHeadTwo = \lyricmode {
         \transpose bf, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -277,7 +313,7 @@ lyricsHeadTwo = \lyricmode {
         \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -344,7 +380,7 @@ lyricsHeadTwo = \lyricmode {
         \transpose c a, <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -374,10 +410,10 @@ lyricsHeadTwo = \lyricmode {
         instrumentName = \poet
     }
     \score {
-        \transpose bf, c \transpose c a, <<
+        \transpose bf, c \transpose bs a <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForA
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -410,7 +446,7 @@ lyricsHeadTwo = \lyricmode {
         \transpose ef, c \transpose bs a <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForA
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
