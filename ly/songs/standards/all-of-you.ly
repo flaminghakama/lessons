@@ -18,7 +18,7 @@ lilypond ly/songs/standards/all-of-you.ly
 mv all-of-you*pdf pdf/songs/standards
 for file in pdf/songs/standards/all-of-you*pdf ; do op $file ; done 
 
-git add . ; git commit -m"changing chord" ; git push 
+git add . ; git commit -m"transposing" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -165,8 +165,8 @@ melody = \relative c' {
     c2. bf4 | c2. bf4 | c2. d,4 | 2. c4 | 
     bf'2 2 | 4 df2 c4 | bf2 c,4 4 ~ | 4 d ef f ||
 
-    af2. g4 | 2. bf,4 | cf2. af'4 | 2. f4 | 
-    af2. g4 | 4 bf,8 c d4 ef | c2. bf'4 | 2. b4 ||
+    af2. g4 | 2. bf,4 | cf8 af'4 8 ~ 8 bf4. | g2. f4 | 
+    af2. g4 | 8 bf,4 c8 d4 ef | c2. bf'4 | 2. b4 ||
 
     d4. c8 d4. c8 | d4 c8 ef ~ 8 d c4 | g1 ~ | 2. c,4 | 
     af'2 bf | c d, | ef1 | r4 ef f g ||  ef1 ~ | 4 r r2 || 
@@ -192,7 +192,7 @@ lyricsHeadOne = \lyricmode {
     and the South of you.
 
     I'd love to gain com -- plete 
-    con -- trol of you,
+    and ut -- ter trust in you,
     and han -- dle e -- ven the 
     heart and soul of you.
 
