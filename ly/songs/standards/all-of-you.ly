@@ -18,7 +18,7 @@ lilypond ly/songs/standards/all-of-you.ly
 mv all-of-you*pdf pdf/songs/standards
 for file in pdf/songs/standards/all-of-you*pdf ; do op $file ; done 
 
-git add . ; git commit -m"transposing" ; git push 
+git add . ; git commit -m"fixing lyric" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -95,7 +95,7 @@ rehearsalMarkTweaksForC = \relative c' {
     \once \override Score.MetronomeMark.extra-offset = #'( 3.5 . 0 )
     s2. 
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . -4 )
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % \startSection "A"
     s1*4
     s1*4 
@@ -103,7 +103,7 @@ rehearsalMarkTweaksForC = \relative c' {
     s1*4 
     s1*4 
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -4 . -4 )
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % \startSection "B"
 }
 
@@ -135,27 +135,7 @@ chordsSong = \chordmode {
 
 }
 
-chordsSongVolOne = \chordmode { 
-    \set chordChanges = ##f 
-    \set chordNameExceptions = #flamingChordExceptions
-    %\set noChordSymbol = ##t
-    s2.
-    af1:m6 | ef:maj7 | f:m7.5- | bf:7.9- | 
-    af1:m6 | ef:maj7| af:m7 | df:7 ||
-
-    g1:m7 | gf:dim7 | f:m7 | bf:7 | 
-    ef2:maj7 d:7 | g:m7.5-/df c:7.9- | f1:m7 | bf:7 ||
-
-    af1:m6 | ef:maj7 | f:m7.5- | bf:7.9- | 
-    af1:m6 | ef:maj7| g:m7 | c:7.9- ||
-
-    af1:maj7 | a2:m7.5- d:7.9- | g:m7 df:9 | c1:7 | 
-    f2:m c:7 | f:m7 bf:7 | ef1:6 | f:m7 ||  
-        ef2 df4:6 d:6 | ef1:6.9 ||
-
-}
-
-melody = \relative c' { 
+melody = \relative c'' { 
     \accidentalStyle default
 
     ef4 f g ||
