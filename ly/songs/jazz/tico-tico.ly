@@ -17,7 +17,7 @@ lilypond ly/songs/jazz/tico-tico.ly
 mv tico-tico*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/tico-tico*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"changing accidental style" ; git push 
+git add . ; git commit -m"single and double page versions" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -315,7 +315,7 @@ rehearsalMarkTweaksOnePageForBb = \relative c' {
         s1
     s1 
 
-    \override Score.RehearsalMark.extra-offset = #'( -5 . -3 )
+    \override Score.RehearsalMark.extra-offset = #'( -4 . -3 )
     % "B"
     s1*4
     s1*4
@@ -526,13 +526,13 @@ melodyOnePageForFlats = {
 
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-A-Minor-for-C"
     \header {
         title = \title
         composer = \composerName
         poet = "Concert Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "(bird key)"
     }
     \score {
         \transpose bf bf <<
@@ -556,13 +556,13 @@ melodyOnePageForFlats = {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-A-Minor-for-Bb"
     \header {
         title = \title
         composer = \composerName
         poet = "Bb Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "(bird key)"
     }
     \score {
         \transpose bf, c <<
@@ -586,13 +586,13 @@ melodyOnePageForFlats = {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-A-Minor-for-Eb"
     \header {
         title = \title
         composer = \composerName
         poet = "Eb Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "(bird key)"
     }
     \score {
         \transpose ef, c <<
@@ -615,6 +615,97 @@ melodyOnePageForFlats = {
     }
 }
 
+\book {
+  \bookOutputSuffix "in-D-Minor-for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Manny key)"
+    }
+    \score {
+        \transpose bf bf \transpose a, d <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-D-Minor-for-Bb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Manny key)"
+    }
+    \score {
+        \transpose bf, c \transpose a, d <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForBb
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-D-Minor-for-Eb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Manny key)"
+    }
+    \score {
+        \transpose ef, c \transpose a d <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForEb
+                    \melody
+                >>
+            }
+        >>
+    }
+}
+
+
 
 \paper {
 
@@ -628,13 +719,13 @@ melodyOnePageForFlats = {
 }
 
 \book {
-  \bookOutputSuffix "single-page-for-C"
+  \bookOutputSuffix "in-A-Minor-single-page-for-C"
     \header {
         title = \title
         composer = \composerName
         poet = "Concert Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "(bird key)"
     }
     \score {
         \transpose bf bf <<
@@ -658,13 +749,13 @@ melodyOnePageForFlats = {
 }
 
 \book {
-  \bookOutputSuffix "single-page-for-Bb"
+  \bookOutputSuffix "in-A-Minor-single-page-for-Bb"
     \header {
         title = \title
         composer = \composerName
         poet = "Bb Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "(bird key)"
     }
     \score {
         \transpose bf, c <<
@@ -688,13 +779,13 @@ melodyOnePageForFlats = {
 }
 
 \book {
-  \bookOutputSuffix "single-page-for-Eb"
+  \bookOutputSuffix "in-A-Minor-single-page-for-Eb"
     \header {
         title = \title
         composer = \composerName
         poet = "Eb Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "(bird key)"
     }
     \score {
         \transpose ef, c <<
@@ -711,6 +802,96 @@ melodyOnePageForFlats = {
                     \structureOnePage
                     \rehearsalMarkTweaksOnePageForEb
                     \melodyOnePageForFlats
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-D-Minor-single-page-for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Manny key)"
+    }
+    \score {
+        \transpose bf bf \transpose a, d <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsFormOnePage
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structureOnePage
+                    \rehearsalMarkTweaksOnePageForC
+                    \melodyOnePage
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-D-Minor-single-page-for-Bb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Manny key)"
+    }
+    \score {
+        \transpose bf, c \transpose a, d <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsFormOnePage
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structureOnePage
+                    \rehearsalMarkTweaksOnePageForBb
+                    \melodyOnePage
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-D-Minor-single-page-for-Eb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Manny key)"
+    }
+    \score {
+        \transpose ef, c \transpose a d <<
+            \new ChordNames { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsFormOnePage
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structureOnePage
+                    \rehearsalMarkTweaksOnePageForEb
+                    \melodyOnePage
                 >>
             }
         >>
