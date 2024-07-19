@@ -18,7 +18,7 @@ lilypond ly/songs/standards/night-and-day.ly
 mv night-and-day*pdf pdf/songs/standards
 for file in pdf/songs/standards/night-and-day*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing lyric" ; git push 
+git add . ; git commit -m"day" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -275,6 +275,105 @@ lyricsCoda = \lyricmode {
     }
     \score {
         \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForEb
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-D-for-C"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c d <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-D-for-Bb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c \transpose c d <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForBb
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-D-for-Eb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c \transpose c d <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
