@@ -18,7 +18,7 @@ lilypond ly/songs/standards/love-for-sale.ly
 mv love-for-sale*pdf pdf/songs/standards
 for file in pdf/songs/standards/love-for-sale*pdf ; do op $file ; done 
 
-git add . ; git commit -m"reformatting coda" ; git push 
+git add . ; git commit -m"fixing chords" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -488,4 +488,117 @@ lyricsCoda = \lyricmode {
     }
 }
 
+\book {
+  \bookOutputSuffix "in-A-for-C"
+    \header {
+        subtitle = "(Elaine trial key 1)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf a <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCoda
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout {
+            indent = 2\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Ab-for-C"
+    \header {
+        subtitle = "(Elaine trial key 2)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf af <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+
+    \score {
+        <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCoda
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout {
+            indent = 2\cm
+        }
+    }
+}
 
