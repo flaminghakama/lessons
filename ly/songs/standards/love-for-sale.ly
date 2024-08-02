@@ -61,7 +61,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c' { 
 
-    \key ef \major
+    \key bf \major
     \time 4/4
 
     \startSection "A"
@@ -521,7 +521,7 @@ lyricsCoda = \lyricmode {
     }
 
     \score {
-        <<
+        \transpose bf a <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsCoda
@@ -578,7 +578,7 @@ lyricsCoda = \lyricmode {
     }
 
     \score {
-        <<
+        \transpose bf af <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsCoda
