@@ -88,7 +88,7 @@ structureCoda = \relative c' {
     \once \override Score.RehearsalMark.extra-offset = #'( -9 . -1 ) 
     \once \override Score.RehearsalMark.font-size = #8 
     \mark \markup { \musicglyph #"scripts.coda" }
-    \key ef \major
+    \key bf \major
     s1*4 \break 
     s1*4 \break 
     s1*4
