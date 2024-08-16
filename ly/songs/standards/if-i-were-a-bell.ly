@@ -1,27 +1,34 @@
-\version "2.19.83"
+\version "2.24.0"
 
 titleLeft = "If I Were"
 titleRight = "A Bell"
-title = "If I Were A Bell"
+titleFull = "If I Were A Bell"
 composerName = "F. Loesser"
-lyricistName = ""
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
-\include "../../../../scores/flaming-libs/flaming-voltas.ily"
+lyricistName = "F. Loesser"
+arranger = ""
+copyright = ""
 
 
 %{
 
+killPreview ; rm if-i-were-a-bell*pdf ; lilypond ly/songs/standards/if-i-were-a-bell.ly ; for file in if-i-were-a-bell*pdf ; do op $file ; done 
+
 killPreview
-rm if-i-were-a-bell*.pdf
+rm pdf/songs/standards/if-i-were-a-bell*
 lilypond ly/songs/standards/if-i-were-a-bell.ly 
-mv if-i-were-a-bell*.pdf pdf/songs/standards
-for file in pdf/songs/standards/if-i-were-a-bell*.pdf ; do op $file ; done
+mv if-i-were-a-bell*pdf pdf/songs/standards
+for file in pdf/songs/standards/if-i-were-a-bell*pdf ; do op $file ; done 
+
+git add . ; git commit -m"fixing chords" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
+
+\include "ly/ily/layout-songs.ily"
 
 \paper {
 
@@ -29,10 +36,10 @@ for file in pdf/songs/standards/if-i-were-a-bell*.pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #4
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #16
+  top-system-spacing.minimum-distance = #18
 
   % Spacing in between systems
   system-system-spacing.basic-distance = #18
@@ -42,24 +49,23 @@ for file in pdf/songs/standards/if-i-were-a-bell*.pdf ; do op $file ; done
 
   page-breaking = #ly:minimal-breaking
 
+  left-margin = 2
   ragged-bottom = ##t
   ragged-last-bottom = ##t
 
   #(define fonts
-    (make-pango-font-tree "Marker Felt"
+    (make-pango-font-tree "Marker Felt" 
                           "Highlander ITC TT" 
                           "LilyJAZZText"
                            (/ myStaffSize 20)))
 }
-%                          "Blue Highway Bold"
 
-\include "ly/ily/layout-songs.ily"
 
 voltaAllXButLast = \markup { \text \italic \large { All X but last } }
 voltaLast = \markup { \text \italic \large { Last X } }
 
 structureForm = \relative c' { 
-    \override Score.RehearsalMark #'extra-offset = #'( -3 . -1.4 ) 
+    \override Score.RehearsalMark.extra-offset = #'( -3 . -1.4 ) 
     \key f \major
     \partial 2*1 s2
     \startSection "A"
@@ -170,9 +176,9 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-F-for-C"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "    Concert Lead Sheet"
         instrumentName = \poet
     }
@@ -211,9 +217,9 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-F-for-Eb"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "    Eb Lead Sheet"
         instrumentName = \poet
     }
@@ -253,14 +259,138 @@ lyricsHeadTwo = \lyricmode {
 
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-F-for-Bb"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "    Bb Lead Sheet"
         instrumentName = \poet
     }
     \score {
         \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                s2 || \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                        \override Beam.damping = #2.75 
+                        \override Stem.length-fraction = #(magstep 1.01) 
+                        \structureForm
+                        \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    %\lyricsHeadOne 
+                } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    %\lyricsHeadTwo 
+                } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-C"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "    Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose f ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                s2 || \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                        \override Beam.damping = #2.75 
+                        \override Stem.length-fraction = #(magstep 1.01) 
+                        \structureForm
+                        \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    \lyricsHeadOne 
+                } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    \lyricsHeadTwo 
+                } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-Eb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "    Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c \transpose f ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                s2 || \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                        \override Beam.damping = #2.75 
+                        \override Stem.length-fraction = #(magstep 1.01) 
+                        \structureForm
+                        \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    %\lyricsHeadOne 
+                } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { 
+                    %\lyricsHeadTwo 
+                } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+        }
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "in-Eb-for-Bb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "    Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c \transpose f ef <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 s2 || \chordsForm
