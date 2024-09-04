@@ -18,7 +18,7 @@ lilypond ly/songs/standards/easy-to-love.ly
 mv easy-to-love*pdf pdf/songs/standards
 for file in pdf/songs/standards/easy-to-love*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing chords" ; git push 
+git add . ; git commit -m"new key" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
