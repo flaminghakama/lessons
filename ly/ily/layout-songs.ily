@@ -1,6 +1,6 @@
 \layout { 
-    indent = 1.00\cm
-    short-indent = 0.25\cm
+    indent = 0.65\cm
+    short-indent = 0\cm
     \context {
         \Score
         \override StaffGrouper.staff-staff-spacing.padding = #0
@@ -22,4 +22,7 @@
    }
 }
 
-
+\paper {
+    left-margin = #8
+    right-margin = #8
+}

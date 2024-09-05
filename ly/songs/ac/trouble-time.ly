@@ -18,7 +18,7 @@ lilypond ly/songs/ac/trouble-time.ly
 mv trouble-time-*pdf pdf/songs/ac
 for file in pdf/songs/ac/trouble-time-*pdf ; do op $file ; done  
 
-git add . ; git commit -m"renotating" ; git push 
+git add . ; git commit -m"notating" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -179,7 +179,7 @@ rehearsalMarkTweaks = \relative c' {
     % "J" "Solos"
 }
 
-atCoda = <>^\markup { \translate #'( -12 . 1.75) \huge \bold \musicglyph #"scripts.coda" }
+atCoda = <>^\markup { \translate #'( -12 . 1.75 ) \huge \bold \musicglyph #"scripts.coda" }
 
 structureCoda = \relative c' { 
     \key c \major
