@@ -1,21 +1,28 @@
-\version "2.19.15"
+\version "2.24.0"
 \include "english.ly"
 
 titleLeft = "Arban's #6"
 titleRight = "for Clarinet"
-title = "Arban's #6 for Clarinet"
+titleFull = "Arban's #6 for Clarinet"
 composerName = "Elaine Alt"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+arranger = ""
+copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
+
 
 %{
 
+killPreview ; rm arbans-for-clarinet.pdf ; lilypond ly/exercises/clarinet/arbans-for-clarinet.ly 
+
+
 rm arbans-for-clarinet.pdf
-lilypond ly/arbans-for-clarinet.ly 
+lilypond ly/exercises/clarinet/arbans-for-clarinet.ly 
 #python ~/git/part-format/bookify-7page.py arbans-for-clarinet.pdf arbans-for-clarinet-printable.pdf automatic
-mv arbans-for-clarinet.pdf pdf
+mv arbans-for-clarinet.pdf pdf/exercises/clarinet
+open -a Preview pdf/exercises/clarinet/arbans-for-clarinet.pdf
 #mv arbans-for-clarinet-printable.pdf pdf/printable
 
 %}
@@ -24,9 +31,9 @@ mv arbans-for-clarinet.pdf pdf
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2021 Elaine Paul" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
     lastupdated = ""
-    title = \markup { \italic \fontsize #4 \bold { \title }  }
+    title = \markup { \italic \fontsize #4 \bold { \titleFull }  }
     poet = ""
     composer = \markup \italic \composerName
     tagline = ""
@@ -63,7 +70,6 @@ mv arbans-for-clarinet.pdf pdf
 }
 
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/arbans.ily"
@@ -91,7 +97,7 @@ mv arbans-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \arbans
@@ -108,7 +114,7 @@ mv arbans-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c g, { 
                 \include "ly/ily/staff-properties.ily"
                 \arbans
@@ -125,7 +131,7 @@ mv arbans-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c f, { 
                 \include "ly/ily/staff-properties.ily"
                 \arbans
@@ -142,7 +148,7 @@ mv arbans-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c bf, { 
                 \include "ly/ily/staff-properties.ily"
                 \arbans
@@ -159,7 +165,7 @@ mv arbans-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c d { 
                 \include "ly/ily/staff-properties.ily"
                 \arbans

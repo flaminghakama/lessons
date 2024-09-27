@@ -1,20 +1,23 @@
-\version "2.19.15"
+\version "2.24.0"
 \include "english.ly"
 
 titleLeft = "Kathy's Exercises"
 titleRight = "for Clarinet"
-title = "Kathy's Exercises for Clarinet"
+titleFull = "Kathy's Exercises for Clarinet"
 composerName = "Elaine Alt"
-\include "../scores/flaming-libs/flaming-paper.ily"
-%\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-%\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-dynamics.ily"
+arranger = ""
+copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 %{
 
+
 rm kathys-exercises-for-clarinet.pdf
-lilypond ly/kathys-exercises-for-clarinet.ly 
+lilypond ly/exercises/clarinet/kathys-exercises-for-clarinet.ly 
 #python ~/git/part-format/bookify-7page.py kathys-exercises-for-clarinet.pdf kathys-exercises-for-clarinet-printable.pdf automatic
 mv kathys-exercises-for-clarinet.pdf pdf
 #mv kathys-exercises-for-clarinet-printable.pdf pdf/printable
@@ -25,7 +28,7 @@ mv kathys-exercises-for-clarinet.pdf pdf
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2021 Elaine Paul" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -64,7 +67,6 @@ mv kathys-exercises-for-clarinet.pdf pdf
 }
 
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/kathys.ily"
@@ -92,7 +94,7 @@ mv kathys-exercises-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.0)
@@ -110,7 +112,7 @@ mv kathys-exercises-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.0)
@@ -129,7 +131,7 @@ mv kathys-exercises-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.0)
@@ -147,7 +149,7 @@ mv kathys-exercises-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.0)
@@ -165,7 +167,7 @@ mv kathys-exercises-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.0)
@@ -183,7 +185,7 @@ mv kathys-exercises-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.0)
@@ -201,7 +203,7 @@ mv kathys-exercises-for-clarinet.pdf pdf
     \score {
         << 
             \override Score.RehearsalMark.self-alignment-X = #LEFT
-            \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+            \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \override Stem.length-fraction = #(magstep 1.0)
