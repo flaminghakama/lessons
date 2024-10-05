@@ -1,9 +1,9 @@
 \version "2.24.0"
 \include "english.ly"
 
-titleLeft = "Pentatonic Introductory Exercises"
-titleRight = "for Saxophone"
-titleFull = "Pentatonic Introductory Exercises for Saxophone"
+titleLeft = "Pentatonic Introductory"
+titleRight = "Exercises for Saxophone"
+titleFull = \markup \center-column { "Pentatonic Introductory Exercises" "for Saxophone" }
 composerName = "Elaine Alt"
 arranger = ""
 copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
@@ -30,7 +30,6 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2022 Elaine Paul" } 
     lastupdated = ""
     title = \markup { \italic \fontsize #4 \bold { \title }  }
     poet = ""
@@ -107,12 +106,26 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/pentatonic/saxophone/pentatonic-E-major.ily"
 
 
-
 \include "ly/notes/pentatonic/saxophone/pentatonic-B-flat-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-D-flat-major.ily"
 
 \include "ly/notes/pentatonic/saxophone/pentatonic-G-sharp-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-B-major.ily"
+
+
+\include "ly/notes/pentatonic/saxophone/pentatonic-E-flat-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-G-flat-major.ily"
+
+\include "ly/notes/pentatonic/saxophone/pentatonic-D-sharp-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-F-sharp-major.ily"
+
+
+\include "ly/notes/pentatonic/saxophone/pentatonic-A-flat-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-C-flat-major.ily"
+
+\include "ly/notes/pentatonic/saxophone/pentatonic-A-sharp-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-C-sharp-major.ily"
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -137,10 +150,10 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
         title = \title
     }
 
-    % \bookpart { 
-    %     \include "../scores/flaming-libs/flaming-title-page.ily"
-    %     \markup \title-page-markup "Saxophone" \composerName \title
-    % }
+    \bookpart { 
+        \include "../../../../engraving/flaming-libs/flaming-title-page.ily"
+        \markup \title-page-markup "Saxophone" \composerName \titleFull
+    }
 
     \include "ly/bookparts/pentatonic/saxophone/pentatonic-introductory.ily"
 }

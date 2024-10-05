@@ -2,9 +2,9 @@
     \bookpart {
 
         \header {
-            % title = ""
-            % subtitle = "A Minor"
-            % composer = ""
+            title = ""
+            subtitle = ""
+            composer = ""
         }
         \score {
             << 
@@ -194,7 +194,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "2. C Minor"  " " }
+                piece = \markup \center-column { "6. C Minor"  " " }
             }
         }
 
@@ -230,7 +230,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "2. F# Minor"  " " }
+                piece = \markup \center-column { "7. F# Minor"  " " }
             }
         }
 
@@ -265,7 +265,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "2. F Minor"  " " }
+                piece = \markup \center-column { "8. F Minor"  " " }
             }
         }
 
@@ -300,7 +300,7 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "2. C# Minor"  " " }
+                piece = \markup \center-column { "9. C# Minor"  " " }
             }
         }
 
@@ -320,4 +320,217 @@
                 piece = \markup \center-column { "E Major"  " " }
             }
         }
+
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroBbMinor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "10. Bb Minor"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroDbMajor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Db Major"  " " }
+            }
+        }
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroGSharpMinor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "11. G# Minor"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroBMajor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "B Major"  " " }
+            }
+        }
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroEbMinor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "12. Eb Minor"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroGbMajor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Gb Major"  " " }
+            }
+        }
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroDSharpMinor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "13. D# Minor"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroFSharpMajor
+                    \pageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "F# Major"  " " }
+            }
+        }
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroAbMinor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "14. Ab Minor"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroCbMajor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Cb Major"  " " }
+            }
+        }
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroASharpMinor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "15. A# Minor"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose a a { 
+                    \include "ly/ily/staff-properties.ily"
+                    \pentatonicExerciseZeroCSharpMajor
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "C# Major"  " " }
+            }
+        }
+
     }

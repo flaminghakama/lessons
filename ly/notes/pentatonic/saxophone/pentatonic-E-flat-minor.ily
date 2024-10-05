@@ -1,3 +1,27 @@
+pentatonicExerciseZeroEbMinor = \relative c' { 
+    \key ef \minor
+    \time 4/4
+    <ef ef'>1 | <gf gf'> | <af af'> | <bf bf'> | <df df'> |
+    \bar "||" 
+    ef'1 | bf,, | df | 
+    \bar "||" \break
+    \time 3/4
+    ef2 gf4 | af bf df | ef2 df4 | bf af gf | ef2. |
+    ef'2 gf4 | af bf df | ef2 df4 | bf af gf | ef2. | \break
+    ef'2 df4 | bf af gf | ef2 gf4 | af bf df | ef2. |
+    ef,2 df4 | bf af gf | ef2 gf4 | af bf df | ef2. |
+    \bar "||" \break
+    \time 4/4
+    ef,8 af gf bf  af df bf ef | df gf ef2. | 
+    ef'8 bf df af  bf gf af ef | gf df ef2. |
+    ef8 bf df af  bf gf af ef | gf df ef2. |
+    \bar "||" 
+    ef8 df gf ef  af gf bf af | df bf ef2. | 
+    ef8 df gf ef  af gf bf af | df bf ef2. | 
+    ef,8 gf df ef  bf df af bf | gf af e2. |
+    \bar "|."
+}
+
 pentatonicExerciseOneEMinorForEFlat = \relative c' { 
     \key e \minor
     \time 4/4

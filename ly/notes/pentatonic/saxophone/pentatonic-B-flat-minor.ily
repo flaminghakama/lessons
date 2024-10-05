@@ -1,4 +1,26 @@
-pentatonicExerciseOneBFlatMinor = \relative bf' { 
+pentatonicExerciseZeroBbMinor = \relative c' { 
+    \key bf \minor
+    \time 4/4
+    <bf bf'>1 | <df df'> | <ef ef'> | <f f'> | <af af'> 
+    \bar "||" 
+    bf'1 | df | ef | f |
+    \bar "||" \break
+    \time 3/4
+    bf,,,2 df4 | ef f af | bf2 af4 | f ef df | bf2. |
+    bf'2 df4 | ef f af | bf2 af4 | f ef df | bf2. | \break
+    bf'2 af4 | f ef df | bf2 df4 | ef f af | bf2. |
+    bf,2 af4 | f ef df | bf2 df4 | ef f af | bf2. |
+    \bar "||" \break
+    \time 4/4
+    bf,8 ef df f  ef af f bf | af df bf2. | 
+    bf8 ef df f  ef af f bf | af df bf2. | \break
+    bf8 f af ef  f df ef bf | df af bf2. | 
+    \bar "||" 
+    bf8 af df bf  ef df f ef | af f bf2. | 
+    \bar "|."
+}
+
+pentatonicExerciseOneBbMinor = \relative bf' { 
     \key bf \minor
     \time 4/4
     \partial 2*1
@@ -22,7 +44,7 @@ pentatonicExerciseOneBFlatMinor = \relative bf' {
     \bar "|." 
 }
 
-pentatonicExerciseTwoBFlatMinor = \relative bf' { 
+pentatonicExerciseTwoBbMinor = \relative bf' { 
     \key bf \minor
     \time 3/4
     bf2 \tuplet 3/2 4 { 
@@ -63,7 +85,7 @@ pentatonicExerciseTwoBFlatMinor = \relative bf' {
     \bar "|." 
 }
 
-pentatonicExerciseThreeBFlatMinor = \relative bf' { 
+pentatonicExerciseThreeBbMinor = \relative bf' { 
     \key bf \minor
     \time 6/4
     \partial 4*1 bf8 af
@@ -93,7 +115,7 @@ pentatonicExerciseThreeBFlatMinor = \relative bf' {
     \bar "|." 
 }
 
-pentatonicExerciseFourBFlatMinor = \relative bf { 
+pentatonicExerciseFourBbMinor = \relative bf { 
     \key bf \minor
     \time 4/4
     \tuplet 3/2 4 {
@@ -124,7 +146,7 @@ pentatonicExerciseFourBFlatMinor = \relative bf {
     \bar "|."
 }
 
-pentatonicExerciseFiveBFlatMinor = \relative bf {
+pentatonicExerciseFiveBbMinor = \relative bf {
     \key bf \minor
     \time 6/4
     bf8 df ef e  f [ e ef df ]  bf2 | 
@@ -149,7 +171,7 @@ pentatonicExerciseFiveBFlatMinor = \relative bf {
     \bar "|."
 }
 
-pentatonicExerciseSixBFlatMinor = \relative bf {
+pentatonicExerciseSixBbMinor = \relative bf {
     \key bf \minor
     \time 4/4
     bf8 df ef e  f af bf df |
