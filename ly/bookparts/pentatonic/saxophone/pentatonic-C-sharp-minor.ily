@@ -1,3 +1,4 @@
+\version "2.24.0"
     \bookpart {
 
         \header {
@@ -8,7 +9,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose d cs { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseOneDMinor
@@ -25,7 +26,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose d cs { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseTwoDMinor
@@ -42,7 +43,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose d cs { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseThreeDMinor
@@ -59,7 +60,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose d cs { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseFourDMinor
@@ -76,7 +77,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose d cs { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseFiveDMinor
@@ -93,7 +94,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose d cs { 
                     \include "ly/ily/staff-properties.ily"
                     \pentatonicExerciseSixDMinor

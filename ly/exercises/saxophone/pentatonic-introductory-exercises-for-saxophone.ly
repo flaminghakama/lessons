@@ -1,14 +1,16 @@
-\version "2.19.83"
+\version "2.24.0"
 \include "english.ly"
 
 titleLeft = "Pentatonic Introductory Exercises"
 titleRight = "for Saxophone"
-title = "Pentatonic Introductory Exercises for Saxophone"
-composerName = "Elaine Paul"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+titleFull = "Pentatonic Introductory Exercises for Saxophone"
+composerName = "Elaine Alt"
+arranger = ""
+copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 %{
 killPreview ; rm pentatonic-introductory-exercises-for-saxophone*.pdf ; lilypond ly/exercises/saxophone/pentatonic-introductory-exercises-for-saxophone.ly ; op pentatonic-introductory-exercises-for-saxophone.pdf 
@@ -67,11 +69,12 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 }
 
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/pentatonic/saxophone/pentatonic-A-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-C-major.ily"
+
+
 
 \include "ly/notes/pentatonic/saxophone/pentatonic-D-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-F-major.ily"
@@ -79,26 +82,37 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/notes/pentatonic/saxophone/pentatonic-E-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-G-major.ily"
 
+
+
 \include "ly/notes/pentatonic/saxophone/pentatonic-G-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-B-flat-major.ily"
 
 \include "ly/notes/pentatonic/saxophone/pentatonic-B-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-D-major.ily"
 
+
+
 \include "ly/notes/pentatonic/saxophone/pentatonic-C-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-E-flat-major.ily"
-
-\include "ly/notes/pentatonic/saxophone/pentatonic-F-minor.ily"
-\include "ly/notes/pentatonic/saxophone/pentatonic-A-flat-major.ily"
 
 \include "ly/notes/pentatonic/saxophone/pentatonic-F-sharp-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-A-major.ily"
 
+
+
+\include "ly/notes/pentatonic/saxophone/pentatonic-F-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-A-flat-major.ily"
+
 \include "ly/notes/pentatonic/saxophone/pentatonic-C-sharp-minor.ily"
 \include "ly/notes/pentatonic/saxophone/pentatonic-E-major.ily"
 
-% \include "ly/notes/pentatonic/saxophone/pentatonic-B-flat-minor.ily"
-% \include "ly/notes/pentatonic/saxophone/pentatonic-E-flat-minor.ily"
+
+
+\include "ly/notes/pentatonic/saxophone/pentatonic-B-flat-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-D-flat-major.ily"
+
+\include "ly/notes/pentatonic/saxophone/pentatonic-G-sharp-minor.ily"
+\include "ly/notes/pentatonic/saxophone/pentatonic-B-major.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
