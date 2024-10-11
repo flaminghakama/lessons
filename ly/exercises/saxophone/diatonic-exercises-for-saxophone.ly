@@ -1,17 +1,23 @@
-\version "2.19.83"
+
+
+\version "2.24.0"
 \include "english.ly"
+
 
 titleLeft = "Diatonic Exercises"
 titleRight = "for Saxophone"
-title = "Diatonic Exercises for Saxophone"
-composerName = "Elaine Paul"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+titleFull = "Diatonic Exercises for Saxophone"
+titleFull = \markup \center-column { "Diatonic Exercises" "for Saxophone" }
+composerName = "Elaine Alt"
+arranger = ""
+copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 %{
-killPreview ; rm diatonic-exercises-for-saxophone*.pdf ; lilypond ly/exercises/saxophone/diatonic-exercises-for-saxophone.ly  ; op diatonic-exercises-for-saxophone.pdf 
+killPreview ; rm diatonic-exercises-for-saxophone*.pdf ; lilypond ly/exercises/saxophone/diatonic-exercises-for-saxophone.ly ; op diatonic-exercises-for-saxophone.pdf 
 
 rm diatonic-exercises-for-saxophone*.pdf
 lilypond ly/exercises/saxophone/diatonic-exercises-for-saxophone.ly
@@ -19,7 +25,7 @@ mv diatonic-exercises-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/diatonic-exercises-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"expanding diatonic exercise to all keys" ; git push 
+git add . ; git commit -m"adding introductory pentatonic exercises 3 and 4 accidentals" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -28,9 +34,8 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2022-4 Elaine Paul" } 
     lastupdated = ""
-    title = \markup { \italic \fontsize #4 \bold { \title }  }
+    title = \markup { \italic \fontsize #4 \bold { \titleFull }  }
     poet = ""
     composer = \markup \italic \composerName
     tagline = ""
@@ -67,7 +72,6 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 }
 
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/diatonic/saxophone/diatonic-C-major.ily"
@@ -114,26 +118,33 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
         title = \title
     }
 
-    % \bookpart { 
-    %     \include "../scores/flaming-libs/flaming-title-page.ily"
-    %     \markup \title-page-markup "Saxophone" \composerName \title
-    % }
+    \bookpart { 
+        \include "../../../../engraving/flaming-libs/flaming-title-page.ily"
+        \markup \title-page-markup "Saxophone" \composerName \titleFull
+    }
 
     \include "ly/bookparts/diatonic/saxophone/diatonic-C-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-G-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-F-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-D-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-B-flat-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-A-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-E-flat-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-E-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-A-flat-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-B-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-D-flat-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-F-sharp-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-G-flat-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-C-sharp-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-C-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/saxophone/diatonic-G-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-F-Major.ily"
+
+    \include "ly/bookparts/diatonic/saxophone/diatonic-D-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-B-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/saxophone/diatonic-A-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-E-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/saxophone/diatonic-E-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-A-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/saxophone/diatonic-B-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-D-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/saxophone/diatonic-F-sharp-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-G-flat-Major.ily"
+
+    \include "ly/bookparts/diatonic/saxophone/diatonic-C-sharp-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-C-flat-Major.ily"
 }
 
 

@@ -9,13 +9,13 @@ copyright = ""
 
 %{
 
-killPreview ; rm wein-a-ramallah*pdf ; lilypond ly/songs/pop/wein-a-ramallah.ly ; for file in wein-a-ramallah*.pdf ; do op $file ; done  
+killPreview ; rm wein-a-ramallah*pdf ; lilypond ly/songs/blo/wein-a-ramallah.ly ; for file in wein-a-ramallah*.pdf ; do op $file ; done  
 
 killPreview
 rm wein-a-ramallah*pdf
-lilypond ly/songs/pop/wein-a-ramallah.ly
-mv wein-a-ramallah*.pdf pdf/songs/pop
-for file in pdf/songs/pop/wein-a-ramallah*.pdf ; do op $file ; done  
+lilypond ly/songs/blo/wein-a-ramallah.ly
+mv wein-a-ramallah*.pdf pdf/songs/blo
+for file in pdf/songs/blo/wein-a-ramallah*.pdf ; do op $file ; done  
 
 git add . ; git commit -m"changing accidental style" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl

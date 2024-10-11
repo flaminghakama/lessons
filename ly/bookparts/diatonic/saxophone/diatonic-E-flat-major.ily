@@ -1,3 +1,4 @@
+\version "2.24.0"
     \bookpart {
 
         \header {
@@ -9,7 +10,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c ef { 
                     \include "ly/ily/staff-properties.ily"
                     \key c \major
@@ -31,7 +32,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c ef { 
                     \include "ly/ily/staff-properties.ily"
                     \key c \major
@@ -53,7 +54,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c ef { 
                     \include "ly/ily/staff-properties.ily"
                     \key c \major
@@ -73,7 +74,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose c ef { 
                     \tonicArpeggioChords 
                 }
@@ -94,7 +95,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose c bf { 
                     \domiantArpeggioChords 
                 }
@@ -115,7 +116,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose c ef { 
                     \grandArpeggioMajorChords 
                 }
@@ -136,7 +137,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
                     \diatonicExerciseOneEbMajor
@@ -153,7 +154,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
                     \diatonicExerciseTwoEbMajor
@@ -170,7 +171,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
                     \diatonicExerciseThreeEbMajor
@@ -187,7 +188,7 @@
         % \score {
         %     << 
         %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose c c { 
         %             \include "ly/ily/staff-properties.ily"
         %             \diatonicExerciseFourEbMajor
@@ -204,7 +205,7 @@
         % \score {
         %     << 
         %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose a a { 
         %             \include "ly/ily/staff-properties.ily"
         %             \diatonicExerciseFiveEbMajor
@@ -221,7 +222,7 @@
         % \score {
         %     << 
         %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose a a { 
         %             \include "ly/ily/staff-properties.ily"
         %             \diatonicExerciseSixEbMajor

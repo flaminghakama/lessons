@@ -1,3 +1,4 @@
+\version "2.24.0"
     \bookpart {
 
         \header {
@@ -5,10 +6,140 @@
             subtitle = "E Major"
             composer = ""
         }
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c e { 
+                    \include "ly/ily/staff-properties.ily"
+                    \key c \major
+                    \time 4/4
+                    \transpose c c \articulationExerciseScale
+                    \transpose c, c \articulationExerciseScale
+                    \bar "|."
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Articulations"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c e { 
+                    \include "ly/ily/staff-properties.ily"
+                    \key c \major
+                    \time 4/4
+                    \transpose c c \syncopationExerciseScale
+                    \transpose c, c \syncopationExerciseScale
+                    \bar "|."
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Syncopation"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c e { 
+                    \include "ly/ily/staff-properties.ily"
+                    \key c \major
+                    \scaleInThirdsMajorNotes
+                    \transpose c, c \scaleInThirdsMajorNotes
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Scale in Thirds"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new ChordNames \transpose c e { 
+                    \tonicArpeggioChords 
+                }
+                \new Staff {
+                    \include "ly/ily/staff-properties.ily"
+                    \transpose c c \tonicArpeggioEb
+                    \pageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Tonic Arpeggio"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new ChordNames \transpose c b { 
+                    \domiantArpeggioChords 
+                }
+                \new Staff {
+                    \include "ly/ily/staff-properties.ily"
+                    \transpose bf b \domiantArpeggioBFlat
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Dominant Arpeggio"  " " }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new ChordNames \transpose c e { 
+                    \grandArpeggioMajorChords 
+                }
+                \new Staff \transpose c e { 
+                    \include "ly/ily/staff-properties.ily"
+                    \grandArpeggioMajor
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Grand Arpeggio"  " " }
+            }
+        }
+
+
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
                     \diatonicExerciseOneEMajor
@@ -25,7 +156,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
                     \diatonicExerciseTwoEMajor
@@ -42,7 +173,7 @@
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
                     \diatonicExerciseThreeEMajor
@@ -59,7 +190,7 @@
         % \score {
         %     << 
         %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose c c { 
         %             \include "ly/ily/staff-properties.ily"
         %             \diatonicExerciseFourEMajor
@@ -76,7 +207,7 @@
         % \score {
         %     << 
         %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose a a { 
         %             \include "ly/ily/staff-properties.ily"
         %             \diatonicExerciseFiveEMajor
@@ -93,7 +224,7 @@
         % \score {
         %     << 
         %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
         %         \new Staff \transpose a a { 
         %             \include "ly/ily/staff-properties.ily"
         %             \diatonicExerciseSixEMajor

@@ -1,6 +1,34 @@
 \version "2.24.0"
 
 
+makeStaff = #(define-music-function
+    (staffName transposition clefName tweaks part)
+    (string? ly:pitch? string? ly:music? ly:music?)
+    #{
+        \new Staff = "$staffName" { 
+            \include "ly/staves/parts/staff-defaults.ily"
+            \accidentalStyle modern-voice-cautionary
+            \clef $clefName
+            \transpose $transposition c <<
+                $tweaks
+                $part 
+            >>
+        }
+    #}
+)
+
+makeChords = #(define-music-function
+    (transposition changes)
+    (ly:pitch? ly:music?)
+    #{
+        \new ChordNames \transpose $transposition c {
+            \include "ly/staves/parts/chord-names-properties.ily"
+            $changes
+        }
+    #}
+)
+
+
 structure = \relative c' { 
     \time 3/4
 

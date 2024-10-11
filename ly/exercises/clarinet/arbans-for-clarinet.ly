@@ -17,13 +17,10 @@ copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" 
 
 killPreview ; rm arbans-for-clarinet.pdf ; lilypond ly/exercises/clarinet/arbans-for-clarinet.ly 
 
-
 rm arbans-for-clarinet.pdf
 lilypond ly/exercises/clarinet/arbans-for-clarinet.ly 
-#python ~/git/part-format/bookify-7page.py arbans-for-clarinet.pdf arbans-for-clarinet-printable.pdf automatic
 mv arbans-for-clarinet.pdf pdf/exercises/clarinet
 open -a Preview pdf/exercises/clarinet/arbans-for-clarinet.pdf
-#mv arbans-for-clarinet-printable.pdf pdf/printable
 
 %}
 
