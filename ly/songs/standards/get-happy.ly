@@ -100,6 +100,24 @@ rehearsalMarkTweaksForC = \relative c' {
 
 }
 
+rehearsalMarkTweaksForSharps = \relative c' { 
+
+    \once \override Score.MetronomeMark.extra-offset = #'( 1 . 1 )
+    s4. 
+    \once \override Score.RehearsalMark.extra-offset = #'( -1 . 1 )
+    s1*8
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 0 )
+    s1*8
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
+    s1*8
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -3 )
+
+}
+
+
 rehearsalMarkTweaksForBb = \relative c' { 
     \rehearsalMarkTweaksForC
 }
@@ -144,7 +162,22 @@ melody = \relative c' {
 
     c8 4 8 bf4 a8 c ~ | 8 c4. r8 c, f [ a ] | c8 4 8 bf4 a8 f ~ | 2 r8 c f [ a ] | 
     c8 4 8 bf4 a8 c ~ | 8 c4. r8 f4 8 ~ | 8 a, bf b c4 8 f ~ | 2 r ||
+}
+melodyForElaine = \relative c' { 
+    \accidentalStyle default
 
+    c8 f [ a ] || 
+    c8 4 8 bf4 a8 c ~ | 8 c4. r8 c, f [ a ] | c8 4 8 bf4 a8 f ~ | 2 r8 c f [ a ] | 
+    c8 4 8 bf4 a8 c ~ | 8 c4. r8 f4 8 ~ | 8 a, bf b c4 a8 f ~ | 2 r8 f bf [ d ] ||
+
+    f8 4 8 ef4 d8 f ~ | 8 4. r8 f, bf [ d ] | f8 4 8 ef4 d8 bf ~ | 2 r8 f bf [ d ] |
+    f8 4 8 ef4 d8 f ~ | 8 4. r8 bf,4 8 ~ | 8 d, ef e f4 d8 bf ~ | 2. r4 ||
+
+    r8 d' r d c4 r | c4 8 bf r4 r8 bf | r bf r bf af4 r | a?4 8 g r2 | 
+    r8 d'4. c2 | 4. bf8 ~ 2 | r8 bf4. af4 4 | a?4. g8 ~ 8 c, f a || 
+
+    c8 4 8 bf4 a8 c ~ | 8 c4. r8 c, f [ a ] | c8 4 8 bf4 a8 f ~ | 2 r8 c f [ a ] | 
+    c8 4 8 bf4 a8 c ~ | 8 c4. r8 f4 8 ~ | 8 a, bf b c4 8 f ~ | 2 r ||
 }
 melodyForFlats = \relative c'' { 
     \melody
@@ -200,7 +233,7 @@ lyricsCoda = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-F-for-C"
     \header {
         subtitle = "(with alternate bridge)"
         poet = "Concert Lead Sheet"
@@ -234,7 +267,75 @@ lyricsCoda = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-E-for-C"
+    \header {
+        subtitle = "(Elaine key candidate)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose f e <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForSharps
+                    \melodyForElaine
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-C"
+    \header {
+        subtitle = "(Elaine key candidate)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose f ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melodyForElaine
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Bb"
     \header {
         subtitle = "(with alternate bridge)"
         poet = "Bb Lead Sheet"
@@ -267,7 +368,7 @@ lyricsCoda = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-F-for-Eb"
     \header {
         subtitle = "(with alternate bridge)"
         poet = "Eb Lead Sheet"
