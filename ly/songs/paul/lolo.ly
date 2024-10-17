@@ -1,30 +1,30 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "Lolo"
 titleRight = ""
-title = "Lolo"
-composerName = "Ben Paul"
+titleFull = "Lolo"
+composerName = "B. Paul"
+arranger = ""
+copyright = ""
 
 %{
 
-killPreview ; rm lolo-*.pdf ; lilypond ly/songs/jazz/lolo.ly ; for file in lolo-*pdf ; do op $file ; done
+killPreview ; rm lolo*pdf ;  lilypond ly/songs/paul/lolo.ly  ; for file in lolo*.pdf ; do op $file ; done  
 
 killPreview
 rm lolo*pdf
-lilypond ly/songs/jazz/lolo.ly 
-mv lolo-*pdf pdf/songs/jazz
-for file in pdf/songs/jazz/lolo-*pdf ; do op $file ; done  
+lilypond ly/songs/paul/lolo.ly
+mv lolo*.pdf pdf/songs/paul
+for file in pdf/songs/paul/lolo*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"renotating" ; git push 
+git add . ; git commit -m"single and double page versions" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -32,13 +32,14 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #18
+  top-system-spacing.minimum-distance = #19
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+  system-system-spacing.basic-distance = #0
+  system-system-spacing.padding = #4
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #13
@@ -57,6 +58,34 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
+
+\layout {
+    \context {
+        \Staff
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 0)
+            )
+    }
+    \context {
+        \RhythmicStaff
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 1)
+            )
+    }
+    \context {
+        \ChordNames
+            \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                (basic-distance . 0)
+                (minimum-distance . 0)
+                (padding . 0)
+            )
+    }
+}
+
 structure = \relative c' { 
     \key bf \major 
     \time 4/4
@@ -64,19 +93,19 @@ structure = \relative c' {
     \partial 4*1
     s4
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     \startSection "A1"
     s1*4 \break
     s1*4 \break
-    \override Score.RehearsalMark #'extra-offset = #'( -5 . -3 )
+    \override Score.RehearsalMark.extra-offset = #'( -5 . -3 )
     \startSection "A2"
     s1*4 \break
     s1*4 \break
-    \override Score.RehearsalMark #'extra-offset = #'( -5 . -1 )
+    \override Score.RehearsalMark.extra-offset = #'( -5 . -1 )
     \startSection "B"
     s1*4 \break
     s1*4 \break
-    \override Score.RehearsalMark #'extra-offset = #'( -5 . -3 )
+    \override Score.RehearsalMark.extra-offset = #'( -5 . -3 )
     \startSection "A3"
     s1*4 \break 
     s1*4 
