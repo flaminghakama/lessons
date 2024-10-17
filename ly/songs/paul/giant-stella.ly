@@ -241,7 +241,7 @@ melodyForFlats = {
         composer = \composerName
         poet = "Concert Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "2024-06-11"
     }
     \score {
         \transpose c c <<
@@ -271,7 +271,7 @@ melodyForFlats = {
         composer = \composerName
         poet = "Bb Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "2024-06-11"
     }
     \score {
         \transpose bf, c <<
@@ -301,7 +301,7 @@ melodyForFlats = {
         composer = \composerName
         poet = "Eb Lead Sheet"
         instrumentName = \poet
-        subtitle = ""
+        subtitle = "2024-06-11"
     }
     \score {
         \transpose ef, c <<
