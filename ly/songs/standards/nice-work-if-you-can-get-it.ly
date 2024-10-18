@@ -153,7 +153,7 @@ chordsSongForFlats = \chordmode {
     d2:m d:m/f | a:7/e a:7 | a1:m7 | d2:aug7 d:aug7/c ||
 
     b2:7 e:7 | a:7 d:7 | g:7 c:7 | a:7 a:7.9- | 
-    g1/d | a2:m g/b | f:7 e:7 | a:m7 a4:m7/d d:aug7 | g2 ef4:7 d:7 | g1:6 ||
+    g1/d | a2:m g/b | f:7 e:7 | a:m7 a4:m7/d d:aug7 | g2 ds4:7 d:7 | g1:6 ||
 }
 
 
@@ -174,7 +174,18 @@ melody = \relative c'' {
 
 }
 melodyForFlats = \relative c'' { 
-    \melody
+    b4 c c b | a b2. | g4 a a g | fs1 | 
+    d4. e8 ~ 8. d16 e8. g16 | a8 b4. r8. d,16 e8. g16 | a8 b4. g4 8 8 ~ | 2. r4 ||
+
+    b4 c c b | a b2. | g4 a \tuplet 3/2 { a4 gs g } | fs1 | 
+    d4. e8 ~ 8. d16 e8. g16 | a8 b4. r8. d,16 e8. g16 | a8 b4. g4 8 8 ~ | 2. r4 ||
+
+    r8 b4 g8 b4 g | as4. g8 ~ 2 | b8. 16 b,8. 16 e8 g4. | fs1 | 
+    r8 a4 f8 a4 f | a4. 8 ~ 4 8. b16 | d4 4 8. e16 b4 | as1 ||
+
+    b4 c c b | a b2. | g4 a \tuplet 3/2 { a4 gs g } | fs1 | 
+    d4. e8 ~ 8. d16 e8. g16 | a8 b4. r8. d,16 e8. g16 | 
+    a8 b4. ~ 2 | d4 b g e | g1 ~ | 2. r4 || 
 }
 
 lyricsHeadOne = \lyricmode {
@@ -350,7 +361,7 @@ lyricsCoda = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForC
-                    \melody
+                    \melodyForFlats
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -384,7 +395,7 @@ lyricsCoda = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForC
-                    \melody
+                    \melodyForFlats
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {

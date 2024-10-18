@@ -129,510 +129,365 @@ rh
 
 clarTabScale = #0.8
 
-% middleBb = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (R a))
-%             (cc . ())
-%             (rh . ())
-%         )
-%         \huge "Bb"
-%     }
-% }
-
-% middleA = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (a))
-%             (cc . ())
-%             (rh . ())
-%         )
-%         \huge " A"
-%     }
-% }
-
-% middleGs = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (gis))
-%             (cc . ())
-%             (rh . ())
-%         )
-%         \huge "G#"
-%     }
-% }
-
-% middleAb = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (gis))
-%             (cc . ())
-%             (rh . ())
-%         )
-%         \huge "Ab"
-%     }
-% }
-
-% middleG = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . ())
-%             (cc . ())
-%             (rh . ())
-%         )
-%         \huge " G"
-%     }
-% }
-
-% middleFs = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . ())
-%             (cc . (one))
-%             (rh . ())
-%         )
-%         \huge "F#"
-%     }
-% }
-
-% middleFsAlt = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . ())
-%             (rh . (three four))
-%         )
-%         \huge "F#*"
-%     }
-% }
-
-% middleGbAlt = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . ())
-%             (rh . (three four))
-%         )
-%         \huge "Gb*"
-%     }
-% }
-
-% middleEs = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . ())
-%             (rh . ())
-%         )
-%         \huge " E#"
-%     }
-% }
-
-% middleE = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one))
-%             (rh . ())
-%         )
-%         \huge " E"
-%     }
-% }
-
-% lowEb = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one))
-%             (rh . (four))
-%         )
-%         \huge "Eb"
-%     }
-% }
-
-% lowDs = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two))
-%             (rh . ())
-%         )
-%         \huge "D#"
-%     }
-% }
-
-% lowD = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two))
-%             (rh . ())
-%         )
-%         \huge " D"
-%     }
-% }
-
-% lowDb = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb cis))
-%             (cc . (one two three))
-%             (rh . ())
-%         )
-%         \huge "Db"
-%     }
-% }
-
-% lowCs = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb cis))
-%             (cc . (one two three))
-%             (rh . ())
-%         )
-%         \huge "C#"
-%     }
-% }
-
-% lowC = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three))
-%             (rh . ())
-%         )
-%         \huge " C"
-%     }
-% }
-
-% lowCb = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three five))
-%             (rh . ())
-%         )
-%         \huge "Cb"
-%     }
-% }
-
-lowB = \markup \center-align \line { 
+highC = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
-        \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (gis))
+            (cc . (one two three four))
+            (rh . (gz))
+        )
+        \huge " C"
+    }
+}
+
+
+      % bes
+      % d
+      % dis
+
+
+highB = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one three))
+            (rh . (dis ees))
+        )
+        \huge " B"
+    } 
+}
+
+highBb = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (four))
+            (rh . (d ees))
+        )
+        \huge "Bb"
+    }
+}
+
+highA = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (two four))
+            (rh . (ees))
+        )
+        \huge " A"
+    }
+}
+
+highGs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (gis))
+            (cc . (two three))
+            (rh . (ees))
+        )
+        \huge "G#"
+    }
+}
+
+highG = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
             (lh . ())
+            (cc . (one two three))
+            (rh . (ees))
+        )
+        \huge " G"
+    }
+}
+
+highFs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one three six))
+            (rh . (ees))
+        )
+        \huge "F#"
+    }
+}
+
+highF = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one three four))
+            (rh . (ees))
+        )
+        \huge " F"
+    }
+}
+
+highE = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two four five))
+            (rh . (ees))
+        )
+        \huge " E"
+    }
+}
+
+highEb = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b gis))
             (cc . (one two three four five six))
-            (rh . ())
+            (rh . (ees))
+        )
+        \huge "Eb"
+    }
+}
+
+highD = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (two three))
+            (rh . (ees))
+        )
+        \huge " D"
+    }
+}
+
+middleCs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . ())
+            (cc . ())
+            (rh . (ees))
+        )
+        \huge "C#"
+    }
+}
+
+middleC = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . ())
+            (cc . (one))
+            (rh . (ees))
+        )
+        \huge " C"
+    }
+}
+
+middleB = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one))
+            (rh . (ees))
         )
         \huge " B"
     }
 }
 
-% lowCbAlt = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four))
-%             (rh . (b))
-%         )
-%         \huge "Cb*"
-%     }
-% }
 
-% lowBAlt = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four))
-%             (rh . (b))
-%         )
-%         \huge "B*"
-%     }
-% }
+lowBb = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one four))
+            (rh . (ees))
+        )
+        \huge "Bb"
+    }
+}
 
-% lowBb = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four))
-%             (rh . ())
-%         )
-%         \huge "Bb"
-%     }
-% }
+lowA = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two))
+            (rh . (ees))
+        )
+        \huge " A"
+    }
+}
 
-% lowAs = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four))
-%             (rh . ())
-%         )
-%         \huge "A#"
-%     }
-% }
+lowGs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b gis))
+            (cc . (one two three))
+            (rh . (ees))
+        )
+        \huge "G#"
+    }
+}
 
-% lowA = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four five))
-%             (rh . ())
-%         )
-%         \huge " A"
-%     }
-% }
+lowG = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three))
+            (rh . (ees))
+        )
+        \huge " G"
+    }
+}
 
-% lowG = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four five six))
-%             (rh . ())
-%         )
-%         \huge " G"
-%     }
-% }
+lowFs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three six))
+            (rh . (ees))
+        )
+        \huge "F#"
+    }
+}
 
-% lowGs = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four five six))
-%             (rh . (gis))
-%         )
-%         " "
-%         \huge "G#"
-%     }
-% }
+lowF = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three four))
+            (rh . (ees))
+        )
+        \huge " F"
+    }
+}
 
-% lowAb = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four five six))
-%             (rh . (gis))
-%         )
-%         " "
-%         \huge "Ab"
-%     }
-% }
+lowE = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three four five))
+            (rh . (ees))
+        )
+        \huge " E"
+    }
+}
 
-% lowFsLeft = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb fis))
-%             (cc . (one two three four five six))
-%             (rh . ())
-%         )
-%         " "
-%         \huge "F# (L)"
-%     }
-% }
+lowEb = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three four five six))
+            (rh . (ees))
+        )
+        \huge "Eb"
+    }
+}
 
-% lowG = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb fis))
-%             (cc . (one two three four five six))
-%             (rh . ())
-%         )
-%         " "
-%         \huge "Gb (L)"
-%     }
-% }
+lowD = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three four five six))
+            (rh . ())
+        )
+        \huge " D"
+    }
+}
 
-% lowFsRight = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four five six))
-%             (rh . (fis))
-%         )
-%         " "
-%         \huge "F# (R)"
-%     }
-% }
+lowCs = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three four five six))
+            (rh . (cis))
+        )
+        \huge "C#"
+    }
+}
 
-% lowFsRightToLeft = \markup \center-align \line { 
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \line { 
-%             \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%                 (lh . (thumb))
-%                 (cc . (one two three four five six))
-%                 (rh . (fis))
-%             )
-%             "  "
-%             \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%                 (lh . (thumb fis))
-%                 (cc . (one two three four five six))
-%                 (rh . ())
-%             )
-%         }
-%         " "
-%         \huge "F# (R>L)"
-%     }
-% }
+lowC = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three four five six))
+            (rh . (cis c))
+        )
+        \huge " C"
+    }
+}
 
-% lowGbRightToLeft = \markup \center-align \line { 
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \line { 
-%             \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%                 (lh . (thumb))
-%                 (cc . (one two three four five six))
-%                 (rh . (fis))
-%             )
-%             "  "
-%             \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%                 (lh . (thumb fis))
-%                 (cc . (one two three four five six))
-%                 (rh . ())
-%             )
-%         }
-%         " "
-%         \huge "Gb (R>L)"
-%     }
-% }
+lowB = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (one two three four five six))
+            (rh . (cis c gz))
+        )
+        \huge " B"
+    }
+}
 
-% lowFLeft= \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb f))
-%             (cc . (one two three four five six))
-%             (rh . ())
-%         )
-%         \huge "F (L)"
-%     }
-% }
-
-% lowFRight= \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four five six))
-%             (rh . (f))
-%         )
-%         " "
-%         \huge "F (R)"
-%     }
-% }
-
-% lowB = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (b))
-%             (cc . (one two three four five six))
-%             (rh . (b))
-%         )
-%         \huge "E (L)"
-%     }
-% }
-
-% lowERight = \markup \center-align \line { 
-%     "   "
-%     \center-column \pad-markup #0 {
-%         \translate #'(0 . -5) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
-%             (lh . (thumb))
-%             (cc . (one two three four five six))
-%             (rh . (e))
-%         )
-%         " "
-%         \huge "E (R)"
-%     }
-% }
 
 lowerRegister = \relative c' { 
     \key c \major
     \time 4/4
     <>^\lowB b1 |
-    % <>^\lowC c1 |
-    % <>^\lowCs df2 cs |
+    <>^\lowC c1 |
+    <>^\lowCs cs2 df |
 
-    % <>^\lowD d1 |
-    % <>^\lowDs ef2 ds |
-
-    % <>^\lowE e1 |
-
-    % <>^\lowF f1 |
-    % <>^\lowFs gf2 fs |
-
-    % <>^\lowG g1 |
-    % <>^\lowGs af2 gs |
-
-    % <>^\lowA a1 |
-    % <>^\lowAs bf2 as |
 }
 
-middleRegister = \relative c'' { 
-    % <>^\middleB b1 |
-    % <>^\middleC c1 |
-    % <>^\middleCs df2 cs |
-
-    % <>^\middleD d1 |
-    % <>^\middleDs ef2 ds |
-
-    % <>^\middleE e1 |
-
-    % <>^\middleF f1 |
-    % <>^\middleFs gf2 fs |
-
-    % <>^\middleG g1 |
-    % <>^\middleGs af2 gs |
-
-    % <>^\middleA a1 |
-    % <>^\middleAs bf2 as |
+middleRegister = \relative c' { 
+    \stemDown
+    <>^\lowD <d d'>1 |
+    <>^\lowEb <ds ds'>2 <ef ef'> |
+    <>^\lowE <e e'>1 | 
+    <>^\lowF <f f'>1 |
+    <>^\lowFs <fs fs'>2 <gf gf'> |
+    <>^\lowG <g g'>1 |
+    \break
+    <>^\lowGs <gs gs'>2 <af af'> |
+    <>^\lowA <a a'>1 |
+    <>^\lowBb <bf bf'>2 <as as'> |
+    <>^\middleB <b b'>1 |
+    <>^\middleC <c c'>1 |
+    <>^\middleCs <cs cs'>2 <df df'> |
 }
 
 upperRegister = \relative c''' { 
-    % <>^\highB b1 |
-    % <>^\highC c1 |
-    % <>^\highCs df2 cs |
-
-    % <>^\highD d1 |
-    % <>^\highDs ef2 ds |
-
-    % <>^\highE e1 |
-
-    % <>^\highF f1 |
-    % <>^\highFs gf2 fs |
-
-    % <>^\highG g1 |
-    % <>^\highGs af2 gs |
-
-    % <>^\highA a1 |
-    % <>^\highAs bf2 as |
-
+    <>^\highD d1 |
+    <>^\highEb ef2 ds |
+    <>^\highE e1 |
+    <>^\highF f1 |
+    <>^\highFs gf2 fs |
+    <>^\highG g1 |
+    \break 
+    <>^\highGs af2 gs |
+    <>^\highA a1 |
+    <>^\highBb bf2 as |
+    <>^\highB b1 |
+    <>^\highC c1 |
     \bar "|."
 }
 
@@ -649,6 +504,7 @@ upperRegister = \relative c''' {
     \bookpart {
         \header {
         }
+
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -657,6 +513,7 @@ upperRegister = \relative c''' {
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
                     \lowerRegister
+                    \noPageBreak
                 }
             >>
             \header {
@@ -664,36 +521,35 @@ upperRegister = \relative c''' {
             }
         }
 
-        % \score {
-        %     << 
-        %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-        %         \new Staff  \keepWithTag #'(ForF) \transpose g f { 
-        %             \include "ly/ily/staff-properties.ily"
-        %             \autoPageBreaksOff
-        %             \middleRegister
-        %             \pageBreak
-        %         }
-        %     >>
-        %     \header {
-        %         piece = "Middle Register"
-        %     }
-        % }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \middleRegister
+                    \noPageBreak
+                }
+            >>
+            \header {
+                piece = "Middle Register"
+            }
+        }
 
-        % \score {
-        %     << 
-        %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-        %         \new Staff  \keepWithTag #'(ForF) \transpose g f { 
-        %             \include "ly/ily/staff-properties.ily"
-        %             \autoPageBreaksOff
-        %             \upperRegister
-        %             \pageBreak
-        %         }
-        %     >>
-        %     \header {
-        %         piece = "Upper Register"
-        %     }
-        % }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \upperRegister
+                }
+            >>
+            \header {
+                piece = "Upper Register"
+            }
+        }
     }
 }
