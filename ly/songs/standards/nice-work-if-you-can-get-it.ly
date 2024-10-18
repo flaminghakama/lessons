@@ -153,7 +153,7 @@ chordsSongForFlats = \chordmode {
     d2:m d:m/f | a:7/e a:7 | a1:m7 | d2:aug7 d:aug7/c ||
 
     b2:7 e:7 | a:7 d:7 | g:7 c:7 | a:7 a:7.9- | 
-    g1/d | a2:m g/b | f:7 e:7 | a:m7 a4:m7/d d:aug7 | g2 ds4:7 d:7 | g1:6 ||
+    g1/d | a2:m g/b | es:7 e:7 | a:m7 a4:m7/d d:aug7 | g2 ds4:7 d:7 | g1:6 ||
 }
 
 
