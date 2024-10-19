@@ -18,7 +18,7 @@ lilypond ly/songs/standards/nice-work-if-you-can-get-it.ly
 mv nice-work-if-you-can-get-it*pdf pdf/songs/standards
 for file in pdf/songs/standards/nice-work-if-you-can-get-it*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing lyric" ; git push 
+git add . ; git commit -m"enharmonics" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -126,16 +126,16 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
 
-    b2:7 e:7 | a:7 d:7 | g:7 c:7 | a:7 a:7.9- | 
+    b2:9 e:13 | a:9 d:13 | g:9 c:13 | a:7 a:7.9- | 
     g1/d | a2:m g/b | g4:6 g/b bf:dim7 a:m7 | g1 ||
 
-    b2:7 e:7 | a:7 d:7 | g:7 c:7 | a:7 a:7.9- | 
+    b2:9 e:13 | a:9 d:13 | g:9 c:13 | a:7 a:7.9- | 
     g1/d | a2:m g/b | g4:6 g/b bf:dim7 a:m7 | g1 ||
 
-    e1:m | c:9 | e:m7 | a:7 | 
+    e1:m | c:13 | e:m7 | a:7 | 
     d2:m d:m/f | a:7/e a:7 | a1:m7 | d2:aug7 d:aug7/c ||
 
-    b2:7 e:7 | a:7 d:7 | g:7 c:7 | a:7 a:7.9- | 
+    b2:9 e:13 | a:9 d:13 | g:9 c:13 | a:7 a:7.9- | 
     g1/d | a2:m g/b | f:7 e:7 | a:m7 a4:m7/d d:aug7 | g2 ef4:7 d:7 | g1:6 ||
 }
 chordsSongForFlats = \chordmode { 
@@ -143,16 +143,16 @@ chordsSongForFlats = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
 
-    b2:7 e:7 | a:7 d:7 | g:7 c:7 | a:7 a:7.9- | 
+    b2:9 e:13 | a:9 d:13 | g:9 c:13 | a:7 a:7.9- | 
     g1/d | a2:m g/b | g4:6 g/b as:dim7 a:m7 | g1 ||
 
-    b2:7 e:7 | a:7 d:7 | g:7 c:7 | a:7 a:7.9- | 
+    b2:9 e:13 | a:9 d:13 | g:9 c:13 | a:7 a:7.9- | 
     g1/d | a2:m g/b | g4:6 g/b as:dim7 a:m7 | g1 ||
 
-    e1:m | c:9 | e:m7 | a:7 | 
+    e1:m | b:9 | e:m7 | a:13 | 
     d2:m d:m/f | a:7/e a:7 | a1:m7 | d2:aug7 d:aug7/c ||
 
-    b2:7 e:7 | a:7 d:7 | g:7 c:7 | a:7 a:7.9- | 
+    b2:9 e:13 | a:9 d:13 | g:9 c:13 | a:7 a:7.9- | 
     g1/d | a2:m g/b | es:7 e:7 | a:m7 a4:m7/d d:aug7 | g2 ds4:7 d:7 | g1:6 ||
 }
 
