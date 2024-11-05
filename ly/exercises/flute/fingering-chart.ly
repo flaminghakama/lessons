@@ -267,6 +267,18 @@ highD = \markup \center-align \line {
     }
 }
 
+middleD = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (two three four five six))
+            (rh . ())
+        )
+        \huge " D"
+    }
+}
+
 middleCs = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
@@ -455,13 +467,14 @@ lowerRegister = \relative c' {
     <>^\lowB b1 |
     <>^\lowC c1 |
     <>^\lowCs cs2 df |
+    <>^\lowD d1 |
 
 }
 
-middleRegister = \relative c' { 
+middleRegister = \relative c'' { 
     \stemDown
-    <>^\lowD <d d'>1 |
-    <>^\lowEb <ds ds'>2 <ef ef'> |
+    <>^\middleD d1 |
+    <>^\lowEb <ds, ds'>2 <ef ef'> |
     <>^\lowE <e e'>1 | 
     <>^\lowF <f f'>1 |
     <>^\lowFs <fs fs'>2 <gf gf'> |
