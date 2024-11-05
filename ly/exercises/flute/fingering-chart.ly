@@ -13,12 +13,12 @@ copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" 
 \include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 %{
-killPreview ; rm fingering-chart*.pdf ; lilypond ly/exercises/flute/fingering-chart.ly ; op fingering-chart.pdf 
+killPreview ; rm flute-fingering-chart*.pdf ; lilypond ly/exercises/flute/flute-fingering-chart.ly ; op flute-fingering-chart.pdf 
 
-rm fingering-chart*.pdf
-lilypond ly/exercises/flute/fingering-chart.ly
-mv fingering-chart.pdf pdf/exercises/flute
-op pdf/exercises/flute/fingering-chart.pdf
+rm flute-fingering-chart*.pdf
+lilypond ly/exercises/flute/flute-fingering-chart.ly
+mv flute-fingering-chart.pdf pdf/exercises/flute
+op pdf/exercises/flute/flute-fingering-chart.pdf
 
 ./bin/createIndexes.sh
 git add . ; git commit -m"adding flute fingerings" ; git push 
