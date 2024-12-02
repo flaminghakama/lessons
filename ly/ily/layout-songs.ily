@@ -23,6 +23,6 @@
 }
 
 \paper {
-    left-margin = #8
-    right-margin = #8
+    left-margin = #10
+    right-margin = #10
 }
