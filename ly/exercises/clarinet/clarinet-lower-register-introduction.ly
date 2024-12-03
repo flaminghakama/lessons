@@ -1,21 +1,22 @@
-\version "2.19.15"
+\version "2.24.0"
 \include "english.ly"
 
 titleLeft = "Clarinet Lower"
 titleRight = "Register Introduction"
-title = "Clarinet Lower Register Introduction"
-composerName = "D. Elaine Alt"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+titleFull = "Clarinet Lower Register Introduction"
+composerName = "Elaine Alt"
+arranger = ""
+copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
 
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 %{
 
 killPreview ; 
 rm clarinet-lower-register-introduction.pdf ; 
-lilypond ly/clarinet-lower-register-introduction.ly ;
+lilypond ly/exercises/clarinet/clarinet-lower-register-introduction.ly ;
 op clarinet-lower-register-introduction.pdf ;
 
 #python ~/git/part-format/bookify-4page.py clarinet-lower-register-introduction.pdf clarinet-lower-register-introduction.printable.pdf
@@ -23,15 +24,14 @@ mv clarinet-lower-register-introduction.pdf pdf
 #mv clarinet-lower-register-introduction.printable.pdf pdf/printable
 #op pdf/printable/clarinet-lower-register-introduction.printable.pdf
 
-
 %}
 
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
     lastupdated = ""
-    title = \markup { \italic \fontsize #4 \bold { \title }  }
+    title = \markup { \italic \fontsize #4 \bold { \titleFull }  }
     poet = ""
     composer = \markup \italic \composerName
     tagline = ""
@@ -40,30 +40,48 @@ mv clarinet-lower-register-introduction.pdf pdf
 
 \paper {
 
-  top-margin = #2
-  right-margin = #14
+    top-margin = #2
+    right-margin = #14
 
-  % First page spacing after header
-  markup-system-spacing.padding = #6
+    % First page spacing after header
+    markup-system-spacing.padding = #0
 
-  % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #14
+    % Subsequent page spacing after header
+    top-system-spacing.minimum-distance = #14
 
-  % Spacing in between systems
-  %system-system-spacing.basic-distance = #18
-  %system-system-spacing.minimum-distance = #15
+    % Spacing in between systems
+    %system-system-spacing.basic-distance = #18
+    %system-system-spacing.minimum-distance = #15
 
-  page-breaking = #ly:minimal-breaking
+    score-system-spacing.basic-distance = #20    
 
-  #(define fonts
-    (make-pango-font-tree "Hardwood" 
-                          "Highlander ITC TT" 
-                          "Papyrus"
-                           (/ myStaffSize 20)))
+    page-breaking = #ly:minimal-breaking
+
+    #(define fonts
+        (make-pango-font-tree 
+            "Hardwood" 
+            "Highlander ITC TT" 
+            "Papyrus"
+            (/ myStaffSize 20)
+        )
+    )
 }
+
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\layout { 
+    \context {
+        \Score {
+            \override StaffGrouper.staff-staff-spacing =
+                #'((minimum-distance . 10))
+        }
+    }
+}
 
 \include "ly/notes/clarinet-introduction.ily"
 
@@ -194,7 +212,7 @@ lowEb = \markup \center-align \line {
     \center-column \pad-markup #0 {
         \translate #'(0 . -1) \override #'(size . 0.6) \woodwind-diagram #'clarinet #'(
             (lh . (thumb))
-            (cc . (one))
+            (cc . (one two))
             (rh . (four))
         )
         \huge "Eb"
@@ -629,10 +647,8 @@ songNotes = \relative c' {
     e4 c fs d | 
         \tag #'ForFs { <>^\middleFsAlt }     
         \tag #'ForGb { <>^\middleGbAlt }     
-        g4 fs8 e d 
-        \tag #'ForFs { <>^\lowBAlt }
-        \tag #'ForGb { <>^\lowCbAlt }
-        c b a | 
+        
+        g4 d b a |
         
     g1 \bar "|." 
 }
@@ -654,7 +670,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -669,7 +685,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff  \keepWithTag #'(ForF) \transpose g f { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -685,7 +701,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForA) { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -701,7 +717,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForBb) { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -717,7 +733,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForAb) { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -733,7 +749,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForE) { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -749,7 +765,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \with { \magnifyStaff #5/7 } \keepWithTag #'(ForFs) { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -765,7 +781,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \with { \magnifyStaff #5/7 } \keepWithTag #'(ForGb) { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -788,7 +804,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -803,7 +819,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -818,7 +834,7 @@ songNotes = \relative c' {
        \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -834,7 +850,7 @@ songNotes = \relative c' {
        \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -850,7 +866,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
@@ -865,7 +881,7 @@ songNotes = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \keepWithTag #'(ForG) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
