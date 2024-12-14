@@ -1,17 +1,19 @@
-\version "2.19.83"
+\version "2.24.0"
 \include "english.ly"
 
 titleLeft = "Diatonic Exercises"
 titleRight = "for Clarinet"
-title = "Diatonic Exercises for Clarinet"
-composerName = "Elaine Paul"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+titleFull = "Diatonic Exercises for Clarinet"
+composerName = "Elaine Alt"
+arranger = ""
+copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 %{
-killPreview ; rm diatonic-exercises-for-clarinet*.pdf ; lilypond ly/exercises/clarinet/diatonic-exercises-for-clarinet.ly  ; op diatonic-exercises-for-clarinet.pdf 
+killPreview ; rm diatonic-exercises-for-clarinet*.pdf ; lilypond ly/exercises/clarinet/diatonic-exercises-for-clarinet.ly ; op diatonic-exercises-for-clarinet.pdf 
 
 rm diatonic-exercises-for-clarinet*.pdf
 lilypond ly/exercises/clarinet/diatonic-exercises-for-clarinet.ly
@@ -19,18 +21,16 @@ mv diatonic-exercises-for-clarinet.pdf pdf/exercises/clarinet
 op pdf/exercises/clarinet/diatonic-exercises-for-clarinet.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding the rest of the diatonic exercises" ; git push 
+git add . ; git commit -m"adding introductory pentatonic exercises 3 and 4 accidentals" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
-
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2022 Elaine Paul" } 
     lastupdated = ""
-    title = \markup { \italic \fontsize #4 \bold { \title }  }
+    title = \markup { \italic \fontsize #4 \bold { \titleFull }  }
     poet = ""
     composer = \markup \italic \composerName
     tagline = ""
@@ -43,10 +43,10 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     right-margin = #14
 
     % First page spacing after header
-    markup-system-spacing.padding = #3
+    markup-system-spacing.padding = #0
 
     % Subsequent page spacing after header
-    top-system-spacing.minimum-distance = #16
+    top-system-spacing.minimum-distance = #14
 
     % Spacing in between systems
     %system-system-spacing.basic-distance = #18
@@ -67,7 +67,6 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 }
 
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/diatonic/clarinet/diatonic-C-major.ily"
