@@ -1,33 +1,36 @@
-\version "2.19.15"
+\version "2.24.0"
 \include "english.ly"
 
-titleLeft = "Clarinet"
-titleRight = "Accidentals"
-title = "Clarinet Accidentals"
-composerName = "D. Elaine Alt"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+titleLeft = "Accidentals"
+titleRight = "for Clarinet"
+titleFull = "Accidentals for Clarinet"
+composerName = "Elaine Alt"
+arranger = ""
+copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
+
 
 %{
 
-rm clarinet-accidentals.pdf ; lilypond ly/exercises/clarinet/clarinet-accidentals.ly ; mv clarinet-accidentals.pdf pdf/exercises/clarinet/ ; open -a Preview pdf/exercises/clarinet/clarinet-accidentals.pdf 
+killPreview ; rm accidentals-for-clarinet.pdf ; lilypond ly/exercises/clarinet/accidentals-for-clarinet.ly ; op accidentals-for-clarinet.pdf
 
-
-rm clarinet-accidentals.pdf
-lilypond ly/exercises/clarinet/clarinet-accidentals.ly 
-mv clarinet-accidentals.pdf pdf/exercises/clarinet/
-open -a Preview pdf/exercises/clarinet/clarinet-accidentals.pdf 
-
+rm accidentals-for-clarinet.pdf
+lilypond ly/exercises/clarinet/accidentals-for-clarinet.ly 
+mv accidentals-for-clarinet.pdf pdf/exercises/clarinet
+open -a Preview pdf/exercises/clarinet/accidentals-for-clarinet.pdf
 
 %}
+
 
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2019 D. Elaine Alt" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
     lastupdated = ""
-    title = \markup { \italic \fontsize #4 \bold { \title }  }
+    title = \markup { \italic \fontsize #4 \bold { \titleFull }  }
     poet = ""
     composer = \markup \italic \composerName
     tagline = ""
@@ -36,32 +39,37 @@ open -a Preview pdf/exercises/clarinet/clarinet-accidentals.pdf
 
 \paper {
 
-  top-margin = #14
-  right-margin = #17
+    top-margin = #2
+    right-margin = #14
 
-  % First page spacing after header
-  markup-system-spacing.padding = #0
+    % First page spacing after header
+    markup-system-spacing.padding = #3
 
-  % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #14
+    % Subsequent page spacing after header
+    top-system-spacing.minimum-distance = #14
 
-  % Spacing in between systems
-  system-system-spacing.basic-distance = #18
-  system-system-spacing.minimum-distance = #15
+    % Spacing in between systems
+    system-system-spacing.padding = #6
 
-  page-breaking = #ly:minimal-breaking
 
-  #(define fonts
-    (make-pango-font-tree "Hardwood" 
-                          "Highlander ITC TT" 
-                          "Papyrus"
-                           (/ myStaffSize 20)))
+    score-system-spacing.basic-distance = #20    
+
+    page-breaking = #ly:minimal-breaking
+
+    #(define fonts
+        (make-pango-font-tree 
+            "Hardwood" 
+            "Highlander ITC TT" 
+            "Papyrus"
+            (/ myStaffSize 20)
+        )
+    )
 }
+
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
+\include "ly/ily/layout.ily"
 
 \include "ly/ily/clarinet-fingerings.ily"    
-\include "ly/ily/layout.ily"
 
 
 plus = \markup { \fontsize #5 "+" } 
@@ -106,9 +114,8 @@ exerciseTwo = \relative c' {
 exerciseThree = \relative c' { 
     \key c \major
     \time 4/4
-    af1^\lowAb fs^\lowGbRight f?^\lowFRight  e^\lowERight \bar "|." \break 
+    af1^\lowAb fs^\lowGbRight f?^\lowFRight  e^\lowERight \bar "|.[|:" \break 
 
-    \bar "[|:"
     \mark "Close"
     g8 [ ( af ] )  g [ ( fs ] )  g [ ( af ] )  g [ ( fs ] )  
     \bar ":|][|:"
@@ -135,28 +142,49 @@ exerciseThree = \relative c' {
     \bar ":|]"
 }
 
-exerciseFour = \relative c' { 
+exerciseFour = \relative c { 
+    \key c \major
+    \time 4/4
+    f1^\lowFLeft fs^\lowGbLeft  e^\lowELeft \bar "|.[|:" \break 
+
+    g8^"outside" [ ( fs ] )  g [ ( f ] )   g [ ( fs ] )  g [ ( f ] )  
+    \bar ":|][|:"
+    f!8 [ ( g ] )  fs [ ( g ] )   f [ ( g ] )  fs [ ( g ] ) \break
+    \bar ":|][|:" 
+
+    g8^"inside" [ ( fs ] ) g [ ( e ] )  g [ ( fs! ] ) g [ ( e ] )
+    \bar ":|][|:"
+    fs8 [ ( g ] ) e [ ( g ] )  fs! [ ( g ] ) e [ ( g ] ) \break
+    \bar ":|][|:"
+    
+    g8^"outside/inside" [ ( f ] ) g [ ( e ] )  g [ ( f ] ) g [ ( e ] ) 
+    \bar ":|][|:"
+    f8 [ ( g ] ) e [ ( g ] )  f [ ( g ] ) e [ ( g ] ) 
+    \bar ":|][|:"
+}
+
+
+exerciseFive  = \relative c { 
     \key c \major
     \time 4/4
     \bar "[|:"
-    g8 [ ( af^\lowAb ] )  g [ ( fs^\lowGbRight ] )  g [ ( af ] )  g [ ( fs ] )  
-    \bar ":|][|:"
-    g8 [ ( f^\lowFRight ] ) g [ ( e^\lowERight ] )  g8 [ ( f ] ) g [ ( e ] ) 
+    e8^"L" [ ( g ] )  fs^"R" [ ( a ] )   g [ ( b ] )  a [ ( fs!^"R" ] ) | e1^"L"   
     \bar ":|][|:" \break
-    g8 [ ( af ] )  g [ ( fs ] ) g8 [ ( f ] ) g [ ( e ] ) 
-    \bar ":|][|:"
-    f [ ( g ] )  af [ ( g ] ) f [ ( g ] ) af [ ( g ] ) 
+    e8^"R" [ ( g ] )  fs^"L" [ ( a ] )   g [ ( b ] )  a [ ( fs!^"L" ] ) | e1^"R"   
     \bar ":|][|:" \break
-    e8 [ ( g ] )  af [ ( g ] ) e [ ( g ] ) af [ ( g ] ) 
-    \bar ":|][|:"
-    f8 [ ( g ] )  f [ ( a ] ) f [ ( bf ] ) f [ ( c' ] ) 
+
+
+    e8^"L" [ ( gs^"R" ] )  fs^"L" [ ( a ] )   gs [ ( b ] )  a [ ( fs!^"R" ] ) | e1^"L"   
     \bar ":|][|:" \break
-    f,8 [ ( d' ] )  f, [ ( e' ] ) f, [ ( f' ] ) c [ ( a ] ) 
+    e8^"L" [ ( gs^"R" ] )  fs^"L" [ ( a ] )   gs [ ( b ] )  a [ ( fs!^"L" ] ) | e1^"R"   
     \bar ":|][|:" \break
-    e8 [ ( g ] )  e [ ( a ] ) e [ ( b ] ) e [ ( c ] ) 
+
+
+
+    e8^"L" [ ( f^"R" ] )  fs^"L" [ ( g ] )   gs^"R" [ ( g ] )  fs!^"L" [ ( f^"R" ] ) | e1^"L"   
+    \bar ":|][|:" \break
+    e8^"R" [ ( f^"L" ] )  fs^"R" [ ( g ] )   gs^"R" [ ( g ] )  fs!^"R" [ ( f^"L" ] ) | e1^"R"   
     \bar ":|][|:" 
-    e8 [ ( g ] )  fs [ ( a ] ) e [ ( g ] ) fs [ ( a ] ) 
-    \bar ":|]"
 }
 
 
@@ -175,7 +203,7 @@ exerciseFour = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseOne
@@ -191,7 +219,7 @@ exerciseFour = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseTwo
@@ -215,7 +243,7 @@ exerciseFour = \relative c' {
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \exerciseThree
@@ -225,23 +253,53 @@ exerciseFour = \relative c' {
                 piece = "3 - Right hand pinky keys"
             }
         }
+    }
 
-%{
+
+    \bookpart {
+
+        \header {
+            title = ""
+            subtitle = ""
+            composer = ""
+            arranger = ""
+        }
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
-                    \exerciseTwo
+                    \exerciseFour
                 }
             >>
             \header {
-                title = ""
-                composer = ""
-                piece = "2 - B & Bb"
+                piece = "4 - Left hand pinky keys"
             }
         }
-        %}
+    }
+
+
+    \bookpart {
+
+        \header {
+            title = ""
+            subtitle = ""
+            composer = ""
+            arranger = ""
+        }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \exerciseFive
+                }
+            >>
+            \header {
+                piece = "5 - Alternating hand pinky keys"
+            }
+        }
     }
 }

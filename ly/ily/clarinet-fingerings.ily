@@ -94,11 +94,11 @@ lowGbRight = \markup \center-align \pad-markup #2 {
         (rh . (fis))
     )
 }
-lowGbRight = \markup \center-align \pad-markup #2 {
+lowGbLeft = \markup \center-align \pad-markup #2 {
 	\override #'(size . 0.7) \woodwind-diagram #'clarinet #'(
-        (lh . (thumb))
+        (lh . (thumb fis))
         (cc . (one two three four five six))
-        (rh . (fis))
+        (rh . ())
     )
 }
 
