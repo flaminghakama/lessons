@@ -14,15 +14,13 @@ copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" 
 
 %{
 
+killPreview ; rm clarinet-lower-register-introduction.pdf ; lilypond ly/exercises/clarinet/clarinet-lower-register-introduction.ly ; op clarinet-lower-register-introduction.pdf ;
+
 killPreview ; 
 rm clarinet-lower-register-introduction.pdf ; 
-lilypond ly/exercises/clarinet/clarinet-lower-register-introduction.ly ;
-op clarinet-lower-register-introduction.pdf ;
-
-#python ~/git/part-format/bookify-4page.py clarinet-lower-register-introduction.pdf clarinet-lower-register-introduction.printable.pdf
-mv clarinet-lower-register-introduction.pdf pdf
-#mv clarinet-lower-register-introduction.printable.pdf pdf/printable
-#op pdf/printable/clarinet-lower-register-introduction.printable.pdf
+lilypond ly/exercises/clarinet/clarinet-lower-register-introduction.ly ; 
+mv clarinet-lower-register-introduction.pdf pdf/exercises/clarinet
+op pdf/exercises/clarinet/clarinet-lower-register-introduction.pdf ;
 
 %}
 

@@ -13,15 +13,15 @@ copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" 
 \include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 %{
-killPreview ; rm flute-fingering-chart*.pdf ; lilypond ly/exercises/flute/flute-fingering-chart.ly ; op flute-fingering-chart.pdf 
+killPreview ; rm fingering-chart*.pdf ; lilypond ly/exercises/flute/fingering-chart.ly ; op fingering-chart.pdf 
 
-rm flute-fingering-chart*.pdf
-lilypond ly/exercises/flute/flute-fingering-chart.ly
-mv flute-fingering-chart.pdf pdf/exercises/flute
-op pdf/exercises/flute/flute-fingering-chart.pdf
+rm fingering-chart*.pdf
+lilypond ly/exercises/flute/fingering-chart.ly
+mv fingering-chart.pdf pdf/exercises/flute
+op pdf/exercises/flute/fingering-chart.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding flute fingerings" ; git push 
+git add . ; git commit -m"renaming flute fingerings" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 
@@ -267,6 +267,18 @@ highD = \markup \center-align \line {
     }
 }
 
+middleEb = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b))
+            (cc . (two three four five six))
+            (rh . (ees))
+        )
+        \huge " Eb"
+    }
+}
+
 middleD = \markup \center-align \line { 
     "   "
     \center-column \pad-markup #0 {
@@ -468,14 +480,15 @@ lowerRegister = \relative c' {
     <>^\lowC c1 |
     <>^\lowCs cs2 df |
     <>^\lowD d1 |
+    <>^\lowEb ds2 ef |
 
 }
 
 middleRegister = \relative c'' { 
     \stemDown
     <>^\middleD d1 |
-    <>^\lowEb <ds, ds'>2 <ef ef'> |
-    <>^\lowE <e e'>1 | 
+    <>^\middleEb ds2 ef |
+    <>^\lowE <e, e'>1 | 
     <>^\lowF <f f'>1 |
     <>^\lowFs <fs fs'>2 <gf gf'> |
     <>^\lowG <g g'>1 |
