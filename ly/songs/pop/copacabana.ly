@@ -34,7 +34,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #6
+  markup-system-spacing.padding = #1
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #20
@@ -74,7 +74,6 @@ structure = \relative c' {
     \startSection "Verse"
     \repeat volta 2 { 
         \bar "S[|:"
-        \key ef \major
         s1*4
         s1*4
         s1*4
@@ -85,7 +84,6 @@ structure = \relative c' {
         s1 
 
         \startSection ""
-        \key g \minor
         s1*3
     }
     \alternative {
@@ -95,9 +93,8 @@ structure = \relative c' {
 
     \startSection "Bridge"
     s1*13
-    s2 \dsAlCodaBelow s2 
+    s2... \dsAlCodaBelow s16 
     \bar "||"
-    \key ef \major
 }
 
 structureCoda = \relative c' { 
@@ -117,32 +114,33 @@ rehearsalMarkTweaksForC = \relative c' {
 
     \once \override Score.MetronomeMark.extra-offset = #'( 0 . 0 )
 
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
     % "Drums"
     s1*4
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -5 . 0 )
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % "Bass"
     s1*4
 
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . -2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -5 . -2 )
     % "Verse 1"
     s1*12
 
     \pageBreak
     
-    \once \override Score.RehearsalMark.extra-offset = #'( -9 . -3 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -7 . 0 )
     % "Chorus 1"
     s1*3   
     s1*3  
     s1*3 
     s1
 
-    % \once \override Score.RehearsalMark.extra-offset = #'( -5 . -1 )
+    % \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % "Bridge 1"
     s1*5 \break
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -9 . -3 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -7 . 0 )
     % "Bridge"
     s1*14
 }
@@ -159,13 +157,13 @@ rehearsalMarkTweaksForBass = \relative c' {
     % "Bass"
     s1*4 \break
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
     % "Verse 1"
     s1*4 \break 
     s1*4 \break 
     s1*4 \break 
     
-    \once \override Score.RehearsalMark.extra-offset = #'( -9 . -2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -7 . -2 )
     % "Chorus 1"
     s1*4 \break 
     s1*4 \break 
@@ -187,7 +185,37 @@ rehearsalMarkTweaksForBass = \relative c' {
 }
 
 rehearsalMarkTweaksForEb = \relative c' { 
-    \rehearsalMarkTweaksForC
+    \once \override Score.MetronomeMark.extra-offset = #'( 0 . 0 )
+
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    % "Drums"
+    s1*4
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Bass"
+    s1*4
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -6 . -2 )
+    % "Verse 1"
+    s1*12
+
+    \pageBreak
+    
+    \once \override Score.RehearsalMark.extra-offset = #'( -5 . 0 )
+    % "Chorus 1"
+    s1*3   
+    s1*3  
+    s1*3 
+    s1
+
+    % \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Bridge 1"
+    s1*5 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -5 . 0 )
+    % "Bridge"
+    s1*14
 }
 
 chordsSong = \chordmode { 
@@ -289,7 +317,7 @@ melodyChorus = \relative c'' {
     ef8. af,16 ~  4  r8 ef'  d [ c ] | d8. g,16 ~  4  r4  r8 g | 
     \tuplet 3/2 2 { af4 bf c  ef d c } | d8. g,16 ~  4  r8 d'4 c8 |
 
-    ef8. af,16 ~  4  r8 ef'  d [ c ] | d4. c8 ~ 2 | 
+    ef8. af,16 ~  4  r8 ef'  d [ c ] | d4. c8 ~ 4 r | 
     \tuplet 3/2 2 { ef4 d ef  d c d } | c8. bf16 ~ 8 c  d bf  c d |
 
     ef4. c8 ~ 2 | r r8 g fs [ ef ] |
@@ -409,6 +437,33 @@ melody = {
     \melodyDs
 }
 
+melodyForEb = {
+    << 
+        \transpose c c, \stringsIntro \\
+        \transpose c, c { s1*3 \bassIntro }
+    >>
+    \melodyVerse
+    \melodyChorus
+
+    % \bgVocalBridgeOne
+
+    <<
+        { \voiceOne \bgVocalBridgeOne } 
+        \new Voice { \voiceTwo \melodyBridgeOne }
+    >>
+
+    \oneVoice
+    \melodyFirstEnding
+    \bgVocalSecondEnding
+    \transpose c c, <<
+        \new Voice { \voiceTwo \stemUp \tieUp \hornsBridge }
+        { \voiceOne \stemDown \tieDown \tupletDown \melodyBridge }
+    >>
+    \oneVoice
+    \melodyDs
+}
+
+
 bassLine = {
     R1*3 
     \bassIntro r2 ||
@@ -522,9 +577,9 @@ lyricsCoda = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-G-minor-for-C"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
@@ -590,9 +645,9 @@ lyricsCoda = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "Bass-for-C"
+  \bookOutputSuffix "Bass-in-G-minor-for-C"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         poet = "Bass"
         instrumentName = \poet
     }
@@ -647,69 +702,402 @@ lyricsCoda = \lyricmode {
     }
 }
 
-% \book {
-%   \bookOutputSuffix "for-Bb"
-%     \header {
-%         subtitle = ""
-%         poet = "Bb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         \transpose bf, c <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong 
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \override Stem.length-fraction = #(magstep 1.2)
-%                     \structure
-%                     \rehearsalMarkTweaksForBb
-%                     \melody
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             % \new Lyrics \with { alignAboveContext = "staff" } {
-%             %     \lyricsto "lead" { \lyricsHeadTwo } 
-%             % }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "in-G-minor-for-Bb"
+    \header {
+        subtitle = "(original key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForEb
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadThree } 
+            }
+        >>
+    }
 
-% \book {
-%   \bookOutputSuffix "for-Eb"
-%     \header {
-%         subtitle = ""
-%         poet = "Eb Lead Sheet"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         \transpose ef, c <<
-%             \new ChordNames \transpose c c  { 
-%                 \include "ly/ily/chord-names-properties.ily"
-%                 \chordsSong 
-%             }
-%             \new Staff = "voice" \transpose c c { 
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \new Voice = "lead" <<
-%                     \override Stem.length-fraction = #(magstep 1.2)
-%                     \structure
-%                     \rehearsalMarkTweaksForEb
-%                     \melody
-%                 >>
-%             }
-%             \new Lyrics \with { alignAboveContext = "staff" } {
-%                 \lyricsto "lead" { \lyricsHeadOne } 
-%             }
-%             % \new Lyrics \with { alignAboveContext = "staff" } {
-%             %     \lyricsto "lead" { \lyricsHeadTwo } 
-%             % }
-%         >>
-%     }
-% }
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        \transpose bf, c <<
+            \new ChordNames \transpose c c { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose c c <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
 
+\book {
+  \bookOutputSuffix "in-G-minor-for-Eb"
+    \header {
+        subtitle = "(original key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForEb
+                    \melodyForEb
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadThree } 
+            }
+        >>
+    }
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        \transpose ef, c <<
+            \new ChordNames \transpose c c { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose c c <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+
+
+\book {
+  \bookOutputSuffix "in-F-minor-for-C"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose g f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadThree } 
+            }
+        >>
+    }
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        \transpose g f <<
+            \new ChordNames \transpose c c { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose c c <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "Bass-in-F-minor-for-C"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Bass"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose g f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \clef bass
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForBass
+                    \bassLine
+                >>
+            }
+        >>
+    }
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        \transpose g f <<
+            \new ChordNames \transpose c c { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \clef bass
+                    \transpose c c <<
+                        \structureCoda
+                        \bassCoda
+                    >>
+                }
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-minor-for-Bb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose g f \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadThree } 
+            }
+        >>
+    }
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        \transpose g f \transpose bf, c <<
+            \new ChordNames \transpose c c { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose c c <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-minor-for-Eb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose g f \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melodyForEb
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadThree } 
+            }
+        >>
+    }
+
+    \score {
+        \header {
+            subtitle = " " 
+            piece = " " 
+        }
+        \transpose g f \transpose ef, c <<
+            \new ChordNames \transpose c c { \chordsCoda }
+            \new Staff = "voice" { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice = "lead" {
+                    \autoPageBreaksOff
+                    \transpose c c <<
+                        \structureCoda
+                        \melodyCoda
+                    >>
+                }
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsCoda } 
+            }
+        >>
+        \layout { 
+            indent = 2.25\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
