@@ -1,8 +1,8 @@
 \version "2.24.0"
 
-titleLeft = "Razr"
+titleLeft = "Razr Platinum"
 titleRight = "Ringtone"
-titleFull = "Razr Ringtone"
+titleFull = "Razr Platinum Ringtone"
 composerName = "Motorola"
 arranger = ""
 copyright = ""
