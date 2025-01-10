@@ -95,6 +95,7 @@ structure = \relative c' {
     s1*13
     s2... \dsAlCodaBelow s16 
     \bar "||"
+    \noPageBreak
 }
 
 structureCoda = \relative c' { 
@@ -224,7 +225,7 @@ chordsSong = \chordmode {
     %\set noChordSymbol = ##t
 
     s1*4 
-    g1:m9 | f:m9 | g:m9 | f8.:m7 fs16:m7 ~ 8 g:m7 s2 ||
+    g1:m9 | f:m9 | g:m9 | f8.:m7 fs16:m7  s8 g:m7 s2 ||
 
     % Verse
     f2:m7 bf:11 | ef:maj7 bf:11 | a:m7.5- d:7.13- | g1:m9 | 
@@ -379,7 +380,11 @@ melodyBridge = \relative c'' {
 }
 
 melodyDs = \relative c'' { 
-    R1*3 | r2 r8 g bf [ c ]
+    R1*3 | 
+    \override Staff.NoteHead.style = #'diamond  
+    g8. gs16 ~  8 a  
+        \revert Staff.NoteHead.style
+    r8 g bf [ c ]
 }
 
 
@@ -520,6 +525,7 @@ lyricsHeadOne = \lyricmode {
             Mu -- sic and pas -- sion 
             al -- ways in fash -- ion
 
+    \repeat unfold 3 { \skip 1 }
     Her name was 
 }
 
@@ -598,6 +604,7 @@ lyricsCoda = \lyricmode {
                     \rehearsalMarkTweaksForC
                     \melody
                 >>
+                \noPageBreak
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
@@ -667,6 +674,7 @@ lyricsCoda = \lyricmode {
                     \rehearsalMarkTweaksForBass
                     \bassLine
                 >>
+                \noPageBreak
             }
         >>
     }
@@ -724,6 +732,7 @@ lyricsCoda = \lyricmode {
                     \rehearsalMarkTweaksForEb
                     \melody
                 >>
+                \noPageBreak
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
@@ -792,6 +801,7 @@ lyricsCoda = \lyricmode {
                     \rehearsalMarkTweaksForEb
                     \melodyForEb
                 >>
+                \noPageBreak
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
@@ -862,6 +872,7 @@ lyricsCoda = \lyricmode {
                     \rehearsalMarkTweaksForC
                     \melody
                 >>
+                \noPageBreak
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
@@ -931,6 +942,7 @@ lyricsCoda = \lyricmode {
                     \rehearsalMarkTweaksForBass
                     \bassLine
                 >>
+                \noPageBreak
             }
         >>
     }
@@ -988,6 +1000,7 @@ lyricsCoda = \lyricmode {
                     \rehearsalMarkTweaksForC
                     \melody
                 >>
+                \noPageBreak
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
@@ -1056,6 +1069,7 @@ lyricsCoda = \lyricmode {
                     \rehearsalMarkTweaksForC
                     \melodyForEb
                 >>
+                \noPageBreak
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
