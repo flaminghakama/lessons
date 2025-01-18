@@ -13,6 +13,27 @@ instructionEb = \markup {
     }
 }
 
+tonicArpeggioEb = \relative c' { 
+    \key ef \major
+    \time 2/4
+    \tuplet 3/2 4 { 
+        ef8 g bf  ef g bf  |
+        ef8 bf g  ef8 bf g  |
+    }
+    ef2 |
+    \tuplet 3/2 4 { 
+        ef8 g, bf  bf' g bf, 
+    } ef2 |
+    \bar "||" \break
+
+    \time 4/4
+    ef8 ( bf' )  g ( ef' )  bf ( g' )  ef ( bf' ) | 
+    g8 ( ef' )  bf ( ef, ) g ( bf, )  ef ( g, )  |
+    bf ( ef, )  g8 ( bf, )  ef ( g, ) bf ( g' ) | 
+    ef1 
+    \bar "|."
+}
+
 diatonicExerciseOneEbMajor = \transpose c ef \relative c' { 
     \key c \major
     \time 3/4

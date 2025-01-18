@@ -1,11 +1,11 @@
 
-domiantArpeggioChords = \chordmode { 
+dominantArpeggioChords = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     c1:7
 }
-domiantArpeggioG = \relative c' {
+dominantArpeggioG = \relative c' {
     \key c \major
     \time 4/4 
     \relative c' {
@@ -28,7 +28,7 @@ domiantArpeggioG = \relative c' {
     \bar "||"
 }
 
-domiantArpeggioD = \relative c {
+dominantArpeggioD = \relative c {
     \key g \major
     \time 4/4 
     \relative c' {
@@ -57,7 +57,7 @@ domiantArpeggioD = \relative c {
 }
 
 
-domiantArpeggioC = \relative c {
+dominantArpeggioC = \relative c {
     \key f \major
     \time 4/4 
     \relative c' {
@@ -85,7 +85,7 @@ domiantArpeggioC = \relative c {
     \bar "||"
 }
 
-domiantArpeggioA = \relative c' {
+dominantArpeggioA = \relative c' {
     \key d \major
     \time 4/4 
     \relative c' {
@@ -108,7 +108,7 @@ domiantArpeggioA = \relative c' {
 }
 
 
-domiantArpeggioF = \relative c {
+dominantArpeggioF = \relative c {
     \key bf \major
     \time 4/4 
     \relative c {
@@ -130,7 +130,7 @@ domiantArpeggioF = \relative c {
     \bar "||"
 }
 
-domiantArpeggioE = \transpose f e {
+dominantArpeggioE = \transpose f e {
     \key bf \major
     \time 4/4 
     \relative c {
@@ -156,7 +156,7 @@ domiantArpeggioE = \transpose f e {
     \bar "||"
 }
 
-domiantArpeggioBFlat = \transpose a bf {
+dominantArpeggioBFlat = \transpose a bf {
     \key d \major
     \time 4/4 
     \relative c' {
@@ -179,7 +179,7 @@ domiantArpeggioBFlat = \transpose a bf {
 }
 
 
-domiantArpeggioB = \relative c' {
+dominantArpeggioB = \relative c' {
     \key e \major
     \time 4/4 
     \relative c' { 
@@ -204,7 +204,7 @@ domiantArpeggioB = \relative c' {
     \bar "||"
 }
 
-domiantArpeggioEFlat = \relative c' {
+dominantArpeggioEFlat = \relative c' {
     \key af \major
     \time 4/4 
     \relative c' { 
@@ -231,7 +231,7 @@ domiantArpeggioEFlat = \relative c' {
     \bar "||"
 }
 
-domiantArpeggioFSharp = \transpose f fs {
+dominantArpeggioFSharp = \transpose f fs {
     \key bf \major
     \time 4/4 
     \relative c {
@@ -253,7 +253,7 @@ domiantArpeggioFSharp = \transpose f fs {
     \bar "||"
 }
 
-domiantArpeggioAFlat = \transpose g af {
+dominantArpeggioAFlat = \transpose g af {
     \key c \major
     \time 4/4 
     \relative c' {
@@ -277,7 +277,7 @@ domiantArpeggioAFlat = \transpose g af {
 }
 
 
-domiantArpeggioCSharp = \relative c {
+dominantArpeggioCSharp = \relative c {
     \key fs \major
     \time 4/4 
     \relative c' {

@@ -16,6 +16,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseOneDbMajor
+                    \bar "|."
                 }
             >>
             \header {
@@ -34,6 +35,7 @@
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOn
                     \diatonicExerciseTwoDbMajor
+                    \bar "|."
                     \pageBreak
                 }
             >>

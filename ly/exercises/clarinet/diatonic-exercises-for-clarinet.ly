@@ -6,7 +6,7 @@ titleRight = "for Clarinet"
 titleFull = "Diatonic Exercises for Clarinet"
 composerName = "Elaine Alt"
 arranger = ""
-copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+copyright = \markup \center-column { " "  \tiny "copyright © 2025 Elaine Paul" } 
 
 \include "../../../../engraving/flaming-libs/flaming-standard.ily"
 \include "../../../../engraving/flaming-libs/flaming-chords.ily"

@@ -96,11 +96,11 @@
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose c g { 
-                    \domiantArpeggioChords 
+                    \dominantArpeggioChords 
                 }
                 \new Staff {
                     \include "ly/ily/staff-properties.ily"
-                    \transpose b, c \domiantArpeggioFSharp
+                    \transpose b, c \dominantArpeggioFSharp
                     \noPageBreak
                 }
             >>

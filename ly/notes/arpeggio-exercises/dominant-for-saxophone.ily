@@ -1,11 +1,11 @@
 
-domiantArpeggioChords = \chordmode { 
+dominantArpeggioChords = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     c1:7
 }
-domiantArpeggioC = \relative c' {
+dominantArpeggioC = \relative c' {
     \key f \major
     \time 4/4 
     \relative c'' {
@@ -25,7 +25,7 @@ domiantArpeggioC = \relative c' {
     }
     \bar "||"
 }
-domiantArpeggioB = \relative c' {
+dominantArpeggioB = \relative c' {
     \key e \major
     \time 4/4 
     \relative c'' { 
@@ -46,7 +46,7 @@ domiantArpeggioB = \relative c' {
     \bar "||"
 }
 
-domiantArpeggioBFlat = \relative c' {
+dominantArpeggioBFlat = \relative c' {
     \key ef \major
     \time 4/4 
     \relative c'' {
@@ -67,7 +67,7 @@ domiantArpeggioBFlat = \relative c' {
     \bar "||"
 }
 
-domiantArpeggioD = \relative c' {
+dominantArpeggioD = \relative c' {
     \key g \major
     \time 4/4 
     \relative c'' {
@@ -88,7 +88,7 @@ domiantArpeggioD = \relative c' {
     \bar "||"
 }
 
-domiantArpeggioEFlat = \relative c' {
+dominantArpeggioEFlat = \relative c' {
     \key af \major
     \time 4/4 
     \relative c' { 
@@ -109,7 +109,7 @@ domiantArpeggioEFlat = \relative c' {
     \bar "||"
 }
 
-domiantArpeggioFSharp = \relative c' {
+dominantArpeggioFSharp = \relative c' {
     \key b \major
     \time 4/4 
     \relative c' { 
@@ -130,7 +130,7 @@ domiantArpeggioFSharp = \relative c' {
     \bar "||"
 }
 
-domiantArpeggioAFlat = \relative c' {
+dominantArpeggioAFlat = \relative c' {
     \key df \major
     \time 4/4 
     \relative c'' { 

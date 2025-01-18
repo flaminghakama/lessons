@@ -12,10 +12,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c g { \domiantArpeggioChords }
+            \new ChordNames \transpose c g { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c c \domiantArpeggioG
+                \transpose c c \dominantArpeggioG
             }
         >>
     }
@@ -28,10 +28,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c d { \domiantArpeggioChords }
+            \new ChordNames \transpose c d { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose g g \domiantArpeggioD
+                \transpose g g \dominantArpeggioD
             }
         >>
     }
@@ -44,10 +44,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c c { \domiantArpeggioChords }
+            \new ChordNames \transpose c c { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \domiantArpeggioC
+                \dominantArpeggioC
             }
         >>
     }
@@ -60,10 +60,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c a { \domiantArpeggioChords }
+            \new ChordNames \transpose c a { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c c \domiantArpeggioA
+                \transpose c c \dominantArpeggioA
             }
         >>
     }
@@ -76,10 +76,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c f { \domiantArpeggioChords }
+            \new ChordNames \transpose c f { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c c \domiantArpeggioF
+                \transpose c c \dominantArpeggioF
             }
         >>
     }
@@ -92,10 +92,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c e { \domiantArpeggioChords }
+            \new ChordNames \transpose c e { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose e e \domiantArpeggioE
+                \transpose e e \dominantArpeggioE
             }
         >>
     }
@@ -108,10 +108,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c bf { \domiantArpeggioChords }
+            \new ChordNames \transpose c bf { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \domiantArpeggioBFlat
+                \dominantArpeggioBFlat
             }
         >>
     }
@@ -124,10 +124,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c b { \domiantArpeggioChords }
+            \new ChordNames \transpose c b { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \domiantArpeggioB
+                \dominantArpeggioB
             }
         >>
     }
@@ -140,10 +140,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c ef { \domiantArpeggioChords }
+            \new ChordNames \transpose c ef { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose c c \domiantArpeggioEFlat
+                \transpose c c \dominantArpeggioEFlat
             }
         >>
     }
@@ -156,10 +156,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c fs { \domiantArpeggioChords }
+            \new ChordNames \transpose c fs { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose fs fs \domiantArpeggioFSharp
+                \transpose fs fs \dominantArpeggioFSharp
             }
         >>
     }
@@ -172,10 +172,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c af { \domiantArpeggioChords }
+            \new ChordNames \transpose c af { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose af af \domiantArpeggioAFlat
+                \transpose af af \dominantArpeggioAFlat
             }
         >>
     }
@@ -188,10 +188,10 @@
             composer = ""
         } 
         << 
-            \new ChordNames \transpose c cs { \domiantArpeggioChords }
+            \new ChordNames \transpose c cs { \dominantArpeggioChords }
             \new Staff {
                 \include "ly/ily/staff-properties.ily"
-                \transpose cs cs \domiantArpeggioCSharp
+                \transpose cs cs \dominantArpeggioCSharp
             }
         >>
     }
