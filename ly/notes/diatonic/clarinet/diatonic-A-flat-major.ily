@@ -83,7 +83,7 @@ diatonicExerciseTwoAbMajor = \transpose c af \relative c {
     b8 c d f c2 | \break
 
     c8 d \lh e g  d e f a | 
-    e8 f g b  f g a c | 
+    e8 \rh f g b  f g a c | 
     g8 a b d  a b c e | 
     b8 c d f c2 | \break
 

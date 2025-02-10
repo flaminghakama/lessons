@@ -233,26 +233,6 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
 
-    s1*4 
-    g1:m9 | f:m9 | g:m9 | f8.:m7 fs16:m7 ~ 8 g:m7 s2 ||
-
-    % Verse
-    f2:m7 bf:11 | ef:maj7 bf:11 | a:m7.5- d:7.13- | g1:m9 | 
-    f1:m7 | ef:maj7 | a2:m7.5- d:7.13- | g1:m7 |
-    c2:dim7 g:m7 | c8.:dim7 d16:7.9- s8 g:m7 s2 | c:m7 d:7 | g4:m d:7/fs bf2:7/f ||
-
-    % Chorus
-    f2:m7 bf:11 | ef1:maj7 | f2:m7 bf:11 | ef:maj7 c:7 | 
-    f2:m7 bf:11 | c:11 c:7 | f:m7 bf:7 | g:m7 c:9 |
-    f1:m7 | d:7.9- | g:m9 | f:m7 | g:m9 | f8.:m9 fs16:m9 s8 g:m9 s2 ||
-        f1:m9 || 
-
-    % Bridge
-    g1:m9 | s | bf:m9 | s | 
-    df1:m9 | s | bf:m9 | s | 
-    g1:m9 | fs:m9 ||
-
-    g1:m9 | f:m9 | g:m9 | f8.:m7 fs16:m7 s8 g:m7 s2 ||
 
 }
 chordsCoda = \chordmode { 
@@ -260,8 +240,6 @@ chordsCoda = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
 
-    d1:7.9- | g:m9 | f:m9 | g:m9 |
-    f1:m9 | g:m9 | s ||
 }
 
 
@@ -273,151 +251,97 @@ chordsSongForFlats = \chordmode {
 }
 
 bellsIntro = \drummode { 
-    timh8 timl8  8 timh16 16  r timl8 16 ~ 8 timh16 16 |
-    timh8 timl16 16  8 timh16 16  r timl8 16 ~ 16 timh8 16 |
-    timh16 8 16  8 16 timl16 ~  16 8 16  8 timh16 16 | 
-    timh8 timl8  8 timh16 16   r timl8 16  8 timh |    
 }
 
 congaIntro = \drummode { 
-    <cgh cgl>8. cgh16  8 cgl8  8 8  4 |
-    <cgh cgl>8. cgh16  8 cgl8  8 8  4 |
-    <cgh cgl>8. cgh16  8 cgl8  8 8  4 |
-    <cgh cgl>8. cgh16  8 cgl8  8 8  4 |
 }
 
 stringsIntro = \relative c''' {
-    s1*4 ||
-    r4 r8 d8 ~ 4. df8 | c2.. f8 | d2.. df8 | c8. cs16 ~ 8 d        
 }
 
 bassIntro = \relative c { 
-    r2 ef8 e f fs ||
-    g8. 16 ~  8 d ~  8 g ~ 16 gf8. | f8. 16 ~  8 c ~  8 f ~ 16 fs8. |
-    g8. 16 ~  8 d ~  8 g ~ 16 gf8. | f8. fs,16 ~  8 g 
 }
 
 
-melodyVerse = \relative c'' { 
+melodyVerseOne = \relative c' { 
     \accidentalStyle default
-    r8 g bf [ c ] ||
-    ef8. af,16 ~ 4  r8 ef'  d [ c ] | d8. g,16 ~ 4  r8 g  bf [ c ] | 
-    d8 ef16 d ~  16 ef8 d16 ~  4  bf8 fs16 a ~ | 16 a8 16 ~  8 g16 a ~  8 g  bf c |
+    d8 e r f ~ 8 a4 8 ~ | 8 d,4 f8 ~ 8 a4 8 ~ | 
+    a8 d,4 f8 ~ 8 a4 8 ~ | 8 c4 d8 ~ 8 c d4 |
 
-    ef8. af,16 ~ 4  r8 ef'  d [ c ] | d8. g,16 ~ 4  r8 g  bf [ c ] | 
-    d8 ef  d16 ef8 d16 ~ 4  bf8 fs | g8 a  bf c16 d ~  8 bf g d |
 
-    fs8. a16 ~  8 g  r bf g [ d ] | fs8. a16 ~  8 g  r4  g8 d |
-    \tuplet 3/2 4 { ef8 f g  a bf c ~ }  16 a8.  bf8 c | d4 4 8.  
+    d,8 e r f ~ 8 a ( g ) a ~ | 8 d,4 f8 ~ 8 a ( g ) a ~ | 
+    a8 d,4 f8 ~ 8 a4 8 ~ | 8 c4 d8 ~ 8 c d4 |
+
+    r8 f r e ~ 8 c4 a8 ~ | 8 f'4 e8 ~ 8 c4 a8 ~ | 
+    a8 4 8 ~ 8 g a8 8 | r c r d  r c d4 |  
+
+    r8 <f' d> r <e c>  r <c a > ( <bf g> ) <a f> | 
+    r8 <f' d> r <e c>  r <c a > ( <bf g> ) <a f> | 
+
+    r8 f,4 e8 ~ 8 d4. 8 | f8 4 d16( f  c d a c f4 ) |  
 }
+
+melodyVerseTwo = \relative c' { 
+    \accidentalStyle default
+    d8 e r f ~ 8 a4 8 ~ | 8 d,4 f8 ~ 8 a4 8 ~ | 
+    a8 d,4 f8 ~ 8 a4 8 ~ | 8 c8 8 d8 ~ 8 c d16( c d8 ) |
+
+    r8 a4 g8 ~  8 f4 8|  
+
+    d,8 e r f ~ 8 a ( g ) a ~ | 8 d,4 f8 ~ 8 a ( g ) a ~ | 
+    a8 d,4 f8 ~ 8 a4 8 ~ | 8 c4 d8 ~ 8 c d4 |
+
+    r8 f r e ~ 8 c4 a8 ~ | 8 f'4 e8 ~ 8 c4 a8 ~ | 
+    a8 4 8 ~ 8 g a8 8 | r c r d  r c d4 |  
+
+    r8 <f' d> r <e c>  r <c a > ( <bf g> ) <a f> | 
+    r8 <f' d> r <e c>  r <c a > ( <bf g> ) <a f> | 
+
+    r8 f,4 e8 ~ 8 d4. 8 | f8 4 d16( f  c d a c f4 ) |  
+    
+}
+
+
 
 bassVerse = \relative c, { 
-    f4 4 bf d | ef4  8 bf  ef8. 16  bf8 d | 
-    a4 4 d4 4 | g,4 4 4 4 |
-
-    f4 4 bf d | ef8. 16 ~  8 bf  ef4 bf | 
-    a8. 16  8 ef' d4  a | g4  8 8  4  d' | 
-
-    c8. bf16 ~  8 g  r2 | c8. d16 ~ 8 g, r2 | 
-    c2 d | g4 fs f4. r8  |    
 }
 
-melodyChorus = \relative c'' { 
-    c16 ~ 8 d ||
-    ef8. af,16 ~  4  r8 ef'  d [ c ] | d8. g,16 ~  4  r4  r8 g | 
-    \tuplet 3/2 2 { af4 bf c  ef d c } | d8. g,16 ~  4  r8 d'4 c8 |
-
-    ef8. af,16 ~  4  r8 ef'  d [ c ] | d4. c8 ~ 2 | 
-    \tuplet 3/2 2 { ef4 d ef  d c d } | c8. bf16 ~ 8 c  d bf  c d |
-
-    ef4. c8 ~ 2 | r r8 g fs [ ef ] |
+melodyChorus = \relative c'' {
+    d4 r r2 | r a8 g f g | g4 ( f ) r2 | f4 r f r | 
+    d4 r r2 | r a8 g f g | a'1 ~ | 2. r4 | 
 }
 
 bassChorus = \relative c, { 
-    f8. 16  8 af  bf4  d | ef4  bf  ef8 8  bf4 |
-    f8. 16 ~  8 af  bf4  c8 d | ef4  bf   r8 c4. |
-
-    f,8. 16 ~  8 af  bf4  c8 d | c8. 16 ~  8 8 ~ 2 |
-    f,4  4   bf8. 16  r4 | g8. 16 ~  8 8  c8. 16 ~ 8 af |
-    f8 16 16  8 bf  c8 8  bf c | d1 |
 }
 
 melodyBridgeOne = \relative c' { 
-    d2 s | s1 | s1 |
 }
 
 bgVocalBridgeOne = \relative c'' { 
-    a4. 8 ~ 2 ~ | 4  r  g8. 16 ~  8 gs | 
-    a4. 8 ~ 2 |
 }
 
 melodyFirstEnding = \relative c'' { 
-    \override Staff.NoteHead.style = #'diamond  
-    g8. gs16 ~  8 a  
-        \revert Staff.NoteHead.style
-        r  g bf [ c ] ||
 }
 
 bassBridgeOne = \relative c { 
-    g8. g'16 ~  8  d  r8 g, ~  16 gf8. | f8. f'16 ~  8 c  r f, ~  16 fs8. |
-    g8. g'16 ~  8  d  r8 g, ~  16 gf8. | f8. fs'16 ~  8 g  r2 ||       
-        f,8. f'16 ~  8 c  r f, ~  16 fs8. |
 }
 
 melodyVerseTwo = \relative c'' { 
-    \accidentalStyle default
-    ef8. af,16 ~ 4  r8 ef'  d [ c ] | d8. g,16 ~ 4  r8 g  bf [ c ] | 
-    d8 ef  d16 ef8 d16  ~  4  bf8 fs16 | a8 g16 a ~  8 g16 a ~   8 g  bf c |
-
-    ef8. af,16 ~ 4  r8 ef'  d [ c ] | d8. g,16 ~ 4  r8 g  bf c | 
-    d8 ef  d16 ef8 d16 ~ 4  bf8 fs | g8 a16 bf ~  8 c16 d ~   8 bf  g d |
-
-     fs8. a16 ~  8 g  r bf g [ d ] | fs8. a16 ~  8 g  r4  g8 d |
-    \tuplet 3/2 4 { ef8 f g  a bf c ~ }  16 a8.  bf8 c | d4 4 4 
 }
 
 bgVocalSecondEnding = \relative c'' { 
-    R1 ||
 }
 
 melodyBridge = \relative c'' { 
-    a4. 8 ~ 2 ~ | 2 \tuplet 3/2 { a4 bf b } |
-    c4. 8 ~ 2 ~ | 2 \tuplet 3/2 { c4 cs d } |
-    ef4. 8 ~ 2 ~ | 2 \tuplet 3/2 { ef4 d df } |
-    c4. 8 ~ 2 ~ | 2 \tuplet 3/2 { c4 b bf } |
-    a1 | gs |
 }
 
 melodyDs = \relative c'' { 
-    R1*3 | r2 r8 g bf [ c ]
 }
-
 
 hornsBridge = \relative c''' { 
-    af2\rest  bf8\rest d,16 16   16 8 a'16  | bf16\rest a8 g16  d2. | 
-    af'2\rest  bf8\rest f16 16   16 8 c'16  | bf16\rest bf c8 ~ 2. | 
-    af2\rest  bf8\rest af16 16   16 8 ef'16  | ef16\rest ef8 df16  af2. | 
-    af2\rest  bf8\rest c  g' [ f ]  | c2 ~  8. b16 ~ 8 bf | 
-    a4. 8  f' d  bf a | gs4 e' cs2 |  
 }
 
-
 bassBridge = \relative c { 
-    g8. g'16  a,8 a'  g16 a bf8  d,8 f |
-    g,8. g'16  a,8 a'  a16 16 g a  bf8 d, | 
-
-    bf4  4  8 bf'  af bf | bf,4  8 f'  bf8. b16 ~  8 c |
-
-    df,8. df'16  ef df af8  df16 16 8  cf, df |       
-    df8. df'16  ef8 af,  df8. c16 ~  8 b |
-
-    bf,8. bf'16  af,8 bf8  8 bf'  f, af | 
-    bf8. bf'16  af,8 bf8  8. a16 ~  8 af | 
-
-    g1 | fs2. f'4 \glissando ||
-           
-    g,8. g'16 ~  8  d  r8 g, ~  16 gf8. | f8. f'16 ~  8 c  r f, ~  16 fs8. |
-    g8. g'16 ~  8  d  r8 g, ~  16 gf8. | f8. fs'16 ~  8 g  r2 ||
 }
 
 
