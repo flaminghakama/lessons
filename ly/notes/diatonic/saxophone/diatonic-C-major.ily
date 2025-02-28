@@ -15,7 +15,7 @@ articulationExerciseScale = \relative c' {
     f16 16 16 16 
     e16 16 16 16
     d16 16 16 16
-    c16 16 16 16 | \noBreak
+    c16 8 16 | \noBreak
     c1 
 }
 
