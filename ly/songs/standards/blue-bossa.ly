@@ -1,36 +1,33 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "Blue"
 titleRight = "Bossa"
-title = "Blue Bossa"
+titleFull = "Blue Bossa"
 composerName = "K. Dorham"
 lyricistName = "J. Cartwright"
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+arranger = ""
+copyright = ""
 
 %{
 
-killPreview ; rm blue-bossa*pdf ; lilypond ly/songs/standards/blue-bossa*.ly ; for file in blue-bossa*pdf ; do open -a Preview $file ; done
+killPreview ; rm blue-bossa*pdf ; lilypond ly/songs/standards/blue-bossa.ly ; for file in blue-bossa*pdf ; do op $file ; done 
 
 killPreview
-rm blue-bossa*pdf
-lilypond ly/songs/standards/blue-bossa*.ly
-mv blue-bossa*.pdf pdf/songs/standards
-for file in pdf/songs/standards/blue-bossa*pdf ; do open -a Preview $file ; done
+rm pdf/songs/standards/blue-bossa*
+lilypond ly/songs/standards/blue-bossa.ly 
+mv blue-bossa*pdf pdf/songs/standards
+for file in pdf/songs/standards/blue-bossa*pdf ; do op $file ; done 
 
-./bin/createIndexes.sh
-git add . ; git commit -m"fixing octave for Eb solos, tweaking rehearsal mark layout" ; git push 
+git add . ; git commit -m"fixing lyric" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
-\paper {
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
-  top-margin = #2
-  right-margin = #14
+\paper {
 
   % First page spacing after header
   markup-system-spacing.padding = #0
@@ -39,15 +36,15 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   top-system-spacing.minimum-distance = #18
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+  system-system-spacing.padding = #0
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #20
+  score-system-spacing.minimum-distance = #13
 
   page-breaking = #ly:minimal-breaking
 
-  ragged-right = ##f
   ragged-bottom = ##f
+  ragged-right = ##f
   ragged-last-bottom = ##f
 
   #(define fonts
@@ -63,24 +60,24 @@ structureFirst = \relative c' {
     \key c \minor
     \partial 4 s4
     \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark #'extra-offset = #'( 0 . 2 )
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 2 )
     \startSectionNoBarline "Head"
-    \bar "[|:"
+    \bar "[|:-|"
     s1*4 \break
     s1*4 \break
     s1*4 
 }
 structureMiddle = \relative c' { 
-    \override Staff.TimeSignature #'stencil = ##f  
+    \override Staff.TimeSignature.stencil = ##f  
     \key c \minor
     s1*4 \break
     \bar ":|][|:"
 }
 structureLast = \relative c' { 
-    \override Staff.TimeSignature #'stencil = ##f  
+    \override Staff.TimeSignature.stencil = ##f  
     \key c \minor
     \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark #'extra-offset = #'( 0 . 2 )
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 2 )
     \startSectionNoBarline "Solos"
     \bar ":|][|:"
     s1*4 \break
@@ -134,6 +131,12 @@ solos = \relative c''' {
     f'2 ~ 8 d a bf ~ | 2 ~ 8 af fs g ~ | 2 ~ 8 f d ef ~ | 1 |
     ef'2 ~ 8 c g af ~ | 2 ~ 8 gf e f ~ | 2 ~ 8 ef c df ~ | 1 |
     g2. f8 bf ~ | 2 ~ 8 g f g ~ | 1 ~ | 1 ||
+}
+solosForBbLow = \relative c''' { 
+    g2 ~ 8 ef b c ~ | 2 ~ 8 bf a af ~ | 2 ~ 8 g e f ~ | 1 |
+    f'2 ~ 8 d a bf ~ | 2 ~ 8 af fs g ~ | 2 ~ 8 f d ef ~ | 1 |
+    ef'2 ~ 8 c g af ~ | 2 ~ 8 gf e f ~ | 2 ~ 8 ef' c df ~ | 1 |
+    g,2. f8 bf ~ | 2 ~ 8 g f g ~ | 1 ~ | 1 ||
 }
 
 lyricsHeadOneFirst = \lyricmode {
@@ -329,6 +332,89 @@ lyricsHeadThree = \lyricmode {
                 <<
                     \structureLast 
                     \solos
+                >> 
+            }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 0.25\cm
+        }
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "for-Bb-low"
+    \header {
+        subtitle = ""
+        poet = "Bb Lead Sheet"
+    }
+    \score {
+        \transpose bf c <<
+            \new ChordNames \transpose c c {
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsFirst
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff    
+                \new Voice = "lead" <<
+                    \structureFirst 
+                    \melodyFirst
+                >>
+                \noPageBreak
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadOneFirst } 
+            % }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadThree } 
+            % }
+        >>
+    }
+    \score {
+        \transpose bf c <<
+            \new ChordNames \transpose c c  { 
+                \chordsMiddle 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \new Voice = "lead" <<
+                        \structureMiddle
+                        \melodyMiddle
+                    >> \\
+                    \new Voice = "harmony" \voiceTwo <<
+                        % \harmony
+                    >>
+                >>
+                \noPageBreak
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadOneMiddle } 
+            % }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 0.25\cm
+        }
+   }
+    \score {
+        \transpose bf c <<
+            \new ChordNames \transpose c c {
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsLast
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structureLast 
+                    \solosForBbLow
                 >> 
             }
         >>
