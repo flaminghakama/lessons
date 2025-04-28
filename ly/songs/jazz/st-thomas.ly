@@ -109,6 +109,62 @@ structure = \relative c' {
     \bar ":|]"
 }
 
+
+drumsKick = \relative c' { 
+    c4 r2. |
+}
+drumsTom = \relative c' { 
+    r4 r8 e r e r e | 
+}
+drumsHat = \relative c' { 
+    r4 b r b | 
+}
+drumsSnare = \relative c' { 
+    r8 c8 4 r2 |
+}
+
+
+structureTranscription = \relative c' { 
+
+    \key c \major
+    \tempo 4=210
+    \time 4/4
+    \startSectionNoBarline "Drums"
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+
+
+    \startSectionNoBarline "Head"
+    \bar "[|:"
+    \repeat volta 2 { 
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+        s1*4 \break
+    }
+    \startSectionNoBarline "Solo"
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+
+    \startSectionNoBarline ""
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+
+    \startSectionNoBarline ""
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+    s1*4 \break
+}
+
+
+
 rehearsalMarkTweaksForC = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -155,10 +211,10 @@ chordsFormForFlats= \chordmode {
 
 melody = \relative c'' { 
     \accidentalStyle default
-    r8 g r c r b r a | g4 a e f | g c b c | R1 | 
+    r4 g8 c r b r a | g4 a e f | g c b c | R1 | 
     r8 g r c r b r a | g4 a e f | g c b c | R1 | 
     e2 f4. g8 | R1 | f2 e4. d8 | R1 | 
-    e2 d | c4. a8 ~ 2 | g4 c b c R1 ||
+    e2 d | c4. a8 ~ 4 r | g4 c b c R1 ||
 
     <>\xmf
     \comp #16

@@ -286,10 +286,8 @@ melodyVerseTwo = \relative c' {
     d8 e r f ~ 8 a4 8 ~ | 8 d,4 f8 ~ 8 a4 8 ~ | 
     a8 d,4 f8 ~ 8 a4 8 ~ | 8 c8 8 d8 ~ 8 c d16( c d8 ) |
 
-    r8 a4 g8 ~  8 f4 8|  
-
-    d,8 e r f ~ 8 a ( g ) a ~ | 8 d,4 f8 ~ 8 a ( g ) a ~ | 
-    a8 d,4 f8 ~ 8 a4 8 ~ | 8 c4 d8 ~ 8 c d4 |
+    r8 a4 g8 ~  8 f4 8 | r8 a4 g8 ~  8 f4 g8 ~ |  
+    g8 a4 g8 ~ 8 f4 a8 ~ | 8 f4 a8 ~ 2 |
 
     r8 f r e ~ 8 c4 a8 ~ | 8 f'4 e8 ~ 8 c4 a8 ~ | 
     a8 4 8 ~ 8 g a8 8 | r c r d  r c d4 |  
