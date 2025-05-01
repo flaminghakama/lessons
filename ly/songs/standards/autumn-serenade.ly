@@ -90,7 +90,7 @@ rehearsalMarkTweaksForC = \relative c' {
 
     s2
 
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -1 . 0 )
     % "A"
     s1*4
     s1*4
@@ -99,7 +99,7 @@ rehearsalMarkTweaksForC = \relative c' {
     s1*4
     s1*4
 
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -4 . -1 )
     % "B"
 }
 
@@ -117,17 +117,15 @@ chordsSong = \chordmode {
     %\set noChordSymbol = ##t
     c2:aug7
 
-    f1:m7.7+ | s | bf:9 | s2 c:aug7 |
-    f1:m7.7+ | s | bf:9 | g:m | 
-    c1:9 | g2:m7 c:7 | f1:6 | d2:dim f | 
-    a2:m7.5- d:7.9- | d:m7.5- g:7.9+ | g1:m | c2:7 c:aug7 ||
+    f1:m7.7+ | s | bf:9 | c:aug7 |
+    f1:m7.7+ | s | bf:9 | g:m6 | 
+    g1:7 | c:7 | f1:6 | d2:dim7 f | 
+    a2:m7.5- d:7.9- | d:m7.5- g:7.9+ | g1:m | c:aug7 ||
 
-    f1:m7.7+ | s | bf:9 | s2 c:aug7 |
-    f1:m7.7+ | s | bf:9 | g:m | 
-    c1:9 | g2:m7 c:7 | f2:6 a:m7 | d1:9 | 
+    f1:m7.7+ | s | bf:9 | c:aug7 |
+    f1:m7.7+ | s | bf:9 | g:m6 | 
+    g1:7 | c:7 | f2:6 a:m7 | d1:9 | 
     d2:m7 g:13 | bf:m7 c:9 | f1 | s ||
-
-
 }
 
 melodyCommon = \relative c'' { 
