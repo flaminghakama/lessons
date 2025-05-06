@@ -1,21 +1,15 @@
-\version "2.22.0"
+\version "2.24.0"
 
 titleLeft = "Birks'"
 titleRight = "Works"
-title = "Birks' Works"
+titleFull = "Birks' Works"
 composerName = "J. B. 'D.' Gillespie"
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+arranger = ""
+copyright = ""
 
 %{
 
-killPreview
-
-rm birks-works*pdf ; lilypond ly/songs/jazz/birks-works.ly ; for file in birks-works*pdf ; do open -a Preview $file ; done
-
+killPreview ; rm birks-works*pdf ; lilypond ly/songs/jazz/birks-works.ly ; for file in birks-works*pdf ; do open -a Preview $file ; done
 
 rm birks-works*pdf
 lilypond ly/songs/jazz/birks-works.ly
@@ -27,6 +21,9 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -34,20 +31,19 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #5
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #24
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+  system-system-spacing.padding = #4
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #13
+  score-system-spacing.minimum-distance = #0
 
   page-breaking = #ly:minimal-breaking
 
-  ragged-right = ##f
   ragged-bottom = ##t
   ragged-last-bottom = ##t
 
@@ -64,7 +60,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
 
     \override Beam.damping = #2.75 
     \override Stem.length-fraction = #(magstep 1.2)
@@ -74,7 +70,7 @@ structure = \relative c' {
 
     \partial 4.
     s4. 
-    \bar "[|:"
+    \bar "[|:-|"
     s1*4 \break 
     s1*4 \break 
     s1*4 \break 
@@ -229,6 +225,31 @@ melodySimplifiedForFlats = \relative c' {
     }
     \score {
         \transpose ef c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSong
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melodySimplified
+                    \noPageBreak
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "simplified-in-C-for-Eb"
+    \header {
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(Dizzy's big band key - simplified)"
+    }
+    \score {
+        \transpose f c \transpose ef, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong
