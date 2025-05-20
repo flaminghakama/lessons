@@ -119,9 +119,11 @@
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose c g { 
                     \grandArpeggioMajorChords 
+                    \grandArpeggioMajorChords 
                 }
                 \new Staff \transpose c g { 
                     \include "ly/ily/staff-properties.ily"
+                    \transpose c c, \grandArpeggioMajor
                     \grandArpeggioMajorTwo
                     \noPageBreak
                 }

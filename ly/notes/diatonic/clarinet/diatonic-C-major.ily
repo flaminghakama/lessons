@@ -28,18 +28,18 @@ syncopationExerciseScale = \relative c' {
     g16 8 16 
     a16 8 16 
     b16 8 16 |
+    d16 c8 a16 
     c16 b8 g16 
     b16 a8 f16 
-    a16 g8 e16 
-    g16 f8 d16 |
+    a16 g8 e16 | 
+    g16 f8 d16 
     f16 e8 c16  
     e16 d8 b16 
-    d16 c8 b16 
     c4
 }
 
 scaleInThirdsMajorNotes = \relative c' { 
-        r4 c8 e  d f e g | f a g b  a c b d | c a b g  a f g e | f d c2. | 
+    c8 e d f  e g f a | g b a c  b d c4 | d8 b c a  b g a f  | g e f d c4 r4 | 
 }
 
 tonicArpeggioChords = \chordmode { 
