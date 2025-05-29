@@ -161,20 +161,20 @@ chordsForm = \chordmode {
 
     s4
 
-    ef2.:m | e:maj7 | ef2.:m | e:maj7 | 
-    ef2.:m | e:maj7 | ef2.:m7.7+ | e:maj9 | 
-    ef2.:m | e:maj7 | ef2.:m | df:7 | 
-    b2.:maj7.11+ | bf:7 | ef:m9 | bf:7 || bf:7 ||
+    ef2.:m9 | e:maj9 | ef2.:m9 | e:maj9 | 
+    ef2.:m9 | e:maj9 | ef2.:m7.7+ | e:maj9 | 
+    ef2.:m9 | e:maj9 | ef2.:m9 | df:7 | 
+    b2.:maj9 | bf:7 | ef:m9 | bf:7 || bf:7 ||
 
     bf2.:m7 | ef:7 | bf2.:m7 | ef:7 | 
     af2. | bf4.:m7 ef:7 | af2. | s | 
     c2.:m7.11 | s | s | f:7 |
     bf2.:7.8+.9+ | s | bf:13 | bf:aug7 |
 
-    ef2.:m | e:maj7 | ef2.:m | e:maj7 | 
-    ef2.:m | e:maj7 | ef2.:m7.7+ | e:maj9 | 
-    ef2.:m | e:maj7 | ef2.:m | df:7 | 
-    b2.:maj7.11+ | bf:7 | ef:m9 | bf:7 ||
+    ef2.:m9 | e:maj9 | ef2.:m9 | e:maj9 | 
+    ef2.:m9 | e:maj9 | ef2.:m7.7+ | e:maj9 | 
+    ef2.:m9 | e:maj9 | ef2.:m9 | df:7 | 
+    b2.:maj9 | bf:7 | ef:m9 | bf:7 ||
 }
 chordsFormForFlats = \chordmode { 
     \set chordChanges = ##f 
@@ -183,26 +183,26 @@ chordsFormForFlats = \chordmode {
 
     s4
 
-    ef2.:m | ff:maj7 | ef2.:m | ff:maj7 | 
-    ef2.:m | ff:maj7 | ef2.:m7.7+ | ff:maj9 | 
-    ef2.:m | ff:maj7 | ef2.:m | df:7 | 
-    cf2.:maj7.11+ | bf:7 | ef:m9 | bf:7 || bf:7 ||
+    ef2.:m9 | ff:maj9 | ef2.:m9 | ff:maj9 | 
+    ef2.:m9 | ff:maj9 | ef2.:m7.7+ | ff:maj9 | 
+    ef2.:m9 | ff:maj9 | ef2.:m9 | df:7 | 
+    cf2.:maj9 | bf:7 | ef:m9 | bf:7 || bf:7 ||
 
     bf2.:m7 | ef:7 | bf2.:m7 | ef:7 | 
     af2. | bf4.:m7 ef:7 | af2. | s | 
     c2.:m7.11 | s | s | f:7 |
     bf2.:7.8+.9+ | s | bf:13 | bf:aug7 |
 
-    ef2.:m | ff:maj7 | ef2.:m | ff:maj7 | 
-    ef2.:m | ff:maj7 | ef2.:m7.7+ | ff:maj9 | 
-    ef2.:m | ff:maj7 | ef2.:m | df:7 | 
-    cf2.:maj7.11+ | bf:7 | ef:m9 | bf:7 ||
+    ef2.:m9 | ff:maj9 | ef2.:m9 | ff:maj9 | 
+    ef2.:m9 | ff:maj9 | ef2.:m7.7+ | ff:maj9 | 
+    ef2.:m9 | ff:maj9 | ef2.:m9 | df:7 | 
+    cf2.:maj9 | bf:7 | ef:m9 | bf:7 ||
 }
 
 melodyACommon = \relative c'' { 
     \tuplet 3/2 { r8 a ( bf ) } ||
     ef4. bf8 \tuplet 3/2 { gf8 ( af bf ) } | cf8 af  r4  \tuplet 3/2 { r8 gf ( af ) } |
-    bf2 \tuplet 3/2 { gf8 ( af a ) } | af8 e ~ 4. d8 | 
+    bf2 \tuplet 3/2 { gf8 ( af bff ) } | af8 e ~ 4. d8 | 
     d8 ef bf2 ~ | 2 r4 |
     \tuplet 3/2 { bf'8 ( ef df ) } \grace { b8 ( } af2 ~ | 2 ) r8 bf | 
 
