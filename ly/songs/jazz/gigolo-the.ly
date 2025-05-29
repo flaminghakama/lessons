@@ -162,7 +162,7 @@ chordsForm = \chordmode {
     s4
 
     ef2.:m | e:maj7 | ef2.:m | e:maj7 | 
-    ef2.:m | e:maj7 | ef2.:m7.7+ | e:maj7.9 | 
+    ef2.:m | e:maj7 | ef2.:m7.7+ | e:maj9 | 
     ef2.:m | e:maj7 | ef2.:m | df:7 | 
     b2.:maj7.11+ | bf:7 | ef:m9 | bf:7 || bf:7 ||
 
@@ -172,7 +172,7 @@ chordsForm = \chordmode {
     bf2.:7.8+.9+ | s | bf:13 | bf:aug7 |
 
     ef2.:m | e:maj7 | ef2.:m | e:maj7 | 
-    ef2.:m | e:maj7 | ef2.:m7.7+ | e:maj7.9 | 
+    ef2.:m | e:maj7 | ef2.:m7.7+ | e:maj9 | 
     ef2.:m | e:maj7 | ef2.:m | df:7 | 
     b2.:maj7.11+ | bf:7 | ef:m9 | bf:7 ||
 }
@@ -184,7 +184,7 @@ chordsFormForFlats = \chordmode {
     s4
 
     ef2.:m | ff:maj7 | ef2.:m | ff:maj7 | 
-    ef2.:m | ff:maj7 | ef2.:m7.7+ | ff:maj7.0 | 
+    ef2.:m | ff:maj7 | ef2.:m7.7+ | ff:maj9 | 
     ef2.:m | ff:maj7 | ef2.:m | df:7 | 
     cf2.:maj7.11+ | bf:7 | ef:m9 | bf:7 || bf:7 ||
 
@@ -194,7 +194,7 @@ chordsFormForFlats = \chordmode {
     bf2.:7.8+.9+ | s | bf:13 | bf:aug7 |
 
     ef2.:m | ff:maj7 | ef2.:m | ff:maj7 | 
-    ef2.:m | ff:maj7 | ef2.:m7.7+ | ff:maj7.9 | 
+    ef2.:m | ff:maj7 | ef2.:m7.7+ | ff:maj9 | 
     ef2.:m | ff:maj7 | ef2.:m | df:7 | 
     cf2.:maj7.11+ | bf:7 | ef:m9 | bf:7 ||
 }
