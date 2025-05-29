@@ -88,7 +88,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 structure = \relative c' { 
 
     \key ef \minor
-    \tempo 4=176
+    \tempo 4=156
     \time 3/4
 
 
@@ -126,7 +126,7 @@ rehearsalMarkTweaksForC = \relative c' {
 
     s4
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -3 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
     % "A"
     s2.*4 \break 
     s2.*6 \break
@@ -162,19 +162,19 @@ chordsForm = \chordmode {
     s4
 
     ef2.:m | e:maj7 | ef2.:m | e:maj7 | 
-    ef2.:m | e:maj7 | ef2.:m | e:maj7 | 
+    ef2.:m | e:maj7 | ef2.:m7.7+ | e:maj7.9 | 
     ef2.:m | e:maj7 | ef2.:m | df:7 | 
-    b2.:7 | bf:7 | ef:m9 | s || s ||
+    b2.:maj7.11+ | bf:7 | ef:m9 | bf:7 || bf:7 ||
 
     bf2.:m7 | ef:7 | bf2.:m7 | ef:7 | 
     af2. | bf4.:m7 ef:7 | af2. | s | 
     c2.:m7.11 | s | s | f:7 |
-    bf2.:7 | s | s | s |
+    bf2.:7.8+.9+ | s | bf:13 | bf:aug7 |
 
     ef2.:m | e:maj7 | ef2.:m | e:maj7 | 
-    ef2.:m | e:maj7 | ef2.:m | e:maj7 | 
+    ef2.:m | e:maj7 | ef2.:m7.7+ | e:maj7.9 | 
     ef2.:m | e:maj7 | ef2.:m | df:7 | 
-    b2.:7 | bf:7 | ef:m9 | s ||
+    b2.:maj7.11+ | bf:7 | ef:m9 | bf:7 ||
 }
 chordsFormForFlats = \chordmode { 
     \set chordChanges = ##f 
@@ -184,27 +184,19 @@ chordsFormForFlats = \chordmode {
     s4
 
     ef2.:m | ff:maj7 | ef2.:m | ff:maj7 | 
-    ef2.:m | ff:maj7 | ef2.:m | ff:maj7 | 
+    ef2.:m | ff:maj7 | ef2.:m7.7+ | ff:maj7.0 | 
     ef2.:m | ff:maj7 | ef2.:m | df:7 | 
-    cf2.:7 | bf:7 | ef:m9 | s || s ||
+    cf2.:maj7.11+ | bf:7 | ef:m9 | bf:7 || bf:7 ||
 
     bf2.:m7 | ef:7 | bf2.:m7 | ef:7 | 
     af2. | bf4.:m7 ef:7 | af2. | s | 
     c2.:m7.11 | s | s | f:7 |
-    bf2.:7 | s | s | s |
+    bf2.:7.8+.9+ | s | bf:13 | bf:aug7 |
 
     ef2.:m | ff:maj7 | ef2.:m | ff:maj7 | 
-    ef2.:m | ff:maj7 | ef2.:m | ff:maj7 | 
+    ef2.:m | ff:maj7 | ef2.:m7.7+ | ff:maj7.9 | 
     ef2.:m | ff:maj7 | ef2.:m | df:7 | 
-    cf2.:7 | bf:7 | ef:m9 | s ||
-}
-
-melodyLick = \relative c'' { 
-    d4 || f,8 bf  \tuplet 3/2 { c16 [ df c } bf8 ] c df |
-}
-melodyEndingLick = \relative c'' {
-    r8 c ~  \tuplet 3/2 { c16 [ df c } bf8 ] c8 bf ~ | 
-    \tuplet 3/2 { bf16 [ c bf } g8 ] bf4 
+    cf2.:maj7.11+ | bf:7 | ef:m9 | bf:7 ||
 }
 
 melodyACommon = \relative c'' { 
@@ -242,15 +234,15 @@ melodyB = \relative c' {
     ef8 f r4 r8 df | cf8. f16 ef2 | 
     df8 ef r4 \tuplet 3/2 { r8 bf ( af ) } | g4 ef'8 df4 bf8 | 
     c4 df8 ef4 f8 | g4 af8 bf4 g8 | 
-    \tuplet 3/2 { af8 g f ~ } 4. d8 | ef2. |
+    \tuplet 3/2 { af8 g f ~ } 4. d8 | ef2 r4 |
     f8 g r4 r8 ef | d g f2 | 
-    ef8 f r4 r8 bf, | a2. |
-    bf'8 cf r4 r8 af | bf ef df4. cf16 df | 
+    ef8 f r4 r8 bf, | a2 r4 |
+    bf'8 cf r4 r8 a | bf ef df4. cf16 df | 
     bf2. ~ | 2
 }
 
 melodyALast = \relative c'' { 
-    f8 ~ | f2. ||
+    f8 ~ | 2. ||
 }
 
 melody = {
@@ -267,6 +259,68 @@ melodyForFlats = {
     \melodyB  
     \melodyACommonForFlats
     \melodyALast
+}
+
+ harmonyACommon = \relative c'' { 
+    \tuplet 3/2 { r8 a ( bf ) } ||
+    bf4. gf8 \tuplet 3/2 { ef4 ( gf8 ) } | gs8 e  r4  \tuplet 3/2 { r8 fs ( gs ) } |
+    gf2 \tuplet 3/2 { ef4 gf8 } | e8 b ~ 4.  bf8 | 
+    bf4 gf2 ~ | 2 r4 |
+    gf'4  d2 ( | e2 ) r8 bf' | 
+
+    bf4. gf8 \tuplet 3/2 { ef4 ( gf8 ) } | af8 bf  r4  \tuplet 3/2 { r8 bf ( d ) } |
+    d8 ef bf2 | df4 af2 | 
+    bf4 gf2 | bf4 d8 bf r4 |  
+    bf8 f r bf r  
+}
+harmonyAEndings = \relative c'' { 
+    d8 ~ 2 r8 b || d2\repeatTie r4 ||  
+}
+harmonyACommonForFlats = \relative c'' { 
+    \tuplet 3/2 { r8 a ( bf ) } ||
+    bf4. gf8 \tuplet 3/2 { ef4 ( gf8 ) } | af8 ff  r4  \tuplet 3/2 { r8 gf ( af ) } |
+    gf2 \tuplet 3/2 { ef4 gf8 } | ff8 cf ~ 4.  bf8 | 
+    bf4 gf2 ~ | 2 r4 |
+    gf'4  d2 ( | ff2 ) r8 bf | 
+
+    bf4. gf8 \tuplet 3/2 { ef4 ( gf8 ) } | af8 bf  r4  \tuplet 3/2 { r8 bf ( d ) } |
+    d8 ef bf2 | df4 af2 | 
+    bf4 gf2 | bf4 d8 bf r4 |  
+    bf8 f r bf r  
+}
+harmonyAEndingsForFlats = \relative c'' { 
+    d8 ~ 2 r8 cf? || d2\repeatTie r4 ||  
+}
+
+harmonyB = \relative c' { 
+    c8 df r4 r8 bf | af8. df16 c2 | 
+    bf8 c r4 \tuplet 3/2 { r8 g ( f ) } | ef4 c'8 bf4 g8 | 
+    af4 bf8 c4 df8 | ef4 f8 g4 ef8 | 
+    \tuplet 3/2 { f8 ef df ~ } 4. bf8 | c2 r4 |
+    d8 ef r4 r8 c | bf ef d2 | 
+    c8 d r4 r8 g, | f2 r4 |
+    ef'8 f r4 r8 e | f bf af4. r8 | 
+    g2. ( | fs2 ) 
+}
+
+harmonyALast = \relative c'' { 
+    d8 ~ | 2. ||
+}
+
+harmony = {
+    \harmonyACommon
+    \harmonyAEndings
+    \harmonyB  
+    \harmonyACommon
+    \harmonyALast
+}
+
+harmonyForFlats = {
+    \harmonyACommonForFlats
+    \harmonyAEndingsForFlats
+    \harmonyB  
+    \harmonyACommonForFlats
+    \harmonyALast
 }
 
 \book {
@@ -376,6 +430,118 @@ melodyForFlats = {
         }
     }
 }
+
+\book {
+  \bookOutputSuffix "harmony-for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Concert Harmony"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose c, c <<
+            \new ChordNames { 
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                \chordsForm
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \accidentalStyle modern-cautionary
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \harmony
+                    \noPageBreak
+                >>
+            }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "harmony-for-Bb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Bb Harmony"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose bf,, c <<
+            \new ChordNames { 
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                \chordsFormForFlats
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \accidentalStyle modern-cautionary
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \harmonyForFlats
+                    \noPageBreak
+                >>
+            }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 1.25\cm
+        }
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "harmony-for-Eb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Eb Harmony"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames { 
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                \chordsFormForFlats
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \accidentalStyle modern-cautionary
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \harmonyForFlats
+                    \noPageBreak
+                >>
+            }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 1.25\cm
+        }
+    }
+}
+
+
+
 
 
 
