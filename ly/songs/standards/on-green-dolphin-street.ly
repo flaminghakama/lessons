@@ -1,37 +1,31 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "On Green"
 titleRight = "Dolphin St."
-title = "On Green Dolphin St."
-composerName = "Kaper/Washington"
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+titleFull = "On Green Dolphin St."
+composerName = "B. Kaper"
+lyricistName = "N. Washington"
+arranger = ""
+copyright = ""
 
 %{
 
-killPreview
-rm on-green-dolphin-street*pdf
-lilypond ly/songs/standards/on-green-dolphin-street.ly
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-C.pdf on-green-dolphin-street-for-Bb.pdf on-green-dolphin-street-for-C-and-Bb.pdf
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-C.pdf on-green-dolphin-street-for-Eb.pdf on-green-dolphin-street-for-C-and-Eb.pdf
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-Bb.pdf on-green-dolphin-street-for-Eb.pdf on-green-dolphin-street-for-Bb-and-Eb.pdf
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-C.pdf on-green-dolphin-street-worksheet-for-C.pdf on-green-dolphin-street-and-worksheet-for-C.pdf
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-Bb.pdf on-green-dolphin-street-worksheet-for-Bb.pdf on-green-dolphin-street-and-worksheet-for-Bb.pdf
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-for-Eb.pdf on-green-dolphin-street-worksheet-for-Eb.pdf on-green-dolphin-street-and-worksheet-for-Eb.pdf
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-C.pdf on-green-dolphin-street-worksheet-for-C.pdf on-green-dolphin-street-worksheet-for-C-double.pdf
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-Bb.pdf on-green-dolphin-street-worksheet-for-Bb.pdf on-green-dolphin-street-worksheet-for-Bb-double.pdf
-python ~/git/part-format/combine-1Page-1Page.py on-green-dolphin-street-worksheet-for-Eb.pdf on-green-dolphin-street-worksheet-for-Eb.pdf on-green-dolphin-street-worksheet-for-Eb-double.pdf
-mv on-green-dolphin-street-worksheet*.pdf pdf/songs/standards/printable
-mv on-green-dolphin-street*and*.pdf pdf/songs/standards/printable
-mv on-green*.pdf pdf/songs/standards
-for file in pdf/songs/standards/on-green-dolphin-street*pdf pdf/songs/standards/on-green-dolphin-street*pdf; do open -a Preview $file ; done
+killPreview ; rm on-green-dolphin-street*pdf ; lilypond ly/songs/standards/on-green-dolphin-street.ly ; for file in on-green-dolphin-street*pdf ; do op $file ; done 
 
+killPreview
+rm pdf/songs/standards/on-green-dolphin-street*
+lilypond ly/songs/standards/on-green-dolphin-street.ly 
+mv on-green-dolphin-street*pdf pdf/songs/standards
+for file in pdf/songs/standards/on-green-dolphin-street*pdf ; do op $file ; done 
+
+git add . ; git commit -m"day" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -39,7 +33,7 @@ for file in pdf/songs/standards/on-green-dolphin-street*pdf pdf/songs/standards/
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -64,6 +58,7 @@ for file in pdf/songs/standards/on-green-dolphin-street*pdf pdf/songs/standards/
 
 \include "ly/ily/layout-songs.ily"
 \include "ly/ily/hideMelody.ily"
+
 
 structure = \relative c' { 
 
@@ -153,9 +148,10 @@ melodySong = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-C-for-C"
     \header {
         poet = "    Concert Pitch"
+        subtitle = "(learning key)"
         instrumentName = \poet
     }
     \score {
@@ -176,9 +172,10 @@ melodySong = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-C-for-Bb"
     \header {
-        poet = "    Bb Soprano Saxophone"
+        poet = "    Bb Lead Sheet"
+        subtitle = "(learning key)"
         instrumentName = \poet
     }
     \score {
@@ -199,9 +196,10 @@ melodySong = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-C-for-Eb"
     \header {
         poet = "    Eb Alto Saxophone"
+        subtitle = "(learning key)"
         instrumentName = \poet
     }
     \score {
@@ -222,9 +220,10 @@ melodySong = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "worksheet-for-C"
+  \bookOutputSuffix "worksheet-in-C-for-C"
     \header {
         poet = "    Concert Pitch"
+        subtitle = "(learning key)"
         instrumentName = \poet
     }
     \score {
@@ -246,9 +245,10 @@ melodySong = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "worksheet-for-Bb"
+  \bookOutputSuffix "worksheet-in-C-for-Bb"
     \header {
-        poet = "    Bb Soprano Saxophone"
+        poet = "    Bb Lead Sheet"
+        subtitle = "(learning key)"
         instrumentName = \poet
     }
     \score {
@@ -270,13 +270,161 @@ melodySong = \relative c' {
 }
 
 \book {
-  \bookOutputSuffix "worksheet-for-Eb"
+  \bookOutputSuffix "worksheet-in-C-for-Eb"
     \header {
         poet = "    Eb Alto Saxophone"
+        subtitle = "(learning key)"
         instrumentName = \poet
     }
     \score {
         <<
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff \transpose ef, c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \hideMelody
+                    \structure
+                    \transpose b e \melodyExercise
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-C"
+    \header {
+        poet = "    Concert Pitch"
+        subtitle = "(original key)"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melodySong
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-Bb"
+    \header {
+        poet = "    Bb Lead Sheet"
+        subtitle = "(original key)"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c ef <<
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff \transpose bf, c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \structure
+                    \melodySong
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-Eb"
+    \header {
+        poet = "    Eb Alto Saxophone"
+        subtitle = "(original key)"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c ef <<
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff \transpose ef, c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \structure
+                    \melodySong
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "worksheet-in-Eb-for-C"
+    \header {
+        poet = "    Concert Pitch"
+        subtitle = "(original key)"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \hideMelody
+                    \structure
+                    \transpose b, c \melodyExercise
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "worksheet-in-Eb-for-Bb"
+    \header {
+        poet = "    Bb Lead Sheet"
+        subtitle = "(original key)"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c ef <<
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff \transpose bf, c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \hideMelody
+                    \structure
+                    \melodyExercise
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "worksheet-in-Eb-for-Eb"
+    \header {
+        poet = "    Eb Alto Saxophone"
+        subtitle = "(original key)"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c ef <<
             \new ChordNames \transpose ef c  { 
                 \include "ly/ily/chord-names-properties.ily" 
                 \chordsForm 
