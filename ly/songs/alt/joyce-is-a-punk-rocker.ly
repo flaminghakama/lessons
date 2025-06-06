@@ -245,17 +245,46 @@ chordsSong = \chordmode {
     \chordsBridge
 }
 
+
+guitarVamp = \chordmode { 
+    e1:1.5 | s | s | s | 
+}
+guitarVerse = \chordmode { 
+    e1:1.5 | s | s | s | 
+    c1:1.3.6 | s | e:1.5 | s | 
+    e1:dim | fs:1.3-.4 | e:1.5 | s | 
+}
+guitarBridge = \chordmode { 
+    d1:7 | s | e2..:1.5 e8:m | s1 | 
+    d1:7 | s | e2..:1.5 ds2.:1.5-.6- s4. | 
+}
+guitarSong = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    \guitarVamp
+    \guitarVerse
+    \guitarVerse
+    \guitarBridge
+    \guitarVamp
+    \guitarVerse
+    \guitarVerse
+    \guitarBridge
+    \guitarBridge
+    \guitarBridge
+}
+
+
 bassVamp = \relative c { 
-    <>\xmf e8 <>\xmp 4 8  8 4 8 | <>\xmf e8 <>\xmp 4 8  8 4 8  | <>\xmf e8 <>\xmp 4 8  8 4 8  | <>\mf 4 4 r2 | 
+    <>\xmf e8 <>\xmp 4 8  8 4 8 | <>\xmf e8 <>\xmp 4 8  8 4 8  | <>\xmf e8 <>\xmp 4 8  8 4 8  | 4 <>\xf 4-^ r2 | 
 }
 bassVerse = \relative c { 
     \accidentalStyle default
-    <>\xf e8 <>\xmp 4 8  <>\xf e8 <>\xmp 4 8 | <>\xf e8 <>\xmp 4 8  <>\xmf d2 | <>\xf e8 <>\xmp 4 8 <>\xf e8 <>\xmp 4 8 | <>\mf 4 4 r2 | 
-    <>\xf a8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf 8 <>\xmp 4 8  <>\xmf g2 | <>\xf e8 <>\xmp 4 8 <>\xf 8 <>\xmp 4 8 | <>\xmf 4 4 r2 | 
-    <>\xf c'8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf b8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf e,8 <>\xmp 4 8  <>\xf 8 8 8 8 | <>\xff 4 r r e ||
+    <>\xf e8 <>\xmp 4 8  <>\xf e8 <>\xmp 4 8 | <>\xf e8 <>\xmp 4 8  <>\xmf d2 | <>\xf e8 <>\xmp 4 8 <>\xf e8 <>\xmp 4 8 | <>\xf 4 r r2 | 
+    <>\xf a8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf 8 <>\xmp 4 8  <>\xmf g2 | <>\xf e8 <>\xmp 4 8 <>\xf 8 <>\xmp 4 8 | <>\xmf 4 <>\xf 4 r2 | 
+    <>\xf c'8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf b8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf e,8 <>\xmp 4 8  <>\xf 8 8 8 8 | 4 <>\xff 4 r2 ||
 }
 bassBridge = \relative c { 
-    <>\xmf d4. 8 4. 8 | r d r d8 2 | e2 8 4 8 ~ | 1 | 
+    <>\xmf d4. 8 4. 8 | r d r d8 2 | e2 8 4 8 ~ | 2 r | 
     d4. 8 4. 8 | r d r d8 2 | e2 8 4 <>\xff b8 ~ | 1 | 
 }
 bassLine = { 
@@ -277,7 +306,7 @@ melodyVamp = \relative c'' {
 }
 melodyVerse = \relative c'' { 
     R1 | r2 <>\xmf e8 4 d8 | r2 r4 <>\xff e | e r r2 ||
-    R1 | r2 <>\xmf e8 4 d8 | r4 d r8 <>\xf d8 e4 | 4 r r2 ||
+    R1 | r2 <>\xmf e8 4 d8 | r4 d r2 | <>\xf d8 e4 8 r2 ||
     R1 | r2 <>\xmf d8 4 8 | <>\xff d4 e4 r2 | R1 ||
 }
 melodyBridge = \relative c'' { 
@@ -303,15 +332,48 @@ lyricsHeadOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    One, Two, Three. Four! Five!
-    One, Two, Three, Four, Five! Six! Sept!
-    One, Two, Three, Four, Five!
+    Be -- neath the twin -- sets
+    Pie charts, pod -- casts, plans, posts, poise
+    Beats a heart punk rock 
+
+    Brook -- lyn -- ese par -- ents
+    Raised a bright boy, gif -- ted girl
+    That girl is our Joyce
+
+    Jeff -- er -- son’s col -- lege
+    Gave her life -- long friends, B. S.
+    Zest for arts,  Book smarts 
+
+    D C punk night -- club
+    More Fu -- ga -- zi than Fried -- man
+    She ran with a -- plomb
+    
 }
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    \repeat unfold 10 { \skip 1 }
+    Ve -- ry cool, more school
+    Mas -- ter of tax, C. P. A.
+    P. F. P. Del -- oitte, 
+
+    C. F. P. Ernst, Young, 
+    mee -- ting Ste -- phen,  Books for Greens, 
+    Toast -- mas -- ters! J -- Date?
+
+    Joyce starts her own firm
+    Gives ad -- vice on hopes, goals, plans,  
+    Makes dreams do -- a -- ble
+
+    Start -- up Wealth:  two books
+    Mon -- te Car -- lo pro -- jec -- tions
+    does it all,  Has son 
+
+    % head le -- vel, she's calm
+    % Through mar -- ket and  re -- gime swings
+    % Punks like her don’t flinch 
+
+    % \repeat unfold 10 { \skip 1 }
 }
 
 lyricsCoda = \lyricmode {
@@ -322,6 +384,7 @@ lyricsCoda = \lyricmode {
 
 \header {
     title = \title
+    subtitle = "Punk Rock, Pro Joyce"
     composer = \markup \italic { "composed by" \composerName }
     arranger = \markup \italic { "lyrics by" \lyricistName }
 }
@@ -351,11 +414,10 @@ lyricsCoda = \lyricmode {
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { 
                     \lyricsHeadOne 
-                    \lyricsHeadOne 
-
-                    \lyricsHeadOne 
-                    \lyricsHeadOne 
                 } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -397,15 +459,11 @@ lyricsCoda = \lyricmode {
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { 
                     \lyricsHeadOne 
-                    \lyricsHeadOne 
-
-                    \lyricsHeadOne 
-                    \lyricsHeadOne 
                 } 
             }
-            % \new Lyrics \with { alignAboveContext = "staff" } {
-            %     \lyricsto "lead" { \lyricsHeadTwo } 
-            % }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
         >>
     }
 }
