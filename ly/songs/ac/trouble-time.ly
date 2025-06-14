@@ -240,6 +240,57 @@ chordsForm = \chordmode {
     bf2 f | c g | d1 | s |
     a2 d:m7 | gs:m g | fs1:m7.7+ | fs || fs ||
 }
+chordsFormForFlats = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+
+    s1*2 ||
+
+    % A
+    gf2:m7.7+ f:maj7 | gf:m7.7+ f:maj7 |  
+    gf2:m7.7+ f:maj7 | gf:m7.7+ f:maj7 | fs4:dim7 b:dim7 e:dim7 a:dim7 || 
+
+    % B
+    d2:m7.7+ cs:maj7 | d:m7.7+ cs:maj7 |  
+    d2:m7.7+ cs:maj7 | d:m7.7+ cs:maj7 | d4:dim7 g:dim7 c:dim7 f:dim7 ||
+
+    % C
+    bf2:m7.7+ a:maj7 | bf:m7.7+ a:maj7 |  
+    bf2:m7.7+ a:maj7 | bf:m7.7+ a:maj7 | gs4:dim7 cs:dim7 fs:dim7 b:dim7 ||
+
+    % D
+    s1*2 
+
+    % E
+    gf2:m7.7+ f:maj7 | gf:m7.7+ f:maj7 |  
+    gf2:m7.7+ f:maj7 | gf:m7.7+ f:maj7 | bf4:dim7 ef:dim7 gs:dim7 cs:dim7 || 
+
+    % F
+    fs1:m7.5- | s | s | fs4:7.5- b:7.5- e:7.5- a:7.5- |
+    d1:m | s | s | d4:7.5- g:7.5- c:7.5- f:7.5- |
+    bf1:m | s | s | s |
+
+
+    % G 
+    fs1:m7.5- | s | fs:m7 | fs4:7.5- b:7.5- e:7.5- a:7.5- |
+    d1:m7.5- | s | d:m7 | d4:7.5- g:7.5- c:7.5- f:7.5- |
+    bf1:m7.5- | s | bf:m7 | bf4:7.5- ds:7.5- gs:7.5- cs:7.5- |
+
+    % H 
+    fs2 cs | gs ds | bf1 | s | 
+    bf2 f | c g | d1 | s | 
+    d2 a | e b | fs1:m7.7+ | fs | 
+
+    % I 
+    fs2 cs | gs ds | bf1 | s | 
+    bf2 f | c g | d1 | s |
+    a2 d:m7 | gs:m g | fs1:m7.7+ | fs ||
+
+    % J 
+    fs2 cs | gs ds | bf1 | s | 
+    bf2 f | c g | d1 | s |
+    a2 d:m7 | gs:m g | fs1:m7.7+ | fs || fs ||
+}
 chordsCoda = \chordmode { 
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
@@ -249,6 +300,11 @@ melodyA = \relative c'' {
     a2\f gs | d2. r8 fs ||
     es'8 fs r fs, es'? e r fs,? | es' fs es e r c? r c |
     r8 fs, es' [ fs ]  es? e r fs,? | es' fs es e r c? r c ~ | 2 
+}
+melodyAForFlats = \relative c'' {
+    a2\f af | d,2. r8 gf ||
+    f'8 gf r gf, f' e r gf,? | f' gf f e r c? r c |
+    r8 gf f' [ gf ]  f e r gf,? | f' gf f e r c? r c ~ | 2 
 }
 
 melodyB= \relative c' {
@@ -268,10 +324,15 @@ melodyD = \relative c'' {
     b4. e,8 bf'4. ef,8 | a4 gs8 g
 }
 
-melodyE = \relative c' {
+melodyE = \relative c'' {
     r4 r8 fs ||
     es'8 fs r fs, es'? e r fs,? | es' fs es e r c? r c |
     r8 fs, es' [ fs ]  es? e r fs,? | es' fs es e r c? r c ~ | 2 
+}
+melodyEForFlats = \relative c'' {
+    r4 r8 gf ||
+    f'8 gf r gf, f'? e r gf,? | f' gf f e r c? r c |
+    r8 gf f' [ gf ]  f? e r gf,? | f' gf f e r c? r c ~ | 2 
 }
 
 melodyF = \relative c' {
@@ -323,6 +384,18 @@ melody = {
     \melodyI
     \melodyJ
 }
+melodyForFlats = {
+    \melodyAForFlats
+    \melodyB
+    \melodyC
+    \melodyD
+    \melodyEForFlats
+    \melodyF
+    \melodyG
+    \melodyH
+    \melodyI
+    \melodyJ
+}
 
 \book {
   \bookOutputSuffix "alto-in-Eb"
@@ -336,7 +409,7 @@ melody = {
         <<
             \new ChordNames \transpose e e { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsForm
+                \chordsFormForFlats
             }
             \new Staff = "lead" \transpose e e {
                 \include "ly/ily/staff-properties.ily"
@@ -344,7 +417,7 @@ melody = {
                 <<
                     \structure
                     \rehearsalMarkTweaks
-                    \melody
+                    \melodyForFlats
                 >>
             }
         >>

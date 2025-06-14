@@ -59,7 +59,52 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
-structure = \relative c' { 
+structureSheet = \relative c' { 
+
+    \tempo "Punk Rock" 4=200
+    \key e \minor
+    \time 4/4
+
+    \startSection "Vamp"
+    s1*4 
+
+    \startSection "Verses 1-3"
+    \startRepeat
+    s1*12
+
+    \startSection "Bridge"
+    \endRepeat
+    s1*8
+
+    \startSection "Vamp"
+    s1*4 
+
+    \startSection "Verses 4-7"
+    \startRepeat
+    s1*12
+
+    \startSection "Bridge"
+    \doubleRepeat
+    s1*8
+
+    \startSection "Vamp"
+    \endRepeat
+    s1*4 
+
+    \startSection "Verses 8-11"
+    \startRepeat
+    s1*12
+
+    \startSectionWithLabel "Bridge" "3X"
+    \doubleRepeat
+    s1*8
+    \endRepeat
+    s1
+    \bar "|."
+
+}
+
+structureSound = \relative c' { 
 
     \tempo "Punk Rock" 4=200
     \key e \minor
@@ -74,24 +119,56 @@ structure = \relative c' {
     \startSection "Verse 2"
     s1*12
 
+    \startSection "Verse 3"
+    s1*12
+
     \startSection "Bridge"
     s1*8
 
     \startSection "Vamp"
     s1*4 
 
-    \startSection "Verse 3"
+    \startSection "Verse 4"
     s1*12
 
-    \startSection "Verse 4"
+    \startSection "Verse 5"
+    s1*12
+
+    \startSection "Verse 6"
+    s1*12
+
+    \startSection "Verse 7"
+    s1*12
+
+    \startSection "Bridge"
+    s1*8
+    s1*8
+
+    \startSection "Vamp"
+    s1*4 
+
+    \startSection "Verse 8"
+    s1*12
+
+    \startSection "Verse 9"
+    s1*12
+
+    \startSection "Verse 10"
+    s1*12
+
+    \startSection "Verse 11"
     s1*12
 
     \startSection "Bridge"
     s1*8
     s1*8
     s1*8
+    \startSection ""
+    s1
     \bar "|."
+    
 }
+
 
 rehearsalMarkTweaksForScore = \relative c' { 
 
@@ -99,40 +176,49 @@ rehearsalMarkTweaksForScore = \relative c' {
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % "Vamp"
-    s1*4 \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Verse 1"
-    s1*12
-    \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Verse 2"
-    s1*12
-    \pageBreak
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Bridge"
-    s1*8
-    \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Vamp"
     s1*4 
     \break
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Verse 3"
+    % "Verse 1-3"
     s1*12
     \break
+    
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Bridge"
+    s1*6 \break s1*2
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Verse 4"
-    s1*12
-    \pageBreak
+    % "Vamp"
+    s1*4 
+
+    \pageBreak 
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Verse 4-7"
+    s1*4 \break 
+    s1*4 \break 
+    s1*4 \break 
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % "Bridge"
+    s1*6 \break s1*2
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Vamp"
+    s1*4 
+
+    \pageBreak
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Verse 8-11"
+    s1*4 \break 
+    s1*4 \break 
+    s1*4 \break 
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Bridge"
+    s1*6 \break s1*2
 }
 
 rehearsalMarkTweaksForLeadSheet = \relative c' { 
@@ -140,17 +226,13 @@ rehearsalMarkTweaksForLeadSheet = \relative c' {
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % "Vamp"
-    s1*4 \break
+    s1*4 
+    \break 
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Verse 1"
+    % "Verse 1-3"
     s1*12
     \break
-
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Verse 2"
-    s1*12
-    \break 
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % "Bridge"
@@ -160,17 +242,27 @@ rehearsalMarkTweaksForLeadSheet = \relative c' {
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % "Vamp"
     s1*4 
+
     \pageBreak
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Verse 3"
+    % "Verse 4-7"
     s1*12
     \break
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
-    % "Verse 4"
+    % "Bridge"
+    s1*8
+
+    \pageBreak
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Vamp"
+    s1*4 
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "Verse 8-11"
     s1*12
-    \break
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
     % "Bridge"
@@ -221,28 +313,68 @@ rehearsalMarkTweaksForBass = \relative c' {
 chordsVamp = \chordmode { 
     e1:m | s | s | s | 
 }
-chordsVerse = \chordmode { 
+chordsVerseSheet = \chordmode { 
     e1:m | s | s | s | 
     a1:m | s | e:m | s | 
     c1:m | b:7 | e:m | s | 
+}
+chordsVerseSound = \chordmode { 
+    e1:m | s | s | s | 
+    a1:m | s | e:m | s | 
+    c1:m | b:7 | e:m | s | 
+}
+chordsBridgeSheet = \chordmode { 
+    d1:7 | s | e1:m | s | 
+    d1:7 | s | e1:m | b:7 |
 }
 chordsBridge = \chordmode { 
     d1:7 | s | e2..:m e8:m | s1 | 
     d1:7 | s | e2..:m b2.:7 s4. | 
 }
-chordsSong = \chordmode { 
+chordsCodaSheet = \chordmode { 
+    e1:m   
+}
+chordsCodaSound = \chordmode { 
+    e4:1.5.6-.8 r2.    
+}
+chordsSheet = \chordmode { 
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     \chordsVamp
-    \chordsVerse
-    \chordsVerse
+    \chordsVerseSheet
+    \chordsBridgeSheet
+    \chordsVamp
+    \chordsVerseSheet
+    \chordsBridgeSheet
+    \chordsVamp
+    \chordsVerseSheet
+    \chordsBridgeSheet
+    \chordsCodaSheet
+}
+chordsSound = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    \chordsVamp
+    \chordsVerseSound
+    \chordsVerseSound
+    \chordsVerseSound
     \chordsBridge
     \chordsVamp
-    \chordsVerse
-    \chordsVerse
+    \chordsVerseSound
+    \chordsVerseSound
+    \chordsVerseSound
+    \chordsVerseSound
+    \chordsBridge
+    \chordsBridge
+    \chordsVamp
+    \chordsVerseSound
+    \chordsVerseSound
+    \chordsVerseSound
+    \chordsVerseSound
     \chordsBridge
     \chordsBridge
     \chordsBridge
+    \chordsCodaSound
 }
 
 
@@ -274,31 +406,135 @@ guitarSong = \chordmode {
 }
 
 
-bassVamp = \relative c { 
-    <>\xmf e8 <>\xmp 4 8  8 4 8 | <>\xmf e8 <>\xmp 4 8  8 4 8  | <>\xmf e8 <>\xmp 4 8  8 4 8  | 4 <>\xf 4-^ r2 | 
+synthVamp = \relative c'' { 
+    s1*4
 }
-bassVerse = \relative c { 
+synthVerse = \relative c''' { 
+    <>\p
+    r4 e b'2 ~ | 2. r4| R1*2 | 
+    r4 e, a2 ~ | 2. r4 | R1*2 | 
+    r4 e g2 ~ | 2. r4 | R1*2  | 
+
+    <>\pp
+    r4 e fs2 ~ | 1 | r4 e g2 ~ | g1 | 
+    r4 e a2 ~ | 1 | r4 e b'2 ~ | 1 | 
+    r4 e, c'2 ~ | 1 | r4 \mf b e2 ~ | 1 ~ | 
+
+    e1 ~ | 1 ~ | 1 ~ | 1 ~ |
+    e1 ~ | 1 ~ | 2.. d8 ~ | 2. r4 |
+}
+synthBridge = \relative c''' { 
+    %  Bright Synth lead
+    %  Harmonic scream synth
+    r4 c a fs | c' a fs b | g e b' g | d'1 |
+    r4 c a fs | c' a fs b | g e b' g | c,1 |
+}
+synthSong = \relative c'' { 
+    s1*4
+    s1*12
+    s1*12
+    s1*12
+    s1*8
+
+    s1*4
+    s1*12
+    s1*12
+    s1*12
+    s1*12
+    s1*8
+    <>\f
+    \synthBridge
+
+    s1*4
+    s1*12
+    s1*12
+    <>\mf
+    \synthVerse
+    s1*8
+    <>\f
+    \synthBridge
+}
+
+
+
+
+bassVampSheet = \relative c { 
+    e8 4 8  8 4 8 | e8 4 8  8 4 8  | e8 4 8  8 4 8  | 4 4 r2 | 
+}
+bassVampSound = \relative c { 
+    e8-- 4-. 8  8-- 4-. 8 | e8-- 4-. 8  8 4-. 8  | e8-- 4-. 8  8 4-. 8  | 4 4-^ r2 | 
+}
+bassVerseSheet = \relative c { 
     \accidentalStyle default
-    <>\xf e8 <>\xmp 4 8  <>\xf e8 <>\xmp 4 8 | <>\xf e8 <>\xmp 4 8  <>\xmf d2 | <>\xf e8 <>\xmp 4 8 <>\xf e8 <>\xmp 4 8 | <>\xf 4 r r2 | 
-    <>\xf a8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf 8 <>\xmp 4 8  <>\xmf g2 | <>\xf e8 <>\xmp 4 8 <>\xf 8 <>\xmp 4 8 | <>\xmf 4 <>\xf 4 r2 | 
-    <>\xf c'8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf b8 <>\xmp 4 8  <>\xf 8 <>\xmp 4 8 | <>\xf e,8 <>\xmp 4 8  <>\xf 8 8 8 8 | 4 <>\xff 4 r2 ||
+    e8 4 8  8 4 8 | e8 4 8  d2 | e8 4 8  e8 4 8 | 4 r r2 | 
+    a8 4 8  8 4 8 | 8 4  8  g2 | e8 4 8  8 4 8 | 4 4 r2 | 
+    c'8 4 8  8 4 8 | b8 4 8  8 4 8 | e,8 4 8  8 8 8 8 | 4 4 r2 ||
 }
-bassBridge = \relative c { 
-    <>\xmf d4. 8 4. 8 | r d r d8 2 | e2 8 4 8 ~ | 2 r | 
-    d4. 8 4. 8 | r d r d8 2 | e2 8 4 <>\xff b8 ~ | 1 | 
-}
-bassLine = { 
+bassVerseSound = \relative c { 
     \accidentalStyle default
-    \bassVamp
-    \bassVerse
-    \bassVerse
-    \bassBridge
-    \bassVamp
-    \bassVerse
-    \bassVerse
-    \bassBridge
-    \bassBridge
-    \bassBridge
+    e8-- 4-. 8  8-- 4-. 8 | e8-- 4-. 8  d2-- | e8-- 4-. 8  e8-- 4-. 8 | 4->\f r r2 | 
+    a8--\mp 4-. 8  8-- 4-. 8 | 8-- 4-.  8  g2-- | e8-- 4-. 8  8-- 4-. 8 | 4 4->\f r2 | 
+    c'8--\mf 4-. 8  8-- 4-. 8 | b8-- 4-. 8  8-- 4-. 8 | e,8-- 4-. 8  8 8 8 8 | 4\f 4-^ r2 ||
+}
+bassBridgeSheet = \relative c { 
+    d4. 8 4. 8 | r d r d8 2 | e2 8 4 8 ~ | 2 r | 
+    d4. 8 4. 8 | r d r d8 2 | e2 8 4 b8 ~ | 1 | 
+}
+bassBridgeSound = \relative c { 
+    d4. 8-. 4. 8-. | r d-. r d8 2 | e2 8 4-. 8-- ~ | 2 r | 
+    d4. 8-. 4. 8-. | r d-. r d8 2 | e2 8 4-. b8-> ~ | 1 | 
+}
+bassCoda = \relative c, { 
+    e4-^ r4 r2
+}
+bassLineSheet = { 
+    \accidentalStyle default
+    \bassVampSheet
+    \bassVerseSheet
+    \bassBridgeSheet
+    \bassVampSheet
+    \bassVerseSheet
+    \bassBridgeSheet
+    \bassVampSheet
+    \bassVerseSheet
+    \bassBridgeSheet
+    \bassCoda
+}
+bassLineSound = { 
+    \accidentalStyle default
+    <>\mf
+    \bassVampSound
+    <>\mp
+    \bassVerseSound
+    \bassVerseSound
+    \bassVerseSound
+    <>\f
+    \bassBridgeSound
+
+    <>\mf
+    \bassVampSound
+    <>\mp
+    \bassVerseSound
+    \bassVerseSound
+    \bassVerseSound
+    \bassVerseSound
+    <>\f
+    \bassBridgeSound
+    \bassBridgeSound
+
+    <>\mf
+    \bassVampSound
+    <>\mp
+    \bassVerseSound
+    \bassVerseSound
+    \bassVerseSound
+    \bassVerseSound
+    <>\f
+    \bassBridgeSound
+    \bassBridgeSound
+    \bassBridgeSound
+    <>\ff
+    \bassCoda
 }
 
 melodyVamp = \relative c'' { 
@@ -314,13 +550,38 @@ melodyBridge = \relative c'' {
 }
 
 
-melody = \relative c'' { 
+melodySheet = \relative c'' { 
+    \accidentalStyle default
+    \melodyVamp
+    \melodyVerse
+    \melodyBridge
+    \melodyVamp
+    \melodyVerse
+    \melodyBridge
+    \melodyVamp
+    \melodyVerse
+    \melodyBridge
+    R1
+}
+melodySound = \relative c'' { 
     \accidentalStyle default
     \melodyVamp
     \melodyVerse
     \melodyVerse
+    \melodyVerse
     \melodyBridge
+
     \melodyVamp
+    \melodyVerse
+    \melodyVerse
+    \melodyVerse
+    \melodyVerse
+    \melodyBridge
+    \melodyBridge
+
+    \melodyVamp
+    \melodyVerse
+    \melodyVerse
     \melodyVerse
     \melodyVerse
     \melodyBridge
@@ -336,44 +597,59 @@ lyricsHeadOne = \lyricmode {
     Pie charts, pod -- casts, plans, posts, poise
     Beats a heart punk rock 
 
-    Brook -- lyn -- ese par -- ents
-    Raised a bright boy, gif -- ted girl
-    That girl is our Joyce
-
-    Jeff -- er -- son’s col -- lege
-    Gave her life -- long friends, B. S.
-    Zest for arts,  Book smarts 
-
     D C punk night -- club
     More Fu -- ga -- zi than Fried -- man
     She ran with a -- plomb
-    
+
+    She starts her own firm
+    Gives ad -- vice on plans, goals, hopes
+    Makes dreams do -- a -- ble
 }
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
+    Brook -- lyn -- ese par -- ents
+    Raised a bright boy, gif -- ted girl
+    That girl is our Joyce
+
     Ve -- ry cool, more school
     Mas -- ter of tax, C. P. A.
     P. F. P. Del -- oitte, 
 
-    C. F. P. Ernst, Young, 
-    mee -- ting Ste -- phen,  Books for Greens, 
-    Toast -- mas -- ters! J -- Date?
-
-    Joyce starts her own firm
-    Gives ad -- vice on hopes, goals, plans,  
-    Makes dreams do -- a -- ble
-
     Start -- up Wealth:  two books
     Mon -- te Car -- lo pro -- jec -- tions
     does it all,  Has son 
+}
+lyricsHeadThree = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
 
-    % head le -- vel, she's calm
-    % Through mar -- ket and  re -- gime swings
-    % Punks like her don’t flinch 
+    Jeff -- er -- son’s col -- lege
+    Gave her life -- long friends, B. S.
+    Zest for arts,  Book smarts 
 
-    % \repeat unfold 10 { \skip 1 }
+    Books for Greens, Ernst, Young
+    Her own wo -- man, she wants more
+    Fi -- nance AND ro -- mance
+
+    Calm, le -- el-  head -- ed
+    Wild mar -- kets and re -- gime swings
+    Punks like Joyce don’t flinch
+}
+lyricsHeadFour = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+
+    \repeat unfold 17 { \skip 1 }
+
+    A tough town da -- ting
+    Joyce meets her match in Ste -- phen
+    Toast -- mas -- ters!  J -- Date?
+
+    Six -- ty years, now what?
+    More ad -- ven -- tures, ope -- ras, laughs
+    You star in this tale
 }
 
 lyricsCoda = \lyricmode {
@@ -399,16 +675,16 @@ lyricsCoda = \lyricmode {
         <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSheet 
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
-                    \structure
+                    \structureSheet
                     \rehearsalMarkTweaksForScore
-                    \melody
+                    \melodySheet
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -419,14 +695,20 @@ lyricsCoda = \lyricmode {
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadTwo } 
             }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadThree } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadFour } 
+            }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \clef bass
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
-                    \structure
-                    \bassLine
+                    \structureSheet
+                    \bassLineSheet
                 >>
             }
         >>
@@ -444,16 +726,16 @@ lyricsCoda = \lyricmode {
         <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSheet 
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
-                    \structure
+                    \structureSheet
                     \rehearsalMarkTweaksForLeadSheet
-                    \melody
+                    \melodySheet
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
@@ -463,6 +745,12 @@ lyricsCoda = \lyricmode {
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadThree } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadFour } 
             }
         >>
     }
@@ -478,7 +766,7 @@ lyricsCoda = \lyricmode {
         <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSheet 
             }
             \new Staff = "bass" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -486,9 +774,9 @@ lyricsCoda = \lyricmode {
                 \clef bass
                 \new Voice = "bass" <<
                     \override Stem.length-fraction = #(magstep 1.2)
-                    \structure
+                    \structureSheet
                     \rehearsalMarkTweaksForBass
-                    \bassLine
+                    \bassLineSheet
                 >>
             }
         >>
@@ -503,16 +791,20 @@ lyricsCoda = \lyricmode {
     }
     \score {
         <<
+            \new Staff = "synth" <<
+                \structureSound
+                \transpose c c \synthSong
+            >>
             \new Staff = "voice" <<
-                \structure
-                \melody
+                \structureSound
+                \melodySound
             >>
             \new ChordNames { 
-                \chordsSong 
+                \chordsSound 
             }
             \new Staff = "bass" <<
-                \structure
-                \transpose c c,, \bassLine
+                \structureSound
+                \transpose c c, \bassLineSound
             >>
         >>
         \midi {}
