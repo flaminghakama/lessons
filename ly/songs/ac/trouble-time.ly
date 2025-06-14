@@ -40,7 +40,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   top-system-spacing.minimum-distance = #22
 
   % Spacing in between systems
-  system-system-spacing.padding = #2
+  system-system-spacing.padding = #0.4
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #13
@@ -144,11 +144,11 @@ rehearsalMarkTweaks = \relative c' {
     % "C"
     s1*5
 
-    \override Score.RehearsalMark.extra-offset = #'( -2 . 2 )
+    \override Score.RehearsalMark.extra-offset = #'( -2 . 0 )
     % "D"
     s1*2
 
-    \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
+    \override Score.RehearsalMark.extra-offset = #'( -3 . -4 )
     % "E"
     s1*5
     
@@ -360,10 +360,15 @@ melodyI = \relative c'' {
     fs8 e fs e ~ 4. 8 | fs8 e fs e d cs b bf | a2 fs16 gs a b \tuplet 6/4 { cs16 ds e fs gs a } | as4 r r2 ||
 }
 
-melodyJ = \relative c' {
+melodyJTenor = \relative c' {
     fs2. cs4 | gs'2. ef4 | bf'2 r4 bf16 16 r8 | r2 bf16 16 r8 r4 | 
     bf2. f4 | c'2. g4 | d1 | r4 d'16 16 r8 r2 | 
     d,2. a'4 | e2. b'4 | fs2 a' | as8 r r4 r2 || fs4 r r r8 fs, ||
+}
+melodyJ = \relative c'' {
+    fs2 es | ds as | r4 bf'16 [ 16 r bf ] r2 | r4 bf16 [ 16 r bf] r2 |  
+    bf2 a | g d4 b'-> | d8 r  r4  d16 [ 16 r d ]  r4 | d16 16 r8  r4  d16 [ 16 r d ] r4 |
+    r4 d a2 | gs b | cs2. es4 | fs8 r r4 r2 || fs4 r r r8 gf,, || 
 }
 
 
