@@ -58,7 +58,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
-cellStructure = \relative c' {
+cellStructureNineFour = \relative c' {
     \time 5/4
     s1*5/4
     \bar "||"
@@ -67,208 +67,209 @@ cellStructure = \relative c' {
     \bar "||"
 }
 
-cellStructure = \relative c' {
+cellStructureNineEight = \relative c' {
     s1*9/8
     s1*9/8
 }
 
 
 
-structureLeadSheet = \relative c'' { 
+structureLeadSheetNineFour = \relative c'' { 
 
     \key a \major
     
     \once \override Score.MetronomeMark.extra-offset = #'( -7 . 1 )
     \tempo 4=180
     
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSectionWithLabel "A" "4X"
     \bar "[|:"
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSectionWithLabel "B" "Melody"
     \bar ":|][|:"
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSectionWithLabel "C" "Chorus"
     \bar ":|][|:"
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \bar ":|]"
 }
 
-structurePart = \relative c'' { 
+
+
+structurePartNineFour = \relative c'' { 
     \tempo 4=120
     \key a \major
 
     \partial 8*7
     s2..
 
-    \time 9/8
-
     \startSection ""
     \startRepeat
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSectionWithLabel "A" ""
     \bar ":|][|:"
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSection "B"
     \endRepeat
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSection "C"
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSectionWithLabel "D" ""
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
 
     \pageBreak 
 
     \startSection "E"
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
     
     \startSection "F"
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break
 
     \startSection "G"
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSectionWithLabel "H" "Open Solo"
     \startRepeat
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSection "I"
     \endRepeat  
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \pageBreak 
 
     \startSection "J"
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
     \startSection "K"
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break
 
     \startSection "L"
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \break 
 
-    \cellStructure
-    \cellStructure
+    \cellStructureNineFour
+    \cellStructureNineFour
     \bar "|."
 }
+
 
 
 chordsCell = \chordmode { 
@@ -300,13 +301,6 @@ bassANineFour = \relative c'' {
     r4 <>^\markup \bold "Bass" a4  cs a8 e' r e,8 ~ | 8 gs8 ~ 8 [ e ~ ] 8 gs e'4 |
     fs,4 d  e d8 d' r8 e,8 ~ | 8 gs8 ~ 8 [ e ~ ] 8 gs e'4 | 
 }
-bassANineEight = \relative c'' {
-    
-    r4 <>^\markup \bold "Bass" a8 ~  8 cs4  a8 e' r |
-    e,4 gs8 ~  8 e4  gs8 e'4 |
-    fs,4 d8 ~  8 e4  d8 d' r8 |
-    e,4 gs8 ~  8 e4  gs8 e'4 | 
-}
 
 melodyBCommon = \relative c'' {
     % 5/4
@@ -334,31 +328,6 @@ melodyBNineFour = \relative c'' {
     e8 d8   4  4  e8 d r cs |
     % 4/4
     b8  4 8 ~  4 a8 b |
-}
-melodyBNineEight = \relative c'' {
-    
-    r4  a8 ~  8 cs4   e8 cs4 |
-    cs8 b8 8 ~ 8 e4  fs8  e4  |
-    e8 d8 8 ~  8 4  e8 d r |
-    cs8 b8 8 ~  8 4 ~  4. |
-
-    r4  a8 ~  8 cs4   e8 cs4 |
-    cs8 b8 8 ~ 8 e4  fs8  e4  |
-    e8 d8 8 ~  8 4  e8 d r |
-    cs8 b8 8 ~  8 4 ~  8 a b |
-}
-melodyBZero = \relative c'' {
-    \melodyBCommon
-    % 4/4
-    b8  4 8 ~  2 |
-}
-
-melodyBOne = \relative c'' {
-    \melodyBZero
-    \melodyBCommon
-    % 4/4
-    b8  4 8 ~  4 a8 b |
-    cs1 r4
 }
 
 melodyCCell = \relative c'' {
@@ -415,89 +384,166 @@ melodyD = \relative c'' {
     R1*5/4 | R1
 }
 
+trumpetDNineFour = \relative c'' {
+    a4 fs2. r4 | R1 |
+    R1*5/4 | R1
+    <>\xp 
+    R1*5/4 | R1
+    R1*5/4 | R1
+}
+
+
+trumpetCNineFour = \relative c'' {
+    cs1 r4 |
+    r8 b4 8 ~ 8 a b4 | 
+    a4 fs ~ 2 r4 | 
+    r8 b4 8 ~ 8 a b4 |
+
+    cs1 r4 |
+    r8 b4 8 ~ 8 a b4 | 
+    a4 fs ~ 2 r4 | 
+    r8 b4 8 ~ 8 a b4 |
+}
 trumpetCNineEight = \relative c'' {
     cs4. ~ 4. ~ 4. |
     r4 b8 ~  8 4  a8 b4 | 
-    a8 fs4 ~  4.  r | 
+    a4 fs8 ~  4.  r | 
     r4 b8 ~  8 4  a8 b4 |
 
     cs4. ~ 4. ~ 4. |
     r4 b8 ~  8 4  a8 b4 | 
-    a8 fs4 ~  4.  r | 
+    a4 fs8 ~  4.  r | 
     r4 b8 ~  8 4  a8 b4 |
 }
 
-tenorCZero = \relative c'' {
-    % 5/4
-    cs1 r4 
-    \melodyCCommon
+tenorC = \relative c'' {
+    R1*5/4
+    R1 
+
+    R1*5/4
+    r8 b4 8 ~ 8 a8 b4 | 
+
+    cs1 r4 | 
+    r8 b4 8 ~ 8 a8 b4 | 
+
+    a4 fs ~ 2 r4 |
+    r8 b4  8 ~  8 a8 b4 |
 }
-tenorCOne = \relative c'' {
-    \melodyCCommon
-    cs2. r2 
-}
-tenorDZero = \relative c'' {
-    \melodyCCell
-    R1 | 
-    R1*5/4 | r8 e4 8 ~ 8 8 4 |
+tenorD = \relative c'' {
+    cs1 r4 | R1 |
+    R1*5/4 | R1 |
+    <>\xp
+    R1*5/4 | R1 |
+    R1*5/4 | R1 |
 }
 tenorE = \relative c'' {
-    d8 e cs2 r | R1 | 
+    <>\xp
+    R1*5/4 | R1 |
+    R1*5/4 | R1 |
+    <>\xp
+    R1*5/4 | R1 |
+    R1*5/4 | R1 |    
+}
+tenorF = \relative c'' {
+    R1*5/4
+    r8 b4 8 ~ 8 a8 b4 | 
+    a1 r4 | 
+    r8 b4 8 ~ 8 a8 b4 | 
+    
+    cs1 r4 | 
+    r8 b4 8 ~ 8 a8 b4 | 
+    a4 fs ~ 2 r4 |
+    R1 
+}
+tenorG = \relative c'' {
+    r4 a cs fs8 e4 fs8 | e1 | 
+    r4 fs4 4 8 e4 fs8 | e1 | 
+
+    r4 a4 2 r4 | r8 e4 8 ~ 8 fs8 gs4 | 
+    fs8 gs fs4 d a4. b8 ~ | 2. r4 | 
+    
+    r4 a'4 2 r4 | r8 e4 8 ~ 8 fs8 gs4 | 
+    fs8 gs fs4 d a4. b8 ~ | 2. r4 | 
+}
+tenorH = \relative c'' {
+    <>\xp
+    R1*5/4 | R1 | 
+    R1*5/4 | R1 | 
+
+    % 5/4
+    r2 r4 e8 8 r4 | 
+    % 4/4
+    r4 r8 e8 4 r |
+
+    % 5/4
+    r2 r4 e8 8 r4 | 
+    % 4/4
+    r4 r8 e8 4 r |
+}
+tenorI = \relative c'' {
+    <>\xp
+    R1*5/4 | R1 | 
+    R1*5/4 | R1 | 
+
+    % 5/4
+    r4   a   cs  e8 [ cs8 ] r cs |
+    % 4/4
+    b8  4 e8 ~  8 fs  e4  |
+    % 5/4
+    e8 d8   4  4  e8 d r cs |
+    % 4/4
+    b8  4 8 ~  2 |
+}
+tenorJ = \relative c'' {
+    % 5/4
+    r4   a   cs  e8 [ cs8 ] r cs |
+    % 4/4
+    b8  4 e8 ~  8 fs  e4  |
+    % 5/4
+    e8 d8   4  4  e8 d r cs |
+    % 4/4
+    b8  4 8 ~  8 a b4 |
+
+    cs1 r4 | 
+    r8 b4 8 ~ 8 a8 b4 | 
+    a4 fs ~ 2 r4 |
+    r8 b4 8 ~ 8 a8 b4 | 
+}
+tenorK = \relative c'' {
+    cs1 r4 | 
+    r8 b4 8 ~ 8 a8 b4 | 
+    a4 fs ~ 2 r4 |
+    r8 b4 8 ~ 8 a8 b4 | 
+
+    % 5/4
+    a1 r4 | 
+    r8 b'4 8 ~ 8 a8 b4 | 
+
+    a4 fs ~ 2 r4 |
+    r8 b4 8 ~ 8 a8 b4 | 
+
+    cs1 r4 | R1 | 
     R1*5/4 | r8 e,4 8 ~ 8 8 4 | 
-    d8 e cs2 r | R1 | 
-    R1*5/4 | r8 e4 8 ~ 8 8 4 |   
+    d8 e cs2. r4 | R1 | 
+    R1*5/4 | r8 e4 8 ~ 8 8 4 |  
 }
-tenorCTwo = \relative c' {
-    d8 e cs2 r | 
-    \melodyCCommon
-}
-tenorATwo = \relative c'' { 
-    cs4 2 \comp #2 | \comp #4 | \comp #5 | \comp #4
-    <>\xp R1*5/4 | R1 | <>\xp R1*5/4 | R1 | 
-    <>\xp R1*5/4 | R1 | <>\xp R1*5/4 | R1 | 
-    <>\xp R1*5/4 | R1 | <>\xp R1*5/4 | R1 | 
-}
-tenorCThree = \relative c' {
-    \melodyCCommon
-}
-tenorDTwoLick = \relative c' {
-    R1*5/4 | r8 e4 8 ~ 8 8 4 | d8 e cs2 r2 | 
-}
-tenorDTwo = \relative c' {
-    cs2. r2 | 
-    \transpose c, c \melodyCCell | R1 | 
-    \tenorDTwoLick | R1 | 
-    \tenorDTwoLick | R1 | 
-    \tenorDTwoLick | 
-}
-tenorCFour = \relative c'' {
-    \melodyCCell
-    % 4/4
-    r8 b4 8 ~  8 a8 b4 | 
+tenorL = \relative c'' {
+    d8 e cs2. r4 | R1 | 
+    R1*5/4 | r8 e4 8 ~ 8 8 4 | 
+    
+    d8 e cs2. r4 |
+    r8 b4 8 ~ 8 a8 b4 | 
+    a4 fs ~ 2 r4 |
+    r8 b4 8 ~ 8 a8 b4 | 
 
-    % 5/4
-    a8 fs ~ 2 r2 | 
-    % 4/4
-    r8 b4  8 ~  8 a8 b4 |
-
-    % 5/4
-    a2. ~ 2 ~ |  
-    % 4/4
-    a1 ~ | 
-
-    % 5/4
-    a2. ~ 2 ~ |  
-    % 4/4
-    a1 | 
+    cs1 r4 | 
+    r8 b4 8 ~ 8 a8 b4 | 
+    a4 fs ~ 2 r4 |
+    r8 b4 8 ~ 8 a8 b4 | 
+    
+    a2. ~ 2 ~ | 1 ~ | 2. r2 | R1 ||
 }
 
-
-altoDZero = \relative c'' {
-    r4  e  gs  cs8 b4  cs8 | b1 |  
-    r4  cs4  4  8 b4  cs8  | b1 |
-    r4 e4 2 r4 | r8 b4 8 ~ 8 cs ds4 | 
-    cs8 ds  cs4  b  e,2 | fs r |  
-}
 trumpetG = \relative c'' {
     % 5/4
     cs1 r4 |
@@ -563,10 +609,10 @@ trumpetK = \relative c'' {
     % 5/4
     r4 a cs fs8 e4 fs8 |
     % 4/4
-    e8 2.. ~ 
+    e8 2.. 
 
     % 5/4
-    e8 r  fs4 4 8 e4 fs8 |
+    r4  fs4 4 8 e4 fs8 |
     % 4/4
     e1 
 
@@ -697,15 +743,15 @@ clicksNineEight = \relative c'' {
 }
 kickNineFour = \relative c' {
     % 5/4
-    r4 d4  r8 4. 4 |
+    r4 d4  r8 8 r4 4 |
     % 4/4
-    r8 4. 4. 8 |
+    r8 8 r4 4 r8 8 |
 }
 kickNineFourForFlats = \relative c' {
     % 5/4
-    r4 ds4  r8 4. 4 |
+    r4 ds4  r8 8 r4 4 |
     % 4/4
-    r8 ds4. 4. 8 |
+    r8 ds8 r4 4 r8 8 |
 }
 kickNineEightForFlats = \relative c' {
     r4 ds8   r4 ds8  r4 ds8 |
@@ -779,19 +825,19 @@ alto = \relative c'' {
 
     % "B"
     <>\xp
-    \transpose ef bf \melodyBNineEight
+    \transpose ef bf \melodyBNineFour
     
     % "C"
-    \transpose ef bf \trumpetCNineEight
+    \transpose ef bf \trumpetCNineFour
 
     % "D"
-    \melodyD 
+    \transpose ef bf \trumpetDNineFour
 
     % "E"
-    \transpose ef bf \melodyBNineEight
+    \transpose ef bf \melodyBNineFour
 
     % "F"
-    \transpose ef bf \trumpetCNineEight
+    \transpose ef bf \trumpetCNineFour
 
     % "G"
     \transpose ef bf \trumpetG
@@ -820,31 +866,31 @@ alto = \relative c'' {
 
 trumpet = \relative c'' {
 
-    r8 r4. r4.  
+    r8 r4 r2 
 
-    \transpose ef bf \bassANineEight
+    \transpose ef bf \bassANineFour
 
     % "A"
-    \transpose e, e <<
-        { \clicksNineEight \clicksNineEight } \\
-        { \kickNineEightForFlats \kickNineEightForFlats }
+    \transpose c, c <<
+        { \clicksNineFour \clicksNineFour } \\
+        { \kickNineFourForFlats \kickNineFourForFlats }
     >>
 
     % "B"
     <>\xp
-    \transpose ef bf \melodyBNineEight
+    \transpose ef bf \melodyBNineFour
     
     % "C"
-    \transpose ef bf \trumpetCNineEight
+    \transpose ef bf \trumpetCNineFour
 
     % "D"
-    \melodyD 
+    \transpose ef bf \trumpetDNineFour
 
     % "E"
-    \transpose ef bf \melodyBNineEight
+    \transpose ef bf \melodyBNineFour
 
     % "F"
-    \transpose ef bf \trumpetCNineEight
+    \transpose ef bf \trumpetCNineFour
 
     % "G"
     \transpose ef bf \trumpetG
@@ -868,10 +914,11 @@ trumpet = \relative c'' {
 
     % "L"
     \transpose ef bf \trumpetL
-
 }
 
 tenor = \relative c'' {
+
+    r8 r4 r2
 
     \bassANineFour
 
@@ -881,23 +928,23 @@ tenor = \relative c'' {
         { \kickNineFour \kickNineFour }
     >>
 
-    \melodyBZero
-    \tenorCZero
+    <>\xp
+    R1*5/4 R1 
+    R1*5/4 R1 
+    <>\xp
+    R1*5/4 R1 
+    R1*5/4 R1 
 
-    % "A1" "3X"
-    R1 | 
-    R1*5/4 | R1 | 
-
-    \melodyBOne
-    \tenorCOne
-    \tenorDZero
+    \tenorC
+    \tenorD
     \tenorE
-    \tenorCTwo
-    \tenorATwo
-    \melodyBOne
-    \tenorCThree
-    \tenorDTwo
-    \tenorCFour
+    \tenorF
+    \tenorG
+    \tenorH
+    \tenorI
+    \tenorJ
+    \tenorK
+    \tenorL
 }
 
 % \book {
@@ -1025,33 +1072,33 @@ tenor = \relative c'' {
 %     }
 % }
 
-% \book {
-%   \bookOutputSuffix "alto-for-Eb"
-%     \header {
-%         title = \title
-%         composer = \markup \italic { "composed by" \composerName }
-%         poet = "Eb Alto Saxophone"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         <<
-%             % \new ChordNames \transpose e e { 
-%             %     \include "ly/ily/chord-names-properties.ily"
-%             %     \chordsForm
-%             % }
-%             \new Staff \with { 
-%                 % instrumentName = "Melody"
-%             } \transpose e e {
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 <<
-%                     \transpose a e \structurePart
-%                     \alto
-%                 >>
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "alto-for-Eb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Eb Alto Saxophone"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            % \new ChordNames \transpose e e { 
+            %     \include "ly/ily/chord-names-properties.ily"
+            %     \chordsForm
+            % }
+            \new Staff \with { 
+                % instrumentName = "Melody"
+            } \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \transpose a e \structurePartNineFour
+                    \alto
+                >>
+            }
+        >>
+    }
+}
 
 \book {
   \bookOutputSuffix "trumpet-for-Bb"
@@ -1073,7 +1120,7 @@ tenor = \relative c'' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \transpose a e \structurePart
+                    \transpose a e \structurePartNineFour
                     \trumpet
                 >>
             }
@@ -1081,31 +1128,31 @@ tenor = \relative c'' {
     }
 }
 
-% \book {
-%   \bookOutputSuffix "tenor-for-Bb"
-%     \header {
-%         title = \title
-%         composer = \markup \italic { "composed by" \composerName }
-%         poet = "Bb Tenor Saxophone"
-%         instrumentName = \poet
-%     }
-%     \score {
-%         <<
-%             % \new ChordNames \transpose e e { 
-%             %     \include "ly/ily/chord-names-properties.ily"
-%             %     \chordsForm
-%             % }
-%             \new Staff \with { 
-%                 % instrumentName = "Melody"
-%             } \transpose e e {
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 <<
-%                     \structurePart
-%                     \tenor
-%                 >>
-%             }
-%         >>
-%     }
-% }
+\book {
+  \bookOutputSuffix "tenor-for-Bb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Bb Tenor Saxophone"
+        instrumentName = \poet
+    }
+    \score {
+        <<
+            % \new ChordNames \transpose e e { 
+            %     \include "ly/ily/chord-names-properties.ily"
+            %     \chordsForm
+            % }
+            \new Staff \with { 
+                % instrumentName = "Melody"
+            } \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structurePartNineFour
+                    \tenor
+                >>
+            }
+        >>
+    }
+}
 

@@ -40,10 +40,10 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   top-system-spacing.minimum-distance = #22
 
   % Spacing in between systems
-  system-system-spacing.padding = #0.4
+  system-system-spacing.padding = #3
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #13
+  score-system-spacing.minimum-distance = #20
 
   page-breaking = #ly:minimal-breaking
 
@@ -434,6 +434,63 @@ melodyForFlats = {
             piece = " "
         }
         <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCoda
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+        >>
+        \layout { 
+            indent = 3\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "trumpet-in-Bb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Bb Trumpet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef bf, <<
+            \new ChordNames \transpose e e { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsFormForFlats
+            }
+            \new Staff = "lead" \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \rehearsalMarkTweaks
+                    \melodyForFlats
+                >>
+            }
+        >>
+    }
+
+
+    \score {
+        \header {
+            piece = " "
+        }
+        \transpose ef bf, <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsCoda
