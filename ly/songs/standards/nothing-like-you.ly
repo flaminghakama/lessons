@@ -377,7 +377,7 @@ melodyChorusFour = \relative c' {
     d8 ~ || 8 ef f g ~ 8 a4 af8 ~ | 8 bf c bf ~ 4 af8 ef' ~ | 
     ef1 ~ | 2. r4 |
 
-    r4 d g, d' | df2. r4 |
+    r4 d g, d' | cs2. r4 |
     r4 c f, c' | b2. r8 bf ~ | 
     bf8 8 4 4 8 8 ~ | 8 8 4 df4. cf8 | 
     a1 ~ | 1 ||
