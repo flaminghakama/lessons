@@ -16,7 +16,7 @@ lilypond ly/songs/jazz/birks-works.ly
 mv birks-works*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/birks-works*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"new song" ; git push 
+git add . ; git commit -m"simplified in C" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
