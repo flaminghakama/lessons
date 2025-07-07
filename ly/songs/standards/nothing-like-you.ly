@@ -476,7 +476,7 @@ lyricsCoda = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "in-Eb-for-C"
+  \bookOutputSuffix "in-Bb-for-C"
     \header {
         subtitle = "(original key)"
         poet = "Concert Lead Sheet"
