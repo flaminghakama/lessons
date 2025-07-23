@@ -168,27 +168,27 @@ melodyPickup = \relative c' {
     bf8 c4 || 
 }
 melodyACommon = \relative c' { 
-    ef4 r8 bf  a4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef } g8 ) bf g ef | 
-    r4 r8 bf  a4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef } g8 ) 4. | 
+    ef4 r8 bf  a4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef ) } g8  bf g ef | 
+    r4 r8 bf  a4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef ) } g8  4. | 
 
-    ef4 r8 bf  a4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef } g8 ) bf g ef | 
+    ef4 r8 bf  a4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef ) } g8  bf g ef | 
 }
 melodyACommonForFlats = \relative c' { 
-    ef4 r8 bf  bff4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef } g8 ) bf g ef | 
-    r4 r8 bf  bff4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef } g8 ) 4. | 
+    ef4 r8 bf  bff4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef ) } g8  bf g ef | 
+    r4 r8 bf  bff4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef ) } g8  4. | 
 
-    ef4 r8 bf  bff4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef } g8 ) bf g ef | 
+    ef4 r8 bf  bff4. af8 | r8 bf ( \tuplet 3/2 { c8 d ef ) } g8  bf g ef | 
 }
 melodyFirstEnding = \relative c'' { 
     r4 r8 c  r4 r8 f, | r4 r8 bf ~ 4 g ||
 }
 melodySecondEnding = \relative c'' { 
-    r4 r8 g ~ 8 bf c ef ~ | 4 c8 ef ~ 4 r ||
+    r4 r8 g ~ 8 bf c ef ~ | 4 c8 ef  r2 ||
 }
 
 melodyB = \relative c'' { 
     <>\xmf \comp #16 
-    <>\xmf \comp #16 
+    <>\xmf \comp #14 r8 \melodyPickup
 }
 
 melody = {
