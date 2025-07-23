@@ -92,8 +92,11 @@ structure = \relative c' {
 
 
     
-    \partial 2 
-    \grace { s8 } s2 
+    \partial 8
+    s8 
+
+    s1*3 
+    s2 \grace { s8 } s2 
 
     \startSection "A"
     \repeat volta 2 {
@@ -120,12 +123,18 @@ rehearsalMarkTweaksForC = \relative c' {
     \once \override Score.MetronomeMark.extra-offset = #'( -5 . 3 )
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
+    s8 
+    s1*3 
+    s2 
     \grace { s8 }
     s2
+    \break
+
     \once \override Score.RehearsalMark.extra-offset = #'( -2 . -3 )
     % "A"
-        s1*4
-        s1*5
+    s1*4
+    s1*5
+    \break 
 
     \once \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
     % "B"
@@ -148,8 +157,8 @@ chordsIntro = \chordmode {
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
-    \grace { s8 }
-    s2 
+    s8
+    bf1:6 | g:7.9- | c:m9 | f:aug7 |
 }
 
 chordsForm = \chordmode { 
@@ -158,7 +167,7 @@ chordsForm = \chordmode {
     %\set noChordSymbol = ##t
 
     bf1 | c2:m7 f:7 | bf1 | c2:m7 f:7 |
-    bf2 g:7 | c:m7 f:7 | bf1 | s || s ||
+    bf2 g:7 | c:m7 f:7 | bf1 | s2 f:aug7 || bf1 ||
     d1:7 | s | df:7 | s | 
     c1:7.5- | s | f:7.5- | s ||
     bf1 | c2:m7 f:7 | bf1 | c2:m7 f:7 |
@@ -166,24 +175,37 @@ chordsForm = \chordmode {
 }
 
 
-melodyA = \relative c'' { 
-    \grace { bf16 ( g } f8 ) g bf df ~ | 8 bf c4 ~ 4. bf8 ~ |
-    bf8 8 af8 8 g8 8 gf f ~ | 4 2. |
-    r2 \grace { g16 ( f } d8 ) f g af ~ | 8 f g4 ~ 4. f8 ~ | 
-    f8 8 ef8 8 df8 8 c bf ~ | 4 2. | 
+
+
+melodyIntro = \relative c'' { 
+    f8 | 
+    r8 ef r d  r c r b | r d, f [ af ]  g f ef d |
+    ef8 g bf d  f ef bf g | d' df r4  
 }
-melodyAFirstEndings = \relative c'' { 
-    r2 \grace { bf16 ( g } f8 ) g bf df \laissezVibrer ||
+
+
+
+
+melodyA = \relative c'' { 
+    \override Glissando.style = #'zigzag
+    \grace { bf16 ( g } f8 ) g bf df ~ | 8 bf c4 ~ 4 r8 bf ~ |
+    bf8 8 af8 8 g8 8 gf8 8 | f4 f2 \glissando \hideNotes \grace { bf,4 } \unHideNotes r4 |
+    r4 r8 f'  d f g af ~ | af8 f g4 ~ 4 r8 f ~ | 
+    f8 8 ef8 8 df8 8 c bf ~ | 8 g bf2. | 
+}
+melodyAFirstEndings = \relative c' { 
+    r2 f8 g bf d \laissezVibrer ||
     R1 ||
 }
 melodyB = \relative c'' { 
     d4 d, d'4. 8 | r d, r d  d'8 8 d,4 | 
     df'4 df, df'4. 8 | r df, r df  df'8 8 df,4 | 
-    r4 c'8 8 gf'8 8 c,4 | gf'4 2. | 
-    r4 f,8 8 b8 8 f4 | b2  
+    r8 c' r c8 gf'8 8 c,4 | gf'4 2 r4 | 
+    r8 f, r f8 b8 8 f4 | b2  
 }
 
 melody = {
+    \melodyIntro
     \melodyA 
     \melodyAFirstEndings
     \melodyB
