@@ -258,7 +258,7 @@ chordsVerse = \chordmode {
 
 chordsBridge = \chordmode { 
     af1 | a | af | g |
-    g1 | af | g | b:aug7 ||
+    g1 | af | g | ef ||
 }
 
 chordsPrechorusOne = \chordmode { 
@@ -344,7 +344,7 @@ melodyPrechorusTwo = \relative c' {
 }
 
 melodyChorusThree = \relative c' { 
-    d8 ~ || 8 ef f g ~ 8 a4 bf8 ~ | 8 c df c ~ 4 bf8 ef ~ | 
+    c8 ~ || 8 d ef f ~ 8 g4 af8 ~ | 8 bf c bf ~ 4 af8 ef' ~ | 
     ef1 ~ | 2. r4 |
 
     r4 d g, d' | cs2. r4 |
@@ -365,16 +365,16 @@ melodyPrechorusThree = \relative c' {
 }
 
 melodyBridgeThree = \relative c'' { 
-    r4 g f g || ef2. r4 |
-    r8 ef f [ gf ]  af gf f gf | ff4 ef2. | 
-    r4 e d e | df2. r4 | 
-    r8 ef ff [ gf ]  g f ef f | 
+    r4 gf ff gf || ef2. r4 |
+    r8 ds e [ fs ]  gs fs e fs | e4 ef2. | 
+    r4 f ef f | d2. r4 | 
+    r8 d ef [ f ]  g f ef f | 
     ef4 d2. | r2 r4 r8  
 
 }
 
 melodyChorusFour = \relative c' { 
-    d8 ~ || 8 ef f g ~ 8 a4 af8 ~ | 8 bf c bf ~ 4 af8 ef' ~ | 
+    c8 ~ || 8 d ef f ~ 8 g4 af8 ~ | 8 bf c bf ~ 4 af8 ef' ~ | 
     ef1 ~ | 2. r4 |
 
     r4 d g, d' | cs2. r4 |
@@ -425,7 +425,7 @@ lyricsHeadOne = \lyricmode {
     No -- thing like you
 
     No -- thing like you has ev -- er been mine be -- fore!
-    Kiss -- es I've known, but none so di -- vine be -- fore
+    Kiss -- es I've known, but none so di -- vine as yours
 
     No one has your mag -- ni -- fi -- cence, who can de -- scribe your charms
     I'd like to make my re -- si -- dence for -- ev -- er in your arms
