@@ -34,7 +34,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #12
+  markup-system-spacing.padding = #2
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #17
@@ -112,25 +112,6 @@ structure = \relative c' {
     \bar ":|]"
 }
 
-structureTranscription = \relative c' { 
-
-    \key c \major
-    \tempo 4=210
-    \time 4/4
-    \startSectionNoBarline "1"
-        s1*4 \break
-        s1*4 \break
-        s1*4 \break
-        s1*4 \break
-    \startSectionNoBarline "2"
-        s1*4 \break
-        s1*4 \break
-        s1*4 \break
-        s1*4 \break
-    \bar "|."
-}
-
-
 drumsKick = \relative c' { 
     c4 r2. |
 }
@@ -151,38 +132,24 @@ structureTranscription = \relative c' {
     \tempo 4=210
     \time 4/4
 
- % }
-    \startSectionNoBarline "Solo"
+    \startSection "Solo"
     s1*4 \break
     s1*4 \break
     s1*4 \break
     s1*4 \break
 
-    \startSectionNoBarline ""
+    \startSection ""
     s1*4 \break
     s1*4 \break
     s1*4 \break
     s1*4 \break
 
-    \startSectionNoBarline ""
+    \startSection ""
     s1*4 \break
     s1*4 \break
     s1*4 \break
     s1*4 \break
 }
-
-transcriptionChorusOne = \relative c'' { 
-    r4 r8 a d,4 r | r4 r8 a' ds,4 r | 
-    r8 a' ds, [ a' ] r2 | r8 a fs [ a ] e a ds, a' | 
-    d,4 r r8 a' e4 | r8 a e4 r8 a r4 | 
-    r8 a e4 r8 a ds, [ a' ] | d,4 r8 a' fs a e a |  
-
-    d,4 r4 r8 a' fs [ a ]| cs e g ds  fs c a as | 
-    b8 g e a  fs g b d | fs4  b,8 d  f cs bf gs |
-    a8 d, r4  r8 a' fs4 | r8 a g4  r8 b gs4 | 
-    r4 r8 a  ds,4 r8 a' |  
-}
-
 
 rehearsalMarkTweaksForC = \relative c' { 
 
@@ -252,6 +219,51 @@ melodyForBb = \relative c' {
 melodyForEb = \relative c' { 
     \melody
 }
+
+
+transcriptionChorusOneInBb = \relative c'' { 
+    r4 r8 a d,4 r | r4 r8 a' ds,4 r | 
+    r8 a' ds, [ a' ] r2 | r8 a fs [ a ] e a ds, a' | 
+    d,4 r r8 a' e4 | r8 a e4 r8 a r4 | 
+    r8 a e4 r8 a ds, [ a' ] | d,4 r8 a' fs a e a |  
+
+    d,4 r4 r8 a' fs [ a ]| cs e g ds  fs c a as | 
+    b8 g e a  fs g b d | fs a, b d  f cs bf gs |
+    a8 d, r4  r8 a' fs4 | r8 a g4  r8 b gs4 | 
+    r4 r8 a  ds,4 r8 a' | r4 r8 a  r a fs [ a ] ||
+}
+
+transcriptionChorusTwoPartOneInBb = \relative c'' { 
+    d,4 r8 a'  d,4 r8 a' | d,4 r8 a'  ds,4 r |
+    r8 a' e4  r8 a fs [ a ] | d,4 r8 a'  g4 r8 b |
+    a8 d, r4  r8 d' ds [ g ] | \tuplet 3/2 { ds8 e f } \tuplet 3/2 { fs8 f e }  ds8 c b a |
+    fs8 g b d  fs a, cs e | d a fs b ~ 4 r | 
+}
+transcriptionChorusTwoPartTwoInBb = \relative c'' { 
+    r4 r8 a  c e g e | fs e \tuplet 3/2 { d8 fs a }  d8 c a as | 
+    b8 g fs e  b' [ \grace { c16 b } a8 g fs ] | e d cs e  fs b a g |
+    fs8 a, c a  e' d c as | b d e fs  a g fs e |
+    d8 b a g  fs a e a | d,4 r r2 ||   
+}
+transcriptionChorusTwoPartTwoInBbForEb = \relative c' { 
+    r4 r8 a  c e g e | fs e \tuplet 3/2 { d8 fs a }  d8 c a as | 
+    b8 g fs e  b' [ \grace { c16 b } a8 g fs ] | e d cs e  fs b a g |
+    fs'8 a, c a  e' d c as | b d e fs  a g fs e |
+    d8 b a g  fs a e a | d,4 r r2 ||   
+}
+
+transcriptionForBb = {
+    \transcriptionChorusOneInBb
+    \transcriptionChorusTwoPartOneInBb
+    \transcriptionChorusTwoPartTwoInBb
+}
+transcriptionForEb = {
+    \transcriptionChorusOneInBb
+    \transcriptionChorusTwoPartOneInBb
+    \transcriptionChorusTwoPartTwoInBbForEb
+}
+
+
 
 % \book {
 %   \bookOutputSuffix "in-C-for-C"
@@ -431,7 +443,7 @@ melodyForEb = \relative c' {
     \score {
         <<
             \new ChordNames \transpose c c { 
-                \chordsForm
+                \transpose bf, c \chordsForm
             }
             \new RhythmicStaff \with {
                     \remove "Staff_symbol_engraver"
@@ -443,9 +455,9 @@ melodyForEb = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \structureTranscription
+                    \transpose bf, c \structureTranscription
                     \rehearsalMarkTweaksForC
-                    \transcriptionChorusOne
+                    \transcriptionForBb
                 >>
             }
         >>
@@ -457,14 +469,14 @@ melodyForEb = \relative c' {
     \header {
         title = \title
         composer = \composerName
-        poet = "Eb Lead Sheet"
+        poet = "Eb Bari Sax"
         instrumentName = \poet
         subtitle = ""
     }
     \score {
         \transpose ef bf <<
             \new ChordNames \transpose c c { 
-                \chordsForm
+                \transpose bf, c \chordsForm
             }
             \new RhythmicStaff \with {
                     \remove "Staff_symbol_engraver"
@@ -476,9 +488,9 @@ melodyForEb = \relative c' {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 <<
-                    \structureTranscription
+                    \transpose bf, c \structureTranscription
                     \rehearsalMarkTweaksForC
-                    \transcriptionChorusOne
+                    \transcriptionForEb
                 >>
             }
         >>
