@@ -87,7 +87,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c' { 
 
-    \key gf \major
+    \key df \major
     \tempo 4=176
 
     \startSection "A"
@@ -342,8 +342,12 @@ melodyAPartOneForFlats = \relative c'' {
     \tuplet 3/2 4 { bf8 f gf  af ef f  gf df ef  f bf, cf  df cf bf } | 
     bff8 <af' bff,> ~ 2. | 
 }
-melodyAPartTwo = \relative c'' { 
-    \tuplet 3/2 4 { gf8 df ef  ff cf df  ef af, a  cf bf a } | 
+melodyAPartTwo = \relative c' { 
+    \tuplet 3/2 4 { fs8 cs ds  e b cs  ds gs, a  b a af } | 
+    g8 <fs' g,> ~ 2. ||    
+}
+melodyAPartTwoForFlats = \relative c'' { 
+    \tuplet 3/2 4 { gf8 df ef  ff cf df  ef af, bff  cf bff af } | 
     g8 <fs' g,> ~ 2. ||    
 }
 melodyAPartThree = \relative c' { 
@@ -389,7 +393,7 @@ melody = {
 }
 melodyForFlats = {
     \melodyAPartOneForFlats
-    \melodyAPartTwo
+    \melodyAPartTwoForFlats
     \melodyAPartThree 
     \melodyAPartOneForFlats 
     \melodyB 
