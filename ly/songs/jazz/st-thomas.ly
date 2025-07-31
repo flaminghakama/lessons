@@ -91,7 +91,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 structure = \relative c' { 
 
     \key c \major
-    \tempo 4=210
+    \tempo 4=208
     \time 4/4
     \startSectionNoBarline "Head"
     \bar "[|:"
