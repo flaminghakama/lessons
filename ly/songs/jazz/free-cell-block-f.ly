@@ -294,7 +294,7 @@ chordsForm = \chordmode {
     gf1*5/4:maj7 | b1:13 | s | 
     gf1*5/4:maj7 | b1:13 ||
 
-    e1:7 | s | e:m6 | s | 
+    e1:9 | s | e:m6 | s | 
     d1:maj7 | s | d:m7.7+ | s | 
     g1:13 | s | c:maj9.11+ | s ||
 
@@ -421,7 +421,6 @@ melodyForFlats = {
             } \transpose c c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
-                \accidentalStyle modern-cautionary
                 <<
                     \structure
                     \rehearsalMarkTweaksForC
@@ -493,7 +492,6 @@ melodyForFlats = {
             } \transpose c c {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
-                \accidentalStyle modern-cautionary
                 <<
                     \structure
                     \rehearsalMarkTweaksForEb
