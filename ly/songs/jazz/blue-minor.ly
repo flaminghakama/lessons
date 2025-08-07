@@ -32,13 +32,13 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #5
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #24
 
   % Spacing in between systems
-  system-system-spacing.padding = #2
+  system-system-spacing.padding = #1
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #0
@@ -88,9 +88,11 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 structure = \relative c' { 
 
     \key f \minor
-    \tempo 4=200
+    \tempo 4=172
 
-    s1
+    s8 
+    \tempo "Swing"
+    s2..
 
     \startSection "A"
     \repeat volta 2 {
@@ -103,7 +105,11 @@ structure = \relative c' {
     }
 
     \startSection "B"
-    s1*8
+    \tempo Latin
+    s1*7
+    s8 
+    \tempo "Swing"
+    s2..
 
     \startSection "A"
     s1*8
@@ -112,34 +118,62 @@ structure = \relative c' {
 
 rehearsalMarkTweaksForC = \relative c' { 
     \once \override Score.MetronomeMark.extra-offset = #'( -5 . 3 )
-
     \override Score.RehearsalMark.self-alignment-X = #LEFT
- 
-   s1
+    s8
+    \once \override Score.MetronomeMark.extra-offset = #'( 0 . 0 )
+    s2..
 
-    \override Score.RehearsalMark.extra-offset = #'( -1 . 0 )
+    \override Score.RehearsalMark.extra-offset = #'( -2 . -4 )
     % "A"
     s1*2 \break 
     s1*4 \break
     s1*4 \break
 
-    \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
+    \override Score.RehearsalMark.extra-offset = #'( -3 . -4 )
+    \once \override Score.MetronomeMark.extra-offset = #'( 0 . 0.5 )
     % "B"
     s1*4 \break
-    s1*4 \break
+    s1*3
+    s8
+    \once \override Score.MetronomeMark.extra-offset = #'( 0 . -4 )
+    s2..
 
-    \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
+    \override Score.RehearsalMark.extra-offset = #'( -3 . -4 )
     % "A"
     s1*4 \break
     s1*4 \break
- }
+}
 
 rehearsalMarkTweaksForBb = \relative c' { 
-    \rehearsalMarkTweaksForC
+    \once \override Score.MetronomeMark.extra-offset = #'( -5 . 3 )
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    s8
+    \once \override Score.MetronomeMark.extra-offset = #'( 0 . 0 )
+    s2..
+
+    \override Score.RehearsalMark.extra-offset = #'( -2 . -1 )
+    % "A"
+    s1*2 \break 
+    s1*4 \break
+    s1*4 \break
+
+    \override Score.RehearsalMark.extra-offset = #'( -3 . -4 )
+    \once \override Score.MetronomeMark.extra-offset = #'( 0 . 0.5 )
+    % "B"
+    s1*4 \break
+    s1*3
+    s8
+    \once \override Score.MetronomeMark.extra-offset = #'( 0 . -4 )
+    s2..
+
+    \override Score.RehearsalMark.extra-offset = #'( -3 . -3 )
+    % "A"
+    s1*4 \break
+    s1*4 \break
 }
 
 rehearsalMarkTweaksForEb = \relative c' { 
-    \rehearsalMarkTweaksForC
+    \rehearsalMarkTweaksForBb
 }
 
 
@@ -156,7 +190,7 @@ chordsForm = \chordmode {
     g1:m7.5- | c:7 || g2:m7.5- c:7 | f1:m ||
 
     bf1:m7 | ef:7 | af:maj7 | f:7 |
-    bf1:m7 | ef:7.9- | g1:m7.5- | c:7 |
+    bf1:m13 | ef:7.9- | g1:m7.5- | c:7 |
 
 
     g2:m7.5- c:7 | f1:m | 
@@ -164,6 +198,25 @@ chordsForm = \chordmode {
     df1:9 | s | 
     g2:m7.5- c:7 | f1:m ||
 }
+
+
+chordRhythm = \new Voice \with {
+        \consists "Pitch_squash_engraver"
+    } \relative c' {
+    \improvisationOn
+    s1 ||
+
+    c2 4. 8 | R1 | c2 4. 8  | R1 | 
+    c4 r8 c8 r4 c | r8 c r4 c r8 c ~ | 
+    c2.. 8 | R1 || c2.. \repeatTie 8 | R1 ||
+
+    s1*7 R1 | 
+
+    c2 4. 8 | R1 | c2 4. 8  | R1 | 
+    c4 r8 c8 r4 c | r8 c r4 c r8 c ~ | 
+    c2.. 8 | R1 ||
+}
+
 
 melodyAPickup = \relative c' { 
     r8 c d [ e ] f g af bf ||
@@ -184,7 +237,7 @@ melodyACommonForFlats = \relative c'' {
     af8 f r af  f4 af8 f | r af f4  af8 f r 
 }
 melodyAFirstEnding = \relative c'' { 
-    bf8 ~ | 2 ~ 8 f cs ef |
+    bf8 ~ | 2 ~ 8 f df ef |
 }
 melodyASecondEnding = \relative c'' { 
     bf2 \repeatTie  af4 f8 8 | r2 r4 
@@ -194,6 +247,11 @@ melodyB = \relative c' {
     f4 ||
     f'1 | f8 ef df c  a bf c df | ef1 ~ | 2 r4 f, |
     df'1 | df8 c bf af  g af bf df | c1 |
+}
+harmonyB = \relative c'' { 
+    s4 ||
+    af1 | g | g2.. gf8 | f2 r4 s4  |
+    g1 | ff | f |
 }
 
 melodyAThirdEnding = \relative c'' { 
@@ -205,7 +263,10 @@ melody = {
     \melodyACommon
         \melodyAFirstEnding \melodyAPickup
         \melodyASecondEnding
-    \melodyB
+    << 
+        \melodyB \\
+        \harmonyB 
+    >>
     \melodyAPickup
     \melodyACommon
     \melodyAThirdEnding
@@ -216,11 +277,21 @@ melodyForFlats = {
     \melodyACommonForFlats
         \melodyAFirstEnding \melodyAPickup
         \melodyASecondEnding
-    \melodyB
+    << 
+        \melodyB \\
+        \harmonyB 
+    >>
     \melodyAPickup
     \melodyACommonForFlats
     \melodyAThirdEnding
     
+}
+
+\layout {
+    \context {
+        \Score
+        % proportionalNotationDuration = #(ly:make-moment 1/2)
+    }
 }
 
 \book {
@@ -237,6 +308,15 @@ melodyForFlats = {
             \new ChordNames { 
                 \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
                 \chordsForm
+            }
+            \new RhythmicStaff \with {
+                    \remove "Staff_symbol_engraver"
+                    \remove "Time_signature_engraver" 
+                    \override VerticalAxisGroup.default-staff-staff-spacing = #'(
+                        (padding . 0)
+                    )
+                } {
+                \chordRhythm
             }
             \new Staff = "lead" \with {
                 \consists Merge_rests_engraver
@@ -282,7 +362,7 @@ melodyForFlats = {
                 \accidentalStyle modern-cautionary
                 <<
                     \structure
-                    \rehearsalMarkTweaksForC
+                    \rehearsalMarkTweaksForBb
                     \melodyForFlats
                     \noPageBreak
                 >>
@@ -318,7 +398,7 @@ melodyForFlats = {
                 \accidentalStyle modern-cautionary
                 <<
                     \structure
-                    \rehearsalMarkTweaksForC
+                    \rehearsalMarkTweaksForEb
                     \melodyForFlats
                     \noPageBreak
                 >>
