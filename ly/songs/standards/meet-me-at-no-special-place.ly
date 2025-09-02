@@ -56,10 +56,42 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
-structure = \relative c' { 
+structureOriginal = \relative c' { 
 
-    \tempo 4=92
-    
+    \tempo 4=84
+    \key d \minor
+    \startSection "Intro"
+    s1*2
+
+    \startSection "A"
+    s1*8
+
+    \startSection "A"
+    s1*8
+
+    \startSection "B"
+    s1*8
+
+    \startSection "A"
+    s1*8
+
+    \startSection "A"
+    s1*8
+
+    \startSection "B"
+    s1*8
+
+    \startSection "A"
+    s1*8
+
+    \startSection "Coda"
+    s1*8
+    \bar "|."
+}
+
+structureForm = \relative c' { 
+
+    \tempo 4=84
     \key c \minor
     \startSection "Intro"
     s1*2
@@ -79,51 +111,125 @@ structure = \relative c' {
 
     \startSection "A"
     s1*8
+    \bar "|."
+}
 
-    \startSection "B"
+structureCoda = \relative c' { 
+    \override Score.RehearsalMark.self-alignment-X = #LEFT 
+    \once \override Score.RehearsalMark.extra-offset = #'( -9 . -1 ) 
+    \once \override Score.RehearsalMark.font-size = #8 
+    \mark \markup { \musicglyph #"scripts.coda" }
+    \key ef \major
+    s1*6
+    \bar "|."    
+}
+
+tweaksOriginal = \relative c' { 
+
+    \override Score.RehearsalMark.self-alignment-X = #LEFT 
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+
+    % \tempo 4=84
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "Intro"
+    s1*2
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "A"
+    s1*8 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "A"
     s1*8
 
-    \startSection "A"
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "B"
     s1*8
 
-    \startSection "Coda"
-    s1*12
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "A"
+    s1*8
+
+    \pageBreak 
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "A"
+    s1*8
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "B"
+    s1*8
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "A"
+    s1*8
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 ) 
+    % "Coda"
+    s1*6
 }
 
 chordsSong = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
+
+    s1 | s ||
+
+    f1:m6 | s | s | s | 
+    f2 f:7 | d:m7
+
+
 }
-melodyFirst = \relative c'' { 
-    g4 ||
-    g'4. f8 ef d r c ~ | 2 r8 bf8 r af ~ | 2 r8 g' r f ~ | 1 | 
-    f4. ef8 d c r bf ~ | 2 r8 af8 r g ~ | 2 r8 f' r ef ~ | 1 | 
-    ef4. df8 c bf r af ~ | 2 r8 gf8 r gf ~ | 4. f8 bf4. af8 | 2. 4 |
+melodyIntro = \relative c'' { 
+    \comp #8 
 }
-melodyMiddle = \relative c'' { 
-    \stemUp 
-    \tieUp
-    af4 g8 bf ~ 4. af8 | 4 g8 bf ~ 4. af8 | g1 ~ | 2. g4 
+melodyAOne = \relative c' { 
+    r4 \tuplet 3/2 { d8 f af } g8 f4. | \tuplet 3/2 { g8 f d ~ } 2 r4 | 
+    r8 d \tuplet 3/2 { f8 af g } r4 r8 f | \tuplet 3/2 { g8 f d ~ } 4 r \tuplet 3/2 { r8 a' ( c, ) } | 
+    f8 a r4 r r8 f | c'4 \tuplet 3/2 { bf8 a f ~ } 8 c e g | 
+    f8 c e g f c e f ~ | 2 r ||      
+
 }
-harmony = \relative c' { 
-    f4 ef8 f ~ 4. 8 | 4 8 8 ~ 4. ef8 | d1 ~ | 2. s4
+melodyATwo = \relative c' { 
+    r4 \tuplet 3/2 { d8 f af } g8 f4. | \tuplet 3/2 { g8 f d ~ } 4 r2 | 
+    r4 \tuplet 3/2 { r8 d f } af8 g ~ 8 f16 g ~ | 8 f16 d ~ 4 r \tuplet 3/2 { r8 a' ( c, ) } | 
+    f8 a r4 r r8 f | c'4 \tuplet 3/2 { bf8 a f ~ } 8 c e g | 
+    f8 c e g f c e f ~ | 2     
+}
+melodyB = \relative c' {  
+    r8 f fs [ g ] ||
+    af8 bf4 df8 ~ 4. cf8 | af bf4. r2 | 
+    r8 ef, af [ bf ~ ] 8 df, ff af ~ | 2 r4 r8 g | 
+    a8 d4 a8 ~ 8 d a4 | g8 d4. r4 r8 d |
+    \tuplet 3/2 { e8 8 8 ~ } 4 r \tuplet 3/2 { r8 f e } | a8 b4 cs8 ~ 4 r || 
+}
+melodyCoda = \relative c'' { 
+    r8 c ~ 16 c bf a  c8 8 r f, | 
+    \tuplet 3/2 4 { c'4 c8  c bf a } c4 r8 f, | 
+    
+    \tuplet 3/2 { c'8 a c } r8 f,  \tuplet 3/2 { c'4 8 } r8 f,8 | 
+    \tuplet 3/2 4 { c'8 4  c8 bf a } c4 r8 c |
+
+    c8 bf4. r4 r8 f | a bf c bf ~ 8 f a bf | 
+    a8 c bf a f c g' f ~ | 2 r2 |  
 }
 
-solos = \relative c''' { 
-    g2 ~ 8 ef b c ~ | 2 ~ 8 bf a af ~ | 2 ~ 8 g e f ~ | 1 |
-    f'2 ~ 8 d a bf ~ | 2 ~ 8 af fs g ~ | 2 ~ 8 f d ef ~ | 1 |
-    ef'2 ~ 8 c g af ~ | 2 ~ 8 gf e f ~ | 2 ~ 8 ef c df ~ | 1 |
-    g2. f8 bf ~ | 2 ~ 8 g f g ~ | 1 ~ | 1 ||
-}
-solosForBbLow = \relative c''' { 
-    g2 ~ 8 ef b c ~ | 2 ~ 8 bf a af ~ | 2 ~ 8 g e f ~ | 1 |
-    f'2 ~ 8 d a bf ~ | 2 ~ 8 af fs g ~ | 2 ~ 8 f d ef ~ | 1 |
-    ef'2 ~ 8 c g af ~ | 2 ~ 8 gf e f ~ | 2 ~ 8 ef' c df ~ | 1 |
-    g,2. f8 bf ~ | 2 ~ 8 g f g ~ | 1 ~ | 1 ||
+melody = \relative c' { 
+    \melodyIntro
+    \melodyAOne
+    \melodyATwo
+    \melodyB 
+    \melodyATwo r2 
+    <>\xmp \comp #16 
+    <>\xmp \comp #14
+    \melodyB 
+    \melodyATwo r2 
+    \melodyCoda
 }
 
-lyricsHeadOneFirst = \lyricmode {
+lyricsHeadOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
@@ -151,8 +257,8 @@ lyricsHeadOneFirst = \lyricmode {
     So meet me at no spe -- cial place
     And I'll be there at no par -- tic -- u -- lar time
 
-    % A
-    instrumental
+
+    % A 
 
     % B
     You'd bet -- ter bring a -- long your glas -- ses
@@ -161,24 +267,19 @@ lyricsHeadOneFirst = \lyricmode {
     As clear -- ly as you can see be -- hind
 
     % A
-    You can turn back in retropect
+    You can turn back in re -- tro -- spect
     Of the times you stuck out your neck.
-    So meet me at no special place,
-    And I'll be there at no particular time.
+    So meet me at no spe -- cial place,
+    And I'll be there at no par -- tic -- u -- lar time.
 
     % Coda 
     All we do is make up
-    Then quarrel all over again,
-    But this is it ~ the breakup
+    Then quarrel all o -- ver a -- gain,
+    But this is it, the break -- up
     From now on, you knew me when...
 
-    So meet me at no special place,
-    And I'll be there at no particular time!
-
-}
-lyricsHeadOneMiddle = \lyricmode {
-    \override LyricText.font-family = #'typewriter
-    \override LyricText.font-size = #'2
+    So meet me at no spe -- cial place,
+    And I'll be there at no par -- tic -- u -- lar time!
 
 }
 lyricsHeadTwo = \lyricmode {
@@ -209,183 +310,20 @@ lyricsHeadThree = \lyricmode {
         <<
             \new ChordNames \transpose c c {
                 \include "ly/ily/chord-names-properties.ily" 
-                \chordsFirst
+                % \chordsFirs
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff    
                 \new Voice = "lead" <<
-                    \structureFirst 
-                    \melodyFirst
+                    \structureOriginal
+                    \tweaksOriginal
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneFirst } 
+                \lyricsto "lead" { \lyricsHeadOne} 
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadThree } 
-            }
-        >>
-    }
-    \score {
-         <<
-            \new ChordNames \transpose c c  { 
-                \chordsMiddle 
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \new Voice = "lead" <<
-                        \structureMiddle
-                        \melodyMiddle
-                    >> \\
-                    \new Voice = "harmony" \voiceTwo <<
-                        \harmony
-                    >>
-                >>
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneMiddle } 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-   }
-    \score {
-        <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsLast
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structureLast 
-                    \solos
-                >> 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
-}
-
-\book {
-  \bookOutputSuffix "for-Bb"
-    \header {
-        subtitle = ""
-        poet = "Bb Lead Sheet"
-    }
-    \score {
-        \transpose bf, c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsFirst
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff    
-                \new Voice = "lead" <<
-                    \structureFirst 
-                    \melodyFirst
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneFirst } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadThree } 
-            }
-        >>
-    }
-    \score {
-        \transpose bf, c <<
-            \new ChordNames \transpose c c  { 
-                \chordsMiddle 
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \new Voice = "lead" <<
-                        \structureMiddle
-                        \melodyMiddle
-                    >> \\
-                    \new Voice = "harmony" \voiceTwo <<
-                        \harmony
-                    >>
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneMiddle } 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-   }
-    \score {
-        \transpose bf, c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsLast
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structureLast 
-                    \solos
-                >> 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
-}
-
-
-\book {
-  \bookOutputSuffix "for-Bb-low"
-    \header {
-        subtitle = ""
-        poet = "Bb Lead Sheet"
-    }
-    \score {
-        \transpose bf c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsFirst
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff    
-                \new Voice = "lead" <<
-                    \structureFirst 
-                    \melodyFirst
-                >>
-                \noPageBreak
-            }
-            % \new Lyrics \with { alignAboveContext = "staff" } {
-            %     \lyricsto "lead" { \lyricsHeadOneFirst } 
-            % }
             % \new Lyrics \with { alignAboveContext = "staff" } {
             %     \lyricsto "lead" { \lyricsHeadTwo } 
             % }
@@ -394,388 +332,4 @@ lyricsHeadThree = \lyricmode {
             % }
         >>
     }
-    \score {
-        \transpose bf c <<
-            \new ChordNames \transpose c c  { 
-                \chordsMiddle 
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \new Voice = "lead" <<
-                        \structureMiddle
-                        \melodyMiddle
-                    >> \\
-                    \new Voice = "harmony" \voiceTwo <<
-                        % \harmony
-                    >>
-                >>
-                \noPageBreak
-            }
-            % \new Lyrics \with { alignAboveContext = "staff" } {
-            %     \lyricsto "lead" { \lyricsHeadOneMiddle } 
-            % }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-   }
-    \score {
-        \transpose bf c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsLast
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structureLast 
-                    \solosForBbLow
-                >> 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
 }
-
-
-\book {
-  \bookOutputSuffix "for-Eb"
-    \header {
-        subtitle = ""
-        poet = "Eb Lead Sheet"
-        instrumentName = \poet
-    }
-    \score {
-        \transpose ef c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsFirst
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff    
-                \new Voice = "lead" <<
-                    \structureFirst 
-                    \melodyFirst
-                >>
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneFirst } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadThree } 
-            }
-        >>
-    }
-    \score {
-        \transpose ef c <<
-            \new ChordNames \transpose c c  { 
-                \chordsMiddle 
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \new Voice = "lead" <<
-                        \structureMiddle
-                        \melodyMiddle
-                    >> \\
-                    \new Voice = "harmony" \voiceTwo <<
-                        \harmony
-                    >>
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneMiddle } 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-   }
-    \score {
-        \transpose ef, c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsLast
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structureLast 
-                    \solos
-                >> 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
-}
-
-
-
-\book {
-  \bookOutputSuffix "in-A-minor-for-C"
-    \header {
-        subtitle = "(Amy Carr Key)"
-        poet = "Concert Pitch"
-        instrumentName = \poet
-    }
-    \score {
-        \transpose c a, <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsFirst
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff    
-                \new Voice = "lead" <<
-                    \structureFirst 
-                    \melodyFirst
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneFirst } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadThree } 
-            }
-        >>
-    }
-    \score {
-        \transpose c a, <<
-            \new ChordNames \transpose c c  { 
-                \chordsMiddle 
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \new Voice = "lead" <<
-                        \structureMiddle
-                        \melodyMiddle
-                    >> \\
-                    \new Voice = "harmony" \voiceTwo <<
-                        \harmony
-                    >>
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneMiddle } 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-   }
-    \score {
-        \transpose c a, <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsLast
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structureLast 
-                    \solos
-                >> 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
-}
-
-\book {
-  \bookOutputSuffix "in-A-minor-for-Bb"
-    \header {
-        subtitle = "(Amy Carr Key)"
-        poet = "Bb Lead Sheet"
-        instrumentName = \poet
-    }
-    \score {
-        \transpose c a, \transpose bf, c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsFirst
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff    
-                \new Voice = "lead" <<
-                    \structureFirst 
-                    \melodyFirst
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneFirst } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadThree } 
-            }
-        >>
-    }
-    \score {
-        \transpose c a, \transpose bf, c <<
-            \new ChordNames \transpose c c  { 
-                \chordsMiddle 
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \new Voice = "lead" <<
-                        \structureMiddle
-                        \melodyMiddle
-                    >> \\
-                    \new Voice = "harmony" \voiceTwo <<
-                        \harmony
-                    >>
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneMiddle } 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
-    \score {
-        \transpose c a, \transpose bf, c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsLast
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structureLast 
-                    \solos
-                >> 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
-}
-
-
-\book {
-  \bookOutputSuffix "in-A-minor-for-Eb"
-    \header {
-        subtitle = "(Amy Carr Key)"
-        poet = "Eb Lead Sheet"
-        instrumentName = \poet
-    }
-    \score {
-        \transpose c a, \transpose ef, c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsFirst
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff    
-                \new Voice = "lead" <<
-                    \structureFirst 
-                    \melodyFirst
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneFirst } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadThree } 
-            }
-        >>
-    }
-    \score {
-        \transpose c a,  \transpose ef, c <<
-            \new ChordNames \transpose c c  { 
-                \chordsMiddle 
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \new Voice = "lead" <<
-                        \structureMiddle
-                        \melodyMiddle
-                    >> \\
-                    \new Voice = "harmony" \voiceTwo <<
-                        \harmony
-                    >>
-                >>
-                \noPageBreak
-            }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadOneMiddle } 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
-    \score {
-        \transpose c a, \transpose ef, c <<
-            \new ChordNames \transpose c c {
-                \include "ly/ily/chord-names-properties.ily" 
-                \chordsLast
-            }
-            \new Staff = "voice" \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                <<
-                    \structureLast 
-                    \solos
-                >> 
-            }
-        >>
-        \layout { 
-            short-indent = 0.25\cm
-            indent = 0.25\cm
-        }
-    }
-}
-
