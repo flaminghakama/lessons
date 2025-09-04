@@ -198,8 +198,8 @@ chordsSong = \chordmode {
     bf1:13 | s | s | s | 
     f2:7 ef:7 | d:m7 df:7 | g:m7 bf4:7 c:7 | f1 ||
 
-    bf1:7 | s | f:7 | s | 
-    bf:1 | a2:m7.5- d:aug7 | g:m7 bf4:7 c:7 | f1 || 
+    bf1:9 | s | f:7 | s | 
+    bf:9 | a2:m7.5- d:aug7 | g:m7 c:7 | f1 || 
 
 
 }
