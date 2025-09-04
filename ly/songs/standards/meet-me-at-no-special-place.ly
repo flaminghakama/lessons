@@ -175,10 +175,31 @@ chordsSong = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
 
-    s1 | s ||
+    bf1:13 | a:9 ||
 
-    f1:m6 | s | s | s | 
-    f2 f:7 | d:m7
+    bf1:13 | s | s | s | 
+    f2:7 ef:7 | d:m7 df:7 | g:m7 bf4:7 c:7 | f1 ||
+
+    bf1:13 | s | s | s | 
+    f2:7 ef:7 | d:m7 df:7 | g:m7 bf4:7 c:7 | f1 ||
+
+    af1:m9 | df:13 | gf:13 | s |
+    d1:m7 | g:7 | e:m7 | a:7 ||
+
+    bf1:13 | s | s | s | 
+    f2:7 ef:7 | d:m7 df:7 | g:m7 bf4:7 c:7 | f1 ||
+
+    bf1:13 | s | s | s | 
+    f2:7 ef:7 | d:m7 df:7 | g:m7 bf4:7 c:7 | f1 ||
+
+    af1:m9 | df:13 | gf:13 | s | 
+    d1:m7 | g:7 | e:m7 | a:7 ||
+
+    bf1:13 | s | s | s | 
+    f2:7 ef:7 | d:m7 df:7 | g:m7 bf4:7 c:7 | f1 ||
+
+    bf1:7 | s | f:7 | s | 
+    bf:1 | a2:m7.5- d:aug7 | g:m7 bf4:7 c:7 | f1 || 
 
 
 }
@@ -206,8 +227,8 @@ melodyB = \relative c' {
     \tuplet 3/2 { e8 8 8 ~ } 4 r \tuplet 3/2 { r8 f e } | a8 b4 cs8 ~ 4 r || 
 }
 melodyCoda = \relative c'' { 
-    r8 c ~ 16 c bf a  c8 8 r f, | 
-    \tuplet 3/2 4 { c'4 c8  c bf a } c4 r8 f, | 
+    r8 c ~ 16 c bf af  c8 8 r f, | 
+    \tuplet 3/2 4 { c'4 c8  c bf af } c4 r8 f, | 
     
     \tuplet 3/2 { c'8 a c } r8 f,  \tuplet 3/2 { c'4 8 } r8 f,8 | 
     \tuplet 3/2 4 { c'8 4  c8 bf a } c4 r8 c |
@@ -310,7 +331,7 @@ lyricsHeadThree = \lyricmode {
         <<
             \new ChordNames \transpose c c {
                 \include "ly/ily/chord-names-properties.ily" 
-                % \chordsFirs
+                \chordsSong
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
