@@ -1,5 +1,5 @@
 killPreview
-rm pdf/songs/standards/nothing-like-you*
-lilypond ly/songs/standards/nothing-like-you.ly 
-mv nothing-like-you*pdf pdf/songs/standards
-mv nothing-like-you*midi midi
+rm wein-a-ramallah*pdf
+lilypond ly/songs/blo/wein-a-ramallah.ly
+mv wein-a-ramallah*.pdf pdf/songs/blo
+for file in pdf/songs/blo/wein-a-ramallah*.pdf ; do open -a Preview $file ; done  
