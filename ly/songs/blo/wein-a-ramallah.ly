@@ -144,9 +144,8 @@ structureCoda = \relative c' {
     \mark \markup { \musicglyph #"scripts.coda" }
     \key c \minor
     \fourFour
-    s1
-    \twoFour
-    s2
+    \tempo "ritardando"
+    s1*2
     \bar "|."    
 }
 
@@ -265,7 +264,7 @@ chordsCoda = \chordmode {
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
-    f2:m af4 bf | c2:m ||
+    f2:m af4 bf | c1:m ||
 }
 
 melodyHead = \relative c'' {
@@ -284,7 +283,7 @@ melodyBridge = \relative c'' {
 }
 
 melodyCoda = \relative c'' { 
-    f8 ef f d  ef4 d8 c | c4 4 ||
+    f8 ef f d  ef4 d8 c | c4 2. ||
 }
 
 melody = {
@@ -323,7 +322,7 @@ bassline = \relative c {
 }
 
 basslineCoda = \relative c, { 
-    f8. f'16 r8 f  af,4 bf | c,2 ||
+    f8. f'16 r8 f  af,4 bf | c,1 ||
 }
 
 tenorIntro = \relative c' { 
@@ -355,7 +354,7 @@ tenorSolos = \relative c' {
 }
 
 tenorCoda = \relative c' { 
-    r8. <af c f>16 r8 <af c f>  <af c ef>4 <f bf d> || <g c ef>2 ||
+    r8. <af c f>16 r8 <af c f>  <af c ef>4 <f bf d> || <g c ef>1 ||
 }
 
 tenor = {
