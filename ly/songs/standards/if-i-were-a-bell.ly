@@ -106,7 +106,7 @@ melodyForm = \relative c'' {
     c8 a8 8 8 ~ 8 c8 8 8 ~ | 8 a8 8 c ~ 8 a8 4 | d4. g,8 ~ 2 | r r8 a4 g8 | 
 
     f8 8 4 4 8 bf ~ | 2 r8 a4 g8 | f8 8 4 8 8 8 c' ~ | 2 r8 a4 g8 | 
-    f8 8 4 4 8 d' ~ | 2 r8 c d [ e ] ~ | 8 cs d e ~ 8 cs d e ~ | 4 r a,4 4 ||
+    f8 8 4 4 8 d' ~ | 2 r8 cs d [ e ] ~ | 8 cs d e ~ 8 cs d e ~ | 4 r a,4 4 ||
 
     a8 f8 8 8 ~ 8 a4 8 | 8 f8 4 a8 f8 4 | a4. c,8 ~ 2 ~ | 2 c'4 4 |
     c8 a8 8 8 ~ 8 c8 8 8 ~ | 8 a8 8 c ~ 8 a8 4 | d4. g,8 ~ 2 | r r8 a4 g8 | 
