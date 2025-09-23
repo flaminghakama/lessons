@@ -117,14 +117,14 @@ chordsSong = \chordmode {
     \set noChordSymbol = \markup { \small "/" }
 
     c4:m r c:1.3-.5.13- r| c:m6 r c:m7 r | f:m7 r bf:7 bf:aug7 | ef:maj7 r d:m7 g | 
-    g4:m7.13- r c:aug7.9-  r | f4:9 r r r | f:m7 r f:1.4.5.7 r | ef:6 r d:7.9- g:7 ||
+    g4:m7.13- r c:aug7.9-  r | f4:9 r r r | f:m7 r bf:1.4.5.7 r | ef:6 r d:7.9- g:7 ||
         ef4:6 r a:m7.5- d:7.9- ||
 
     g4:m r r r | c:m6 r d:7 r | g:m r e:m7.5- r | c:m6/ef r d:7.9- r | 
     g4:m r r r | ef:13.11+ r d:1.4.5.7 d:7 | g1:maj7 | d4:m7 r g:1.4.5.7 g:7 ||
 
     c4:m r c:1.3-.5.13- r| c:m6 r c:m7 r | f:m7 r bf:7 bf:aug7 | ef:maj7 r d:m7 g | 
-    g4:m7.13- r c:aug7.9-  r | f4:9 r r r | f:m7 r f:1.4.5.7 r | ef4:6 r g:aug7 r ||
+    g4:m7.13- r c:aug7.9-  r | f4:9 r r r | f:m7 r bf:1.4.5.7 r | ef4:6 r g:aug7 r ||
 }
 
 chordsSongReal = \chordmode { 
