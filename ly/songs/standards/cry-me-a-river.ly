@@ -3,8 +3,8 @@
 titleLeft = "Cry Me"
 titleRight = "A River"
 titleFull = "Cry Me A River"
-composerName = "C. Porter"
-lyricistName = "C. Porter"
+composerName = "A. Hamilton"
+lyricistName = "A. Hamilton"
 arranger = ""
 copyright = ""
 
@@ -18,7 +18,7 @@ lilypond ly/songs/standards/cry-me-a-river.ly
 mv cry-me-a-river*pdf pdf/songs/standards
 for file in pdf/songs/standards/cry-me-a-river*pdf ; do op $file ; done 
 
-git add . ; git commit -m"new key" ; git push 
+git add . ; git commit -m"fix chord" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
