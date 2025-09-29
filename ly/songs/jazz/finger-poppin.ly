@@ -96,6 +96,7 @@ structure = \relative c' {
     \startSection "A"
     \repeat volta 2 {
         \startRepeat
+        \tempo "Two Feel"
         s1*4 \break
         s1*3
     }
@@ -159,11 +160,39 @@ chordsForm = \chordmode {
 }
 
 
+chordRhythm =\new Voice \with {
+        \consists "Pitch_squash_engraver"
+    } \relative c' {
+    \improvisationOn
+    <>^\markup { " " } 
+    c4 r r r8 c | r4 c4 4 8 8 |
+    r2 r4 r8 c | r4 c8 8 4. 8 | 
+    c4 r r c4 | r c4 4 8 8 ~ | 1:32 ~ | 2:32 4-> r
+
+    s1*2 | r2 c4 r | c4 r8 c8 r4 c4  | 
+    s1*2 | r2 c4 r | c4 r8 c8 r4 c4  || c4 r8 c8 r2  || 
+
+
+    r2 c2 | 4. 8 ~ 2 | r2 c2 | 4. 8 ~ 2 | 
+    c2 2 | 4. 8 ~ 4 4 ~ | 1 | 4 r8 c8 ~ 2 ||
+
+    s1*2 | r2 c4 r | c4 r8 c8 r4 c4  | 
+    s1*2 | c4 r4 r2 | R1 ||
+}
+
+
 melodyIntro = \relative c' { 
-    <f bf,>4 r r r8 <f b,> | r4 <f b,>4 4 8 <f c> |
-    r2 r4 r8 <df> | r4 <df>8 <c> <b>4. <b>8 | 
-    <bf>4 r r <bf,>4 | r <bf>4 4 8 <b> ~ | 
-    <b>1 ~ | 2 r4  
+    f4 r r r8 f | r4 f4 4 8 8 |
+    r2 r4 r8 f | r4 f8 8 4. 8 | 
+    f4 r r bf,4 | r bf4 4 8 a! ~ | 
+    a1 ~ | 2 r4  
+}
+
+harmonyIntro = \relative c' { 
+    bf4 r r r8 b | r4 b4 4 8 c |
+    r2 r4 r8 df | r4 df8 c b4. b8 | 
+    bf4 r r bf,4 | r bf4 4 8 b ~ | 
+    b1 ~ | 2 r4  
 }
 
 
@@ -199,11 +228,18 @@ melodyAForFlats = \relative c' {
 }
 
 melody = {
-    R1*7 | r2 r4
+    \transpose c, c << 
+        \melodyIntro 
+        \harmonyIntro 
+    >>
     \melodyA 
 }
 melodyForFlats = {
-    R1*7 | r2 r4
+    <>^\markup { \small "Tenor" }_\markup { \small "Trumpet" }
+    << 
+        \transpose c, c \harmonyIntro 
+        \melodyIntro 
+    >>
     \melodyAForFlats
 }
 
@@ -221,6 +257,14 @@ melodyForFlats = {
             \new ChordNames { 
                 \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
                 \chordsForm
+            }
+            \new RhythmicStaff \with {
+                    \remove "Staff_symbol_engraver"
+                    \remove "Time_signature_engraver" 
+                    \magnifyStaff #5/7
+                } {
+                %\override Score.BarLine.break-visibility = ##(#f #f #f)
+                \chordRhythm
             }
             \new Staff = "lead" \with {
                 \consists Merge_rests_engraver
