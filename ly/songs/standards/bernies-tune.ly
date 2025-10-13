@@ -1,17 +1,16 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "Bernie's"
 titleRight = "Tune"
-title = "Bernie's Tune"
+titleFull = "Bernie's Tune"
 composerName = "B. Miller"
 lyricistName = "M. Stoller & J. Lieber"
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+arranger = "G. Mulligan"
+copyright = ""
 
 %{
+
+killPreview ; rm bernie*pdf ; lilypond ly/songs/standards/bernie*.ly ; mv bernie*.pdf pdf/songs/standards ; for file in pdf/songs/standards/bernie*pdf ; do open -a Preview $file ; done
 
 killPreview
 rm bernie*pdf
@@ -21,13 +20,17 @@ for file in pdf/songs/standards/bernie*pdf ; do open -a Preview $file ; done
 
 %}
 
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
+
 \paper {
 
   top-margin = #2
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -80,20 +83,36 @@ chordsForm = \chordmode {
 }
 
 melodyA = \relative c'' { 
-    r8 a r gs a4 r8 a | r gs a4 a,8 d f a | af2 ( ~ 4. e8 ~ | 1 ) |  
-    r8 g r fs g4 r8 g | r fs g4 a,8 cs e g | f2 ( ~ 4. d8 ~ | 1 ) | 
+    r8 a r gs a4 r8 a | r gs a4 a,8 d f a | af2 ~ 4. e8 ~ | 1 |  
+    r8 g r fs g4 r8 g | r fs g4 a,8 cs e g | f2 ~ 4. d8 ~ | 1 | 
 }
 melodyB = \relative c' { 
     bf4 4 g'8 f4 d8 | c4. d8 ~ 2 | 
     bf4 4 g'8 f4 d8 | c1| 
     bf4 4 g'8 f4 d8 | c4. d8 ~ 2 | 
-    r8 a'4 8 2 ( ~ | 8 g f e cs2 ) | 
+    r8 a'4 8 2 ~ | 8 g f e cs2 | 
 }
 melodyForm = \relative c' { 
     \melodyA
     \melodyA
     \melodyB
     \melodyA
+}
+
+harmonyA = \relative c'' { 
+    r8 d r cs d4 r8 d | r cs d4 d,8 f a cs | c2 ~ 4. af8 ~ | 1 |  
+    r8 b r as b4 r8 b | r as b4 cs,8 e g b | a2 ~ 4. f8 ~ | 2  
+}
+harmonyB = \relative c'' { 
+    g8 f d c ||
+    bf1 | c2 g'8 f d c | bf1 | c2 g'8 f d c |
+    bf1 | c2 g'8 f d c | bf2. c8 a ~ | 1 ||
+}
+harmonyForm = \relative c' { 
+    \harmonyA r2 
+    \harmonyA
+    \harmonyB
+    \harmonyA r2
 }
 
 lyricsHeadOne = \lyricmode {
@@ -174,6 +193,124 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
+  \bookOutputSuffix "lead-and-harmony-for-C"
+    \header {
+        subtitle = ""
+        arranger = ""
+        instrumentName = "Concert Lead & Harmony"
+        poet = \instrumentName
+    }
+    \score {
+        <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \with {
+                \consists Merge_rests_engraver
+            } \transpose c, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \accidentalStyle modern
+                    \structure
+                    <<
+                        \melodyForm \\
+                        \transpose d d, \harmonyForm
+                    >>
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        subtitle = ""
+        arranger = ""
+        instrumentName = "Bb Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        <<
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose bf, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForm
+                >>
+            }
+        >>
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "harmony-for-Bb"
+    \header {
+        subtitle = ""
+        arranger = ""
+        instrumentName = "Bb Harmony"
+        poet = \instrumentName
+    }
+    \score {
+        <<
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose bf, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \accidentalStyle modern
+                    \structure
+                    \harmonyForm
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "lead-and-harmony-for-Bb"
+    \header {
+        subtitle = ""
+        arranger = ""
+        instrumentName = "Bb Lead & Harmony"
+        poet = \instrumentName
+    }
+    \score {
+        <<
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \with {
+                \consists Merge_rests_engraver
+            } \transpose bf,, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \accidentalStyle modern
+                    \structure
+                    <<
+                        \melodyForm \\
+                        \transpose d d, \harmonyForm
+                    >>
+                >>
+            }
+        >>
+    }
+}
+
+\book {
   \bookOutputSuffix "for-Eb"
     \header {
         subtitle = ""
@@ -193,6 +330,65 @@ lyricsHeadTwo = \lyricmode {
                 \new Voice = "lead" <<
                     \structure
                     \melodyForm
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "harmony-for-Eb"
+    \header {
+        subtitle = ""
+        arranger = ""
+        instrumentName = "Eb Harmony"
+        poet = \instrumentName
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose ef, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \accidentalStyle modern
+                    \structure
+                    \harmonyForm
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "lead-and-harmony-for-Eb"
+    \header {
+        subtitle = ""
+        arranger = ""
+        instrumentName = "Eb Lead & Harmony"
+        poet = \instrumentName
+    }
+    \score {
+        <<
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \with {
+                \consists Merge_rests_engraver
+            } \transpose ef, c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \accidentalStyle modern
+                    \structure
+                    <<
+                        \melodyForm \\
+                        \transpose d d, \harmonyForm
+                    >>
                 >>
             }
         >>
