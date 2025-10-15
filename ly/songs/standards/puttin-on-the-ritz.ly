@@ -280,18 +280,18 @@ lyricsHeadOne = \lyricmode {
     Spend -- ing eve -- ry dime
     For a won -- der -- ful time
 
-    If you're blue, and you don't know where to go to
+    If you're blue and you don't know where to go to,
     Why don't you go where Har -- lem flits?
-    Put -- tin' on the Ritz
+    Put -- tin' On The Ritz
 
 
-    That's where each and eve -- ry lu -- lu- -- belle goes
-    Eve -- ry Thurs -- day eve -- ning with her swell beaus
-    Rub -- bin' el -- bows
+    That's where each and ev -- 'ry Lu -- lu  Belle goes
+    Ev -- 'ry Thurs -- day ev' -- ning with her swell beaus
+    Rub -- bing el -- bows,
 
-    Come with me and we'll at -- tend their ju -- bi -- lee
+    Come with me and we'll at -- tend their Ju -- bi -- lee
     And see them spend their last two bits
-    Put -- tin' on the Ritz
+    Put -- tin' On The Ritz
 }
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
@@ -299,8 +299,9 @@ lyricsHeadTwo = \lyricmode {
 
     \repeat unfold 53 { \skip 1 }
 
-    Span -- gled gowns u -- pon the be -- vy of high browns
-    From down the lev -- ee, all mis -- fits
+    Span -- gled gowns u -- pon the bev -- y of high browns
+    From down the lev -- ee, 
+    All mis -- fits
 }
 
 
@@ -328,6 +329,7 @@ lyricsHeadTwo = \lyricmode {
             \new GrandStaff <<
                 \new Staff = "voice" { 
                     \include "ly/ily/staff-properties.ily"
+                    \accidentalStyle modern
                     \autoPageBreaksOff
                     \new Voice = "top" <<
                         \structurePiano
@@ -337,6 +339,7 @@ lyricsHeadTwo = \lyricmode {
                 }
                 \new Staff = "voice" { 
                     \include "ly/ily/staff-properties.ily"
+                    \accidentalStyle modern
                     \autoPageBreaksOff
                     \new Voice = "top" <<
                         \clef bass
