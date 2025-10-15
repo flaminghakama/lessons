@@ -18,7 +18,7 @@ lilypond ly/songs/standards/puttin-on-the-ritz*.ly
 mv puttin-on-the-ritz*.pdf pdf/songs/standards
 for file in pdf/songs/standards/puttin-on-the-ritz*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"fixing pitch" ; git push 
+git add . ; git commit -m"fixing lyrics" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -364,7 +364,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
-                \override Staff.TimeSignature.stencil = ##f
+                \once \override Staff.TimeSignature.stencil = ##f
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
@@ -398,7 +398,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
-                \override Staff.TimeSignature.stencil = ##f
+                \once \override Staff.TimeSignature.stencil = ##f
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureCoda
@@ -453,7 +453,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
-                \override Staff.TimeSignature.stencil = ##f
+                \once \override Staff.TimeSignature.stencil = ##f
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
@@ -487,7 +487,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
-                \override Staff.TimeSignature.stencil = ##f
+                \once \override Staff.TimeSignature.stencil = ##f
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureCoda
@@ -543,7 +543,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
-                \override Staff.TimeSignature.stencil = ##f
+                \once \override Staff.TimeSignature.stencil = ##f
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structure
@@ -577,7 +577,7 @@ lyricsHeadTwo = \lyricmode {
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
-                \override Staff.TimeSignature.stencil = ##f
+                \once \override Staff.TimeSignature.stencil = ##f
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
                     \structureCoda
