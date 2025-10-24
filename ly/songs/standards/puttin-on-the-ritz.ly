@@ -314,9 +314,9 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-F-for-C"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         instrumentName = "Concert Lead Sheet"
         poet = \instrumentName
     }
@@ -416,9 +416,213 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-E-for-C"
     \header {
-        subtitle = ""
+        subtitle = "(Elaine key)"
+        instrumentName = "Concert Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        \new StaffGroup \transpose f e <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsPiano
+            }
+            \new GrandStaff <<
+                \new Staff = "voice" { 
+                    \include "ly/ily/staff-properties.ily"
+                    \accidentalStyle modern
+                    \autoPageBreaksOff
+                    \new Voice = "top" <<
+                        \structurePiano
+                        \rehearsalMarkTweaksForPiano
+                        \pianoIntroTop
+                    >>
+                }
+                \new Staff = "voice" { 
+                    \include "ly/ily/staff-properties.ily"
+                    \accidentalStyle modern
+                    \autoPageBreaksOff
+                    \new Voice = "top" <<
+                        \clef bass
+                        \structurePiano
+                        \rehearsalMarkTweaksForPiano
+                        \pianoIntroBottom
+                    >>
+                }
+            >>
+        >>
+        \layout {
+            indent = 1.25\cm
+            short-indent = 0.25\cm
+        }    
+    }
+
+    \score {
+        \transpose f e <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \once \override Staff.TimeSignature.stencil = ##f
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+        \layout {
+            indent = 0\cm
+            short-indent = 0\cm
+        }    
+    }
+
+    \score { 
+        \header { 
+            title = ""
+            poet = ""
+            composer = ""
+        }
+        \transpose f e <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \once \override Staff.TimeSignature.stencil = ##f
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+        >>
+        \layout {
+            indent = 4\cm
+            ragged-right = ##t
+            ragged-last = ##t
+            short-indent = .25\cm
+        }    
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Eb-for-C"
+    \header {
+        subtitle = "(Elaine key concept)"
+        instrumentName = "Concert Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        \new StaffGroup \transpose f ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsPiano
+            }
+            \new GrandStaff <<
+                \new Staff = "voice" { 
+                    \include "ly/ily/staff-properties.ily"
+                    \accidentalStyle modern
+                    \autoPageBreaksOff
+                    \new Voice = "top" <<
+                        \structurePiano
+                        \rehearsalMarkTweaksForPiano
+                        \pianoIntroTop
+                    >>
+                }
+                \new Staff = "voice" { 
+                    \include "ly/ily/staff-properties.ily"
+                    \accidentalStyle modern
+                    \autoPageBreaksOff
+                    \new Voice = "top" <<
+                        \clef bass
+                        \structurePiano
+                        \rehearsalMarkTweaksForPiano
+                        \pianoIntroBottom
+                    >>
+                }
+            >>
+        >>
+        \layout {
+            indent = 1.25\cm
+            short-indent = 0.25\cm
+        }    
+    }
+
+    \score {
+        \transpose f ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsForm 
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \once \override Staff.TimeSignature.stencil = ##f
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+        \layout {
+            indent = 0\cm
+            short-indent = 0\cm
+        }    
+    }
+
+    \score { 
+        \header { 
+            title = ""
+            poet = ""
+            composer = ""
+        }
+        \transpose f ef <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsCoda
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \once \override Staff.TimeSignature.stencil = ##f
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+        >>
+        \layout {
+            indent = 4\cm
+            ragged-right = ##t
+            ragged-last = ##t
+            short-indent = .25\cm
+        }    
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Bb"
+    \header {
+        subtitle = "(original key)"
         instrumentName = "Bb Lead Sheet"
         poet = \instrumentName
     }
@@ -506,9 +710,9 @@ lyricsHeadTwo = \lyricmode {
 
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-F-for-Eb"
     \header {
-        subtitle = ""
+        subtitle = "(original key)"
         instrumentName = "Eb Lead Sheet"
         poet = \instrumentName
     }
