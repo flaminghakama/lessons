@@ -17,7 +17,7 @@ lilypond ly/songs/jazz/crisis.ly
 mv crisis*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/crisis*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"fixing pitch" ; git push 
+git add . ; git commit -m"trombone" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -394,6 +394,79 @@ melodyForFlats = {
                 <<
                     \accidentalStyle modern-cautionary
                     \structureCoda
+                    <<
+                        \melodyCoda \\
+                        \harmonyACommonPartTwo
+                    >>
+                >>
+            }
+        >>
+        \layout { 
+            short-indent = 1.25\cm
+            indent = 1.25\cm
+            ragged-right = ##f
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-C-tenor-clef"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Trombone Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose c b, <<
+            \new ChordNames { 
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                \chordsIntro
+                \chordsForm
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \accidentalStyle modern-cautionary
+                \clef bass 
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    {
+                        \bassIntro
+                        \clef tenor
+                        <<
+                            \melodyIntro \\
+                            \harmonyIntro
+                        >>
+                        \melody
+                    }
+                >>
+            }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 0.25\cm
+        }
+    }
+    \score {
+        \transpose c b, <<
+            \new ChordNames { 
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                \chordsCoda
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \accidentalStyle modern-cautionary
+                    \structureCoda
+                    \clef tenor
                     <<
                         \melodyCoda \\
                         \harmonyACommonPartTwo
