@@ -18,6 +18,9 @@ lilypond ly/songs/standards/bernie*.ly
 mv bernie*.pdf pdf/songs/standards
 for file in pdf/songs/standards/bernie*pdf ; do open -a Preview $file ; done
 
+git add . ; git commit -m"fixing pitch" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 \include "../../../../engraving/flaming-libs/flaming-standard.ily"

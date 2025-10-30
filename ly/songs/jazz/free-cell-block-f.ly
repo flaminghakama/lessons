@@ -294,7 +294,7 @@ chordsForm = \chordmode {
     gf1*5/4:maj7 | b1:13 | s | 
     gf1*5/4:maj7 | b1:13 ||
 
-    e1:9 | s | e:m6 | s | 
+    e1:maj9 | s | e:m6 | s | 
     d1:maj7 | s | d:m7.7+ | s | 
     g1:13 | s | c:maj9.11+ | s ||
 
@@ -319,7 +319,7 @@ chordsFormForFlats = \chordmode {
     gf1*5/4:maj7 | cf1:13 | s | 
     gf1*5/4:maj7 | cf1:13 ||
 
-    e1:7 | s | e:m6 | s | 
+    e1:maj9 | s | e:m6 | s | 
     d1:maj7 | s | d:m7.7+ | s | 
     g1:13 | s | c:maj9.11+ | s ||
 
@@ -360,7 +360,7 @@ melodyAPartThree = \relative c' {
 }
 
 melodyB = \relative c' { 
-    fs4. e8 ~ 4 d | cs4. d8 ~ 4 e | fs4. e8 ~ 4 d | cs4. d8 ~ 4 e |
+    fs4. e8 ~ 4 ds | cs4. ds8 ~ 4 e | fs4. e8 ~ 4 d | cs4. d8 ~ 4 e |
     fs4. e8 ~ 4 d | cs4. d8 ~ 4 e | f4. e8 ~ 4 d | cs4. d8 ~ 4 e |
     e4. d8 ~ 4 c | b4. c8 ~ 4 d | 
     d8 c4 b8  a b c d | e g b d gf,2 ||

@@ -18,7 +18,7 @@ lilypond ly/songs/standards/puttin-on-the-ritz*.ly
 mv puttin-on-the-ritz*.pdf pdf/songs/standards
 for file in pdf/songs/standards/puttin-on-the-ritz*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"fixing lyrics" ; git push 
+git add . ; git commit -m"tranposed" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
