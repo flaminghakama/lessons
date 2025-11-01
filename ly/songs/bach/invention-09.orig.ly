@@ -15,10 +15,10 @@
    maintainerWeb     = "http://pobox.com/~jeff.covey/"
    lastupdated       = "2006/08/28"
  footer = "Mutopia-2008/06/15-171"
- tagline = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } â€¢ \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Copyright Â© 2008. \hspace #0.5 Reference: \footer } } \line { \teeny \line { Licensed under the Creative Commons Attribution-ShareAlike 3.0 (Unported) License, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/by-sa/3.0" http://creativecommons.org/licenses/by-sa/3.0 } } } }
+ tagline = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-column { \small \line { Sheet music from \with-url "http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } â€¢ \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url "http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Copyright Â© 2008. \hspace #0.5 Reference: \footer } } \line { \teeny \line { Licensed under the Creative Commons Attribution-ShareAlike 3.0 (Unported) License, for details see: \hspace #-0.5 \with-url "http://creativecommons.org/licenses/by-sa/3.0" http://creativecommons.org/licenses/by-sa/3.0 } } } }
 }
 
-\version "2.11.46"
+\version "2.24.0"
 
 global =  { \key f \minor \time 3/4 }
 
@@ -41,7 +41,7 @@ voiceOne =
    fis16[ g( a  bes)]  c8[( a16  fis)]  ees!8[(  d)]     | % 14
    b4.^\downprall b8 c4^\prallmordent ~                  | % 15
    %c8.[^\turn d16]
-   c8.^\markup { \hspace #3.0 \musicglyph #"scripts.turn" } d16
+   c8.^\markup { \hspace #3.0 \musicglyph "scripts.turn" } d16
    d4.^\upprall   c8                                     | % 16
    c4 ~  c16[ d( ees d]  c[ bes! aes  g)]                | % 17
    f8[ d'] ~  d16[ ees( f ees]  d[ c b  a)]              | % 18
@@ -60,8 +60,8 @@ voiceOne =
    e16[ f g aes]  bes8[ g16 e]  des!8[ c]                | % 31
    bes16[( aes g aes]  bes[ des c bes]  aes[ g f  e)]    | % 32
    % c'8.[^\mordent\turn des16] g,4.^\downprall f8 f2.^\fermata
-   c'8.^\markup { \musicglyph #"scripts.mordent"
-   \hspace #2.0 \musicglyph #"scripts.turn" } des16
+   c'8.^\markup { \musicglyph "scripts.mordent"
+   \hspace #2.0 \musicglyph "scripts.turn" } des16
    g,4.^\downprall f8                                    | % 33
    f2.^\fermata                                          | % 34
    \bar "|."
@@ -123,10 +123,7 @@ voiceTwo =
    \layout{ }
    
   \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 94 4)
-      }
+    \tempo 4 = 94
     }
 
 

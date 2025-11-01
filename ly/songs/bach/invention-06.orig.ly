@@ -15,10 +15,10 @@
    maintainerWeb     = "http://pobox.com/~jeff.covey/"
    lastupdated       = "2006/08/26"
  footer = "Mutopia-2008/06/15-159"
- tagline = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } â€¢ \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Copyright Â© 2008. \hspace #0.5 Reference: \footer } } \line { \teeny \line { Licensed under the Creative Commons Attribution-ShareAlike 3.0 (Unported) License, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/by-sa/3.0" http://creativecommons.org/licenses/by-sa/3.0 } } } }
+ tagline = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-column { \small \line { Sheet music from \with-url "http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } â€¢ \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url "http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Copyright Â© 2008. \hspace #0.5 Reference: \footer } } \line { \teeny \line { Licensed under the Creative Commons Attribution-ShareAlike 3.0 (Unported) License, for details see: \hspace #-0.5 \with-url "http://creativecommons.org/licenses/by-sa/3.0" http://creativecommons.org/licenses/by-sa/3.0 } } } }
 }
 
-\version "2.11.46"
+\version "2.24.0"
 
 global =  { \key e \major \time 3/8 }
 
@@ -91,8 +91,8 @@ voiceOne =
       gis16[ e32   dis e16   gis32 fis gis16 b32 a  ]                | % 60
       b16[   gis32 fis gis16 b32   a   b16   e32 dis]                | % 61
       e16[ b gis e] r8                                               | % 62
-      \override Score.RehearsalMark   #'break-visibility = #begin-of-line-invisible
-      \mark \markup { \musicglyph #"scripts.ufermata" }
+      \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
+      \mark \markup { \musicglyph "scripts.ufermata" }
    }
 }
 
@@ -166,8 +166,8 @@ voiceTwo =
       e, r16  e'[ b gis]                                             | % 60
       e[ b' gis e b gis]                                             | % 61
       e4 e'8                                                         | % 62
-      \override Staff.RehearsalMark   #'direction = #-1
-      \mark \markup { \musicglyph #"scripts.dfermata" }
+      \override Staff.RehearsalMark.direction = #-1
+      \mark \markup { \musicglyph "scripts.dfermata" }
    }
 }
 
@@ -189,10 +189,7 @@ voiceTwo =
    }
    
   \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 80 8)
-      }
+    \tempo 8 = 80
     }
 
 

@@ -1,4 +1,4 @@
-\version "2.19.81"
+\version "2.24.0"
 
 #(ly:set-option 'relative-includes #t)
 
@@ -8,7 +8,7 @@ titleFull = "Invention 4."
 instrumentName = ""
 composerName = "Johann Sebastian Bach (1685-1750)"
 copyright = \markup { \tiny "public domain" }
-arranger = ""
+arranger = "arranged by Elaine Alt"
 
 \header {
   enteredby =   "Allen Garvin"
@@ -25,7 +25,7 @@ arranger = ""
 }
 
 \include "../engraving/flaming-libs/flaming-standard.ily"
-#(set-default-paper-size "legal" 'landscape)
+% #(set-default-paper-size "legal" 'landscape)
 
 voiceone =  \relative c' {
     \accidentalStyle modern-cautionary
@@ -110,7 +110,6 @@ voicetwo =  \relative c {
     \accidentalStyle modern-cautionary
     \key d \minor
     \time 3/8
-    \clef "bass"
 
     % m1
     R4. | 
@@ -186,21 +185,119 @@ voicetwo =  \relative c {
     d,4.\fermata \bar "|."                    
 }
 
-\score {
-   \context GrandStaff << 
-    \context Staff = "one" <<
-      \voiceone
-    >>
-    \context Staff = "two" <<
-      \voicetwo
-    >>
-  >>
+voicetwoForClarinet =  \relative c {
+    \accidentalStyle modern-cautionary
+    \key d \minor
+    \time 3/8
 
-  \layout{ }
+    % m1
+    R4. | 
+    R4. | 
+    d16 e f g a bes | 
+    cis, bes' a g f e | 
+    
+    % m5
+    f8 a d | 
+    e, g cis | 
+    d, d' f, | 
+    g a bes | 
+    c, c' e, | 
+    f g a | 
+    bes16 g a bes c d | 
+    
+    % m12
+    e, d' c bes a g | 
+    a f g a bes c | 
+    d, c' bes a g f | 
+    e c d e f g |        
+    a, g' f e d c | 
+    d bes c8 c' |        
+    f,16 g, a bes c d | 
+    
+    % m19
+    e d c bes a g | 
+    a bes c d e f | 
+    g, f' e d c bes | 
+    a bes c a bes c | 
+
+    % m23
+    fis8 r r |
+    g,16 a bes g a bes | 
+    e8 r r |  
+    f8 f' d |
+    b gis e |
+    a,16 gis a b c d | 
+
+    % m29
+    e4.\prall ~ | 
+    e ~ | 
+    e ~ | 
+    e ~ | 
+    e ~ | 
+
+    % m33
+    e8 e d |
+    c b a | 
+    d e f | 
+    d e e' |
+    a,16 a, bes! c d ees | 
+    fis ees d c bes a | 
+    
+
+    % m39
+    g8. g16 a bes | 
+    c8 g c | 
+    f16 g a b cis d  |
+
+    % m42
+    e, d' cis b a g | 
+    f8 a d |
+    e, g cis |
+
+    % m45 
+    d,16 e f g a bes 
+    cis, bes' a g f e | 
+    f g a8 a, | 
+    bes8. c16 bes a | 
+    g bes' a g f e | 
+    f g a8 a, | 
+    d4.\fermata \bar "|."                    
+}
+
+% \score {
+%    \context GrandStaff << 
+%     \context Staff = "one" <<
+%       \voiceone
+%     >>
+%     \context Staff = "two" <<
+%       \clef "bass"
+%       \voicetwo
+%     >>
+%   >>
+
+%   \layout{ }
   
-  \midi {
-    \tempo 4 = 90
+%   \midi {
+%     \tempo 4 = 90
+%     }
+
+
+% }
+
+
+\score {
+ 
+    \transpose d a, << 
+        \context Staff = "one" \with { instrumentName = "Violin" } <<
+            \voiceone
+        >>
+        \context Staff = "two" \with { instrumentName = "Bb Clarinet" } <<
+            \transpose bes,, c \voicetwoForClarinet
+        >>
+    >>
+    \layout{ 
+        indent = 3\cm
+        short-indent = 0.5\cm
     }
-
-
+  
 }

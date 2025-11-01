@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.24.0"
 
 allemande = \context Staff \relative c'' {
 
@@ -7,7 +7,7 @@ allemande = \context Staff \relative c'' {
 	\set Staff.midiInstrument = "cello"
     \set Timing.beamExceptions = #'()
     \set Timing.baseMoment = #(ly:make-moment 1/4)
-    \set Timing.beatStructure = #'(1 1 1 1)
+    \set Timing.beatStructure = 1,1,1,1
 
 	\partial 16 b16 |
 	% 1

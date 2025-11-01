@@ -17,10 +17,10 @@
   mutopiaopus =       "BWV 776"
  
  footer = "Mutopia-2008/06/15-55"
- tagline = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } â€¢ \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
+ tagline = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-column { \small \line { Sheet music from \with-url "http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } â€¢ \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url "http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url "http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
 }
 
-\version "2.11.46"
+\version "2.24.0"
 
 voiceone =  \relative c' {
   \set Staff.midiInstrument = "harpsichord"
@@ -63,16 +63,16 @@ voiceone =  \relative c' {
   ees[ f' ees\prall des]  c16[ des ees des]  c8[ bes] |            % bar 30
   aes[ c ees aes] ~  aes16[ f g aes]  bes8[ aes] |                 % bar 31
   \grace {
-     \override Stem   #'stroke-style = #"grace"
-     \override Stem   #'stroke-style = #'()
+     \override Flag.stroke-style = #"grace"
+     \override Flag.stroke-style = #'()
      \set tupletNumberFormatFunction = #'()
-     \override TupletBracket #'bracket-visibility = ##f
+     \override TupletBracket.bracket-visibility = ##f
      aes
-     \revert Stem #'stroke-style
-     \revert Stem #'stroke-style
+     \revert Flag.stroke-style
+     \revert Flag.stroke-style
   }
 
-  g8.[ \times 2/3 { f32 ees f] }
+  g8.[ \tuplet 3/2 { f32 ees f] }
   f4\downmordent ees2\fermata\bar "|."                             % bar 32
 }
 
@@ -128,10 +128,7 @@ voicetwo =  \relative c {
   \layout{ }
   
   \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 105 4)
-      }
+    \tempo 4 = 105
     }
 
 
