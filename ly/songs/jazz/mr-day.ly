@@ -16,7 +16,7 @@ lilypond ly/songs/jazz/mr-day.ly
 mv mr-day*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/mr-day*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"simplified in C" ; git push 
+git add . ; git commit -m"new song" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -139,7 +139,7 @@ melody = \relative c'' {
     \header {
         poet = "Concert Lead Sheet"
         instrumentName = \poet
-        subtitle = "(real book key)"
+        subtitle = ""
     }
     \score {
         \transpose c c <<
@@ -169,7 +169,7 @@ melody = \relative c'' {
     \header {
         poet = "Bb Lead Sheet"
         instrumentName = \poet
-        subtitle = "(real book key)"
+        subtitle = ""
     }
     \score {
         \transpose as, c <<
@@ -197,7 +197,7 @@ melody = \relative c'' {
     \header {
         poet = "Eb Lead Sheet"
         instrumentName = \poet
-        subtitle = "(real book key)"
+        subtitle = ""
     }
     \score {
         \transpose ds, c <<
