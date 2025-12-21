@@ -18,7 +18,7 @@ lilypond ly/songs/standards/puttin-on-the-grift*.ly
 mv puttin-on-the-grift*.pdf pdf/songs/standards
 for file in pdf/songs/standards/puttin-on-the-grift*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"tranposed" ; git push 
+git add . ; git commit -m"satire" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -278,7 +278,7 @@ lyricsHeadOne = \lyricmode {
     Red hats and pan -- cake col -- lars 
     White hoods and beau -- coup dol -- lars 
     Steal -- ing eve -- ry dime
-    For a won -- der -- ful bribe
+    For an out -- ra -- geous bribe
 
     If you're crude and you don't know where to go to,
     Why don't you go where mag -- gots shit?
