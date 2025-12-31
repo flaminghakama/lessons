@@ -79,6 +79,7 @@ structure = \relative c' {
 
     \startSection "Breakdown"
     s1*4
+    \bar "||"
 }
 
 structureCoda = \relative c' { 
@@ -191,7 +192,7 @@ melodyBridge = \relative c'' {
 }
 
 melodyBreakdown = \relative c'' { 
-    r16 e b cs  d e b cs  d8 cs  r8 b16 cs |
+    d16 e b cs  d e b cs  d8 cs  r8 b16 cs |
     d16 e b cs  d e b cs  d8 cs  r8 r16 b |
     d16 e b cs  d e b cs  d8 cs  r4 |
     b8. cs16 ~  8 d ~  16 b'8.  4  | 
@@ -230,7 +231,6 @@ lyricsHeadOne = \lyricmode {
     You met me at the per -- fect time
 
 
-
         You want me, I want you, ba -- by
         My su -- gar -- boo, I'm le -- vi -- ta -- ting
 
@@ -253,10 +253,10 @@ lyricsHeadOne = \lyricmode {
             Yeah, yeah, yeah, yeah, yeah
             I'm levitating
 
-                My love is like a roc -- ket, watch it blast off
+                Love is like a roc -- ket, watch it blast off
                 And I'm fee -- ling so e -- lec -- tric, dance my arse off
 
-                And even if I wan -- ted to, I can't stop
+                And e -- ven if I wan -- ted to, I can't stop
                 Yeah, yeah, yeah, yeah, yeah
 }
 
