@@ -1,28 +1,31 @@
-\version "2.19.83"
+\version "2.24.0"
 
 titleLeft = "All"
 titleRight = "Of Me"
 title = "All Of Me"
 composerName = "S. Simons/G. Marks"
 lyricistName = ""
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
-
+arranger = ""
+copyright = ""
 
 %{
 
-https://www.youtube.com/watch?v=Sz_zeJM-5-A
+killPreview ; rm caravan*pdf ; lilypond ly/songs/standards/caravan*.ly ; for file in caravan*pdf ; do open -a Preview $file ; done
 
 killPreview
-rm all-of-me*.pdf
-lilypond ly/songs/standards/all-of-me.ly 
-mv all-of-me*.pdf pdf/songs/standards
-for file in pdf/songs/standards/all-of-me*.pdf ; do op $file ; done
+rm caravan*pdf
+lilypond ly/songs/standards/caravan*.ly
+mv caravan*.pdf pdf/songs/standards
+for file in pdf/songs/standards/caravan*pdf ; do open -a Preview $file ; done
+
+git add . ; git commit -m"tranposed" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -30,10 +33,10 @@ for file in pdf/songs/standards/all-of-me*.pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #10
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #16
+  top-system-spacing.minimum-distance = #18
 
   % Spacing in between systems
   system-system-spacing.basic-distance = #18

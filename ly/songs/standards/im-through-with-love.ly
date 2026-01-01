@@ -1,24 +1,24 @@
 \version "2.24.0"
 
-titleLeft = "Softly, As In"
-titleRight = "A Morning Sunrise"
-titleFull = "Softly, As In A Morning Sunrise"
-composerName = "S. Romberg"
-lyricistName = "O. Hammerstein II"
+titleLeft = "I'm Through"
+titleRight = "With Love"
+titleFull = "I'm Through With Love"
+composerName = "M. Malneck & F. Livingston"
+lyricistName = "G. Kahn"
 arranger = ""
 copyright = ""
 
 %{
 
-killPreview ; rm softly-as-in-a-morning-sunrise*pdf ; lilypond ly/songs/standards/softly-as-in-a-morning-sunrise*.ly ; for file in softly-as-in-a-morning-sunrise*pdf ; do open -a Preview $file ; done
+killPreview ; rm im-through-with-love*pdf ; lilypond ly/songs/standards/im-through-with-love.ly ; for file in im-through-with-love*pdf ; do op $file ; done 
 
 killPreview
-rm softly-as-in-a-morning-sunrise*pdf
-lilypond ly/songs/standards/softly-as-in-a-morning-sunrise*.ly
-mv softly-as-in-a-morning-sunrise*.pdf pdf/songs/standards
-for file in pdf/songs/standards/softly-as-in-a-morning-sunrise*pdf ; do open -a Preview $file ; done
+rm pdf/songs/standards/im-through-with-love*
+lilypond ly/songs/standards/im-through-with-love.ly 
+mv im-through-with-love*pdf pdf/songs/standards
+for file in pdf/songs/standards/im-through-with-love*pdf ; do op $file ; done 
 
-git add . ; git commit -m"tranposed" ; git push 
+git add . ; git commit -m"fixing lyric" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -33,7 +33,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #4
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -58,97 +58,176 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/ily/layout-songs.ily"
 
-
 structure = \relative c' { 
-    \key c \minor
-    \startSectionNoBarline "A"
-    \bar "[|:"
-    \repeat volta 2 { 
-        s1*7
-    }
-    \alternative {
-        { s1  \bar ":|]"} 
-        { s1 \break }
-    }
-    \startSection "B"
-    s1*4 \break
-    s1*4 \break
+
+    \key f \major
+    \time 4/4
+
+    \partial 8 
+    s8 
+
     \startSection "A"
+    s1*4 
+    s1*4 
+    \startSection ""
+    s1*4 
+    s1*4 
+
+    \startSection "B"
+    s1*4 
+    s1*4 
+
+    \startSection "C"
+    s1*4 
+    s1*4 
+    \bar "||"
+
+}
+
+rehearsalMarkTweaksForC = \relative c' { 
+
+    \once \override Score.MetronomeMark.extra-offset = #'( 3.5 . 0 )
+
+    s8 
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "A"
+    s1*4  
     s1*4 \break 
-    s1*4
-    \bar "|."    
+    % ""
+    s1*4  
+    s1*4 \break 
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "B"
+    s1*4  
+    s1*4 \break 
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    % "C"
+    s1*4  
+    s1*4 
+}
+
+rehearsalMarkTweaksForBb = \relative c' { 
+    \rehearsalMarkTweaksForC
+}
+
+rehearsalMarkTweaksForEb = \relative c' { 
+    \rehearsalMarkTweaksForC
 }
 
 chordsSong = \chordmode { 
-    \set chordChanges = ##t 
+    \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
-    \set noChordSymbol = ##f
+    %\set noChordSymbol = ##t
+    s8 
 
-    c1:m7 | d2:m7.5- g:7 | c1:m7 | f:m7 | 
-    c1:m7 | d2:m7.5- g:7 | c1:m7 | d2:m7.5- g:7 || f2:m7 bf:7 ||
+    f2:maj7 af:dim7 | g:m7 c:7 | 
+    f2:maj9 f:7 | bf:maj7 ef:7 |  
 
-    ef1:maj7 | s | c:7.9- | s |
-    f1:m7 | fs:dim7 | g:1.4.5.7 | g:7 ||
+    a2:m7 d:aug7.9- | g:m7 d:aug7.9- |
+    g2:m7 c:7 | a4:m7 d:7.9- g:m7 c:7.9- ||
 
-    c1:m7 | d2:m7.5- g:7 | c1:m7 | f:m7 | 
-    c1:m7 | d2:m7.5- g:7 | c1:m7 | d2:m7.5- g:7 ||
+    f2:maj7 af:dim7 | g:m7 c:7 | 
+    f2:maj9 f:7 | bf:maj7 ef:7 |  
+
+    a2:m7 d:aug7.9- | g:m7 d:aug7.9- |
+    g2:m7 c:7 | f:6 e:7.9- ||
+
+
+    a2:m a:1.3-.5.13- | a:m6 a:1.3-.5.13- | 
+    a2:m a:1.3-.5.13- | a:m6 d:7 | 
+
+    c2:6 a:m7 | d:m7 g:13 |
+    g2:m7 d:aug7.9- | g:m7 c:7 ||
+
+
+    f2:maj7 af:dim7 | g:m7 c:7 | 
+    f2:maj9 f:7 | bf:maj7 ef:7 |  
+
+    a2:m7 d:aug7.9- | g:m7 d:aug7.9- |
+    g2:m7 c:7 | f:6 c:7.9- ||
 }
 
-melodyA = \relative c'' { 
-    c2 g | r8 f g [ f ] g4 f | c'2 ef, | r8 d ef [ d ] ef4 d | 
-    g2 c, | r8 g' af [ g ] ef4 d | c1 |
-}
-melodyEndings = \relative c' {
-     R1 || 
-}
-melodyBridge = \relative c' {
-     \tuplet 3/2 2 { r4 d ef f g af } ||
-     bf2 ef, | r4 c'8 bf c4 bf | 
-     bf2 e, | \tuplet 3/2 2 { r4 e f  g af bf } |
-     c2 f, | r8 c' d [ c ] d4 c | 
-     d1 | ef4 d c b ||
-}
+melody = \relative c' { 
+    \accidentalStyle default
 
-melodySong = \relative c' { 
-    \melodyA 
-    \melodyEndings
-    \melodyBridge
-    \melodyA 
-    R1
+    f8 || 
+    e4. d8 f4. d8 | e d f d  e4 f8 fs | 
+    g4. f8 a4. f8 | g f a f  g4 a8 bf | 
+    c4. a8 ef'4. d8 | c bf4. ~ 2 | 
+    r8 d, cs [ d ]  bf'4 a | c2. r8 f, ||
+
+    e4. d8 f4. d8 | e d f d  e4 f8 fs | 
+    g4. f8 a4. f8 | g f a f  g4 a8 bf | 
+    c4. a8 ef'4. d8 | c bf4. ~ 2 | 
+    r8 d, cs [ d ]  bf'4 a | f1 ||
+
+    r8 a b [ a ]  c8 4 a8 | b8 4 a8 c2 | 
+    r8 a b [ a ]  c8 4 a8 | b8 4 a8 c2 |
+    r8 c d [ c ]  e8 4 c8 | d8 4 c8  e4 g, |
+    c4. g8  bf8 4 f8 | a8 4 e8  g4. f8 ||
+
+    e4. d8 f4. d8 | e d f d  e4 f8 fs | 
+    g4. f8 a4. f8 | g f a f  g4 a8 bf | 
+    c4. a8 ef'4. d8 | c bf4. ~ 2 | 
+    r8 d, cs [ d ]  bf'4 a | f2 r ||
+}
+melodyForFlats = \relative c'' { 
+    \melody
 }
 
 lyricsHeadOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    Soft -- ly as in a mor -- ning sun -- rise
-    the light of love comes steal -- ing
-    in -- to a new -- born day.
+    I'm through with love 
+    I'll ne -- ver fall a -- gain. 
+    
+    Said "\"a"  -- "dieu\""  to love, 
+    "\"Don't" e -- ver call a -- "gain\""
+
+    for I must have you or no -- one, 
+    and so I'm through with love.
 
 
-    For the pas -- sions that thrill love,
-    lift you high to hea -- ven,
-    are the pas -- sions that kill love
-    and lead ya down to hell.
-    Same old sto -- ry:
+    I've locked my heart, 
+    I'll keep my feel -- ing there.
 
-    soft -- ly as in an eve -- nin' sun -- set,
-    the light that gave you glo -- ry
-    will take it all a -- way.
+    I have stocked my heart 
+    with i -- cy frig -- i -- daire, 
+
+    and I mean to care for no -- one, 
+    be -- cause I'm through with love.
+
+
+        Why did you lead me to think you could care?
+        You did -- n't need me for you had your share
+        of slaves a -- round you to hound you and swear, 
+        with deep e -- mo -- tion, de -- vo -- tion to you.
+
+
+    Good -- bye to Spring, 
+    and all it meant to me, 
+
+    It can ne -- ver bring 
+    the thing that used to be, 
+
+    for I must have you or no -- one, 
+    and so I'm through with love. 
 }
 lyricsHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    Flam -- ing with all the glow of sun -- rise
-    a bur -- ning kiss is seal -- ing
-    the vow that all be -- tray.
+    \repeat unfold 10 { \skip 1 }
 }
-lyricsHeadThree = \lyricmode {
+
+lyricsCoda = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
-    \repeat unfold 34 { \skip 1 }
 }
 
 \header {
@@ -160,7 +239,7 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "In-C-minor-for-C"
+  \bookOutputSuffix "in-F-for-C"
     \header {
         subtitle = "(real book key)"
         poet = "Concert Lead Sheet"
@@ -178,21 +257,22 @@ lyricsHeadThree = \lyricmode {
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
-                    \melodySong
+                    \rehearsalMarkTweaksForC
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
         >>
     }
 }
 
 \book {
-  \bookOutputSuffix "In-C-minor-for-Bb"
+  \bookOutputSuffix "in-F-for-Bb"
     \header {
         subtitle = "(real book key)"
         poet = "Bb Lead Sheet"
@@ -210,21 +290,22 @@ lyricsHeadThree = \lyricmode {
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
-                    \melodySong
+                    \rehearsalMarkTweaksForBb
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
         >>
     }
 }
 
 \book {
-  \bookOutputSuffix "In-C-minor-for-Eb"
+  \bookOutputSuffix "in-F-for-Eb"
     \header {
         subtitle = "(real book key)"
         poet = "Eb Lead Sheet"
@@ -242,28 +323,29 @@ lyricsHeadThree = \lyricmode {
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
-                    \melodySong
+                    \rehearsalMarkTweaksForEb
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
         >>
     }
 }
 
 \book {
-  \bookOutputSuffix "In-G-minor-for-C"
+  \bookOutputSuffix "in-Bb-for-C"
     \header {
         subtitle = "(hipsteria key)"
         poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        \transpose c g <<
+        \transpose f bf <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
@@ -274,28 +356,29 @@ lyricsHeadThree = \lyricmode {
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
-                    \melodySong
+                    \rehearsalMarkTweaksForC
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
         >>
     }
 }
 
 \book {
-  \bookOutputSuffix "In-G-minor-for-Bb"
+  \bookOutputSuffix "in-Bb-for-Bb"
     \header {
         subtitle = "(hipsteria key)"
         poet = "Bb Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        \transpose c g \transpose bf, c <<
+        \transpose f bf \transpose bf, c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
@@ -306,28 +389,29 @@ lyricsHeadThree = \lyricmode {
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
-                    \melodySong
+                    \rehearsalMarkTweaksForBb
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
         >>
     }
 }
 
 \book {
-  \bookOutputSuffix "In-G-minor-for-Eb"
+  \bookOutputSuffix "in-Bb-for-Eb"
     \header {
         subtitle = "(hipsteria key)"
         poet = "Eb Lead Sheet"
         instrumentName = \poet
     }
     \score {
-        \transpose c g \transpose ef c <<
+        \transpose f bf \transpose ef c <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
@@ -338,16 +422,16 @@ lyricsHeadThree = \lyricmode {
                 \new Voice = "lead" <<
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
-                    \melodySong
+                    \rehearsalMarkTweaksForEb
+                    \melody
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
-            \new Lyrics \with { alignAboveContext = "staff" } {
-                \lyricsto "lead" { \lyricsHeadTwo } 
-            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
         >>
     }
 }
-

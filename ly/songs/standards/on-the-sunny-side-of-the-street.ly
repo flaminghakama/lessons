@@ -1,38 +1,31 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "On The Sunny"
 titleRight = "Side of the Street"
-title = "On The Sunny Side of the Street"
+titleFull = "On The Sunny Side of the Street"
 composerName = "J. McHugh/D. Fields"
 arrangerName = "D. Gillespie"
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+arranger = ""
+copyright = ""
 
 %{
 
+killPreview ; rm on-the-sunny-side-of-the-street*pdf ; lilypond ly/songs/standards/on-the-sunny-side-of-the-street*.ly ; for file in on-the-sunny-side-of-the-street*pdf ; do open -a Preview $file ; done
+
 killPreview
 rm on-the-sunny-side-of-the-street*pdf
-lilypond ly/songs/standards/on-the-sunny-side-of-the-street.ly
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-C.pdf on-the-sunny-side-of-the-street-for-Bb.pdf on-the-sunny-side-of-the-street-for-C-and-Bb.pdf
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-C.pdf on-the-sunny-side-of-the-street-for-Eb.pdf on-the-sunny-side-of-the-street-for-C-and-Eb.pdf
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-Bb.pdf on-the-sunny-side-of-the-street-for-Eb.pdf on-the-sunny-side-of-the-street-for-Bb-and-Eb.pdf
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-C.pdf on-the-sunny-side-of-the-street-worksheet-for-C.pdf on-the-sunny-side-of-the-street-and-worksheet-for-C.pdf
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-Bb.pdf on-the-sunny-side-of-the-street-worksheet-for-Bb.pdf on-the-sunny-side-of-the-street-and-worksheet-for-Bb.pdf
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-for-Eb.pdf on-the-sunny-side-of-the-street-worksheet-for-Eb.pdf on-the-sunny-side-of-the-street-and-worksheet-for-Eb.pdf
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-worksheet-for-C.pdf on-the-sunny-side-of-the-street-worksheet-for-C.pdf on-the-sunny-side-of-the-street-worksheet-for-C-double.pdf
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-worksheet-for-Bb.pdf on-the-sunny-side-of-the-street-worksheet-for-Bb.pdf on-the-sunny-side-of-the-street-worksheet-for-Bb-double.pdf
-# python ~/git/part-format/combine-1Page-1Page.py on-the-sunny-side-of-the-street-worksheet-for-Eb.pdf on-the-sunny-side-of-the-street-worksheet-for-Eb.pdf on-the-sunny-side-of-the-street-worksheet-for-Eb-double.pdf
-mv on-the-sunny-side-of-the-street*worksheet*.pdf  pdf/songs/standards/printable
-mv on-the-sunny-side-of-the-street*and*.pdf pdf/songs/standards/printable
+lilypond ly/songs/standards/on-the-sunny-side-of-the-street*.ly
 mv on-the-sunny-side-of-the-street*.pdf pdf/songs/standards
+for file in pdf/songs/standards/on-the-sunny-side-of-the-street*pdf ; do open -a Preview $file ; done
 
-for file in pdf/songs/standards/on-the-sunny-side-of-the-street*pdf pdf/songs/standards/on-the-sunny-side-of-the-street*pdf; do open -a Preview $file ; done
+git add . ; git commit -m"tranposed" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -40,7 +33,7 @@ for file in pdf/songs/standards/on-the-sunny-side-of-the-street*pdf pdf/songs/st
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #0
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -64,6 +57,8 @@ for file in pdf/songs/standards/on-the-sunny-side-of-the-street*pdf pdf/songs/st
 }
 
 \include "ly/ily/layout-songs.ily"
+
+
 \include "ly/ily/hideMelody.ily"
 
 structure = \relative c' { 
@@ -76,13 +71,13 @@ structure = \relative c' {
     s1
     \bar "||"
 
-    \once \override Score.RehearsalMark #'extra-offset = #'( 6 . -2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( 6 . -2 )
     \mark \markup \box "A" 
     s1*4 \break
     s1*4 \break
     \bar "||"
 
-    \override Score.RehearsalMark #'extra-offset = #'( 1 . 1 )
+    \override Score.RehearsalMark.extra-offset = #'( 1 . 1 )
     \mark \markup \box "A" 
     s1*4 \break
     s1*4 \break
@@ -232,8 +227,9 @@ melodyExercise = \relative c''' {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-C-for-C"
     \header {
+        subtitle = "(dizzy key)"
         poet = "    Concert Pitch"
         instrumentName = \poet
     }
@@ -255,8 +251,9 @@ melodyExercise = \relative c''' {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-C-for-Bb"
     \header {
+        subtitle = "(dizzy key)"
         poet = "    Bb Lead Sheet"
         instrumentName = \poet
     }
@@ -278,8 +275,9 @@ melodyExercise = \relative c''' {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-C-for-Eb"
     \header {
+        subtitle = "(dizzy key)"
         poet = "    Eb Lead Sheet"
         instrumentName = \poet
     }
@@ -290,6 +288,78 @@ melodyExercise = \relative c''' {
                 \chordsSong 
             }
             \new Staff \transpose ef, c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \structure
+                    \melodySong
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-G-for-C"
+    \header {
+        subtitle = "(hipsteria key)"
+        poet = "    Concert Pitch"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c g <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melodySong
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-G-for-Bb"
+    \header {
+        subtitle = "(hipsteria key)"
+        poet = "    Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c g <<
+            \new ChordNames \transpose bf c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
+            \new Staff \transpose bf c { 
+                \include "ly/ily/staff-properties.ily"
+                \new Voice <<
+                    \structure
+                    \melodySong
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-G-for-Eb"
+    \header {
+        subtitle = "(hipsteria key)"
+        poet = "    Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose c g <<
+            \new ChordNames \transpose ef c  { 
+                \include "ly/ily/chord-names-properties.ily" 
+                \chordsSong 
+            }
+            \new Staff \transpose ef c { 
                 \include "ly/ily/staff-properties.ily"
                 \new Voice <<
                     \structure

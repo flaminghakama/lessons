@@ -1,17 +1,16 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "Cara"
 titleRight = "van"
-title = "Caravan"
+titleFull = "Caravan"
 composerName = "J. Tizol & E. K. 'D'. Ellington"
 lyricistName = "J. Tizol & E. K. 'D'. Ellington"
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+arranger = ""
+copyright = ""
 
 %{
+
+killPreview ; rm caravan*pdf ; lilypond ly/songs/standards/caravan*.ly ; for file in caravan*pdf ; do open -a Preview $file ; done
 
 killPreview
 rm caravan*pdf
@@ -19,7 +18,14 @@ lilypond ly/songs/standards/caravan*.ly
 mv caravan*.pdf pdf/songs/standards
 for file in pdf/songs/standards/caravan*pdf ; do open -a Preview $file ; done
 
+git add . ; git commit -m"tranposed" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -27,7 +33,7 @@ for file in pdf/songs/standards/caravan*pdf ; do open -a Preview $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #0
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #18
@@ -51,6 +57,7 @@ for file in pdf/songs/standards/caravan*pdf ; do open -a Preview $file ; done
 }
 
 \include "ly/ily/layout-songs.ily"
+
 
 structure = \relative c' { 
     \key f \minor
