@@ -18,7 +18,7 @@ lilypond ly/songs/standards/puttin-on-the-grift*.ly
 mv puttin-on-the-grift*.pdf pdf/songs/standards
 for file in pdf/songs/standards/puttin-on-the-grift*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"satire" ; git push 
+git add . ; git commit -m"lyrics" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

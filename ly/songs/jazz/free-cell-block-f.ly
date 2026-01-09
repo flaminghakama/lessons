@@ -17,7 +17,7 @@ lilypond ly/songs/jazz/free-cell-block-f.ly
 mv free-cell-block-f*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/free-cell-block-f*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"fixing pitch" ; git push 
+git add . ; git commit -m"post-session fix" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

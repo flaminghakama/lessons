@@ -16,7 +16,7 @@ lilypond ly/songs/jazz/mr-day.ly
 mv mr-day*.pdf  pdf/songs/jazz
 for file in pdf/songs/jazz/mr-day*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"new song" ; git push 
+git add . ; git commit -m"fixing subtitle" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
