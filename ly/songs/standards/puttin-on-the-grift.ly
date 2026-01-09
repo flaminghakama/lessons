@@ -282,7 +282,7 @@ lyricsHeadOne = \lyricmode {
 
     If you're crude and you don't know where to go to,
     Why don't you go where mag -- gots shit?
-    Put -- tin' On The grift
+    Put -- tin' On The Grift
 
 
     That's where each and ev -- 'ry bil -- lion -- aire goes
