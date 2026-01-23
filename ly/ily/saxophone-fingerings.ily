@@ -81,7 +81,7 @@ lowC = \markup \center-align \line {
         \translate #'(0 . 0) \override #'(size . 0.6) \woodwind-diagram #'saxophone #'(
             (lh . ())
             (cc . (one two three four five six))
-            (rh . (c))
+                (rh . (c))
         )
         \huge "C"
     }

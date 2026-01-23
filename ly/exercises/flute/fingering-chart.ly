@@ -6,7 +6,7 @@ titleRight = "Fingerings"
 titleFull = "Flute Fingerings"
 composerName = "Elaine Alt"
 arranger = ""
-copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+copyright = \markup \center-column { " "  \tiny "copyright © 2026 Elaine Paul" } 
 
 \include "../../../../engraving/flaming-libs/flaming-standard.ily"
 \include "../../../../engraving/flaming-libs/flaming-chords.ily"
@@ -97,6 +97,9 @@ rh
 
     page-breaking = #ly:minimal-breaking
 
+    ragged-bottom = ##t
+    ragged-last-bottom = ##t
+
     #(define fonts
         (make-pango-font-tree 
             "Hardwood" 
@@ -118,16 +121,13 @@ rh
                 #'((minimum-distance . 10))
         }
     }
+    ragged-bottom = ##f
 }
 
 \header { 
     instrumentName = "Flute"
 }
 
-
-\include "ly/notes/clarinet-introduction.ily"
-
-clarTabScale = #0.8
 
 highC = \markup \center-align \line { 
     "   "
@@ -517,6 +517,23 @@ upperRegister = \relative c''' {
     \bar "|."
 }
 
+trebleClefNotes = \relative c' { 
+    <>^\lowF f1 |
+    <>^\lowA a1 |
+    <>^\middleC c1 |
+    <>^\lowE e1 |
+    \break
+
+    <>^\lowE e,1 | 
+    <>^\lowG g1 |
+    <>^\middleB b1 |
+    <>^\middleD d1 |
+    <>^\lowF f1 |
+    \bar "|."
+
+
+}
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -529,6 +546,25 @@ upperRegister = \relative c''' {
     }
     \bookpart {
         \header {
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \trebleClefNotes
+                    \pageBreak
+                }
+            >>
+            \header {
+                piece = \markup \center-column { 
+                    "Notes on the Treble Clef (G clef)"
+                    "   "
+                }
+            }
         }
 
         \score {
