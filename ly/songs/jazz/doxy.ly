@@ -1,29 +1,30 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "Doxy"
-titleRight = " "
-title = "Doxy"
-composerName = "Sonny Rollins"
+titleRight = ""
+titleFull = "Doxy"
+composerName = "S. Rollins"
+arranger = ""
+copyright = ""
 
 %{
 
-killPreview ; rm doxy-*pdf ;  lilypond ly/songs/jazz/doxy.ly  ; for file in doxy-*.pdf ; do op $file ; done  
+killPreview ; rm doxy*pdf ;  lilypond ly/songs/jazz/doxy.ly  ; for file in doxy*.pdf ; do op $file ; done  
 
 killPreview
-rm doxy*.pdf 
+rm doxy*pdf
 lilypond ly/songs/jazz/doxy.ly
-python ~/git/PyPDF2/Scripts/pdfcat -o doxy-for-Eb.pdf pdf/songs/jazz/doxy-for-Eb.pdf pdf/songs/jazz/doxy-blank-for-Eb.pdf
-mv doxy-for-Eb.pdf pdf/songs/jazz/printable
 mv doxy*.pdf pdf/songs/jazz
-for file in pdf/songs/jazz/doxy*pdf pdf/songs/jazz/printable/doxy*pdf ; do open -a Preview $file ; done
+for file in pdf/songs/jazz/doxy*.pdf ; do op $file ; done  
+
+git add . ; git commit -m"trombone" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -31,16 +32,16 @@ for file in pdf/songs/jazz/doxy*pdf pdf/songs/jazz/printable/doxy*pdf ; do open 
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #18
+  top-system-spacing.minimum-distance = #24
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+  system-system-spacing.basic-distance = #0
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #13
+  score-system-spacing.minimum-distance = #0
 
   page-breaking = #ly:minimal-breaking
 
@@ -145,8 +146,68 @@ melody = \relative c' {
 }
 
 \book {
+  \bookOutputSuffix "for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        <<
+            \new ChordNames \transpose c c { 
+                \include "ly/ily/chord-names-properties.ily"                
+                \chordsHead 
+            }
+            \new Staff = "lead" \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \strcture
+                    \melody
+                >>
+                \noPageBreak
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "for-Bb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        <<
+            \new ChordNames \transpose bf c { 
+                \include "ly/ily/chord-names-properties.ily"                
+                \chordsHead 
+            }
+            \new Staff = "lead" \transpose bf, c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \strcture
+                    \melody
+                >>
+                \noPageBreak
+            }
+        >>
+    }
+}
+
+\book {
   \bookOutputSuffix "for-Eb"
     \header {
+        title = \title
+        composer = \composerName
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
         subtitle = ""
     }
     \score {
@@ -168,24 +229,28 @@ melody = \relative c' {
     }
 }
 
-\book {
-  \bookOutputSuffix "blank-for-Eb"
-    \header {
-        subtitle = ""
-    }
-    \score {
-        <<
-            \new ChordNames \transpose ef c { 
-                \include "ly/ily/chord-names-properties.ily"
-                \chordsForm 
-                \chordsForm
-            }
-            \new Staff = "lead" \transpose ef c {
-                \include "ly/ily/staff-properties.ily"
-                \autoPageBreaksOff
-                \strctureBlank 
-                \noPageBreak
-            }
-        >>
-    }
-}
+% \book {
+%   \bookOutputSuffix "blank-for-Eb"
+%     \header {
+%         title = \title
+%         composer = \composerName
+%         poet = "Eb Lead Sheet"
+%         instrumentName = \poet
+%         subtitle = ""
+%     }
+%     \score {
+%         <<
+%             \new ChordNames \transpose ef c { 
+%                 \include "ly/ily/chord-names-properties.ily"
+%                 \chordsForm 
+%                 \chordsForm
+%             }
+%             \new Staff = "lead" \transpose ef c {
+%                 \include "ly/ily/staff-properties.ily"
+%                 \autoPageBreaksOff
+%                 \strctureBlank 
+%                 \noPageBreak
+%             }
+%         >>
+%     }
+% }

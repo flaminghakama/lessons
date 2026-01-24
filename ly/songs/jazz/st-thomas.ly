@@ -40,7 +40,8 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   top-system-spacing.minimum-distance = #17
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #17
+  % system-system-spacing.minimum-distance = #18
+  system-system-spacing.padding = #3
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #13
