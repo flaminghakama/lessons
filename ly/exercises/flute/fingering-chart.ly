@@ -534,6 +534,12 @@ trebleClefNotes = \relative c' {
 
 }
 
+aquarium = \relative c'' { 
+    <>^\lowA 
+    a4\mf ( <>^\lowGs gs a gs ) | a ( <>^\lowD d,2. ) | a'4 ( gs a gs ) | a ( d,2. ) | \break
+    a'4\cresc ( gs\xf a <>^\lowBb bf ) | g ( <>^\lowFs fs g a ) | <>^\lowF f! ( <>^\lowE e f g ) | e2.\f r4 
+    \bar "||"
+}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -556,12 +562,30 @@ trebleClefNotes = \relative c' {
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
                     \trebleClefNotes
-                    \pageBreak
                 }
             >>
             \header {
                 piece = \markup \center-column { 
                     "Notes on the Treble Clef (G clef)"
+                    "   "
+                }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \aquarium
+                    \pageBreak
+                }
+            >>
+            \header {
+                piece = \markup \center-column { 
+                    "'Aquarium' from Carnival of the Animals (Saint-Saëns)"
                     "   "
                 }
             }
