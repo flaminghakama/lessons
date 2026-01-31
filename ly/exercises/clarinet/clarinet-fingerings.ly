@@ -551,6 +551,18 @@ fingeringsIntroductionLeftHand = \relative c'' {
     \bar "||"
 }
 
+
+fingeringsFoundationsOne = \relative c' {
+    <>^\lowC c8 ( <>^\lowD  d c d  c d c d ) | c ( <>^\middleE e ) <>^\middleG g-. e-. <>^\middleF f4 e8-. d-. | \break
+    c8 ( d c d  c d c d ) | c4 d8 ( e )  d4 \breath g |
+
+    c,8 ( d c d  c d c d ) | c ( e ) g-. e-.  f4 e8-. d-. | \break 
+    g8 ( f ) e-. d-.  c ( <>^\lowB b ) <>^\lowA a-. b-. | c-. <>^\lowG g ( a ) b-.  c2 
+
+    \bar "||"
+}
+
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -585,5 +597,24 @@ fingeringsIntroductionLeftHand = \relative c'' {
                 }
             }
         }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForG) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \fingeringsFoundationsOne
+                }
+            >>
+            \header {
+                piece = \markup \center-column {
+                    "Finger Fitness Foundations"
+                    "   "
+                }
+            }
+        }
+
     }
 }
