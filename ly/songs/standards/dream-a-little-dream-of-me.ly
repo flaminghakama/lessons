@@ -168,7 +168,7 @@ lyricsHeadOne = \lyricmode {
     While  I'm a -- lone and blue as can be, 
     "\"Dream" A Lit -- tle Dream Of "Me.\""
 
-    Stars fad -- ing, but I lin -- ger on, dear,  
+    Stars fad -- ing, but I lin --  ger on, dear,  
     Still crav -- ing your kiss; 
     I'm long -- in to lin -- ger 'til dawn, dear, 
     Just say -- ing this: 

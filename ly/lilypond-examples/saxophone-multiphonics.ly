@@ -10,6 +10,7 @@ fingeringOne = \markup \center-align \line {
             (rh . ())
         )
     }
+    \huge "   "
 }
 
 fingeringTwo = \markup \center-align \line {
@@ -21,6 +22,7 @@ fingeringTwo = \markup \center-align \line {
             (rh . (low-c))
         )
     }
+    \huge "   "
 }
 
 fingeringThree = \markup \center-align \line {
@@ -32,6 +34,7 @@ fingeringThree = \markup \center-align \line {
             (rh . (low-c ees))
         )
     }
+    \huge "   "
 }
 
 fingeringFour = \markup \center-align \line {
@@ -43,6 +46,7 @@ fingeringFour = \markup \center-align \line {
             (rh . (low-c ees))
         )
     }
+    \huge "   "
 }
 
 notes = \relative c' { 
@@ -59,9 +63,6 @@ notes = \relative c' {
     <>_\fingeringFour
     <ees d' bes' e>  
 }
-
-
-%  Doing it by hand 
 
 \score {
     <<

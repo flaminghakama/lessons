@@ -6,7 +6,7 @@ titleRight = "The Break"
 titleFull = "Over The Break"
 composerName = "Elaine Alt"
 arranger = ""
-copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
+copyright = \markup \center-column { " "  \tiny "copyright © 2026 Elaine Paul" } 
 
 \include "../../../../engraving/flaming-libs/flaming-standard.ily"
 \include "../../../../engraving/flaming-libs/flaming-chords.ily"
@@ -88,8 +88,20 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 \include "ly/notes/clarinet-introduction.ily"
 
+overTheBreakLowerInGSimplified = \relative c' { 
+    \key g \major
+    \time 3/4
+    \partial 8. 
+    d16 e [ fs ] \bar "||" 
+    g d e fs  g d e fs  g8 b  | g4  r  r16 e fs g |
+    a16 e fs g  a e fs g  a8 c  | \break a4  r  r16 fs g a |
+    b16 fs g a  b fs g a  b8 d  | b4  r  r16 g a b |
+    c16 g a b  c g a b  c8 e  | c4  r  r16 a b c | 
+    d8 [ c ]  a [ fs ] d [ fs ] | g4 r8 fs g4 
+    \bar "|."  
+}
 
-overTheBreakLowerInG = \relative c' { 
+overTheBreakLowerInGAdvanced = \relative c' { 
     \key g \major
     \time 3/4
     \partial 8. 
@@ -102,7 +114,11 @@ overTheBreakLowerInG = \relative c' {
     \bar "|."  
 }
 
-overTheBreakUpperInG = \relative c' { 
+
+overTheBreakLowerInG = \overTheBreakLowerInGSimplified
+
+
+overTheBreakUpperInGAdvanced = \relative c' { 
     \key g \major
     \time 3/4
     \partial 8. 
@@ -114,6 +130,8 @@ overTheBreakUpperInG = \relative c' {
     d16 c a fs  a fs d c  b8 g' | r16 g' g,,8  r2 ||  
     \bar "|."  
 }
+
+overTheBreakUpperInG = \overTheBreakLowerInGSimplified 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
