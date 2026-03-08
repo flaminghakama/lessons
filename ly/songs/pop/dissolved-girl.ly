@@ -65,11 +65,16 @@ structure = \relative c' {
     \key f \minor
     \time 4/4
 
+    \startSectionWithLabel "Intro" "3X"
+    \startRepeat
+    s1*8
+
     \startSection "Verse 1" %    Shame, such a shame
+    \endRepeat
     s1*16
 
     \startSection "" 
-    s1*8
+    s1*8 
 
     \startSection "Verse 2" %    Say, say my name
     s1*16
@@ -78,7 +83,7 @@ structure = \relative c' {
     \segnoDoubleBar
     s1*16
 
-    \startSectionWithLabel "Instrumental" "Play 6X"
+    \startSectionWithLabel "Instrumental" "6X"
     \startRepeat
     s1*7
     \fine
@@ -97,15 +102,26 @@ rehearsalMarkTweaksForC = \relative c' {
     \once \override Score.MetronomeMark.extra-offset = #'( 0 . 0 )
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    % "Instrumental" 
+    s1*8 
+
+
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
     % "Verse 1" %    Shame, such a shame
-    s1*16 \break
+    s1*4 \break
+    s1*4
+    s1*4 \break
+    s1*4
 
     % "" 
-    s1*8
+    s1*8 \break
 
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
     % "Verse 2" %    Say, say my name
-    s1*16
+    s1*4 
+    s1*4
+    s1*4 \break
+    s1*4
     
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
     % "Chorus 1" 
@@ -188,6 +204,8 @@ melodyVerseThree = \relative c'' {
 
 
 melody = {
+    <>\xp
+    R1*8
     \melodyVerseOne
     <>\xp
     R1*8
