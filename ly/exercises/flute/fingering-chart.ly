@@ -21,7 +21,7 @@ mv fingering-chart.pdf pdf/exercises/flute
 op pdf/exercises/flute/fingering-chart.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"renaming flute fingerings" ; git push 
+git add . ; git commit -m"aquarium" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 

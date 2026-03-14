@@ -378,6 +378,18 @@ melodyVerseOne = \relative c' {
     s1*8
     s1*8
 }
+bgVoiceVerseOne = \relative c' { 
+    s1*8
+    s1*8
+}
+bgVoiceVerseTwo = \relative c' { 
+    s1*8
+    s1*8
+}
+bgVoiceVerseThree = \relative c' { 
+    s1*8
+    s1*8
+}
 
 melodyBridgeOne = \relative c' {
     g2 r | R1 | g2 r | R1 | 
@@ -386,91 +398,35 @@ melodyBridgeOne = \relative c' {
     g2 r | R1 | g2 r | r g | 
 }
 
-melody = {
+bgVocals = {
 
     \melodyIntro
     s1*8
     \bassIntro
     s1*8
     \freezeRock
+    
     \buildUp
     \bassGrooveVoice
+    \bgVoiceChorusOne
+    \bgVoiceVerseOne 
+    \melodyBridgeOne
 
-    \melodyChorusOne
-    \melodyVerseOne 
-
-
-
-
-rangadangVoice = \relative c' { 
-    e8 8 4  8 8 d e ~ | 8 8 4 r2 | 
-    e8 8 4  8 8 d e ~ | 8 8 4 r2 | 
-    e8 8 4  8 8 d e ~ | 8 8 4  8 8 d e ~ |  
-    e8 8 4  8 8 d e ~ | 8 8 4   |  
- }
-
-bassVerse = \relative c, { 
-}
-
-melodyChorus = \relative c'' {
-    d4 r r2 | r a8 g f g | g4 ( f ) r2 | f4 r f r | 
-    d4 r r2 | r a8 g f g | a'1 ~ | 2. r4 | 
-}
-
-
-melodyKSugar = \relative c' { 
-    e2 r | r e4 4 | R1 | r2 e | 
-    R1 | r2 e4 4 | R1 | r2 e ||
-}
-
-    \startSection "Chorus I"
-    s1*32
-
-    \startSection "Verse I"
-    s1*16
-
-    \startSection "Bridge"
-    s1*16
-
-    \startSection "Pre-chorus II"
+    \buildUp
     s1*8
+    \rangadangVoice
+    \bgVoiceChorusTwo
+    \bgVoiceVerseTwo
+    \melodyBridgeOne
 
-    \startSection "Groove II"
+    \buildUp
     s1*8
+    \bgVoiceChorusThree
+    \melodyKSugar
+    \bgVoiceVerseThree
+    \melodyBridgeOne
 
-    \startSection "Rangdang"
-    s1*8
-
-    \startSection "Chorus II"
-    s1*32
-
-    \startSection "Verse II"
-    s1*16
-
-    \startSection "Bridge II"
-    s1*16
-
-    \startSection "Pre-chorus III"
-    s1*8
-
-    \startSection "Groove III"
-    s1*8
-
-    \startSection "Chorus III"
-    s1*32
-
-    \startSection "K Sugar"
-    s1*8
-
-    \startSection "Verse III"
-    s1*16
-
-    \startSection "Bridge III"
-    s1*16
-
-    \startSection "Pre-chorus IV"
-    s1*8
-
+    \buildUp
     \startSection "Groove IV"
     s1*8
 
