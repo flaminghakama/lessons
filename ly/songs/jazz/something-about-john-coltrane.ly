@@ -102,8 +102,13 @@ structure = \relative c' {
     }
 
     \startSection "Melody"
+    \startRepeat
+    s1*9/8*16
+
+
+    \startSection "Pedal"
+    s1*9/8*16
     \endRepeat
-    s1*9/8*4
 }
 
 rehearsalMarkTweaksForC = \relative c' { 
@@ -119,6 +124,13 @@ rehearsalMarkTweaksForC = \relative c' {
         
     \once \override Score.RehearsalMark.extra-offset = #'( -5 . 1 )
     % "Melody"
+        s1*9/8*4 \break
+        s1*9/8*12 \break
+        
+    \once \override Score.RehearsalMark.extra-offset = #'( -5 . 1 )
+    % "Pedal"
+        s1*9/8 \noBreak s1*9/8 \noBreak s1*9/8 \noBreak s1*9/8  \break
+        s1*9/8*4 \break
         s1*9/8*4 \break
         s1*9/8*4 \break
 }
@@ -147,11 +159,17 @@ chordsForm = \chordmode {
     cs1*9/8:m | s | s | s | 
     cs1*9/8:m | s | s | s || s ||
 
-    cs1*9/8:m | s | s | s | 
+    cs1*9/8*4:m |
+    s1*9/8*12
+
+    gs1*9/8:1.4.5 | s | s | s | 
+    gs1*9/8:1.4.5 | s | s | s | 
+    gs1*9/8:1.4.5 | s | s | s | 
+    gs1*9/8:1.4.5 | s | s | s | 
 }
 
 
-bassline = \relative c, { 
+basslineA = \relative c, { 
     cs4. gs' cs | cs4 b8  gs4 fs8  cs ( e ) b | 
     cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  cs ( e ) b | 
 
@@ -164,23 +182,41 @@ bassline = \relative c, {
     cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  cs ( e ) b |
     cs4. gs' cs | cs4 b8  gs4 fs8  cs ( e ) b | 
 }
+basslinePedal = \relative c, { 
+    gs4. ~ 4 8 r4 gs8 | gs,4. ~ 4 gs'8 r4 b8 | 
+    cs4. 4. 8 b gs | gs,2. r4. |
+
+    cs'4. ~ 4 8  r b gs | gs,4. ~ 4 fs'8  gs8 8 b  |
+    cs4. ~ 4 b8  cs b b | b gs4  fs4.  e8 fs b | 
+
+    cs4. ~ 4 8  r fs, gs | gs,4. ~ 4 gs'8  r gs b | 
+    cs4.  4 8  r fs, gs | gs,4. ~ 4 8  r gs' b | 
+
+    cs4 8 ~ 8 4 4 8 | gs,2. r8 gs' b  | 
+    cs4. ~ 4 8  r4 b8 | gs4. fs2. ||  
+}
 
 melodyA = \relative c'' { 
     r4.  r4 gs8 ~ 4 fs8 ||
     e2. ~ 8 ds cs | ds2. ~ 8 cs ds |
     cs4 e8 ~ 4. ~ 8 ds cs | ds cs gs ~ 4. as4 r8 | 
+
+    <>\xmp R1*9/8*12 
 }
 
 melodyForC = {
     \clef bass
-    \transpose c, c \bassline 
+    \transpose c, c \basslineA
     \clef treble
     \melodyA 
+    \clef bass
+    \transpose c,, c \basslinePedal
 }
 
 melody = {
-    \transpose c,, c \bassline 
+    \transpose c,, c \basslineA
     \melodyA 
+    \transpose c,,, c \basslinePedal
 }
 
 \book {
@@ -230,7 +266,7 @@ melody = {
         subtitle = ""
     }
     \score {
-        \transpose bf, c <<
+        \transpose as, c <<
             \new ChordNames { 
                 \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
                 \chordsIntro
@@ -267,7 +303,7 @@ melody = {
         subtitle = ""
     }
     \score {
-        \transpose ef, c <<
+        \transpose ds, c <<
             \new ChordNames { 
                 \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
                 \chordsIntro
