@@ -170,17 +170,17 @@ chordsForm = \chordmode {
 
 
 basslineA = \relative c, { 
-    cs4. gs' cs | cs4 b8  gs4 fs8  cs ( e ) b | 
-    cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  cs ( e ) b | 
+    cs4. gs' cs | cs4 b8  gs4 fs8  e ( fs ) b, | 
+    cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  e ( fs ) b, | 
 
     cs4. gs' cs | cs4 b8  gs4 fs8  e4 b8  | 
-    cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  cs ( e ) b | 
+    cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  e ( fs ) b, | 
 
-    cs4. gs' cs | cs4 b8  gs4 fs8  cs ( e ) b | 
+    cs4. gs' cs | cs4 b8  gs4 fs8  e ( fs ) b, | 
     cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  e4 b8  |
 
-    cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  cs ( e ) b |
-    cs4. gs' cs | cs4 b8  gs4 fs8  cs ( e ) b | 
+    cs4.  gs'8 cs r  r cs4 ~ | 4 b8  gs4 fs8  e ( fs ) b, |
+    cs4. gs' cs | cs4 b8  gs4 fs8  e ( fs ) b, | 
 }
 basslinePedal = \relative c, { 
     gs4. ~ 4 8 r4 gs8 | gs,4. ~ 4 gs'8 r4 b8 | 
