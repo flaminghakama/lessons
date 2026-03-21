@@ -4,7 +4,7 @@ titleLeft = "Soap"
 titleRight = ""
 titleFull = "Soap"
 composerName = "G. A. Tipton"
-lyricistName = ""
+arrangerName = "E. Alt"
 arranger = ""
 copyright = ""
 
@@ -223,7 +223,7 @@ melodyA = \relative c''' {
 
 
 melodyB = \relative c'' { 
-    r4 r8 as  b d4 f8 ~ | 8 e4 d8 ~ 4 r | 
+    r4 r8 bf  b d4 f8 ~ | 8 e4 d8 ~ 4 r | 
     r4 r8 ds  e a4 g8 ~ | 4   
 }
 
@@ -336,7 +336,6 @@ lyricsCoda = \lyricmode {
 \header {
     title = \title
     composer = \markup \italic { "composed by" \composerName }
-    arranger = \markup \italic { "lyrics by" \lyricistName }
     poet = "Eb Alto Saxophone"
     instrumentName = \poet
 }
@@ -422,6 +421,7 @@ lyricsCoda = \lyricmode {
   \bookOutputSuffix "Violin-Clarinet"
     \header {
         subtitle = ""
+        arranger = \markup \italic { "arranged by" \arrangerName }
         poet = "Transposed Score"
         instrumentName = \poet
     }
