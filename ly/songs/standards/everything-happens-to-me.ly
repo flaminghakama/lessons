@@ -291,7 +291,7 @@ lyricsHeadTwo = \lyricmode {
     \repeat unfold 1 { \skip 1 }
 
     ne -- ver miss a thing,
-    I've had meas -- les and the mumps,
+    I've had the meas -- les and the mumps,
 
     and ev -- 'ry time I play my ace
     my part -- ner al -- ways trumps,
