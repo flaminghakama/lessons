@@ -106,6 +106,26 @@ rehearsalMarkTweaksForC = \relative c' {
     \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
 }
 
+chordsForm = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s8 
+    c2:m9 f4:9 f:9/ef | d2:m7 cs:dim7 | 
+    c2:m7 f4:9 f:9/ef | d2:m7.5- g:7 | 
+    c2:m7 ef4:m7 af:7.9- | d2:m7 g:9 | 
+    c2:m7 f:7 | bf:maj7 g:7 || c2:m7 f:7 | bf1:6 ||
+
+    f2:1.3-.5.7.11 bf:aug7.8+.9+ | ef:maj9 c:m7 | 
+    f:1.3-.5.7.11 bf:7.9- | ef1:maj9 |
+    e2:m11 a:aug7 | d:maj9 d:6 | g:m7 c:9 | c:m7 f:7 ||
+
+    c2:m9 f4:9 f:7/ef | d2:m7 cs:dim7 | 
+    c2:m7 f4:9 f:7/ef | d2:m7.5- g:aug7 | 
+    d2:dim7 ef:m6 | d:m7 g4:13 g:aug7 | 
+    c2:m7 f:7 | bf1:6 ||
+}
+
 
 chordsFormFake = \chordmode { 
     \set chordChanges = ##t 
@@ -153,7 +173,7 @@ chordsFormSher = \chordmode {
     b2:dim7 c:m7.5- | s g:9 | 
     s1 | bf:maj7 || s1*2 ||
 
-    f2:1.3-.5.7.11 bf:aug7.9+ | ef1:maj7 | f:1.3-.5.7.11 bf:aug7.9- | ef1:maj7 |
+    f2:1.3-.5.7.11 bf:aug7.9+ | ef1:maj7 | f2:1.3-.5.7.11 bf:aug7.9- | ef1:maj7 |
     e2:1.3-.5.7.11 a:aug7.9+ | d:maj7 b:m7 | s c:7 | f:1.4.5.7 f:7 ||
 
     s2 f:7 | s1 | 
