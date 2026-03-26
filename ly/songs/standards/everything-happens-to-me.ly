@@ -18,7 +18,7 @@ lilypond ly/songs/standards/everything-happens-to-me*.ly
 mv everything-happens-to-me*.pdf pdf/songs/standards
 for file in pdf/songs/standards/everything-happens-to-me*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"tranposed" ; git push 
+git add . ; git commit -m"fix" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -91,19 +91,17 @@ rehearsalMarkTweaksForC = \relative c' {
     s8
 
     % "A" 
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 0 )
         s1*6 
         s1*2
         s1*2 \break 
 
-    \pageBreak
-
     % "B"
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
     s1*8 \break 
 
     % "A"
-    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
 }
 
 chordsForm = \chordmode { 
@@ -118,12 +116,12 @@ chordsForm = \chordmode {
 
     f2:1.3-.5.7.11 bf:aug7.8+.9+ | ef:maj9 c:m7 | 
     f:1.3-.5.7.11 bf:7.9- | ef1:maj9 |
-    e2:m11 a:aug7 | d:maj9 d:6 | g:m7 c:9 | c:m7 f:7 ||
+    e2:m11 a:7.8+.9+ | d:maj7 b:m7 | g4:m g:m7.7+ g:m7 c:7 | c2:m7 f:7 ||
 
-    c2:m9 f4:9 f:7/ef | d2:m7 cs:dim7 | 
-    c2:m7 f4:9 f:7/ef | d2:m7.5- g:aug7 | 
-    d2:dim7 ef:m6 | d:m7 g4:13 g:aug7 | 
-    c2:m7 f:7 | bf1:6 ||
+    c2:m9 f4:9 f:9/ef | d2:m7 cs:dim7 | 
+    c2:m7 f4:9 f:9/ef | d2:m7.5- g:aug7 | 
+    c2:m7 ef4:m7 af:7.9- | d2:m7 g:9 | 
+    c2:m7 f:13 | bf1:6 ||
 }
 
 
@@ -319,21 +317,25 @@ lyricsHeadTwo = \lyricmode {
     }
     \score {
         <<
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormSherAlt
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormSher
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormReal
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormFake
+            %                 }
             \new ChordNames \transpose c c  { 
                                 \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
-                                \chordsFormSherAlt
-                            }
-            \new ChordNames \transpose c c  { 
-                                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
-                                \chordsFormSher
-                            }
-            \new ChordNames \transpose c c  { 
-                                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
-                                \chordsFormReal
-                            }
-            \new ChordNames \transpose c c  { 
-                                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
-                                \chordsFormFake
+                                \chordsForm
                             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
