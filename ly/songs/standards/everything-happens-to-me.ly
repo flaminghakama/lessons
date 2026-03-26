@@ -18,7 +18,7 @@ lilypond ly/songs/standards/everything-happens-to-me*.ly
 mv everything-happens-to-me*.pdf pdf/songs/standards
 for file in pdf/songs/standards/everything-happens-to-me*pdf ; do open -a Preview $file ; done
 
-git add . ; git commit -m"fix" ; git push 
+git add . ; git commit -m"fix lyrics" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -251,7 +251,7 @@ lyricsHeadOne = \lyricmode {
     I make a date for golf and 
     you can bet your life it rains,
 
-    I try to give a par -- ty
+    I try to give a part -- y
     and the guy up -- stairs com -- plains,
 
     I guess I'll go thru life
