@@ -44,7 +44,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     right-margin = #14
 
     % First page spacing after header
-    markup-system-spacing.padding = #10
+    markup-system-spacing.padding = #2
 
     % Subsequent page spacing after header
     top-system-spacing.minimum-distance = #14

@@ -541,6 +541,21 @@ aquarium = \relative c'' {
     \bar "||"
 }
 
+
+minorMelody = \relative c'' { 
+    \time 3/4
+    \key g \minor 
+
+    <>^\lowG 
+    g4. <>^\lowA a8 <>^\lowBb bf [ <>^\middleC c ] | <>^\middleD d2. |
+
+    <>^\lowFs fs,4. a8 bf [ c ] | \break d2. | 
+
+    g,4. a8 bf [ c ] | d4 <>^\lowG g <>^\lowF f | <>^\middleEb ef d c | d2. ||
+    \bar "||"
+}
+
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -586,6 +601,25 @@ aquarium = \relative c'' {
             \header {
                 piece = \markup \center-column { 
                     "'Aquarium' from Carnival of the Animals (Saint-Saëns)"
+                    "   "
+                }
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \minorMelody
+                    \pageBreak
+                }
+            >>
+            \header {
+                piece = \markup \center-column { 
+                    "Minor Melody"
                     "   "
                 }
             }

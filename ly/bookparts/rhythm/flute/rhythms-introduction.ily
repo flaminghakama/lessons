@@ -5,8 +5,6 @@
         }
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsIntroductionExerciseOneMajor
@@ -16,15 +14,13 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = ""
+                piece = "1. Ascending Scale"
                 poet = ""
             }
         }
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsIntroductionExerciseTwoMajor
@@ -35,14 +31,12 @@
                 subtitle = ""
                 composer = ""
                 poet = ""
-                piece = "" %\markup \center-column { "2. G Major"  " " }
+                piece = "2. Arpeggios"
             }
         }
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsIntroductionExerciseThreeMajor 
@@ -53,15 +47,13 @@
                 subtitle = ""
                 composer = ""
                 poet = ""
-                piece = "" %\markup \center-column { "3. C Major"  " " }
+                piece = "3. G Major"
             }
         }
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-                \new Staff \transpose g, c { 
+                \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsIntroductionExerciseFourMajor 
                 }
@@ -70,15 +62,30 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "4. C Major"  " " }
+                poet = ""
+                piece = "4."
             }
         }
 
         \score {
             << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c, c { 
+                \new Staff \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \rhythmsIntroductionExerciseFiveMajor 
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                poet = ""
+                piece = "5."
+            }
+        }
+
+        \score {
+            << 
+                \new Staff \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \rhythmsIntroductionExerciseSixMajor 
                 }
@@ -87,42 +94,25 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "5. C Major"  " " }
+                poet = ""
+                piece = "6."
             }
         }
 
-        % \score {
-        %     << 
-        %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-        %         \new Staff \transpose fs, fs { 
-        %             \include "ly/ily/staff-properties.ily"
-        %             \rhythmsIntroductionExerciseSevenMajor 
-        %         }
-        %     >>
-        %     \header {
-        %         title = ""
-        %         subtitle = ""
-        %         composer = ""
-        %         piece = \markup \center-column { "6. Mozart"  " " }
-        %     }
-        % }
-
-        % \score {
-        %     << 
-        %         \override Score.RehearsalMark.self-alignment-X = #LEFT
-        %         \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-        %         \new Staff \transpose g, c { 
-        %             \include "ly/ily/staff-properties.ily"
-        %             \rhythmsIntroductionExerciseFiveMajor 
-        %         }
-        %     >>
-        %     \header {
-        %         title = ""
-        %         subtitle = ""
-        %         composer = ""
-        %         piece = \markup \center-column { "7. C Major"  " " }
-        %     }
-        % }
+        \score {
+            << 
+                \new Staff \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \rhythmsIntroductionExerciseSevenMajor 
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                poet = ""
+                piece = "7. G Minor"
+            }
+        }
 
     }
