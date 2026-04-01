@@ -223,34 +223,34 @@ melodyForEb = \relative c' {
 
 
 transcriptionChorusOneInBb = \relative c'' { 
-    r4 r8 a d,4 r | r4 r8 a' ds,4 r | 
-    r8 a' ds, [ a' ] r2 | r8 a fs [ a ] e a ds, a' | 
-    d,4 r r8 a' e4 | r8 a e4 r8 a r4 | 
-    r8 a e4 r8 a ds, [ a' ] | d,4 r8 a' fs a e a |  
+    r4 r8 a ( d,4-. ) r | r4 r8 a' ( ds,4-. ) r | 
+    r8 a' ( ds, [ a'-. ) ] r2 | r8 a ( fs ) [ a ( ] e ) a ( ds, ) a' ( | 
+    d,4-. ) r r8 a' ( e4-. ) | r8 a ( e4-. ) r8 a r4 | 
+    r8 a ( e4-. ) r8 a ( ds, [ a' ] | d,4-. ) r8 a' ( fs a e a |  
 
-    d,4 r4 r8 a' fs [ a ]| cs e g ds  fs c a as | 
-    b8 g e a  fs g b d | fs a, b d  f cs bf gs |
-    a8 d, r4  r8 a' fs4 | r8 a g4  r8 b gs4 | 
-    r4 r8 a  ds,4 r8 a' | r4 r8 a  r a fs [ a ] ||
+    d,4-.) r4 r8 a' ( fs [ a ] | cs ) e g ds  fs c ( a as | 
+    b8 ) g ( e ) a  ( fs g ) b ( d ) | fs4-. b,8 d  f cs bf gs ( |
+    a8 d, ) r4  r8 a' ( fs4-. ) | r8 a ( g4-. )  r8 b ( gs4-. ) | 
+    r4 r8 a  ds,4 r8 a' | r4 r8 a  r a ( fs ) [ a ( ] ||
 }
 
 transcriptionChorusTwoPartOneInBb = \relative c'' { 
-    d,4 r8 a'  d,4 r8 a' | d,4 r8 a'  ds,4 r |
-    r8 a' e4  r8 a fs [ a ] | d,4 r8 a'  g4 r8 b |
-    a8 d, r4  r8 d' ds [ g ] | \tuplet 3/2 { ds8 e f } \tuplet 3/2 { fs8 f e }  ds8 c b a |
-    fs8 g b d  fs a, cs e | d a fs b ~ 4 r | 
+    d,4-. ) r8 a'  ( d,4-. ) r8 a' ( | d,4-. ) r8 a' ( ds,4-. ) r |
+    r8 a' ( e4-. )  r8 a ( fs ) [ a ( ] | d,4-. ) r8 a'  g4-. r8 b ( |
+    a8 ) d, r4  r8 d' ( ds ) [ g ( ] | ds8 e ) \tuplet 3/2 { fs8 ( f e ) }  ds8 c b a |
+    fs8 ( g ) b d  fs a, ( cs ) e ( | d ) a ( fs ) b ~ 4 r | 
 }
 transcriptionChorusTwoPartTwoInBb = \relative c'' { 
-    r4 r8 a  c e g e | fs e \tuplet 3/2 { d8 fs a }  d8 c a as | 
-    b8 g fs e  b' [ \grace { c16 b } a8 g fs ] | e d cs e  fs b a g |
-    fs8 a, c a  e' d c as | b d e fs  a g fs e |
-    d8 b a g  fs a e a | d,4 r r2 ||   
+    r4 r8 a  c e g ( e | fs ) e ( \tuplet 3/2 { d8 fs a ) }  d8 c ( a as | 
+    b8 ) g ( fs e )  b' ( [ \grace { c16 b } a8 ) g fs ] | e d ( cs ) e  ( fs ) b ( a ) g ( |
+    fs8 ) a, ( c a )  e' d c as | b d ( e fs )  a g ( fs ) e ( |
+    d8 ) b ( a ) g (  fs ) a ( e ) a ( | d,4-. )r r2 ||   
 }
 transcriptionChorusTwoPartTwoInBbForEb = \relative c' { 
-    r4 r8 a  c e g e | fs e \tuplet 3/2 { d8 fs a }  d8 c a as | 
-    b8 g fs e  b' [ \grace { c16 b } a8 g fs ] | e d cs e  fs b a g |
-    fs'8 a, c a  e' d c as | b d e fs  a g fs e |
-    d8 b a g  fs a e a | d,4 r r2 ||   
+    r4 r8 a  c e g ( e | fs ) e ( \tuplet 3/2 { d8 fs a ) }  d8 c ( a as | 
+    b8 ) g ( fs e ) b' ( [ \grace { c16 b } a8 ) g fs ] | e d ( cs ) e  ( fs ) b ( a ) g ( |
+    fs'8 ) a, ( c a )  e' d c as | b d ( e fs )  a g ( fs ) e ( |
+    d8 ) b ( a ) g ( fs ) a ( e ) a ( | d,4-. ) r r2 ||   
 }
 
 transcriptionForBb = {
