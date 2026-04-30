@@ -244,7 +244,7 @@ melody = {
     \melodyLastEndings
 }
 
-lyricsHeadOne = \lyricmode {
+lyricsOriginalHeadOne = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
@@ -284,7 +284,7 @@ lyricsHeadOne = \lyricmode {
 
 }
 
-lyricsHeadTwo = \lyricmode {
+lyricsOriginalHeadTwo = \lyricmode {
     \override LyricText.font-family = #'typewriter
     \override LyricText.font-size = #'2
 
@@ -292,6 +292,62 @@ lyricsHeadTwo = \lyricmode {
 
     ne -- ver miss a thing,
     I've had the meas -- les and the mumps,
+
+    and ev -- 'ry time I play my ace
+    my part -- ner al -- ways trumps,
+
+    I guess I'm just a fool
+    who ne -- ver looks be -- fore he jumps,
+}
+
+lyricsHeadOne = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+
+    I make a date for golf and 
+    you can bet your life it rains,
+
+    I try to give a part -- y
+    and the guy up -- stairs com -- plains,
+
+    I guess I'll go thru life
+    just catch -- in' colds and mis -- sin' trains,
+    Ev -- 'ry -- thing Hap -- pens To Me.  I 
+
+    Ev -- 'ry -- thing Hap -- pens To Me.  
+
+        At first my heart tho't
+        you could break this jinx for me,
+        
+        That love would turn the trick
+        to end des -- pair,
+        
+        but now, I just can't fool
+        this head that thinks for me,
+
+        I've mort -- gaged all my 
+        cast -- les in the air.
+
+    I've Inst -- a -- grammed and phoned, 
+    I sent an e-  -- mail spec -- ial boo,
+
+    your ans -- wer was to ghost me 
+    leav -- ing me with -- out a clue.
+
+    I fell in love just once
+    and then it had to be with you,
+    Ev -- 'ry -- thing Hap -- pens To Me.
+
+}
+
+lyricsHeadTwo = \lyricmode {
+    \override LyricText.font-family = #'typewriter
+    \override LyricText.font-size = #'2
+
+    \repeat unfold 1 { \skip 1 }
+
+    ne -- ver miss a thing,
+    I've had the co -- vid and the mumps,
 
     and ev -- 'ry time I play my ace
     my part -- ner al -- ways trumps,

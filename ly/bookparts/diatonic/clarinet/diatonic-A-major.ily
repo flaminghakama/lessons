@@ -122,6 +122,7 @@
                 }
                 \new Staff \transpose c a { 
                     \include "ly/ily/staff-properties.ily"
+                    \transpose c c, \grandArpeggioMajor
                     \grandArpeggioMajorTwo
                     \noPageBreak
                 }
