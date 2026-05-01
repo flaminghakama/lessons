@@ -953,7 +953,7 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "Horn-Three-in-E-for-C"
+  \bookOutputSuffix "Horn-III-in-E-for-C"
     \header {
         subtitle = "(Zoo key)"
         poet = "Trombone"
@@ -981,7 +981,7 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "Horn-Three-in-E-for-Eb"
+  \bookOutputSuffix "Horn-III-in-E-for-Eb"
     \header {
         subtitle = "(Zoo key)"
         poet = "Baritone Saxophone"
