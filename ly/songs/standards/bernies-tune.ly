@@ -27,34 +27,34 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "../../../../engraving/flaming-libs/flaming-chords.ily"
 \include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
-\paper {
+    \paper {
 
-  top-margin = #2
-  right-margin = #14
+      top-margin = #2
+      right-margin = #14
 
-  % First page spacing after header
-  markup-system-spacing.padding = #0
+      % First page spacing after header
+      markup-system-spacing.padding = #0
 
-  % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #18
+      % Subsequent page spacing after header
+      top-system-spacing.minimum-distance = #18
 
-  % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+      % Spacing in between systems
+      system-system-spacing.basic-distance = #18
 
-  % Space after score, before the next score
-  score-system-spacing.minimum-distance = #13
+      % Space after score, before the next score
+      score-system-spacing.minimum-distance = #13
 
-  page-breaking = #ly:minimal-breaking
+      page-breaking = #ly:minimal-breaking
 
-  ragged-bottom = ##t
-  ragged-last-bottom = ##t
+      ragged-bottom = ##t
+      ragged-last-bottom = ##t
 
-  #(define fonts
-    (make-pango-font-tree "Marker Felt" 
-                          "Highlander ITC TT" 
-                          "LilyJAZZText"
-                           (/ myStaffSize 20)))
-}
+      #(define fonts
+        (make-pango-font-tree "Marker Felt" 
+                              "Highlander ITC TT" 
+                              "LilyJAZZText"
+                               (/ myStaffSize 20)))
+    }
 
 \include "ly/ily/layout-songs.ily"
 
