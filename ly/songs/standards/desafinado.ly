@@ -129,7 +129,7 @@ chordsSong = \chordmode {
     f1:maj7 | s | g:7.11+ | s | 
     g1:m7 | c:7 | a:m7.5- | d:7.9- |
     g1:m7 | a:7.9- | d:7 | d:7.9- |
-    g1:7.9- | s | gf:maj7 | c:7.9- || 
+    g1:7.9- | s | gf:maj7 | s2 c:7.9- || 
 
     f1:maj7 | s | g:7.11+ | s | 
     g1:m7 | c:7 | a:m7.5- | d:7.9- |
@@ -137,7 +137,7 @@ chordsSong = \chordmode {
     a1:maj7 | af:aug7 | g:7 | gf:7 || 
 
     a1:maj7 | bf:dim7 | b:m7 | e:7 |
-    a1:maj7 | c:maj7 | b:m7 | e:7 |
+    a1:maj7 | c:7 | b:m7 | e:7 |
     c1:maj7 | cs:dim7 | d:m7 | g:7 |
     g1:m7 | ef:m6 | g:7 | gf:maj7 ||
 
@@ -154,7 +154,7 @@ chordsSongForFlats = \chordmode {
     f1:maj7 | s | g:7.11+ | s | 
     g1:m7 | c:7 | a:m7.5- | d:7.9- |
     g1:m7 | a:7.9- | d:7 | d:7.9- |
-    g1:7.9- | s | fs:maj7 | c:7.9- || 
+    g1:7.9- | s | fs:maj7 | s2 c:7.9- || 
 
     f1:maj7 | s | g:7.11+ | s | 
     g1:m7 | c:7 | a:m7.5- | d:7.9- |
@@ -162,7 +162,7 @@ chordsSongForFlats = \chordmode {
     a1:maj7 | af:aug7 | g:7 | fs:7 || 
 
     a1:maj7 | bf:dim7 | b:m7 | e:7 |
-    a1:maj7 | c:maj7 | b:m7 | e:7 |
+    a1:maj7 | c:7 | b:m7 | e:7 |
     c1:maj7 | cs:dim7 | d:m7 | g:7 |
     g1:m7 | ef:m6 | g:7 | fs:maj7 ||
 
