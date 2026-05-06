@@ -18,7 +18,7 @@ lilypond ly/songs/standards/desafinado.ly
 mv desafinado*pdf pdf/songs/standards
 for file in pdf/songs/standards/desafinado*pdf ; do op $file ; done 
 
-git add . ; git commit -m"chords" ; git push 
+git add . ; git commit -m"fixing notes" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -241,7 +241,7 @@ melodyC = \relative c' {
     8 8 8 8 ~ 8 c'4 bf8 ~ | 2 r4 r8 e, | 
 
     f8 8 8 8  8 4 8 ~ | 8 e ds4 ~ 8 e4 g8 ~ | 
-    g8 f d c ~ 8 f4. | R1 ||        
+    g8 f d f8 ~ 8 4. | R1 ||        
 
 }
 
