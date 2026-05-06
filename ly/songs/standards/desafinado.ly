@@ -18,7 +18,7 @@ lilypond ly/songs/standards/desafinado.ly
 mv desafinado*pdf pdf/songs/standards
 for file in pdf/songs/standards/desafinado*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing pitches" ; git push 
+git add . ; git commit -m"transposition" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -134,12 +134,37 @@ chordsSong = \chordmode {
     f1:maj7 | s | g:7.11+ | s | 
     g1:m7 | c:7 | a:m7.5- | d:7.9- |
     g1:m7 | bf:m6 | f:maj7 | e:7.9- |
-    a1:maj7 | af:7 | g:7 | gf:7 || 
+    a1:maj7 | af:aug7 | g:7 | gf:7 || 
 
     a1:maj7 | bf:dim7 | b:m7 | e:7 |
     a1:maj7 | c:maj7 | b:m7 | e:7 |
     c1:maj7 | cs:dim7 | d:m7 | g:7 |
     g1:m7 | ef:m6 | g:7 | gf:maj7 ||
+
+    f1:maj7 | s | g:7.11+ | s | 
+    g1:m7 | c:7 | a:m7.5- | d:7.9- |
+    g1:m7 | bf:m6 | f:maj7 | d:m7 |
+    g1:7 | s | bf:m7 | ef:9 | 
+    g1:7 | g2:m7 c:7 | f1:6 | s2 c2:7 ||
+}
+chordsSongForFlats = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    %\set noChordSymbol = ##t
+    f1:maj7 | s | g:7.11+ | s | 
+    g1:m7 | c:7 | a:m7.5- | d:7.9- |
+    g1:m7 | a:7.9- | d:7 | d:7.9- |
+    g1:7.9- | s | fs:maj7 | c:7.9- || 
+
+    f1:maj7 | s | g:7.11+ | s | 
+    g1:m7 | c:7 | a:m7.5- | d:7.9- |
+    g1:m7 | bf:m6 | f:maj7 | e:7.9- |
+    a1:maj7 | af:aug7 | g:7 | gf:7 || 
+
+    a1:maj7 | bf:dim7 | b:m7 | e:7 |
+    a1:maj7 | c:maj7 | b:m7 | e:7 |
+    c1:maj7 | cs:dim7 | d:m7 | g:7 |
+    g1:m7 | ef:m6 | g:7 | fs:maj7 ||
 
     f1:maj7 | s | g:7.11+ | s | 
     g1:m7 | c:7 | a:m7.5- | d:7.9- |
@@ -160,6 +185,19 @@ melodyAOne = \relative c' {
 
     r8 af4 g8 f d4 af'8 ~ | 8 g f8 8  d f4 df8 ~ | 
     df8 4. r2 | R1 ||
+}
+melodyAOneForFlats = \relative c' { 
+    r4 c8 d  e f4 e8 ~ | 4. d8 cs d4 f8 ~ | 
+    f8 cs4 8 ~ 2 | R1 |
+
+    r8 d4 e8 f g4 f8 ~ | 4 e8 ds ~ 4 e8 c' ~ | 
+    c8 ef,4 8 ~ 2 | R1 | 
+
+    r8 d c' [ bf ]  a8 g4 bf8 ~ | 8 a ds,4 ~ 8 e4 fs8 ~ |
+    fs8 a fs4 ~ 8 d4 ef8 ~ | 4 2 r4 | 
+
+    r8 af4 g8 f d4 af'8 ~ | 8 g f8 8  d f4 cs8 ~ | 
+    cs8 4. r2 | R1 ||
 }
 melodyATwo = \relative c' { 
     r8 c4 d8  e f4 e8 ~ | 4 d8 ( 8 cs8 ) d4 8 | 
@@ -214,7 +252,10 @@ melody = {
     \melodyC
 }
 melodyForFlats = \relative c'' { 
-    \melody
+    \melodyAOneForFlats
+    \melodyATwo
+    \melodyB
+    \melodyC
 }
 
 lyricsHeadOne = \lyricmode {
@@ -375,7 +416,7 @@ lyricsCoda = \lyricmode {
         \transpose f ef <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSong 
+                \chordsSongForFlats
             }
             \new Staff = "voice" \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -384,7 +425,7 @@ lyricsCoda = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForC
-                    \melody
+                    \melodyForFlats
                 >>
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
