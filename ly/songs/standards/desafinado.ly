@@ -18,7 +18,7 @@ lilypond ly/songs/standards/desafinado.ly
 mv desafinado*pdf pdf/songs/standards
 for file in pdf/songs/standards/desafinado*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing lyric" ; git push 
+git add . ; git commit -m"portugese" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -185,7 +185,7 @@ melodyB = \relative c' {
     g8 a4 g8 ~ 8 a4 g8 ~ | 8 f e f  g d4 g8 ~ | 
     g2 r | r2 \tuplet 3/2 { r4 g a } | 
 
-    b4 a8 b8 ~ 8 a c4 ~ | 8 b a b ~ 8 g4. ~ | 
+    bf4 a8 bf8 ~ 8 a c4 ~ | 8 bf a bf ~ 8 g4. ~ | 
     g2 r | r2 r4 r8
 }
 melodyC = \relative c' { 
@@ -196,7 +196,7 @@ melodyC = \relative c' {
     r8 d4 e8 f g4 f8 ~ | 8 e ds e ~ 4. d'8 ~ | 
     d8 df c b ~ 8 bf4 d8 ~ | 2 r4 a4 |
 
-    c4 b8 a ~ 8 g b4 ~ | 8 a g f ~ 8 a4 e8 | 
+    c4 bf8 a ~ 8 g b4 ~ | 8 a g f ~ 8 a4 e8 | 
     e8 8 g2. | r2 r4 d8 e |
 
     f8. 16  8 8  8 4 8 ~ | 8 8 8 d \tuplet 3/2 { d8 8 e } f4 ~ | 
