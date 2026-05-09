@@ -1,44 +1,48 @@
-\version "2.23.2"
+\version "2.24.0"
 
 titleLeft = "Blue"
 titleRight = "Steps"
-title = "Blue Steps"
-composerName = "Elaine Paul Alt"
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+titleFull = "Blue Steps"
+composerName = "Elaine Alt"
+lyricistName = ""
+arranger = ""
+copyright = ""
 
 %{
 
+killPreview ; rm blue-steps*pdf ; lilypond ly/songs/alt/blue-steps.ly ; for file in blue-steps*pdf ; do op $file ; done 
+
 killPreview
-rm blue-steps*pdf
-lilypond ly/songs/alt/blue-steps.ly
-mv blue-steps*.pdf  pdf/songs/alt
-mv blue-steps*.midi midi
-a pdf/songs/alt/blue-steps-for-C.pdf &
-#for file in pdf/songs/alt/blue-steps*pdf ; do open -a Preview $file ; done
+rm pdf/songs/alt/blue-steps*
+lilypond ly/songs/alt/blue-steps.ly 
+mv blue-steps*pdf pdf/songs/alt
+for file in pdf/songs/alt/blue-steps*pdf ; do op $file ; done 
+
+git add . ; git commit -m"fixing notes" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
   top-margin = #2
   right-margin = #14
-  left-margin = #4
 
   % First page spacing after header
-  markup-system-spacing.padding = #8
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #22
+  top-system-spacing.minimum-distance = #20
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #20
+  system-system-spacing.basic-distance = #18
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #30
+  score-system-spacing.minimum-distance = #13
 
   page-breaking = #ly:minimal-breaking
 
@@ -52,6 +56,9 @@ a pdf/songs/alt/blue-steps-for-C.pdf &
                            (/ myStaffSize 20)))
 }
 
+\include "ly/ily/layout-songs.ily"
+
+
 \layout { 
     indent = .75\cm
     short-indent = .25\cm
@@ -60,7 +67,7 @@ a pdf/songs/alt/blue-steps-for-C.pdf &
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
 
     \key bf \major
     \tempo 4=168
@@ -69,15 +76,15 @@ structure = \relative c' {
     s8
 
     \startSectionNoBarline "Head"
-    \bar "[|:"
+    \bar "[|:-|"
     \repeat volta 2 { 
         s1*4 \break
         s1*4 \break
-        s1*2
+        s1 s2.... \toCoda s32 
     } 
     \alternative { 
         { s1*2 \bar ":|]" }
-        { s1 s2.... \toCoda s32 \break }
+        { s1*2 \break }
     }
 
     \startSectionNoBarline "Twos"
@@ -96,7 +103,7 @@ structure = \relative c' {
     \pageBreak
 
     \startSectionNoBarline "Solos"
-    \bar "[|:"
+    \bar "[|:-|"
     \repeat volta 2 { 
         s1*4 \break
         s1*4 \break
@@ -107,13 +114,15 @@ structure = \relative c' {
 structureCoda = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark #'extra-offset = #'( -11 . -4 ) 
-    \once \override Score.RehearsalMark #'font-size = #8
+    \once \override Score.RehearsalMark.extra-offset = #'( -11 . -4 ) 
+    \once \override Score.RehearsalMark.font-size = #8
     \mark \markup { \musicglyph #"scripts.coda" }
 
     \key bf \major
     \time 4/4
-        s1*2
+    s1*2
+    \bar "||"
+    s1*2
     \bar "|." 
 }
 
@@ -151,12 +160,14 @@ codaChords = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
+    \chordsLastTwoBars ||
     fs2:7 a:7 | d:maj7.7+ f4:7 bf:6 ||
 }
 codaChordsForEb = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
+    \chordsLastTwoBarsForEb ||
     gf2:7 a:7 | d:maj7.7+ f4:7 bf:6 ||
 }
 
@@ -218,10 +229,10 @@ headFirstEndingForMidi = \relative c'' {
     r2 r4 a8 cs | r4 r8 d 
 }
 melodyCoda = \relative c' { 
-    e8\ff fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
+    R1 | r2 r4 r8 e8\ff ~ | 8 fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
 }
 melodyCodaForEb = \relative c' { 
-    ff8\ff gf af a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
+    R1 | r2 r4 r8 ff\ff ~ || 8 gf af a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
 }
 
 head = \relative c'' { 
@@ -262,7 +273,7 @@ twosFirstEnding = \relative c' {
 twosSecondEnding = \relative c' { 
     R1 
 }
-twosThirdCommonForEb = \relative c' { 
+twosThirdCommonForEb = \relative c { 
     r4 r8 f\xf ~ | 
     f8 g a bf ~ 8 c d ef ~ | 8 f g a ~ 8 cf df ef | R1 |
 }
@@ -272,18 +283,38 @@ twosCommon = {
     \twosSecond
     \twosThirdCommon
 }
+twosCommonHorns = { 
+    \twosFirst
+    \transpose c, c \twosSecond
+    \twosThirdCommon
+}
 twosCommonForBb = { 
     \twosFirst
     \twosSecond
     \twosThirdCommonForEb
 }
+twosCommonForBbHorns = { 
+    \twosFirst
+    \transpose c, c \twosSecond
+    \transpose c, c \twosThirdCommonForEb
+}
 twosCommonForEb = { 
     \transpose c c, \twosFirst
     \twosSecondForEb
-    \transpose c c, \twosThirdCommonForEb
+    \transpose c c \twosThirdCommonForEb
+}
+twosCommonForEbHorns = { 
+    \twosFirst
+    \twosSecondForEb
+    \transpose c, c \twosThirdCommonForEb
 }
 twos = { 
     \twosCommon
+    \twosFirstEnding
+    \twosSecondEnding
+}
+twosHorns = { 
+    \twosCommonHorns
     \twosFirstEnding
     \twosSecondEnding
 }
@@ -292,10 +323,20 @@ twosForBb = {
     \twosFirstEnding
     \twosSecondEnding
 }
+twosForBbHorns = { 
+    \twosCommonForBbHorns
+    \twosFirstEnding
+    \twosSecondEnding
+}
 twosForEb = { 
     \twosCommonForEb
     \transpose c c, \twosFirstEnding
     \transpose c c \twosSecondEnding
+}
+twosForEbHorns = { 
+    \twosCommonForEbHorns
+    \twosFirstEnding
+    \twosSecondEnding
 }
 
 
@@ -306,7 +347,7 @@ lineCommon = \relative c'' {
 }
 lineCommonHarmony = \relative c'' { 
     r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
-    2 df | ef cf | c ds | e b4 c4 ~ |
+    2 df | ef cf | c? ds | e b4 c4 ~ |
     2 bf | a b | as2\xmf a | 
 }
 lineCommonForEb = \relative c'' { 
@@ -316,7 +357,7 @@ lineCommonForEb = \relative c'' {
 }
 lineCommonHarmonyForEb = \relative c'' { 
     r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
-    2 df | ef cf | c ef | ff b,4 c4 ~ |
+    2 df | ef cf | c? ef | ff b,4 c4 ~ |
     2 bf | a cf | bf2\xmf a | 
 }
 lineFirstEnding = \relative c' { 
@@ -354,14 +395,29 @@ melody = \relative c' {
     \twos
     \line
 }
+melodyHorns = \relative c' {
+    \head
+    \twosHorns
+    \transpose c, c \line
+}
 melodyForBb = \relative c' {
     \headForEb
     \twosForBb
     \lineForEb
 }
+melodyForBbHorns = \relative c' {
+    \headForEb
+    \twosForBbHorns
+    \lineForEb
+}
 melodyForEb = \relative c' {
     \headForEb
     \twosForEb
+    \lineForEb
+}
+melodyForEbHorns = \relative c' {
+    \headForEb
+    \twosForEbHorns
     \lineForEb
 }
 harmony = {
@@ -421,10 +477,11 @@ basslineCoda = \relative c {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-Bb-for-C"
     \header {
         poet = "    Concert Lead Sheet"
         instrumentName = \poet
+        subtitle = "(original key)"
     }
     \score {
         \new StaffGroup <<
@@ -473,10 +530,11 @@ basslineCoda = \relative c {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-Bb-for-Bb"
     \header {
         poet = "    Bb Lead Sheet"
         instrumentName = \poet
+        subtitle = "(original key)"
     }
     \score {
         \new StaffGroup \transpose bf, c <<
@@ -498,7 +556,7 @@ basslineCoda = \relative c {
                 \override Stem.length-fraction = #(magstep 1.2)
                 \new Voice = "lead" <<
                     \structure
-                    \harmonyForEb
+                    \transpose c, c \harmonyForEb
                 >>
             }
             % \new Lyrics \with { alignAboveContext = "staff" } {
@@ -525,10 +583,11 @@ basslineCoda = \relative c {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-Bb-for-Eb"
     \header {
         poet = "    Eb Lead Sheet"
         instrumentName = \poet
+        subtitle = "(original key)"
     }
     \score {
         \new StaffGroup \transpose ef, c <<
@@ -560,6 +619,166 @@ basslineCoda = \relative c {
     }
     \score {
         \new StaffGroup \transpose ef c <<
+            \new ChordNames \transpose c c  { 
+                \codaChordsForEb
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCodaForEb
+                >>
+            }
+        >>
+    }
+}
+
+
+\book {
+  \bookOutputSuffix "in-F-for-C"
+    \header {
+        poet = "    Concert Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(horns key)"
+    }
+    \score {
+        \new StaffGroup \transpose bf f <<
+            \new ChordNames \transpose c c  { 
+                \chordsSong 
+                %\codaChords
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyHorns
+                >>
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structure
+                    \transpose c, c \harmony
+                >>
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadOne } 
+            % }
+        >>
+    }
+    \score {
+        \new StaffGroup  \transpose bf f <<
+            \new ChordNames \transpose c c  { 
+                \codaChords
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCoda
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Bb"
+    \header {
+        poet = "    Bb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(horns key)"
+    }
+    \score {
+        \new StaffGroup \transpose bf, c  \transpose bf f <<
+            \new ChordNames \transpose c c  { 
+                \chordsSongForBb
+                %\codaChords
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForBbHorns
+                >>
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structure
+                    \transpose c, c \harmonyForEb
+                >>
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadOne } 
+            % }
+        >>
+    }
+    \score {
+        \new StaffGroup \transpose bf, c  \transpose bf f <<
+            \new ChordNames \transpose c c  { 
+                \codaChordsForEb
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCodaForEb
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Eb"
+    \header {
+        poet = "    Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(horns key)"
+    }
+    \score {
+        \new StaffGroup \transpose ef, c  \transpose bf f <<
+            \new ChordNames \transpose c c  { 
+                \chordsSongForEb 
+                %\codaChords
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForEbHorns
+                >>
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structure
+                    \harmonyForEb
+                >>
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadOne } 
+            % }
+        >>
+    }
+    \score {
+        \new StaffGroup \transpose ef, c  \transpose bf f <<
             \new ChordNames \transpose c c  { 
                 \codaChordsForEb
                 \include "ly/ily/chord-names-properties.ily"
