@@ -18,7 +18,7 @@ lilypond ly/songs/alt/blue-steps.ly
 mv blue-steps*pdf pdf/songs/alt
 for file in pdf/songs/alt/blue-steps*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing notes" ; git push 
+git add . ; git commit -m"fixing chord" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -47,6 +47,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   page-breaking = #ly:minimal-breaking
 
   ragged-bottom = ##t
+  ragged-last = ##f
   ragged-last-bottom = ##t
 
   #(define fonts
@@ -60,14 +61,15 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 
 \layout { 
-    indent = .75\cm
+    indent = 1.25\cm
     short-indent = .25\cm
 }
 
 structure = \relative c' { 
 
-    \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark.extra-offset = #'( -3 . 1 )
+    \once \override Score.MetronomeMark.extra-offset = #'( -6 . 2 )
+    \override Score.RehearsalMark.self-alignment-X = #RIGHT
+    \override Score.RehearsalMark.extra-offset = #'( 1 . 3 )
 
     \key bf \major
     \tempo 4=168
@@ -114,7 +116,7 @@ structure = \relative c' {
 structureCoda = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark.extra-offset = #'( -11 . -4 ) 
+    \once \override Score.RehearsalMark.extra-offset = #'( -11 . -2 ) 
     \once \override Score.RehearsalMark.font-size = #8
     \mark \markup { \musicglyph #"scripts.coda" }
 
@@ -129,11 +131,20 @@ structureCoda = \relative c' {
 chordsLastBar = \chordmode { 
     d2:maj7 f:7 ||
 }
+chordsLastBarHorns = \chordmode { 
+    eff2:maj7 f:7 ||
+}
 chordsLastTwoBars = \chordmode { 
     fs2:7 a:7 | \chordsLastBar ||
 }
+chordsLastTwoBarsHorns = \chordmode { 
+    gf2:7 a:7 | \chordsLastBar ||
+}
 chordsLastTwoBarsForEb = \chordmode { 
     gf2:7 a:7 | \chordsLastBar ||
+}
+chordsLastTwoBarsForEbHorns = \chordmode { 
+    gf2:7 bff:7 | \chordsLastBarHorns ||
 }
 
 formChordsCommon = \chordmode {
@@ -146,10 +157,10 @@ formChords = \chordmode {
     \chordsLastTwoBars
 }
 formChordsHorns = \chordmode {
-    bf2:7 bf:1.3.5.7.8+.9 | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
-    ef1:7 | df:7 | af2:7 b:7 | e:maj7 g:aug7 | 
-    c1:m7 | f:aug7/cs | 
-    \chordsLastTwoBars
+    bf2:7 af:1.3.5.7.8+.9 | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
+    c1:m7 | f:aug7/df | 
+    \chordsLastTwoBarsHorns
 }
 formChordsForBb = \chordmode {
     bf2:7 ef:1.3.5.7.8+.10+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
@@ -157,9 +168,9 @@ formChordsForBb = \chordmode {
     c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
 }
 formChordsForBbHorns = \chordmode {
-    bf2:7 af:1.3.5.7.8+.9.10+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    bf2:7 gf:1.3.5.7.8+.9.10+ | ef2:7 gf:7 | bff:7 eff:7 | f:m7 bf:7 |
     ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
-    c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
+    c1:m7 | f:aug7/df | \chordsLastTwoBarsForEbHorns
 }
 formChordsForEb = \chordmode {
     bf2:7 af:1.3.5.7.8+.10+.12+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
@@ -167,9 +178,9 @@ formChordsForEb = \chordmode {
     c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
 }
 formChordsForEbHorns = \chordmode {
-    bf2:7 df:1.3.5.7.8+.9.10+.12+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    bf2:7 cf:1.3.5.7.8+.9.10+.12+ | ef2:7 gf:7 | bff:7 eff:7 | f:m7 bf:7 |
     ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
-    c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
+    c1:m7 | f:aug7/df | \chordsLastTwoBarsForEbHorns
 }
 
 codaChords = \chordmode {
@@ -178,6 +189,27 @@ codaChords = \chordmode {
     \set noChordSymbol = ##f
     \chordsLastTwoBars ||
     fs2:7 a:7 | d:maj7.7+ f4:7 bf:6 ||
+}
+codaChordsHorns = \chordmode {
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    \chordsLastTwoBarsHorns ||
+    gf2:7 a:7 | d:maj7.7+ f4:7 bf:6 ||
+}
+codaChordsForBbHorns = \chordmode {
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    \chordsLastTwoBarsForEbHorns ||
+    gf2:7 bff:7 | eff:maj7.7+ f4:7 bf:6 ||
+}
+codaChordsForEbHorns = \chordmode {
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    \chordsLastTwoBarsForEbHorns ||
+    gf2:7 bff:7 | eff:maj7.7+ f4:7 bf:6 ||
 }
 codaChordsForEb = \chordmode {
     \set chordChanges = ##t 
@@ -201,8 +233,8 @@ chordsSongHorns = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s8
-    \formChordsHorns \chordsLastTwoBars  
-    \formChordsHorns \chordsLastBar
+    \formChordsHorns \chordsLastTwoBarsHorns  
+    \formChordsHorns \chordsLastBarHorns
     \formChordsHorns
 }
 
@@ -220,8 +252,8 @@ chordsSongForBbHorns = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s8
-    \formChordsForBbHorns \chordsLastTwoBars 
-    \formChordsForBbHorns \chordsLastBar
+    \formChordsForBbHorns \chordsLastTwoBarsForEbHorns 
+    \formChordsForBbHorns \chordsLastBarHorns
     \formChordsForBbHorns
 }
 
@@ -239,8 +271,8 @@ chordsSongForEbHorns = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     s8
-    \formChordsForEbHorns \chordsLastTwoBars 
-    \formChordsForEbHorns \chordsLastBar 
+    \formChordsForEbHorns \chordsLastTwoBarsForEbHorns 
+    \formChordsForEbHorns \chordsLastBarHorns 
     \formChordsForEbHorns 
 }
 
@@ -250,6 +282,16 @@ headCommon = \relative c'' {
 
     r4 r8 f'8 |
     r8 ef r bf  df4-- ef-. | r4 r8 ff8  r ef df [ bf ] | af4-- g8 fs8 r2 | r4 r8 
+
+    f' r ef r b | 
+    d4-- c-. r2 | r2 ff8 ef df bf |
+}
+headCommonHorns = \relative c'' { 
+    f\xf || 
+    r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | a?4-- g8 fs8 r2 | r2 
+
+    r4 r8 f'8 |
+    r8 ef r bf  df4-- ef-. | r4 r8 ff8  r ef df [ bf ] | af4-- g8 gf8 r2 | r4 r8 
 
     f' r ef r b | 
     d4-- c-. r2 | r2 ff8 ef df bf |
@@ -264,18 +306,34 @@ headCommonForEb = \relative c'' {
     f' r ef r b | 
     d4-- c-. r2 | r2 ff8 ef df bf |
 }
+headCommonForEbHorns = \relative c'' { 
+    f\xf || 
+    r8 ef r bf df4-- ef-. | r2 ff8 ef df bf | bff4-- aff8 gf8 r2 | r2
+
+    r4 r8 f' |
+    r8 ef r bf df4-- ef-. | r4 r8 ff8 r ef df [ bf ] | af4-- g8 gf8 r2 | r4 r8 
+
+    f' r ef r b | 
+    d4-- c-. r2 | r2 ff8 ef df bf |
+}
 
 headFirstEnding = \relative c'' {
-    r2 r4 a8 cs | r4 r8 d r4 r8 f
+    r2 r4 a8 cs | r4 r8 d? r4 r8 f
+}
+headFirstEndingHorns = \relative c'' {
+    r2 r4 bff8 df | r4 r8 d? r4 r8 f
 }
 headFirstEndingForMidi = \relative c'' {
     r2 r4 a8 cs | r4 r8 d 
 }
 melodyCoda = \relative c' { 
-    R1 | r2 r4 r8 e8\ff ~ | 8 fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
+    R1 | r2 r4 r8 e8 ~ | 8 fs gs a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
 }
 melodyCodaForEb = \relative c' { 
-    R1 | r2 r4 r8 ff\ff ~ || 8 gf af a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
+    R1 | r2 r4 r8 ff ~ || 8 gf af a ~ 8 b cs d ~ | 8 e fs g ~ 8 a bf4-^ ||
+}
+melodyCodaForHorns = \relative c' { 
+    R1 | r2 r4 r8 ff ~ || 8 gf af bff ~ 8 cf df eff ~ | 8 ff gf g ~ 8 a? bf4-^ ||
 }
 
 head = \relative c'' { 
@@ -283,8 +341,8 @@ head = \relative c'' {
     \headFirstEnding
     R1 | r2 r4 
 }
-headForBb = \relative c'' { 
-    \headCommonForEb
+headHorns = \relative c'' { 
+    \headCommonHorns
     \headFirstEnding
     R1 | r2 r4 
 }
@@ -293,10 +351,19 @@ headForEb = \relative c'' {
     \headFirstEnding
     R1 | r2 r4 
 }
+headForEbHorns = \relative c'' { 
+    \headCommonForEbHorns
+    \headFirstEndingHorns
+    R1 | r2 r4 
+}
 
 twosFirst = \relative c' { 
     r8 d\xmp ~ ||
     d8 ef f g ~  8 af bf c ~ | 8 df ef ff ~ 8 gf af a | R1 | r2 
+}
+twosFirstHorns = \relative c' { 
+    r8 d\xmp ~ ||
+    d8 ef f g ~  8 af bf c ~ | 8 df ef ff ~ 8 gf af bff | R1 | r2 
 }
 twosSecond = \relative c' { 
     r4 r8 g\xmf ~ | 
@@ -309,6 +376,10 @@ twosSecondForEb = \relative c' {
 twosThirdCommon = \relative c' { 
     r4 r8 f\xf ~ | 
     f8 g a bf ~ 8 c d ef ~ | 8 f g a ~ 8 b cs ds | R1 | 
+}
+twosThirdCommonHorns = \relative c' { 
+    r4 r8 f\xf ~ | 
+    f8 g a bf ~ 8 c d ef ~ | 8 f g a ~ 8 cf df ef | R1 | 
 }
 twosFirstEnding = \relative c' { 
     r2 r4 r8 d\xmp \laissezVibrer |
@@ -329,7 +400,7 @@ twosCommon = {
 twosCommonHorns = { 
     \twosFirst
     \transpose c, c \twosSecond
-    \twosThirdCommon
+    \twosThirdCommonHorns
 }
 twosCommonForBb = { 
     \twosFirst
@@ -337,8 +408,8 @@ twosCommonForBb = {
     \twosThirdCommonForEb
 }
 twosCommonForBbHorns = { 
-    \twosFirst
-    \transpose c, c \twosSecond
+    \twosFirstHorns
+    \transpose c c \twosSecond
     \transpose c, c \twosThirdCommonForEb
 }
 twosCommonForEb = { 
@@ -347,9 +418,9 @@ twosCommonForEb = {
     \transpose c c \twosThirdCommonForEb
 }
 twosCommonForEbHorns = { 
-    \twosFirst
+    \twosFirstHorns
     \twosSecondForEb
-    \transpose c, c \twosThirdCommonForEb
+    \transpose c c \twosThirdCommonForEb
 }
 twos = { 
     \twosCommon
@@ -385,29 +456,55 @@ twosForEbHorns = {
 
 lineCommon = \relative c'' { 
     r2 bf\xmp | df ef | e1 | ef2 df4 bf ~ | 
-    bf2 ef, | gf af | a1 | gs2 g4 ef4 ~ |
-    ef2 c | ef f | fs1\xmf | 
+    bf2 \breath ef, | gf af | a1 | gs2 g4 ef4 ~ |
+    ef2 \breath c | ef f | fs1\xmf | 
+}
+lineCommonHorns = \relative c'' { 
+    r2 bf\xmp | df ef | e1 | ef2 df4 bf ~ | 
+    bf2 \breath ef, | gf af | bff1 | af2 g4 ef4 ~ |
+    ef2 \breath c | ef f | gf1\xmf | 
+}
+lineCommonForBbHorns = \relative c'' { 
+    r2 bf\xmp | df ef | ff1 | ef2 df4 bf ~ | 
+    bf2 \breath ef, | gf af | bff1 | af2 g4 ef4 ~ |
+    ef2 \breath c | ef f | gf1\xmf | 
 }
 lineCommonHarmony = \relative c'' { 
     r2 af\xmp | g gf | g?2 fs | f2 f4 g ~ | 
-    2 df | ef cf | c? ds | e b4 c4 ~ |
-    2 bf | a b | as2\xmf a | 
+    g2 \breath df | ef cf | c? ds | e b4 c4 ~ |
+    c2 \breath bf | a b | as2\xmf a | 
+}
+lineCommonHarmonyHorns = \relative c'' { 
+    r2 af\xmp | g gf | g?2 fs | f?2 f4 g ~ | 
+    g2 \breath df | ef cf | c? ef | ff b,4 c4 ~ |
+    c2 \breath bf | a? cf |  bf2\xmf a | 
 }
 lineCommonForEb = \relative c'' { 
     r2 bf | df ef | e1 | ef2 df4 bf ~ | 
-    bf2 ef, | gf af | bff1 | af2 g4 ef4 ~ |
-    ef2 c | ef f | gf1 |
+    bf2 \breath ef, | gf af | bff1 | af2 g4 ef4 ~ |
+    ef2 \breath c | ef f | gf1 |
 }
 lineCommonHarmonyForEb = \relative c'' { 
     r2 af\xmp | g gf | g?2 fs | f2 f4 g ~ | 
-    2 df | ef cf | c? ef | ff b,4 c4 ~ |
-    2 bf | a cf | bf2\xmf a | 
+    g2 \breath df | ef cf | c? ef | ff b,4 c4 ~ |
+    c2 \breath bf | a cf | bf2\xmf a | 
+}
+lineCommonHarmonyForEbHorns = \relative c'' { 
+    r2 af\xmp | g gf | aff2 gf | f2 f4 g ~ | 
+    g2 \breath df | ef cf | c? ef | ff b,4 c4 ~ |
+    c2 \breath bf | a cf | bf2\xmf bff | 
 }
 lineFirstEnding = \relative c' { 
     d1\xmf ||
 }
+lineFirstEndingHorns = \relative c' { 
+    eff1\xmf ||
+}
 lineFirstEndingHarmony = \relative c { 
     fs2\xmf f
+}
+lineFirstEndingHarmonyHorns = \relative c { 
+    gf2\xmf f
 }
 lineSecondEnding = \relative c' { 
     d2.\xmf
@@ -420,17 +517,37 @@ line = {
     \lineCommon 
     \lineFirstEnding
 }
+lineHorns = { 
+    \lineCommonHorns
+    \lineFirstEnding
+}
 lineHarmony = {
     \lineCommonHarmony 
+    \lineFirstEndingHarmony
+}
+lineHarmonyHorns = {
+    \lineCommonHarmonyHorns 
     \lineFirstEndingHarmony
 }
 lineForEb = { 
     \lineCommonForEb
     \lineFirstEnding
 }
+lineForBbHorns = { 
+    \lineCommonForBbHorns
+    \lineFirstEndingHorns
+}
+lineForEbHorns = { 
+    \lineCommonForBbHorns
+    \lineFirstEnding
+}
 lineHarmonyForEb = {
     \lineCommonHarmonyForEb
     \lineFirstEndingHarmony
+}
+lineHarmonyForEbHorns = {
+    \lineCommonHarmonyForEbHorns
+    \transpose c, c \lineFirstEndingHarmonyHorns
 }
 
 melody = \relative c' {
@@ -439,9 +556,9 @@ melody = \relative c' {
     \line
 }
 melodyHorns = \relative c' {
-    \head
+    \headHorns
     \twosHorns
-    \transpose c, c \line
+    \transpose c, c \lineHorns
 }
 melodyForBb = \relative c' {
     \headForEb
@@ -449,9 +566,9 @@ melodyForBb = \relative c' {
     \lineForEb
 }
 melodyForBbHorns = \relative c' {
-    \headForEb
+    \headForEbHorns
     \twosForBbHorns
-    \lineForEb
+    \lineForBbHorns
 }
 melodyForEb = \relative c' {
     \headForEb
@@ -459,19 +576,29 @@ melodyForEb = \relative c' {
     \lineForEb
 }
 melodyForEbHorns = \relative c' {
-    \headForEb
+    \headForEbHorns
     \twosForEbHorns
-    \lineForEb
+    \lineForBbHorns
 }
 harmony = {
     s8 || s1*12 || s1*2 ||
     s1*12 || s1 ||
     \lineHarmony
 }
+harmonyHorns = {
+    s8 || s1*12 || s1*2 ||
+    s1*12 || s1 ||
+    \lineHarmonyHorns
+}
 harmonyForEb = {
     s8 || s1*12 || s1*2 ||
     s1*12 || s1 ||
     \lineHarmonyForEb
+}
+harmonyForEbHorns = {
+    s8 || s1*12 || s1*2 ||
+    s1*12 || s1 ||
+    \lineHarmonyForEbHorns
 }
 
 lyricsHeadOne = \lyricmode {
@@ -680,17 +807,16 @@ basslineCoda = \relative c {
 
 
 \book {
-  \bookOutputSuffix "in-F-for-C"
+  \bookOutputSuffix "in-G-for-C"
     \header {
         poet = "    Concert Lead Sheet"
         instrumentName = \poet
         subtitle = "(horns key)"
     }
     \score {
-        \new StaffGroup \transpose bf f <<
+        \new StaffGroup \transpose bf g <<
             \new ChordNames \transpose c c  { 
                 \chordsSongHorns
-                %\codaChords
                 \include "ly/ily/chord-names-properties.ily"
             }
             \new Staff \transpose c c { 
@@ -706,7 +832,7 @@ basslineCoda = \relative c {
                 \override Stem.length-fraction = #(magstep 1.2)
                 \new Voice = "lead" <<
                     \structure
-                    \transpose c, c \harmony
+                    \transpose c, c \harmonyHorns
                 >>
             }
             % \new Lyrics \with { alignAboveContext = "staff" } {
@@ -715,62 +841,9 @@ basslineCoda = \relative c {
         >>
     }
     \score {
-        \new StaffGroup  \transpose bf f <<
+        \new StaffGroup  \transpose bf g <<
             \new ChordNames \transpose c c  { 
-                \codaChords
-                \include "ly/ily/chord-names-properties.ily"
-            }
-            \new Staff \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \override Stem.length-fraction = #(magstep 1.2)
-                \new Voice = "lead" <<
-                    \structureCoda
-                    \melodyCoda
-                >>
-            }
-        >>
-    }
-}
-
-\book {
-  \bookOutputSuffix "in-F-for-Bb"
-    \header {
-        poet = "    Bb Lead Sheet"
-        instrumentName = \poet
-        subtitle = "(horns key)"
-    }
-    \score {
-        \new StaffGroup \transpose bf, c  \transpose bf f <<
-            \new ChordNames \transpose c c  { 
-                \chordsSongForBbHorns
-                %\codaChords
-                \include "ly/ily/chord-names-properties.ily"
-            }
-            \new Staff \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \override Stem.length-fraction = #(magstep 1.2)
-                \new Voice = "lead" <<
-                    \structure
-                    \melodyForBbHorns
-                >>
-            }
-            \new Staff \transpose c c { 
-                \include "ly/ily/staff-properties.ily"
-                \override Stem.length-fraction = #(magstep 1.2)
-                \new Voice = "lead" <<
-                    \structure
-                    \transpose c, c \harmonyForEb
-                >>
-            }
-            % \new Lyrics \with { alignAboveContext = "staff" } {
-            %     \lyricsto "lead" { \lyricsHeadOne } 
-            % }
-        >>
-    }
-    \score {
-        \new StaffGroup \transpose bf, c  \transpose bf f <<
-            \new ChordNames \transpose c c  { 
-                \codaChordsForEb
+                \codaChordsHorns
                 \include "ly/ily/chord-names-properties.ily"
             }
             \new Staff \transpose c c { 
@@ -786,14 +859,66 @@ basslineCoda = \relative c {
 }
 
 \book {
-  \bookOutputSuffix "in-F-for-Eb"
+  \bookOutputSuffix "in-G-for-Bb"
+    \header {
+        poet = "    Bb Lead Sheet"
+        instrumentName = \poet
+        subtitle = "(horns key)"
+    }
+    \score {
+        \new StaffGroup \transpose bf, c  \transpose bf g <<
+            \new ChordNames \transpose c c  { 
+                \chordsSongForBbHorns
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structure
+                    \melodyForBbHorns
+                >>
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structure
+                    \transpose c, c \harmonyForEbHorns
+                >>
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadOne } 
+            % }
+        >>
+    }
+    \score {
+        \new StaffGroup \transpose bf, c  \transpose bf g <<
+            \new ChordNames \transpose c c  { 
+                \codaChordsForBbHorns
+                \include "ly/ily/chord-names-properties.ily"
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \override Stem.length-fraction = #(magstep 1.2)
+                \new Voice = "lead" <<
+                    \structureCoda
+                    \melodyCodaForHorns
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-G-for-Eb"
     \header {
         poet = "    Eb Lead Sheet"
         instrumentName = \poet
         subtitle = "(horns key)"
     }
     \score {
-        \new StaffGroup \transpose ef, c  \transpose bf f <<
+        \new StaffGroup \transpose ef, c  \transpose bf g <<
             \new ChordNames \transpose c c  { 
                 \chordsSongForEbHorns
                 %\codaChords
@@ -812,7 +937,7 @@ basslineCoda = \relative c {
                 \override Stem.length-fraction = #(magstep 1.2)
                 \new Voice = "lead" <<
                     \structure
-                    \harmonyForEb
+                    \harmonyForEbHorns
                 >>
             }
             % \new Lyrics \with { alignAboveContext = "staff" } {
@@ -821,9 +946,9 @@ basslineCoda = \relative c {
         >>
     }
     \score {
-        \new StaffGroup \transpose ef, c  \transpose bf f <<
+        \new StaffGroup \transpose ef c  \transpose bf g <<
             \new ChordNames \transpose c c  { 
-                \codaChordsForEb
+                \codaChordsForEbHorns
                 \include "ly/ily/chord-names-properties.ily"
             }
             \new Staff \transpose c c { 
@@ -831,7 +956,7 @@ basslineCoda = \relative c {
                 \override Stem.length-fraction = #(magstep 1.2)
                 \new Voice = "lead" <<
                     \structureCoda
-                    \melodyCodaForEb
+                    \melodyCodaForHorns
                 >>
             }
         >>
