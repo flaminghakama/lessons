@@ -253,7 +253,7 @@ chordsSongForBbHorns = \chordmode {
     \set noChordSymbol = ##f
     s8
     \formChordsForBbHorns \chordsLastTwoBarsForEbHorns 
-    \formChordsForBbHorns \chordsLastBarHorns
+    \formChordsForBbHorns \chordsLastBar
     \formChordsForBbHorns
 }
 
