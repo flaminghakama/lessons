@@ -67,7 +67,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
+    \override Score.RehearsalMark.extra-offset = #'( -3 . 1 )
 
     \key bf \major
     \tempo 4=168
@@ -145,13 +145,29 @@ formChords = \chordmode {
     \formChordsCommon
     \chordsLastTwoBars
 }
+formChordsHorns = \chordmode {
+    bf2:7 bf:1.3.5.7.8+.9 | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:7 b:7 | e:maj7 g:aug7 | 
+    c1:m7 | f:aug7/cs | 
+    \chordsLastTwoBars
+}
 formChordsForBb = \chordmode {
     bf2:7 ef:1.3.5.7.8+.10+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
     ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
     c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
 }
+formChordsForBbHorns = \chordmode {
+    bf2:7 af:1.3.5.7.8+.9.10+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
+    c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
+}
 formChordsForEb = \chordmode {
     bf2:7 af:1.3.5.7.8+.10+.12+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
+    ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
+    c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
+}
+formChordsForEbHorns = \chordmode {
+    bf2:7 df:1.3.5.7.8+.9.10+.12+ | ef2:7 gf:7 | a:7 d:7 | f:m7 bf:7 |
     ef1:7 | df:7 | af2:7 cf:7 | ff:maj7 g:aug7 | 
     c1:m7 | f:aug7/df | \chordsLastTwoBarsForEb
 }
@@ -180,6 +196,15 @@ chordsSong = \chordmode {
     \formChords \chordsLastBar
     \formChords
 }
+chordsSongHorns = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s8
+    \formChordsHorns \chordsLastTwoBars  
+    \formChordsHorns \chordsLastBar
+    \formChordsHorns
+}
 
 chordsSongForBb = \chordmode { 
     \set chordChanges = ##t 
@@ -190,6 +215,15 @@ chordsSongForBb = \chordmode {
     \formChordsForBb \chordsLastBar
     \formChordsForBb
 }
+chordsSongForBbHorns = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s8
+    \formChordsForBbHorns \chordsLastTwoBars 
+    \formChordsForBbHorns \chordsLastBar
+    \formChordsForBbHorns
+}
 
 chordsSongForEb = \chordmode { 
     \set chordChanges = ##t 
@@ -199,6 +233,15 @@ chordsSongForEb = \chordmode {
     \formChordsForEb \chordsLastTwoBars 
     \formChordsForEb \chordsLastBar 
     \formChordsForEb 
+}
+chordsSongForEbHorns = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    s8
+    \formChordsForEbHorns \chordsLastTwoBars 
+    \formChordsForEbHorns \chordsLastBar 
+    \formChordsForEbHorns 
 }
 
 headCommon = \relative c'' { 
@@ -346,7 +389,7 @@ lineCommon = \relative c'' {
     ef2 c | ef f | fs1\xmf | 
 }
 lineCommonHarmony = \relative c'' { 
-    r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
+    r2 af\xmp | g gf | g?2 fs | f2 f4 g ~ | 
     2 df | ef cf | c? ds | e b4 c4 ~ |
     2 bf | a b | as2\xmf a | 
 }
@@ -356,7 +399,7 @@ lineCommonForEb = \relative c'' {
     ef2 c | ef f | gf1 |
 }
 lineCommonHarmonyForEb = \relative c'' { 
-    r2 af\xmp | g gf | g2 fs | f2 f4 g ~ | 
+    r2 af\xmp | g gf | g?2 fs | f2 f4 g ~ | 
     2 df | ef cf | c? ef | ff b,4 c4 ~ |
     2 bf | a cf | bf2\xmf a | 
 }
@@ -646,7 +689,7 @@ basslineCoda = \relative c {
     \score {
         \new StaffGroup \transpose bf f <<
             \new ChordNames \transpose c c  { 
-                \chordsSong 
+                \chordsSongHorns
                 %\codaChords
                 \include "ly/ily/chord-names-properties.ily"
             }
@@ -699,7 +742,7 @@ basslineCoda = \relative c {
     \score {
         \new StaffGroup \transpose bf, c  \transpose bf f <<
             \new ChordNames \transpose c c  { 
-                \chordsSongForBb
+                \chordsSongForBbHorns
                 %\codaChords
                 \include "ly/ily/chord-names-properties.ily"
             }
@@ -752,7 +795,7 @@ basslineCoda = \relative c {
     \score {
         \new StaffGroup \transpose ef, c  \transpose bf f <<
             \new ChordNames \transpose c c  { 
-                \chordsSongForEb 
+                \chordsSongForEbHorns
                 %\codaChords
                 \include "ly/ily/chord-names-properties.ily"
             }
