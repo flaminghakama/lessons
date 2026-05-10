@@ -363,6 +363,17 @@ lowGs = \markup \center-align \line {
         \huge "G#"
     }
 }
+lowAb = \markup \center-align \line { 
+    "   "
+    \center-column \pad-markup #0 {
+        \translate #'(0 . 1) \override #'(size . 0.6) \woodwind-diagram #'flute #'(
+            (lh . (b gis))
+            (cc . (one two three))
+            (rh . (ees))
+        )
+        \huge "Ab"
+    }
+}
 
 lowG = \markup \center-align \line { 
     "   "
@@ -556,7 +567,57 @@ minorMelody = \relative c'' {
 }
 
 
+DMajorScale = \relative c' { 
+    \key d \major
+    <>^\lowD
+    d2 
+    <>^\lowE
+    e |
+    <>^\lowFs
+    fs 
+    <>^\lowG
+    g |
+    <>^\lowA
+    a 
+    <>^\middleB
+    b | 
+    <>^\middleCs
+    cs 
+    <>^\middleD
+    d ~ | 1 | \break
+
+    d2 cs | b a | g fs | e d ~ | 1 ||
+}
+
+EbMajorScale = \relative c' { 
+    \key ef \major
+    <>^\lowEb
+    ef2 
+    <>^\lowF
+    f |
+    <>^\lowG
+    g 
+    <>^\lowAb
+    af |
+    <>^\lowBb
+    bf 
+    <>^\middleC
+    c | 
+    <>^\middleD
+    d 
+    <>^\middleEb
+    ef ~ | 1 | \break
+
+    ef2 d | c bf | af g | f ef ~ | 1 ||
+}
+
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+label = #(define-scheme-function (text) (string?)
+   #{ 
+     \markup \center-column { #text " " } 
+   #})
 
 
 \book { 
@@ -580,10 +641,7 @@ minorMelody = \relative c'' {
                 }
             >>
             \header {
-                piece = \markup \center-column { 
-                    "Notes on the Treble Clef (G clef)"
-                    "   "
-                }
+                piece = \label "Notes on the Treble Clef (G clef)"
             }
         }
 
@@ -594,15 +652,51 @@ minorMelody = \relative c'' {
                 \new Staff  \keepWithTag #'(ForF) \transpose g g { 
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
-                    \aquarium
-                    \pageBreak
+                    \DMajorScale
                 }
             >>
             \header {
-                piece = \markup \center-column { 
-                    "'Aquarium' from Carnival of the Animals (Saint-Saëns)"
-                    "   "
+                piece = \label "D Major Scale"
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \EbMajorScale
                 }
+            >>
+            \header {
+                piece = \label "Eb Major Scale"
+            }
+        }
+
+    }
+
+    \bookpart {
+
+        \header {
+            title = ""
+            subtitle = "Melodies"
+            composer = ""
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \aquarium
+                }
+            >>
+            \header {
+                piece = \label "'Aquarium' from Carnival of the Animals (Saint-Saëns)"
             }
         }
 
@@ -614,17 +708,21 @@ minorMelody = \relative c'' {
                     \include "ly/ily/staff-properties.ily"
                     \autoPageBreaksOff
                     \minorMelody
-                    \pageBreak
                 }
             >>
             \header {
-                piece = \markup \center-column { 
-                    "Minor Melody"
-                    "   "
-                }
+                piece = \label "Minor Melody"
             }
         }
+    }
 
+    \bookpart {
+
+        \header {
+            title = ""
+            subtitle = "Fingering Chart"
+            composer = ""
+        }
         \score {
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
@@ -637,7 +735,7 @@ minorMelody = \relative c'' {
                 }
             >>
             \header {
-                piece = "Lower Register"
+                piece = \label "Lower Register"
             }
         }
 
@@ -653,7 +751,7 @@ minorMelody = \relative c'' {
                 }
             >>
             \header {
-                piece = "Middle Register"
+                piece = \label "Middle Register"
             }
         }
 
@@ -668,7 +766,7 @@ minorMelody = \relative c'' {
                 }
             >>
             \header {
-                piece = "Upper Register"
+                piece = \label "Upper Register"
             }
         }
     }
