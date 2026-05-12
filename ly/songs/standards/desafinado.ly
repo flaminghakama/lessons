@@ -231,8 +231,8 @@ melodyC = \relative c' {
     c8 d e4 f8 e4.| d8 cs4. ~ 8 d4 f8 ~ | 
     f8 cs8 8 8 2 | R1 |
 
-    r8 d4 e8 f g4 f8 ~ | 8 e ds e ~ 4. d'8 ~ | 
-    d8 df c b ~ 8 bf4 d8 ~ | 2 r4 a4 |
+    r8 d4 e8 f g4 f8 ~ | 8 e ds e ~ 4 d'4 | 
+    df8 c8 b4 bf4. d8 ~ | 2 r4 a4 |
 
     c4 bf8 a ~ 8 g bf4 ~ | 8 a g f ~ 8 a4 e8 | 
     e8 8 g2. | r2 r4 d8 e |
