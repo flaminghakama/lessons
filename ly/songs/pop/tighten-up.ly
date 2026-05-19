@@ -1,21 +1,21 @@
 \version "2.24.0"
 
-titleLeft = "Groove"
-titleRight = "Me"
-titleFull = "Groove Me"
-composerName = "F. Hibbert"
+titleLeft = "Tighten"
+titleRight = "Up"
+titleFull = "Tighten Up"
+composerName = "A. Bell"
 arranger = ""
 copyright = ""
 
 %{
 
-killPreview ; rm groove-me*pdf ;  lilypond ly/songs/pop/groove-me.ly  ; for file in groove-me*.pdf ; do op $file ; done  
+killPreview ; rm tighten-up*pdf ;  lilypond ly/songs/pop/tighten-up.ly  ; for file in tighten-up*.pdf ; do op $file ; done  
 
 killPreview
-rm groove-me*pdf
-lilypond ly/songs/pop/groove-me.ly
-mv groove-me*.pdf pdf/songs/pop
-for file in pdf/songs/pop/groove-me*.pdf ; do op $file ; done  
+rm tighten-up*pdf
+lilypond ly/songs/pop/tighten-up.ly
+mv tighten-up*.pdf pdf/songs/pop
+for file in pdf/songs/pop/tighten-up*.pdf ; do op $file ; done  
 
 git add . ; git commit -m"groove" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
@@ -91,17 +91,28 @@ structure = \relative c' {
     \override Score.RehearsalMark.self-alignment-X = #LEFT
 
     \tempo 4=176
-    \key b \major
+    \key fs \minor
     \time 4/4
 
     \startSection "Intro"
     s1*4
 
-    \startSection "Verse"
-    s1*8 
+    \startSection "Drums"
+    s1*4
 
-    \startSection "Pre-chorus"
-    s1*8 
+    \startSection "Bass"
+    s1*4
+
+    \startSection "Guitar"
+    s1*4
+
+    \startSection "Organ"
+    s1*4
+
+    \startSection "Horn Break"
+    s1*4
+
+
 
     \startSection "Chorus"
     s1*10
@@ -129,31 +140,6 @@ rehearsalMarkTweaksForC = \relative c' {
     s1*4 \break 
 
     \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Verse"
-    s1*8 
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Pre-chorus"
-    s1*8 \break
-
-    \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Chorus"
-    s1*10
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Verse 2"
-    s1*8 
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Pre-chorus 2"
-    s1*8 
-
-    \once \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark.extra-offset = #'( -8 . 0.4 )
-    % "Chorus 2" "Repeat and fade"
-
 }
 
 rehearsalMarkTweaksForBass = \relative c' { 
@@ -166,34 +152,6 @@ rehearsalMarkTweaksForBass = \relative c' {
     s1*4 \break 
 
     \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Verse"
-    s1*8 
-
-    \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Pre-chorus"
-    s1*4 
-    s1*4 \break
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Chorus"
-    s1*10
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Verse 2"
-    s1*8 
-
-    \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Pre-chorus 2"
-    s1*4 
-    s1*4 \break 
-
-    \once \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark.extra-offset = #'( -8 . 0.4 )
-    % "Chorus 2" "Repeat and fade"
-
 }
 
 rehearsalMarkTweaksForBb = \relative c' { 
@@ -204,31 +162,6 @@ rehearsalMarkTweaksForBb = \relative c' {
     \override Score.RehearsalMark.extra-offset = #'( 4 . -2 )
     % "Intro"
     s1*4
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Verse"
-    s1*8 
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Pre-chorus"
-    s1*8 \break
-
-    \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Chorus"
-    s1*10
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Verse 2"
-    s1*8 
-
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-    % "Pre-chorus 2"
-    s1*8 \break
-
-    \override Score.RehearsalMark.extra-offset = #'( -8 . 0.4 )
-    % "Chorus 2" "Repeat and fade"
-
 }
 
 rehearsalMarkTweaksForEb = \relative c' { 
@@ -243,128 +176,29 @@ chordsSong = \chordmode {
 }
 
 chordsSong = \chordmode { 
-    % Intro 
-    b1:6 | s1*3 ||
 
-    % Verse 
-    b1:6 | s1*3 ||
-    b1:6 | s1*3 ||
-
-    % Pre-chorus
-    fs1:7 | s1 | b:6 | s |
-    fs1:7 | s1*3 ||
-
-    % Chorus
-    b1:6 | s1*3 |
-    d1 | e | b:6 | s | 
-    b:6 | gs:7 ||
-
-    % Verse 2
-    b1:6 | s1*3 ||
-    b1:6 | s1*3 ||
-
-    % Pre-chorus
-    fs1:7 | s1 | b:6 | s |
-    fs1:7 | s1*3 ||
-
-    % Chorus
-    b1:6 | s1*3 |
-    d1 | e || 
 }
 
 
 basslineRoot = \relative c { 
     b8 8 r4  r8 ds4 r8 | r8 fs4 r8 r8 gs4 b8 | 
 }
-basslineFive = \relative c, { 
-    fs8 8 r4  r8 as4. | r8 cs4. r8 e4 fs8 | 
-}
-basslineChorus = \relative c { 
-    d8. b16 d4 fs,16 8 g16 r a16 [ r d ] | 
-    e8. b16 e4  gs,16 8 g16 ~ 16 as8 16 |
-}
-basslineBreak = \relative c { 
-    b8 8 r4  r8 ds4. | r8 gs8 8 [ 8 ~ ] 8 8 4 | 
-}
 
-hornLick = \relative c'' { 
-    r4 b r gs | r4 r8 <cs e,> r <b ds,> r4 | 
+hornBreak = \relative c'' { 
+    r4 cs as fs | a4. gs8 ~ 8 fs ds4 | 
 }
-hornLickChorus = \relative c'' { 
-    <d fs,>1 | <e gs,> | 
-}
-
-hornLickVerseTwo = \relative c'' { 
-    R1*3 | <ds fs,>4  4  16 [ 16 r <ds fs,> ]  r <cs e,> <b ds,>8-. | 
+hornHarmonyBreak = \relative c'' { 
+    r4 cs as fs | e4. gs8 ~ 8 fs ds4 | 
 }
 
 
 bassSong = { 
     
-    \basslineRoot
-    \basslineRoot ||
-    
-    \basslineRoot 
-    \basslineRoot 
-    \basslineRoot 
-    \basslineRoot ||
-    
-    \basslineFive
-    \basslineRoot 
-    \basslineFive
-    \basslineFive ||
-
-    \basslineRoot 
-    \basslineRoot 
-    \basslineChorus 
-    \basslineRoot 
-    \basslineBreak ||
-
-
-    \basslineRoot 
-    \basslineRoot 
-    \basslineRoot 
-    \basslineRoot ||
-    
-    \basslineFive
-    \basslineRoot 
-    \basslineFive
-    \basslineFive ||
-    
-    \basslineRoot 
-    \basslineRoot 
-    \basslineChorus 
 }
 
 
 hornsSong = {
 
-    R1*2 \hornLick
-
-    <>\xmp 
-    R1*8 
-
-    <>\xmp 
-    R1*8 
-
-    \hornLick
-    \hornLick
-    \hornLickChorus  
-    \hornLick 
-    \hornLick 
-
-
-    <>\xmp 
-    \hornLickVerseTwo
-    \hornLickVerseTwo
-
-    <>\xmp 
-    R1*8 
-
-
-    \hornLick
-    \hornLick
-    \hornLickChorus 
 }
 
 
