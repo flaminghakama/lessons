@@ -18,7 +18,7 @@ lilypond ly/songs/standards/desafinado.ly
 mv desafinado*pdf pdf/songs/standards
 for file in pdf/songs/standards/desafinado*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing notes" ; git push 
+git add . ; git commit -m"fixing rhythm" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
