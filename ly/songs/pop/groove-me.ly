@@ -17,7 +17,7 @@ lilypond ly/songs/pop/groove-me.ly
 mv groove-me*.pdf pdf/songs/pop
 for file in pdf/songs/pop/groove-me*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"groove" ; git push 
+git add . ; git commit -m"fixing key" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -439,7 +439,7 @@ lyricsHeadThree = \lyricmode {
         instrumentName = \poet
     }
     \score {
-        \transpose bf, c  <<
+        \transpose as, c  <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
@@ -466,7 +466,7 @@ lyricsHeadThree = \lyricmode {
         instrumentName = \poet
     }
     \score {
-        \transpose ef, c  <<
+        \transpose ds, c  <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
