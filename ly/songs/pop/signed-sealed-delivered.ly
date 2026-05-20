@@ -1,21 +1,21 @@
 \version "2.24.0"
 
-titleLeft = "Tighten"
-titleRight = "Up"
-titleFull = "Tighten Up"
-composerName = "A. Bell"
+titleLeft = "Signed, Sealed"
+titleRight = "and Delivered"
+titleFull = "Signed, Sealed and Delivered"
+composerName = "S. Wonder"
 arranger = ""
 copyright = ""
 
 %{
 
-killPreview ; rm tighten-up*pdf ;  lilypond ly/songs/pop/tighten-up.ly  ; for file in tighten-up*.pdf ; do op $file ; done  
+killPreview ; rm signed-sealed-delivered*pdf ;  lilypond ly/songs/pop/signed-sealed-delivered.ly  ; for file in signed-sealed-delivered*.pdf ; do op $file ; done  
 
 killPreview
-rm tighten-up*pdf
-lilypond ly/songs/pop/tighten-up.ly
-mv tighten-up*.pdf pdf/songs/pop
-for file in pdf/songs/pop/tighten-up*.pdf ; do op $file ; done  
+rm signed-sealed-delivered*pdf
+lilypond ly/songs/pop/signed-sealed-delivered.ly
+mv signed-sealed-delivered*.pdf pdf/songs/pop
+for file in pdf/songs/pop/signed-sealed-delivered*.pdf ; do op $file ; done  
 
 git add . ; git commit -m"tighten" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
@@ -32,7 +32,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #0
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
   top-system-spacing.minimum-distance = #19
@@ -88,42 +88,30 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c' { 
 
-    \override Score.RehearsalMark.self-alignment-X = #LEFT
-
-    \tempo 4=176
-    \key fs \major
+    \tempo 4=104
+    \key f \major
     \time 4/4
 
-    \startSection "Bass"
     s1*4
 
-    \startSectionWithLabel "Intro" "Repeat until cue"
+    \startSection "Verse 1"
+    s1*8
+
+    \startSection "Verse 2"
+    s1*8
+
+    \startSection "Chorus 1" 
+    s1*12
+
+    \startSection "Verse 3"
+    s1*8
+
+    \startSection "Verse 4"
+    s1*8
+
+    \startSectionWithLabel "Chorus 2" "Repeat & fade"
     \startRepeat
-    s1*4
-
-    \startSection "Drums"
-    \endRepeat
-    s1*4
-
-    \startSection "Bass"
-    s1*4
-
-    \startSection "Guitar"
-    s1*4
-
-    \startSection "Organ"
-    s1*4
-
-    \startSection "Horn Break"
-    s1*4
-
-    \startSectionWithLabel "Horn Hits" "Repeat until cue"
-    \startRepeat
-    s1*4
-
-    \startSectionWithLabel "Horn Hits 2" "Repeat until cue"
-    \doubleRepeat
-    s1*4
+    s1*12
     \endRepeat
 }
 
@@ -133,71 +121,55 @@ rehearsalMarkTweaksForC = \relative c' {
     \once \override Score.MetronomeMark.extra-offset = #'( -6 . 0 )
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-
-
-    % "Bass"
     s1*4
 
-    % "Intro" "Repeat until cue"
-    s1*4 \break 
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    %  "Verse 1"
+    s1*8
 
-    % "Drums"
-    s1*4 
+    \override Score.RehearsalMark.extra-offset = #'( -3 . 1 )
+    %  "Verse 2"
+    s1*8
 
-    % "Bass"
-    s1*4
+    %  "Chorus 1" 
+    s1*12
 
-    % "Guitar"
-    s1*4
+    %  "Verse 3"
+    s1*8
 
-    % "Organ"
-    s1*4 \break 
+    %  "Verse 4"
+    s1*8
 
-    % "Horn Break"
-    s1*4 \break
-
-    % "Horn Hits" "Repeat until cue"
-    s1*4 \break
-
-    % "Horn Hits 2" "Repeat until cue"
-
-
+    \override Score.RehearsalMark.extra-offset = #'( -6 . 1 )
+    % "Chorus 2" "Repeat & fade"
 }
 
 rehearsalMarkTweaksForBb = \relative c' { 
 
-    \once \override Score.MetronomeMark.extra-offset = #'( -6 . 0 )
+    \once \override Score.MetronomeMark.extra-offset = #'( -4 . 1.4 )
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark.extra-offset = #'( 0 . 0.4 )
-
-
-    % "Bass"
     s1*4
 
-    % "Intro" "Repeat until cue"
-    s1*4 \break 
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    %  "Verse 1"
+    s1*8 \break
 
-    % "Drums"
-    s1*4 
+    \override Score.RehearsalMark.extra-offset = #'( -3 . 1 )
+    %  "Verse 2"
+    s1*8 \break
 
-    % "Bass"
-    s1*4
+    %  "Chorus 1" 
+    s1*12 \break 
 
-    % "Guitar"
-    s1*4
+    %  "Verse 3"
+    s1*8 \break
 
-    % "Organ"
-    s1*4 \break 
+    %  "Verse 4"
+    s1*8 \break
 
-    % "Horn Break"
-    s1*4 \break
-
-    % "Horn Hits" "Repeat until cue"
-    s1*4 \break
-
-    % "Horn Hits 2" "Repeat until cue"
+    \override Score.RehearsalMark.extra-offset = #'( -6 . 1 )
+    % "Chorus 2" "Repeat & fade"
 }
 
 rehearsalMarkTweaksForEb = \relative c' { 
@@ -212,100 +184,133 @@ chordsSong = \chordmode {
 }
 
 chordsSong = \chordmode { 
-    fs1:maj9 | ds:m7/cs |
 }
 
-
-basslineRoot = \relative c { 
+trumpetIntro = \relative c'' { 
+    f1 |
+}
+tromboneIntro = \relative c' { 
+    a1 |
+}
+bariIntro = \relative c {
+    c2..      
 }
 
-hornLeadBreak = \relative c'' { 
-    r4 cs as fs | a4. gs8 ~ 8 fs ds4 | 
-}
-hornHarmonyBreak = \relative c' { 
-    r4 es cs as | e'4. ds8 ~ 8 cs gs4 | 
-}
-hornLeadHits = \relative c'' { 
-    cs16 [ 16 r cs ]  r cs r8  r2 | as16 [ 16 r as ]  r as r8  r2 |
-}
-hornMiddleHits = \relative c'' { 
-    as16 [ 16 r as ]  r as r8  r2 | fs16 [ 16 r fs ]  r fs r8  r2 |
-}
-hornHarmonyHits = \relative c' { 
-    es16 [ 16 r es ]  r es r8  r2 | ds16 [ 16 r ds ]  r ds r8  r2 |
-}
-hornLeadHitsTwo = \relative c'' { 
-    cs16 [ 16 r cs ]  r cs r8  r2 | ds16 [ 16 r ds ]  r ds r8  r2 |
-}
-hornMiddleHitsTwo = \relative c'' { 
-    as16 [ 16 r as ]  r as r8  r2 | as16 [ 16 r as ]  r as r8  r2 |
-}
-hornHarmonyHitsTwo = \relative c' { 
-    es16 [ 16 r es ]  r es r8  r2 | fs16 [ 16 r fs ]  r fs r8  r2 |
+bariVerseOne = \relative c, {
+    e8 || 
+    f4 r r2 | r2 r4 r8 e | 
+    f4 r r2 | R1 |
+    R1*3 | r2 r4 r8 
 }
 
-
-bassSong = { 
-    
+hornsLickVerseTwo = \relative c'' {
+    r8 a r bf  r c r4 | 
+    f2 d4. c8 ~ | 1 | 
+    f2 r8 f4. | \tuplet 3/2 2 { r4 f f  f f f } 
+}
+bariVerseTwo = \relative c, {
+    e8 || 
+    f4 r r2 | r2 r4 r8 e | 
+    f4 r r2 | 
 }
 
+hornsLickChorus = \relative c'' {
+    r4 c8 ef ~ 8 c ef f ~ | 1 |
+}
+trumpetChorusOut = \relative c'' { 
+    f1 ~ | 2. r4
+}
+tromboneChorusOut = \relative c' { 
+    a1 ~ | 2. r4
+}
+bariChorusOut = \relative c {
+    c1 ~ | 2. r4    
+}
 
-hornsSong = {
+hornsVerseThreeLick = \relative c'' {
+    R1 | r2 af8 g ef f ~ | 1 ~ | 1 | 
+    R1*2 | f'4 ef d c8 bf | a bf af4 
+}
+trumpetVerseThree = \relative c' { 
+    f2 ||
+}
+bariVerseThree = \relative c { 
+    f4. e,8 || f4 r r2 |
+}
 
-    % "Bass"
-    <>\xmp
-    R1*4
+hornsVerseFour = \relative c'' { 
+    r8 a r bf  r c r f ~ | 
+    f2 d4 r8 c ~ | 2. r4 | 
+    f2 r8 f4. | \tuplet 3/2 2 { r4 f4 4  4 2 } 
+}
 
-    % "Intro" "Repeat until cue"
-    <>\xmp
-    R1*4
+hornsBb = {
 
-    % "Drums"
-    <>\xmp
-    R1*4
+    R1*3 
+    <<
+        \trumpetIntro
+        \transpose c, c \tromboneIntro
+    >>
+    R1*8 
+    R1*3
+    \hornsLickVerseTwo
 
-    % "Bass"
-    <>\xmp
-    R1*4
-
-    % "Guitar"
-    <>\xmp
-    R1*4
-
-    % "Organ"
-    <>\xmp
-    R1*4
-
-    % "Horn Break"
-    <>\xmp
+    \hornsLickChorus
+    \hornsLickChorus
+    \hornsLickChorus
+    \hornsLickChorus
     R1*2
     <<
-        \hornLeadBreak
-        \hornHarmonyBreak
+        \trumpetChorusOut
+        \transpose c, c \tromboneChorusOut
     >>
+    
+    \hornsVerseThreeLick
+    \trumpetVerseThree 
 
-    % "Horn Hits" "Repeat until cue"
-    <<
-        \hornLeadHits
-        \hornMiddleHits
-        \hornHarmonyHits
-    >>
-    <<
-        \hornLeadHits
-        \hornMiddleHits
-        \hornHarmonyHits
-    >>
-    % "Horn Hits 2" "Repeat until cue"
-    <<
-        \hornLeadHitsTwo
-        \hornMiddleHitsTwo
-        \hornHarmonyHitsTwo
-    >>
-    <<
-        \hornLeadHitsTwo
-        \hornMiddleHitsTwo
-        \hornHarmonyHitsTwo
-    >>
+    R1*3
+    \hornsVerseFour
+
+    \hornsLickChorus
+    \hornsLickChorus
+    \hornsLickChorus
+    \hornsLickChorus
+    R1*4
+}
+
+
+bariSong = {
+
+    R1*3 
+    \bariIntro
+    \bariVerseOne
+    \bariVerseTwo
+    \transpose c c, {
+        \hornsLickVerseTwo
+    }
+    \transpose c c,, {
+        \hornsLickChorus
+        \hornsLickChorus
+        \hornsLickChorus
+        \hornsLickChorus
+    }
+    R1*2
+    \bariChorusOut
+    
+    \transpose c c, \hornsVerseThreeLick
+    \bariVerseThree
+    
+        R1*2
+    \transpose c c, {
+        \hornsVerseFour
+    }
+    \transpose c c,, {
+        \hornsLickChorus
+        \hornsLickChorus
+        \hornsLickChorus
+        \hornsLickChorus
+    }
+    R1*4
 }
 
 
@@ -345,7 +350,7 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "Horns-in-Gb-for-C"
+  \bookOutputSuffix "Horns-in-F-for-C"
     \header {
         subtitle = "(original key)"
         poet = "Concert Horns"
@@ -364,7 +369,17 @@ lyricsHeadThree = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForC
-                    \hornsSong
+                    \hornsBb
+                >>
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Stem.length-fraction = #(magstep 1.2)
+                    \structure
+                    \clef bass
+                    \bariSong
                 >>
             }
         >>
@@ -373,14 +388,14 @@ lyricsHeadThree = \lyricmode {
 
 
 \book {
-  \bookOutputSuffix "Horns-in-Gb-for-Bb"
+  \bookOutputSuffix "Horns-in-F-for-Bb"
     \header {
         subtitle = "(original key)"
         poet = "Bb Horns"
         instrumentName = \poet
     }
     \score {
-        \transpose as, c  <<
+        \transpose bf, c  <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
@@ -392,7 +407,7 @@ lyricsHeadThree = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForBb
-                    \hornsSong
+                    \hornsBb
                 >>
             }
         >>
@@ -400,14 +415,14 @@ lyricsHeadThree = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "Horns-in-Gb-for-Eb"
+  \bookOutputSuffix "Bari-in-F-for-Eb"
     \header {
         subtitle = "(original key)"
-        poet = "Eb Horns"
+        poet = "Eb Baritone Sax"
         instrumentName = \poet
     }
     \score {
-        \transpose ds, c  <<
+        \transpose ef,, c  <<
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsSong 
@@ -419,7 +434,7 @@ lyricsHeadThree = \lyricmode {
                     \override Stem.length-fraction = #(magstep 1.2)
                     \structure
                     \rehearsalMarkTweaksForEb
-                    \hornsSong
+                    \bariSong
                 >>
             }
         >>

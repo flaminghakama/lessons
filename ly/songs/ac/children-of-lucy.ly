@@ -269,5 +269,67 @@ trombone = {
             }
         }
     }
+}
+
+\book {
+  \bookOutputSuffix "Alto-Harmony"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = \markup \center-column {
+            "Alto Sax in Eb (harmony)"
+        }
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef,, c <<
+            \new ChordNames \transpose e e { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "lead" \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \clef treble
+                <<
+                    \structure
+                    \trombone
+                >>
+            }
+        >>
+    }
+
+
+    \score {
+        \header {
+            piece = " "
+        }
+        \transpose ef,, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsCoda
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \clef treble
+                <<
+                    \structureCoda
+                    \tromboneCoda
+                >>
+            }
+        >>
+        \layout { 
+            indent = 3\cm
+            short-indent = 1.25\cm
+            \context {
+                \Score
+                \override StaffGrouper.staff-staff-spacing.padding = #0
+                \override StaffGrouper.staff-staff-spacing.basic-distance = #0
+            }
+        }
+    }
 
 }
+
+
+
