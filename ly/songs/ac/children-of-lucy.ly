@@ -18,7 +18,7 @@ lilypond ly/songs/ac/children-of-lucy.ly
 mv children-of-lucy-*pdf pdf/songs/ac
 for file in pdf/songs/ac/children-of-lucy-*pdf ; do op $file ; done  
 
-git add . ; git commit -m"renotating" ; git push 
+git add . ; git commit -m"alto part" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

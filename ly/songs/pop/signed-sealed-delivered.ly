@@ -17,7 +17,7 @@ lilypond ly/songs/pop/signed-sealed-delivered.ly
 mv signed-sealed-delivered*.pdf pdf/songs/pop
 for file in pdf/songs/pop/signed-sealed-delivered*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"tighten" ; git push 
+git add . ; git commit -m"delivered" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -88,7 +88,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c' { 
 
-    \tempo 4=104
+    \tempo 4=108
     \key f \major
     \time 4/4
 

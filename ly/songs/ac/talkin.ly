@@ -1,4 +1,4 @@
-\version "2.19.81"
+x`\version "2.19.81"
 
 titleLeft = "Talkin"
 titleRight = ""
