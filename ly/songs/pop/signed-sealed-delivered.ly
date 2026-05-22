@@ -229,7 +229,7 @@ bariChorusOut = \relative c {
 
 hornsVerseThreeLick = \relative c'' {
     R1 | r2 af8 g ef f ~ | 1 ~ | 1 | 
-    R1*2 | f'4 ef d c8 bf | a bf af4 
+    R1*2 | f'4 ef d c8 bf | a c af4 
 }
 trumpetVerseThree = \relative c' { 
     f2 ||
