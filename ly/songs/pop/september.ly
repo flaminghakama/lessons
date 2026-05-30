@@ -17,7 +17,7 @@ lilypond ly/songs/pop/september.ly
 mv september*.pdf pdf/songs/pop
 for file in pdf/songs/pop/september*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"delivered" ; git push 
+git add . ; git commit -m"september" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

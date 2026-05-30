@@ -569,15 +569,11 @@ minorMelody = \relative c'' {
 
 DMajorScale = \relative c' { 
     \key d \major
-    <>^\lowD
     d2 
-    <>^\lowE
     e |
     <>^\lowFs
     fs 
-    <>^\lowG
     g |
-    <>^\lowA
     a 
     <>^\middleB
     b | 
@@ -588,6 +584,82 @@ DMajorScale = \relative c' {
 
     d2 cs | b a | g fs | e d ~ | 1 ||
 }
+
+
+DDorianMinorScale = \relative c' { 
+    \key d \minor
+    d2 
+    e |
+    f 
+    g |
+    a 
+    <>^\middleB
+    b | 
+    <>^\middleC
+    c
+    <>^\middleD
+    d ~ | 1 | \break
+
+    d2 c | b a | g f | e d ~ | 1 
+    \bar "||" \break
+}
+DNaturalMinorScale = \relative c' { 
+    \key d \minor
+    d2 
+    e |
+    f 
+    g |
+    a 
+    <>^\lowBb
+    bf | 
+    <>^\middleC
+    c
+    <>^\middleD
+    d ~ | 1 | \break
+
+    d2 c | bf a | g f | e d ~ | 1 
+    \bar "||" \break
+}
+DHarmonicMinorScale = \relative c' { 
+    \key d \minor
+    d2 
+    e |
+    f 
+    g |
+    a 
+    <>^\lowBb
+    bf | 
+    <>^\middleCs
+    cs 
+    <>^\middleD
+    d ~ | 1 | \break
+
+    d2 cs | bf a | g f | e d ~ | 1
+    \bar "||" \break
+}
+DMelodicMinorScale = \relative c' { 
+    \key d \minor
+    d2 
+    e |
+    f 
+    g |
+    a 
+    <>^\middleB
+    b | 
+    <>^\middleCs
+    cs 
+    <>^\middleD
+    d ~ | 1 | \break
+
+    d2 
+    <>^\middleC
+    c | 
+    <>^\lowBb
+    bf 
+    a | g f | e d ~ | 1
+    \bar "||" \break
+}
+
 
 EbMajorScale = \relative c' { 
     \key ef \major
@@ -672,6 +744,63 @@ label = #(define-scheme-function (text) (string?)
             >>
             \header {
                 piece = \label "Eb Major Scale"
+            }
+        }
+
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \DDorianMinorScale
+                }
+            >>
+            \header {
+                piece = \label "D Dorian Minor Scale"
+            }
+        }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \DNaturalMinorScale
+                }
+            >>
+            \header {
+                piece = \label "D Natural Minor Scale"
+            }
+        }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \DHarmonicMinorScale
+                }
+            >>
+            \header {
+                piece = \label "D Harmonic Minor Scale"
+            }
+        }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff  \keepWithTag #'(ForF) \transpose g g { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \DMelodicMinorScale
+                }
+            >>
+            \header {
+                piece = \label "D Melodic Minor Scale"
             }
         }
 
