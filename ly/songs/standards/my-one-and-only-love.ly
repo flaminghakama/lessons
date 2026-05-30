@@ -18,7 +18,7 @@ lilypond ly/songs/standards/my-one-and-only-love.ly
 mv my-one-and-only-love*pdf pdf/songs/standards
 for file in pdf/songs/standards/my-one-and-only-love*pdf ; do op $file ; done 
 
-git add . ; git commit -m"updating chords" ; git push 
+git add . ; git commit -m"page break" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -205,7 +205,7 @@ chordsForm = \chordmode {
     \set noChordSymbol = ##f
     
     c2:maj7 a:m7 | d:m7 g4:9 gs:dim7 | 
-    a2:m7 f:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    a2:m7 f:maj7 | b2:m7.5- e4:7.9+ a:7.9- | 
 
     d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
     d2:m7 g4:7 g:7/f | e:m7 a:7.9- d:m7 g:9 ||  
@@ -218,7 +218,7 @@ chordsForm = \chordmode {
     d2:m7 af:7.11+ | d:m7 g:7.9- ||
 
     c2:maj7 a:m7 | d:m7 g4:9 gs:dim7 | 
-    a2:m7 f2:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    a2:m7 f2:maj7 | b2:m7.5- e4:7.9+ a:7.9- | 
 
     d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
     d2:m7 g4:aug7 df:9 | c2 d4:m7 g:7 || 
@@ -228,7 +228,7 @@ chordsFormFlats = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     c2:maj7 a:m7 | d:m7 g4:9 gs:dim7 | 
-    a2:m7 f:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    a2:m7 f:maj7 | b2:m7.5- e4:7.9+ a:7.9- | 
 
     d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
     d2:m7 g4:7 g:7/f | e:m7 a:7.9- d:m7 g:9 ||  
@@ -241,7 +241,7 @@ chordsFormFlats = \chordmode {
     d2:m7 gs:7.11+ | d:m7 g:7.9- ||
 
     c2:maj7 a:m7 | d:m7 g4:9 gs:dim7 | 
-    a2:m7 f:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    a2:m7 f:maj7 | b2:m7.5- e4:7.9+ a:7.9- | 
 
     d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
     d2:m7 g4:aug7 cs:9 | c2 d4:m7 g:7 || 
@@ -265,7 +265,7 @@ chordsFormSharps = \chordmode {
     d2:m7 af:7.11+ | d:m7 g:7.9- ||
 
     c2:maj7 a:m7 | d:m7 g4:9 af:dim7 | 
-    a2:m f:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    a2:m f:maj7 | b2:m7.5- e4:7.9+ a:7.9- | 
 
     d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
     d2:m7 g4:aug7 df:9 | c2 d4:m7 g:7 || 
