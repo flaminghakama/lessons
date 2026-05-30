@@ -18,7 +18,7 @@ lilypond ly/songs/standards/my-one-and-only-love.ly
 mv my-one-and-only-love*pdf pdf/songs/standards
 for file in pdf/songs/standards/my-one-and-only-love*pdf ; do op $file ; done 
 
-git add . ; git commit -m"fixing lyric" ; git push 
+git add . ; git commit -m"updating chords" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -94,7 +94,7 @@ rehearsalMarkTweaksForC = {
     \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
     % "B"
     s1*8 
-    \pageBreak 
+    % \pageBreak 
 
     \override Score.RehearsalMark.extra-offset = #'( -3 . -2 )
     % "A"
