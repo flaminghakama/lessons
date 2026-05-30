@@ -175,7 +175,7 @@ chordsColorado = \transpose f c \chordmode {
     g2:m7 e4:m7.5- a:7.9+ | d2:m7 g:7.11+ | 
     g2:m7 c:7.9- | f1 ||  
 }
-chordsForm = \chordmode { 
+chordsFake = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -199,52 +199,76 @@ chordsForm = \chordmode {
     d4:m c:m7 b:m7.5- e:7 | a2:m7 ef:9 | 
     a2:m7 g4:aug7 df:9 | c2 d4:m7 g:7 || 
 }
+chordsForm = \chordmode { 
+    \set chordChanges = ##t 
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    
+    c2:maj7 a:m7 | d:m7 g4:9 gs:dim7 | 
+    a2:m7 f:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+
+    d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
+    d2:m7 g4:7 g:7/f | e:m7 a:7.9- d:m7 g:9 ||  
+        d2:m7 g4:7 g:7/f | c2 fs4:m7.5- b:7 || 
+
+    e1:m6 | fs2:m7.5- b:7 | 
+    e1:m6 | fs2:m7.5- b:7 | 
+
+    e2:m e:m/ds | e:m/d e:m/cs | 
+    d2:m7 af:7.11+ | d:m7 g:7.9- ||
+
+    c2:maj7 a:m7 | d:m7 g4:9 gs:dim7 | 
+    a2:m7 f2:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+
+    d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
+    d2:m7 g4:aug7 df:9 | c2 d4:m7 g:7 || 
+}
 chordsFormFlats = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    c2 a:m7 | d:m7 g4:9 gs:dim7 | 
-    a:m a:m/g f2:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    c2:maj7 a:m7 | d:m7 g4:9 gs:dim7 | 
+    a2:m7 f:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
 
-    d4:m d:m/c b:m7.5- e:7 | a2:m7 ef:9 | 
+    d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
     d2:m7 g4:7 g:7/f | e:m7 a:7.9- d:m7 g:9 ||  
         d2:m7 g4:7 g:7/f | c2 fs4:m7.5- b:7 || 
 
-    e2:m6 cs:m7.5- | fs:m7 b:7 | 
-    e2:m6 cs:m7.5- | fs:m7 b:7 | 
+    e1:m6 | fs2:m7.5- b:7 | 
+    e1:m6 | fs2:m7.5- b:7 | 
 
     e2:m e:m/ds | e:m/d e:m/cs | 
     d2:m7 gs:7.11+ | d:m7 g:7.9- ||
 
-    c2 a:m7 | d:m7 g4:9 gs:dim7 | 
-    a:m a:m/g f2:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    c2:maj7 a:m7 | d:m7 g4:9 gs:dim7 | 
+    a2:m7 f:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
 
-    d4:m c:m7 b:m7.5- e:7 | a2:m7 ef:9 | 
-    a2:m7 g4:aug7 cs:9 | c2 d4:m7 g:7 || 
+    d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
+    d2:m7 g4:aug7 cs:9 | c2 d4:m7 g:7 || 
 }
 chordsFormSharps = \chordmode { 
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
     
-    c2 a:m7 | d:m7 g4:9 af:dim7 | 
-    a:m a:m/g f2:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    c2:maj7 a:m7 | d:m7 g4:9 af:dim7 | 
+    a2:m f:maj7 | b2:m7.5- e4:7.9+ a:7.9- | 
 
-    d4:m d:m/c b:m7.5- e:7 | a2:m7 ef:9 | 
+    d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
     d2:m7 g4:7 g:7/f | e:m7 a:7.9- d:m7 g:9 ||  
         d2:m7 g4:7 g:7/f | c2 gf4:m7.5- cf:7 || 
 
-    ff2:m6 df:m7.5- | gf:m7 cf:7 | 
-    ff2:m6 df:m7.5- | gf:m7 cf:7 | 
+    ff1:m6 | gf2:m7.5- cf:7 | 
+    ff1:m6 | gf2:m7.5- cf:7 | 
 
     ff2:m ff:m/ef | ff:m/d ff:m/df | 
     d2:m7 af:7.11+ | d:m7 g:7.9- ||
 
-    c2 a:m7 | d:m7 g4:9 af:dim7 | 
-    a:m a:m/g f2:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
+    c2:maj7 a:m7 | d:m7 g4:9 af:dim7 | 
+    a2:m f:maj7 | b2:m7.5- e4:7.9- a:7.9- | 
 
-    d4:m c:m7 b:m7.5- e:7 | a2:m7 ef:9 | 
-    a2:m7 g4:aug7 df:9 | c2 d4:m7 g:7 || 
+    d2:m b4:m7.5- e:7.9+ | a2:m7 ef:9 | 
+    d2:m7 g4:aug7 df:9 | c2 d4:m7 g:7 || 
 }
 chordsCoda = \chordmode { 
     \set chordChanges = ##t 
@@ -256,7 +280,7 @@ chordsCodaFlats = \chordmode {
     \set chordChanges = ##t 
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
-    af4:maj7 cs:maj7 cs:6 c:6.9
+    gs4:maj7 cs:maj7 cs:6 c:6.9
 }
 
 melodyACommon = \relative c' { 
@@ -343,14 +367,18 @@ lyricsCoda = \lyricmode {
     }
     \score {
         <<
-            \new ChordNames \transpose c c  { 
-                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
-                \chordsColorado
-            }
-            \new ChordNames \transpose c c  { 
-                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
-                \chordsReal 
-            }
+            % \new ChordNames \transpose c c  { 
+            %     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %     \chordsColorado
+            % }
+            % \new ChordNames \transpose c c  { 
+            %     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %     \chordsReal 
+            % }
+            % \new ChordNames \transpose c c  { 
+            %     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %     \chordsFake
+            % }
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
                 \chordsForm 
@@ -528,14 +556,18 @@ lyricsCoda = \lyricmode {
     }
     \score {
         \transpose c ef <<
-            \new ChordNames \transpose c c  { 
-                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
-                \chordsColorado
-            }
-            \new ChordNames \transpose c c  { 
-                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
-                \chordsReal 
-            }
+            % \new ChordNames \transpose c c  { 
+            %     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %     \chordsColorado
+            % }
+            % \new ChordNames \transpose c c  { 
+            %     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %     \chordsReal 
+            % }
+            % \new ChordNames \transpose c c  { 
+            %     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %     \chordsFake
+            % }
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
                 \chordsFormFlats
