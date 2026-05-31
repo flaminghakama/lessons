@@ -18,7 +18,7 @@ lilypond ly/songs/standards/my-one-and-only-love.ly
 mv my-one-and-only-love*pdf pdf/songs/standards
 for file in pdf/songs/standards/my-one-and-only-love*pdf ; do op $file ; done 
 
-git add . ; git commit -m"page break" ; git push 
+git add . ; git commit -m"chord tweaks" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

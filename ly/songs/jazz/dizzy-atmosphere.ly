@@ -38,7 +38,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   top-system-spacing.minimum-distance = #24
 
   % Spacing in between systems
-  system-system-spacing.padding = #3
+  system-system-spacing.padding = #5
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #0
@@ -114,7 +114,7 @@ structure = \relative c' {
     \startSection "A"
     s1*8
 
-    \startSection "Out B"
+    \startSection "B"
     s1*8
 
     \startSection "A"
@@ -127,7 +127,7 @@ structure = \relative c' {
 }
 
 rehearsalMarkTweaksForC = \relative c' { 
-    \once \override Score.MetronomeMark.extra-offset = #'( -5 . -1 )
+    \once \override Score.MetronomeMark.extra-offset = #'( -4 . 2 )
 
     s8 
 
@@ -136,6 +136,8 @@ rehearsalMarkTweaksForC = \relative c' {
     % "Intro"
     s1*8 \break
 
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    \override Score.RehearsalMark.self-alignment-X = #RIGHT
     % "Head"
     s1*4 
     s1*4 \break 
@@ -148,6 +150,8 @@ rehearsalMarkTweaksForC = \relative c' {
 
     \pageBreak 
 
+    \once \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once \override Score.RehearsalMark.extra-offset = #'( -2 . 2 )
     % "Out Chorus"
     s1*8 \break
 
@@ -208,27 +212,27 @@ melodyA = \relative c'' {
      \tuplet 3/2 { af8 bf af } f2 \tuplet 3/2 { af8 bf af } | f2 \tuplet 3/2 { af8 bf af } f4 ||
 }
 melodyB = \relative c' { 
-    r8 d r e fs a b a | d4 d8 e r2 | 
-    r8 df, r ef f af bf af | df4 df8 ef r2 | 
+    r8 d4 e8 fs a b a | d b d e r2 | 
+    r8 df,4 ef8 f af bf af | df bf df ef r2 | 
     r4 c, c'8 a ~ 4 | b,4 b'8 gs ~ 4 r | 
     r4 bf, bf'8 g ~ 4 | a,4 a'8 fs ~ 4 r | 
 }
 melodyOutAOne = \transpose c bf, \relative c' { 
-    f4 \grace { g16 f } d8 ef  f a c a | bf4  ef8 cs d4 gf8 e | 
-    f4 r ef8 g, r8 ef' | d g, d' df r b c [ af ~ ] | 
-    af2 \glissando g'8 bf af fs | g gf f fs r4 r8 f | 
-    r8 f, r ef' d bf g f | a bf r4 r4 r8 
+    f8 g16 f  d8 ef  f a c a | bf4  ef8 cs d4 gf8 e | 
+    f4 r ef8 g,4 ef'8 | d g, d' df r b c [ af ~ ] | 
+    af2 \glissando g'8 bf af fs | g gf f fs r4 r8 f ~ | 
+    f8 f,4 ef'8 d bf g f | a bf r4 r4 r8 
 }
 melodyOutATwo = \transpose c bf, \relative c'' { 
-    d8 ||
-    r8 bf r g bf4 r | r r8 bf f g bf \grace { cs8 ( } d ) | 
-    r8 bf r4 r2 | af8 f g f ~ 4 ef8 cs | 
+    d8 ~ ||
+    d8 bf4 g8 bf4 r | r r8 bf f g bf \grace { cs8 ( } d ~ | 
+    d8 ) bf4 r8 r2 | af8 f g f ~ 4 ef8 cs | 
     d8 f af c \tuplet 3/2 { bf8 c bf } af8 fs | g4 \tuplet 3/2 { fs8 g bf } f8 ef r4 |
-    r8 bf' g [ f ] r ef r cs | d bf r4 r2 ||
+    r8 bf' g [ f ~ ] 8 ef4 cs8 | d bf r4 r2 ||
 }
 melodyOutB = \transpose c bf, \relative c'' { 
     d8 b c d  cs b bf a | gs b d fs ~ 4. e8 | 
-    f8 cs r bf a2 | af8 fs g ef' r2 |
+    f8 cs4 bf8 a2 | af8 fs g ef' r2 |
     d4 8 fs e d c a | af4 gf8 e f cs' b a |
     gs8 fs' ~ <fs d>2 r4 | g,8 f' ~ <f df>2 r4 ||  
 }
@@ -248,6 +252,7 @@ melodyCoda = \relative c'' {
 
 
 melody = {
+    \accidentalStyle default
     \melodyIntro
     \melodyA 
     \melodyB
@@ -260,42 +265,42 @@ melody = {
     \melodyCoda
 }
 
-% \book {
-%   \bookOutputSuffix "for-C"
-%     \header {
-%         title = \title
-%         composer = \composerName
-%         poet = "Concert Lead Sheet"
-%         instrumentName = \poet
-%         subtitle = ""
-%     }
-%     \score {
-%         \transpose c c <<
-%             \new ChordNames { 
-%                 \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
-%                 \chordsIntro
-%                 \chordsForm
-%             }
-%             \new Staff = "lead" \with {
-%                 \consists Merge_rests_engraver
-%             } \transpose c c {
-%                 \include "ly/ily/staff-properties.ily"
-%                 \autoPageBreaksOff
-%                 \accidentalStyle modern-cautionary
-%                 <<
-%                     \structure
-%                     \rehearsalMarkTweaksForC
-%                     \melody
-%                     \noPageBreak
-%                 >>
-%             }
-%         >>
-%         \layout { 
-%             short-indent = 0.25\cm
-%             indent = 0.75\cm
-%         }
-%     }
-% }
+\book {
+  \bookOutputSuffix "for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose c c <<
+            \new ChordNames { 
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                \chordsIntro
+                \chordsForm
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \accidentalStyle modern-cautionary
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                    \noPageBreak
+                >>
+            }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 0.75\cm
+        }
+    }
+}
 
 \book {
   \bookOutputSuffix "for-Bb"
