@@ -17,7 +17,7 @@ lilypond ly/songs/jazz/dizzy-atmosphere.ly
 mv dizzy-atmosphere*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/dizzy-atmosphere*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"fixing pitch" ; git push 
+git add . ; git commit -m"dizzy chords" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -258,8 +258,8 @@ chordsSolos = \chordmode {
     af2:6 f:m7 | bf:m7 ef:7.9- | af:6 f:m7 | bf:m7 ef:7.9- | 
     ef2:m7 af:7 | df:7 d:dim7 | bf:m7 ef:7 | af:6 ef:7 ||
 
-    d1:9 | s | df:7.11+ | s | 
-    c1:7 | b:7 | bf1:7 | a:7 || 
+    d1:9 | s | df:9.11+ | s | 
+    c1:7 | b:7.13- | bf1:aug13.11+ | a:aug13.11+ || 
 
     af2:6 f:m7 | bf:m7 ef:7.9- | af:6 f:m7 | bf:m7 ef:7.9- | 
     ef2:m7 af:7 | df:7 d:dim7 | bf:m7 ef:7 | af1:6 ||
@@ -306,8 +306,8 @@ melodyB = \relative c' {
 }
 melodyOutAOne = \transpose c bf, \relative c' { 
     f8 g16 f  d8 ef  f a c a | bf4  ef8 cs d4 gf8 e | 
-    f4 r ef8 g, r ef' | d g, d' df r b c [ af ~ ] | 
-    af2 \glissando g'8 bf af fs | g gf f fs r4 r8 f | 
+    f4 r ef?8 g, r ef' | d g, d' df r b c [ af ~ ] | 
+    af2 \glissando g'8 bf af fs | g gf f gf? r4 r8 f | 
     r8 f,4 ef'8 d bf g f | a bf r4 r4 r8 
 }
 melodyOutATwo = \transpose c bf, \relative c'' { 
@@ -319,9 +319,9 @@ melodyOutATwo = \transpose c bf, \relative c'' {
 }
 melodyOutB = \transpose c bf, \relative c'' { 
     d8 b c d  cs b bf a | gs b d fs ~ 4. e8 | 
-    f8 df4 bf8 a2 | af8 fs g ef' r2 |
+    f8 df4 bf8 a?2 | af8 fs g ef'? r2 |
     d4 8 fs e d c a | gs4 fs8 e f cs' b a |
-    gs8 fs' <fs d>2 r4 | g,8 f' <f df>2 r4 ||  
+    gs8 fs' <fs d>2 r4 | g,?8 f'? <f df>2 r4 ||  
 }
 
 bassCoda = \relative c {
