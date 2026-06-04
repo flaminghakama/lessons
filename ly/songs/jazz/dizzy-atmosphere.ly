@@ -17,7 +17,7 @@ lilypond ly/songs/jazz/dizzy-atmosphere.ly
 mv dizzy-atmosphere*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/dizzy-atmosphere*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"dizzy chords" ; git push 
+git add . ; git commit -m"enharmonics" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -43,6 +43,9 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #0
 
+  % spacing of ungrouped staves
+  staff-staff-spacing.padding = #8
+
   page-breaking = #ly:minimal-breaking
 
   ragged-bottom = ##t
@@ -64,7 +67,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
             \override VerticalAxisGroup.default-staff-staff-spacing = #'(
                 (basic-distance . 0)
                 (minimum-distance . 0)
-                (padding . 0)
+                (padding . 1.4)
             )
     }
     \context {
@@ -259,7 +262,7 @@ chordsSolos = \chordmode {
     ef2:m7 af:7 | df:7 d:dim7 | bf:m7 ef:7 | af:6 ef:7 ||
 
     d1:9 | s | df:9.11+ | s | 
-    c1:7 | b:7.13- | bf1:aug13.11+ | a:aug13.11+ || 
+    c1:7 | b:7.13- | bf1:aug9.11+ | a:aug9.11+ || 
 
     af2:6 f:m7 | bf:m7 ef:7.9- | af:6 f:m7 | bf:m7 ef:7.9- | 
     ef2:m7 af:7 | df:7 d:dim7 | bf:m7 ef:7 | af1:6 ||
@@ -319,7 +322,7 @@ melodyOutATwo = \transpose c bf, \relative c'' {
 }
 melodyOutB = \transpose c bf, \relative c'' { 
     d8 b c d  cs b bf a | gs b d fs ~ 4. e8 | 
-    f8 df4 bf8 a?2 | af8 fs g ef'? r2 |
+    f8 df4 bf8 a2 | af8 fs g ef'? r2 |
     d4 8 fs e d c a | gs4 fs8 e f cs' b a |
     gs8 fs' <fs d>2 r4 | g,?8 f'? <f df>2 r4 ||  
 }
