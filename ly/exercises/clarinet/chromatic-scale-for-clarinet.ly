@@ -1,34 +1,36 @@
-\version "2.19.83"
+\version "2.24.0"
 \include "english.ly"
+
 
 titleLeft = "Chromatic Exercises"
 titleRight = "for Clarinet"
-title = "Chromatic Exercises for Clarinet"
-composerName = "D. Elaine Alt"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+titleFull = "Chromatic Exercises for Clarinet"
+composerName = "Elaine Alt"
+arranger = ""
+copyright = \markup \center-column { " "  \tiny "copyright © 2024-2026 Elaine Paul" } 
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
+
 
 %{
 
-rm chromatic-exercises-for-clarinet.pdf ; lilypond ly/exercises/clarinet/chromatic-scale-for-clarinet.ly  ; mv chromatic-scale-for-clarinet*.pdf pdf/exercises/clarinet ; open -a Preview pdf/exercises/clarinet/chromatic-scale-for-clarinet.pdf
+killPreview ; rm chromatic-scale-for-clarinet.pdf ; lilypond ly/exercises/clarinet/chromatic-scale-for-clarinet.ly ; op chromatic-scale-for-clarinet.pdf
 
-
-rm chromatic-exercises-for-clarinet.pdf
+rm chromatic-scale-for-clarinet.pdf
 lilypond ly/exercises/clarinet/chromatic-scale-for-clarinet.ly 
-mv chromatic-scale-for-clarinet*.pdf pdf/exercises/clarinet
+mv chromatic-scale-for-clarinet.pdf pdf/exercises/clarinet
 open -a Preview pdf/exercises/clarinet/chromatic-scale-for-clarinet.pdf
 
 %}
 
-
 \header {
     source = ""
     style = ""
-    copyright = \markup \center-column { " "  \tiny "copyright © 2021 Elaine Alt" } 
+    copyright = \copyright 
     lastupdated = ""
-    title = \markup { \italic \fontsize #4 \bold { \title }  }
+    title = \markup { \italic \fontsize #4 \bold { \titleFull }  }
     poet = ""
     composer = \markup \italic \composerName
     tagline = ""
@@ -41,14 +43,14 @@ open -a Preview pdf/exercises/clarinet/chromatic-scale-for-clarinet.pdf
     right-margin = #14
 
     % First page spacing after header
-    markup-system-spacing.padding = #0
+    markup-system-spacing.padding = #3
 
     % Subsequent page spacing after header
     top-system-spacing.minimum-distance = #14
 
     % Spacing in between systems
-    %system-system-spacing.basic-distance = #18
-    %system-system-spacing.minimum-distance = #15
+    system-system-spacing.padding = #6
+
 
     score-system-spacing.basic-distance = #20    
 
@@ -65,8 +67,8 @@ open -a Preview pdf/exercises/clarinet/chromatic-scale-for-clarinet.pdf
 }
 
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
 \include "ly/ily/layout.ily"
+
 
 \include "ly/notes/chromatic/clarinet/chromatic-scale.ily"
 
