@@ -5,7 +5,7 @@ titleRight = "To Me"
 titleFull = "Everything Happens To Me"
 composerName = "M. Dennis"
 lyricistName = "T. Adair"
-arranger = ""
+arranger = "E. Alt"
 copyright = ""
 
 %{
@@ -353,7 +353,7 @@ lyricsHeadTwo = \lyricmode {
     my part -- ner al -- ways trumps,
 
     I guess I'm just a fool
-    who ne -- ver looks be -- fore he jumps,
+    who ne -- ver looks be -- fore they jump,
 }
 
 \header {
@@ -365,6 +365,54 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
+  \bookOutputSuffix "original-lyrics-in-Bb-for-C" 
+    \header {
+        subtitle = "(original lyrics)"
+        instrumentName = "Concert Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        <<
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormSherAlt
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormSher
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormReal
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormFake
+            %                 }
+            \new ChordNames \transpose c c  { 
+                                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+                                \chordsForm
+                            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsOriginalHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsOriginalHeadTwo } 
+            }
+        >>
+    }
+}
+
+\book {
   \bookOutputSuffix "in-Bb-for-C" 
     \header {
         subtitle = "(original key)"
@@ -373,6 +421,102 @@ lyricsHeadTwo = \lyricmode {
     }
     \score {
         <<
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormSherAlt
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormSher
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormReal
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormFake
+            %                 }
+            \new ChordNames \transpose c c  { 
+                                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+                                \chordsForm
+                            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-Bb" 
+    \header {
+        subtitle = "(original key)"
+        instrumentName = "Bb Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        \transpose bf, c <<
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormSherAlt
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormSher
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormReal
+            %                 }
+            % \new ChordNames \transpose c c  { 
+            %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+            %                     \chordsFormFake
+            %                 }
+            \new ChordNames \transpose c c  { 
+                                \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
+                                \chordsForm
+                            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \structure
+                    \rehearsalMarkTweaksForC
+                    \melody
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Bb-for-Eb" 
+    \header {
+        subtitle = "(original key)"
+        instrumentName = "Eb Lead Sheet"
+        poet = \instrumentName
+    }
+    \score {
+        \transpose ef, c <<
             % \new ChordNames \transpose c c  { 
             %                     \include "ly/ily/chord-names-properties.ily"                \include "ly/ily/chord-names-properties.ily"\include "ly/ily/chord-names-properties.ily" 
             %                     \chordsFormSherAlt

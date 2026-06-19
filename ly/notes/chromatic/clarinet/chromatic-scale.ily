@@ -284,4 +284,205 @@ chromaticExerciseUpperThreeAdvanced = \relative c'' {
     \bar "|."
 }
 
+doubleChromaticApproachAscending = \relative c' { 
+    \accidentalStyle modern-voice
+    c8 d e g  f e ef cs | 
+    d8 e f a  g gf f ds | 
+    e8 f g b  a g gf e | 
+    f8 g a c  b a af fs |
+    g8 a b d  c b bf gs | 
+    a8 b c e  d df c as | 
+    b8 c d f  e d df b | 
+    c2. r4 | 
+    \bar "||"
+}
+
+doubleChromaticApproachDescending = \relative c'' { 
+    \accidentalStyle modern-voice
+    c8 b a f  g a c as | 
+    b8 a g e  f g bf gs | 
+    a8 g f d  e f af fs | 
+    g8 f e c  d ds gf e |
+    f8 e d b  c d f ds | 
+    e8 d c a  b c ef cs | 
+    d8 c b g  a as df b | 
+    c1 
+    \bar "||"
+}
+
+doubleChromaticApproachFlatsAscending = \relative c' { 
+    c8 d e g  f e ds cs | 
+    d8 e f a  g fs f ds | 
+    e8 f g b  a g fs e | 
+    f8 g a c  b a gs fs |
+    g8 a b d  c b bf gs | 
+    a8 b c e  d cs c as | 
+    b8 c d f  e d cs b | 
+    c2. r4 |
+    \bar "||"
+}
+
+doubleChromaticApproachFlatsDescending = \relative c'' { 
+    c8 b a f  g a c as | 
+    b8 a g e  f g bf gs | 
+    a8 g f d  e f gs fs | 
+    g8 f e c  d ds fs e |
+    f8 e d b  c d f ds | 
+    e8 d c a  b c ef cs | 
+    d8 c b g  a as cs b | 
+    c1 
+    \bar "||"
+}
+
+doubleChromaticApproachSharpsAscending = \relative c' { 
+    \accidentalStyle modern-voice
+    c8 d e g  f e ef cs | 
+    d8 e f a  g gf f ef | 
+    e8 f g b  a g gf e | 
+    f8 g a c  b a af fs |
+    g8 a b d  c b bf af | 
+    a8 b c e  d df c bf | 
+    b8 c d f  e d df b | 
+    c2. r4 | 
+    \bar "||"
+}
+
+doubleChromaticApproachSharpsDescending = \relative c'' { 
+    \accidentalStyle modern-voice
+    c8 b a f  g a c bf | 
+    b8 a g e  f g bf af | 
+    a8 g f d  e f af fs | 
+    g8 f e c  d ef gf e |
+    f8 e d b  c d f ef | 
+    e8 d c a  b c ef df | 
+    d8 c b g  a bf df b | 
+    c1 
+    \bar "||"
+}
+
+
+doubleChromaticApproachOne = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachAscending
+    \transpose c, c \doubleChromaticApproachAscending
+    \transpose c,, c \doubleChromaticApproachAscending \break
+    \transpose c,, c \doubleChromaticApproachDescending
+    \transpose c, c \doubleChromaticApproachDescending
+    \doubleChromaticApproachDescending
+}
+doubleChromaticApproachFlatsOne = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachFlatsAscending
+    \transpose c, c \doubleChromaticApproachFlatsAscending
+    \transpose c,, c \doubleChromaticApproachFlatsAscending \break
+    \transpose c,, c \doubleChromaticApproachFlatsDescending
+    \transpose c, c \doubleChromaticApproachFlatsDescending
+    \doubleChromaticApproachFlatsDescending
+}
+doubleChromaticApproachSharpsOne = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachSharpsAscending
+    \transpose c, c \doubleChromaticApproachSharpsAscending
+    \transpose c,, c \doubleChromaticApproachSharpsAscending \break
+    \transpose c,, c \doubleChromaticApproachSharpsDescending
+    \transpose c, c \doubleChromaticApproachSharpsDescending
+    \doubleChromaticApproachSharpsDescending
+}
+doubleChromaticApproachTwo = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachAscending
+    \transpose c, c \doubleChromaticApproachAscending \break
+    \transpose c,, c \doubleChromaticApproachDescending
+    \transpose c, c \doubleChromaticApproachDescending
+    \doubleChromaticApproachDescending
+}
+doubleChromaticApproachFlatsTwo = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachFlatsAscending
+    \transpose c, c \doubleChromaticApproachFlatsAscending \break
+    \transpose c,, c \doubleChromaticApproachFlatsDescending
+    \transpose c, c \doubleChromaticApproachFlatsDescending
+    \doubleChromaticApproachFlatsDescending
+}
+doubleChromaticApproachSharpsTwo = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachSharpsAscending
+    \transpose c, c \doubleChromaticApproachSharpsAscending \break
+    \transpose c,, c \doubleChromaticApproachSharpsDescending
+    \transpose c, c \doubleChromaticApproachSharpsDescending
+    \doubleChromaticApproachSharpsDescending
+}
+doubleChromaticApproachThree = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachAscending
+    \transpose c, c \doubleChromaticApproachAscending
+    \transpose c,, c \doubleChromaticApproachAscending \break
+    \transpose c,,, c \doubleChromaticApproachDescending
+    \transpose c,, c \doubleChromaticApproachDescending
+    \transpose c, c \doubleChromaticApproachDescending
+}
+doubleChromaticApproachFlatsThree = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachFlatsAscending
+    \transpose c, c \doubleChromaticApproachFlatsAscending
+    \transpose c,, c \doubleChromaticApproachFlatsAscending \break
+    \transpose c, c \doubleChromaticApproachFlatsDescending
+    \doubleChromaticApproachFlatsDescending
+}
+doubleChromaticApproachSharpsThree = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachSharpsAscending
+    \transpose c, c \doubleChromaticApproachSharpsAscending
+    \transpose c,, c \doubleChromaticApproachSharpsAscending \break
+    \transpose c, c \doubleChromaticApproachSharpsDescending
+    \doubleChromaticApproachSharpsDescending
+}
+doubleChromaticApproachFour = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachAscending
+    \transpose c, c \doubleChromaticApproachAscending
+    \transpose c,, c \doubleChromaticApproachAscending \break
+    \transpose c,, c \doubleChromaticApproachDescending
+    \transpose c, c \doubleChromaticApproachDescending
+}
+doubleChromaticApproachFlatsFour = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachFlatsAscending
+    \transpose c, c \doubleChromaticApproachFlatsAscending
+    \transpose c,, c \doubleChromaticApproachFlatsAscending \break
+    \transpose c,, c \doubleChromaticApproachFlatsDescending
+    \transpose c, c \doubleChromaticApproachFlatsDescending
+}
+doubleChromaticApproachSharpsFour = {
+    \accidentalStyle modern-voice
+    \key c \major
+    \time 4/4
+    \doubleChromaticApproachSharpsAscending
+    \transpose c, c \doubleChromaticApproachSharpsAscending
+    \transpose c,, c \doubleChromaticApproachSharpsAscending \break
+    \transpose c,, c \doubleChromaticApproachSharpsDescending
+    \transpose c, c \doubleChromaticApproachSharpsDescending
+}
 

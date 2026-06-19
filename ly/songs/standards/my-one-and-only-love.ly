@@ -395,6 +395,9 @@ lyricsCoda = \lyricmode {
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
             }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
+            }
         >>
     }
 
@@ -583,6 +586,9 @@ lyricsCoda = \lyricmode {
             }
             \new Lyrics \with { alignAboveContext = "staff" } {
                 \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadTwo } 
             }
         >>
     }
