@@ -1,6 +1,6 @@
 
 tonicArpeggioF = \relative c { 
-    \key c \major
+    \key f \major
     \time 2/4
     \tuplet 3/2 4 { 
         f8 a c  f a c  |

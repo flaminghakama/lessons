@@ -1,9 +1,11 @@
-\version "2.19.81"
+\version "2.24.0"
 
 titleLeft = "Sweet Love"
 titleRight = "Of Mine"
-title = "Sweet Love Of Mine"
+titleFull = "Sweet Love Of Mine"
 composerName = "W. Shaw"
+arranger = ""
+copyright = ""
 
 %{
 
@@ -15,13 +17,16 @@ lilypond ly/songs/jazz/sweet-love-of-mine.ly
 mv sweet-love-of-mine*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/sweet-love-of-mine*.pdf ; do op $file ; done  
 
+git add . ; git commit -m"transposed for Eb" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
+
 %}
 
 
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -29,16 +34,17 @@ for file in pdf/songs/jazz/sweet-love-of-mine*.pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #2
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #18
+  top-system-spacing.minimum-distance = #17
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+  % system-system-spacing.minimum-distance = #18
+  system-system-spacing.padding = #1
 
   % Space after score, before the next score
-  score-system-spacing.minimum-distance = #13
+  score-system-spacing.padding = #6
 
   page-breaking = #ly:minimal-breaking
 
@@ -54,6 +60,7 @@ for file in pdf/songs/jazz/sweet-love-of-mine*.pdf ; do op $file ; done
 
 \include "ly/ily/layout-songs.ily"
 
+
 structure = \relative c' { 
     \key c \minor 
     \tempo "Bossa" 4=148
@@ -61,27 +68,89 @@ structure = \relative c' {
     \bar "[|:"
     \partial 8*3 s4.
     \bar "||"
-    s1*3 | s2 s8 \bar ":|]"  \break 
+    s1*3 | s2 s8 \bar ":|]" 
     s4. 
     \startSection "A"
-    s1*4 \break
-    s1*4 \break
-
-    \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark #'extra-offset = #'( -5 . -1 )
+    \startRepeat
+    s1*4
+    s1*4
 
     \startSection "A"
-    s1*4 \break
-    s1*4 \break
+    s1*4
+    s1*4
 
     \startSection "B"
+    s1*4
+    s1*4
+
+    \startSection "A"
+    s1*4
+    s1*4 
+    \endRepeat
+}
+
+rehearsalMarkTweaksForC = \relative c' { 
+
+    \once \override Score.MetronomeMark.extra-offset = #'( -4 . 0.4 )
+
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once \override Score.RehearsalMark.extra-offset = #'( 1 . 1 )
+    % "Intro/Coda"
+    s4.
+    s1*4 
+
+    \override Score.RehearsalMark.self-alignment-X = #RIGHT
+    \once \override Score.RehearsalMark.extra-offset = #'( 0 . -1 )
+    % "A"
     s1*4 \break
     s1*4 \break
 
-    \startSection "A"
+    \override Score.RehearsalMark.extra-offset = #'( -2 . 1 )
+    % "A"
+    s1*4 \break
+    s1*4 \break
+
+    \override Score.RehearsalMark.extra-offset = #'( -2 . 0 )
+    % "B"
+    s1*4 \break
+    s1*4 \break
+
+    \override Score.RehearsalMark.extra-offset = #'( -2 . 0 )
+    % "A"
     s1*4 \break
     s1*4 
-    \bar "|."
+}
+
+rehearsalMarkTweaksForEb = \relative c' { 
+
+    \once \override Score.MetronomeMark.extra-offset = #'( -4 . 0.4 )
+
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once \override Score.RehearsalMark.extra-offset = #'( 1 . 1 )
+    % "Intro/Coda"
+    s4.
+    s1*3 | s2 s8 
+    s4. 
+
+    \override Score.RehearsalMark.self-alignment-X = #RIGHT
+    % "A"
+    s1*4 \break
+    s1*4 \break
+
+    \override Score.RehearsalMark.extra-offset = #'( 1 . 0 )
+    % "A"
+    s1*4 \break
+    s1*4 \break
+
+    % \override Score.RehearsalMark.extra-offset = #'( 2 . -4 )
+    % "B"
+    s1*4 \break
+    s1*4 \break
+
+    % \override Score.RehearsalMark.extra-offset = #'( 2 . -2 )
+    % "A"
+    s1*4 \break
+    s1*4 
 }
 
 chordsForm = \chordmode { 
@@ -133,7 +202,7 @@ melodyA = \relative c' {
 harmonyA = \relative c' { 
     s4. ||
     s2 s4 s8 df | r f r g  r f ef [ c ] ~ | 
-    c2 s4 s8 b ~ | 2 s | 
+    c2 4. b8 ~ | 2 s | 
     r2 c8 g gs a ~ | 2 
 }
 
@@ -153,10 +222,10 @@ harmonyASecondEnding = \relative c' {
 
 melodyB = \relative c' { 
     r4 f || 
-    c'2 ~ 8 bf ef bf | e,2 8 b'4 e,8 | 
-    ef1 ~ | 2 r8 c'4 d8 | 
+    c'2 ~ 8 bf c bf | e,2 ~ 8 b'4 e,8 | 
+    ef1 ~ | 2 \tuplet 3/2 { r4 c' d } | 
 
-    \tuplet 3/2 { ef4 d c } ef2 ~ | 2 f \glissando | 
+    ef4 \tuplet 3/2 { d8 c ef ~ } 2 ~ | 2 f \glissando | 
     d1 | r2 r8 
 }
 harmonyB = \relative c' { 
@@ -228,6 +297,7 @@ melody = \relative c'' {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForC
                     \melody
                 >>
                 \noPageBreak
@@ -266,6 +336,7 @@ melody = \relative c'' {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForC
                     \melody
                 >>
                 \noPageBreak
@@ -304,6 +375,7 @@ melody = \relative c'' {
                 \autoPageBreaksOff
                 <<
                     \structure
+                    \rehearsalMarkTweaksForEb
                     \melody
                 >>
                 \noPageBreak

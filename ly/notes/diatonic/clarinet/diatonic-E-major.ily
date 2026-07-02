@@ -39,7 +39,7 @@ instructionE = \markup {
 }
 
 diatonicFingeringExampleEMajor = \relative c'' { 
-    \key af \major
+    \key e \major
     \time 2/4
     \rh ds8 \rh cs \lh b ds |
     ds8 \lh cs \rlh b16 [ ~ 16 ds8 ] |
