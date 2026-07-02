@@ -137,14 +137,14 @@ chordsForFlats = \chordmode {
 
 melodyTop = \relative c''' {
     bf8-> 8-> ||
-    r2 r4 r8 c,-> ~ | 8 \tuplet 3/2 { bf16 a g } f8 a ~ 8 ef f g | 
+    r2 r4 r8 c-> ~ | 8 \tuplet 3/2 { bf16 a g } f8 a ~ 8 ef f g | 
     a4 r r r8 c-> ~ | 8 af16 gf f8 a ~ 8 cs, d g | 
 
     f4 r r8 f r f | r f bf, [ f' ~ ] 8 bf,4 f'8 |
-    bf,8 f' bf, g f' g, e' f-> | r2 r4 bf'8-> 8-> ||
+    bf,8 f' bf, g f' g, e' f-> | r2 r4 bf8-> 8-> ||
 
 
-    r2 r4 r8 c,-> ~ | 8 \tuplet 3/2 { bf16 a g } f8 a ~ 8 ef f g | 
+    r2 r4 r8 c-> ~ | 8 \tuplet 3/2 { bf16 a g } f8 a ~ 8 ef f g | 
     f4-> 4-> 4-> r8 c'-> ~ | 8 af16 gf f8 a8 ~ 8 cs, d g | 
 
     f4 r r8 f r f | r g, bf [ f'-> ] ~ 8 bf,4 g8 | 
@@ -155,10 +155,10 @@ melodyTop = \relative c''' {
     \grace { cs8 ( } d4 ) g2. | r2 ef8 c d c ~ | 
 
     c2 ef8 c d c ~ | 2 ef8 c d c |
-    a'8 df4.-> 4.-> 8-> ~ | 2 r4 bf'8-> 8-> ||
+    a'8 df4.-> 4.-> 8-> ~ | 2 r4 bf8-> 8-> ||
 
 
-    r2 r4 r8 c,-> ~ | 8 \tuplet 3/2 { bf16 a g } f8 a ~ 8 ef f g | 
+    r2 r4 r8 c-> ~ | 8 \tuplet 3/2 { bf16 a g } f8 a ~ 8 ef f g | 
     f4-> 4-> 4-> r8 c'-> ~ | 8 af16 gf f8 a ~ 8 cs, d g | 
 
     f4 r r8 f r f  | r f bf, [ f'-> ] ~ 8 bf,4 f'8 | 
@@ -225,6 +225,60 @@ melodyBottom = \relative c''' {
 }
 
 \book {
+  \bookOutputSuffix "harmony-for-Bb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Bb Harmony"
+        instrumentName = \poet
+        subtitle = "2022-06-02"
+    }
+    \score {
+        \transpose bf c <<
+            \new ChordNames \transpose e e { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "lead" \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \melodyTop
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "harmony-for-Eb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Eb Harmony"
+        instrumentName = \poet
+        subtitle = "2022-06-02"
+    }
+    \score {
+        \transpose ef c <<
+            \new ChordNames \transpose e e { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "lead" \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \melodyTop
+                >>
+            }
+        >>
+    }
+}
+
+\book {
   \bookOutputSuffix "bottom-for-C"
     \header {
         title = \title
@@ -235,6 +289,60 @@ melodyBottom = \relative c''' {
     }
     \score {
         <<
+            \new ChordNames \transpose e e { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "lead" \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \melodyBottom
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "melody-for-Bb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Bb Melody"
+        instrumentName = \poet
+        subtitle = "2022-06-02"
+    }
+    \score {
+        \transpose bf c <<
+            \new ChordNames \transpose e e { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "lead" \transpose e e {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                <<
+                    \structure
+                    \melodyBottom
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "melody-for-Eb"
+    \header {
+        title = \title
+        composer = \markup \italic { "composed by" \composerName }
+        poet = "Eb Melody"
+        instrumentName = \poet
+        subtitle = "2022-06-02"
+    }
+    \score {
+        \transpose ef c <<
             \new ChordNames \transpose e e { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm
