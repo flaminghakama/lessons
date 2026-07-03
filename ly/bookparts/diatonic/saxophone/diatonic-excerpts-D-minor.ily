@@ -3,12 +3,12 @@
 
         \header {
             title = ""
-            subtitle = "C Minor"
+            subtitle = "D Minor"
             composer = ""
         }
 
         \score {
-            << 
+            \transpose c d << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
@@ -30,7 +30,7 @@
         }
 
         \score {
-            << 
+            \transpose c d << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
@@ -51,7 +51,7 @@
         }
 
         \score {
-            << 
+            \transpose c d << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose c c { 
@@ -66,12 +66,12 @@
                 title = ""
                 subtitle = ""
                 composer = ""
-                piece = \markup \center-column { "Scale in Thirds"  " " }
+                piece = \markup \center-column { "Scale in Thirds - Harmonic Minor"  " " }
             }
         }
 
         \score {
-            << 
+            \transpose c d << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose c c { 
@@ -95,12 +95,12 @@
             << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-                \new ChordNames \transpose c g { 
-                    \dominantArpeggioMinorChords 
+                \new ChordNames \transpose g d { 
+                    \diminishedArpeggioChords 
                 }
                 \new Staff {
                     \include "ly/ily/staff-properties.ily"
-                    \transpose c c \diminishedArpeggioCMinor
+                    \transpose d d \diminishedArpeggioDMinor
                     \noPageBreak
                 }
             >>
@@ -113,7 +113,7 @@
         }
 
         \score {
-            \transpose a c << 
+            \transpose c d \transpose a c << 
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose c c { 
@@ -139,7 +139,7 @@
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \diatonicExerciseOneCMinor
+                    \diatonicExerciseOneDMinor
                     \pageBreak
                 }
             >>
@@ -157,7 +157,7 @@
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \diatonicExerciseTwoCMinor
+                    \diatonicExerciseTwoDMinor
                     \noPageBreak
                 }
             >>
@@ -175,7 +175,7 @@
                 \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new Staff \transpose a a { 
                     \include "ly/ily/staff-properties.ily"
-                    \diatonicExerciseThreeCMinor
+                    \diatonicExerciseThreeDMinor
                 }
             >>
             \header {

@@ -1,96 +1,5 @@
-articulationExerciseScaleMelodicMinor = \relative c' { 
-    r4 
-    c16 16 16 16 
-    d16 16 16 16 
-    ef16 16 16 16 |
-    f16 16 16 16 
-    g16 16 16 16 
-    a16 16 16 16 
-    b16 16 16 16 |
 
-    c16 16 16 16 
-    bf?16 16 16 16
-    af?16 16 16 16
-    g16 16 16 16 |
-    f16 16 16 16 
-    ef16 16 16 16
-    d16 16 16 16
-    c16 8 16 | \noBreak
-    c2 r 
-}
-articulationExerciseScaleHarmonicMinor = \relative c' { 
-    r4 
-    c16 16 16 16 
-    d16 16 16 16 
-    ef16 16 16 16 |
-    f16 16 16 16 
-    g16 16 16 16 
-    af16 16 16 16 
-    b16 16 16 16 |
-
-    c16 16 16 16 
-    b16 16 16 16
-    af16 16 16 16
-    g16 16 16 16 |
-    f16 16 16 16 
-    ef16 16 16 16
-    d16 16 16 16
-    c16 8 16 | \noBreak
-    c2 r 
-}
-
-syncopationExerciseScaleMelodicMinor = \relative c' { 
-    r4 
-    c16 8 16 
-    d16 8 16 
-    ef16 8 16 |
-    f16 8 16 
-    g16 8 16 
-    a16 8 16 
-    b16 8 16 |
-    d16 c8 a16 
-    c16 bf?8 g16 
-    bf16 af?8 f16 
-    af16 g8 ef16 | 
-    g16 f8 d16 
-    f16 ef8 c16  
-    ef16 d8 b16 
-    c4
-}
-syncopationExerciseScaleHarmonicMinor = \relative c' { 
-    r4 
-    c16 8 16 
-    d16 8 16 
-    ef16 8 16 |
-    f16 8 16 
-    g16 8 16 
-    af?16 8 16 
-    b16 8 16 |
-    d16 c8 af?16 
-    c16 b8 g16 
-    b16 af8 f16 
-    af16 g8 ef16 | 
-    g16 f8 d16 
-    f16 ef8 c16  
-    ef16 d8 b16 
-    c4
-}
-
-scaleInThirdsMelodicMinorNotes = \relative c' { 
-    c8 ef d f  ef g f af | g bf af c  b d c4 | d8 b c af?  bf g af f  | g ef f d c4 r4 | 
-}
-scaleInThirdsHarmonicMinorNotes = \relative c' { 
-    c8 ef d f  ef g f af | g b af? c  b d c4 | d8 b c af  b g af f  | g ef f d c4 r4 | 
-}
-
-tonicMinorArpeggioChords = \chordmode { 
-    \set chordChanges = ##f
-    \set chordNameExceptions = #flamingChordExceptions
-    \set noChordSymbol = ##f
-    c1:m
-}
-
-tonicMinorArpeggioC = \relative c' { 
+tonicMinorArpeggioD = \relative c' { 
     \key c \minor
     \time 2/4
     \tuplet 3/2 4 { 
@@ -113,7 +22,8 @@ tonicMinorArpeggioC = \relative c' {
     \bar "|."
 }
 
-diatonicExerciseOneCMinor = \relative c' { 
+
+diatonicExerciseOneDMinor = \transpose c d \relative c' { 
     \key c \minor
     \time 3/4
     c8 ef g ef c4 | 
@@ -148,13 +58,13 @@ diatonicExerciseOneCMinor = \relative c' {
     af8 f d f af4 | 
     g8 ef c ef g4 | 
     f8 d bf d f4 | 
-    ef8 c' af c ef,4 | 
-    d8 b' g b d,4 |
+    ef8 c af c ef4 | 
+    d8 b g' b, d4 |
     c2.
     \bar "||"
 }
 
-diatonicExerciseTwoCMinor = \relative c' { 
+diatonicExerciseTwoDMinor = \transpose c d \relative c' { 
     \key c \minor
     \time 4/4
     c8 d ef g  d ef f af | 
@@ -179,7 +89,7 @@ diatonicExerciseTwoCMinor = \relative c' {
     \bar "||"
 }
 
-diatonicExerciseThreeCMinor = \relative c' { 
+diatonicExerciseThreeDMinor = \transpose c d \relative c' { 
     \key c \minor
     \time 4/4
     c8 d ef f  g f ef c | 

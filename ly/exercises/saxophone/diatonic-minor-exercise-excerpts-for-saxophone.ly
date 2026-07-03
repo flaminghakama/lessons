@@ -23,7 +23,7 @@ mv diatonic-minor-exercise-excerpts-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/diatonic-minor-exercise-excerpts-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"fixing rhythm" ; git push 
+git add . ; git commit -m"saxophone minor diatonic" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
@@ -72,10 +72,10 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 %BodoniClassicChancery" 
 \include "ly/ily/layout.ily"
 
+\include "ly/notes/diatonic/saxophone/diatonic-D-minor.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-C-minor.ily"
 % \include "ly/notes/diatonic/saxophone/diatonic-F-major.ily"
 % \include "ly/notes/diatonic/saxophone/diatonic-G-major.ily"
-% \include "ly/notes/diatonic/saxophone/diatonic-D-major.ily"
 % \include "ly/notes/diatonic/saxophone/diatonic-A-major.ily"
 
 \include "ly/notes/saxophone-articulation.ily"
@@ -112,6 +112,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     %     \markup \title-page-markup "Saxophone" \composerName \titleFull
     % }
 
+    \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-D-Minor.ily"
     \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-C-Minor.ily"
 
     % \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-G-Minor.ily"
