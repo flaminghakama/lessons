@@ -353,7 +353,7 @@ lyricsHeadTwo = \lyricmode {
     my part -- ner al -- ways trumps,
 
     I guess I'm just a fool
-    who ne -- ver looks be -- fore they jump,
+    who ne -- ver looks be -- fore they jumpr,
 }
 
 \header {

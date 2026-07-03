@@ -21,7 +21,7 @@ mv minor-diatonic-exercises-for-clarinet.pdf pdf/exercises/clarinet
 op pdf/exercises/clarinet/minor-diatonic-exercises-for-clarinet.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding introductory pentatonic exercises 3 and 4 accidentals" ; git push 
+git add . ; git commit -m"adding minor diatonic clarinet" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

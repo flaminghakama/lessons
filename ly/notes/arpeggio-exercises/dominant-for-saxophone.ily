@@ -5,6 +5,12 @@ dominantArpeggioChords = \chordmode {
     \set noChordSymbol = ##f
     c1:7
 }
+dominantArpeggioMinorChords = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+    c1:7.9-
+}
 dominantArpeggioC = \relative c' {
     \key f \major
     \time 4/4 
@@ -109,9 +115,7 @@ dominantArpeggioEFlat = \relative c' {
     \bar "||"
 }
 
-dominantArpeggioFSharp = \relative c' {
-    \key b \major
-    \time 4/4 
+dominantArpeggioFSharpNotes = \relative c' {
     \relative c' { 
         fs2. ( e8 ) cs ( |
         as8 ) cs ( e ) fs (  cs ) e ( fs ) as ( | 
@@ -128,6 +132,17 @@ dominantArpeggioFSharp = \relative c' {
         fs'1 ) 
     }
     \bar "||"
+}
+
+dominantArpeggioFSharp = \relative c' {
+    \key b \major
+    \time 4/4 
+    \dominantArpeggioFSharpNotes
+}
+dominantArpeggioMinorFSharp = \relative c' {
+    \key b \minor
+    \time 4/4 
+    \dominantArpeggioFSharpNotes
 }
 
 dominantArpeggioAFlat = \relative c' {

@@ -17,7 +17,7 @@ lilypond ly/songs/jazz/dizzy-atmosphere.ly
 mv dizzy-atmosphere*.pdf pdf/songs/jazz
 for file in pdf/songs/jazz/dizzy-atmosphere*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"enharmonics" ; git push 
+git add . ; git commit -m"chord tweaks" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
