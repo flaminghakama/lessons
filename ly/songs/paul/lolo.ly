@@ -234,7 +234,7 @@ melodyBottom = \relative c''' {
         subtitle = "2022-06-02"
     }
     \score {
-        \transpose bf c <<
+        \transpose bf, c <<
             \new ChordNames \transpose e e { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm
@@ -315,7 +315,7 @@ melodyBottom = \relative c''' {
         subtitle = "2022-06-02"
     }
     \score {
-        \transpose bf c <<
+        \transpose bf, c <<
             \new ChordNames \transpose e e { 
                 \include "ly/ily/chord-names-properties.ily"
                 \chordsForm
