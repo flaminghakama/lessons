@@ -17,7 +17,7 @@ lilypond ly/songs/pop/signed-sealed-delivered.ly
 mv signed-sealed-delivered*.pdf pdf/songs/pop
 for file in pdf/songs/pop/signed-sealed-delivered*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"delivered" ; git push 
+git add . ; git commit -m"note fix" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

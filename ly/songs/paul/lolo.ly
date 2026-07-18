@@ -17,7 +17,7 @@ lilypond ly/songs/paul/lolo.ly
 mv lolo*.pdf pdf/songs/paul
 for file in pdf/songs/paul/lolo*.pdf ; do op $file ; done  
 
-git add . ; git commit -m"single and double page versions" ; git push 
+git add . ; git commit -m"lolo octave Bb" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

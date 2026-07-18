@@ -1,31 +1,35 @@
-\version "2.19.15"
+\version "2.24.0"
 \include "english.ly"
 titleLeft = "Saxophone"
 titleRight = "Fingering"
-title = "Saxophone Fingering"
+titleFull = "Saxophone Fingering"
+arranger = ""
 composerName = "D. Elaine Alt"
-\include "../scores/flaming-libs/flaming-paper.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
-\include "../scores/flaming-libs/flaming-markup.ily"
-\include "../scores/flaming-libs/flaming-chords.ily"
+copyright = \markup \center-column { " "  \tiny "copyright © 2026 Elaine Paul" } 
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 \include "../scores/flaming-libs/flaming-title-page.ily"
 
 %{
 
-rm saxophone-fingering-introduction.pdf
-lilypond ly/exercises/saxophone/saxophone-fingering-introduction.ly
+killPreview ; rm saxophone-fingering-introduction.pdf ; lilypond ly/exercises/saxophone/saxophone-fingering-introduction.ly ; op saxophone-fingering-introduction.pdf ;
+
+killPreview ; 
+rm saxophone-fingering-introduction.pdf ; 
+lilypond ly/exercises/saxophone/saxophone-fingering-introduction.ly ; 
 mv saxophone-fingering-introduction.pdf pdf/exercises/saxophone
-op pdf/exercises/saxophone/saxophone-fingering-introduction.pdf 
+op pdf/exercises/saxophone/saxophone-fingering-introduction.pdf ;
 
 %}
-
 
 \header {
     source = ""
     style = ""
-    copyright = \markup { \tiny "copyright © 2022 Elaine Alt" } 
+    copyright = \markup \center-column { " "  \tiny "copyright © 2024 Elaine Paul" } 
     lastupdated = ""
-    title = \markup { \italic \fontsize #4 \bold { \title }  }
+    title = \markup { \italic \fontsize #4 \bold { \titleFull }  }
     poet = ""
     composer = \markup \italic \composerName
     tagline = ""
@@ -34,29 +38,35 @@ op pdf/exercises/saxophone/saxophone-fingering-introduction.pdf
 
 \paper {
 
-  top-margin = #14
-  right-margin = #17
+    top-margin = #2
+    right-margin = #14
 
-  % First page spacing after header
-  markup-system-spacing.padding = #6
+    % First page spacing after header
+    markup-system-spacing.padding = #0
 
-  % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #0
+    % Subsequent page spacing after header
+    top-system-spacing.minimum-distance = #14
 
-  % Spacing in between systems
-  system-system-spacing.basic-distance = #18
-  system-system-spacing.minimum-distance = #15
+    % Spacing in between systems
+    %system-system-spacing.basic-distance = #18
+    %system-system-spacing.minimum-distance = #15
 
-  page-breaking = #ly:minimal-breaking
+    score-system-spacing.basic-distance = #20    
 
-  #(define fonts
-    (make-pango-font-tree "Hardwood" 
-                          "Highlander ITC TT" 
-                          "Papyrus"
-                           (/ myStaffSize 20)))
+    page-breaking = #ly:minimal-breaking
+
+    #(define fonts
+        (make-pango-font-tree 
+            "Hardwood" 
+            "Highlander ITC TT" 
+            "Papyrus"
+            (/ myStaffSize 20)
+        )
+    )
 }
+
 %BodoniClassicChancery" 
-\include "../scores/flaming-libs/flaming-fonts.ily"
+\include "ly/ily/layout.ily"
 
 \include "ly/ily/saxophone-fingerings.ily"    
 \include "ly/ily/layout.ily"
@@ -84,7 +94,7 @@ chromaticAccidentalFingerings = \relative c' {
 equinoxStructure = \relative c'' { 
     \key c \minor
     \partial 8*1 s8*1 
-    \bar "[|:" 
+    \bar "[|:-|" 
     \repeat volta 2 { 
         s1*12
     }
@@ -142,7 +152,7 @@ equinoxFingeringsAlto = \relative c' {
 blueTraneStructure = \relative c'' { 
     \key c \minor
     \partial 8*5 s8*5 
-    \bar "[|:" 
+    \bar "[|:-|" 
     \repeat volta 2 { 
         s1*10
     }
@@ -207,7 +217,7 @@ blueTraneFingeringsAlto = \relative c' {
 
 mrPcStructure = \relative c'' { 
     \key c \minor
-    \bar "[|:" 
+    \bar "[|:-|" 
     \repeat volta 2 { 
         s1*12
     }
@@ -248,7 +258,68 @@ pitchesInMrPCFingeringsAlto = \relative c' {
     s1^\midA |
     s1^\midEb |
 }
-%}
+
+
+
+songNotes = \relative c' { 
+    \key d \major
+    \time 4/4
+    \tag #'ForD { <>^\lowD }   
+        d4.
+        \tag #'ForD { <>^\lowE }
+        e8        
+        \tag #'ForD { <>^\lowFs }
+        fs4.  
+        d8 | fs4 d fs2 | 
+        \tag #'(ForD) { \break }
+
+    e4. fs8 
+        \tag #'ForD { <>^\lowG }
+        g g fs e | 
+        \tag #'(x) { \break }
+        g1 | 
+
+    fs4. 
+        g8 
+        \tag #'ForD { <>^\lowA }
+        a4. fs8 | \noBreak a4 fs a2 |
+        \tag #'(ForD) { \break } 
+
+    g4. a8 
+        \tag #'ForD { <>^\midB }
+        b b a g | 
+        \tag #'(x) { \break } 
+        b1 | 
+        \tag #'(x) { \break }
+
+
+    a4. 
+        d,8 e fs 
+        g a | 
+        b1 |
+
+    b4. 
+        e,8 fs 
+        g a b |
+        \tag #'(x) { \break }
+        \tag #'ForD { <>^\midCs }
+        cs1 | 
+        \tag #'(ForD) { \break }
+
+    cs4. fs,8 
+        g a b cs | 
+        \tag #'ForD { <>^\midD }
+        d2. d8 cs |
+
+    b4 g cs a | 
+        d4 a fs e |
+        
+    d1 \bar "|." 
+}
+
+
+
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -386,7 +457,7 @@ pitchesInMrPCFingeringsAlto = \relative c' {
             << 
                 \include "ly/ily/score-properties.ily"
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose ef c { 
                     \blueTraneChords
                 }
@@ -433,7 +504,7 @@ pitchesInMrPCFingeringsAlto = \relative c' {
             << 
                 \include "ly/ily/score-properties.ily"
                 \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark #'extra-offset = #'( -3 . 2 )
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
                 \new ChordNames \transpose ef c { 
                     \mrPCChords
                 }
@@ -451,4 +522,29 @@ pitchesInMrPCFingeringsAlto = \relative c' {
             }
         }
     }    
+
+
+    \header {
+        subtitle = "Do-Re-Mi"
+        composer = \markup { \italic "composed by" "Richard Rodgers" }
+        piece = " "
+    }
+    \bookpart {
+        \header {
+        }
+        \score {
+            << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \keepWithTag #'(ForD) \transpose d d { 
+                    \include "ly/ily/staff-properties.ily"
+                    \autoPageBreaksOff
+                    \songNotes
+                }
+            >>
+            \header {
+                piece = "D Major"
+            }
+        }
+    }
 }
