@@ -1,21 +1,21 @@
 \version "2.24.0"
 
-titleLeft = "India"
-titleRight = ""
-titleFull = "India"
-composerName = "J. Coltrane"
+titleLeft = "Promises"
+titleRight = "Kept"
+titleFull = "Promises Kept"
+composerName = "S. Sharrock"
 arranger = ""
 copyright = ""
 
 %{
 
-killPreview ; rm india*pdf ;  lilypond ly/songs/jazz/india.ly  ; for file in india*.pdf ; do op $file ; done  
+killPreview ; rm promises-kept*pdf ;  lilypond ly/songs/jazz/promises-kept.ly  ; for file in promises-kept*.pdf ; do op $file ; done  
 
 killPreview
-rm india*pdf
-lilypond ly/songs/jazz/india.ly
-mv india*.pdf pdf/songs/jazz
-for file in pdf/songs/jazz/india*.pdf ; do op $file ; done  
+rm promises-kept*pdf
+lilypond ly/songs/jazz/promises-kept.ly
+mv promises-kept*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/promises-kept*.pdf ; do op $file ; done  
 
 git add . ; git commit -m"fixing pitch" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
@@ -60,20 +60,41 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 structure = \relative c' { 
 
-    \key c \major
-    \tempo 4=192
+    \key af \major
+    \tempo 4=212
     \time 4/4
 
+    \startSectionWithLabel "A" "4X"
     \startRepeat
-    s1*4 \break
-    s1*4 \break
+    s1*4
+
+    \startSection "B"
+    \endRepeat    
+    s1*4
+    s1*4
+
+    \startSection "C"
+    \startRepeat    
     s1*4 
     \endRepeat
 }
 
 rehearsalMarkTweaksForC = \relative c' { 
-    \once \override Score.MetronomeMark.extra-offset = #'( -6 . -1 )
+    \once \override Score.MetronomeMark.extra-offset = #'( -8 . 3 )
     \override Score.RehearsalMark.self-alignment-X = #LEFT
+
+    \override Score.RehearsalMark.extra-offset = #'( -2 . -1 )
+    % "A" "4X"
+    s1*4 \break
+
+    \override Score.RehearsalMark.self-alignment-X = #RIGHT
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    %  "B"
+    s1*4 \break
+    s1*4 \break
+
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 1 )
+    %  "C"
 }
 
 rehearsalMarkTweaksForBb = \relative c' { 
@@ -89,20 +110,37 @@ chordsForm = \chordmode {
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
-    c1/g | s | s | s | 
-    c1/g | s | s | s | 
-    d1:1.4.5.7/g | s | c/g | s | 
+    bf1:m7 | af | ef2:m6 df:6 | af1 ||
+    ef1:m/f | ef:m | ef1:m/f | ef:m |
+    ef1:m/f | ef:m | ef1:m/f | ef:m ||
+    df1:maj7 | s | s | s ||
 }
 
-melody = \relative c' { 
-    c4 ( d2.-> ~ | 2. ) r4 | c4 ( d2.-> ~ | 2. ) r4 |
-    c4 ( d2.-> ~ | 2. ) r4 | c4 ( d2.-> ~ | 2. ) r4 |
-    r4 g2.-> | e2 c | c4 ( d2.-> ~ | 2. ) r4 |
+melodyAB = \relative c' { 
+    r2 f8 af bf df | r4 c2 r4 | bf8 c bf4  af8 bf af ef ~ | 1 || 
+    
+    r2 f16 gf f8 ef4 ~ | 2 f16 gf f8 c4 ~ | 
+    c2 f16 gf f8 ef4 ~ | 2 f16 gf f8 c4 ~ |
+    c2 f16 gf f8 ef4 ~ | 2 f16 gf f8 c4 ~ |
+    c2 f16 gf f8 ef4 ~ | 2 f16 gf f8 c4 ||
+}
+melodyC = \relative c' { 
+    c4 r8 df ~ 2 ~ | 1 | c4 r8 df ~ 2 ~ | 1 || 
 }
 harmony = \relative c' { 
-    g4 2.-> ~ | 2. r4 | g4 2.-> ~ | 2. r4 |
-    g4 2.-> ~ | 2. r4 | g4 2.-> ~ | 2. r4 |
-    r4 d'2.-> | c2 a | g4 2.-> ~ | 2. r4 |
+    s1 | r4 ef2 r4 | ef r df r8 c ~ | 1 ||
+
+    c2.. bf8 ~ | 1 | c2.. bf8 ~ | 1 |
+    c2.. bf8 ~ | 1 | c2.. bf8 ~ | 1 ||
+}
+
+bassline = \relative c { 
+    bf2.. af8 ~ | 1 | ef'4 r df r8 af ~ | 2 r8 a4. ||
+
+    f'2.. ef8 ~ | 1 | f2.. ef8 ~ | 1 |
+    f2.. ef8 ~ | 1 | f2.. ef8 ~ | 1 ||
+
+    c4 r8 df ~ 2 ~ | 1 | c4 r8 df ~ 2 ~ | 1 || 
 }
 
 \book {
@@ -116,22 +154,30 @@ harmony = \relative c' {
     }
     \score {
         \transpose c c <<
-            \new ChordNames { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
-                \chordsForm
-            }
-            \new PianoStaff \with {
+            \new StaffGroup \with {
                 \override StaffGrouper.staff-staff-spacing =
-                    #'((padding . 2))
+                    #'((padding . 4))
             } <<
-                \new Staff = "lead" \transpose c c {
+                \new Staff = "lead" \with {
+                    \consists Merge_rests_engraver
+                } \transpose c c {
                     % \include "ly/ily/staff-properties.ily"
                     <<
                         \structure
                         \rehearsalMarkTweaksForC
-                        \melody
+                        {
+                            << 
+                                \melodyAB \\
+                                \harmony
+                            >>
+                            \melodyC
+                        }
                         \noPageBreak
                     >>
+                }
+                \new ChordNames { 
+                    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                    \chordsForm
                 }
                 \new Staff = "harmony" \transpose c c {
                     % \include "ly/ily/staff-properties.ily"
@@ -139,7 +185,7 @@ harmony = \relative c' {
                     <<
                         \structure
                         \rehearsalMarkTweaksForC
-                        \harmony
+                        \bassline
                         \noPageBreak
                     >>
                 }
@@ -163,29 +209,37 @@ harmony = \relative c' {
     }
     \score {
         \transpose bf, c <<
-            \new ChordNames { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
-                \chordsForm
-            }
-            \new PianoStaff \with {
+            \new StaffGroup \with {
                 \override StaffGrouper.staff-staff-spacing =
-                    #'((padding . 2))
+                    #'((padding . 4))
             } <<
-                \new Staff = "lead" \transpose c c {
+                \new Staff = "lead" \with {
+                    \consists Merge_rests_engraver
+                } \transpose c c {
                     % \include "ly/ily/staff-properties.ily"
                     <<
                         \structure
                         \rehearsalMarkTweaksForC
-                        \melody
+                        {
+                            << 
+                                \melodyAB \\
+                                \harmony
+                            >>
+                            \melodyC
+                        }
                         \noPageBreak
                     >>
+                }
+                \new ChordNames { 
+                    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                    \chordsForm
                 }
                 \new Staff = "harmony" \transpose c c {
                     % \include "ly/ily/staff-properties.ily"
                     <<
                         \structure
                         \rehearsalMarkTweaksForC
-                        \transpose c c \harmony
+                        \transpose c, c \bassline
                         \noPageBreak
                     >>
                 }
@@ -209,29 +263,37 @@ harmony = \relative c' {
     }
     \score {
         \transpose ef, c <<
-            \new ChordNames { 
-                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
-                \chordsForm
-            }
-            \new PianoStaff \with {
+            \new StaffGroup \with {
                 \override StaffGrouper.staff-staff-spacing =
-                    #'((padding . 2))
+                    #'((padding . 4))
             } <<
-                \new Staff = "lead" \transpose c c {
+                \new Staff = "lead" \with {
+                    \consists Merge_rests_engraver
+                } \transpose c c {
                     % \include "ly/ily/staff-properties.ily"
                     <<
                         \structure
                         \rehearsalMarkTweaksForC
-                        \melody
+                        {
+                            << 
+                                \melodyAB \\
+                                \harmony
+                            >>
+                            \melodyC
+                        }
                         \noPageBreak
                     >>
+                }
+                \new ChordNames { 
+                    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                    \chordsForm
                 }
                 \new Staff = "harmony" \transpose c c {
                     % \include "ly/ily/staff-properties.ily"
                     <<
                         \structure
                         \rehearsalMarkTweaksForC
-                        \transpose c c \harmony
+                        \transpose c, c \bassline
                         \noPageBreak
                     >>
                 }
