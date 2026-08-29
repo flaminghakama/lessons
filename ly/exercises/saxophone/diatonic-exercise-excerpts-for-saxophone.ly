@@ -8,7 +8,7 @@ titleRight = "for Saxophone"
 titleFull = "Diatonic Exercises for Saxophone"
 titleFull = \markup \center-column { "Diatonic Exercise Excerpts" "for Saxophone" }
 composerName = "Elaine Alt"
-arranger = ""
+arranger = "" 
 copyright = \markup \center-column { " "  \tiny "copyright © 2025 Elaine Paul" } 
 
 \include "../../../../engraving/flaming-libs/flaming-standard.ily"
@@ -74,14 +74,16 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/diatonic/saxophone/diatonic-C-major.ily"
-\include "ly/notes/diatonic/saxophone/diatonic-F-major.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-G-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-F-major.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-D-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-B-flat-major.ily"
 \include "ly/notes/diatonic/saxophone/diatonic-A-major.ily"
+\include "ly/notes/diatonic/saxophone/diatonic-E-flat-major.ily"
 
 \include "ly/notes/saxophone-articulation.ily"
-\include "ly/notes/arpeggio-exercises/grand-for-saxophone.ily"
-\include "ly/notes/arpeggio-exercises/dominant-for-saxophone.ily"
+% \include "ly/notes/arpeggio-exercises/grand-for-saxophone.ily"
+% \include "ly/notes/arpeggio-exercises/dominant-for-saxophone.ily"
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,11 +117,13 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-C-Major.ily"
 
     \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-G-Major.ily"
-    % \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-F-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-F-Major.ily"
 
     \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-D-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-B-flat-Major.ily"
 
     \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-A-Major.ily"
+    \include "ly/bookparts/diatonic/saxophone/diatonic-excerpts-E-flat-Major.ily"
 }
 
 

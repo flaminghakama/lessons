@@ -89,63 +89,63 @@
             }
         }
 
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-                \new ChordNames \transpose c g { 
-                    \dominantArpeggioChords 
-                }
-                \new Staff {
-                    \include "ly/ily/staff-properties.ily"
-                    \transpose b, c \dominantArpeggioFSharp
-                    \noPageBreak
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "Dominant Arpeggio"  " " }
-            }
-        }
+    %     \score {
+    %         << 
+    %             \override Score.RehearsalMark.self-alignment-X = #LEFT
+    %             \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    %             \new ChordNames \transpose c g { 
+    %                 \dominantArpeggioChords 
+    %             }
+    %             \new Staff {
+    %                 \include "ly/ily/staff-properties.ily"
+    %                 \transpose b, c \dominantArpeggioFSharp
+    %                 \noPageBreak
+    %             }
+    %         >>
+    %         \header {
+    %             title = ""
+    %             subtitle = ""
+    %             composer = ""
+    %             piece = \markup \center-column { "Dominant Arpeggio"  " " }
+    %         }
+    %     }
 
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-                \new ChordNames \transpose c c { 
-                    \grandArpeggioMajorChords 
-                }
-                \new Staff \transpose a a { 
-                    \include "ly/ily/staff-properties.ily"
-                    \grandArpeggioMajor
-                    \noPageBreak
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "Grand Arpeggio"  " " }
-            }
-        }
+    %     \score {
+    %         << 
+    %             \override Score.RehearsalMark.self-alignment-X = #LEFT
+    %             \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    %             \new ChordNames \transpose c c { 
+    %                 \grandArpeggioMajorChords 
+    %             }
+    %             \new Staff \transpose a a { 
+    %                 \include "ly/ily/staff-properties.ily"
+    %                 \grandArpeggioMajor
+    %                 \noPageBreak
+    %             }
+    %         >>
+    %         \header {
+    %             title = ""
+    %             subtitle = ""
+    %             composer = ""
+    %             piece = \markup \center-column { "Grand Arpeggio"  " " }
+    %         }
+    %     }
 
-        \score {
-            << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-                \new Staff \transpose a a { 
-                    \include "ly/ily/staff-properties.ily"
-                    \diatonicExerciseOneCMajor
-                    \noPageBreak
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "Triads"  " " }
-            }
-        }
+    %     \score {
+    %         << 
+    %             \override Score.RehearsalMark.self-alignment-X = #LEFT
+    %             \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    %             \new Staff \transpose a a { 
+    %                 \include "ly/ily/staff-properties.ily"
+    %                 \diatonicExerciseOneCMajor
+    %                 \noPageBreak
+    %             }
+    %         >>
+    %         \header {
+    %             title = ""
+    %             subtitle = ""
+    %             composer = ""
+    %             piece = \markup \center-column { "Triads"  " " }
+    %         }
+    %     }
     }

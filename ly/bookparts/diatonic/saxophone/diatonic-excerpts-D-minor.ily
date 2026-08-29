@@ -36,6 +36,26 @@
                 \new Staff \transpose c c { 
                     \include "ly/ily/staff-properties.ily"
                     \key c \minor
+                    \scaleInThirdsHarmonicMinorNotes
+                    \transpose c, c \scaleInThirdsHarmonicMinorNotes
+                    \noPageBreak
+                }
+            >>
+            \header {
+                title = ""
+                subtitle = ""
+                composer = ""
+                piece = \markup \center-column { "Scale in Thirds - Harmonic Minor"  " " }
+            }
+        }
+
+        \score {
+            \transpose c d << 
+                \override Score.RehearsalMark.self-alignment-X = #LEFT
+                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+                \new Staff \transpose c c { 
+                    \include "ly/ily/staff-properties.ily"
+                    \key c \minor
                     \time 4/4
                     \syncopationExerciseScaleHarmonicMinor
                     \transpose c, c \syncopationExerciseScaleHarmonicMinor
@@ -47,26 +67,6 @@
                 subtitle = ""
                 composer = ""
                 piece = \markup \center-column { "Syncopation - Harmonic Minor"  " " }
-            }
-        }
-
-        \score {
-            \transpose c d << 
-                \override Score.RehearsalMark.self-alignment-X = #LEFT
-                \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
-                \new Staff \transpose c c { 
-                    \include "ly/ily/staff-properties.ily"
-                    \key c \minor
-                    \scaleInThirdsHarmonicMinorNotes
-                    \transpose c, c \scaleInThirdsHarmonicMinorNotes
-                    \noPageBreak
-                }
-            >>
-            \header {
-                title = ""
-                subtitle = ""
-                composer = ""
-                piece = \markup \center-column { "Scale in Thirds - Harmonic Minor"  " " }
             }
         }
 
