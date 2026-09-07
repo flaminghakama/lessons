@@ -15,13 +15,13 @@ From the common sense perspective, a book corresponds to a bound volume.  It is 
 
 Of course, we can have sets of books like an encyclopedia, but we do not model an encyclopedia within the language.  We are content with one top-level book object, and anything more complex is managed by the user in terms of multiple books.
 
-What is top-level about a book?  I would say that it is a bound set of pages, which in our world corresponds to an outupt file.  All the pages are the same size and in the same format.  
+What is top-level about a book?  It is a bound set of pages, which in our world corresponds to an outupt file.  All the pages are the same size.  
 
-Beyond that, for simple books there are lots of conventions for what is common across all pages, such as margins, page numbering and headers/footers, typography.  
+Beyond that, there are lots of conventions for what is common across all pages, such as margins, page numbering and headers/footers, typography.  
 
 However, these are all generally variable.  
 
-the bookpart may not have as common a meaning as book, but since we enforce page breaks, we can take it to mean that pages are explicitly part of the book/bookpart contract
+the bookpart is generally a collection of pages that share these characteristics in common.
 
 
 From a document creation perspective., and these fall on the but these are 

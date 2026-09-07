@@ -24,7 +24,7 @@ mv diatonic-exercises-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/diatonic-exercises-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding introductory pentatonic exercises 3 and 4 accidentals" ; git push 
+git add . ; git commit -m"reorder and trim" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

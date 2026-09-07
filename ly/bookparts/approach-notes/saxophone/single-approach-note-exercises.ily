@@ -1,6 +1,6 @@
 \bookpart {
     \header {
-        title = "Approach Note Exercises for Saxophone"
+        title = "Single Approach Note Exercises for Saxophone"
         subtitle = "Scale patterns with single approach note"
     }
 
