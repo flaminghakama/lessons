@@ -1,26 +1,32 @@
-\version "2.19.83"
+\version "2.24.0"
 
 titleLeft = "I Waited"
 titleRight = "For You"
-title = "I Waited For You"
+titleFull = "I Waited For You"
 composerName = "J. B. 'D.' Gillespie & G. Fuller"
 lyricistName = ""
 
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
-
+arranger = ""
+copyright = ""
 
 %{
 
+killPreview ; rm i-waited-for-you*pdf ; lilypond ly/songs/standards/i-waited-for-you.ly ; for file in i-waited-for-you*pdf ; do op $file ; done 
+
 killPreview
-rm i-waited-for-you*.pdf
+rm pdf/songs/standards/i-waited-for-you*
 lilypond ly/songs/standards/i-waited-for-you.ly 
-mv i-waited-for-you*.pdf pdf/songs/standards
-for file in pdf/songs/standards/i-waited-for-you*.pdf ; do op $file ; done
+mv i-waited-for-you*pdf pdf/songs/standards
+for file in pdf/songs/standards/i-waited-for-you*pdf ; do op $file ; done 
+
+git add . ; git commit -m"fixing lyric" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
+
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -28,10 +34,10 @@ for file in pdf/songs/standards/i-waited-for-you*.pdf ; do op $file ; done
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #6
+  markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #16
+  top-system-spacing.minimum-distance = #18
 
   % Spacing in between systems
   system-system-spacing.basic-distance = #18
@@ -53,12 +59,13 @@ for file in pdf/songs/standards/i-waited-for-you*.pdf ; do op $file ; done
 
 \include "ly/ily/layout-songs.ily"
 
+
 structure = \relative c' { 
 
     \key g \major
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT    
-    %\override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
+    %\override Score.RehearsalMark.extra-offset = #'( -5 . -2 )
 
     \startSection "A"
     s1*4 \break
@@ -66,7 +73,7 @@ structure = \relative c' {
     s1*4 \break
     s1*4 \break
 
-    \override Score.RehearsalMark #'extra-offset = #'( -5 . -2 )
+    \override Score.RehearsalMark.extra-offset = #'( -5 . -2 )
     \startSection "B"
     s1*4 \break
     s1*4 \break
@@ -203,7 +210,7 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
                     \structure
                     \melodyForm
                 >>
@@ -222,9 +229,79 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "in-F-for-Bb"
     \header {
-        subtitle = ""
+        subtitle = "(Elaine key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c \transpose g f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-F-for-Eb"
+    \header {
+        subtitle = "(Elaine key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c \transpose g f <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-G-for-C"
+    \header {
+        subtitle = "(real book key)"
         poet = "Concert Lead Sheet"
         instrumentName = \poet
     }
@@ -238,7 +315,7 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
                     \structure
                     \melodyForm
                 >>
@@ -257,9 +334,9 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "in-G-for-Bb"
     \header {
-        subtitle = ""
+        subtitle = "(real book key)"
         poet = "Bb Lead Sheet"
         instrumentName = \poet
     }
@@ -273,7 +350,7 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
                     \structure
                     \melodyForm
                 >>
@@ -292,9 +369,9 @@ lyricsHeadTwo = \lyricmode {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "in-G-for-Eb"
     \header {
-        subtitle = ""
+        subtitle = "(real book key)"
         poet = "Eb Lead Sheet"
         instrumentName = \poet
     }
@@ -308,7 +385,112 @@ lyricsHeadTwo = \lyricmode {
                 \include "ly/ily/staff-properties.ily"
                 \autoPageBreaksOff
                 \new Voice = "lead" <<
-                    \override Staff.TimeSignature #'break-visibility = ##(#f #f #f)
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Ab-for-C"
+    \header {
+        subtitle = "(Original key)"
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose g af <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Ab-for-Bb"
+    \header {
+        subtitle = "(Original key)"
+        poet = "Bb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose bf, c \transpose g af <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
+                    \structure
+                    \melodyForm
+                >>
+            }
+            \new Lyrics \with { alignAboveContext = "staff" } {
+                \lyricsto "lead" { \lyricsHeadOne } 
+            }
+            % \new Lyrics \with { alignAboveContext = "staff" } {
+            %     \lyricsto "lead" { \lyricsHeadTwo } 
+            % }
+        >>
+        \layout { 
+            indent = 1.25\cm
+        }
+    }
+}
+
+\book {
+  \bookOutputSuffix "in-Ab-for-Eb"
+    \header {
+        subtitle = "(Original key)"
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+    }
+    \score {
+        \transpose ef, c \transpose g af <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsForm
+            }
+            \new Staff = "voice" \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \new Voice = "lead" <<
+                    \override Staff.TimeSignature.break-visibility = ##(#f #f #f)
                     \structure
                     \melodyForm
                 >>

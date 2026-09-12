@@ -1,42 +1,43 @@
-
-\version "2.19.83"
+\version "2.24.0"
 
 titleLeft = "The Girl"
 titleRight = "From Ipanema"
-title = "The Girl From Ipanema"
+titleFull = "The Girl From Ipanema"
+
 composerName = "A. C. Jobim"
 lyricistName = "A. C. Jobim"
-
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
-\include "../../../../scores/flaming-libs/flaming-voltas.ily"
-
+arranger = ""
+copyright = ""
 
 %{
 
+killPreview ; rm girl-from-ipanema*pdf ; lilypond ly/songs/standards/girl-from-ipanema.ly ; for file in girl-from-ipanema*pdf ; do op $file ; done 
+
 killPreview
-rm girl-from-ipanema*.pdf
+rm pdf/songs/standards/girl-from-ipanema*
 lilypond ly/songs/standards/girl-from-ipanema.ly 
-mv girl-from-ipanema*.pdf pdf/songs/standards
-for file in pdf/songs/standards/girl-from-ipanema*.pdf ; do op $file ; done
+mv girl-from-ipanema*pdf pdf/songs/standards
+for file in pdf/songs/standards/girl-from-ipanema*pdf ; do op $file ; done 
+
+git add . ; git commit -m"fixing lyric" ; git push 
+lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
-\paper {
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
-  top-margin = #2
-  right-margin = #14
+\paper {
 
   % First page spacing after header
   markup-system-spacing.padding = #0
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #16
+  top-system-spacing.minimum-distance = #18
 
   % Spacing in between systems
-  system-system-spacing.basic-distance = #18
+  system-system-spacing.padding = #0
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #13
@@ -57,7 +58,7 @@ for file in pdf/songs/standards/girl-from-ipanema*.pdf ; do op $file ; done
 
 structure = \relative c' { 
     \key f \major
-    \override Score.RehearsalMark #'extra-offset = #'( -2.4 . 0.6 ) 
+    \override Score.RehearsalMark.extra-offset = #'( -2.4 . 0.6 ) 
 	\startSection "A"
 	s1*4 \break
 	s1*4 \break
@@ -125,7 +126,7 @@ melody = \relative c'' {
 
 	es1 ~ | 8 fs es ds ~ 8 es ds4 | cs4. ds8 ~ 2 ~ | 2 r |
 	gs1 ~ | 8 a gs fs ~ 8 gs fs e ~ | 4. fs8 ~ 2 ~ | 2 r |
-	a2.. 8 ~ | 8 b a4 g8 a4 f8 ~ | f8 g2.. | r2 r8 a b [ c ] ~ |
+	a2.. 8 ~ | 8 bf a4 g8 a4 f8 ~ | f8 g2.. | r2 r8 a bf [ c ] ~ |
 	\tuplet 3/2 { c4 c, d } e8 f g gs ~ | 2. r8 a | bf4 bf,8 c \tuplet 3/2 { d4 e f } | fs1 ||
 
 	g4. e8 4 d8 g ~ | 4 e8 8 ~ 8 4 d8 | g4 e e d8 g ~ | 8 8 e8 8 ~ 8 4 d8 | 
