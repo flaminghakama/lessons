@@ -164,6 +164,7 @@
                     \autoPageBreaksOn
                     \diatonicExerciseOneEMajor
                     \bar "|."
+                    \pageBreak
                 }
             >>
             \header {
