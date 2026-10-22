@@ -75,7 +75,7 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "ly/ily/layout.ily"
 
 \include "ly/notes/approach-notes/saxophone/single-approach-note-exercises.ily"
-\include "ly/notes/approach-notes/saxophone/double-approach-note-exercises.ily"
+% \include "ly/notes/approach-notes/saxophone/double-approach-note-exercises.ily"
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

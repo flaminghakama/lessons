@@ -90,6 +90,30 @@ structure = \relative c' {
     \key bf \major
     \tempo 2=110
 
+    \startSection "Intro"
+    s1*8
+    s1*4
+
+    \startSection "Head"
+    \repeat volta 2 { 
+        \startRepeat
+        s1*4
+        s1*4
+    }
+
+    \startSection "B"
+    \endRepeat
+    s1*4
+    s1*4
+
+    \startSection "A"
+    s1*4
+    s1*4
+
+    \startSection "Interlude"
+    s1*6
+    s1*4
+
     \startSection "Solo"
     s1*4
     s1*4
@@ -106,22 +130,55 @@ structure = \relative c' {
 }
 
 rehearsalMarkTweaksForC = \relative c' { 
-    \once \override Score.MetronomeMark.extra-offset = #'( -5 . -1 )
+    \once \override Score.MetronomeMark.extra-offset = #'( -6 . 3 )
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \once \override Score.RehearsalMark.extra-offset = #'( 1 . -2 )
-    % "Solo"
+    \once \override Score.RehearsalMark.extra-offset = #'( 4 . -1 )
+    % "Intro"
+    s1*8 
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -2 . 1 )
+    % "Head"
     s1*4 \break
     s1*4 \break
-    % "A"
-    s1*4 \break
-    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -4 . -1 )
     % "B"
     s1*4 \break
     s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -4 . -1 )
     % "A"
     s1*4 \break
-    s1*4
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
+    % "Interlude"
+    s1*6 %\break
+    s1*4 
+
+    \pageBreak
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    % "Solo"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    % "A"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    % "B"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    % "A"
+    s1*4 \break
+    s1*4 
 
 }
 
@@ -137,6 +194,7 @@ chordsIntro = \chordmode {
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
+
 }
 
 chordsForm = \chordmode { 
@@ -144,15 +202,59 @@ chordsForm = \chordmode {
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
 
+    s1*8 
+    s1*4 ||
+
     bf1:7 | s | s | s | 
     bf1:7 | s | s | s || 
+
+    d1:m7 | g:7.8+.9+ | c:7.11+ | s | 
+    c1:m7 | g:7.8+.9+ | bf:7.11+ | s || 
+
     bf1:7 | s | s | s | 
     bf1:7 | s | s | s ||
 
 }
 
+introTenorInBb = \relative c'' {
+    c4 r8 bf  r4 c | r8 bf r4  c r | bf8 8 8 8  c4 r8 bf | r4 c4 r2 ||
+}
 
-soloAInBb = \relative c'' { 
+melodyAInBb = \relative c' {
+    r4 r8 c  f g r bf | r a r g  a4 f | 
+    r4 r8 c  f g r bf | r a r g  a4 r | 
+}
+melodyATwoInBb = \relative c' {
+    r4 r8 c  f g r bf | r a r g  a4 f | 
+    r4 r8 c  f g r bf | r a r g  f4 r | 
+}
+harmonyAInBb = \relative c' {
+    r4 r8 f  a bf r d | r c r bf  c4 a | 
+    r4 r8 f  a bf r d | r c r bf  c4 r | 
+}
+harmonyATwoInBb = \relative c' {
+    r4 r8 f  a bf r d | r c r bf  c4 a | 
+    r4 r8 f  8 bf r d | r c r bf  a4 r | 
+}
+
+
+melodyBInBb = \relative c'' { 
+    a4 \tuplet 3/2 { a8 8 8 }  8 8 r8 a ~ | 4 8 c ~ 4 bf | 
+    gs4. a8 ~ 4 r | R1 |
+
+    g4 \tuplet 3/2 { g8 8 8 }  8 8 r8 g ~ | 4 8 bf ~ 4 af | 
+    fs4. g8 ~ 2 | f8 8 8 e r2 |
+}
+
+melodyInterludeInBb = \relative c'' { 
+    r4 r8 c  bf c r bf | r c r bf  r c r4 |
+    r4 r8 c  a c r a | r c r a  r c r4 |
+    r4 r8 c  bf c r bf | r c r bf  r c r4 |
+    a8 8 8 8  c4 r8 bf | r4 c  r8 bf r bf |
+    c4 r c4 4 | R1 |
+}
+
+soloInBb = \relative c'' { 
     r4 r8 c  r c4. ~ | 1 | 
     r8 bf r c  r d ( c4-. ) | bf-. c4 2 |
     
@@ -163,11 +265,34 @@ soloAInBb = \relative c'' {
     a8 g4. ~ 4 \tuplet 3/2 { bf8 ( d f ) } | a2.. g8 | 
 
     f8 d ( bf g )  a g r c ~ | 4 r8 c ~ 4. a8 | 
-    bf8 c ( d ) e  f d ( bf ) g | a c r4 r4 r8         
+    bf8 c ( d ) e  f d ( bf ) g | a c r4 r4 r8 e ||
+
+    r8 e r4  e4. e8 ~  | 8 8 r d  cs4 a'8 g | 
+    fs8 d a g  fs d'4. | r2 r4 d8 e |
+    f8 g e f  d4. a8 | c as b g' ~ 4 f8 ef |
+    e c r4  c2 | f8 d bf f a4 r ||   
+
+    r8 f' r a  r f r a | f4. a8 r2 | 
+    r8 f r a  r a r a ~ | 8 f d4  f d8 f | 
+    a8 f r4  f2 |     
 }
 
-solos = \transpose c bf, {
-    \soloAInBb
+melody = \transpose c bf, {
+    <>\xmp R1*8
+    \introTenorInBb
+    \melodyAInBb
+    \melodyATwoInBb
+    \melodyBInBb
+    <<
+        {
+            \harmonyAInBb
+            \harmonyATwoInBb
+        } \\ {
+            \melodyAInBb
+            \melodyATwoInBb            
+        }
+    \melodyInterludeInBb
+    \soloInBb
 }
 
 \book {
@@ -175,7 +300,7 @@ solos = \transpose c bf, {
     \header {
         title = \title
         composer = \composerName
-        poet = "Concert Lead Sheet"
+        poet = "Bb Lead Sheet"
         instrumentName = \poet
         subtitle = ""
     }
@@ -194,7 +319,7 @@ solos = \transpose c bf, {
                 <<
                     \structure
                     \rehearsalMarkTweaksForC
-                    \solos
+                    \melody 
                     \noPageBreak
                 >>
             }
