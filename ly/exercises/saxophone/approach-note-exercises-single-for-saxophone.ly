@@ -22,7 +22,7 @@ mv approach-note-exercises-single-for-saxophone.pdf pdf/exercises/saxophone
 op pdf/exercises/saxophone/approach-note-exercises-single-for-saxophone.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding double approach note" ; git push 
+git add . ; git commit -m"fixing chords" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}

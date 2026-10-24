@@ -32,13 +32,13 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
   right-margin = #14
 
   % First page spacing after header
-  markup-system-spacing.padding = #5
+  markup-system-spacing.padding = #4
 
   % Subsequent page spacing after header
-  top-system-spacing.minimum-distance = #24
+  top-system-spacing.minimum-distance = #20
 
   % Spacing in between systems
-  system-system-spacing.padding = #3
+  system-system-spacing.padding = #4.2
 
   % Space after score, before the next score
   score-system-spacing.minimum-distance = #0
@@ -85,9 +85,9 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
     }
 }
 
-structure = \relative c' { 
+structureHead = \relative c' { 
 
-    \key bf \major
+    \key ef \major
     \tempo 2=110
 
     \startSection "Intro"
@@ -114,6 +114,14 @@ structure = \relative c' {
     s1*6
     s1*4
 
+    \bar "|."
+
+}
+
+structure = \relative c' { 
+
+    \structureHead
+
     \startSection "Solo"
     s1*4
     s1*4
@@ -126,7 +134,31 @@ structure = \relative c' {
     \startSection "A"
     s1*4
     s1*4
+    \startSection "Solo Two"
+    s1*4
+    s1*4
+    \startSection "A"
+    s1*4
+    s1*4
+    \startSection "B"
+    s1*4
+    s1*4
+    \startSection "A"
+    s1*4
+    s1*4
 
+    \startSection "Solo Three"
+    s1*4
+    s1*4
+    \startSection "A"
+    s1*4
+    s1*4
+    \startSection "B"
+    s1*4
+    s1*4
+    \startSection "A"
+    s1*4
+    s1*4
 }
 
 rehearsalMarkTweaksForC = \relative c' { 
@@ -148,7 +180,37 @@ rehearsalMarkTweaksForC = \relative c' {
     s1*4 \break
     s1*4 \break
 
+    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 0 )
+    % "A"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 1 )
+    % "Interlude"
+    s1*6 %\break
+    s1*4 
+}
+
+rehearsalMarkTweaksForBb = \relative c' { 
+    \once \override Score.MetronomeMark.extra-offset = #'( -6 . 3 )
+
+    \override Score.RehearsalMark.self-alignment-X = #LEFT
+    \once \override Score.RehearsalMark.extra-offset = #'( 4 . -1 )
+    % "Intro"
+    s1*8 
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -2 . 1 )
+    % "Head"
+    s1*4 \break
+    s1*4 \break
+
     \once \override Score.RehearsalMark.extra-offset = #'( -4 . -1 )
+    % "B"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -4 . 0 )
     % "A"
     s1*4 \break
     s1*4 \break
@@ -160,30 +222,69 @@ rehearsalMarkTweaksForC = \relative c' {
 
     \pageBreak
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 1 )
     % "Solo"
     s1*4 \break
     s1*4 \break
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
     % "A"
     s1*4 \break
     s1*4 \break
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
     % "B"
     s1*4 \break
     s1*4 \break
 
-    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
     % "A"
     s1*4 \break
-    s1*4 
+    s1*3 \pageBreak s1 
 
-}
 
-rehearsalMarkTweaksForBb = \relative c' { 
-    \rehearsalMarkTweaksForC
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    % "Solo Two"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
+    % "A"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
+    % "B"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
+    % "A"
+    s1*4 \break
+    s1*3 \pageBreak s1 
+
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    % "Solo Three"
+    s1*4 \break
+    s1*4 \break
+
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
+    % "A"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
+    % "B"
+    s1*4 \break
+    s1*4 \break
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
+    % "A"
+    s1*4 \break
 }
 
 rehearsalMarkTweaksForEb = \relative c' { 
@@ -197,7 +298,7 @@ chordsIntro = \chordmode {
 
 }
 
-chordsForm = \chordmode { 
+chordsHead = \chordmode { 
     \set chordChanges = ##f 
     \set chordNameExceptions = #flamingChordExceptions
     %\set noChordSymbol = ##t
@@ -205,14 +306,62 @@ chordsForm = \chordmode {
     s1*8 
     s1*4 ||
 
-    bf1:7 | s | s | s | 
-    bf1:7 | s | s | s || 
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s || 
 
     d1:m7 | g:7.8+.9+ | c:7.11+ | s | 
-    c1:m7 | g:7.8+.9+ | bf:7.11+ | s || 
+    c1:m7 | f:7.8+.9+ | bf:7.11+ | s || 
 
-    bf1:7 | s | s | s | 
-    bf1:7 | s | s | s ||
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s ||
+
+    bf1:7 | s | ef | s | 
+    bf1:7 | s | ef | s | 
+    bf1:7 | s ||
+
+
+}
+chordsForm = \chordmode { 
+    \set chordChanges = ##f 
+    \set chordNameExceptions = #flamingChordExceptions
+    %\set noChordSymbol = ##t
+
+    \chordsHead
+
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s || 
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s || 
+
+    d1:m7 | g:7 | c:7 | s | 
+    c1:m7 | f:7 | bf:maj7 | bf:7 || 
+
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s ||
+
+
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s || 
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s || 
+
+    d1:m7 | g:7 | c:7 | s | 
+    c1:m7 | f:7 | bf:maj7 | bf:7 || 
+
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s ||
+
+
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s || 
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s || 
+
+    d1:m7 | g:7 | c:7 | s | 
+    c1:m7 | f:7 | bf:maj7 | bf:7 || 
+
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s ||
 
 }
 
@@ -224,6 +373,13 @@ melodyAInBb = \relative c' {
     r4 r8 c  f g r bf | r a r g  a4 f | 
     r4 r8 c  f g r bf | r a r g  a4 r | 
 }
+melodyLastAInBb = \relative c' {
+    r4 r8 c  f g r bf | r a r g  a4 f | 
+    r4 r8 c  f g r bf | r a r g  a4*1/2-\tweak style #'zigzag \glissando 
+        \single \hideNotes 
+        \tweak X-offset #2 \tweak X-extent #'( 0 . 0 )
+        a,4*1/2 r4 |
+}
 melodyATwoInBb = \relative c' {
     r4 r8 c  f g r bf | r a r g  a4 f | 
     r4 r8 c  f g r bf | r a r g  f4 r | 
@@ -234,7 +390,7 @@ harmonyAInBb = \relative c' {
 }
 harmonyATwoInBb = \relative c' {
     r4 r8 f  a bf r d | r c r bf  c4 a | 
-    r4 r8 f  8 bf r d | r c r bf  a4 r | 
+    r4 r8 f  a bf r d | r c r bf  a4 r | 
 }
 
 
@@ -259,22 +415,99 @@ soloInBb = \relative c'' {
     r8 bf r c  r d ( c4-. ) | bf-. c4 2 |
     
     r4 \tuplet 3/2 { g8 ( a bf }  a8 ) 8  r g | r a4 8 g2 ~ | 
-    g8 f r e  d8 4. ~  | 8 e r f  g4  f8 e ~ ||
+    g8 f r e  d8 4. ~  | 8 e r f  g4  f8 ( e ~ ||
 
-    e8 f4. r2 | r4 r8 e  r f d [ bf ] | 
+    e8 f4. ) r2 | r4 r8 e  r f d [ bf ] | 
     a8 g4. ~ 4 \tuplet 3/2 { bf8 ( d f ) } | a2.. g8 | 
 
     f8 d ( bf g )  a g r c ~ | 4 r8 c ~ 4. a8 | 
     bf8 c ( d ) e  f d ( bf ) g | a c r4 r4 r8 e ||
 
-    r8 e r4  e4. e8 ~  | 8 8 r d  cs4 a'8 g | 
-    fs8 d a g  fs d'4. | r2 r4 d8 e |
-    f8 g e f  d4. a8 | c as b g' ~ 4 f8 ef |
-    e c r4  c2 | f8 d bf f a4 r ||   
+    r8 e r4  e4. e8 ~  | 8 8 r d  cs4 a'8 g ( | 
+    fs8 ) d ( a ) g (  fs ) d'4. | r2 r4 d8 e |
+    f8 g e f  d4. a8 | c as ( b ) g' ~ 4 f8 ef |
+    e c r4  c2 | f8 d ( bf ) f a4 r ||   
 
     r8 f' r a  r f r a | f4. a8 r2 | 
     r8 f r a  r a r a ~ | 8 f d4  f d8 f | 
-    a8 f r4  f2 |     
+    a8 f r f ~  2 ~ | 8 d r f  a c r a |
+    f8 d r d ~ 2 | r4 r8 a' ~ 2 ~ ||
+       
+}
+soloTwoInBb = \relative c'' { 
+    a2  c4. a8 | bf c cs d  bf a g f |
+    e8 g ( bf ) d (  c ) a r bf | r4 r8 g  \tuplet 3/2 { bf8 a ( g }  fs8 ) a | 
+
+    g8 d f a  e4. d8 | c a \tuplet 3/2 4 { bf8 ( d f ) a ( bf b } c ) a |
+    bf8 d, f a  g d4. ~ | 4 r r r8 c ( ||
+
+
+    df8 ) ef f g (  c,4. ) 8 ( | df ) ef f g  r a g4 |
+    r2  bf8 ( a ) r c | bf2 ~ \tuplet 3/2 { bf4 g \grace { e8 ( } f4 ) } | 
+
+    df4 ( c2. ~ | 8 ) 8 ( ~ \tuplet 3/2 { 8 df c ) } bf4 a' | 
+    g4. f8  e c4 r8 | R1 ||
+
+
+    e8 ( g ) b d (  cs4 ) a | b4 8 g  r4 a ~ | 
+    a4 g8 fs16 ( g  fs8 ) e d cs | e cs d e  fs a r a |
+
+    c8 a a b  g gs a f | e8 d c as (  b ) a' g f ( | 
+    \tuplet 3/2 { e8 f d' } c8 ) af (  g ) f ( e ) d ( | c8 cs ) d bf (  a ) g r4 ||
+
+
+    r4 c,8 g'  c g' c4 | 4 g8 ( d )  g ( d ) c4 |  
+    r4 c'8 g  c g d4 | g4 8 ( d ~  8 ) 8 ( c4 ~ | 
+
+    c4 ) d  g4. c,8 | r d ( g4 ~ 8 ) c,  r d | 
+    g ( [ a ] ) r g ~ 2 | r2 r4 r8
+}
+soloThreeInBb = \relative c'' { 
+    g8 | c4 8 a  c8 8 r c ~ | 4. bf8  \tuplet 3/2 { c4 d e8 ( f ~ } |
+    f4 )  e    d8 c4. ~ | 4. a8  bf4-. d ~ | 
+
+    d8 a g4 ~  2 ~ | \tuplet 3/2 { g4 f a } e4 d8 c ~ |  
+    c2 r | r8 c2.. ~ ||
+
+
+    c4  d8 e  f g r4 | a8 ( bf ) fs a  g d r f | 
+    e8 d2.. | bf8 c ( df ) ef (  f ) g ( af ) bf | 
+
+    c8 df ef ( c )  r2 | r8 df4 ( \grace { ef16 df } bf8 )   c d, ( f ) a ( | 
+    g8 ) f ( e ) d (  c ) bf d ( bf ) | a8 g r4  c r || 
+
+
+    r4 cs8 d  e8 8 8 8 | 4 cs' a4. g8 | 
+    fs4. -\tweak style #'zigzag \glissando e'8 ( d ) a4. | r2 r4 r8 a |
+
+    d4 a8 d (  cs ) a r a | c a ( as ) b  r4 g8 a | 
+    b8 c a b  g e c4 | e8 ( f ) d bf (  a ) g r4 ||
+
+
+    r4 r8 bf,  r d r f | r a r c  r a bf [ c ] |
+    d8 e ( f ) g  \tuplet 3/2 { a4 g-. r } | bf8 ( a ) r c  bf4-. g-. | 
+
+    bf4 g a2 ~ | 4. g8  f g e ( f ) | 
+    d2. r4 | r4 r8 a' ~ 4. f8 ||
+
+}
+
+melodyHead = \transpose c bf, {
+    <>\xmp R1*8
+    \introTenorInBb
+    \melodyAInBb
+    \melodyATwoInBb
+    \melodyBInBb
+    <<
+        {
+            \harmonyAInBb
+            \harmonyATwoInBb
+        } \\ {
+            \melodyLastAInBb
+            \melodyATwoInBb            
+        }
+    >>
+    \melodyInterludeInBb
 }
 
 melody = \transpose c bf, {
@@ -288,11 +521,50 @@ melody = \transpose c bf, {
             \harmonyAInBb
             \harmonyATwoInBb
         } \\ {
-            \melodyAInBb
+            \melodyLastAInBb
             \melodyATwoInBb            
         }
+    >>
     \melodyInterludeInBb
     \soloInBb
+    \soloTwoInBb
+    \soloThreeInBb
+}
+
+\book {
+  \bookOutputSuffix "for-C"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Concert Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose c c <<
+            \new ChordNames { 
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                \chordsHead
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \accidentalStyle modern-cautionary
+                <<
+                    \structureHead
+                    \rehearsalMarkTweaksForC
+                    \melodyHead
+                    \noPageBreak
+                >>
+            }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 0.75\cm
+        }
+    }
 }
 
 \book {
@@ -318,7 +590,7 @@ melody = \transpose c bf, {
                 \accidentalStyle modern-cautionary
                 <<
                     \structure
-                    \rehearsalMarkTweaksForC
+                    \rehearsalMarkTweaksForBb
                     \melody 
                     \noPageBreak
                 >>
@@ -331,3 +603,38 @@ melody = \transpose c bf, {
     }
 }
 
+\book {
+  \bookOutputSuffix "for-Eb"
+    \header {
+        title = \title
+        composer = \composerName
+        poet = "Eb Lead Sheet"
+        instrumentName = \poet
+        subtitle = ""
+    }
+    \score {
+        \transpose ef, c <<
+            \new ChordNames { 
+                \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = 1.5
+                \chordsForm
+            }
+            \new Staff = "lead" \with {
+                \consists Merge_rests_engraver
+            } \transpose c c {
+                \include "ly/ily/staff-properties.ily"
+                \autoPageBreaksOff
+                \accidentalStyle modern-cautionary
+                <<
+                    \structure
+                    \rehearsalMarkTweaksForBb
+                    \melody 
+                    \noPageBreak
+                >>
+            }
+        >>
+        \layout { 
+            short-indent = 0.25\cm
+            indent = 0.75\cm
+        }
+    }
+}

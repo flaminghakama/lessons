@@ -21,7 +21,7 @@ mv diatonic-exercises-for-clarinet.pdf pdf/exercises/clarinet
 op pdf/exercises/clarinet/diatonic-exercises-for-clarinet.pdf
 
 ./bin/createIndexes.sh
-git add . ; git commit -m"adding introductory pentatonic exercises 3 and 4 accidentals" ; git push 
+git add . ; git commit -m"adding content to 4 and 5 accidental keys" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
