@@ -26,6 +26,9 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 \include "../../../../engraving/flaming-libs/flaming-chords.ily"
 \include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
+dsFineWithRepeatsMarkup = \markup { \bold \huge \center-column { "D.S. al Fine" "with repeats" } }
+dsFine = <>_\dsFineWithRepeatsMarkup
+
 
 scoop = #(define-music-function (graceNote note) (ly:music? ly:music?)
   #{
@@ -101,6 +104,8 @@ structureHead = \relative c' {
 
     \startSection "Intro"
     s1*8
+
+    \bar "S-double"
     s1*4
 
     \startSection "Head"
@@ -121,11 +126,14 @@ structureHead = \relative c' {
 
     \startSection "Interlude"
     s1*6
-    s1*4
+    s1*3
+    \fine 
+    s1
 
     \bar "|."
 
 }
+
 
 structure = \relative c' { 
 
@@ -182,8 +190,20 @@ structure = \relative c' {
     s1*4
     s1*4
 
-    \startSection "Piano"
-    s1*2
+    \startSectionWithLabel "Piano" "Open"
+    \repeat volta 2 { 
+        \startRepeat
+        s1*8
+    }
+
+    \startSectionWithLabel "Outro" "On Cue"
+    s1*4
+    s1*4
+    s1*3
+    s2
+    \dsFine
+    s2
+    \bar "||"
 }
 
 rehearsalMarkTweaksForC = \relative c' { 
@@ -327,20 +347,21 @@ rehearsalMarkTweaksForBb = \relative c' {
 
     \once \override Score.RehearsalMark.extra-offset = #'( -3 . -1 )
     % "A"
-    s1 \noBreak 
-    s1 \noBreak 
-    s1 \noBreak 
-    s1 \noBreak 
+    s1*4 \break  
+    s1*4 
 
-    s1  
-    s1 \noBreak 
-    s1 \noBreak 
-    s1 \noBreak 
+    \pageBreak 
 
     \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
     % "Piano"
-    s1 \noBreak 
-    s1 \noBreak 
+    s1*8 
+    \break 
+
+    \once \override Score.RehearsalMark.extra-offset = #'( -3 . 2 )
+    % "Outro"
+    s1*4 \break 
+    s1*4 \break 
+    s1*4 
 }
 
 rehearsalMarkTweaksForEb = \relative c' { 
@@ -404,6 +425,10 @@ chordsForm = \chordmode {
     \chordsSolos
     \chordsSolos
     \chordsSolos
+
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s | 
+    ef1:1.4.5 | s | s | s || 
 }
 
 introTenorInBb = \relative c'' {
@@ -565,8 +590,19 @@ soloFourInBb = \relative c'' {
     c4. a8  c a4. ~ | 2  r8 f r a | 
     f8 d r f   d bf r d | bf g r bf  g d r f || 
 
-    e4-. c2. ~ | 2. r4 |
+    e4-. c2. ~ | 2. r4 | R1*6 
 
+}
+
+melodyOutroInBb = \relative c' { 
+    c4-. r8 g  bf8 ( c ) r g ~ | 4 bf-. c-. g-. | 
+    c4-. r8 g  bf8 ( c ) r g ~ | 4 bf-. c-. r | 
+
+    e4-. r8 c  d8 ( e ) r c ~ | 4 d-. e-. c-. | 
+    e4-. r8 c  d8 ( e ) r c ~ | 4 d-. e-. r | 
+
+    g4-. r8 e f8 ( g ) r e ~ | 4 f-. g-. e-. | 
+    g4-. r8 e f8 ( g ) r e ~ | 4 f-. g-. r ||
 }
 
 melodyHead = \transpose c bf, {
@@ -607,6 +643,8 @@ melody = \transpose c bf, {
     \soloTwoInBb
     \soloThreeInBb
     \soloFourInBb
+
+    \melodyOutroInBb    
 }
 
 \book {
