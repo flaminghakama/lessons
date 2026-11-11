@@ -1,32 +1,31 @@
-\version "2.22.0"
+\version "2.24.0"
 
 titleLeft = "Foot"
 titleRight = "prints"
-title = "Footprints"
+titleFull = "Footprints"
 composerName = "W. Shorter"
 
-\include "../../../../scores/flaming-libs/flaming-paper.ily"
-\include "../../../../scores/flaming-libs/flaming-markup.ily"
-\include "../../../../scores/flaming-libs/flaming-chords.ily"
-\include "../../../../scores/flaming-libs/flaming-dynamics.ily"
+arranger = ""
+copyright = ""
 
 %{
 
+killPreview ; rm footprints*pdf ;  lilypond ly/songs/jazz/footprints.ly  ; for file in footprints*.pdf ; do op $file ; done  
+
 killPreview
-
-rm footprints*pdf ; lilypond ly/songs/jazz/footprints.ly ; for file in footprints*pdf ; do open -a Preview $file ; done
-
 rm footprints*pdf
 lilypond ly/songs/jazz/footprints.ly
-mv footprints*.pdf  pdf/songs/jazz
-for file in pdf/songs/jazz/footprints*pdf ; do open -a Preview $file ; done
+mv footprints*.pdf pdf/songs/jazz
+for file in pdf/songs/jazz/footprints*.pdf ; do op $file ; done  
 
-./bin/createIndexes.sh 
-git add . ; git commit -m"wayne" ; git push 
+git add . ; git commit -m"post-session fix" ; git push 
 lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
 %}
 
+\include "../../../../engraving/flaming-libs/flaming-standard.ily"
+\include "../../../../engraving/flaming-libs/flaming-chords.ily"
+\include "../../../../engraving/flaming-libs/flaming-fonts.ily"
 
 \paper {
 
@@ -47,7 +46,6 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 
   page-breaking = #ly:minimal-breaking
 
-  ragged-right = ##f
   ragged-bottom = ##t
   ragged-last-bottom = ##t
 
@@ -59,12 +57,18 @@ lynx http://altjazz.org/cgi-bin/pullLessons.pl
 }
 
 \include "ly/ily/layout-songs.ily"
-\include "ly/ily/hideMelody.ily"
+
+\layout {
+    \context {
+        \StaffGroup
+        \override StaffGrouper.staff-staff-spacing.padding = #4
+    }
+}
 
 structure = \relative c' { 
 
     \override Score.RehearsalMark.self-alignment-X = #LEFT
-    \override Score.RehearsalMark #'extra-offset = #'( 0 . 0 )
+    \override Score.RehearsalMark.extra-offset = #'( 0 . 0 )
 
     \override Beam.damping = #2.75 
     \override Stem.length-fraction = #(magstep 1.2)
@@ -100,7 +104,7 @@ chordsSongTop = \chordmode {
 
     s1.*12
 }
-chordsSongMid = \chordmode { 
+chordsSongShorterMid = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -113,6 +117,19 @@ chordsSongMid = \chordmode {
     f1.:m9.13 | s | c:m9 | s | 
     fs2.:m9 b:aug7.9+ | e:7.9+ a:1.3.5+.7.9+.11+ | c1.:m9 | s |
 }
+chordsSongLevinMid = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+    s1*2
+
+    s1.*2
+
+    c1.:m9 | s | s | s | 
+    f1.:m9.13 | s | c:m9 | s | 
+    fs2.:m9 b:aug7.9+ | f:1.3-.5.7.11 bf:13 | c1.:m9 | s |
+}
 chordsSongTopForFlats = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
@@ -124,7 +141,7 @@ chordsSongTopForFlats = \chordmode {
 
     s1.*12
 }
-chordsSongMidForFlats = \chordmode { 
+chordsSongShorterMidForFlats = \chordmode { 
     \set chordChanges = ##f
     \set chordNameExceptions = #flamingChordExceptions
     \set noChordSymbol = ##f
@@ -136,6 +153,19 @@ chordsSongMidForFlats = \chordmode {
     c1.:m9 | s | s | s | 
     f1.:m9.13 | s | c:m9 | s | 
     gf2.:m9 cf:aug7.9+ | e:7.9+ a:1.3.5+.7.9+.11+ | c1.:m9 | s |
+}
+chordsSongLevinMidForFlats = \chordmode { 
+    \set chordChanges = ##f
+    \set chordNameExceptions = #flamingChordExceptions
+    \set noChordSymbol = ##f
+
+    s1*2
+
+    s1.*2
+
+    c1.:m9 | s | s | s | 
+    f1.:m9.13 | s | c:m9 | s | 
+    gf2.:m9 cf:aug7.9+ | f:7.9+ bf:1.3.5+.7.9+.11+ | c1.:m9 | s |
 }
 
 melody = {
@@ -254,9 +284,10 @@ bassline = {
 }
 
 \book {
-  \bookOutputSuffix "for-C"
+  \bookOutputSuffix "Shorter-turnaround-for-C"
     \header {
         poet = "Concert Lead Sheet"
+        subtitle = "(Wayne Shorter turnaround)"
         instrumentName = \poet
     }
     \score {
@@ -274,7 +305,7 @@ bassline = {
             }
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSongMid
+                \chordsSongShorterMid
             }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -289,9 +320,10 @@ bassline = {
 }
 
 \book {
-  \bookOutputSuffix "for-Bb"
+  \bookOutputSuffix "Shorter-turnaround-for-Bb"
     \header {
         poet = "Bb Lead Sheet"
+        subtitle = "(Wayne Shorter turnaround)"
         instrumentName = \poet
     }
     \score {
@@ -309,7 +341,7 @@ bassline = {
             }
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSongMidForFlats
+                \chordsSongShorterMidForFlats
             }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
@@ -323,9 +355,10 @@ bassline = {
 }
 
 \book {
-  \bookOutputSuffix "for-Eb"
+  \bookOutputSuffix "Shorter-turnaround-for-Eb"
     \header {
         poet = "Eb Lead Sheet"
+        subtitle = "(Wayne Shorter turnaround)"
         instrumentName = \poet
     }
     \score {
@@ -343,7 +376,116 @@ bassline = {
             }
             \new ChordNames \transpose c c  { 
                 \include "ly/ily/chord-names-properties.ily"
-                \chordsSongMidForFlats
+                \chordsSongShorterMidForFlats
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \transpose c, c \bassline
+                >>
+            }
+        >>
+    }
+}
+
+
+
+
+\book {
+  \bookOutputSuffix "Levin-turnaround-for-C"
+    \header {
+        poet = "Concert Lead Sheet"
+        subtitle = "(Grant Levin turnaround)"
+        instrumentName = \poet
+    }
+    \score {
+        \new StaffGroup \transpose c c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongTop
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melody
+                >>
+            }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongLevinMid
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                \clef bass
+                <<
+                    \structure
+                    \bassline
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "Levin-turnaround-for-Bb"
+    \header {
+        poet = "Bb Lead Sheet"
+        subtitle = "(Grant Levin turnaround)"
+        instrumentName = \poet
+    }
+    \score {
+        \new StaffGroup \transpose bf, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongTopForFlats
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melodyForBb
+                >>
+            }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongLevinMidForFlats
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \transpose c, c \bassline
+                >>
+            }
+        >>
+    }
+}
+
+\book {
+  \bookOutputSuffix "Levin-turnaround-for-Eb"
+    \header {
+        poet = "Eb Lead Sheet"
+        subtitle = "(Grant Levin turnaround)"
+        instrumentName = \poet
+    }
+    \score {
+        \new StaffGroup \transpose ef, c <<
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongTopForFlats
+            }
+            \new Staff \transpose c c { 
+                \include "ly/ily/staff-properties.ily"
+                <<
+                    \structure
+                    \melodyForEb
+                >>
+            }
+            \new ChordNames \transpose c c  { 
+                \include "ly/ily/chord-names-properties.ily"
+                \chordsSongLevinMidForFlats
             }
             \new Staff \transpose c c { 
                 \include "ly/ily/staff-properties.ily"
